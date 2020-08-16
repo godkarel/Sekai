@@ -1,0 +1,2092 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form formType="sheetTemplate" dataType="com.Sekai" 
+     title="Sekai 2" name="frmsekai">
+	 
+<event name="onNodeReady">
+	
+	
+	if sheet.Nome == nil then
+		sheet.cla = "Sem clã"
+		sheet.Graduacao = "Academico"
+		sheet.Idade = (tonumber(sheet.Idade) or 0) 
+		sheet.Elemento = (tonumber(sheet.Elemento) or 0)
+		sheet.Yen = (tonumber(sheet.Yen) or 0)
+		sheet.Forca = (tonumber(sheet.Forca) or 0)
+		sheet.Inteligencia = (tonumber(sheet.Inteligencia) or 0)
+		sheet.Sabedoria = (tonumber(sheet.Sabedoria) or 0)
+		sheet.Habilidade = (tonumber(sheet.Habilidade) or 0)
+		sheet.Resistencia = (tonumber(sheet.Resistencia) or 0)
+		sheet.TaiTotal = (tonumber(sheet.TaiTotal) or 0)
+		sheet.NinTotal = (tonumber(sheet.NinTotal) or 0)
+		sheet.GenTotal = (tonumber(sheet.GenTotal) or 0)
+		sheet.DanoArmado = (tonumber(sheet.DanoArmado) or 0)
+		sheet.Elemental1 = (tonumber(sheet.Elemental1) or 0)
+		sheet.HPTotal = (tonumber(sheet.HPTotal) or 0)
+		sheet.ChakraTotal = (tonumber(sheet.ChakraTotal) or 0)
+		sheet.ReiatsuTotal = (tonumber(sheet.ReiatsuTotal) or 0)
+		sheet.OutrosTotal = (tonumber(sheet.OutrosTotal) or 0)
+		sheet.DanoJutsu = (tonumber(sheet.DanoJutsu) or 0)
+		sheet.DanoJutsu2 = (tonumber(sheet.DanoJutsu2) or 0)
+		sheet.DanoJutsu3 = (tonumber(sheet.DanoJutsu3) or 0)
+		sheet.CustoJutsu = (tonumber(sheet.CustoJutsu) or 0)
+		sheet.CustoJutsu2 = (tonumber(sheet.CustoJutsu2) or 0)
+		sheet.CustoJutsu3 = (tonumber(sheet.CustoJutsu3) or 0)
+		sheet.Tipo = (tonumber(sheet.Tipo) or 0)
+		sheet.Tipo2 = (tonumber(sheet.Tipo2) or 0)
+		sheet.Tipo3 = (tonumber(sheet.Tipo3) or 0)
+		sheet.Intensidade = (tonumber(sheet.Intensidade) or 0)
+		sheet.Intensidade2 = (tonumber(sheet.Intensidade2) or 0)
+		sheet.Intensidade3 = (tonumber(sheet.Intensidade3) or 0)
+		sheet.LevelJutsu = (tonumber(sheet.LevelJutsu) or 0)
+		sheet.LevelJutsu2 = (tonumber(sheet.LevelJutsu2) or 0)
+		sheet.LevelJutsu3 = (tonumber(sheet.LevelJutsu3) or 0)
+		sheet.DanoKunai = (tonumber(sheet.DanoKunai) or 0)
+		sheet.DanoShuriken = (tonumber(sheet.DanoShuriken) or 0)
+		sheet.DanoShurikenFuuma = (tonumber(sheet.DanoShurikenFuuma) or 0)
+		sheet.DanoKunaiGigante = (tonumber(sheet.DanoKunaiGigante) or 0)
+		sheet.Marionete = (tonumber(sheet.Marionete) or 0)
+		sheet.KunaiLimite = (tonumber(sheet.KunaiLimite) or 0)
+		sheet.ShurikenLimite = (tonumber(sheet.ShurikenLimite) or 0)
+		sheet.SFuumaLimite = (tonumber(sheet.SFuumaLimite) or 0)
+		sheet.KGiganteLimite = (tonumber(sheet.KGiganteLimite) or 0)
+		sheet.PB = (tonumber(sheet.PB) or 0)
+		sheet.GinsoExplosivo = (tonumber(sheet.GinsoExplosivo) or 0)
+		sheet.Veneno = (tonumber(sheet.Veneno) or 0)
+		sheet.Bandagem = (tonumber(sheet.Bandagem) or 0)
+		sheet.BF = (tonumber(sheet.BF) or 0)
+		sheet.PBombaLimite = (tonumber(sheet.PBombaLimite) or 0)
+		sheet.GExplosivoLimite = (tonumber(sheet.GExplosivoLimite) or 0)
+		sheet.VenenoLimite = (tonumber(sheet.VenenoLimite) or 0)
+		sheet.BandagemLimite = (tonumber(sheet.BandagemLimite) or 0)
+		sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0)
+		sheet.DTaijutsu = (tonumber(sheet.DTaijutsu) or 0)
+		sheet.DNinjutsu = (tonumber(sheet.DNinjutsu) or 0)
+		sheet.DGenjutsu = (tonumber(sheet.DGenjutsu) or 0)
+		sheet.DDA = (tonumber(sheet.DDA) or 0)
+		sheet.DDE = (tonumber(sheet.DDE) or 0)
+		sheet.DHP = (tonumber(sheet.DHP) or 0)
+		sheet.DChakra = (tonumber(sheet.DChakra) or 0)
+		sheet.DReiatsu = (tonumber(sheet.DReiatsu) or 0)
+		sheet.DOutro = (tonumber(sheet.DOutro) or 0)
+		sheet.DAcertoTai = (tonumber(sheet.DAcertoTai) or 0)
+		sheet.DAcertoNin = (tonumber(sheet.DAcertoNin) or 0)
+		sheet.DAcertoGen = (tonumber(sheet.DAcertoGen) or 0)
+		sheet.DBloqueio = (tonumber(sheet.DBloqueio) or 0)
+		sheet.DEsquiva = (tonumber(sheet.DEsquiva) or 0)
+		sheet.DCriticalTai = (tonumber(sheet.DCriticalTai) or 0)
+		sheet.DCriticalNin = (tonumber(sheet.DCriticalNin) or 0)
+		sheet.DCriticalGen = (tonumber(sheet.DCriticalGen) or 0)
+		sheet.ChakraBiju = (tonumber(sheet.ChakraBiju) or 0)
+		sheet.ChakraBranco = (tonumber(sheet.ChakraBranco) or 0)
+		sheet.ChakraPreto = (tonumber(sheet.ChakraPreto) or 0)
+		sheet.Hadou = (tonumber(sheet.Hadou) or 0)
+		sheet.HadouNegro = (tonumber(sheet.HadouNegro) or 0)
+		sheet.ChakraNatural = (tonumber(sheet.ChakraNatural) or 0)
+		sheet.ChakraRoxo = (tonumber(sheet.ChakraRoxo) or 0)
+		sheet.IntensidadeP1 = (tonumber(sheet.IntensidadeP1) or 0)
+		sheet.CustoPerga1 = (tonumber(sheet.CustoPerga1) or 0)
+		sheet.TipoPergaminho1 = (tonumber(sheet.TipoPergaminho1) or 0)
+		sheet.IntensidadeP2 = (tonumber(sheet.IntensidadeP2) or 0)
+		sheet.CustoPerga2 = (tonumber(sheet.CustoPerga2) or 0)
+		sheet.TipoPergaminho2 = (tonumber(sheet.TipoPergaminho2) or 0)
+		sheet.IntensidadeP3 = (tonumber(sheet.IntensidadeP3) or 0)
+		sheet.CustoPerga3 = (tonumber(sheet.CustoPerga3) or 0)
+		sheet.TipoPergaminho3 = (tonumber(sheet.TipoPergaminho3) or 0)
+		sheet.AcertoTaiTotal = (tonumber(sheet.AcertoTaiTotal) or 0)
+		sheet.AcertoNinTotal = (tonumber(sheet.AcertoNinTotal) or 0)
+		sheet.AcertoGenTotal = (tonumber(sheet.AcertoGenTotal) or 0)
+		sheet.EsquivaTotal = (tonumber(sheet.EsquivaTotal) or 0)
+		sheet.BloqueioTotal = (tonumber(sheet.BloqueioTotal) or 0)
+		sheet.CRTaiTotal = (tonumber(sheet.CRTaiTotal) or 0)
+		sheet.CRNinTotal = (tonumber(sheet.CRNinTotal) or 0)
+		sheet.CRGenTotal = (tonumber(sheet.CRGenTotal) or 0)
+		sheet.TurnoTotal = (tonumber(sheet.TurnoTotal) or 0)
+		sheet.DShurikenTotal = (tonumber(sheet.DShurikenTotal) or 0)
+		sheet.DKunaiTotal = (tonumber(sheet.DKunaiTotal) or 0)
+		sheet.DPBTotal = (tonumber(sheet.DPBTotal) or 0)
+		sheet.DEETotal = (tonumber(sheet.DEETotal) or 0)
+		sheet.DVenenoTotal = (tonumber(sheet.DVenenoTotal) or 0)
+		sheet.GAcertoTai = (tonumber(sheet.GAcertoTai) or 0)
+		sheet.GAcertoNin = (tonumber(sheet.GAcertoNin) or 0)
+		sheet.GAcertoGen = (tonumber(sheet.GAcertoGen) or 0)
+		sheet.GEsquiva = (tonumber(sheet.GEsquiva) or 0)
+		sheet.GBloqueio = (tonumber(sheet.GBloqueio) or 0)
+		sheet.GCRTai = (tonumber(sheet.GCRTai) or 0)
+		sheet.GCRNin = (tonumber(sheet.GCRNin) or 0)
+		sheet.GCRGen = (tonumber(sheet.GCRGen) or 0)
+		sheet.GTurno = (tonumber(sheet.GTurno) or 0)
+		sheet.CTai = (tonumber(sheet.CTai) or 0)	
+		sheet.CNin = (tonumber(sheet.CNin) or 0)	
+		sheet.CGen = (tonumber(sheet.CGen) or 0)
+		sheet.CDA = (tonumber(sheet.CDA) or 0)
+		sheet.CDE = (tonumber(sheet.CDE) or 0)
+		sheet.CHP = (tonumber(sheet.CHP) or 0)
+		sheet.CChakra = (tonumber(sheet.CChakra) or 0)
+		sheet.Taijutsu = (tonumber(sheet.Taijutsu) or 0)
+		sheet.Ninjutsu = (tonumber(sheet.Ninjutsu) or 0)
+		sheet.Genjutsu = (tonumber(sheet.Genjutsu) or 0)
+		sheet.DanoArmado = (tonumber(sheet.DanoArmado) or 0)
+		sheet.Elemental1 = (tonumber(sheet.Elemental1) or 0)
+		sheet.GHP = (tonumber(sheet.GHP) or 0)
+		sheet.GChakra = (tonumber(sheet.GChakra) or 0)
+		sheet.CAT = (tonumber(sheet.CAT) or 0)
+		sheet.CAN = (tonumber(sheet.CAN) or 0)
+		sheet.CAG = (tonumber(sheet.CAG) or 0)
+		sheet.CEsq = (tonumber(sheet.CEsq) or 0)
+		sheet.CBloq = (tonumber(sheet.CBloq) or 0)
+		sheet.CCRT = (tonumber(sheet.CCRT) or 0)
+		sheet.CCRN = (tonumber(sheet.CCRN) or 0)
+		sheet.CCRG = (tonumber(sheet.CCRG) or 0)
+		sheet.ExpTotal = 0
+		sheet.Exp = 0
+		sheet.Level = 1
+		sheet.HP = (tonumber(sheet.HP) or 0)
+		sheet.Chakra = (tonumber(sheet.Chakra) or 0)
+		sheet.Reiatsu = (tonumber(sheet.Reiatsu) or 0)
+		sheet.Outros = (tonumber(sheet.Outros) or 0)
+		sheet.ArmaDT = (tonumber(sheet.ArmaDT) or 0)
+		sheet.ArmaDN = (tonumber(sheet.ArmaDN) or 0)
+		sheet.ArmaDG = (tonumber(sheet.ArmaDG) or 0)
+		sheet.ArmaDA = (tonumber(sheet.ArmaDA) or 0)
+		sheet.ArmaDE = (tonumber(sheet.ArmaDE) or 0)
+		sheet.ArmaHP = (tonumber(sheet.ArmaHP) or 0)
+		sheet.ArmaChakra = (tonumber(sheet.ArmaChakra) or 0)
+		sheet.BandanaHP = (tonumber(sheet.BandanaHP) or 0)
+		sheet.BandanaChakra = (tonumber(sheet.BandanaChakra) or 0)
+		sheet.BandanaReducao = (tonumber(sheet.BandanaReducao) or 0)
+		sheet.ColeteHP = (tonumber(sheet.ColeteHP) or 0)
+		sheet.ColeteChakra = (tonumber(sheet.ColeteChakra) or 0)
+		sheet.ColeteReducao = (tonumber(sheet.ColeteReducao) or 0)
+		sheet.AcessorioDT = (tonumber(sheet.AcessorioDT) or 0)
+		sheet.AcessorioDN = (tonumber(sheet.AcessorioDN) or 0)
+		sheet.AcessorioDG = (tonumber(sheet.AcessorioDG) or 0)
+		sheet.AcessorioDE = (tonumber(sheet.AcessorioDE) or 0)
+		sheet.AcessorioReiatsu = (tonumber(sheet.AcessorioReiatsu) or 0)
+		sheet.AcessorioHP = (tonumber(sheet.AcessorioHP) or 0)
+		sheet.AcessorioChakra = (tonumber(sheet.AcessorioChakra) or 0)
+		sheet.AcessorioOutros = (tonumber(sheet.AcessorioOutros) or 0)
+		sheet.GHP = 100
+		sheet.Nome = "Escolha o Nome"	
+		showMessage("Escolha seu nome, clã e idade");
+	end;
+	
+</event>	 	 
+	 
+		<scrollBox align="client">
+			 -----------------------------------
+			 -----------------------------------
+			 ----------- ABA 1 -----------------
+			 -----------------------------------
+			 -----------------------------------
+	<tabControl left="10" top="10" width="1000" height="700">
+        <tab title="Status">
+		
+			
+--------------------------------------botões de ataque-----------------------------------------
+			
+			<scrollBox align="client">
+		    <image left="1" top="1" width="1000" height="700" src="/imagens/1.png"/>
+			<button left="40" top="420" text="Ataque Tai" width="100">
+			  <event name="onClick">        
+                        local mesaDoPersonagem = rrpg.getMesaDe(sheet);        
+                        sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);                        
+                        mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de ataque fisico",
+							function (rolado)
+								if sheet.AcertoTaiTotal >= rolado.resultado then
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo");
+								else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou de seu ataque");
+								end;          
+							end);                               
+                </event>
+				    </button>
+
+			<button left="250" top="420" text="Esquiva" width="100">
+						  <event name="onClick">
+                        local mesaDoPersonagem = rrpg.getMesaDe(sheet);        
+                        sheet.EsquivaTotal = tonumber(sheet.EsquivaTotal or 0);                        
+                        mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de Esquiva",
+							function (rolado)
+								if sheet.EsquivaTotal >= rolado.resultado then
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Esquivou do ataque do oponente");
+								else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente Acertou");
+								end;          
+							end);  
+                </event>
+				    </button>
+
+--------------------------------BOTÕES DE LISTA DE JUTSUS ENTRE OUTRAS-----------------------------------------
+
+			<button left="40" top="448" width="100" height="85" opacity="0.1" text="" onClick="self.POPJutsu:show();"/>
+			<popup name="POPJutsu" visible="false" left="1" top="40"
+                     width="900" height="600" >
+					 
+			<scrollBox align="client">		 
+			<image top="1" width="870" height="705" src="/imagens/5.png"/>
+			<!-- Botão de inserir novo item à lista -->
+       
+                <button text="Novo Jutsu"  width="125" height="40" left="70" top="10">
+                        <event name="onClick">
+                                -- Usuário clicou no botão de criar novo item.
+                                -- Vamos inserir um novo item no nosso recordList                              
+                                self.rclListaDosItens1:append();
+                        </event>
+                </button>
+      
+
+        <!-- recordList, representando a lista -->
+        <recordList name="rclListaDosItens1" field="Jutsus" templateForm="frmItemDaLista1"
+                                width="880" height="570" left="10" top="60" selectable="true">                              
+
+                <event name="onSelect">
+                        --[[
+                        Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+
+                  --]]                      
+                  local node = self.rclListaDosItens1.selectedNode; 
+                         self.ListaJutsus.node = node;                       
+                  -- a caixa de detalhe só ficará visível se houver item selecionado
+                          self.ListaJutsus.visible = (node ~= nil);
+                </event>
+        </recordList>       
+        <!-- dataScopeBox representando a nossa caixa de detalhes -->  
+        <dataScopeBox name="ListaJutsus" visible="false" width="480" height="580" left="400" top="60" >
+                <!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro   -->       
+
+                <rectangle  color="black" xradius="10" yradius="10" width="460" height="560" left="1" top="1" >
+                                
+																
+                                <label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
+                                <edit  width="310" height="30" left="130" top="15" field="NomedoJutsu"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriJutsu" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Dano"/>
+                                <edit  width="80" height="30" left="55" top="355" type="number" field="DanoJutsu"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false"  horzTextAlign="center" fontColor="cyan"  type="number" field="ChakraPlayer"/>
+								<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="190" top="363" width="140" height="18" field="Tipo" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental'}"/>
+								<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
+                                <edit  width="80" height="20" left="110" top="400" enabled="false" horzTextAlign="center" type="number" field="DNVerdadeiro"/>
+								<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson " fontSize="16" text="Intensidade"/>
+								<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade"/>
+								<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+								<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
+								<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
+								<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="1d10"/>
+								<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="2d10"/>
+								<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="3d10"/>
+								<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />
+																						
+								<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="1d20"/>
+								<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
+								<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
+								<event name="onClick"> 								
+									<![CDATA[
+										local node = self.ListaJutsus.node;									
+										local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+										
+										if node.Tipo == nil then
+											showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
+										else 	
+											sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
+											
+											if node.DanoJutsu ~= nil then
+												node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
+											else
+												node.LevelJutsu1 = 1;
+											end;
+											
+											if node.Tipo == 'Tai' then
+												node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.TaiTotal) or 0);	
+											end;	
+											
+											if node.Tipo == 'Nin' then
+												node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.NinTotal) or 0);	
+											end;
+											
+											if node.Tipo == 'Gen' then
+												node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.GenTotal) or 0);	
+											end;
+											
+											if node.Tipo == 'Elemental' then
+												node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.EleTotal) or 0);	
+											end;
+											
+											if node.Tipo == 'Selamento' then
+												node.Intensidade = 0;	
+											end;
+											
+											if node.Tipo == 'Outros' then
+												node.Intensidade = 0;
+											end;
+																				
+											mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
+											function (rolado)	
+											if sheet.AcertoNinTotal >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu);
+													
+												if node.Tipo == 'Tai'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+												end;
+												
+												if node.Tipo == 'Nin'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+												end;
+												
+												if node.Tipo == 'Gen'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+												end;
+												
+												if node.Tipo == 'Elemental'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+												end;
+												
+												local mesa = Firecast.getMesaDe(sheet);
+												local ChakraPlayer = mesa.meuJogador:getBarValue(2);
+												node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
+												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsu) or 0);
+												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+												else
+												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
+											end;
+											end);
+										end;	
+									 ]]>
+								</event>
+								</button>
+                </rectangle>
+			</dataScopeBox>
+			</scrollBox>
+			</popup> 
+			
+			------------------------------ POP FAVORITO -----------------------------------
+				
+			<button left="145" top="448" width="100" height="85" opacity="0.1" text="" onClick="self.POPFavorito:show();"/>
+			<popup name="POPFavorito" visible="false" left="1" top="40"
+                        width="900" height="600" >
+						
+			<scrollBox align="client">	
+			<image top="1" width="870" height="705" src="/imagens/5.png"/>
+			<!-- Botão de inserir novo item à lista -->
+       
+                <button text="Novo Jutsu"  width="125" height="40" left="70" top="10">
+                        <event name="onClick">
+                                -- Usuário clicou no botão de criar novo item.
+                                -- Vamos inserir um novo item no nosso recordList                              
+                                self.rclListaDosItens2:append();
+                        </event>
+                </button>
+      
+
+        <!-- recordList, representando a lista -->
+        <recordList name="rclListaDosItens2" field="Jutsus2" templateForm="frmItemDaLista2"
+                                width="880" height="570" left="10" top="60" selectable="true">                              
+
+                <event name="onSelect">
+                        --[[
+                        Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+
+                  --]]                      
+                  local node = self.rclListaDosItens2.selectedNode; 
+                         self.ListaJutsus2.node = node;                       
+                  -- a caixa de detalhe só ficará visível se houver item selecionado
+                          self.ListaJutsus2.visible = (node ~= nil);
+                </event>
+        </recordList>       
+        <!-- dataScopeBox representando a nossa caixa de detalhes -->  
+        <dataScopeBox name="ListaJutsus2" visible="false" width="480" height="580" left="400" top="60" >
+                <!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro   -->       
+
+                <rectangle  color="black" xradius="10" yradius="10" width="460" height="560" left="1" top="1" >
+                                            
+                                <label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
+                                <edit  width="310" height="30" left="130" top="15" field="NomedoJutsu2"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriJutsu2" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Dano"/>
+                                <edit  width="80" height="30" left="55" top="355" type="number"  field="DanoJutsu2"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu2"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer2"/>
+								<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="190" top="363" width="140" height="18" field="Tipo2" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'Defensivo', 'Selamento', 'Outros', 'M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental'}"/>
+								<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
+                                <edit  width="80" height="20" left="110" top="400" enabled="false" horzTextAlign="center" type="number" field="DNVerdadeiro2"/>
+								<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson " fontSize="16" text="Intensidade"/>
+								<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade2"/>
+								<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+								<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
+								<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
+								<edit  width="50" height="30" left="180" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="21d10"/>
+								<edit  width="50" height="30" left="240" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="22d10"/>
+								<edit  width="50" height="30" left="300" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="23d10"/>
+								<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />
+								<edit  width="50" height="30" left="360" top="500" type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="21d20"/>
+								<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
+								<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
+								<event name="onClick"> 								
+									 <![CDATA[
+										local node = self.ListaJutsus2.node;									
+										local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+										if node.Tipo2 == nil then
+											showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
+										else 	
+											sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
+											
+											if node.DanoJutsu ~= nil then
+												node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
+											else
+												node.LevelJutsu1 = 1;
+											end;
+											
+											if node.Tipo2 == 'Tai' then
+												node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.TaiTotal) or 0);	
+											end;	
+											
+											if node.Tipo2 == 'Nin' then
+												node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.NinTotal) or 0);	
+											end;
+											
+											if node.Tipo2 == 'Gen' then
+												node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.GenTotal) or 0);	
+											end;
+											
+											if node.Tipo2 == 'Elemental' then
+												node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.EleTotal) or 0);	
+											end;
+											
+											if node.Tipo2 == 'Selamento' then
+												node.Intensidade = 0;	
+											end;
+											
+											if node.Tipo2 == 'Outros' then
+												node.Intensidade = 0;
+											end;
+											
+											mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
+											function (rolado)	
+											if sheet.AcertoNinTotal >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu2);
+												
+												if node.Tipo2 == 'Tai'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+												end;
+												
+												if node.Tipo2 == 'Nin'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+												end;
+												
+												if node.Tipo2 == 'Gen'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+												end;
+												
+												if node.Tipo2 == 'Elemental'then
+													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+												end;
+												
+												local mesa = Firecast.getMesaDe(sheet);
+												local ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
+												node.ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
+												node.ChakraPlayer2 = (tonumber(node.ChakraPlayer2) or 0) - (tonumber(node.CustoJutsu2) or 0);
+												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer2);
+												else
+												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
+											end;
+											end);
+										end;	
+									 ]]>
+								</event>
+								</button>
+		
+                </rectangle>
+			</dataScopeBox>
+			</scrollBox>
+			</popup> 
+			
+			<button left="250" top="448" width="100" height="85" opacity="0.1" text="" onClick="self.POPKekegenkai:show();"/>
+			<popup name="POPKekegenkai" visible="false" left="1" top="40"
+                      width="900" height="600" >
+			<scrollBox align="client">
+			<image top="1" width="870" height="705" src="/imagens/5.png"/>
+			<!-- Botão de inserir novo item à lista -->
+			
+                <button text="Novo Jutsu"  width="125" height="40" left="70" top="10">
+                        <event name="onClick">
+                                -- Usuário clicou no botão de criar novo item.
+                                -- Vamos inserir um novo item no nosso recordList                              
+                                self.rclListaDosItens3:append();
+                        </event>
+                </button>
+      
+
+        <!-- recordList, representando a lista -->
+        <recordList name="rclListaDosItens3" field="Jutsus3" templateForm="frmItemDaLista3"
+                                width="880" height="570" left="10" top="60" selectable="true">                              
+
+                <event name="onSelect">
+                        --[[
+                        Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+
+                  --]]                      
+                  local node = self.rclListaDosItens3.selectedNode; 
+                         self.ListaJutsus3.node = node;                       
+                  -- a caixa de detalhe só ficará visível se houver item selecionado
+                          self.ListaJutsus3.visible = (node ~= nil);
+                </event>
+        </recordList>       
+        <!-- dataScopeBox representando a nossa caixa de detalhes -->  
+        <dataScopeBox name="ListaJutsus3" visible="false" width="480" height="580" left="400" top="60" >
+                <!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro   -->       
+
+                <rectangle  color="black" xradius="10" yradius="10" width="460" height="560" left="1" top="1" >
+                                            
+                                <label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
+                                <edit  width="310" height="30" left="130" top="15" field="NomedoJutsu3"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriJutsu3" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Dano"/>
+                                <edit  width="80" height="30" left="55" top="355" type="number"  field="DanoJutsu3"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu3"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer3"/>
+								<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="190" top="363" width="140" height="18" field="Tipo3" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'Defensivo', 'Selamento', 'Outros', 'M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental'}"/>
+								<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
+                                <edit  width="80" height="20" left="110" top="400" enabled="false" horzTextAlign="center" type="number" field="DNVerdadeiro3"/>
+								<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson" fontSize="16" text="Intensidade"/>
+								<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade3"/>
+								<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+								<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
+								<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
+								<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="31d10"/>
+								<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="32d10"/>
+								<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="33d10"/>
+								<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />
+								<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="31d20"/>
+
+								<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
+								<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
+									<event name="onClick"> 
+										<![CDATA[
+											local node = self.ListaJutsus3.node;									
+											local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+											if node.Tipo3 == nil then
+												showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
+											else 	
+												sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
+												
+												if node.DanoJutsu ~= nil then
+													node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
+												else
+													node.LevelJutsu1 = 1;
+												end;											
+												
+												if node.Tipo3 == 'Tai' then
+													node.Intensidade3 = (tonumber(node.DNVerdadeiro3) or 0) + (tonumber(sheet.TaiTotal) or 0);	
+												end;	
+												
+												if node.Tipo3 == 'Nin' then
+													node.Intensidade3 = (tonumber(node.DNVerdadeiro3) or 0) + (tonumber(sheet.NinTotal) or 0);	
+												end;
+												
+												if node.Tipo3 == 'Gen' then
+													node.Intensidade3 = (tonumber(node.DNVerdadeiro3) or 0) + (tonumber(sheet.GenTotal) or 0);	
+												end;
+												
+												if node.Tipo3 == 'Elemental' then
+													node.Intensidade3 = (tonumber(node.DNVerdadeiro3) or 0) + (tonumber(sheet.EleTotal) or 0);	
+												end;
+												
+												if node.Tipo3 == 'Selamento' then
+													node.Intensidade = 0;	
+												end;
+												
+												if node.Tipo3 == 'Outros' then
+													node.Intensidade = 0;
+												end;
+												
+												mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
+												function (rolado)	
+													if sheet.AcertoNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu3);
+														
+														if node.Tipo3 == 'Tai'then
+															mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+														end;
+														
+														if node.Tipo3 == 'Nin'then
+															mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+														end;
+														
+														if node.Tipo3 == 'Gen'then
+															mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+														end;
+														
+														if node.Tipo3 == 'Elemental'then
+															mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+														end;
+																											
+														local mesa = Firecast.getMesaDe(sheet);
+														local ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
+														node.ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
+														node.ChakraPlayer3 = (tonumber(node.ChakraPlayer3) or 0) - (tonumber(node.CustoJutsu3) or 0);
+														mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer3);
+														else
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
+													end;
+												end);
+											end;	
+										]]>
+									</event>
+								</button>
+                </rectangle>
+			</dataScopeBox>
+		
+			</scrollBox>
+			
+			</popup> 
+			
+---------------------------------------STATUS-----------------------------------------------------
+			
+			<edit left="90" top="32" width="85" height="18" field="Nome"/>
+			<comboBox  left="220" top="32" width="95" height="18" field="Cla" items="{'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kami', 'Kamizurui', 'Nara', 'Uchiha', 'Uzumaki', 'Yamanaka', 'Rinnegan',
+			 '----------', 'Fire', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----------', 'Gote', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '----------'}"/>
+			<edit left="365" top="32" width="50" height="18" field="Idade"/>
+			<edit left="365" top="80" width="50" height="18" visible="false" type="number" max="40" field="Idade2"/>
+			<comboBox  left="505" top="32" width="140" height="18" field="Graduacao" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
+			
+			<edit left="220" top="52" width="85" height="18" type="number" enabled="true" field="Yen"/>
+			<edit left="90" top="52" width="85" height="18" field="Elemento"/>
+			
+			<edit left="130" top="115" width="85" height="18" type="number"  field="Forca"/>
+			<edit left="130" top="135" width="85" height="18" type="number"  field="Inteligencia"/>
+			<edit left="130" top="155" width="85" height="18" type="number"  field="Sabedoria"/>
+			<edit left="130" top="175" width="85" height="18" type="number"  field="Habilidade"/>
+			<edit left="130" top="195" width="85" height="18" type="number"  field="Resistencia"/>
+			
+			<edit left="370" top="115" width="85" enabled="false" height="18" type="float"  field="TaiTotal"/>
+			<edit left="370" top="135" width="85" enabled="false" height="18" type="float"  field="NinTotal"/>
+			<edit left="370" top="155" width="85" enabled="false" height="18" type="float"  field="GenTotal"/>
+			<edit left="370" top="175" width="85" enabled="false" height="18" type="float"  field="DATotal"/>
+			<edit left="370" top="195" width="85" enabled="false"  height="18" type="float"  field="EleTotal"/>
+			
+			-----------------------------------------------------------------------------
+			------------------------BOTOES DE LEVEL E DELEVEL ---------------------------
+			-----------------------------------------------------------------------------
+			
+			 <button left="540" top="100" width="30" height="30" fontColor="Red" fontFamily="Nyala" fontSize="30" visible="false"  enabled="true" text="«">
+                <event name="onClick">
+				sheet.Level = (tonumber(sheet.Level) or 0) - 1
+				if 0 > sheet.Level then
+				sheet.Level = 0
+				end;
+				
+				if sheet.Graduacao == 'Academico' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 100
+				end
+				
+				if sheet.Graduacao == 'Genin' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 200
+				end
+				
+				if sheet.Graduacao == 'Chunin' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 1000			
+				end
+				
+				if sheet.Graduacao == 'Jounin' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 5000
+				end
+				
+				if sheet.Graduacao == 'Anbu' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 10000
+				end
+               
+				if sheet.Graduacao == 'AnbuNucleo' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 15000
+				end
+				
+				if sheet.Graduacao == 'Organização' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 20000
+				end
+				
+								
+				if sheet.Graduacao == 'GDE' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 30000
+				end
+				
+								
+				if sheet.Graduacao == 'Concelheiro' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 40000
+				end
+				
+								
+				if sheet.Graduacao == 'Kage' then
+				sheet.GHP =  (tonumber(sheet.GHP) or 0) - 50000
+				end
+
+				
+                </event>
+			 </button>
+			 
+			  <button left="625" top="100" width="30" height="30" fontColor="Red" fontFamily="Nyala" visible="false" fontSize="30"  text="»">
+                <event name="onClick">
+					sheet.Level = (tonumber(sheet.Level) or 0) + 1
+					
+					if sheet.Graduacao == 'Academico' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100
+					end;
+					
+					if sheet.Graduacao == 'Genin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200
+					end;
+					
+					if sheet.Graduacao == 'Chunin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000			
+					end;
+					
+					if sheet.Graduacao == 'Jounin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000
+					end;
+					
+					if sheet.Graduacao == 'Anbu' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000
+					end;
+				   
+					if sheet.Graduacao == 'AnbuNucleo' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000
+					end;
+					
+					if sheet.Graduacao == 'Organização' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000
+					end;
+					
+									
+					if sheet.Graduacao == 'GDE' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000
+					end;
+					
+									
+					if sheet.Graduacao == 'Concelheiro' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000
+					end;
+					
+									
+					if sheet.Graduacao == 'Kage' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000
+					end;				
+                </event>
+			 </button>
+			 
+			<edit left="570" top="100" width="55" height="30" horzTextAlign="center" fontColor="Red" fontFamily="Nyala" fontSize="25" enabled="true" type="number"   field="Level"/>
+			<edit left="535" top="132" width="55" height="18" type="float"  field="Exp"/>
+			<edit left="610" top="132" width="55" height="18" enabled="false" type="float" field="ExpTotal"/>
+			
+			<edit left="90" top="276" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Red" field="HP"/>
+			<edit left="90" top="296" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Cyan" field="Chakra"/>
+			<edit left="90" top="316" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="#FFD700" field="Reiatsu"/>
+			<edit left="90" top="336" width="85" height="18" type="float" enabled="false" horzTextAlign="center" field="Outros"/>
+			
+
+			<edit left="190" top="276" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="Red" field="HPTotal"/>
+			<button left="300" top="276" width="40" height="20" text="❤">
+				<event name="onClick">
+					local mesa = Firecast.getMesaDe(sheet); 
+					local HPTotal = (tonumber(sheet.HPTotal) or 0);
+					mesa.meuJogador:requestSetBarValue(1, nil, HPTotal);
+				</event>
+			</button>
+			
+			<edit left="190" top="296" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="cyan"  field="ChakraTotal"/>
+			<button left="300" top="296" width="40" height="20" text="⚡">
+				<event name="onClick">
+					local mesa = Firecast.getMesaDe(sheet); 
+					local ChakraTotal = (tonumber(sheet.ChakraTotal) or 0);
+					mesa.meuJogador:requestSetBarValue(2, nil, ChakraTotal);
+				</event>
+			</button>
+			<edit left="190" top="316" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="#FFD700" field="ReiatsuTotal"/>
+			<edit left="190" top="336" width="85" height="18" enabled="false" type="float" horzTextAlign="center" field="OutrosTotal"/>
+			<comboBox  left="280" top="336" width="110" height="18" field="TipoOutro" items="{'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}"/>
+			<image field="imagemDoPersonagem" editable="true" style="autoFit" 
+              left="404" top="410" width="302" height="255" />
+					
+			<button left="502" top="270" width="105" height="85" opacity="1.0" visible="true" text="Calculo" onClick="self.POPCALCULO:show();"/>			
+			<popup name="POPCALCULO" visible="false" left="1" top="40"
+                        width="820" height="620">
+						
+			<image left="10" top="10" width="800" height="600" src="/imagens/CALCULO.png"/>	
+				
+			<edit left="150" top="35" width="85" height="18" enabled="false" type="float"  field="CTai"/>
+			<edit left="150" top="58" width="85" height="18" enabled="false" type="float"  field="CNin"/>
+			<edit left="150" top="81" width="85" height="18" enabled="false" type="float"  field="CGen"/>
+			<edit left="150" top="102" width="85" height="18" enabled="false" type="float"  field="CDA"/>
+			<edit left="150" top="122" width="85" height="18" enabled="false" type="float"  field="CDE"/>
+			<edit left="150" top="145" width="85" height="18" enabled="false" type="float"  field="CHP"/>
+			<edit left="150" top="168" width="85" height="18" enabled="false" type="float"  field="CChakra"/>
+			
+			<edit left="280" top="35" width="85" height="18" enabled="false" type="float"  field="Taijutsu"/>
+			<edit left="280" top="58" width="85" height="18" enabled="false" type="float"  field="Ninjutsu"/>
+			<edit left="280" top="81" width="85" height="18" enabled="false" type="float"  field="Genjutsu"/>
+			<edit left="280" top="102" width="85" height="18" enabled="false" type="float"  field="DanoArmado"/>
+			<edit left="280" top="122" width="85" height="18" enabled="false" type="float"  field="Elemental1"/>
+			<edit left="300" top="145" width="85" height="18" type="float"  enabled="true" field="GHP"/>
+			<edit left="300" top="168" width="85" height="18" enabled="false" type="float" field="GChakra"/>
+			
+			<edit left="150" top="210" width="85" height="18" enabled="false" type="float"  field="CAT"/>
+			<edit left="150" top="230" width="85" height="18" enabled="false" type="float"  field="CAN"/>
+			<edit left="150" top="250" width="85" height="18" enabled="false" type="float"  field="CAG"/>
+			
+			<edit left="150" top="300" width="85" height="18" enabled="false" type="float"  field="CEsq"/>
+			<edit left="150" top="320" width="85" height="18" enabled="false" type="float" field="CBloq"/>
+			
+			<edit left="150" top="360" width="85" height="18" enabled="false" type="float"  field="CCRT"/>
+			<edit left="150" top="380" width="85" height="18" enabled="false" type="float"  field="CCRN"/>
+			<edit left="150" top="400" width="85" height="18" enabled="false" type="float"  field="CCRG"/>
+			
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			-----------------------CALCULO XP POR LEVEL----------------------------
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			
+			<dataLink fields="{'Level', 'Exp'}">
+				<event name="onChange">	
+					sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100
+									
+					if sheet.Exp > sheet.ExpTotal then
+						sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0)
+						sheet.Level = (tonumber(sheet.Level) or 0) + 1
+					end;	
+												
+					if sheet.Graduacao == 'Academico' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100
+					end;
+					
+					if sheet.Graduacao == 'Genin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200
+					end;
+					
+					if sheet.Graduacao == 'Chunin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000			
+					end;
+					
+					if sheet.Graduacao == 'Jounin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000
+					end;
+					
+					if sheet.Graduacao == 'Anbu' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000
+					end;
+				   
+					if sheet.Graduacao == 'AnbuNucleo' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000
+					end;
+					
+					if sheet.Graduacao == 'Organização' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000
+					end;
+					
+									
+					if sheet.Graduacao == 'GDE' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000
+					end;
+					
+									
+					if sheet.Graduacao == 'Concelheiro' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000
+					end;
+					
+									
+					if sheet.Graduacao == 'Kage' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000
+					end;
+
+				</event>
+			</dataLink>
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			-------------------------CALCULO POR NIVEL DE CLÃ--------------------------
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			
+			<dataLink fields="{'Cla'">
+				<event name="onChange">
+					sheet.CTai = 0
+					sheet.CNin = 0
+					sheet.CGen = 0
+					sheet.CDA = 0
+					sheet.CDE = 0
+					sheet.CHP = 0
+					sheet.CChakra = 0
+					sheet.CAT = 0
+					sheet.CAN = 0
+					sheet.CAG = 0
+					sheet.CEsq = 0
+					sheet.CBloq = 0
+					sheet.CCRT = 0
+					sheet.CCRN = 0
+					sheet.CCRG = 0			
+				</event>
+			</dataLink>
+			
+			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
+			'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
+			,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
+			'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
+			,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
+			,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
+			,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'">
+				<event name="onChange">
+							
+					if sheet.Cla == 'Sem clã' then
+					
+					end
+					
+					if sheet.Cla == 'Aburame' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * -0.10;
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.15;
+					end
+					
+					if sheet.Cla == 'Akimichi' then
+						sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.20;
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20;
+					end				
+					
+					if sheet.Cla == 'Fuma' then
+						sheet.CCRN = 5
+						sheet.CAN = 5
+					end
+					
+					if sheet.Cla == 'Hyuga' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
+						sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Inuzuka' then
+
+					end
+					
+					if sheet.Cla == 'Jyuin' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.40
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Kaguya' then
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
+						sheet.CBloq = 10
+					end
+					
+					if sheet.Cla == 'Kami' then
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
+					end
+
+					if sheet.Cla == 'Kamizurui' then
+						sheet.CAN = 5
+						sheet.CCRN = 5
+						sheet.CEsq = 3
+					end
+					
+					if sheet.Cla == 'Nara' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Uchiha' then
+						sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Uzumaki' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 1
+					end
+					
+					if sheet.Cla == 'Yamanaka' then
+						sheet.CAT = 5 
+						sheet.CAN = 5 
+						sheet.CAG = 5 
+					end		
+
+					if sheet.Cla == 'Rinnegan' then
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.15
+					end
+					
+					if sheet.Cla == '----------' then
+						showMessage("ESCOLHE UM CLÃ FILHA DA PUTA");
+					end
+					
+					if sheet.Cla == 'Fire' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Kibaku' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Kori' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Mashido' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Nomade' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+				
+					if sheet.Cla == 'Orega' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Ray' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+					end
+				
+					if sheet.Cla == 'Sabaku' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10
+						sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Senju' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
+					end
+					
+					if sheet.Cla == 'Temuri' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30
+					end
+					
+					if sheet.Cla == 'Xaulan' then
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30
+					end
+									
+					------------------------------------------------------
+					
+					if sheet.Cla == 'Gote' then
+						sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.20
+					end
+					
+					if sheet.Cla == 'Hanbun' then
+						sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.50
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.50
+						sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.50
+						sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.50
+						sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.50
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.50
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.50
+					end
+					
+					if sheet.Cla == 'Kazumi' then
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
+						sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10
+						sheet.CAG = 5
+					end
+					
+					if sheet.Cla == 'Kouga' then
+					end
+					
+					if sheet.Cla == 'Miroku' then
+					end
+					
+					if sheet.Cla == 'Mitsu' then
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
+					end
+					
+					if sheet.Cla == 'Nakamura' then
+					end
+					
+					if sheet.Cla == 'Natsume' then
+						sheet.CAT = 5
+						sheet.CCRT = 5
+						sheet.CBloq = 5
+						sheet.CEsq = 3
+					end
+					
+					if sheet.Cla == 'Neko' then
+					end
+					
+					if sheet.Cla == 'Neon' then
+						sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
+						sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
+						sheet.CAN = 5
+						sheet.CCRN = 5
+					end
+					
+					if sheet.Cla == 'Shinkara' then
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
+					end
+					
+					if sheet.Cla == '' then
+						sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
+					end
+					
+				</event>
+			</dataLink>
+			
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			-----------------------CALCULO POR NIVEL DE CLÃ----------------------------
+			---------------------------------------------------------------------------
+			---------------------------------------------------------------------------
+			<dataLink fields="{'TipoOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'">
+			<event name="onChange"> 
+			 <![CDATA[
+				 
+				if sheet.TipoOutro == 'ChakraBiju' then
+					sheet.Outros = (tonumber(sheet.ChakraBiju) or 0)
+				end
+				
+				if sheet.TipoOutro == 'ChakraBranco' then
+					sheet.Outros = (tonumber(sheet.ChakraBranco) or 0)
+				end
+				
+				if sheet.TipoOutro == 'ChakraPreto' then
+					sheet.Outros = (tonumber(sheet.ChakraPreto) or 0)
+				end
+				
+				if sheet.TipoOutro == 'Hadou' then
+					sheet.Outros = (tonumber(sheet.Hadou) or 0)
+				end
+				
+				if sheet.TipoOutro == 'HadouNegro' then
+					sheet.Outros = (tonumber(sheet.HadouNegro) or 0)
+				end
+               
+				if sheet.TipoOutro == 'ChakraNatural' then
+					sheet.Outros = (tonumber(sheet.ChakraNatural) or 0)
+				end
+				
+				if sheet.TipoOutro == 'ChakraRoxo' then
+					sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0)
+				end
+				]]>
+			</event>
+			</dataLink>
+			
+			---------------------------------------------------------------
+			---------------------------------------------------------------
+			--------------------- STATUS POR GRADUACÃO---------------------
+			---------------------------------------------------------------
+			---------------------------------------------------------------
+			
+			
+			<dataLink fields="{'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal', 'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'">
+			<event name="onChange"> 
+                
+			 <![CDATA[
+				 
+				if sheet.Graduacao == 'Academico' then
+				sheet.GTurno = 1
+				end
+				
+				if sheet.Graduacao == 'Genin' then
+				sheet.GAcertoTai = 2
+				sheet.GAcertoNin = 2
+				sheet.GAcertoGen = 2
+				sheet.GEsquiva = 2
+				sheet.GBloqueio = 3
+				end
+				
+				if sheet.Graduacao == 'Chunin' then
+				sheet.GAcertoTai = 4
+				sheet.GAcertoNin = 4
+				sheet.GAcertoGen = 4
+				sheet.GEsquiva = 4
+				sheet.GBloqueio = 6
+				end
+				
+				if sheet.Graduacao == 'Jounin' then
+				sheet.GAcertoTai = 6
+				sheet.GAcertoNin = 6
+				sheet.GAcertoGen = 6
+				sheet.GEsquiva = 6
+				sheet.GBloqueio = 9
+				sheet.GTurno = 2
+				sheet.GCRTai = 3
+				sheet.GCRNin = 3
+				sheet.GCRGen = 3
+				end
+				
+				if sheet.Graduacao == 'Anbu' then
+				sheet.GAcertoTai = 8
+				sheet.GAcertoNin = 8
+				sheet.GAcertoGen = 8
+				sheet.GEsquiva = 8
+				sheet.GBloqueio = 12
+				end
+               
+				if sheet.Graduacao == 'AnbuNucleo' then
+				sheet.GAcertoTai = 10
+				sheet.GAcertoNin = 10
+				sheet.GAcertoGen = 10
+				sheet.GEsquiva = 10
+				sheet.GBloqueio = 15
+				sheet.GCRTai = 6
+				sheet.GCRNin = 6
+				sheet.GCRGen = 6
+				end
+				
+				if sheet.Graduacao == 'Organização' then
+				sheet.GAcertoTai = 12
+				sheet.GAcertoNin = 12
+				sheet.GAcertoGen = 12
+				sheet.GEsquiva = 12
+				sheet.GBloqueio = 18
+				end
+				
+								
+				if sheet.Graduacao == 'GDE' then
+				sheet.GAcertoTai = 14
+				sheet.GAcertoNin = 14
+				sheet.GAcertoGen = 14
+				sheet.GEsquiva = 14
+				sheet.GBloqueio = 21
+				sheet.GCRTai = 9
+				sheet.GCRNin = 9
+				sheet.GCRGen = 9
+				end
+				
+								
+				if sheet.Graduacao == 'Concelheiro' then
+				sheet.GAcertoTai = 16
+				sheet.GAcertoNin = 16
+				sheet.GAcertoGen = 16
+				sheet.GEsquiva = 16
+				sheet.GBloqueio = 24
+				end
+				
+								
+				if sheet.Graduacao == 'Kage' then
+				sheet.GAcertoTai = 18
+				sheet.GAcertoNin = 18
+				sheet.GAcertoGen = 18
+				sheet.GEsquiva = 20
+				sheet.GBloqueio = 30
+				sheet.GTurno = 3
+				sheet.GCRTai = 14
+				sheet.GCRNin = 14
+				sheet.GCRGen = 14
+				end		
+				]]>	
+		
+
+				
+			</event>
+			</dataLink>
+			
+			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
+			'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'">
+			<event name="onChange"> 
+                sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
+				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
+				sheet.Genjutsu = (tonumber(sheet.Sabedoria) or 0) * 2;
+				sheet.Elemental1 = (tonumber(sheet.Sabedoria) or 0) + (tonumber(sheet.Inteligencia) or 0)
+				sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0)
+				
+			</event>
+			</dataLink>
+			
+			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
+			'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'">
+			<event name="onChange"> 
+				
+				sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0)
+				sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0)
+				sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0)
+				sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0)
+				sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0)
+
+				sheet.TaiTotal = math.ceil(sheet.TaiTotal);
+				sheet.NinTotal = math.ceil(sheet.NinTotal);
+				sheet.GenTotal = math.ceil(sheet.GenTotal);
+				sheet.EleTotal = math.ceil(sheet.EleTotal);
+				sheet.DATotal = math.ceil(sheet.DATotal);				
+				
+			</event>
+			</dataLink>
+			
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			---------------------------CALCULO HP----------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+						
+			<dataLink fields="{'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
+			'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'">
+			<event name="onChange"> 
+			sheet.HP = (tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0)
+			sheet.HPTotal = (tonumber(sheet.HP) or 0) + (tonumber(sheet.CHP) or 0) + (tonumber(sheet.DHP) or 0) + (tonumber(sheet.AcessorioHP) or 0) + (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0) 		
+			</event>
+			</dataLink>
+			
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			---------------------------CALCULO CHAKRA------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			
+			<dataLink fields="{'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
+			'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'">
+			<event name="onChange"> 
+			
+			sheet.Idade2 = (tonumber(sheet.Idade) or 0)
+			
+			if sheet.Idade2 > 40 then
+			sheet.Idade2 = 40
+			end
+			
+			sheet.Chakra = (tonumber(sheet.Idade2) or 0) * 25  + (tonumber(sheet.Level) or 0);
+			sheet.ChakraTotal = (tonumber(sheet.Chakra) or 0) + (tonumber(sheet.ArmaChakra) or 0) + (tonumber(sheet.BandanaChakra) or 0) + (tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) +
+			(tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);
+					
+			</event>
+			</dataLink>
+			
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			---------------------------REIATSU-------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			-----------------------------------------------------------------
+			
+			<dataLink fields="{'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
+			'DReiatsu', 'AcessorioReiatsu'">
+			<event name="onChange"> 
+			sheet.ReiatsuLevel = (tonumber(sheet.Level) or 0) * 0.15
+			sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + (tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) * (tonumber(sheet.ReiatsuLevel) or 0) ;
+			sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) + (tonumber(sheet.DReiatsu) or 0);
+			
+			</event>
+			</dataLink>
+						
+			</popup> 
+			------------------------------ POP KUNAI -----------------------------------
+			
+			<button left="32" top="550" width="105" height="85" opacity="0.1" text="" onClick="self.POPKunai:show();"/>
+			
+			<popup name="POPKunai" visible="false" left="1" top="40"
+                        width="550" height="550">
+				
+				<label  width="120" height="40" left="280" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Danos"/>
+				<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantidade"/>
+				
+				<image left="10" top="30" width="100" height="130" src="/imagens/kunai.png"/>
+				<label  width="120" height="40" left="130" top="60" fontFamily="Nyala" fontSize="20" text="Dano Kunai"/>
+                <edit  width="100" height="30" left="260" top="65" enabled="false" field="DanoKunai"/>
+			
+				<image left="10" top="130" width="100" height="100" src="/imagens/shuriken.png"/>
+				<label  width="120" height="40" left="130" top="150" fontFamily="Nyala" fontSize="20" text="Dano Shuriken"/>
+                <edit  width="100" height="30" left="260" top="155" enabled="false" field="DanoShuriken"/>
+
+				<image left="10" top="230" width="100" height="100" src="/imagens/SFuuma.png"/>
+				<label  width="120" height="40" left="130" top="250" fontFamily="Nyala" fontSize="20" text="Shuriken Fuuma"/>
+                <edit  width="100" height="30" left="260" top="255" enabled="false" field="DanoShurikenFuuma"/>				
+
+				<image left="10" top="330" width="100" height="100" src="/imagens/Kgigante.png"/>
+				<label  width="120" height="40" left="130" top="350" fontFamily="Nyala" fontSize="20" text="Kunai Gigante"/>
+                <edit  width="100" height="30" left="260" top="355" enabled="false" field="DanoKunaiGigante"/>		
+				
+				<image left="10" top="430" width="100" height="100" src="/imagens/Senbon.png"/>
+				<label  width="120" height="40" left="130" top="450" fontFamily="Nyala" fontSize="20" text="Senbon"/>
+                <edit  width="100" height="30" left="260" top="455" enabled="false" field="Senbon"/>					
+				
+				<edit  width="100" height="30" left="410" top="65" enabled="false"  field="KunaiLimite"/>
+				<edit  width="100" height="30" left="410" top="155" enabled="false"  field="ShurikenLimite"/>
+				<edit  width="100" height="30" left="410" top="255" enabled="false"  field="SFuumaLimite"/>
+				<edit  width="100" height="30" left="410" top="355" enabled="false"  field="KGiganteLimite"/>	
+				<edit  width="100" height="30" left="410" top="455" enabled="false"  field="SenbonLimite"/>
+				
+				<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'">
+				<event name="onChange"> 
+                sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0) 
+				sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50
+				sheet.DanoShurikenFuuma = (tonumber(sheet.Habilidade) or 0) * 3 
+				sheet.DanoKunaiGigante = (tonumber(sheet.Habilidade) or 0) * 2
+				sheet.Senbon = (tonumber(sheet.Habilidade) or 0) * 0.40
+				
+				sheet.PB = (tonumber(sheet.Inteligencia) or 0)
+				sheet.GinsoExplosivo = (tonumber(sheet.Inteligencia) or 0) * 2		
+                sheet.Veneno = (tonumber(sheet.Sabedoria) or 0) 
+				sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2
+				
+				</event>
+				</dataLink>
+				
+			</popup> 
+			
+			------------------------------ POP EXPLOSIVO -----------------------------------
+			
+			<button left="140" top="550" width="105" height="85" opacity="0.1" text="" onClick="self.POPPB:show();"/>
+			<popup name="POPPB" visible="false" left="1" top="40"
+                        width="550" height="550">
+				
+				<label  width="120" height="40" left="280" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Danos"/>
+				<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantidade"/>
+				
+				<image left="10" top="30" width="100" height="130" src="/imagens/pb.png"/>
+				<label  width="120" height="40" left="130" top="60" fontFamily="Nyala" fontSize="20" text="Papel Bomba"/>
+                <edit  width="100" height="30" left="260" top="65" enabled="false" field="PB"/>
+			
+				<image left="0" top="120" width="130" height="130" src="/imagens/BE.png"/>
+				<label  width="120" height="40" left="130" top="150" fontFamily="Nyala" fontSize="20" text="Ginso Explosivo"/>
+                <edit  width="100" height="30" left="260" top="155" enabled="false" field="GinsoExplosivo"/>
+
+				<image left="20" top="240" width="100" height="100" src="/imagens/veneno.png"/>
+				<label  width="120" height="40" left="130" top="250" fontFamily="Nyala" fontSize="20" text="Veneno"/>
+                <edit  width="100" height="30" left="260" top="255" enabled="false" field="Veneno"/>				
+
+				<image left="10" top="330" width="100" height="100" src="/imagens/bandagem.png"/>
+				<label  width="120" height="40" left="130" top="350" fontFamily="Nyala" fontSize="20" text="Bandagem"/>
+                <edit  width="100" height="30" left="260" top="355" enabled="false" field="Bandagem"/>		
+				
+				<image left="10" top="430" width="100" height="100" src="/imagens/bombaf.png"/>
+				<label  width="120" height="40" left="130" top="450" fontFamily="Nyala" fontSize="20" text="Bomba Fumaça"/>
+                <edit  width="100" height="30" left="260" top="455" enabled="false" field="BF"/>					
+						
+						
+				<edit  width="100" height="30" left="410" top="65" enabled="false"  field="PBombaLimite"/>		
+				<edit  width="100" height="30" left="410" top="155" enabled="false"  field="GExplosivoLimite"/>
+				<edit  width="100" height="30" left="410" top="255" enabled="false"  field="VenenoLimite"/>
+				<edit  width="100" height="30" left="410" top="355" enabled="false"  field="BandagemLimite"/>
+				<edit  width="100" height="30" left="410" top="455" enabled="false"  field="BombaFumacaLimite"/>
+								 
+			</popup> 
+			
+			
+			
+			<button left="250" top="550" width="105" height="85" opacity="0.1" text="" onClick="self.POPDiverso:show();"/>
+			</scrollBox>
+			<popup name="POPDiverso" visible="false" left="1" top="40"
+                        width="1130" height="400">
+			
+			<image left="1" top="1" width="1110" height="350" src="/imagens/6.png"/>
+			<edit  width="80" height="20" left="220" top="73" type="number"  field="DTaijutsu"/>		
+			<edit  width="80" height="20" left="220" top="95" type="number"  field="DNinjutsu"/>
+			<edit  width="80" height="20" left="220" top="117" type="number"  field="DGenjutsu"/>
+			<edit  width="80" height="20" left="220" top="139" type="number"  field="DDA"/>
+			<edit  width="80" height="20" left="220" top="161" type="number"  field="DDE"/>
+			<edit  width="80" height="20" left="220" top="183" type="number"  field="DHP"/>
+			<edit  width="80" height="20" left="220" top="205" type="number"  field="DChakra"/>
+			<edit  width="80" height="20" left="220" top="227" type="number"  field="DReiatsu"/>
+			<edit  width="80" height="20" left="220" top="249" type="number"  field="DOutro"/>
+			
+			<edit  width="80" height="20" left="480" top="73" type="number"  field="DAcertoTai"/>
+			<edit  width="80" height="20" left="480" top="95" type="number"  field="DAcertoNin"/>
+			<edit  width="80" height="20" left="480" top="117" type="number"  field="DAcertoGen"/>
+			<edit  width="80" height="20" left="480" top="139" type="number"  field="DBloqueio"/>
+			<edit  width="80" height="20" left="480" top="161" type="number"  field="DEsquiva"/>
+			<edit  width="80" height="20" left="480" top="183" type="number"  field="DCriticalTai"/>
+			<edit  width="80" height="20" left="480" top="205" type="number"  field="DCriticalNin"/>
+			<edit  width="80" height="20" left="480" top="227" type="number"  field="DCriticalGen"/>
+			
+			<edit  width="80" height="20" left="740" top="73" type="number"  field="ChakraBiju"/>
+			<edit  width="80" height="20" left="740" top="95" type="number"  field="ChakraBranco"/>
+			<edit  width="80" height="20" left="740" top="117" type="number"  field="ChakraPreto"/>
+			<edit  width="80" height="20" left="740" top="139" type="number"  field="Hadou"/>
+			<edit  width="80" height="20" left="740" top="161" type="number"  field="HadouNegro"/>
+			<edit  width="80" height="20" left="740" top="183" type="number"  field="ChakraNatural"/>
+			<edit  width="80" height="20" left="740" top="205" type="number"  field="ChakraRoxo"/>		
+
+			<button left="845" top="105" width="70" height="80" opacity="0.1" text="" onClick="self.POPPergaminho1:show();"/>
+			
+			<popup name="POPPergaminho1" visible="false" left="1" top="40"
+                        width="450" height="520">
+			
+			<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Selado :"/>
+                                <edit  width="310" height="30" left="100" top="15" field="NomePergaminho1"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriPergaminho1" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Intensidade"/>
+                                <edit  width="120" height="30" left="100" top="355"  type="number" enabled="false" field="IntensidadeP1"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355"  type="number" field="CustoPerga1"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false" type="number" field="ChakraPerga1"/>
+								<label  width="60" height="40" left="230" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho1" items="{'X', 'SS', 'S'}"/>
+								<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
+								<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho1()"/>
+								
+								<script> 
+								local function Pergaminho1() 
+				       				   
+								local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+					
+								mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Grande",
+                                function (rolado)
+									
+                                        mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. sheet.DescriPergaminho1);
+										local mesa = Firecast.getMesaDe(sheet); 
+										local CustoPerga1 = mesa.meuJogador:getBarValue(2);
+										CustoPerga1 = CustoPerga1 - (tonumber(sheet.CustoPerga1) or 0);
+										mesa.meuJogador:requestSetBarValue(2, CustoPerga1);
+								
+								end);
+								end;
+								
+								</script> 
+			</popup>
+			
+			<button left="917" top="105" width="65" height="80" opacity="0.1" text="" onClick="self.POPPergaminho2:show();"/>
+			
+			<popup name="POPPergaminho2" visible="false" left="1" top="40"
+                        width="450" height="520">
+			
+			<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Selado :"/>
+                                <edit  width="310" height="30" left="100" top="15" field="NomePergaminho2"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriPergaminho2" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Intensidade"/>
+                                <edit  width="120" height="30" left="100" top="355" enabled="false"  type="number" field="IntensidadeP2"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355"  type="number" field="CustoPerga2"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false" type="number" field="ChakraPerga2"/>
+								<label  width="60" height="40" left="230" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho2" items="{'A', 'B', 'C', 'D', 'E'}"/>
+								<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
+								<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho2()"/>
+								
+								<script> 
+								local function Pergaminho2() 
+				       				   
+								local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+					
+								mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Medio",
+                                function (rolado)
+									
+                                        mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho2);
+										local mesa = Firecast.getMesaDe(sheet); 
+										local CustoPerga2 = mesa.meuJogador:getBarValue(2);
+										CustoPerga2 = CustoPerga2 - (tonumber(sheet.CustoPerga2) or 0);
+										mesa.meuJogador:requestSetBarValue(2, CustoPerga2);
+								
+								end);
+								end;
+								</script> 
+			</popup>
+			
+			<button left="984" top="105" width="65" height="80" opacity="0.1" text="" onClick="self.POPPergaminho3:show();"/>
+			
+			<popup name="POPPergaminho3" visible="false" left="1" top="40"
+                        width="450" height="520">
+			
+			<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Selado :"/>
+                                <edit  width="310" height="30" left="100" top="15" field="NomePergaminho3"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriPergaminho3" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Intensidade"/>
+                                <edit  width="120" height="30" left="100" top="355" enabled="false"  type="number" field="IntensidadeP3"/>
+								<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+                                <edit  width="40" height="30" left="400" top="355"  type="number" field="CustoPerga3"/>
+								<edit  width="40" height="30" left="390" top="380" visible="false" type="number" field="ChakraPerga3"/>
+								<label  width="60" height="40" left="230" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
+                                <comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho3" items="{'X','SS','S','A','B','C','D','E','Outros'}"/>
+								<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
+								<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho3()"/>
+								
+								<script> 
+								local function Pergaminho3() 
+				       				   
+								local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+					
+								mesaDoPersonagem.chat:rolarDados("1d100", "[§K4]Uso de Selamento",
+                                function (rolado)
+									
+                                        mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho3);
+										local mesa = Firecast.getMesaDe(sheet); 
+										local CustoPerga3 = mesa.meuJogador:getBarValue(2);
+										CustoPerga3 = CustoPerga3 - (tonumber(sheet.CustoPerga3) or 0);
+										mesa.meuJogador:requestSetBarValue(2, CustoPerga3);
+								
+								end);
+								end;
+								</script> 
+			</popup>
+			
+			<button left="907" top="188" width="83" height="80" opacity="0.1" text="" onClick="self.EstilodeCombate:show();"/>
+			<popup name="EstilodeCombate" visible="false" left="1" top="40"
+                        width="450" height="350">
+			
+			<label  width="300" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do estilo de Combate :"/>
+                                <edit  width="210" height="30" left="230" top="15" field="NomeEDC"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DEDC" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								
+			</popup>
+			
+			</popup> 
+			
+		------------------- Barreira da ABA 1 -------------------------------
+
+		</tab>
+		
+			 -----------------------------------
+			 -----------------------------------
+             ----------- ABA 2 -----------------
+			 -----------------------------------
+			 -----------------------------------
+			 
+        <tab title="Chances">
+		<scrollBox align="client">
+             <image left="1" top="1" width="1000" height="700" src="/imagens/2.png"/>
+			 <edit left="230" top="45" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="AcertoTaiTotal"/>
+			 <edit left="230" top="70" width="75" height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="AcertoNinTotal"/>
+			 <edit left="230" top="95" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="AcertoGenTotal"/>
+			 <edit left="230" top="145" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="EsquivaTotal"/>
+			 <edit left="230" top="170" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="BloqueioTotal"/>
+			 <edit left="230" top="220" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRTaiTotal"/>
+			 <edit left="230" top="245" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRNinTotal"/>
+			 <edit left="230" top="270" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRGenTotal"/>
+			 <edit left="230" top="320" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="TurnoTotal"/>
+			 <edit left="230" top="370" width="75" height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="Atletismo"/>
+			 <edit left="230" top="395" width="75" height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="Raciocinio"/>
+			 <edit left="230" top="420" width="75" height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="Percepcao"/>
+			 <edit left="230" top="445" width="75" height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="Furtividade"/>			 
+			 <edit left="230" top="470" width="75"  height="18" enabled="true" horzTextAlign="center" fontColor="#00FFFF" type="number" field="Vigor"/>
+			 
+			 <edit left="430" top="370" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="GAtletismo"/>
+			 <edit left="430" top="395" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="GRaciocinio"/>
+			 <edit left="430" top="420" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="GPercepcao"/>
+			 <edit left="430" top="445" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="GFurtividade"/>
+			 <edit left="430" top="470" width="75"  height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="GVigor"/>
+			 
+			 <edit left="330" top="370" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="AtletismoTotal"/>
+			 <edit left="330" top="395" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="RaciocinioTotal"/>
+			 <edit left="330" top="420" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="PercepcaoTotal"/>
+			 <edit left="330" top="445" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="FurtividadeTotal"/>
+			 <edit left="330" top="470" width="75"  height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="VigorTotal"/>
+			 
+			 <edit left="530" top="370" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="SAtletismo"/>
+			 <edit left="530" top="395" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="SRaciocinio"/>
+			 <edit left="530" top="420" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="SPercepcao"/>
+			 <edit left="530" top="445" width="75" height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="SFurtividade"/>
+			 <edit left="530" top="470" width="75"  height="18" visible="false" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="SVigor"/>
+			 
+			 <edit left="330" top="45" width="85" height="18" enabled="false" visible="false" type="number" field="GAcertoTai"/>
+			 <edit left="330" top="70" width="85" height="18" enabled="false" visible="false"   type="number" field="GAcertoNin"/>
+			 <edit left="330" top="95" width="85" height="18" enabled="false" visible="false"   type="number" field="GAcertoGen"/>
+			 <edit left="330" top="145" width="85" height="18" enabled="false" visible="false"  type="number" field="GEsquiva"/>
+			 <edit left="330" top="170" width="85" height="18" enabled="false" visible="false"  type="number" field="GBloqueio"/>
+			 <edit left="330" top="220" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRTai"/>
+			 <edit left="330" top="245" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRNin"/>
+			 <edit left="330" top="270" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRGen"/>
+			 <edit left="330" top="320" width="85" height="18" enabled="false" visible="false"  type="number" field="GTurno"/>
+			 
+			<dataLink fields="{'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor'}">
+				<event name="onChange"> 
+					
+					if sheet.Atletismo == nil then
+						sheet.Atletismo = 0;
+					end;					
+					if sheet.Raciocinio == nil then
+						sheet.Raciocinio = 0;
+					end;						
+					if sheet.Percepcao == nil then
+						sheet.Percepcao = 0;
+					end;						
+					if sheet.Furtividade == nil then
+						sheet.Furtividade = 0;
+					end;						
+					if sheet.Vigor == nil then
+						sheet.Vigor = 0;
+					end;		
+						
+					if sheet.SAtletismo == nil then
+						sheet.SAtletismo = 0;
+					end;	
+					if sheet.SRaciocinio == nil then
+						sheet.SRaciocinio = 0;
+					end;	
+					if sheet.SPercepcao == nil then
+						sheet.SPercepcao = 0;
+					end;						
+					if sheet.SFurtividade == nil then
+						sheet.SFurtividade = 0;
+					end;	
+					if sheet.SVigor == nil then
+						sheet.SVigor = 0;
+					end;
+										
+					if sheet.GAtletismo == nil then
+						sheet.GAtletismo = 0;
+					end;	
+					if sheet.GRaciocinio == nil then
+						sheet.GRaciocinio = 0;
+					end;	
+					if sheet.GPercepcao == nil then
+						sheet.GPercepcao = 0;
+					end;						
+					if sheet.GFurtividade == nil then
+						sheet.GFurtividade = 0;
+					end;	
+					if sheet.GVigor == nil then
+						sheet.GVigor = 0;
+					end;
+					
+					if sheet.AtletismoTotal == nil then
+						sheet.AtletismoTotal = 0;
+					end;	
+					if sheet.RaciocinioTotal == nil then
+						sheet.RaciocinioTotal = 0;
+					end;	
+					if sheet.PercepcaoTotal == nil then
+						sheet.PercepcaoTotal = 0;
+					end;						
+					if sheet.FurtividadeTotal == nil then
+						sheet.FurtividadeTotal = 0;
+					end;	
+					if sheet.VigorTotal == nil then
+						sheet.VigorTotal = 0;
+					end;
+					
+					if sheet.Graduacao =='Genin' then
+					sheet.GAtletismo = 1;
+					sheet.GRaciocinio = 1;
+					sheet.GPercepcao = 1;
+					sheet.GFurtividade = 1;
+					sheet.GVigor = 1;
+					end;
+					
+					if sheet.Graduacao =='Jounin' then
+					sheet.GAtletismo = 2;
+					sheet.GRaciocinio = 2;
+					sheet.GPercepcao = 2;
+					sheet.GFurtividade = 2;
+					sheet.GVigor = 2;
+					end;
+					
+					if sheet.Graduacao =='Anbu Nucleo' then
+					sheet.GAtletismo = 3;
+					sheet.GRaciocinio = 3;
+					sheet.GPercepcao = 3;
+					sheet.GFurtividade = 3;
+					sheet.GVigor = 3;
+					end;
+					
+					if sheet.Graduacao =='GDE' then
+					sheet.GAtletismo = 4;
+					sheet.GRaciocinio = 4;
+					sheet.GPercepcao = 4;
+					sheet.GFurtividade = 4;
+					sheet.GVigor = 4;
+					end;
+					
+					if sheet.Graduacao =='Kage' then
+					sheet.GAtletismo = 6;
+					sheet.GRaciocinio = 6;
+					sheet.GPercepcao = 6;
+					sheet.GFurtividade = 6;
+					sheet.GVigor = 6;
+					end;
+					
+					if sheet.Forca >= 100000000 then
+						sheet.SAtletismo = 5;
+					elseif sheet.Forca >= 10000000 then
+						sheet.SAtletismo = 4;
+					elseif sheet.Forca >= 1000000 then
+						sheet.SAtletismo = 3;
+					elseif sheet.Forca >= 100000 then
+						sheet.SAtletismo = 2;
+					elseif sheet.Forca >= 10000 then
+						sheet.SAtletismo = 1;	
+					else
+						sheet.SVigor = 0;
+					end;	
+					
+					if sheet.Inteligencia >= 100000000 then
+						sheet.SRaciocinio = 5;
+					elseif sheet.Sabedoria >= 100000000 then
+						sheet.SRaciocinio = 5;	
+					elseif sheet.Inteligencia >= 10000000 then
+						sheet.SRaciocinio = 4;
+					elseif sheet.Sabedoria >= 10000000 then
+						sheet.SRaciocinio = 4;	
+					elseif sheet.Inteligencia >= 1000000 then
+						sheet.SRaciocinio = 3;
+					elseif sheet.Sabedoria >= 1000000 then
+						sheet.SRaciocinio = 3;	
+					elseif sheet.Inteligencia >= 100000 then
+						sheet.SRaciocinio = 2;
+					elseif sheet.Sabedoria >= 100000 then
+						sheet.SRaciocinio = 2;
+					elseif sheet.Sabedoria >= 10000 then
+						sheet.SRaciocinio = 1;	
+					elseif sheet.Inteligencia >= 10000 then
+						sheet.SRaciocinio = 1;	
+					else
+						sheet.SRaciocinio = 0;
+					end; 
+					
+					if sheet.Habilidade >= 500000000 then
+						sheet.SPercepcao = 5;
+						sheet.SFurtividade = 5;
+					elseif sheet.Habilidade >= 50000000 then
+						sheet.SPercepcao = 4;
+						sheet.SFurtividade = 4;
+					elseif sheet.Habilidade >= 5000000 then
+						sheet.SPercepcao = 3;
+						sheet.SFurtividade = 3;
+					elseif sheet.Habilidade >= 500000 then
+						sheet.SPercepcao = 2;
+						sheet.SFurtividade = 2;
+					elseif sheet.Habilidade >= 50000 then
+						sheet.SPercepcao = 1;	
+						sheet.SFurtividade = 1;
+					else 
+						sheet.SPercepcao = 0;
+						sheet.SFurtividade = 0;
+					end; 
+					
+					if sheet.Resistencia >= 100000000 then
+						sheet.SVigor = 5;
+					elseif sheet.Resistencia >= 10000000 then
+						sheet.SVigor = 4;
+					elseif sheet.Resistencia >= 1000000 then
+						sheet.SVigor = 3;
+					elseif sheet.Resistencia >= 100000 then
+						sheet.SVigor = 2;
+					elseif sheet.Resistencia >= 10000 then
+						sheet.SVigor = 1;	
+					else
+						sheet.SVigor = 0;
+					end;	
+
+					sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
+					sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
+					sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
+					sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
+					sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+			 
+				</event>
+			</dataLink>
+			 
+			 
+			---------------------------------------------------------------
+			---------------------------------------------------------------
+			--------------------- STATUS POR GRADUACÃO---------------------
+			---------------------------------------------------------------
+			---------------------------------------------------------------
+
+			<dataLink fields="{'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
+			'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen'">
+			<event name="onChange"> 
+			sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
+			sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60	
+			sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60
+			sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20
+			sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30
+			sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1
+			sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1
+			sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1
+			sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1
+			</event>
+			</dataLink>
+
+		</scrollBox>
+         </tab>
+
+			 -----------------------------------
+			 -----------------------------------
+             ----------- ABA 3-----------------
+			 -----------------------------------
+			 -----------------------------------
+		 
+		 <tab title="Equipamentos">
+
+			<scrollBox align="client">
+		
+
+		    <image left="1" top="1" width="1000" height="700" src="/imagens/3.png"/>
+			
+			<richEdit left="22" top="90" width="320" height="340" backgroundColor="#00000000" defaultFontColor="white" field="Historia"/>
+			
+			<button left="430" top="120" width="120" height="100" opacity="0.0" text="" onClick="self.POPArma:show();"/>
+			<popup name="POPArma" visible="false" left="1" top="40"
+                     width="500" height="550" >					 
+					  <label left="20" top="20" fontFamily="Nyala" fontSize="20" text="Dano Tai"/>
+					  <label left="20" top="60" fontFamily="Nyala" fontSize="20" text="Dano Nin"/>
+					  <label left="20" top="100" fontFamily="Nyala" fontSize="20" text="Dano Gen"/>
+					  <label left="20" top="140" fontFamily="Nyala" fontSize="20" text="Dano Armado"/>
+					  <label left="200" top="20" fontFamily="Nyala" fontSize="20" text="Dano Elemental"/>
+					  <label left="200" top="60" fontFamily="Nyala" fontSize="20" text="HP"/> 
+					  <label left="200" top="100" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+					  <label left="20" top="200" width="300" fontFamily="Nyala" fontSize="20" text="Habilidade da Espada"/>
+					  <label left="20" top="300" fontFamily="Nyala" fontSize="20" text="Shinkai"/>
+					  <label left="20" top="400" fontFamily="Nyala" fontSize="20" text="Bankai"/>
+					  
+					  
+					  
+					  <edit left="110" top="16" width="85" height="25"  type="number" field="ArmaDT"/>
+					  <edit left="110" top="56" width="85" height="25"  type="number" field="ArmaDN"/>
+					  <edit left="110" top="96" width="85" height="25"  type="number" field="ArmaDG"/>
+					  <edit left="130" top="136" width="85" height="25"  type="number" field="ArmaDA"/>
+					  <edit left="360" top="16" width="85" height="25"  type="number" field="ArmaDE"/>
+					  <edit left="360" top="56" width="85" height="25"  type="number" field="ArmaHP"/>
+					  <edit left="360" top="96" width="85" height="25"  type="number" field="ArmaChakra"/>
+					  <textEditor left="20" top="223" width="440" height="70"  field="HDE"/>
+					  <textEditor left="20" top="320" width="440" height="70"  field="Shinkai"/>
+					  <textEditor left="20" top="420" width="440" height="100"  field="Bankai"/>					  
+			</popup> 
+			
+			<button left="610" top="120" width="160" height="100" opacity="0.0" text="" onClick="self.POPBandana:show();"/>
+			<popup name="POPBandana" visible="false" left="1" top="40"
+                     width="300" height="300" >
+
+					  <label left="20" top="20" fontFamily="Nyala" fontSize="20" text="HP"/>
+					  <label left="20" top="60" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+					  <label left="20" top="100" fontFamily="Nyala" fontSize="20" text="Redução"/>
+					  <label left="20" top="140" width="300" fontFamily="Nyala" fontSize="20" text="Passiva"/>
+
+					  
+					  <edit left="110" top="16" width="85" height="25"  type="number" field="BandanaHP"/>
+					  <edit left="110" top="56" width="85" height="25"  type="number" field="BandanaChakra"/>
+					  <edit left="110" top="96" width="85" height="25"  type="number" field="BandanaReducao"/>
+					  <textEditor left="20" top="163" width="260" height="110" field="BandanaPassiva"/>
+				 					 
+			</popup> 
+
+			<button left="430" top="225" width="120" height="115" opacity="0.0" text="" onClick="self.POPColete:show();"/>
+			<popup name="POPColete" visible="false" left="1" top="40"
+				width="300" height="300" >
+				 
+				<label left="20" top="20" fontFamily="Nyala" fontSize="20" text="HP"/>
+				<label left="20" top="60" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+				<label left="20" top="100" fontFamily="Nyala" fontSize="20" text="Redução"/>
+				<label left="20" top="140" width="300" fontFamily="Nyala" fontSize="20" text="Passiva"/>
+
+				<edit left="110" top="16" width="85" height="25"  type="number" field="ColeteHP"/>
+				<edit left="110" top="56" width="85" height="25"  type="number" field="ColeteChakra"/>
+				<edit left="110" top="96" width="85" height="25"  type="number" field="ColeteReducao"/>
+				<textEditor left="20" top="163" width="260" height="110" field="ColetePassiva"/>
+					 
+			</popup> 
+			
+			<button left="610" top="232" width="160" height="100" opacity="0.0" text="" onClick="self.POPAcessorio:show();"/>
+			<popup name="POPAcessorio" visible="false" left="1" top="40"
+                     width="500" height="350" >
+					 
+					  <label left="20" top="20" fontFamily="Nyala" fontSize="20" text="Dano Tai"/>
+					  <label left="20" top="60" fontFamily="Nyala" fontSize="20" text="Dano Nin"/>
+					  <label left="20" top="100" fontFamily="Nyala" fontSize="20" text="Dano Gen"/>
+					  <label left="230" top="20" fontFamily="Nyala" fontSize="20" text="Dano Elemental"/>
+					  <label left="230" top="60" fontFamily="Nyala" fontSize="20" text="HP"/>
+					  <label left="230" top="100" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+					  <label left="20" top="140" width="300" fontFamily="Nyala" fontSize="20" text="Reiatsu"/>
+					  <label left="230" top="140" fontFamily="Nyala" fontSize="20" text="Outros"/>
+					  
+					  <edit left="110" top="16" width="85" height="25"  type="number" field="AcessorioDT"/>
+					  <edit left="110" top="56" width="85" height="25"  type="number" field="AcessorioDN"/>
+					  <edit left="110" top="96" width="85" height="25"  type="number" field="AcessorioDG"/>
+					  <edit left="360" top="16" width="85" height="25" 	type="number"  field="AcessorioDE"/>
+					  <edit left="360" top="56" width="85" height="25"  type="number" field="AcessorioHP"/>
+					  <edit left="360" top="96" width="85" height="25"  type="number" field="AcessorioChakra"/>
+					  <edit left="110" top="136" width="85" height="25"  type="number" field="AcessorioReiatsu"/>
+					  <edit left="360" top="136" width="85" height="25"  type="number" field="AcessorioOutros"/>
+					 
+					 <label left="20" top="180" width="300" fontFamily="Nyala" fontSize="20" text="Habilidade"/>
+					 <textEditor left="20" top="210" width="425" height="110" field="AcessorioPassiva"/>
+
+			</popup> 	
+					
+					<button left="30" top="540" width="120" height="115" opacity="0.1" text="" onClick="self.POPBAG:show();"/>
+					<popup name="POPBAG" visible="false" left="1" top="40"
+                     width="650" height="500" >			
+					 
+						<image left="1" top="1" width="650" height="500" src="/imagens/Loja.png"/>
+						<label left="160" top="13" height="25" width="100" fontColor="red" text="Kunai" autoSize="true"/>
+						<edit left="200" top="08" height="25" width="30"  type="number" field="KunaiLimite"/>
+						<label left="235" top="13" height="25" width="100" fontColor="red" text="Shuriken" autoSize="true"/>
+						<edit left="290" top="08" height="25" width="30"  type="number" field="ShurikenLimite"/>
+						<label left="325" top="13" height="25" width="100" fontColor="red" text="S.Fuuma" autoSize="true"/>
+						<edit left="380" top="08" height="25" width="30"  type="number" field="SFuumaLimite"/>
+						<label left="420" top="13" height="25" width="100" fontColor="red" text="K.Gigante" autoSize="true"/>
+						<edit left="480" top="08" height="25" width="30"  type="number" field="KGiganteLimite"/>
+						<label left="515" top="13" height="25" width="100" fontColor="red" text="P.Bomba" autoSize="true"/>
+						<edit left="570" top="08" height="25" width="30"  type="number" field="PBombaLimite"/>					
+						<label left="160" top="38" height="25" width="100" fontColor="red" text="G.Explosivo" autoSize="true"/>
+						<edit left="230" top="35" height="25" width="30"  type="number" field="GExplosivoLimite"/>
+						<label left="265" top="38" height="25" width="100" fontColor="red" text="Veneno" autoSize="true"/>
+						<edit left="315" top="35" height="25" width="30"  type="number" field="VenenoLimite"/>
+						<label left="350" top="38" height="25" width="100" fontColor="red" text="Bandagem" autoSize="true"/>
+						<edit left="415" top="35" height="25" width="30"  type="number" field="BandagemLimite"/>
+						<label left="450" top="38" height="25" width="100" fontColor="red" text="Bomba Fumaça" autoSize="true"/>
+						<edit left="545" top="35" height="25" width="30"  type="number" field="BombaFumacaLimite"/>
+						<layout align="top" height="30" margins="{bottom=4}">
+						
+						<button text="Novo Item" width="150" align="left">
+                        <event name="onClick">
+                                -- Usuário clicou no botão de criar novo item.
+                                -- Vamos inserir um novo item no nosso recordList                              
+                                self.rclListaDosItens4:append();
+                        </event>
+						</button>
+						</layout>       
+
+						<!-- recordList, representando a lista -->
+						<recordList name="rclListaDosItens4" field="campoDosItens4" templateForm="frmItemDaLista4"
+                                left="5" top="71" height="420" width="640" selectable="true">                              
+
+                <event name="onSelect">
+                        --[[
+                        Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+
+                  --]]                      
+                  local node = self.rclListaDosItens4.selectedNode; 
+                         self.boxDetalhesDoItem.node = node;                       
+                  -- a caixa de detalhe só ficará visível se houver item selecionado
+                          self.boxDetalhesDoItem.visible = (node ~= nil);
+                </event>
+				</recordList>       
+				<!-- dataScopeBox representando a nossa caixa de detalhes -->  
+				<dataScopeBox name="boxDetalhesDoItem" visible="false" top="38" left="300"
+                     width="330" height="440" margins="{left=4, right=4}">
+                <!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro   -->       
+
+						<rectangle  color="grey" height="430" width="380" top="33" left="1">
+                                   
+                                <label left="10" top="13" height="25" width="100" fontColor="red" text="Nome do Item:" autoSize="true"/>
+                                <edit left="105" top="10" height="25" width="205" field="NomedoItem"/>
+								<textEditor left="10" top="40" width="300" height="310" field="DescriItem"/>
+                                <label left="10" top="360" height="25" width="100" text="Tipo :" autoSize="true"/>
+								<comboBox  left="50" top="360" width="140" height="18" field="TipoItens" items="{'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'}"/>
+							                       
+						</rectangle>
+				</dataScopeBox>
+			
+				</popup> 
+			
+				</scrollBox>
+			
+		</tab>
+		
+			 -----------------------------------
+			 -----------------------------------
+             ----------- ABA 4-----------------
+			 -----------------------------------
+			 -----------------------------------
+		
+		<tab title="Historia">
+
+			<scrollBox align="client">
+		
+
+		    <image left="1" top="1" width="1000" height="700" src="/imagens/4.png"/>
+			<richEdit left="85" top="140" width="440" height="545" backgroundColor="#00000000" defaultFontColor="white" field="Kutchyose"/>
+			
+			</scrollBox>
+			
+			
+		</tab>
+				 
+        </tabControl>
+		
+		
+		
+		</scrollBox>
+		
+
+		
+</form>
