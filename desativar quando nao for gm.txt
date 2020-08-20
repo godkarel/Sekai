@@ -1,3 +1,5 @@
 desativar botão de calculo 
 desativar botões de treino de Ninjutsu
-desativar botões de delevel do usuario 
+Desativar Level EDIT
+
+Desativar 
