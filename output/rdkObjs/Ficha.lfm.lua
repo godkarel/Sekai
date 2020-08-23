@@ -325,7 +325,7 @@ local function constructNew_frmsekai()
     obj.edit7:setHeight(20);
     obj.edit7:setLeft(230);
     obj.edit7:setTop(400);
-    obj.edit7:setEnabled(true);
+    obj.edit7:setEnabled(false);
     obj.edit7:setHorzTextAlign("center");
     obj.edit7:setType("number");
     obj.edit7:setField("LevelJutsu1");
@@ -351,7 +351,7 @@ local function constructNew_frmsekai()
     obj.edit8:setType("number");
     obj.edit8:setMin(1);
     obj.edit8:setMax(9);
-    obj.edit8:setEnabled(true);
+    obj.edit8:setEnabled(false);
     obj.edit8:setHorzTextAlign("center");
     obj.edit8:setField("1d10");
     obj.edit8:setName("edit8");
@@ -365,7 +365,7 @@ local function constructNew_frmsekai()
     obj.edit9:setType("number");
     obj.edit9:setMin(1);
     obj.edit9:setMax(9);
-    obj.edit9:setEnabled(true);
+    obj.edit9:setEnabled(false);
     obj.edit9:setHorzTextAlign("center");
     obj.edit9:setField("2d10");
     obj.edit9:setName("edit9");
@@ -379,7 +379,7 @@ local function constructNew_frmsekai()
     obj.edit10:setType("number");
     obj.edit10:setMin(1);
     obj.edit10:setMax(9);
-    obj.edit10:setEnabled(true);
+    obj.edit10:setEnabled(false);
     obj.edit10:setHorzTextAlign("center");
     obj.edit10:setField("3d10");
     obj.edit10:setName("edit10");
@@ -404,7 +404,7 @@ local function constructNew_frmsekai()
     obj.edit11:setType("number");
     obj.edit11:setMin(1);
     obj.edit11:setMax(18);
-    obj.edit11:setEnabled(true);
+    obj.edit11:setEnabled(false);
     obj.edit11:setTransparent(true);
     obj.edit11:setHorzTextAlign("center");
     obj.edit11:setField("1d20");
@@ -677,7 +677,7 @@ local function constructNew_frmsekai()
     obj.edit18:setHeight(20);
     obj.edit18:setLeft(230);
     obj.edit18:setTop(400);
-    obj.edit18:setEnabled(true);
+    obj.edit18:setEnabled(false);
     obj.edit18:setType("number");
     obj.edit18:setHorzTextAlign("center");
     obj.edit18:setField("LevelJutsu2");
@@ -703,7 +703,7 @@ local function constructNew_frmsekai()
     obj.edit19:setType("number");
     obj.edit19:setMin(1);
     obj.edit19:setMax(9);
-    obj.edit19:setEnabled(true);
+    obj.edit19:setEnabled(false);
     obj.edit19:setHorzTextAlign("center");
     obj.edit19:setField("21d10");
     obj.edit19:setName("edit19");
@@ -717,7 +717,7 @@ local function constructNew_frmsekai()
     obj.edit20:setType("number");
     obj.edit20:setMin(1);
     obj.edit20:setMax(9);
-    obj.edit20:setEnabled(true);
+    obj.edit20:setEnabled(false);
     obj.edit20:setHorzTextAlign("center");
     obj.edit20:setField("22d10");
     obj.edit20:setName("edit20");
@@ -731,7 +731,7 @@ local function constructNew_frmsekai()
     obj.edit21:setType("number");
     obj.edit21:setMin(1);
     obj.edit21:setMax(9);
-    obj.edit21:setEnabled(true);
+    obj.edit21:setEnabled(false);
     obj.edit21:setHorzTextAlign("center");
     obj.edit21:setField("23d10");
     obj.edit21:setName("edit21");
@@ -756,7 +756,7 @@ local function constructNew_frmsekai()
     obj.edit22:setType("number");
     obj.edit22:setMin(1);
     obj.edit22:setMax(18);
-    obj.edit22:setEnabled(true);
+    obj.edit22:setEnabled(false);
     obj.edit22:setTransparent(true);
     obj.edit22:setHorzTextAlign("center");
     obj.edit22:setField("21d20");
@@ -1029,7 +1029,7 @@ local function constructNew_frmsekai()
     obj.edit29:setHeight(20);
     obj.edit29:setLeft(230);
     obj.edit29:setTop(400);
-    obj.edit29:setEnabled(true);
+    obj.edit29:setEnabled(false);
     obj.edit29:setHorzTextAlign("center");
     obj.edit29:setType("number");
     obj.edit29:setField("LevelJutsu3");
@@ -1055,7 +1055,7 @@ local function constructNew_frmsekai()
     obj.edit30:setType("number");
     obj.edit30:setMin(1);
     obj.edit30:setMax(9);
-    obj.edit30:setEnabled(true);
+    obj.edit30:setEnabled(false);
     obj.edit30:setHorzTextAlign("center");
     obj.edit30:setField("31d10");
     obj.edit30:setName("edit30");
@@ -1069,7 +1069,7 @@ local function constructNew_frmsekai()
     obj.edit31:setType("number");
     obj.edit31:setMin(1);
     obj.edit31:setMax(9);
-    obj.edit31:setEnabled(true);
+    obj.edit31:setEnabled(false);
     obj.edit31:setHorzTextAlign("center");
     obj.edit31:setField("32d10");
     obj.edit31:setName("edit31");
@@ -1083,7 +1083,7 @@ local function constructNew_frmsekai()
     obj.edit32:setType("number");
     obj.edit32:setMin(1);
     obj.edit32:setMax(9);
-    obj.edit32:setEnabled(true);
+    obj.edit32:setEnabled(false);
     obj.edit32:setHorzTextAlign("center");
     obj.edit32:setField("33d10");
     obj.edit32:setName("edit32");
@@ -1108,7 +1108,7 @@ local function constructNew_frmsekai()
     obj.edit33:setType("number");
     obj.edit33:setMin(1);
     obj.edit33:setMax(18);
-    obj.edit33:setEnabled(true);
+    obj.edit33:setEnabled(false);
     obj.edit33:setTransparent(true);
     obj.edit33:setHorzTextAlign("center");
     obj.edit33:setField("31d20");
@@ -1152,7 +1152,7 @@ local function constructNew_frmsekai()
     obj.comboBox4:setHeight(18);
     obj.comboBox4:setField("Cla");
     obj.comboBox4:setItems({'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kami', 'Kamizurui', 'Nara', 'Uchiha', 'Uzumaki', 'Yamanaka', 'Rinnegan',
-				 '----------', 'Fire', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----------', 'Gote', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '----------'});
+		 '----------', 'Fire', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----------', 'Gote', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '----------'});
     obj.comboBox4:setName("comboBox4");
 
     obj.edit35 = GUI.fromHandle(_obj_newObject("edit"));
@@ -1522,7 +1522,7 @@ local function constructNew_frmsekai()
     obj.button16:setWidth(105);
     obj.button16:setHeight(85);
     obj.button16:setOpacity(1.0);
-    obj.button16:setVisible(true);
+    obj.button16:setVisible(false);
     obj.button16:setText("Calculo");
     obj.button16:setName("button16");
 
@@ -1799,12 +1799,12 @@ local function constructNew_frmsekai()
     obj.dataLink3 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink3:setParent(obj.POPCALCULO);
     obj.dataLink3:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-				'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
-				,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
-				'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
-				,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
-				,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
-				,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'});
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
+		,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
+		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
+		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
+		,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
+		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'});
     obj.dataLink3:setName("dataLink3");
 
     obj.dataLink4 = GUI.fromHandle(_obj_newObject("dataLink"));
@@ -1820,31 +1820,31 @@ local function constructNew_frmsekai()
     obj.dataLink6 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink6:setParent(obj.POPCALCULO);
     obj.dataLink6:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-				'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
     obj.dataLink6:setName("dataLink6");
 
     obj.dataLink7 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink7:setParent(obj.POPCALCULO);
     obj.dataLink7:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
-				'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
     obj.dataLink7:setName("dataLink7");
 
     obj.dataLink8 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink8:setParent(obj.POPCALCULO);
     obj.dataLink8:setFields({'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
-				'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'});
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'});
     obj.dataLink8:setName("dataLink8");
 
     obj.dataLink9 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink9:setParent(obj.POPCALCULO);
     obj.dataLink9:setFields({'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
-				'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'});
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'});
     obj.dataLink9:setName("dataLink9");
 
     obj.dataLink10 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink10:setParent(obj.POPCALCULO);
     obj.dataLink10:setFields({'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
-				'DReiatsu', 'AcessorioReiatsu'});
+		'DReiatsu', 'AcessorioReiatsu'});
     obj.dataLink10:setName("dataLink10");
 
     obj.button17 = GUI.fromHandle(_obj_newObject("button"));
@@ -2753,23 +2753,22 @@ local function constructNew_frmsekai()
     obj.button21:setName("button21");
 
  
-									local function Pergaminho1() 
-										   
-									local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+						local function Pergaminho1() 
+						   
+						local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+
+						mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Grande",
+							function (rolado)
+							
+								mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. sheet.DescriPergaminho1);
+								local mesa = Firecast.getMesaDe(sheet); 
+								local CustoPerga1 = mesa.meuJogador:getBarValue(2);
+								CustoPerga1 = CustoPerga1 - (tonumber(sheet.CustoPerga1) or 0);
+								mesa.meuJogador:requestSetBarValue(2, CustoPerga1);
 						
-									mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Grande",
-									function (rolado)
-										
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. sheet.DescriPergaminho1);
-											local mesa = Firecast.getMesaDe(sheet); 
-											local CustoPerga1 = mesa.meuJogador:getBarValue(2);
-											CustoPerga1 = CustoPerga1 - (tonumber(sheet.CustoPerga1) or 0);
-											mesa.meuJogador:requestSetBarValue(2, CustoPerga1);
-									
-									end);
-									end;
-									
-									
+						end);
+						end;			
+					
 
 
     obj.button22 = GUI.fromHandle(_obj_newObject("button"));
@@ -2919,22 +2918,22 @@ local function constructNew_frmsekai()
     obj.button23:setName("button23");
 
  
-									local function Pergaminho2() 
-										   
-									local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+							local function Pergaminho2() 
+								   
+							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+				
+							mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Medio",
+								function (rolado)
+								
+									mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho2);
+									local mesa = Firecast.getMesaDe(sheet); 
+									local CustoPerga2 = mesa.meuJogador:getBarValue(2);
+									CustoPerga2 = CustoPerga2 - (tonumber(sheet.CustoPerga2) or 0);
+									mesa.meuJogador:requestSetBarValue(2, CustoPerga2);
+							
+							end);
+							end;
 						
-									mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Medio",
-									function (rolado)
-										
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho2);
-											local mesa = Firecast.getMesaDe(sheet); 
-											local CustoPerga2 = mesa.meuJogador:getBarValue(2);
-											CustoPerga2 = CustoPerga2 - (tonumber(sheet.CustoPerga2) or 0);
-											mesa.meuJogador:requestSetBarValue(2, CustoPerga2);
-									
-									end);
-									end;
-									
 
 
     obj.button24 = GUI.fromHandle(_obj_newObject("button"));
@@ -3084,22 +3083,22 @@ local function constructNew_frmsekai()
     obj.button25:setName("button25");
 
  
-									local function Pergaminho3() 
-										   
-									local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+							local function Pergaminho3() 
+								   
+							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+				
+							mesaDoPersonagem.chat:rolarDados("1d100", "[§K4]Uso de Selamento",
+								function (rolado)
+								
+									mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho3);
+									local mesa = Firecast.getMesaDe(sheet); 
+									local CustoPerga3 = mesa.meuJogador:getBarValue(2);
+									CustoPerga3 = CustoPerga3 - (tonumber(sheet.CustoPerga3) or 0);
+									mesa.meuJogador:requestSetBarValue(2, CustoPerga3);
+							
+							end);
+							end;
 						
-									mesaDoPersonagem.chat:rolarDados("1d100", "[§K4]Uso de Selamento",
-									function (rolado)
-										
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho3);
-											local mesa = Firecast.getMesaDe(sheet); 
-											local CustoPerga3 = mesa.meuJogador:getBarValue(2);
-											CustoPerga3 = CustoPerga3 - (tonumber(sheet.CustoPerga3) or 0);
-											mesa.meuJogador:requestSetBarValue(2, CustoPerga3);
-									
-									end);
-									end;
-									
 
 
     obj.button26 = GUI.fromHandle(_obj_newObject("button"));
@@ -5020,7 +5019,7 @@ local function constructNew_frmsekai()
             												node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
             												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsu) or 0);
             												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
-            												else
+            											else
             												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
             											end;
             										end);
@@ -5035,92 +5034,92 @@ local function constructNew_frmsekai()
     obj._e_event8 = obj.button7:addEventListener("onClick",
         function (_)
             -- Usuário clicou no botão de criar novo item.
-            						-- Vamos inserir um novo item no nosso recordList                              
-            						self.rclListaDosItens2:append();
+            							-- Vamos inserir um novo item no nosso recordList                              
+            							self.rclListaDosItens2:append();
         end, obj);
 
     obj._e_event9 = obj.rclListaDosItens2:addEventListener("onSelect",
         function (_)
             --[[
-            							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+            								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
             
-            					  --]]                      
-            					  local node = self.rclListaDosItens2.selectedNode; 
-            							 self.ListaJutsus2.node = node;                       
-            					  -- a caixa de detalhe só ficará visível se houver item selecionado
-            							  self.ListaJutsus2.visible = (node ~= nil);
+            						  --]]                      
+            						  local node = self.rclListaDosItens2.selectedNode; 
+            								 self.ListaJutsus2.node = node;                       
+            						  -- a caixa de detalhe só ficará visível se houver item selecionado
+            								  self.ListaJutsus2.visible = (node ~= nil);
         end, obj);
 
     obj._e_event10 = obj.button8:addEventListener("onClick",
         function (_)
             local node = self.ListaJutsus2.node;									
-            								local mesaDoPersonagem = rrpg.getMesaDe(sheet);
-            								if node.Tipo2 == nil then
-            									showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
-            								else 	
-            									sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
-            									
-            									if node.DanoJutsu ~= nil then
-            										node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
-            									else
-            										node.LevelJutsu1 = 1;
-            									end;
-            									
-            									if node.Tipo2 == 'Tai' then
-            										node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.TaiTotal) or 0);	
-            									end;	
-            									
-            									if node.Tipo2 == 'Nin' then
-            										node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.NinTotal) or 0);	
-            									end;
-            									
-            									if node.Tipo2 == 'Gen' then
-            										node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.GenTotal) or 0);	
-            									end;
-            									
-            									if node.Tipo2 == 'Elemental' then
-            										node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.EleTotal) or 0);	
-            									end;
-            									
-            									if node.Tipo2 == 'Selamento' then
-            										node.Intensidade = 0;	
-            									end;
-            									
-            									if node.Tipo2 == 'Outros' then
-            										node.Intensidade = 0;
-            									end;
-            									
-            									mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
-            										function (rolado)	
-            											if sheet.AcertoNinTotal >= rolado.resultado then
-            												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu2);
-            												
-            												if node.Tipo2 == 'Tai'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo2 == 'Nin'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo2 == 'Gen'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo2 == 'Elemental'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
-            												end;
-            												
-            												local mesa = Firecast.getMesaDe(sheet);
-            												local ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
-            												node.ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
-            												node.ChakraPlayer2 = (tonumber(node.ChakraPlayer2) or 0) - (tonumber(node.CustoJutsu2) or 0);
-            												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer2);
+            									local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+            									if node.Tipo2 == nil then
+            										showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
+            									else 	
+            										sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
+            										
+            										if node.DanoJutsu ~= nil then
+            											node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
+            										else
+            											node.LevelJutsu1 = 1;
+            										end;
+            										
+            										if node.Tipo2 == 'Tai' then
+            											node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.TaiTotal) or 0);	
+            										end;	
+            										
+            										if node.Tipo2 == 'Nin' then
+            											node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.NinTotal) or 0);	
+            										end;
+            										
+            										if node.Tipo2 == 'Gen' then
+            											node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.GenTotal) or 0);	
+            										end;
+            										
+            										if node.Tipo2 == 'Elemental' then
+            											node.Intensidade2 = (tonumber(node.DNVerdadeiro2) or 0) + (tonumber(sheet.EleTotal) or 0);	
+            										end;
+            										
+            										if node.Tipo2 == 'Selamento' then
+            											node.Intensidade = 0;	
+            										end;
+            										
+            										if node.Tipo2 == 'Outros' then
+            											node.Intensidade = 0;
+            										end;
+            										
+            										mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
+            											function (rolado)	
+            												if sheet.AcertoNinTotal >= rolado.resultado then
+            													mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu2);
+            													
+            													if node.Tipo2 == 'Tai'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo2 == 'Nin'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo2 == 'Gen'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo2 == 'Elemental'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade2 .. "[§K3,0] »");
+            													end;
+            													
+            													local mesa = Firecast.getMesaDe(sheet);
+            													local ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
+            													node.ChakraPlayer2 = mesa.meuJogador:getBarValue(2);
+            													node.ChakraPlayer2 = (tonumber(node.ChakraPlayer2) or 0) - (tonumber(node.CustoJutsu2) or 0);
+            													mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer2);
             												else
-            												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
-            											end;
-            									end);
-            								end;
+            													mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
+            												end;
+            										end);
+            									end;
         end, obj);
 
     obj._e_event11 = obj.button9:addEventListener("onClick",
@@ -5186,149 +5185,143 @@ local function constructNew_frmsekai()
             										end;
             										
             										mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
-            										function (rolado)	
-            											if sheet.AcertoNinTotal >= rolado.resultado then
-            												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu3);
-            												
-            												if node.Tipo3 == 'Tai'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo3 == 'Nin'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo3 == 'Gen'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
-            												end;
-            												
-            												if node.Tipo3 == 'Elemental'then
-            													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
-            												end;
-            																									
-            												local mesa = Firecast.getMesaDe(sheet);
-            												local ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
-            												node.ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
-            												node.ChakraPlayer3 = (tonumber(node.ChakraPlayer3) or 0) - (tonumber(node.CustoJutsu3) or 0);
-            												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer3);
+            											function (rolado)	
+            												if sheet.AcertoNinTotal >= rolado.resultado then
+            													mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu3);
+            													
+            													if node.Tipo3 == 'Tai'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo3 == 'Nin'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo3 == 'Gen'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+            													end;
+            													
+            													if node.Tipo3 == 'Elemental'then
+            														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade3 .. "[§K3,0] »");
+            													end;
+            																										
+            													local mesa = Firecast.getMesaDe(sheet);
+            													local ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
+            													node.ChakraPlayer3 = mesa.meuJogador:getBarValue(2);
+            													node.ChakraPlayer3 = (tonumber(node.ChakraPlayer3) or 0) - (tonumber(node.CustoJutsu3) or 0);
+            													mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer3);
             												else
-            												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
-            											end;
+            													mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
+            												end;
             										end);
             									end;
         end, obj);
 
     obj._e_event15 = obj.button12:addEventListener("onClick",
         function (_)
-            sheet.Level = (tonumber(sheet.Level) or 0) - 1
-            					if 0 > sheet.Level then
-            					sheet.Level = 0
-            					end;
-            					
-            					if sheet.Graduacao == 'Academico' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 100
-            					end
-            					
-            					if sheet.Graduacao == 'Genin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 200
-            					end
-            					
-            					if sheet.Graduacao == 'Chunin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 1000			
-            					end
-            					
-            					if sheet.Graduacao == 'Jounin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 5000
-            					end
-            					
-            					if sheet.Graduacao == 'Anbu' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 10000
-            					end
-            				   
-            					if sheet.Graduacao == 'AnbuNucleo' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 15000
-            					end
-            					
-            					if sheet.Graduacao == 'Organização' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 20000
-            					end
-            					
-            									
-            					if sheet.Graduacao == 'GDE' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 30000
-            					end
-            					
-            									
-            					if sheet.Graduacao == 'Concelheiro' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 40000
-            					end
-            					
-            									
-            					if sheet.Graduacao == 'Kage' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 50000
-            					end
+            sheet.Level = (tonumber(sheet.Level) or 0) - 1;
+            				if 0 > sheet.Level then
+            					sheet.Level = 0;
+            				end;
+            				
+            				if sheet.Graduacao == 'Academico' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 100;
+            				end;
+            				
+            				if sheet.Graduacao == 'Genin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 200;
+            				end;
+            				
+            				if sheet.Graduacao == 'Chunin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 1000;		
+            				end;
+            				
+            				if sheet.Graduacao == 'Jounin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 5000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Anbu' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 10000;
+            				end;
+            			   
+            				if sheet.Graduacao == 'AnbuNucleo' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 15000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Organização' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 20000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'GDE' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 30000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Concelheiro' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 40000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Kage' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 50000;
+            				end;
         end, obj);
 
     obj._e_event16 = obj.button13:addEventListener("onClick",
         function (_)
-            sheet.Level = (tonumber(sheet.Level) or 0) + 1
-            						
-            						if sheet.Graduacao == 'Academico' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100
-            						end;
-            						
-            						if sheet.Graduacao == 'Genin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200
-            						end;
-            						
-            						if sheet.Graduacao == 'Chunin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000			
-            						end;
-            						
-            						if sheet.Graduacao == 'Jounin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000
-            						end;
-            						
-            						if sheet.Graduacao == 'Anbu' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000
-            						end;
-            					   
-            						if sheet.Graduacao == 'AnbuNucleo' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000
-            						end;
-            						
-            						if sheet.Graduacao == 'Organização' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'GDE' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'Concelheiro' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'Kage' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000
-            						end;
+            sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+            				
+            				if sheet.Graduacao == 'Academico' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+            				end;
+            				
+            				if sheet.Graduacao == 'Genin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+            				end;
+            				
+            				if sheet.Graduacao == 'Chunin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;			
+            				end;
+            				
+            				if sheet.Graduacao == 'Jounin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Anbu' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+            				end;
+            			   
+            				if sheet.Graduacao == 'AnbuNucleo' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Organização' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'GDE' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Concelheiro' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Kage' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+            				end;
         end, obj);
 
     obj._e_event17 = obj.button14:addEventListener("onClick",
         function (_)
             local mesa = Firecast.getMesaDe(sheet); 
-            						local HPTotal = (tonumber(sheet.HPTotal) or 0);
-            						mesa.meuJogador:requestSetBarValue(1, nil, HPTotal);
+            				local HPTotal = (tonumber(sheet.HPTotal) or 0);
+            				mesa.meuJogador:requestSetBarValue(1, nil, HPTotal);
         end, obj);
 
     obj._e_event18 = obj.button15:addEventListener("onClick",
         function (_)
             local mesa = Firecast.getMesaDe(sheet); 
-            						local ChakraTotal = (tonumber(sheet.ChakraTotal) or 0);
-            						mesa.meuJogador:requestSetBarValue(2, nil, ChakraTotal);
+            				local ChakraTotal = (tonumber(sheet.ChakraTotal) or 0);
+            				mesa.meuJogador:requestSetBarValue(2, nil, ChakraTotal);
         end, obj);
 
     obj._e_event19 = obj.button16:addEventListener("onClick",
@@ -5338,412 +5331,401 @@ local function constructNew_frmsekai()
 
     obj._e_event20 = obj.dataLink1:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100
-            										
-            						if sheet.Exp > sheet.ExpTotal then
-            							sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0)
-            							sheet.Level = (tonumber(sheet.Level) or 0) + 1
-            						end;	
-            													
-            						if sheet.Graduacao == 'Academico' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100
-            						end;
-            						
-            						if sheet.Graduacao == 'Genin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200
-            						end;
-            						
-            						if sheet.Graduacao == 'Chunin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000			
-            						end;
-            						
-            						if sheet.Graduacao == 'Jounin' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000
-            						end;
-            						
-            						if sheet.Graduacao == 'Anbu' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000
-            						end;
-            					   
-            						if sheet.Graduacao == 'AnbuNucleo' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000
-            						end;
-            						
-            						if sheet.Graduacao == 'Organização' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'GDE' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'Concelheiro' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000
-            						end;
-            						
-            										
-            						if sheet.Graduacao == 'Kage' then
-            							sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000
-            						end;
+            sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
+            								
+            				if sheet.Exp > sheet.ExpTotal then
+            					sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
+            					sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+            				end;	
+            											
+            				if sheet.Graduacao == 'Academico' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+            				end;
+            				
+            				if sheet.Graduacao == 'Genin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+            				end;
+            				
+            				if sheet.Graduacao == 'Chunin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
+            				end;
+            				
+            				if sheet.Graduacao == 'Jounin' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Anbu' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+            				end;
+            			   
+            				if sheet.Graduacao == 'AnbuNucleo' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+            				end;
+            				
+            				if sheet.Graduacao == 'Organização' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'GDE' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Concelheiro' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+            				end;				
+            								
+            				if sheet.Graduacao == 'Kage' then
+            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+            				end;
         end, obj);
 
     obj._e_event21 = obj.dataLink2:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.CTai = 0
-            						sheet.CNin = 0
-            						sheet.CGen = 0
-            						sheet.CDA = 0
-            						sheet.CDE = 0
-            						sheet.CHP = 0
-            						sheet.CChakra = 0
-            						sheet.CAT = 0
-            						sheet.CAN = 0
-            						sheet.CAG = 0
-            						sheet.CEsq = 0
-            						sheet.CBloq = 0
-            						sheet.CCRT = 0
-            						sheet.CCRN = 0
-            						sheet.CCRG = 0
+            sheet.CTai = 0;
+            				sheet.CNin = 0;
+            				sheet.CGen = 0;
+            				sheet.CDA = 0;
+            				sheet.CDE = 0;
+            				sheet.CHP = 0;
+            				sheet.CChakra = 0;
+            				sheet.CAT = 0;
+            				sheet.CAN = 0;
+            				sheet.CAG = 0;
+            				sheet.CEsq = 0;
+            				sheet.CBloq = 0;
+            				sheet.CCRT = 0;
+            				sheet.CCRN = 0;
+            				sheet.CCRG = 0	;
         end, obj);
 
     obj._e_event22 = obj.dataLink3:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Cla == 'Sem clã' then
-            						
-            						end
-            						
-            						if sheet.Cla == 'Aburame' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * -0.10;
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.15;
-            						end
-            						
-            						if sheet.Cla == 'Akimichi' then
-            							sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.20;
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20;
-            						end				
-            						
-            						if sheet.Cla == 'Fuma' then
-            							sheet.CCRN = 5
-            							sheet.CAN = 5
-            						end
-            						
-            						if sheet.Cla == 'Hyuga' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
-            							sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Inuzuka' then
+            				end;
+            				
+            				if sheet.Cla == 'Aburame' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * -0.10;
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.15;
+            				end;
+            				
+            				if sheet.Cla == 'Akimichi' then
+            					sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.20;
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20;
+            				end;			
+            				
+            				if sheet.Cla == 'Fuma' then
+            					sheet.CCRN = 5;
+            					sheet.CAN = 5;
+            				end;
+            				
+            				if sheet.Cla == 'Hyuga' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20;
+            					sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Inuzuka' then
+            				end;
+            				
+            				if sheet.Cla == 'Jyuin' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.40;
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Kaguya' then
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+            					sheet.CBloq = 10;
+            				end;
+            				
+            				if sheet.Cla == 'Kami' then
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+            				end;
             
-            						end
-            						
-            						if sheet.Cla == 'Jyuin' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.40
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Kaguya' then
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
-            							sheet.CBloq = 10
-            						end
-            						
-            						if sheet.Cla == 'Kami' then
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
-            						end
+            				if sheet.Cla == 'Kamizurui' then
+            					sheet.CAN = 5;
+            					sheet.CCRN = 5;
+            					sheet.CEsq = 3;
+            				end;
+            				
+            				if sheet.Cla == 'Nara' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20;
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Uchiha' then
+            					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Uzumaki' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 1;
+            				end;
+            				
+            				if sheet.Cla == 'Yamanaka' then
+            					sheet.CAT = 5;
+            					sheet.CAN = 5;
+            					sheet.CAG = 5; 
+            				end;
             
-            						if sheet.Cla == 'Kamizurui' then
-            							sheet.CAN = 5
-            							sheet.CCRN = 5
-            							sheet.CEsq = 3
-            						end
-            						
-            						if sheet.Cla == 'Nara' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Uchiha' then
-            							sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Uzumaki' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 1
-            						end
-            						
-            						if sheet.Cla == 'Yamanaka' then
-            							sheet.CAT = 5 
-            							sheet.CAN = 5 
-            							sheet.CAG = 5 
-            						end		
+            				if sheet.Cla == 'Rinnegan' then
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30;
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.15;
+            				end;
+            				
+            				if sheet.Cla == '----------' then
+            					showMessage("ESCOLHE UM CLÃ FILHA DA PUTA");
+            				end;
+            				
+            				if sheet.Cla == 'Fire' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Kibaku' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Kori' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10;
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Mashido' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Nomade' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            			
+            				if sheet.Cla == 'Orega' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Ray' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            				end;
+            			
+            				if sheet.Cla == 'Sabaku' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10;
+            					sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Senju' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20;
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30;
+            				end;
+            				
+            				if sheet.Cla == 'Temuri' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30;
+            				end;
+            				
+            				if sheet.Cla == 'Xaulan' then
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30;
+            				end;								
+            				------------------------------------------------------				
+            				if sheet.Cla == 'Gote' then
+            					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.20;
+            				end;
+            				
+            				if sheet.Cla == 'Hanbun' then
+            					sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.50;
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.50;
+            					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.50;
+            					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.50;
+            					sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.50;
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.50;
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.50;
+            				end;
+            				
+            				if sheet.Cla == 'Kazumi' then
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+            					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10;
+            					sheet.CAG = 5;
+            				end;
             
-            						if sheet.Cla == 'Rinnegan' then
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.15
-            						end
-            						
-            						if sheet.Cla == '----------' then
-            							showMessage("ESCOLHE UM CLÃ FILHA DA PUTA");
-            						end
-            						
-            						if sheet.Cla == 'Fire' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Kibaku' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Kori' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Mashido' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Nomade' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            					
-            						if sheet.Cla == 'Orega' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Ray' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            						end
-            					
-            						if sheet.Cla == 'Sabaku' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10
-            							sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Senju' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
-            						end
-            						
-            						if sheet.Cla == 'Temuri' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30
-            						end
-            						
-            						if sheet.Cla == 'Xaulan' then
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30
-            						end
-            										
-            						------------------------------------------------------
-            						
-            						if sheet.Cla == 'Gote' then
-            							sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.20
-            						end
-            						
-            						if sheet.Cla == 'Hanbun' then
-            							sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.50
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.50
-            							sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.50
-            							sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.50
-            							sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.50
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.50
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.50
-            						end
-            						
-            						if sheet.Cla == 'Kazumi' then
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
-            							sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10
-            							sheet.CAG = 5
-            						end
-            						
-            						if sheet.Cla == 'Kouga' then
-            						end
-            						
-            						if sheet.Cla == 'Miroku' then
-            						end
-            						
-            						if sheet.Cla == 'Mitsu' then
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == 'Nakamura' then
-            						end
-            						
-            						if sheet.Cla == 'Natsume' then
-            							sheet.CAT = 5
-            							sheet.CCRT = 5
-            							sheet.CBloq = 5
-            							sheet.CEsq = 3
-            						end
-            						
-            						if sheet.Cla == 'Neko' then
-            						end
-            						
-            						if sheet.Cla == 'Neon' then
-            							sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10
-            							sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30
-            							sheet.CAN = 5
-            							sheet.CCRN = 5
-            						end
-            						
-            						if sheet.Cla == 'Shinkara' then
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
-            						end
-            						
-            						if sheet.Cla == '' then
-            							sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10
-            						end
+            				if sheet.Cla == 'Kouga' then
+            				end;
+            				
+            				if sheet.Cla == 'Miroku' then
+            				end;
+            				
+            				if sheet.Cla == 'Mitsu' then
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == 'Nakamura' then
+            				end;
+            				
+            				if sheet.Cla == 'Natsume' then
+            					sheet.CAT = 5;
+            					sheet.CCRT = 5;
+            					sheet.CBloq = 5;
+            					sheet.CEsq = 3;
+            				end;
+            				
+            				if sheet.Cla == 'Neko' then
+            				end;
+            				
+            				if sheet.Cla == 'Neon' then
+            					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+            					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30;
+            					sheet.CAN = 5;
+            					sheet.CCRN = 5;
+            				end;
+            				
+            				if sheet.Cla == 'Shinkara' then
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+            				end;
+            				
+            				if sheet.Cla == '' then
+            					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+            				end;
         end, obj);
 
     obj._e_event23 = obj.dataLink4:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.TipoOutro == 'ChakraBiju' then
-            						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0);
+            					end;
             					
             					if sheet.TipoOutro == 'ChakraBranco' then
-            						sheet.Outros = (tonumber(sheet.ChakraBranco) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.ChakraBranco) or 0);
+            					end;
             					
             					if sheet.TipoOutro == 'ChakraPreto' then
-            						sheet.Outros = (tonumber(sheet.ChakraPreto) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.ChakraPreto) or 0);
+            					end;
             					
             					if sheet.TipoOutro == 'Hadou' then
-            						sheet.Outros = (tonumber(sheet.Hadou) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.Hadou) or 0);
+            					end;
             					
             					if sheet.TipoOutro == 'HadouNegro' then
-            						sheet.Outros = (tonumber(sheet.HadouNegro) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.HadouNegro) or 0);
+            					end;
             				   
             					if sheet.TipoOutro == 'ChakraNatural' then
-            						sheet.Outros = (tonumber(sheet.ChakraNatural) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.ChakraNatural) or 0);
+            					end;
             					
             					if sheet.TipoOutro == 'ChakraRoxo' then
-            						sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0)
-            					end
+            						sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0);
+            					end;
         end, obj);
 
     obj._e_event24 = obj.dataLink5:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Graduacao == 'Academico' then
-            					sheet.GTurno = 1
-            					end
+            						sheet.GTurno = 1;
+            					end;
             					
             					if sheet.Graduacao == 'Genin' then
-            					sheet.GAcertoTai = 2
-            					sheet.GAcertoNin = 2
-            					sheet.GAcertoGen = 2
-            					sheet.GEsquiva = 2
-            					sheet.GBloqueio = 3
-            					end
+            						sheet.GAcertoTai = 2;
+            						sheet.GAcertoNin = 2;
+            						sheet.GAcertoGen = 2;
+            						sheet.GEsquiva = 2;
+            						sheet.GBloqueio = 3;
+            					end;
             					
             					if sheet.Graduacao == 'Chunin' then
-            					sheet.GAcertoTai = 4
-            					sheet.GAcertoNin = 4
-            					sheet.GAcertoGen = 4
-            					sheet.GEsquiva = 4
-            					sheet.GBloqueio = 6
-            					end
+            						sheet.GAcertoTai = 4;
+            						sheet.GAcertoNin = 4;
+            						sheet.GAcertoGen = 4;
+            						sheet.GEsquiva = 4;
+            						sheet.GBloqueio = 6;
+            					end;
             					
             					if sheet.Graduacao == 'Jounin' then
-            					sheet.GAcertoTai = 6
-            					sheet.GAcertoNin = 6
-            					sheet.GAcertoGen = 6
-            					sheet.GEsquiva = 6
-            					sheet.GBloqueio = 9
-            					sheet.GTurno = 2
-            					sheet.GCRTai = 3
-            					sheet.GCRNin = 3
-            					sheet.GCRGen = 3
-            					end
+            						sheet.GAcertoTai = 6;
+            						sheet.GAcertoNin = 6;
+            						sheet.GAcertoGen = 6;
+            						sheet.GEsquiva = 6;
+            						sheet.GBloqueio = 9;
+            						sheet.GTurno = 2;
+            						sheet.GCRTai = 3;
+            						sheet.GCRNin = 3;
+            						sheet.GCRGen = 3;
+            					end;
             					
             					if sheet.Graduacao == 'Anbu' then
-            					sheet.GAcertoTai = 8
-            					sheet.GAcertoNin = 8
-            					sheet.GAcertoGen = 8
-            					sheet.GEsquiva = 8
-            					sheet.GBloqueio = 12
-            					end
+            						sheet.GAcertoTai = 8;
+            						sheet.GAcertoNin = 8;
+            						sheet.GAcertoGen = 8;
+            						sheet.GEsquiva = 8;
+            						sheet.GBloqueio = 12;
+            					end;
             				   
             					if sheet.Graduacao == 'AnbuNucleo' then
-            					sheet.GAcertoTai = 10
-            					sheet.GAcertoNin = 10
-            					sheet.GAcertoGen = 10
-            					sheet.GEsquiva = 10
-            					sheet.GBloqueio = 15
-            					sheet.GCRTai = 6
-            					sheet.GCRNin = 6
-            					sheet.GCRGen = 6
-            					end
+            						sheet.GAcertoTai = 10;
+            						sheet.GAcertoNin = 10;
+            						sheet.GAcertoGen = 10;
+            						sheet.GEsquiva = 10;
+            						sheet.GBloqueio = 15;
+            						sheet.GCRTai = 6;
+            						sheet.GCRNin = 6;
+            						sheet.GCRGen = 6;
+            					end;
             					
             					if sheet.Graduacao == 'Organização' then
-            					sheet.GAcertoTai = 12
-            					sheet.GAcertoNin = 12
-            					sheet.GAcertoGen = 12
-            					sheet.GEsquiva = 12
-            					sheet.GBloqueio = 18
-            					end
-            					
+            						sheet.GAcertoTai = 12;
+            						sheet.GAcertoNin = 12;
+            						sheet.GAcertoGen = 12;
+            						sheet.GEsquiva = 12;
+            						sheet.GBloqueio = 18;
+            					end;					
             									
             					if sheet.Graduacao == 'GDE' then
-            					sheet.GAcertoTai = 14
-            					sheet.GAcertoNin = 14
-            					sheet.GAcertoGen = 14
-            					sheet.GEsquiva = 14
-            					sheet.GBloqueio = 21
-            					sheet.GCRTai = 9
-            					sheet.GCRNin = 9
-            					sheet.GCRGen = 9
-            					end
-            					
+            						sheet.GAcertoTai = 14;
+            						sheet.GAcertoNin = 14;
+            						sheet.GAcertoGen = 14;
+            						sheet.GEsquiva = 14;
+            						sheet.GBloqueio = 21;
+            						sheet.GCRTai = 9;
+            						sheet.GCRNin = 9;
+            						sheet.GCRGen = 9;
+            					end;					
             									
             					if sheet.Graduacao == 'Concelheiro' then
-            					sheet.GAcertoTai = 16
-            					sheet.GAcertoNin = 16
-            					sheet.GAcertoGen = 16
-            					sheet.GEsquiva = 16
-            					sheet.GBloqueio = 24
-            					end
-            					
+            						sheet.GAcertoTai = 16;
+            						sheet.GAcertoNin = 16;
+            						sheet.GAcertoGen = 16;
+            						sheet.GEsquiva = 16;
+            						sheet.GBloqueio = 24;
+            					end;					
             									
             					if sheet.Graduacao == 'Kage' then
-            					sheet.GAcertoTai = 18
-            					sheet.GAcertoNin = 18
-            					sheet.GAcertoGen = 18
-            					sheet.GEsquiva = 20
-            					sheet.GBloqueio = 30
-            					sheet.GTurno = 3
-            					sheet.GCRTai = 14
-            					sheet.GCRNin = 14
-            					sheet.GCRGen = 14
-            					end
+            						sheet.GAcertoTai = 18;
+            						sheet.GAcertoNin = 18;
+            						sheet.GAcertoGen = 18;
+            						sheet.GEsquiva = 20;
+            						sheet.GBloqueio = 30;
+            						sheet.GTurno = 3;
+            						sheet.GCRTai = 14;
+            						sheet.GCRNin = 14;
+            						sheet.GCRGen = 14;
+            					end;
         end, obj);
 
     obj._e_event25 = obj.dataLink6:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
-            					sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
-            					sheet.Genjutsu = (tonumber(sheet.Sabedoria) or 0) * 2;
-            					sheet.Elemental1 = (tonumber(sheet.Sabedoria) or 0) + (tonumber(sheet.Inteligencia) or 0);
-            					sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
+            				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
+            				sheet.Genjutsu = (tonumber(sheet.Sabedoria) or 0) * 2;
+            				sheet.Elemental1 = (tonumber(sheet.Sabedoria) or 0) + (tonumber(sheet.Inteligencia) or 0);
+            				sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
         end, obj);
 
     obj._e_event26 = obj.dataLink7:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0);
-            					sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
-            					sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0);
-            					sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0);
-            					sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0);
-            
-            					sheet.TaiTotal = math.ceil(sheet.TaiTotal);
-            					sheet.NinTotal = math.ceil(sheet.NinTotal);
-            					sheet.GenTotal = math.ceil(sheet.GenTotal);
-            					sheet.EleTotal = math.ceil(sheet.EleTotal);
-            					sheet.DATotal = math.ceil(sheet.DATotal);
+            				sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
+            				sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0);
+            				sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0);
+            				sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0);
+            				sheet.TaiTotal = math.ceil(sheet.TaiTotal);
+            				sheet.NinTotal = math.ceil(sheet.NinTotal);
+            				sheet.GenTotal = math.ceil(sheet.GenTotal);
+            				sheet.EleTotal = math.ceil(sheet.EleTotal);
+            				sheet.DATotal = math.ceil(sheet.DATotal);
         end, obj);
 
     obj._e_event27 = obj.dataLink8:addEventListener("onChange",
@@ -5754,12 +5736,10 @@ local function constructNew_frmsekai()
 
     obj._e_event28 = obj.dataLink9:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.Idade2 = (tonumber(sheet.Idade) or 0)
-            				
+            sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
             				if sheet.Idade2 > 40 then
-            				sheet.Idade2 = 40
-            				end
-            				
+            					sheet.Idade2 = 40;
+            				end;
             				sheet.Chakra = (tonumber(sheet.Idade2) or 0) * 25  + (tonumber(sheet.Level) or 0);
             				sheet.ChakraTotal = (tonumber(sheet.Chakra) or 0) + (tonumber(sheet.ArmaChakra) or 0) + (tonumber(sheet.BandanaChakra) or 0) + (tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) +
             				(tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);
@@ -5767,8 +5747,8 @@ local function constructNew_frmsekai()
 
     obj._e_event29 = obj.dataLink10:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.ReiatsuLevel = (tonumber(sheet.Level) or 0) * 0.15
-            				sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + (tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) * (tonumber(sheet.ReiatsuLevel) or 0) ;
+            sheet.ReiatsuLevel = (tonumber(sheet.Level) or 0) * 0.15;
+            				sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + (tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) * (tonumber(sheet.ReiatsuLevel) or 0);
             				sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) + (tonumber(sheet.DReiatsu) or 0);
         end, obj);
 
@@ -5779,16 +5759,16 @@ local function constructNew_frmsekai()
 
     obj._e_event31 = obj.dataLink11:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0) 
-            					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50
-            					sheet.DanoShurikenFuuma = (tonumber(sheet.Habilidade) or 0) * 3 
-            					sheet.DanoKunaiGigante = (tonumber(sheet.Habilidade) or 0) * 2
-            					sheet.Senbon = (tonumber(sheet.Habilidade) or 0) * 0.40
+            sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0);
+            					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50;
+            					sheet.DanoShurikenFuuma = (tonumber(sheet.Habilidade) or 0) * 3;
+            					sheet.DanoKunaiGigante = (tonumber(sheet.Habilidade) or 0) * 2;
+            					sheet.Senbon = (tonumber(sheet.Habilidade) or 0) * 0.40;
             					
-            					sheet.PB = (tonumber(sheet.Inteligencia) or 0)
-            					sheet.GinsoExplosivo = (tonumber(sheet.Inteligencia) or 0) * 2		
-            					sheet.Veneno = (tonumber(sheet.Sabedoria) or 0) 
-            					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2
+            					sheet.PB = (tonumber(sheet.Inteligencia) or 0);
+            					sheet.GinsoExplosivo = (tonumber(sheet.Inteligencia) or 0) * 2;	
+            					sheet.Veneno = (tonumber(sheet.Sabedoria) or 0);
+            					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2;
         end, obj);
 
     obj._e_event32 = obj.button18:addEventListener("onClick",
@@ -5928,43 +5908,43 @@ local function constructNew_frmsekai()
             						end;
             						
             						if sheet.Graduacao =='Genin' then
-            						sheet.GAtletismo = 1;
-            						sheet.GRaciocinio = 1;
-            						sheet.GPercepcao = 1;
-            						sheet.GFurtividade = 1;
-            						sheet.GVigor = 1;
+            							sheet.GAtletismo = 1;
+            							sheet.GRaciocinio = 1;
+            							sheet.GPercepcao = 1;
+            							sheet.GFurtividade = 1;
+            							sheet.GVigor = 1;
             						end;
             						
             						if sheet.Graduacao =='Jounin' then
-            						sheet.GAtletismo = 2;
-            						sheet.GRaciocinio = 2;
-            						sheet.GPercepcao = 2;
-            						sheet.GFurtividade = 2;
-            						sheet.GVigor = 2;
+            							sheet.GAtletismo = 2;
+            							sheet.GRaciocinio = 2;
+            							sheet.GPercepcao = 2;
+            							sheet.GFurtividade = 2;
+            							sheet.GVigor = 2;
             						end;
             						
             						if sheet.Graduacao =='Anbu Nucleo' then
-            						sheet.GAtletismo = 3;
-            						sheet.GRaciocinio = 3;
-            						sheet.GPercepcao = 3;
-            						sheet.GFurtividade = 3;
-            						sheet.GVigor = 3;
+            							sheet.GAtletismo = 3;
+            							sheet.GRaciocinio = 3;
+            							sheet.GPercepcao = 3;
+            							sheet.GFurtividade = 3;
+            							sheet.GVigor = 3;
             						end;
             						
             						if sheet.Graduacao =='GDE' then
-            						sheet.GAtletismo = 4;
-            						sheet.GRaciocinio = 4;
-            						sheet.GPercepcao = 4;
-            						sheet.GFurtividade = 4;
-            						sheet.GVigor = 4;
+            							sheet.GAtletismo = 4;
+            							sheet.GRaciocinio = 4;
+            							sheet.GPercepcao = 4;
+            							sheet.GFurtividade = 4;
+            							sheet.GVigor = 4;
             						end;
             						
             						if sheet.Graduacao =='Kage' then
-            						sheet.GAtletismo = 6;
-            						sheet.GRaciocinio = 6;
-            						sheet.GPercepcao = 6;
-            						sheet.GFurtividade = 6;
-            						sheet.GVigor = 6;
+            							sheet.GAtletismo = 6;
+            							sheet.GRaciocinio = 6;
+            							sheet.GPercepcao = 6;
+            							sheet.GFurtividade = 6;
+            							sheet.GVigor = 6;
             						end;
             						
             						if sheet.Forca >= 100000000 then
@@ -6049,14 +6029,14 @@ local function constructNew_frmsekai()
     obj._e_event47 = obj.dataLink13:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
-            				sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60	
-            				sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60
-            				sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20
-            				sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30
-            				sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1
-            				sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1
-            				sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1
-            				sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1
+            						sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
+            						sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60;
+            						sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20;
+            						sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30;
+            						sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1;
+            						sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1;
+            						sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1;
+            						sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1;
         end, obj);
 
     obj._e_event48 = obj.button32:addEventListener("onClick",
@@ -6087,20 +6067,20 @@ local function constructNew_frmsekai()
     obj._e_event53 = obj.button37:addEventListener("onClick",
         function (_)
             -- Usuário clicou no botão de criar novo item.
-            									-- Vamos inserir um novo item no nosso recordList                              
-            									self.rclListaDosItens4:append();
+            								-- Vamos inserir um novo item no nosso recordList                              
+            								self.rclListaDosItens4:append();
         end, obj);
 
     obj._e_event54 = obj.rclListaDosItens4:addEventListener("onSelect",
         function (_)
             --[[
-            							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox (e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
-            
-            					  --]]                      
-            					  local node = self.rclListaDosItens4.selectedNode; 
-            							 self.boxDetalhesDoItem.node = node;                       
-            					  -- a caixa de detalhe só ficará visível se houver item selecionado
-            							  self.boxDetalhesDoItem.visible = (node ~= nil);
+            							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
+            							(e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+            							--]]                      
+            							local node = self.rclListaDosItens4.selectedNode; 
+            							self.boxDetalhesDoItem.node = node;                       
+            							-- a caixa de detalhe só ficará visível se houver item selecionado
+            							self.boxDetalhesDoItem.visible = (node ~= nil);
         end, obj);
 
     function obj:_releaseEvents()
