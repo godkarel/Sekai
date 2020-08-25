@@ -325,7 +325,7 @@ local function constructNew_frmsekai()
     obj.edit7:setHeight(20);
     obj.edit7:setLeft(230);
     obj.edit7:setTop(400);
-    obj.edit7:setEnabled(false);
+    obj.edit7:setEnabled(true);
     obj.edit7:setHorzTextAlign("center");
     obj.edit7:setType("number");
     obj.edit7:setField("LevelJutsu1");
@@ -677,7 +677,7 @@ local function constructNew_frmsekai()
     obj.edit18:setHeight(20);
     obj.edit18:setLeft(230);
     obj.edit18:setTop(400);
-    obj.edit18:setEnabled(false);
+    obj.edit18:setEnabled(true);
     obj.edit18:setType("number");
     obj.edit18:setHorzTextAlign("center");
     obj.edit18:setField("LevelJutsu2");
@@ -1029,7 +1029,7 @@ local function constructNew_frmsekai()
     obj.edit29:setHeight(20);
     obj.edit29:setLeft(230);
     obj.edit29:setTop(400);
-    obj.edit29:setEnabled(false);
+    obj.edit29:setEnabled(true);
     obj.edit29:setHorzTextAlign("center");
     obj.edit29:setType("number");
     obj.edit29:setField("LevelJutsu3");

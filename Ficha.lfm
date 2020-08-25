@@ -255,7 +255,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" horzTextAlign="center" type="number" field="LevelJutsu1"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/> 
 						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="1d10"/>
 						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="2d10"/>
@@ -394,7 +394,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade2"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" type="number" horzTextAlign="center" field="LevelJutsu2"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
 						<edit  width="50" height="30" left="180" top="500" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="21d10"/>
 						<edit  width="50" height="30" left="240" top="500" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="22d10"/>
@@ -528,7 +528,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade3"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" horzTextAlign="center" type="number" field="LevelJutsu3"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
 						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="31d10"/>
 						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="32d10"/>
