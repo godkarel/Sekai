@@ -163,8 +163,14 @@
 			sheet.AcessorioHP = (tonumber(sheet.AcessorioHP) or 0);
 			sheet.AcessorioChakra = (tonumber(sheet.AcessorioChakra) or 0);
 			sheet.AcessorioOutros = (tonumber(sheet.AcessorioOutros) or 0);
+			sheet.SAtletismo = (tonumber(sheet.SAtletismo) or 0);
+			sheet.SRaciocinio = (tonumber(sheet.SRaciocinio) or 0);
+			sheet.SPercepcao = (tonumber(sheet.SPercepcao) or 0);
+			sheet.SFurtividade = (tonumber(sheet.SFurtividade) or 0);
+			sheet.SVigor = (tonumber(sheet.SVigor) or 0);
 			sheet.GHP = 100;
 			sheet.Nome = "Escolha o Nome";
+			sheet.Sequenci1 = true;
 			showMessage("Escolha seu nome, clã e idade");
 		end;	
 	</event> 
@@ -257,11 +263,11 @@
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/> 
-						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="1d10"/>
-						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="2d10"/>
-						<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="3d10"/>
+						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="1d10"/>
+						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="2d10"/>
+						<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="3d10"/>
 						<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />						
-						<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="false" transparent="true"  horzTextAlign="center" field="1d20"/>
+						<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="1d20"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -396,11 +402,11 @@
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
-						<edit  width="50" height="30" left="180" top="500" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="21d10"/>
-						<edit  width="50" height="30" left="240" top="500" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="22d10"/>
-						<edit  width="50" height="30" left="300" top="500" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="23d10"/>
+						<edit  width="50" height="30" left="180" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="21d10"/>
+						<edit  width="50" height="30" left="240" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="22d10"/>
+						<edit  width="50" height="30" left="300" top="500" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="23d10"/>
 						<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />
-						<edit  width="50" height="30" left="360" top="500" type="number" min="1" max="18"  enabled="false" transparent="true"  horzTextAlign="center" field="21d20"/>
+						<edit  width="50" height="30" left="360" top="500" type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="21d20"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -530,11 +536,11 @@
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
 						<label  width="230" height="40" left="180" top="450" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/>
-						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="31d10"/>
-						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="32d10"/>
-						<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="33d10"/>
+						<edit  width="50" height="30" left="180" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="31d10"/>
+						<edit  width="50" height="30" left="240" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="32d10"/>
+						<edit  width="50" height="30" left="300" top="500"  type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="33d10"/>
 						<rectangle width="50" height="30" left="360" top="500" color="black" strokeColor="red" strokeSize="3" />
-						<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="false" transparent="true"  horzTextAlign="center" field="31d20"/>
+						<edit  width="50" height="30" left="360" top="500"  type="number" min="1" max="18"  enabled="true" transparent="true"  horzTextAlign="center" field="31d20"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -738,7 +744,7 @@
 			</event>
 		</button>
 				 
-		<edit left="570" top="100" width="55" height="30" horzTextAlign="center" fontColor="Red" fontFamily="Nyala" fontSize="25" enabled="false" type="number"   field="Level"/>
+		<edit left="570" top="100" width="55" height="30" horzTextAlign="center" fontColor="Red" fontFamily="Nyala" fontSize="25" enabled="true" type="number"   field="Level"/>
 		<edit left="535" top="132" width="55" height="18" type="float"  field="Exp"/>
 		<edit left="610" top="132" width="55" height="18" enabled="false" type="float" field="ExpTotal"/>
 		
@@ -770,7 +776,7 @@
 		<image field="imagemDoPersonagem" editable="true" style="autoFit" 
 		  left="404" top="410" width="302" height="255" />
 		--GM DESATIVA-- 		
-		<button left="502" top="270" width="105" height="85" opacity="1.0" visible="false" text="Calculo" onClick="self.POPCALCULO:show();"/>			
+		<button left="502" top="270" width="105" height="85" opacity="1.0" visible="true" text="Calculo" onClick="self.POPCALCULO:show();"/>			
 		<popup name="POPCALCULO" visible="false" left="1" top="40"
 				width="820" height="620">
 				
@@ -806,52 +812,54 @@
 		---------------------------------------------------------------------------		
 		<dataLink fields="{'Level', 'Exp'}">
 			<event name="onChange">	
-				sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
-								
-				if sheet.Exp > sheet.ExpTotal then
-					sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
-					sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+				if sheet.Sequenci1 == true then
+					sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
+									
+					if sheet.Exp > sheet.ExpTotal then
+						sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
+						sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+					end;	
+												
+					if sheet.Graduacao == 'Academico' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+					end;
+					
+					if sheet.Graduacao == 'Genin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+					end;
+					
+					if sheet.Graduacao == 'Chunin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
+					end;
+					
+					if sheet.Graduacao == 'Jounin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+					end;
+					
+					if sheet.Graduacao == 'Anbu' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+					end;
+				   
+					if sheet.Graduacao == 'AnbuNucleo' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+					end;
+					
+					if sheet.Graduacao == 'Organização' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+					end;				
+									
+					if sheet.Graduacao == 'GDE' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+					end;				
+									
+					if sheet.Graduacao == 'Concelheiro' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+					end;				
+									
+					if sheet.Graduacao == 'Kage' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+					end;
 				end;	
-											
-				if sheet.Graduacao == 'Academico' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
-				end;
-				
-				if sheet.Graduacao == 'Genin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
-				end;
-				
-				if sheet.Graduacao == 'Chunin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
-				end;
-				
-				if sheet.Graduacao == 'Jounin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
-				end;
-				
-				if sheet.Graduacao == 'Anbu' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
-				end;
-			   
-				if sheet.Graduacao == 'AnbuNucleo' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
-				end;
-				
-				if sheet.Graduacao == 'Organização' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
-				end;				
-								
-				if sheet.Graduacao == 'GDE' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
-				end;				
-								
-				if sheet.Graduacao == 'Concelheiro' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
-				end;				
-								
-				if sheet.Graduacao == 'Kage' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
-				end;
 			</event>
 		</dataLink>
 		---------------------------------------------------------------------------
@@ -1583,7 +1591,7 @@
 						end; 	   
 					</script> 
 				
-				<button left="430" top="395" width="85" height="20"  fontSize="12" fontColor="#00FFFF" text="Sabedoria" onClick="RolarTesteSabedoria()"/>
+				<button left="430" top="395" width="85" height="20"  fontSize="12" fontColor="#00FFFF" text="Raciocinio" onClick="RolarTesteSabedoria()"/>
 					<script>
 						local function RolarTesteSabedoria()      
 							local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
@@ -1601,7 +1609,7 @@
 						end; 	   
 					</script> 
 
-				<button left="430" top="445" width="85" height="20"  fontSize="12" fontColor="#00FFFF" text="Acrobacia" onClick="RolarTesteAcrobacia()"/>
+				<button left="430" top="445" width="85" height="20"  fontSize="12" fontColor="#00FFFF" text="Furtividade" onClick="RolarTesteAcrobacia()"/>
 					<script>
 						local function RolarTesteAcrobacia()      
 							local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
@@ -1614,194 +1622,196 @@
 					<script>
 						local function RolarTesteVigor()      
 							local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
-							sheet.VigorTotal = sheet.VigorTotal or 0;                        
+							sheet.VigorTotal = sheet.VigorTotal or 0;                      
 							mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.VigorTotal, "[§K2]Teste de Vigor"); 
 						end; 	   
 					</script> 			
 				 
 				<dataLink fields="{'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor'}">
 					<event name="onChange">						
-						if sheet.Atletismo == nil then
-							sheet.Atletismo = 0;
-						end;					
-						if sheet.Raciocinio == nil then
-							sheet.Raciocinio = 0;
-						end;						
-						if sheet.Percepcao == nil then
-							sheet.Percepcao = 0;
-						end;						
-						if sheet.Furtividade == nil then
-							sheet.Furtividade = 0;
-						end;						
-						if sheet.Vigor == nil then
-							sheet.Vigor = 0;
-						end;		
+						if sheet.Sequenci1 == true then	
+							if sheet.Atletismo == nil then
+								sheet.Atletismo = 0;
+							end;					
+							if sheet.Raciocinio == nil then
+								sheet.Raciocinio = 0;
+							end;						
+							if sheet.Percepcao == nil then
+								sheet.Percepcao = 0;
+							end;						
+							if sheet.Furtividade == nil then
+								sheet.Furtividade = 0;
+							end;						
+							if sheet.Vigor == nil then
+								sheet.Vigor = 0;
+							end;		
+								
+							if sheet.SAtletismo == nil then
+								sheet.SAtletismo = 0;
+							end;	
+							if sheet.SRaciocinio == nil then
+								sheet.SRaciocinio = 0;
+							end;	
+							if sheet.SPercepcao == nil then
+								sheet.SPercepcao = 0;
+							end;						
+							if sheet.SFurtividade == nil then
+								sheet.SFurtividade = 0;
+							end;	
+							if sheet.SVigor == nil then
+								sheet.SVigor = 0;
+							end;
+												
+							if sheet.GAtletismo == nil then
+								sheet.GAtletismo = 0;
+							end;	
+							if sheet.GRaciocinio == nil then
+								sheet.GRaciocinio = 0;
+							end;	
+							if sheet.GPercepcao == nil then
+								sheet.GPercepcao = 0;
+							end;						
+							if sheet.GFurtividade == nil then
+								sheet.GFurtividade = 0;
+							end;	
+							if sheet.GVigor == nil then
+								sheet.GVigor = 0;
+							end;
 							
-						if sheet.SAtletismo == nil then
-							sheet.SAtletismo = 0;
-						end;	
-						if sheet.SRaciocinio == nil then
-							sheet.SRaciocinio = 0;
-						end;	
-						if sheet.SPercepcao == nil then
-							sheet.SPercepcao = 0;
-						end;						
-						if sheet.SFurtividade == nil then
-							sheet.SFurtividade = 0;
-						end;	
-						if sheet.SVigor == nil then
-							sheet.SVigor = 0;
-						end;
-											
-						if sheet.GAtletismo == nil then
-							sheet.GAtletismo = 0;
-						end;	
-						if sheet.GRaciocinio == nil then
-							sheet.GRaciocinio = 0;
-						end;	
-						if sheet.GPercepcao == nil then
-							sheet.GPercepcao = 0;
-						end;						
-						if sheet.GFurtividade == nil then
-							sheet.GFurtividade = 0;
-						end;	
-						if sheet.GVigor == nil then
-							sheet.GVigor = 0;
-						end;
-						
-						if sheet.AtletismoTotal == nil then
-							sheet.AtletismoTotal = 0;
-						end;	
-						if sheet.RaciocinioTotal == nil then
-							sheet.RaciocinioTotal = 0;
-						end;	
-						if sheet.PercepcaoTotal == nil then
-							sheet.PercepcaoTotal = 0;
-						end;						
-						if sheet.FurtividadeTotal == nil then
-							sheet.FurtividadeTotal = 0;
-						end;	
-						if sheet.VigorTotal == nil then
-							sheet.VigorTotal = 0;
-						end;
-						
-						if sheet.Graduacao =='Genin' then
-							sheet.GAtletismo = 1;
-							sheet.GRaciocinio = 1;
-							sheet.GPercepcao = 1;
-							sheet.GFurtividade = 1;
-							sheet.GVigor = 1;
-						end;
-						
-						if sheet.Graduacao =='Jounin' then
-							sheet.GAtletismo = 2;
-							sheet.GRaciocinio = 2;
-							sheet.GPercepcao = 2;
-							sheet.GFurtividade = 2;
-							sheet.GVigor = 2;
-						end;
-						
-						if sheet.Graduacao =='Anbu Nucleo' then
-							sheet.GAtletismo = 3;
-							sheet.GRaciocinio = 3;
-							sheet.GPercepcao = 3;
-							sheet.GFurtividade = 3;
-							sheet.GVigor = 3;
-						end;
-						
-						if sheet.Graduacao =='GDE' then
-							sheet.GAtletismo = 4;
-							sheet.GRaciocinio = 4;
-							sheet.GPercepcao = 4;
-							sheet.GFurtividade = 4;
-							sheet.GVigor = 4;
-						end;
-						
-						if sheet.Graduacao =='Kage' then
-							sheet.GAtletismo = 6;
-							sheet.GRaciocinio = 6;
-							sheet.GPercepcao = 6;
-							sheet.GFurtividade = 6;
-							sheet.GVigor = 6;
-						end;
-						
-						if sheet.Forca >= 100000000 then
-							sheet.SAtletismo = 5;
-						elseif sheet.Forca >= 10000000 then
-							sheet.SAtletismo = 4;
-						elseif sheet.Forca >= 1000000 then
-							sheet.SAtletismo = 3;
-						elseif sheet.Forca >= 100000 then
-							sheet.SAtletismo = 2;
-						elseif sheet.Forca >= 10000 then
-							sheet.SAtletismo = 1;	
-						else
-							sheet.SVigor = 0;
-						end;	
-						
-						if sheet.Inteligencia >= 100000000 then
-							sheet.SRaciocinio = 5;
-						elseif sheet.Sabedoria >= 100000000 then
-							sheet.SRaciocinio = 5;	
-						elseif sheet.Inteligencia >= 10000000 then
-							sheet.SRaciocinio = 4;
-						elseif sheet.Sabedoria >= 10000000 then
-							sheet.SRaciocinio = 4;	
-						elseif sheet.Inteligencia >= 1000000 then
-							sheet.SRaciocinio = 3;
-						elseif sheet.Sabedoria >= 1000000 then
-							sheet.SRaciocinio = 3;	
-						elseif sheet.Inteligencia >= 100000 then
-							sheet.SRaciocinio = 2;
-						elseif sheet.Sabedoria >= 100000 then
-							sheet.SRaciocinio = 2;
-						elseif sheet.Sabedoria >= 10000 then
-							sheet.SRaciocinio = 1;	
-						elseif sheet.Inteligencia >= 10000 then
-							sheet.SRaciocinio = 1;	
-						else
-							sheet.SRaciocinio = 0;
-						end; 
-						
-						if sheet.Habilidade >= 500000000 then
-							sheet.SPercepcao = 5;
-							sheet.SFurtividade = 5;
-						elseif sheet.Habilidade >= 50000000 then
-							sheet.SPercepcao = 4;
-							sheet.SFurtividade = 4;
-						elseif sheet.Habilidade >= 5000000 then
-							sheet.SPercepcao = 3;
-							sheet.SFurtividade = 3;
-						elseif sheet.Habilidade >= 500000 then
-							sheet.SPercepcao = 2;
-							sheet.SFurtividade = 2;
-						elseif sheet.Habilidade >= 50000 then
-							sheet.SPercepcao = 1;	
-							sheet.SFurtividade = 1;
-						else 
-							sheet.SPercepcao = 0;
-							sheet.SFurtividade = 0;
-						end; 
-						
-						if sheet.Resistencia >= 100000000 then
-							sheet.SVigor = 5;
-						elseif sheet.Resistencia >= 10000000 then
-							sheet.SVigor = 4;
-						elseif sheet.Resistencia >= 1000000 then
-							sheet.SVigor = 3;
-						elseif sheet.Resistencia >= 100000 then
-							sheet.SVigor = 2;
-						elseif sheet.Resistencia >= 10000 then
-							sheet.SVigor = 1;	
-						else
-							sheet.SVigor = 0;
-						end;	
+							if sheet.AtletismoTotal == nil then
+								sheet.AtletismoTotal = 0;
+							end;	
+							if sheet.RaciocinioTotal == nil then
+								sheet.RaciocinioTotal = 0;
+							end;	
+							if sheet.PercepcaoTotal == nil then
+								sheet.PercepcaoTotal = 0;
+							end;						
+							if sheet.FurtividadeTotal == nil then
+								sheet.FurtividadeTotal = 0;
+							end;	
+							if sheet.VigorTotal == nil then
+								sheet.VigorTotal = 0;
+							end;
+							
+							if sheet.Graduacao =='Genin' then
+								sheet.GAtletismo = 1;
+								sheet.GRaciocinio = 1;
+								sheet.GPercepcao = 1;
+								sheet.GFurtividade = 1;
+								sheet.GVigor = 1;
+							end;
+							
+							if sheet.Graduacao =='Jounin' then
+								sheet.GAtletismo = 2;
+								sheet.GRaciocinio = 2;
+								sheet.GPercepcao = 2;
+								sheet.GFurtividade = 2;
+								sheet.GVigor = 2;
+							end;
+							
+							if sheet.Graduacao =='Anbu Nucleo' then
+								sheet.GAtletismo = 3;
+								sheet.GRaciocinio = 3;
+								sheet.GPercepcao = 3;
+								sheet.GFurtividade = 3;
+								sheet.GVigor = 3;
+							end;
+							
+							if sheet.Graduacao =='GDE' then
+								sheet.GAtletismo = 4;
+								sheet.GRaciocinio = 4;
+								sheet.GPercepcao = 4;
+								sheet.GFurtividade = 4;
+								sheet.GVigor = 4;
+							end;
+							
+							if sheet.Graduacao =='Kage' then
+								sheet.GAtletismo = 6;
+								sheet.GRaciocinio = 6;
+								sheet.GPercepcao = 6;
+								sheet.GFurtividade = 6;
+								sheet.GVigor = 6;
+							end;
+							
+							if sheet.Forca >= 100000000 then
+								sheet.SAtletismo = 5;
+							elseif sheet.Forca >= 10000000 then
+								sheet.SAtletismo = 4;
+							elseif sheet.Forca >= 1000000 then
+								sheet.SAtletismo = 3;
+							elseif sheet.Forca >= 100000 then
+								sheet.SAtletismo = 2;
+							elseif sheet.Forca >= 10000 then
+								sheet.SAtletismo = 1;	
+							else
+								sheet.SVigor = 0;
+							end;	
+							
+							if sheet.Inteligencia >= 100000000 then
+								sheet.SRaciocinio = 5;
+							elseif sheet.Sabedoria >= 100000000 then
+								sheet.SRaciocinio = 5;	
+							elseif sheet.Inteligencia >= 10000000 then
+								sheet.SRaciocinio = 4;
+							elseif sheet.Sabedoria >= 10000000 then
+								sheet.SRaciocinio = 4;	
+							elseif sheet.Inteligencia >= 1000000 then
+								sheet.SRaciocinio = 3;
+							elseif sheet.Sabedoria >= 1000000 then
+								sheet.SRaciocinio = 3;	
+							elseif sheet.Inteligencia >= 100000 then
+								sheet.SRaciocinio = 2;
+							elseif sheet.Sabedoria >= 100000 then
+								sheet.SRaciocinio = 2;
+							elseif sheet.Sabedoria >= 10000 then
+								sheet.SRaciocinio = 1;	
+							elseif sheet.Inteligencia >= 10000 then
+								sheet.SRaciocinio = 1;	
+							else
+								sheet.SRaciocinio = 0;
+							end; 
+							
+							if sheet.Habilidade >= 500000000 then
+								sheet.SPercepcao = 5;
+								sheet.SFurtividade = 5;
+							elseif sheet.Habilidade >= 50000000 then
+								sheet.SPercepcao = 4;
+								sheet.SFurtividade = 4;
+							elseif sheet.Habilidade >= 5000000 then
+								sheet.SPercepcao = 3;
+								sheet.SFurtividade = 3;
+							elseif sheet.Habilidade >= 500000 then
+								sheet.SPercepcao = 2;
+								sheet.SFurtividade = 2;
+							elseif sheet.Habilidade >= 50000 then
+								sheet.SPercepcao = 1;	
+								sheet.SFurtividade = 1;
+							else 
+								sheet.SPercepcao = 0;
+								sheet.SFurtividade = 0;
+							end; 
+							
+							if sheet.Resistencia >= 100000000 then
+								sheet.SVigor = 5;
+							elseif sheet.Resistencia >= 10000000 then
+								sheet.SVigor = 4;
+							elseif sheet.Resistencia >= 1000000 then
+								sheet.SVigor = 3;
+							elseif sheet.Resistencia >= 100000 then
+								sheet.SVigor = 2;
+							elseif sheet.Resistencia >= 10000 then
+								sheet.SVigor = 1;	
+							else
+								sheet.SVigor = 0;
+							end;	
 
-						sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
-						sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
-						sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
-						sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
-						sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+							sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
+							sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
+							sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
+							sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
+							sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+						end;	
 					</event>
 				</dataLink>				 
 				---------------------------------------------------------------
@@ -1979,6 +1989,141 @@
 		----------- ABA 4-----------------
 		-----------------------------------
 		-----------------------------------
+		
+		<tab title="Personagem">
+			<scrollBox align="client">
+				<image left="1" top="1" width="1190" height="680" src="/imagens/7.png"/>
+				<edit left="170" top="12" width="80" height="25" horzTextAlign="Center" fontSize="18" field="RepFolha" />
+				<edit left="170" top="40" width="80" height="25" horzTextAlign="Center" fontSize="18" field="RepAreia" />
+				<edit left="170" top="68" width="80" height="25" horzTextAlign="Center" fontSize="18" field="RepNuvem" />
+				<edit left="170" top="96" width="80" height="25" horzTextAlign="Center" fontSize="18" field="RepNevoa" />
+				<edit left="170" top="124" width="80" height="25" horzTextAlign="Center" fontSize="18" field="RepPedra" />
+				
+				<edit name="GanhoAnual" left="10" top="213" readOnly="true" width="140" height="25" horzTextAlign="Center" fontSize="18" />
+				<edit left="187" top="213" width="50" height="25" horzTextAlign="Center" fontSize="18" field="BonusGanhoAnual" />
+				
+				<image left="23" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif"/>
+				<image left="222" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif"/>
+				
+				<button left="23" top="478" width="146" height="116" opacity="0.5" text="" onClick="self.POPTreino:show();"/>
+				<popup name="POPTreino" visible="false" left="1" top="40"
+					 width="900" height="600">						 
+					<scrollBox align="client">		 
+						<image top="1" width="870" height="705" src="/imagens/5.png"/>
+						<!-- Botão de inserir novo item à lista -->			   
+						<button text="Novo Treinamento"  width="125" height="40" left="70" top="10">
+							<event name="onClick">                           
+								self.rclListadeTreino:append();
+							</event>
+						</button>
+						<!-- recordList, representando a lista -->
+						<recordList name="rclListadeTreino" field="Jutsus" templateForm="frmTreinosJutsus1"
+									width="880" height="570" left="10" top="60" selectable="true">                              
+							<event name="onSelect">
+								--[[
+								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
+								(e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+								--]]                      
+								local node = self.rclListadeTreino.selectedNode; 
+								self.dsbListadeTreino.node = node;                       
+								-- a caixa de detalhe só ficará visível se houver item selecionado
+								self.dsbListadeTreino.visible = (node ~= nil);
+							</event>
+						</recordList>       
+						<!-- dataScopeBox representando a nossa caixa de detalhes -->  
+						<dataScopeBox name="dsbListadeTreino" visible="false" width="480" height="580" left="400" top="60" >
+						<!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro   -->       
+							<rectangle  color="black" xradius="10" yradius="10" width="460" height="560" left="1" top="1" >											
+								<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
+								<edit  width="310" height="30" left="130" top="15" field="JutsuTreinando"/>
+								<textEditor left="10" top="60" width="430" height="280" field="DescriTreinandoJutsu" text="Este é um textEditor\n\ncom multiplas linhas"/>
+								--GM DESATIVA-- 
+								<label left="140" top="350" width="230" height="40" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/> 
+								<edit  left="140" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina1d10"/>
+								<edit  left="200" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina2d10"/>
+								<edit  left="260" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina3d10"/>
+								<rectangle left="320" top="385" width="50" height="30" color="black" strokeColor="red" strokeSize="3" />						
+								<edit left="320" top="385" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="true" horzTextAlign="center" field="Treina1d20"/>
+								<button name="btnTreinar" left="60" top="385" width="70" height="30" fontFamily="Nyala" fontSize="18" text="Treinar" onClick="TreinaJutsu()"/>
+								<script>
+								<![CDATA[
+									local function TreinaJutsu() 
+																	
+									self.btnTreinar.visible = false;
+									local node = self.dsbListadeTreino.node;									
+									local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+									
+									if node.Treina1d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina2d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina3d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina1d20 > 18 then
+										node.Treina1d10 = 18;
+									end;									
+																										
+										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
+										function (rolado)
+										mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
+											if node.Treina1d10 >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+												mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+												function (rolado)	
+													if node.Treina2d10 >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+														mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+														function (rolado)
+															if node.Treina3d10 >= rolado.resultado then
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																function (rolado)
+																	if node.Treina1d20 >= rolado.resultado then
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
+																		mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																		self.btnTreinar.visible = true;	
+																	else 
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																		self.btnTreinar.visible = true;	
+																	end;
+																end);	
+															else
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																self.btnTreinar.visible = true;																
+															end;
+														end);
+													else
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+														self.btnTreinar.visible = true;														
+													end;												
+												end)
+											else
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+												self.btnTreinar.visible = true;
+											end;
+										end);										
+									end;								
+								]]>
+								</script>							
+							</rectangle>
+						</dataScopeBox>
+					</scrollBox>
+				</popup> 
+				
+			</scrollBox>
+		</tab>			
+		-----------------------------------
+		-----------------------------------
+		----------- ABA 5 -----------------
+		-----------------------------------
+		-----------------------------------
+		
 		<tab title="Historia">
 			<scrollBox align="client">
 				<image left="1" top="1" width="1000" height="700" src="/imagens/4.png"/>
@@ -1987,4 +2132,6 @@
 		</tab>						 
 		</tabControl>			
 	</scrollBox>	
+	
+	
 </form>

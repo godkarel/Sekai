@@ -351,7 +351,7 @@ local function constructNew_frmsekai()
     obj.edit8:setType("number");
     obj.edit8:setMin(1);
     obj.edit8:setMax(9);
-    obj.edit8:setEnabled(false);
+    obj.edit8:setEnabled(true);
     obj.edit8:setHorzTextAlign("center");
     obj.edit8:setField("1d10");
     obj.edit8:setName("edit8");
@@ -365,7 +365,7 @@ local function constructNew_frmsekai()
     obj.edit9:setType("number");
     obj.edit9:setMin(1);
     obj.edit9:setMax(9);
-    obj.edit9:setEnabled(false);
+    obj.edit9:setEnabled(true);
     obj.edit9:setHorzTextAlign("center");
     obj.edit9:setField("2d10");
     obj.edit9:setName("edit9");
@@ -379,7 +379,7 @@ local function constructNew_frmsekai()
     obj.edit10:setType("number");
     obj.edit10:setMin(1);
     obj.edit10:setMax(9);
-    obj.edit10:setEnabled(false);
+    obj.edit10:setEnabled(true);
     obj.edit10:setHorzTextAlign("center");
     obj.edit10:setField("3d10");
     obj.edit10:setName("edit10");
@@ -404,7 +404,7 @@ local function constructNew_frmsekai()
     obj.edit11:setType("number");
     obj.edit11:setMin(1);
     obj.edit11:setMax(18);
-    obj.edit11:setEnabled(false);
+    obj.edit11:setEnabled(true);
     obj.edit11:setTransparent(true);
     obj.edit11:setHorzTextAlign("center");
     obj.edit11:setField("1d20");
@@ -703,7 +703,7 @@ local function constructNew_frmsekai()
     obj.edit19:setType("number");
     obj.edit19:setMin(1);
     obj.edit19:setMax(9);
-    obj.edit19:setEnabled(false);
+    obj.edit19:setEnabled(true);
     obj.edit19:setHorzTextAlign("center");
     obj.edit19:setField("21d10");
     obj.edit19:setName("edit19");
@@ -717,7 +717,7 @@ local function constructNew_frmsekai()
     obj.edit20:setType("number");
     obj.edit20:setMin(1);
     obj.edit20:setMax(9);
-    obj.edit20:setEnabled(false);
+    obj.edit20:setEnabled(true);
     obj.edit20:setHorzTextAlign("center");
     obj.edit20:setField("22d10");
     obj.edit20:setName("edit20");
@@ -731,7 +731,7 @@ local function constructNew_frmsekai()
     obj.edit21:setType("number");
     obj.edit21:setMin(1);
     obj.edit21:setMax(9);
-    obj.edit21:setEnabled(false);
+    obj.edit21:setEnabled(true);
     obj.edit21:setHorzTextAlign("center");
     obj.edit21:setField("23d10");
     obj.edit21:setName("edit21");
@@ -756,7 +756,7 @@ local function constructNew_frmsekai()
     obj.edit22:setType("number");
     obj.edit22:setMin(1);
     obj.edit22:setMax(18);
-    obj.edit22:setEnabled(false);
+    obj.edit22:setEnabled(true);
     obj.edit22:setTransparent(true);
     obj.edit22:setHorzTextAlign("center");
     obj.edit22:setField("21d20");
@@ -1055,7 +1055,7 @@ local function constructNew_frmsekai()
     obj.edit30:setType("number");
     obj.edit30:setMin(1);
     obj.edit30:setMax(9);
-    obj.edit30:setEnabled(false);
+    obj.edit30:setEnabled(true);
     obj.edit30:setHorzTextAlign("center");
     obj.edit30:setField("31d10");
     obj.edit30:setName("edit30");
@@ -1069,7 +1069,7 @@ local function constructNew_frmsekai()
     obj.edit31:setType("number");
     obj.edit31:setMin(1);
     obj.edit31:setMax(9);
-    obj.edit31:setEnabled(false);
+    obj.edit31:setEnabled(true);
     obj.edit31:setHorzTextAlign("center");
     obj.edit31:setField("32d10");
     obj.edit31:setName("edit31");
@@ -1083,7 +1083,7 @@ local function constructNew_frmsekai()
     obj.edit32:setType("number");
     obj.edit32:setMin(1);
     obj.edit32:setMax(9);
-    obj.edit32:setEnabled(false);
+    obj.edit32:setEnabled(true);
     obj.edit32:setHorzTextAlign("center");
     obj.edit32:setField("33d10");
     obj.edit32:setName("edit32");
@@ -1108,7 +1108,7 @@ local function constructNew_frmsekai()
     obj.edit33:setType("number");
     obj.edit33:setMin(1);
     obj.edit33:setMax(18);
-    obj.edit33:setEnabled(false);
+    obj.edit33:setEnabled(true);
     obj.edit33:setTransparent(true);
     obj.edit33:setHorzTextAlign("center");
     obj.edit33:setField("31d20");
@@ -1348,7 +1348,7 @@ local function constructNew_frmsekai()
     obj.edit49:setFontColor("Red");
     obj.edit49:setFontFamily("Nyala");
     obj.edit49:setFontSize(25);
-    obj.edit49:setEnabled(false);
+    obj.edit49:setEnabled(true);
     obj.edit49:setType("number");
     obj.edit49:setField("Level");
     obj.edit49:setName("edit49");
@@ -1522,7 +1522,7 @@ local function constructNew_frmsekai()
     obj.button16:setWidth(105);
     obj.button16:setHeight(85);
     obj.button16:setOpacity(1.0);
-    obj.button16:setVisible(false);
+    obj.button16:setVisible(true);
     obj.button16:setText("Calculo");
     obj.button16:setName("button16");
 
@@ -3692,7 +3692,7 @@ local function constructNew_frmsekai()
     obj.button28:setHeight(20);
     obj.button28:setFontSize(12);
     obj.button28:setFontColor("#00FFFF");
-    obj.button28:setText("Sabedoria");
+    obj.button28:setText("Raciocinio");
     obj.button28:setName("button28");
 
 
@@ -3732,7 +3732,7 @@ local function constructNew_frmsekai()
     obj.button30:setHeight(20);
     obj.button30:setFontSize(12);
     obj.button30:setFontColor("#00FFFF");
-    obj.button30:setText("Acrobacia");
+    obj.button30:setText("Furtividade");
     obj.button30:setName("button30");
 
 
@@ -3758,7 +3758,7 @@ local function constructNew_frmsekai()
 
 						local function RolarTesteVigor()      
 							local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
-							sheet.VigorTotal = sheet.VigorTotal or 0;                        
+							sheet.VigorTotal = sheet.VigorTotal or 0;                      
 							mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.VigorTotal, "[§K2]Teste de Vigor"); 
 						end; 	   
 					
@@ -4705,7 +4705,7 @@ local function constructNew_frmsekai()
 
     obj.tab4 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab4:setParent(obj.tabControl1);
-    obj.tab4:setTitle("Historia");
+    obj.tab4:setTitle("Personagem");
     obj.tab4:setName("tab4");
 
     obj.scrollBox8 = GUI.fromHandle(_obj_newObject("scrollBox"));
@@ -4717,13 +4717,391 @@ local function constructNew_frmsekai()
     obj.image27:setParent(obj.scrollBox8);
     obj.image27:setLeft(1);
     obj.image27:setTop(1);
-    obj.image27:setWidth(1000);
-    obj.image27:setHeight(700);
-    obj.image27:setSRC("/imagens/4.png");
+    obj.image27:setWidth(1190);
+    obj.image27:setHeight(680);
+    obj.image27:setSRC("/imagens/7.png");
     obj.image27:setName("image27");
 
+    obj.edit208 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit208:setParent(obj.scrollBox8);
+    obj.edit208:setLeft(170);
+    obj.edit208:setTop(12);
+    obj.edit208:setWidth(80);
+    obj.edit208:setHeight(25);
+    obj.edit208:setHorzTextAlign("center");
+    obj.edit208:setFontSize(18);
+    obj.edit208:setField("RepFolha");
+    obj.edit208:setName("edit208");
+
+    obj.edit209 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit209:setParent(obj.scrollBox8);
+    obj.edit209:setLeft(170);
+    obj.edit209:setTop(40);
+    obj.edit209:setWidth(80);
+    obj.edit209:setHeight(25);
+    obj.edit209:setHorzTextAlign("center");
+    obj.edit209:setFontSize(18);
+    obj.edit209:setField("RepAreia");
+    obj.edit209:setName("edit209");
+
+    obj.edit210 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit210:setParent(obj.scrollBox8);
+    obj.edit210:setLeft(170);
+    obj.edit210:setTop(68);
+    obj.edit210:setWidth(80);
+    obj.edit210:setHeight(25);
+    obj.edit210:setHorzTextAlign("center");
+    obj.edit210:setFontSize(18);
+    obj.edit210:setField("RepNuvem");
+    obj.edit210:setName("edit210");
+
+    obj.edit211 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit211:setParent(obj.scrollBox8);
+    obj.edit211:setLeft(170);
+    obj.edit211:setTop(96);
+    obj.edit211:setWidth(80);
+    obj.edit211:setHeight(25);
+    obj.edit211:setHorzTextAlign("center");
+    obj.edit211:setFontSize(18);
+    obj.edit211:setField("RepNevoa");
+    obj.edit211:setName("edit211");
+
+    obj.edit212 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit212:setParent(obj.scrollBox8);
+    obj.edit212:setLeft(170);
+    obj.edit212:setTop(124);
+    obj.edit212:setWidth(80);
+    obj.edit212:setHeight(25);
+    obj.edit212:setHorzTextAlign("center");
+    obj.edit212:setFontSize(18);
+    obj.edit212:setField("RepPedra");
+    obj.edit212:setName("edit212");
+
+    obj.GanhoAnual = GUI.fromHandle(_obj_newObject("edit"));
+    obj.GanhoAnual:setParent(obj.scrollBox8);
+    obj.GanhoAnual:setName("GanhoAnual");
+    obj.GanhoAnual:setLeft(10);
+    obj.GanhoAnual:setTop(213);
+    obj.GanhoAnual:setReadOnly(true);
+    obj.GanhoAnual:setWidth(140);
+    obj.GanhoAnual:setHeight(25);
+    obj.GanhoAnual:setHorzTextAlign("center");
+    obj.GanhoAnual:setFontSize(18);
+
+    obj.edit213 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit213:setParent(obj.scrollBox8);
+    obj.edit213:setLeft(187);
+    obj.edit213:setTop(213);
+    obj.edit213:setWidth(50);
+    obj.edit213:setHeight(25);
+    obj.edit213:setHorzTextAlign("center");
+    obj.edit213:setFontSize(18);
+    obj.edit213:setField("BonusGanhoAnual");
+    obj.edit213:setName("edit213");
+
+    obj.image28 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image28:setParent(obj.scrollBox8);
+    obj.image28:setLeft(23);
+    obj.image28:setTop(478);
+    obj.image28:setWidth(146);
+    obj.image28:setHeight(116);
+    obj.image28:setEditable(false);
+    obj.image28:setStyle("autoFit");
+    lfm_setPropAsString(obj.image28, "animate",  "true");
+    obj.image28:setSRC("https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif");
+    obj.image28:setName("image28");
+
+    obj.image29 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image29:setParent(obj.scrollBox8);
+    obj.image29:setLeft(222);
+    obj.image29:setTop(478);
+    obj.image29:setWidth(146);
+    obj.image29:setHeight(116);
+    obj.image29:setEditable(false);
+    obj.image29:setStyle("autoFit");
+    lfm_setPropAsString(obj.image29, "animate",  "true");
+    obj.image29:setSRC("https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif");
+    obj.image29:setName("image29");
+
+    obj.button38 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button38:setParent(obj.scrollBox8);
+    obj.button38:setLeft(23);
+    obj.button38:setTop(478);
+    obj.button38:setWidth(146);
+    obj.button38:setHeight(116);
+    obj.button38:setOpacity(0.5);
+    obj.button38:setText("");
+    obj.button38:setName("button38");
+
+    obj.POPTreino = GUI.fromHandle(_obj_newObject("popup"));
+    obj.POPTreino:setParent(obj.scrollBox8);
+    obj.POPTreino:setName("POPTreino");
+    obj.POPTreino:setVisible(false);
+    obj.POPTreino:setLeft(1);
+    obj.POPTreino:setTop(40);
+    obj.POPTreino:setWidth(900);
+    obj.POPTreino:setHeight(600);
+
+    obj.scrollBox9 = GUI.fromHandle(_obj_newObject("scrollBox"));
+    obj.scrollBox9:setParent(obj.POPTreino);
+    obj.scrollBox9:setAlign("client");
+    obj.scrollBox9:setName("scrollBox9");
+
+    obj.image30 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image30:setParent(obj.scrollBox9);
+    obj.image30:setTop(1);
+    obj.image30:setWidth(870);
+    obj.image30:setHeight(705);
+    obj.image30:setSRC("/imagens/5.png");
+    obj.image30:setName("image30");
+
+    obj.button39 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button39:setParent(obj.scrollBox9);
+    obj.button39:setText("Novo Treinamento");
+    obj.button39:setWidth(125);
+    obj.button39:setHeight(40);
+    obj.button39:setLeft(70);
+    obj.button39:setTop(10);
+    obj.button39:setName("button39");
+
+    obj.rclListadeTreino = GUI.fromHandle(_obj_newObject("recordList"));
+    obj.rclListadeTreino:setParent(obj.scrollBox9);
+    obj.rclListadeTreino:setName("rclListadeTreino");
+    obj.rclListadeTreino:setField("Jutsus");
+    obj.rclListadeTreino:setTemplateForm("frmTreinosJutsus1");
+    obj.rclListadeTreino:setWidth(880);
+    obj.rclListadeTreino:setHeight(570);
+    obj.rclListadeTreino:setLeft(10);
+    obj.rclListadeTreino:setTop(60);
+    obj.rclListadeTreino:setSelectable(true);
+
+    obj.dsbListadeTreino = GUI.fromHandle(_obj_newObject("dataScopeBox"));
+    obj.dsbListadeTreino:setParent(obj.scrollBox9);
+    obj.dsbListadeTreino:setName("dsbListadeTreino");
+    obj.dsbListadeTreino:setVisible(false);
+    obj.dsbListadeTreino:setWidth(480);
+    obj.dsbListadeTreino:setHeight(580);
+    obj.dsbListadeTreino:setLeft(400);
+    obj.dsbListadeTreino:setTop(60);
+
+    obj.rectangle8 = GUI.fromHandle(_obj_newObject("rectangle"));
+    obj.rectangle8:setParent(obj.dsbListadeTreino);
+    obj.rectangle8:setColor("black");
+    obj.rectangle8:setXradius(10);
+    obj.rectangle8:setYradius(10);
+    obj.rectangle8:setWidth(460);
+    obj.rectangle8:setHeight(560);
+    obj.rectangle8:setLeft(1);
+    obj.rectangle8:setTop(1);
+    obj.rectangle8:setName("rectangle8");
+
+    obj.label90 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label90:setParent(obj.rectangle8);
+    obj.label90:setWidth(120);
+    obj.label90:setHeight(40);
+    obj.label90:setLeft(10);
+    obj.label90:setTop(10);
+    obj.label90:setFontFamily("Nyala");
+    obj.label90:setFontSize(20);
+    obj.label90:setText("Nome do Jutsu:");
+    obj.label90:setName("label90");
+
+    obj.edit214 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit214:setParent(obj.rectangle8);
+    obj.edit214:setWidth(310);
+    obj.edit214:setHeight(30);
+    obj.edit214:setLeft(130);
+    obj.edit214:setTop(15);
+    obj.edit214:setField("JutsuTreinando");
+    obj.edit214:setName("edit214");
+
+    obj.textEditor15 = GUI.fromHandle(_obj_newObject("textEditor"));
+    obj.textEditor15:setParent(obj.rectangle8);
+    obj.textEditor15:setLeft(10);
+    obj.textEditor15:setTop(60);
+    obj.textEditor15:setWidth(430);
+    obj.textEditor15:setHeight(280);
+    obj.textEditor15:setField("DescriTreinandoJutsu");
+    obj.textEditor15:setText("Este é um textEditor\n\ncom multiplas linhas");
+    obj.textEditor15:setName("textEditor15");
+
+    obj.label91 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label91:setParent(obj.rectangle8);
+    obj.label91:setLeft(140);
+    obj.label91:setTop(350);
+    obj.label91:setWidth(230);
+    obj.label91:setHeight(40);
+    obj.label91:setFontFamily("Nyala");
+    obj.label91:setFontSize(18);
+    obj.label91:setText("Fortificação de jutsu 3D10 e 1d20");
+    obj.label91:setName("label91");
+
+    obj.edit215 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit215:setParent(obj.rectangle8);
+    obj.edit215:setLeft(140);
+    obj.edit215:setTop(385);
+    obj.edit215:setWidth(50);
+    obj.edit215:setHeight(30);
+    obj.edit215:setType("number");
+    obj.edit215:setMin(1);
+    obj.edit215:setMax(9);
+    obj.edit215:setEnabled(true);
+    obj.edit215:setHorzTextAlign("center");
+    obj.edit215:setField("Treina1d10");
+    obj.edit215:setName("edit215");
+
+    obj.edit216 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit216:setParent(obj.rectangle8);
+    obj.edit216:setLeft(200);
+    obj.edit216:setTop(385);
+    obj.edit216:setWidth(50);
+    obj.edit216:setHeight(30);
+    obj.edit216:setType("number");
+    obj.edit216:setMin(1);
+    obj.edit216:setMax(9);
+    obj.edit216:setEnabled(true);
+    obj.edit216:setHorzTextAlign("center");
+    obj.edit216:setField("Treina2d10");
+    obj.edit216:setName("edit216");
+
+    obj.edit217 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit217:setParent(obj.rectangle8);
+    obj.edit217:setLeft(260);
+    obj.edit217:setTop(385);
+    obj.edit217:setWidth(50);
+    obj.edit217:setHeight(30);
+    obj.edit217:setType("number");
+    obj.edit217:setMin(1);
+    obj.edit217:setMax(9);
+    obj.edit217:setEnabled(true);
+    obj.edit217:setHorzTextAlign("center");
+    obj.edit217:setField("Treina3d10");
+    obj.edit217:setName("edit217");
+
+    obj.rectangle9 = GUI.fromHandle(_obj_newObject("rectangle"));
+    obj.rectangle9:setParent(obj.rectangle8);
+    obj.rectangle9:setLeft(320);
+    obj.rectangle9:setTop(385);
+    obj.rectangle9:setWidth(50);
+    obj.rectangle9:setHeight(30);
+    obj.rectangle9:setColor("black");
+    obj.rectangle9:setStrokeColor("red");
+    obj.rectangle9:setStrokeSize(3);
+    obj.rectangle9:setName("rectangle9");
+
+    obj.edit218 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit218:setParent(obj.rectangle8);
+    obj.edit218:setLeft(320);
+    obj.edit218:setTop(385);
+    obj.edit218:setWidth(50);
+    obj.edit218:setHeight(30);
+    obj.edit218:setType("number");
+    obj.edit218:setMin(1);
+    obj.edit218:setMax(18);
+    obj.edit218:setEnabled(true);
+    obj.edit218:setTransparent(true);
+    obj.edit218:setHorzTextAlign("center");
+    obj.edit218:setField("Treina1d20");
+    obj.edit218:setName("edit218");
+
+    obj.btnTreinar = GUI.fromHandle(_obj_newObject("button"));
+    obj.btnTreinar:setParent(obj.rectangle8);
+    obj.btnTreinar:setName("btnTreinar");
+    obj.btnTreinar:setLeft(60);
+    obj.btnTreinar:setTop(385);
+    obj.btnTreinar:setWidth(70);
+    obj.btnTreinar:setHeight(30);
+    obj.btnTreinar:setFontFamily("Nyala");
+    obj.btnTreinar:setFontSize(18);
+    obj.btnTreinar:setText("Treinar");
+
+
+									local function TreinaJutsu() 
+																	
+									self.btnTreinar.visible = false;
+									local node = self.dsbListadeTreino.node;									
+									local mesaDoPersonagem = rrpg.getMesaDe(sheet);
+									
+									if node.Treina1d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina2d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina3d10 > 9 then
+										node.Treina1d10 = 9;
+									end;
+									
+									if node.Treina1d20 > 18 then
+										node.Treina1d10 = 18;
+									end;									
+																										
+										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
+										function (rolado)
+										mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
+											if node.Treina1d10 >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+												mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+												function (rolado)	
+													if node.Treina2d10 >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+														mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+														function (rolado)
+															if node.Treina3d10 >= rolado.resultado then
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																function (rolado)
+																	if node.Treina1d20 >= rolado.resultado then
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
+																		mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																		self.btnTreinar.visible = true;	
+																	else 
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																		self.btnTreinar.visible = true;	
+																	end;
+																end);	
+															else
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																self.btnTreinar.visible = true;																
+															end;
+														end);
+													else
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+														self.btnTreinar.visible = true;														
+													end;												
+												end)
+											else
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+												self.btnTreinar.visible = true;
+											end;
+										end);										
+									end;								
+								
+
+
+    obj.tab5 = GUI.fromHandle(_obj_newObject("tab"));
+    obj.tab5:setParent(obj.tabControl1);
+    obj.tab5:setTitle("Historia");
+    obj.tab5:setName("tab5");
+
+    obj.scrollBox10 = GUI.fromHandle(_obj_newObject("scrollBox"));
+    obj.scrollBox10:setParent(obj.tab5);
+    obj.scrollBox10:setAlign("client");
+    obj.scrollBox10:setName("scrollBox10");
+
+    obj.image31 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image31:setParent(obj.scrollBox10);
+    obj.image31:setLeft(1);
+    obj.image31:setTop(1);
+    obj.image31:setWidth(1000);
+    obj.image31:setHeight(700);
+    obj.image31:setSRC("/imagens/4.png");
+    obj.image31:setName("image31");
+
     obj.richEdit2 = GUI.fromHandle(_obj_newObject("richEdit"));
-    obj.richEdit2:setParent(obj.scrollBox8);
+    obj.richEdit2:setParent(obj.scrollBox10);
     obj.richEdit2:setLeft(85);
     obj.richEdit2:setTop(140);
     obj.richEdit2:setWidth(440);
@@ -4895,8 +5273,14 @@ local function constructNew_frmsekai()
             			sheet.AcessorioHP = (tonumber(sheet.AcessorioHP) or 0);
             			sheet.AcessorioChakra = (tonumber(sheet.AcessorioChakra) or 0);
             			sheet.AcessorioOutros = (tonumber(sheet.AcessorioOutros) or 0);
+            			sheet.SAtletismo = (tonumber(sheet.SAtletismo) or 0);
+            			sheet.SRaciocinio = (tonumber(sheet.SRaciocinio) or 0);
+            			sheet.SPercepcao = (tonumber(sheet.SPercepcao) or 0);
+            			sheet.SFurtividade = (tonumber(sheet.SFurtividade) or 0);
+            			sheet.SVigor = (tonumber(sheet.SVigor) or 0);
             			sheet.GHP = 100;
             			sheet.Nome = "Escolha o Nome";
+            			sheet.Sequenci1 = true;
             			showMessage("Escolha seu nome, clã e idade");
             		end;
         end, obj);
@@ -5331,51 +5715,53 @@ local function constructNew_frmsekai()
 
     obj._e_event20 = obj.dataLink1:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
-            								
-            				if sheet.Exp > sheet.ExpTotal then
-            					sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
-            					sheet.Level = (tonumber(sheet.Level) or 0) + 1;
-            				end;	
-            											
-            				if sheet.Graduacao == 'Academico' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
-            				end;
-            				
-            				if sheet.Graduacao == 'Genin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
-            				end;
-            				
-            				if sheet.Graduacao == 'Chunin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
-            				end;
-            				
-            				if sheet.Graduacao == 'Jounin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
-            				end;
-            				
-            				if sheet.Graduacao == 'Anbu' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
-            				end;
-            			   
-            				if sheet.Graduacao == 'AnbuNucleo' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
-            				end;
-            				
-            				if sheet.Graduacao == 'Organização' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
-            				end;				
-            								
-            				if sheet.Graduacao == 'GDE' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
-            				end;				
-            								
-            				if sheet.Graduacao == 'Concelheiro' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
-            				end;				
-            								
-            				if sheet.Graduacao == 'Kage' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+            if sheet.Sequenci1 == true then
+            					sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
+            									
+            					if sheet.Exp > sheet.ExpTotal then
+            						sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
+            						sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+            					end;	
+            												
+            					if sheet.Graduacao == 'Academico' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+            					end;
+            					
+            					if sheet.Graduacao == 'Genin' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+            					end;
+            					
+            					if sheet.Graduacao == 'Chunin' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
+            					end;
+            					
+            					if sheet.Graduacao == 'Jounin' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+            					end;
+            					
+            					if sheet.Graduacao == 'Anbu' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+            					end;
+            				   
+            					if sheet.Graduacao == 'AnbuNucleo' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+            					end;
+            					
+            					if sheet.Graduacao == 'Organização' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+            					end;				
+            									
+            					if sheet.Graduacao == 'GDE' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+            					end;				
+            									
+            					if sheet.Graduacao == 'Concelheiro' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+            					end;				
+            									
+            					if sheet.Graduacao == 'Kage' then
+            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+            					end;
             				end;
         end, obj);
 
@@ -5843,187 +6229,189 @@ local function constructNew_frmsekai()
 
     obj._e_event46 = obj.dataLink12:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.Atletismo == nil then
-            							sheet.Atletismo = 0;
-            						end;					
-            						if sheet.Raciocinio == nil then
-            							sheet.Raciocinio = 0;
-            						end;						
-            						if sheet.Percepcao == nil then
-            							sheet.Percepcao = 0;
-            						end;						
-            						if sheet.Furtividade == nil then
-            							sheet.Furtividade = 0;
-            						end;						
-            						if sheet.Vigor == nil then
-            							sheet.Vigor = 0;
-            						end;		
+            if sheet.Sequenci1 == true then	
+            							if sheet.Atletismo == nil then
+            								sheet.Atletismo = 0;
+            							end;					
+            							if sheet.Raciocinio == nil then
+            								sheet.Raciocinio = 0;
+            							end;						
+            							if sheet.Percepcao == nil then
+            								sheet.Percepcao = 0;
+            							end;						
+            							if sheet.Furtividade == nil then
+            								sheet.Furtividade = 0;
+            							end;						
+            							if sheet.Vigor == nil then
+            								sheet.Vigor = 0;
+            							end;		
+            								
+            							if sheet.SAtletismo == nil then
+            								sheet.SAtletismo = 0;
+            							end;	
+            							if sheet.SRaciocinio == nil then
+            								sheet.SRaciocinio = 0;
+            							end;	
+            							if sheet.SPercepcao == nil then
+            								sheet.SPercepcao = 0;
+            							end;						
+            							if sheet.SFurtividade == nil then
+            								sheet.SFurtividade = 0;
+            							end;	
+            							if sheet.SVigor == nil then
+            								sheet.SVigor = 0;
+            							end;
+            												
+            							if sheet.GAtletismo == nil then
+            								sheet.GAtletismo = 0;
+            							end;	
+            							if sheet.GRaciocinio == nil then
+            								sheet.GRaciocinio = 0;
+            							end;	
+            							if sheet.GPercepcao == nil then
+            								sheet.GPercepcao = 0;
+            							end;						
+            							if sheet.GFurtividade == nil then
+            								sheet.GFurtividade = 0;
+            							end;	
+            							if sheet.GVigor == nil then
+            								sheet.GVigor = 0;
+            							end;
             							
-            						if sheet.SAtletismo == nil then
-            							sheet.SAtletismo = 0;
-            						end;	
-            						if sheet.SRaciocinio == nil then
-            							sheet.SRaciocinio = 0;
-            						end;	
-            						if sheet.SPercepcao == nil then
-            							sheet.SPercepcao = 0;
-            						end;						
-            						if sheet.SFurtividade == nil then
-            							sheet.SFurtividade = 0;
-            						end;	
-            						if sheet.SVigor == nil then
-            							sheet.SVigor = 0;
-            						end;
-            											
-            						if sheet.GAtletismo == nil then
-            							sheet.GAtletismo = 0;
-            						end;	
-            						if sheet.GRaciocinio == nil then
-            							sheet.GRaciocinio = 0;
-            						end;	
-            						if sheet.GPercepcao == nil then
-            							sheet.GPercepcao = 0;
-            						end;						
-            						if sheet.GFurtividade == nil then
-            							sheet.GFurtividade = 0;
-            						end;	
-            						if sheet.GVigor == nil then
-            							sheet.GVigor = 0;
-            						end;
-            						
-            						if sheet.AtletismoTotal == nil then
-            							sheet.AtletismoTotal = 0;
-            						end;	
-            						if sheet.RaciocinioTotal == nil then
-            							sheet.RaciocinioTotal = 0;
-            						end;	
-            						if sheet.PercepcaoTotal == nil then
-            							sheet.PercepcaoTotal = 0;
-            						end;						
-            						if sheet.FurtividadeTotal == nil then
-            							sheet.FurtividadeTotal = 0;
-            						end;	
-            						if sheet.VigorTotal == nil then
-            							sheet.VigorTotal = 0;
-            						end;
-            						
-            						if sheet.Graduacao =='Genin' then
-            							sheet.GAtletismo = 1;
-            							sheet.GRaciocinio = 1;
-            							sheet.GPercepcao = 1;
-            							sheet.GFurtividade = 1;
-            							sheet.GVigor = 1;
-            						end;
-            						
-            						if sheet.Graduacao =='Jounin' then
-            							sheet.GAtletismo = 2;
-            							sheet.GRaciocinio = 2;
-            							sheet.GPercepcao = 2;
-            							sheet.GFurtividade = 2;
-            							sheet.GVigor = 2;
-            						end;
-            						
-            						if sheet.Graduacao =='Anbu Nucleo' then
-            							sheet.GAtletismo = 3;
-            							sheet.GRaciocinio = 3;
-            							sheet.GPercepcao = 3;
-            							sheet.GFurtividade = 3;
-            							sheet.GVigor = 3;
-            						end;
-            						
-            						if sheet.Graduacao =='GDE' then
-            							sheet.GAtletismo = 4;
-            							sheet.GRaciocinio = 4;
-            							sheet.GPercepcao = 4;
-            							sheet.GFurtividade = 4;
-            							sheet.GVigor = 4;
-            						end;
-            						
-            						if sheet.Graduacao =='Kage' then
-            							sheet.GAtletismo = 6;
-            							sheet.GRaciocinio = 6;
-            							sheet.GPercepcao = 6;
-            							sheet.GFurtividade = 6;
-            							sheet.GVigor = 6;
-            						end;
-            						
-            						if sheet.Forca >= 100000000 then
-            							sheet.SAtletismo = 5;
-            						elseif sheet.Forca >= 10000000 then
-            							sheet.SAtletismo = 4;
-            						elseif sheet.Forca >= 1000000 then
-            							sheet.SAtletismo = 3;
-            						elseif sheet.Forca >= 100000 then
-            							sheet.SAtletismo = 2;
-            						elseif sheet.Forca >= 10000 then
-            							sheet.SAtletismo = 1;	
-            						else
-            							sheet.SVigor = 0;
-            						end;	
-            						
-            						if sheet.Inteligencia >= 100000000 then
-            							sheet.SRaciocinio = 5;
-            						elseif sheet.Sabedoria >= 100000000 then
-            							sheet.SRaciocinio = 5;	
-            						elseif sheet.Inteligencia >= 10000000 then
-            							sheet.SRaciocinio = 4;
-            						elseif sheet.Sabedoria >= 10000000 then
-            							sheet.SRaciocinio = 4;	
-            						elseif sheet.Inteligencia >= 1000000 then
-            							sheet.SRaciocinio = 3;
-            						elseif sheet.Sabedoria >= 1000000 then
-            							sheet.SRaciocinio = 3;	
-            						elseif sheet.Inteligencia >= 100000 then
-            							sheet.SRaciocinio = 2;
-            						elseif sheet.Sabedoria >= 100000 then
-            							sheet.SRaciocinio = 2;
-            						elseif sheet.Sabedoria >= 10000 then
-            							sheet.SRaciocinio = 1;	
-            						elseif sheet.Inteligencia >= 10000 then
-            							sheet.SRaciocinio = 1;	
-            						else
-            							sheet.SRaciocinio = 0;
-            						end; 
-            						
-            						if sheet.Habilidade >= 500000000 then
-            							sheet.SPercepcao = 5;
-            							sheet.SFurtividade = 5;
-            						elseif sheet.Habilidade >= 50000000 then
-            							sheet.SPercepcao = 4;
-            							sheet.SFurtividade = 4;
-            						elseif sheet.Habilidade >= 5000000 then
-            							sheet.SPercepcao = 3;
-            							sheet.SFurtividade = 3;
-            						elseif sheet.Habilidade >= 500000 then
-            							sheet.SPercepcao = 2;
-            							sheet.SFurtividade = 2;
-            						elseif sheet.Habilidade >= 50000 then
-            							sheet.SPercepcao = 1;	
-            							sheet.SFurtividade = 1;
-            						else 
-            							sheet.SPercepcao = 0;
-            							sheet.SFurtividade = 0;
-            						end; 
-            						
-            						if sheet.Resistencia >= 100000000 then
-            							sheet.SVigor = 5;
-            						elseif sheet.Resistencia >= 10000000 then
-            							sheet.SVigor = 4;
-            						elseif sheet.Resistencia >= 1000000 then
-            							sheet.SVigor = 3;
-            						elseif sheet.Resistencia >= 100000 then
-            							sheet.SVigor = 2;
-            						elseif sheet.Resistencia >= 10000 then
-            							sheet.SVigor = 1;	
-            						else
-            							sheet.SVigor = 0;
-            						end;	
+            							if sheet.AtletismoTotal == nil then
+            								sheet.AtletismoTotal = 0;
+            							end;	
+            							if sheet.RaciocinioTotal == nil then
+            								sheet.RaciocinioTotal = 0;
+            							end;	
+            							if sheet.PercepcaoTotal == nil then
+            								sheet.PercepcaoTotal = 0;
+            							end;						
+            							if sheet.FurtividadeTotal == nil then
+            								sheet.FurtividadeTotal = 0;
+            							end;	
+            							if sheet.VigorTotal == nil then
+            								sheet.VigorTotal = 0;
+            							end;
+            							
+            							if sheet.Graduacao =='Genin' then
+            								sheet.GAtletismo = 1;
+            								sheet.GRaciocinio = 1;
+            								sheet.GPercepcao = 1;
+            								sheet.GFurtividade = 1;
+            								sheet.GVigor = 1;
+            							end;
+            							
+            							if sheet.Graduacao =='Jounin' then
+            								sheet.GAtletismo = 2;
+            								sheet.GRaciocinio = 2;
+            								sheet.GPercepcao = 2;
+            								sheet.GFurtividade = 2;
+            								sheet.GVigor = 2;
+            							end;
+            							
+            							if sheet.Graduacao =='Anbu Nucleo' then
+            								sheet.GAtletismo = 3;
+            								sheet.GRaciocinio = 3;
+            								sheet.GPercepcao = 3;
+            								sheet.GFurtividade = 3;
+            								sheet.GVigor = 3;
+            							end;
+            							
+            							if sheet.Graduacao =='GDE' then
+            								sheet.GAtletismo = 4;
+            								sheet.GRaciocinio = 4;
+            								sheet.GPercepcao = 4;
+            								sheet.GFurtividade = 4;
+            								sheet.GVigor = 4;
+            							end;
+            							
+            							if sheet.Graduacao =='Kage' then
+            								sheet.GAtletismo = 6;
+            								sheet.GRaciocinio = 6;
+            								sheet.GPercepcao = 6;
+            								sheet.GFurtividade = 6;
+            								sheet.GVigor = 6;
+            							end;
+            							
+            							if sheet.Forca >= 100000000 then
+            								sheet.SAtletismo = 5;
+            							elseif sheet.Forca >= 10000000 then
+            								sheet.SAtletismo = 4;
+            							elseif sheet.Forca >= 1000000 then
+            								sheet.SAtletismo = 3;
+            							elseif sheet.Forca >= 100000 then
+            								sheet.SAtletismo = 2;
+            							elseif sheet.Forca >= 10000 then
+            								sheet.SAtletismo = 1;	
+            							else
+            								sheet.SVigor = 0;
+            							end;	
+            							
+            							if sheet.Inteligencia >= 100000000 then
+            								sheet.SRaciocinio = 5;
+            							elseif sheet.Sabedoria >= 100000000 then
+            								sheet.SRaciocinio = 5;	
+            							elseif sheet.Inteligencia >= 10000000 then
+            								sheet.SRaciocinio = 4;
+            							elseif sheet.Sabedoria >= 10000000 then
+            								sheet.SRaciocinio = 4;	
+            							elseif sheet.Inteligencia >= 1000000 then
+            								sheet.SRaciocinio = 3;
+            							elseif sheet.Sabedoria >= 1000000 then
+            								sheet.SRaciocinio = 3;	
+            							elseif sheet.Inteligencia >= 100000 then
+            								sheet.SRaciocinio = 2;
+            							elseif sheet.Sabedoria >= 100000 then
+            								sheet.SRaciocinio = 2;
+            							elseif sheet.Sabedoria >= 10000 then
+            								sheet.SRaciocinio = 1;	
+            							elseif sheet.Inteligencia >= 10000 then
+            								sheet.SRaciocinio = 1;	
+            							else
+            								sheet.SRaciocinio = 0;
+            							end; 
+            							
+            							if sheet.Habilidade >= 500000000 then
+            								sheet.SPercepcao = 5;
+            								sheet.SFurtividade = 5;
+            							elseif sheet.Habilidade >= 50000000 then
+            								sheet.SPercepcao = 4;
+            								sheet.SFurtividade = 4;
+            							elseif sheet.Habilidade >= 5000000 then
+            								sheet.SPercepcao = 3;
+            								sheet.SFurtividade = 3;
+            							elseif sheet.Habilidade >= 500000 then
+            								sheet.SPercepcao = 2;
+            								sheet.SFurtividade = 2;
+            							elseif sheet.Habilidade >= 50000 then
+            								sheet.SPercepcao = 1;	
+            								sheet.SFurtividade = 1;
+            							else 
+            								sheet.SPercepcao = 0;
+            								sheet.SFurtividade = 0;
+            							end; 
+            							
+            							if sheet.Resistencia >= 100000000 then
+            								sheet.SVigor = 5;
+            							elseif sheet.Resistencia >= 10000000 then
+            								sheet.SVigor = 4;
+            							elseif sheet.Resistencia >= 1000000 then
+            								sheet.SVigor = 3;
+            							elseif sheet.Resistencia >= 100000 then
+            								sheet.SVigor = 2;
+            							elseif sheet.Resistencia >= 10000 then
+            								sheet.SVigor = 1;	
+            							else
+            								sheet.SVigor = 0;
+            							end;	
             
-            						sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
-            						sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
-            						sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
-            						sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
-            						sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+            							sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
+            							sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
+            							sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
+            							sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
+            							sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+            						end;
         end, obj);
 
     obj._e_event47 = obj.dataLink13:addEventListener("onChange",
@@ -6083,7 +6471,38 @@ local function constructNew_frmsekai()
             							self.boxDetalhesDoItem.visible = (node ~= nil);
         end, obj);
 
+    obj._e_event55 = obj.button38:addEventListener("onClick",
+        function (_)
+            self.POPTreino:show();
+        end, obj);
+
+    obj._e_event56 = obj.button39:addEventListener("onClick",
+        function (_)
+            self.rclListadeTreino:append();
+        end, obj);
+
+    obj._e_event57 = obj.rclListadeTreino:addEventListener("onSelect",
+        function (_)
+            --[[
+            								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
+            								(e todas as tag dentro dele) salvar e carregar dados no   objeto Nodo (NodeDatabase) do item selecionado.
+            								--]]                      
+            								local node = self.rclListadeTreino.selectedNode; 
+            								self.dsbListadeTreino.node = node;                       
+            								-- a caixa de detalhe só ficará visível se houver item selecionado
+            								self.dsbListadeTreino.visible = (node ~= nil);
+        end, obj);
+
+    obj._e_event58 = obj.btnTreinar:addEventListener("onClick",
+        function (_)
+            TreinaJutsu()
+        end, obj);
+
     function obj:_releaseEvents()
+        __o_rrpgObjs.removeEventListenerById(self._e_event58);
+        __o_rrpgObjs.removeEventListenerById(self._e_event57);
+        __o_rrpgObjs.removeEventListenerById(self._e_event56);
+        __o_rrpgObjs.removeEventListenerById(self._e_event55);
         __o_rrpgObjs.removeEventListenerById(self._e_event54);
         __o_rrpgObjs.removeEventListenerById(self._e_event53);
         __o_rrpgObjs.removeEventListenerById(self._e_event52);
@@ -6150,6 +6569,7 @@ local function constructNew_frmsekai()
           self:setNodeDatabase(nil);
         end;
 
+        if self.edit213 ~= nil then self.edit213:destroy(); self.edit213 = nil; end;
         if self.edit150 ~= nil then self.edit150:destroy(); self.edit150 = nil; end;
         if self.label14 ~= nil then self.label14:destroy(); self.label14 = nil; end;
         if self.edit64 ~= nil then self.edit64:destroy(); self.edit64 = nil; end;
@@ -6181,12 +6601,15 @@ local function constructNew_frmsekai()
         if self.POPPB ~= nil then self.POPPB:destroy(); self.POPPB = nil; end;
         if self.POPArma ~= nil then self.POPArma:destroy(); self.POPArma = nil; end;
         if self.edit183 ~= nil then self.edit183:destroy(); self.edit183 = nil; end;
+        if self.btnTreinar ~= nil then self.btnTreinar:destroy(); self.btnTreinar = nil; end;
         if self.label15 ~= nil then self.label15:destroy(); self.label15 = nil; end;
         if self.dataLink9 ~= nil then self.dataLink9:destroy(); self.dataLink9 = nil; end;
         if self.POPDiverso ~= nil then self.POPDiverso:destroy(); self.POPDiverso = nil; end;
+        if self.scrollBox9 ~= nil then self.scrollBox9:destroy(); self.scrollBox9 = nil; end;
         if self.label49 ~= nil then self.label49:destroy(); self.label49 = nil; end;
         if self.comboBox10 ~= nil then self.comboBox10:destroy(); self.comboBox10 = nil; end;
         if self.edit156 ~= nil then self.edit156:destroy(); self.edit156 = nil; end;
+        if self.textEditor15 ~= nil then self.textEditor15:destroy(); self.textEditor15 = nil; end;
         if self.label82 ~= nil then self.label82:destroy(); self.label82 = nil; end;
         if self.button37 ~= nil then self.button37:destroy(); self.button37 = nil; end;
         if self.image11 ~= nil then self.image11:destroy(); self.image11 = nil; end;
@@ -6194,6 +6617,7 @@ local function constructNew_frmsekai()
         if self.edit69 ~= nil then self.edit69:destroy(); self.edit69 = nil; end;
         if self.label52 ~= nil then self.label52:destroy(); self.label52 = nil; end;
         if self.button21 ~= nil then self.button21:destroy(); self.button21 = nil; end;
+        if self.rclListadeTreino ~= nil then self.rclListadeTreino:destroy(); self.rclListadeTreino = nil; end;
         if self.edit115 ~= nil then self.edit115:destroy(); self.edit115 = nil; end;
         if self.edit16 ~= nil then self.edit16:destroy(); self.edit16 = nil; end;
         if self.label47 ~= nil then self.label47:destroy(); self.label47 = nil; end;
@@ -6209,6 +6633,7 @@ local function constructNew_frmsekai()
         if self.textEditor4 ~= nil then self.textEditor4:destroy(); self.textEditor4 = nil; end;
         if self.edit159 ~= nil then self.edit159:destroy(); self.edit159 = nil; end;
         if self.edit196 ~= nil then self.edit196:destroy(); self.edit196 = nil; end;
+        if self.edit214 ~= nil then self.edit214:destroy(); self.edit214 = nil; end;
         if self.label1 ~= nil then self.label1:destroy(); self.label1 = nil; end;
         if self.rectangle7 ~= nil then self.rectangle7:destroy(); self.rectangle7 = nil; end;
         if self.image9 ~= nil then self.image9:destroy(); self.image9 = nil; end;
@@ -6224,6 +6649,7 @@ local function constructNew_frmsekai()
         if self.EstilodeCombate ~= nil then self.EstilodeCombate:destroy(); self.EstilodeCombate = nil; end;
         if self.rectangle2 ~= nil then self.rectangle2:destroy(); self.rectangle2 = nil; end;
         if self.rclListaDosItens1 ~= nil then self.rclListaDosItens1:destroy(); self.rclListaDosItens1 = nil; end;
+        if self.label91 ~= nil then self.label91:destroy(); self.label91 = nil; end;
         if self.dataLink6 ~= nil then self.dataLink6:destroy(); self.dataLink6 = nil; end;
         if self.tabControl1 ~= nil then self.tabControl1:destroy(); self.tabControl1 = nil; end;
         if self.image10 ~= nil then self.image10:destroy(); self.image10 = nil; end;
@@ -6251,6 +6677,7 @@ local function constructNew_frmsekai()
         if self.POPKunai ~= nil then self.POPKunai:destroy(); self.POPKunai = nil; end;
         if self.edit134 ~= nil then self.edit134:destroy(); self.edit134 = nil; end;
         if self.tab3 ~= nil then self.tab3:destroy(); self.tab3 = nil; end;
+        if self.rectangle9 ~= nil then self.rectangle9:destroy(); self.rectangle9 = nil; end;
         if self.edit121 ~= nil then self.edit121:destroy(); self.edit121 = nil; end;
         if self.textEditor9 ~= nil then self.textEditor9:destroy(); self.textEditor9 = nil; end;
         if self.edit163 ~= nil then self.edit163:destroy(); self.edit163 = nil; end;
@@ -6263,11 +6690,13 @@ local function constructNew_frmsekai()
         if self.label23 ~= nil then self.label23:destroy(); self.label23 = nil; end;
         if self.dataLink10 ~= nil then self.dataLink10:destroy(); self.dataLink10 = nil; end;
         if self.label32 ~= nil then self.label32:destroy(); self.label32 = nil; end;
+        if self.button39 ~= nil then self.button39:destroy(); self.button39 = nil; end;
         if self.comboBox6 ~= nil then self.comboBox6:destroy(); self.comboBox6 = nil; end;
         if self.label24 ~= nil then self.label24:destroy(); self.label24 = nil; end;
         if self.edit54 ~= nil then self.edit54:destroy(); self.edit54 = nil; end;
         if self.dataLink5 ~= nil then self.dataLink5:destroy(); self.dataLink5 = nil; end;
         if self.label61 ~= nil then self.label61:destroy(); self.label61 = nil; end;
+        if self.label90 ~= nil then self.label90:destroy(); self.label90 = nil; end;
         if self.edit100 ~= nil then self.edit100:destroy(); self.edit100 = nil; end;
         if self.tab2 ~= nil then self.tab2:destroy(); self.tab2 = nil; end;
         if self.edit61 ~= nil then self.edit61:destroy(); self.edit61 = nil; end;
@@ -6292,7 +6721,9 @@ local function constructNew_frmsekai()
         if self.image12 ~= nil then self.image12:destroy(); self.image12 = nil; end;
         if self.label37 ~= nil then self.label37:destroy(); self.label37 = nil; end;
         if self.edit127 ~= nil then self.edit127:destroy(); self.edit127 = nil; end;
+        if self.edit218 ~= nil then self.edit218:destroy(); self.edit218 = nil; end;
         if self.edit165 ~= nil then self.edit165:destroy(); self.edit165 = nil; end;
+        if self.edit208 ~= nil then self.edit208:destroy(); self.edit208 = nil; end;
         if self.ListaJutsus2 ~= nil then self.ListaJutsus2:destroy(); self.ListaJutsus2 = nil; end;
         if self.edit8 ~= nil then self.edit8:destroy(); self.edit8 = nil; end;
         if self.edit45 ~= nil then self.edit45:destroy(); self.edit45 = nil; end;
@@ -6322,6 +6753,7 @@ local function constructNew_frmsekai()
         if self.button11 ~= nil then self.button11:destroy(); self.button11 = nil; end;
         if self.label81 ~= nil then self.label81:destroy(); self.label81 = nil; end;
         if self.edit166 ~= nil then self.edit166:destroy(); self.edit166 = nil; end;
+        if self.scrollBox10 ~= nil then self.scrollBox10:destroy(); self.scrollBox10 = nil; end;
         if self.button6 ~= nil then self.button6:destroy(); self.button6 = nil; end;
         if self.button5 ~= nil then self.button5:destroy(); self.button5 = nil; end;
         if self.edit37 ~= nil then self.edit37:destroy(); self.edit37 = nil; end;
@@ -6336,6 +6768,7 @@ local function constructNew_frmsekai()
         if self.edit155 ~= nil then self.edit155:destroy(); self.edit155 = nil; end;
         if self.edit162 ~= nil then self.edit162:destroy(); self.edit162 = nil; end;
         if self.edit194 ~= nil then self.edit194:destroy(); self.edit194 = nil; end;
+        if self.GanhoAnual ~= nil then self.GanhoAnual:destroy(); self.GanhoAnual = nil; end;
         if self.edit87 ~= nil then self.edit87:destroy(); self.edit87 = nil; end;
         if self.label39 ~= nil then self.label39:destroy(); self.label39 = nil; end;
         if self.label79 ~= nil then self.label79:destroy(); self.label79 = nil; end;
@@ -6344,6 +6777,7 @@ local function constructNew_frmsekai()
         if self.edit15 ~= nil then self.edit15:destroy(); self.edit15 = nil; end;
         if self.label3 ~= nil then self.label3:destroy(); self.label3 = nil; end;
         if self.label20 ~= nil then self.label20:destroy(); self.label20 = nil; end;
+        if self.edit211 ~= nil then self.edit211:destroy(); self.edit211 = nil; end;
         if self.rclListaDosItens3 ~= nil then self.rclListaDosItens3:destroy(); self.rclListaDosItens3 = nil; end;
         if self.edit138 ~= nil then self.edit138:destroy(); self.edit138 = nil; end;
         if self.button31 ~= nil then self.button31:destroy(); self.button31 = nil; end;
@@ -6352,6 +6786,7 @@ local function constructNew_frmsekai()
         if self.button18 ~= nil then self.button18:destroy(); self.button18 = nil; end;
         if self.label50 ~= nil then self.label50:destroy(); self.label50 = nil; end;
         if self.edit42 ~= nil then self.edit42:destroy(); self.edit42 = nil; end;
+        if self.edit209 ~= nil then self.edit209:destroy(); self.edit209 = nil; end;
         if self.image15 ~= nil then self.image15:destroy(); self.image15 = nil; end;
         if self.edit118 ~= nil then self.edit118:destroy(); self.edit118 = nil; end;
         if self.edit154 ~= nil then self.edit154:destroy(); self.edit154 = nil; end;
@@ -6367,9 +6802,12 @@ local function constructNew_frmsekai()
         if self.edit102 ~= nil then self.edit102:destroy(); self.edit102 = nil; end;
         if self.edit178 ~= nil then self.edit178:destroy(); self.edit178 = nil; end;
         if self.edit117 ~= nil then self.edit117:destroy(); self.edit117 = nil; end;
+        if self.edit215 ~= nil then self.edit215:destroy(); self.edit215 = nil; end;
+        if self.edit216 ~= nil then self.edit216:destroy(); self.edit216 = nil; end;
         if self.dataLink12 ~= nil then self.dataLink12:destroy(); self.dataLink12 = nil; end;
         if self.edit73 ~= nil then self.edit73:destroy(); self.edit73 = nil; end;
         if self.edit98 ~= nil then self.edit98:destroy(); self.edit98 = nil; end;
+        if self.image30 ~= nil then self.image30:destroy(); self.image30 = nil; end;
         if self.POPPergaminho2 ~= nil then self.POPPergaminho2:destroy(); self.POPPergaminho2 = nil; end;
         if self.edit185 ~= nil then self.edit185:destroy(); self.edit185 = nil; end;
         if self.label40 ~= nil then self.label40:destroy(); self.label40 = nil; end;
@@ -6395,6 +6833,7 @@ local function constructNew_frmsekai()
         if self.label59 ~= nil then self.label59:destroy(); self.label59 = nil; end;
         if self.edit47 ~= nil then self.edit47:destroy(); self.edit47 = nil; end;
         if self.label68 ~= nil then self.label68:destroy(); self.label68 = nil; end;
+        if self.button38 ~= nil then self.button38:destroy(); self.button38 = nil; end;
         if self.label67 ~= nil then self.label67:destroy(); self.label67 = nil; end;
         if self.edit169 ~= nil then self.edit169:destroy(); self.edit169 = nil; end;
         if self.edit149 ~= nil then self.edit149:destroy(); self.edit149 = nil; end;
@@ -6412,11 +6851,13 @@ local function constructNew_frmsekai()
         if self.label34 ~= nil then self.label34:destroy(); self.label34 = nil; end;
         if self.edit5 ~= nil then self.edit5:destroy(); self.edit5 = nil; end;
         if self.edit204 ~= nil then self.edit204:destroy(); self.edit204 = nil; end;
+        if self.edit210 ~= nil then self.edit210:destroy(); self.edit210 = nil; end;
         if self.POPJutsu ~= nil then self.POPJutsu:destroy(); self.POPJutsu = nil; end;
         if self.label41 ~= nil then self.label41:destroy(); self.label41 = nil; end;
         if self.scrollBox2 ~= nil then self.scrollBox2:destroy(); self.scrollBox2 = nil; end;
         if self.label72 ~= nil then self.label72:destroy(); self.label72 = nil; end;
         if self.label88 ~= nil then self.label88:destroy(); self.label88 = nil; end;
+        if self.tab5 ~= nil then self.tab5:destroy(); self.tab5 = nil; end;
         if self.label12 ~= nil then self.label12:destroy(); self.label12 = nil; end;
         if self.edit68 ~= nil then self.edit68:destroy(); self.edit68 = nil; end;
         if self.edit72 ~= nil then self.edit72:destroy(); self.edit72 = nil; end;
@@ -6431,17 +6872,20 @@ local function constructNew_frmsekai()
         if self.edit125 ~= nil then self.edit125:destroy(); self.edit125 = nil; end;
         if self.edit1 ~= nil then self.edit1:destroy(); self.edit1 = nil; end;
         if self.button29 ~= nil then self.button29:destroy(); self.button29 = nil; end;
+        if self.image29 ~= nil then self.image29:destroy(); self.image29 = nil; end;
         if self.edit79 ~= nil then self.edit79:destroy(); self.edit79 = nil; end;
         if self.label78 ~= nil then self.label78:destroy(); self.label78 = nil; end;
         if self.image27 ~= nil then self.image27:destroy(); self.image27 = nil; end;
         if self.edit175 ~= nil then self.edit175:destroy(); self.edit175 = nil; end;
         if self.edit101 ~= nil then self.edit101:destroy(); self.edit101 = nil; end;
         if self.image3 ~= nil then self.image3:destroy(); self.image3 = nil; end;
+        if self.image28 ~= nil then self.image28:destroy(); self.image28 = nil; end;
         if self.edit164 ~= nil then self.edit164:destroy(); self.edit164 = nil; end;
         if self.image8 ~= nil then self.image8:destroy(); self.image8 = nil; end;
         if self.label58 ~= nil then self.label58:destroy(); self.label58 = nil; end;
         if self.comboBox1 ~= nil then self.comboBox1:destroy(); self.comboBox1 = nil; end;
         if self.POPPergaminho1 ~= nil then self.POPPergaminho1:destroy(); self.POPPergaminho1 = nil; end;
+        if self.dsbListadeTreino ~= nil then self.dsbListadeTreino:destroy(); self.dsbListadeTreino = nil; end;
         if self.edit23 ~= nil then self.edit23:destroy(); self.edit23 = nil; end;
         if self.label56 ~= nil then self.label56:destroy(); self.label56 = nil; end;
         if self.rclListaDosItens2 ~= nil then self.rclListaDosItens2:destroy(); self.rclListaDosItens2 = nil; end;
@@ -6528,6 +6972,7 @@ local function constructNew_frmsekai()
         if self.label4 ~= nil then self.label4:destroy(); self.label4 = nil; end;
         if self.button34 ~= nil then self.button34:destroy(); self.button34 = nil; end;
         if self.POPPergaminho3 ~= nil then self.POPPergaminho3:destroy(); self.POPPergaminho3 = nil; end;
+        if self.POPTreino ~= nil then self.POPTreino:destroy(); self.POPTreino = nil; end;
         if self.label74 ~= nil then self.label74:destroy(); self.label74 = nil; end;
         if self.image24 ~= nil then self.image24:destroy(); self.image24 = nil; end;
         if self.edit148 ~= nil then self.edit148:destroy(); self.edit148 = nil; end;
@@ -6538,6 +6983,8 @@ local function constructNew_frmsekai()
         if self.label9 ~= nil then self.label9:destroy(); self.label9 = nil; end;
         if self.label28 ~= nil then self.label28:destroy(); self.label28 = nil; end;
         if self.edit107 ~= nil then self.edit107:destroy(); self.edit107 = nil; end;
+        if self.rectangle8 ~= nil then self.rectangle8:destroy(); self.rectangle8 = nil; end;
+        if self.edit217 ~= nil then self.edit217:destroy(); self.edit217 = nil; end;
         if self.edit30 ~= nil then self.edit30:destroy(); self.edit30 = nil; end;
         if self.tab4 ~= nil then self.tab4:destroy(); self.tab4 = nil; end;
         if self.edit56 ~= nil then self.edit56:destroy(); self.edit56 = nil; end;
@@ -6585,12 +7032,14 @@ local function constructNew_frmsekai()
         if self.label25 ~= nil then self.label25:destroy(); self.label25 = nil; end;
         if self.edit22 ~= nil then self.edit22:destroy(); self.edit22 = nil; end;
         if self.image23 ~= nil then self.image23:destroy(); self.image23 = nil; end;
+        if self.image31 ~= nil then self.image31:destroy(); self.image31 = nil; end;
         if self.label5 ~= nil then self.label5:destroy(); self.label5 = nil; end;
         if self.ListaJutsus ~= nil then self.ListaJutsus:destroy(); self.ListaJutsus = nil; end;
         if self.dataLink11 ~= nil then self.dataLink11:destroy(); self.dataLink11 = nil; end;
         if self.button19 ~= nil then self.button19:destroy(); self.button19 = nil; end;
         if self.button14 ~= nil then self.button14:destroy(); self.button14 = nil; end;
         if self.edit136 ~= nil then self.edit136:destroy(); self.edit136 = nil; end;
+        if self.edit212 ~= nil then self.edit212:destroy(); self.edit212 = nil; end;
         if self.edit173 ~= nil then self.edit173:destroy(); self.edit173 = nil; end;
         if self.image21 ~= nil then self.image21:destroy(); self.image21 = nil; end;
         if self.edit20 ~= nil then self.edit20:destroy(); self.edit20 = nil; end;
