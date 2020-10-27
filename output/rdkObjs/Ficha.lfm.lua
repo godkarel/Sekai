@@ -325,7 +325,7 @@ local function constructNew_frmsekai()
     obj.edit7:setHeight(20);
     obj.edit7:setLeft(230);
     obj.edit7:setTop(400);
-    obj.edit7:setEnabled(false);
+    obj.edit7:setEnabled(true);
     obj.edit7:setHorzTextAlign("center");
     obj.edit7:setType("number");
     obj.edit7:setField("LevelJutsu1");
@@ -445,7 +445,7 @@ local function constructNew_frmsekai()
     obj.edit12:setMin(1);
     obj.edit12:setMax(9);
     obj.edit12:setEnabled(true);
-    obj.edit12:setVisible(false);
+    obj.edit12:setVisible(true);
     obj.edit12:setHorzTextAlign("center");
     obj.edit12:setField("Upa1d10Soma");
     obj.edit12:setName("edit12");
@@ -460,7 +460,7 @@ local function constructNew_frmsekai()
     obj.edit13:setMin(1);
     obj.edit13:setMax(9);
     obj.edit13:setEnabled(true);
-    obj.edit13:setVisible(false);
+    obj.edit13:setVisible(true);
     obj.edit13:setHorzTextAlign("center");
     obj.edit13:setField("Upa2d10Soma");
     obj.edit13:setName("edit13");
@@ -475,7 +475,7 @@ local function constructNew_frmsekai()
     obj.edit14:setMin(1);
     obj.edit14:setMax(9);
     obj.edit14:setEnabled(true);
-    obj.edit14:setVisible(false);
+    obj.edit14:setVisible(true);
     obj.edit14:setHorzTextAlign("center");
     obj.edit14:setField("Upa3d10Soma");
     obj.edit14:setName("edit14");
@@ -488,7 +488,7 @@ local function constructNew_frmsekai()
     obj.rectangle3:setHeight(30);
     obj.rectangle3:setColor("black");
     obj.rectangle3:setStrokeColor("red");
-    obj.rectangle3:setVisible(false);
+    obj.rectangle3:setVisible(true);
     obj.rectangle3:setStrokeSize(3);
     obj.rectangle3:setName("rectangle3");
 
@@ -502,7 +502,7 @@ local function constructNew_frmsekai()
     obj.edit15:setMin(1);
     obj.edit15:setMax(18);
     obj.edit15:setEnabled(true);
-    obj.edit15:setVisible(false);
+    obj.edit15:setVisible(true);
     obj.edit15:setTransparent(true);
     obj.edit15:setHorzTextAlign("center");
     obj.edit15:setField("Upa1d20Soma");
@@ -958,7 +958,7 @@ local function constructNew_frmsekai()
     obj.edit26:setHeight(20);
     obj.edit26:setLeft(230);
     obj.edit26:setTop(400);
-    obj.edit26:setEnabled(false);
+    obj.edit26:setEnabled(true);
     obj.edit26:setType("number");
     obj.edit26:setHorzTextAlign("center");
     obj.edit26:setField("LevelJutsu2");
@@ -1078,7 +1078,7 @@ local function constructNew_frmsekai()
     obj.edit31:setMin(1);
     obj.edit31:setMax(9);
     obj.edit31:setEnabled(true);
-    obj.edit31:setVisible(false);
+    obj.edit31:setVisible(true);
     obj.edit31:setHorzTextAlign("center");
     obj.edit31:setField("Upa1d10Soma2");
     obj.edit31:setName("edit31");
@@ -1093,7 +1093,7 @@ local function constructNew_frmsekai()
     obj.edit32:setMin(1);
     obj.edit32:setMax(9);
     obj.edit32:setEnabled(true);
-    obj.edit32:setVisible(false);
+    obj.edit32:setVisible(true);
     obj.edit32:setHorzTextAlign("center");
     obj.edit32:setField("Upa2d10Soma2");
     obj.edit32:setName("edit32");
@@ -1108,7 +1108,7 @@ local function constructNew_frmsekai()
     obj.edit33:setMin(1);
     obj.edit33:setMax(9);
     obj.edit33:setEnabled(true);
-    obj.edit33:setVisible(false);
+    obj.edit33:setVisible(true);
     obj.edit33:setHorzTextAlign("center");
     obj.edit33:setField("Upa3d10Soma2");
     obj.edit33:setName("edit33");
@@ -1121,7 +1121,7 @@ local function constructNew_frmsekai()
     obj.rectangle7:setHeight(30);
     obj.rectangle7:setColor("black");
     obj.rectangle7:setStrokeColor("red");
-    obj.rectangle7:setVisible(false);
+    obj.rectangle7:setVisible(true);
     obj.rectangle7:setStrokeSize(3);
     obj.rectangle7:setName("rectangle7");
 
@@ -1135,7 +1135,7 @@ local function constructNew_frmsekai()
     obj.edit34:setMin(1);
     obj.edit34:setMax(18);
     obj.edit34:setEnabled(true);
-    obj.edit34:setVisible(false);
+    obj.edit34:setVisible(true);
     obj.edit34:setTransparent(false);
     obj.edit34:setHorzTextAlign("center");
     obj.edit34:setField("Upa1d20Soma2");
@@ -1591,7 +1591,7 @@ local function constructNew_frmsekai()
     obj.edit45:setHeight(20);
     obj.edit45:setLeft(230);
     obj.edit45:setTop(400);
-    obj.edit45:setEnabled(false);
+    obj.edit45:setEnabled(true);
     obj.edit45:setHorzTextAlign("center");
     obj.edit45:setType("number");
     obj.edit45:setField("LevelJutsu3");
@@ -1711,7 +1711,7 @@ local function constructNew_frmsekai()
     obj.edit50:setMin(1);
     obj.edit50:setMax(9);
     obj.edit50:setEnabled(true);
-    obj.edit50:setVisible(false);
+    obj.edit50:setVisible(true);
     obj.edit50:setHorzTextAlign("center");
     obj.edit50:setField("Upa1d10Soma3");
     obj.edit50:setName("edit50");
@@ -1726,7 +1726,7 @@ local function constructNew_frmsekai()
     obj.edit51:setMin(1);
     obj.edit51:setMax(9);
     obj.edit51:setEnabled(true);
-    obj.edit51:setVisible(false);
+    obj.edit51:setVisible(true);
     obj.edit51:setHorzTextAlign("center");
     obj.edit51:setField("Upa2d10Soma3");
     obj.edit51:setName("edit51");
@@ -1741,7 +1741,7 @@ local function constructNew_frmsekai()
     obj.edit52:setMin(1);
     obj.edit52:setMax(9);
     obj.edit52:setEnabled(true);
-    obj.edit52:setVisible(false);
+    obj.edit52:setVisible(true);
     obj.edit52:setHorzTextAlign("center");
     obj.edit52:setField("Upa3d10Soma3");
     obj.edit52:setName("edit52");
@@ -1754,7 +1754,7 @@ local function constructNew_frmsekai()
     obj.rectangle11:setHeight(30);
     obj.rectangle11:setColor("black");
     obj.rectangle11:setStrokeColor("red");
-    obj.rectangle11:setVisible(false);
+    obj.rectangle11:setVisible(true);
     obj.rectangle11:setStrokeSize(3);
     obj.rectangle11:setName("rectangle11");
 
@@ -1768,7 +1768,7 @@ local function constructNew_frmsekai()
     obj.edit53:setMin(1);
     obj.edit53:setMax(18);
     obj.edit53:setEnabled(true);
-    obj.edit53:setVisible(false);
+    obj.edit53:setVisible(true);
     obj.edit53:setTransparent(true);
     obj.edit53:setHorzTextAlign("center");
     obj.edit53:setField("Upa1d20Soma3");

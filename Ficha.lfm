@@ -278,7 +278,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" horzTextAlign="center" type="number" field="LevelJutsu1"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -413,11 +413,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
 											--GM NUNCA PRECISA -- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro"/>
@@ -600,7 +600,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade2"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" type="number" horzTextAlign="center" field="LevelJutsu2"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -734,11 +734,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d202"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma2"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma2"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma2"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma2"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma2"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma2"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro2"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro2"/>
@@ -918,7 +918,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade3"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" horzTextAlign="center" type="number" field="LevelJutsu3"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -1052,11 +1052,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d203"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma3"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma3"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma3"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma3"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma3"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma3"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro3"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro3"/>
@@ -2584,25 +2584,25 @@
 			<scrollBox align="client">
 				----GM DESATIVA--
 				<image left="1" top="1" width="1190" height="680" src="/imagens/7.png"/>
-				<edit left="170" top="12" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="false" fontSize="18" field="RepFolha" />
-				<edit left="170" top="40" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="false" fontSize="18" field="RepAreia" />
-				<edit left="170" top="68" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="false" fontSize="18" field="RepNuvem" />
-				<edit left="170" top="96" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="false" fontSize="18" field="RepNevoa" />
-				<edit left="170" top="124" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="false" fontSize="18" field="RepPedra" />
+				<edit left="170" top="12" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="true" fontSize="18" field="RepFolha" />
+				<edit left="170" top="40" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="true" fontSize="18" field="RepAreia" />
+				<edit left="170" top="68" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="true" fontSize="18" field="RepNuvem" />
+				<edit left="170" top="96" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="true" fontSize="18" field="RepNevoa" />
+				<edit left="170" top="124" width="80" height="25" horzTextAlign="Center" type="number" max="100" min="0" enabled="true" fontSize="18" field="RepPedra" />
 							
 				<edit name="GanhoAnual" left="10" top="213" readOnly="true" width="140" type="number" height="25" fontColor="red" enabled="false" horzTextAlign="Center" fontSize="18" />
 				
-				<edit left="187" top="213" width="50" height="25" horzTextAlign="Center" type="number" fontSize="18" enabled="false" field="BonusGanhoAnual" />				
-				<edit left="10" top="270" readOnly="true" width="140" height="25" horzTextAlign="Center" fontSize="18" enabled="false" field="BingoBook" />
+				<edit left="187" top="213" width="50" height="25" horzTextAlign="Center" type="number" fontSize="18" enabled="true" field="BonusGanhoAnual" />				
+				<edit left="10" top="270" readOnly="true" width="140" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="BingoBook" />
 				
 				<comboBox left="110" top="300" field="Moradia" items="{'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'}"/>
 				<edit left="280" top="298" width="50" height="25" horzTextAlign="Center" fontSize="18" field="MoradiaNpc" />
 				
-				<edit left="10" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="false" field="Bonus1d10" />
-				<edit left="60" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="false"  field="Bonus2d10" />
-				<edit left="120" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="false" field="Bonus3d10" />
+				<edit left="10" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus1d10" />
+				<edit left="60" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true"  field="Bonus2d10" />
+				<edit left="120" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus3d10" />
 				<rectangle left="180" top="379" width="40" height="30" color="black" strokeColor="red" strokeSize="3" />
-				<edit left="180" top="380" width="40" height="25" transparent="true" horzTextAlign="Center" enabled="false" fontSize="18" field="Bonus1d20" />
+				<edit left="180" top="380" width="40" height="25" transparent="true" horzTextAlign="Center" enabled="true" fontSize="18" field="Bonus1d20" />
 				
 				<image left="23" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif"/>
 				<image left="222" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif"/>
