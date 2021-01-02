@@ -71,6 +71,14 @@ local function constructNew_frmsekai()
     obj.button1:setWidth(100);
     obj.button1:setName("button1");
 
+    obj.comboBox1 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox1:setParent(obj.scrollBox2);
+    obj.comboBox1:setLeft(145);
+    obj.comboBox1:setTop(420);
+    obj.comboBox1:setItems({'Taijutsu', 'Armado'});
+    obj.comboBox1:setField("BatendoCom");
+    obj.comboBox1:setName("comboBox1");
+
     obj.button2 = GUI.fromHandle(_obj_newObject("button"));
     obj.button2:setParent(obj.scrollBox2);
     obj.button2:setLeft(250);
@@ -250,15 +258,15 @@ local function constructNew_frmsekai()
     obj.label4:setText("Tipo");
     obj.label4:setName("label4");
 
-    obj.comboBox1 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox1:setParent(obj.rectangle1);
-    obj.comboBox1:setLeft(190);
-    obj.comboBox1:setTop(363);
-    obj.comboBox1:setWidth(140);
-    obj.comboBox1:setHeight(18);
-    obj.comboBox1:setField("Tipo");
-    obj.comboBox1:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox1:setName("comboBox1");
+    obj.comboBox2 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox2:setParent(obj.rectangle1);
+    obj.comboBox2:setLeft(190);
+    obj.comboBox2:setTop(363);
+    obj.comboBox2:setWidth(140);
+    obj.comboBox2:setHeight(18);
+    obj.comboBox2:setField("Tipo");
+    obj.comboBox2:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox2:setName("comboBox2");
 
     obj.label5 = GUI.fromHandle(_obj_newObject("label"));
     obj.label5:setParent(obj.rectangle1);
@@ -445,7 +453,7 @@ local function constructNew_frmsekai()
     obj.edit12:setMin(1);
     obj.edit12:setMax(9);
     obj.edit12:setEnabled(true);
-    obj.edit12:setVisible(true);
+    obj.edit12:setVisible(false);
     obj.edit12:setHorzTextAlign("center");
     obj.edit12:setField("Upa1d10Soma");
     obj.edit12:setName("edit12");
@@ -460,7 +468,7 @@ local function constructNew_frmsekai()
     obj.edit13:setMin(1);
     obj.edit13:setMax(9);
     obj.edit13:setEnabled(true);
-    obj.edit13:setVisible(true);
+    obj.edit13:setVisible(false);
     obj.edit13:setHorzTextAlign("center");
     obj.edit13:setField("Upa2d10Soma");
     obj.edit13:setName("edit13");
@@ -475,7 +483,7 @@ local function constructNew_frmsekai()
     obj.edit14:setMin(1);
     obj.edit14:setMax(9);
     obj.edit14:setEnabled(true);
-    obj.edit14:setVisible(true);
+    obj.edit14:setVisible(false);
     obj.edit14:setHorzTextAlign("center");
     obj.edit14:setField("Upa3d10Soma");
     obj.edit14:setName("edit14");
@@ -488,7 +496,7 @@ local function constructNew_frmsekai()
     obj.rectangle3:setHeight(30);
     obj.rectangle3:setColor("black");
     obj.rectangle3:setStrokeColor("red");
-    obj.rectangle3:setVisible(true);
+    obj.rectangle3:setVisible(false);
     obj.rectangle3:setStrokeSize(3);
     obj.rectangle3:setName("rectangle3");
 
@@ -502,7 +510,7 @@ local function constructNew_frmsekai()
     obj.edit15:setMin(1);
     obj.edit15:setMax(18);
     obj.edit15:setEnabled(true);
-    obj.edit15:setVisible(true);
+    obj.edit15:setVisible(false);
     obj.edit15:setTransparent(true);
     obj.edit15:setHorzTextAlign("center");
     obj.edit15:setField("Upa1d20Soma");
@@ -651,63 +659,68 @@ local function constructNew_frmsekai()
 											node.Upa1d20 = 18;
 										end;	
 										
-										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
-										function (rolado)
-										if node.DescriJutsu == nil then
-											showMessage("Falta Descrição do Jutsu ou não irá funcionar");
-											self.btnUparJutsu.visible = true;
-										else 
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu);										
-												if node.Upa1d10 >= rolado.resultado then
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-													mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
-													function (rolado)	
-														if node.Upa2d10 >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
-															function (rolado)
-																if node.Upa3d10 >= rolado.resultado then
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-																	mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
-																	function (rolado)
-																		if node.Upa1d20 >= rolado.resultado then
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
-																			mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
-																			node.Upa1d10Erro = 0;
-																			node.Upa2d10Erro = 0;
-																			node.Upa3d10Erro = 0;
-																			node.Upa1d20Erro = 0;																			
-																			node.LevelJutsu1 = tonumber(node.LevelJutsu1 or 0) + 1;
-																			self.btnUparJutsu.visible = true;	
-																		else 
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
-																			node.Upa1d20Erro =  node.Upa1d20Erro + 1;
-																			node.Upa1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma) or 0) + (tonumber(node.Upa1d20Erro) or 0);
-																			self.btnUparJutsu.visible = true;	
-																		end;
-																	end);	
-																else
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
-																	node.Upa3d10Erro =  node.Upa3d10Erro + 1;
-																	node.Upa3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma) or 0) + (tonumber(node.Upa3d10Erro) or 0);
-																	self.btnUparJutsu.visible = true;																
-																end;
-															end);
-														else
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
-															node.Upa2d10Erro =  node.Upa2d10Erro + 1;														
-															node.Upa2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma) or 0) + (tonumber(node.Upa2d10Erro) or 0);
-															self.btnUparJutsu.visible = true;														
-														end;												
-													end)
-												else
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
-													node.Upa1d10Erro =  node.Upa1d10Erro + 1;
-													node.Upa1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma) or 0) + (tonumber(node.Upa1d10Erro) or 0);
-													self.btnUparJutsu.visible = true;
+										if sheet.TreinoON == true then	
+											mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
+											function (rolado)
+											if node.DescriJutsu == nil then
+												showMessage("Falta Descrição do Jutsu ou não irá funcionar");
+												self.btnUparJutsu.visible = true;
+											else 
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu);										
+													if node.Upa1d10 >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+														mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+														function (rolado)	
+															if node.Upa2d10 >= rolado.resultado then
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+																function (rolado)
+																	if node.Upa3d10 >= rolado.resultado then
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																		mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																		function (rolado)
+																			if node.Upa1d20 >= rolado.resultado then
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
+																				mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																				node.Upa1d10Erro = 0;
+																				node.Upa2d10Erro = 0;
+																				node.Upa3d10Erro = 0;
+																				node.Upa1d20Erro = 0;																			
+																				node.LevelJutsu1 = tonumber(node.LevelJutsu1 or 0) + 1;
+																				self.btnUparJutsu.visible = true;	
+																			else 
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																				node.Upa1d20Erro =  node.Upa1d20Erro + 1;
+																				node.Upa1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma) or 0) + (tonumber(node.Upa1d20Erro) or 0);
+																				self.btnUparJutsu.visible = true;	
+																			end;
+																		end);	
+																	else
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																		node.Upa3d10Erro =  node.Upa3d10Erro + 1;
+																		node.Upa3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma) or 0) + (tonumber(node.Upa3d10Erro) or 0);
+																		self.btnUparJutsu.visible = true;																
+																	end;
+																end);
+															else
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+																node.Upa2d10Erro =  node.Upa2d10Erro + 1;														
+																node.Upa2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma) or 0) + (tonumber(node.Upa2d10Erro) or 0);
+																self.btnUparJutsu.visible = true;														
+															end;												
+														end)
+													else
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+														node.Upa1d10Erro =  node.Upa1d10Erro + 1;
+														node.Upa1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma) or 0) + (tonumber(node.Upa1d10Erro) or 0);
+														self.btnUparJutsu.visible = true;
+													end;
 												end;
-											end;
-										end);										
+											end);
+										else
+											showMessage("TREINO NÃO HABILITADO PROVAVELMENTE O MESTRE ESTA OFFLINE");
+											self.btnUparJutsu3.visible = true;
+										end;
 									end;	
 									
 
@@ -883,15 +896,15 @@ local function constructNew_frmsekai()
     obj.label12:setText("Tipo");
     obj.label12:setName("label12");
 
-    obj.comboBox2 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox2:setParent(obj.rectangle5);
-    obj.comboBox2:setLeft(190);
-    obj.comboBox2:setTop(363);
-    obj.comboBox2:setWidth(140);
-    obj.comboBox2:setHeight(18);
-    obj.comboBox2:setField("Tipo2");
-    obj.comboBox2:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox2:setName("comboBox2");
+    obj.comboBox3 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox3:setParent(obj.rectangle5);
+    obj.comboBox3:setLeft(190);
+    obj.comboBox3:setTop(363);
+    obj.comboBox3:setWidth(140);
+    obj.comboBox3:setHeight(18);
+    obj.comboBox3:setField("Tipo2");
+    obj.comboBox3:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox3:setName("comboBox3");
 
     obj.label13 = GUI.fromHandle(_obj_newObject("label"));
     obj.label13:setParent(obj.rectangle5);
@@ -958,7 +971,7 @@ local function constructNew_frmsekai()
     obj.edit26:setHeight(20);
     obj.edit26:setLeft(230);
     obj.edit26:setTop(400);
-    obj.edit26:setEnabled(true);
+    obj.edit26:setEnabled(false);
     obj.edit26:setType("number");
     obj.edit26:setHorzTextAlign("center");
     obj.edit26:setField("LevelJutsu2");
@@ -1078,7 +1091,7 @@ local function constructNew_frmsekai()
     obj.edit31:setMin(1);
     obj.edit31:setMax(9);
     obj.edit31:setEnabled(true);
-    obj.edit31:setVisible(true);
+    obj.edit31:setVisible(false);
     obj.edit31:setHorzTextAlign("center");
     obj.edit31:setField("Upa1d10Soma2");
     obj.edit31:setName("edit31");
@@ -1093,7 +1106,7 @@ local function constructNew_frmsekai()
     obj.edit32:setMin(1);
     obj.edit32:setMax(9);
     obj.edit32:setEnabled(true);
-    obj.edit32:setVisible(true);
+    obj.edit32:setVisible(false);
     obj.edit32:setHorzTextAlign("center");
     obj.edit32:setField("Upa2d10Soma2");
     obj.edit32:setName("edit32");
@@ -1108,7 +1121,7 @@ local function constructNew_frmsekai()
     obj.edit33:setMin(1);
     obj.edit33:setMax(9);
     obj.edit33:setEnabled(true);
-    obj.edit33:setVisible(true);
+    obj.edit33:setVisible(false);
     obj.edit33:setHorzTextAlign("center");
     obj.edit33:setField("Upa3d10Soma2");
     obj.edit33:setName("edit33");
@@ -1121,7 +1134,7 @@ local function constructNew_frmsekai()
     obj.rectangle7:setHeight(30);
     obj.rectangle7:setColor("black");
     obj.rectangle7:setStrokeColor("red");
-    obj.rectangle7:setVisible(true);
+    obj.rectangle7:setVisible(false);
     obj.rectangle7:setStrokeSize(3);
     obj.rectangle7:setName("rectangle7");
 
@@ -1135,7 +1148,7 @@ local function constructNew_frmsekai()
     obj.edit34:setMin(1);
     obj.edit34:setMax(18);
     obj.edit34:setEnabled(true);
-    obj.edit34:setVisible(true);
+    obj.edit34:setVisible(false);
     obj.edit34:setTransparent(false);
     obj.edit34:setHorzTextAlign("center");
     obj.edit34:setField("Upa1d20Soma2");
@@ -1284,63 +1297,68 @@ local function constructNew_frmsekai()
 											node.Upa1d202 = 18;
 										end;	
 										
-										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
-										function (rolado)
-										if node.DescriJutsu2 == nil then
-											showMessage("Falta Descrição do Jutsu ou não irá funcionar");
-											self.btnUparJutsu2.visible = true;
-										else 
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu2);										
-												if node.Upa1d102 >= rolado.resultado then
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-													mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
-													function (rolado)	
-														if node.Upa2d102 >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
-															function (rolado)
-																if node.Upa3d102 >= rolado.resultado then
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-																	mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
-																	function (rolado)
-																		if node.Upa1d202 >= rolado.resultado then
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
-																			mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
-																			node.Upa1d10Erro2 = 0;
-																			node.Upa2d10Erro2 = 0;
-																			node.Upa3d10Erro2 = 0;
-																			node.Upa1d20Erro2 = 0;																			
-																			node.LevelJutsu2 = tonumber(node.LevelJutsu2 or 0) + 1;
-																			self.btnUparJutsu2.visible = true;	
-																		else 
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
-																			node.Upa1d20Erro2 =  node.Upa1d20Erro2 + 1;
-																			node.Upa1d202 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma2) or 0) + (tonumber(node.Upa1d20Erro2) or 0);
-																			self.btnUparJutsu2.visible = true;	
-																		end;
-																	end);	
-																else
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
-																	node.Upa3d10Erro2 =  node.Upa3d10Erro2 + 1;
-																	node.Upa3d102 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma2) or 0) + (tonumber(node.Upa3d10Erro2) or 0);
-																	self.btnUparJutsu2.visible = true;																
-																end;
-															end);
-														else
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
-															node.Upa2d10Erro2 =  node.Upa2d10Erro2 + 1;														
-															node.Upa2d102 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma2) or 0) + (tonumber(node.Upa2d10Erro2) or 0);
-															self.btnUparJutsu2.visible = true;														
-														end;												
-													end)
-												else
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
-													node.Upa1d10Erro2 =  node.Upa1d10Erro2 + 1;
-													node.Upa1d102 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma2) or 0) + (tonumber(node.Upa1d10Erro2) or 0);
-													self.btnUparJutsu2.visible = true;
+										if sheet.TreinoON == true then	
+											mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
+											function (rolado)
+											if node.DescriJutsu2 == nil then
+												showMessage("Falta Descrição do Jutsu ou não irá funcionar");
+												self.btnUparJutsu2.visible = true;
+											else 
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu2);										
+													if node.Upa1d102 >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+														mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+														function (rolado)	
+															if node.Upa2d102 >= rolado.resultado then
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+																function (rolado)
+																	if node.Upa3d102 >= rolado.resultado then
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																		mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																		function (rolado)
+																			if node.Upa1d202 >= rolado.resultado then
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
+																				mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																				node.Upa1d10Erro2 = 0;
+																				node.Upa2d10Erro2 = 0;
+																				node.Upa3d10Erro2 = 0;
+																				node.Upa1d20Erro2 = 0;																			
+																				node.LevelJutsu2 = tonumber(node.LevelJutsu2 or 0) + 1;
+																				self.btnUparJutsu2.visible = true;	
+																			else 
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																				node.Upa1d20Erro2 =  node.Upa1d20Erro2 + 1;
+																				node.Upa1d202 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma2) or 0) + (tonumber(node.Upa1d20Erro2) or 0);
+																				self.btnUparJutsu2.visible = true;	
+																			end;
+																		end);	
+																	else
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																		node.Upa3d10Erro2 =  node.Upa3d10Erro2 + 1;
+																		node.Upa3d102 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma2) or 0) + (tonumber(node.Upa3d10Erro2) or 0);
+																		self.btnUparJutsu2.visible = true;																
+																	end;
+																end);
+															else
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+																node.Upa2d10Erro2 =  node.Upa2d10Erro2 + 1;														
+																node.Upa2d102 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma2) or 0) + (tonumber(node.Upa2d10Erro2) or 0);
+																self.btnUparJutsu2.visible = true;														
+															end;												
+														end)
+													else
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+														node.Upa1d10Erro2 =  node.Upa1d10Erro2 + 1;
+														node.Upa1d102 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma2) or 0) + (tonumber(node.Upa1d10Erro2) or 0);
+														self.btnUparJutsu2.visible = true;
+													end;
 												end;
-											end;
-										end);										
+											end);
+										else
+											showMessage("TREINO NÃO HABILITADO PROVAVELMENTE O MESTRE ESTA OFFLINE");
+											self.btnUparJutsu3.visible = true;
+										end;										
 									end;	
 									
 
@@ -1516,15 +1534,15 @@ local function constructNew_frmsekai()
     obj.label20:setText("Tipo");
     obj.label20:setName("label20");
 
-    obj.comboBox3 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox3:setParent(obj.rectangle9);
-    obj.comboBox3:setLeft(190);
-    obj.comboBox3:setTop(363);
-    obj.comboBox3:setWidth(140);
-    obj.comboBox3:setHeight(18);
-    obj.comboBox3:setField("Tipo3");
-    obj.comboBox3:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox3:setName("comboBox3");
+    obj.comboBox4 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox4:setParent(obj.rectangle9);
+    obj.comboBox4:setLeft(190);
+    obj.comboBox4:setTop(363);
+    obj.comboBox4:setWidth(140);
+    obj.comboBox4:setHeight(18);
+    obj.comboBox4:setField("Tipo3");
+    obj.comboBox4:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox4:setName("comboBox4");
 
     obj.label21 = GUI.fromHandle(_obj_newObject("label"));
     obj.label21:setParent(obj.rectangle9);
@@ -1591,7 +1609,7 @@ local function constructNew_frmsekai()
     obj.edit45:setHeight(20);
     obj.edit45:setLeft(230);
     obj.edit45:setTop(400);
-    obj.edit45:setEnabled(true);
+    obj.edit45:setEnabled(false);
     obj.edit45:setHorzTextAlign("center");
     obj.edit45:setType("number");
     obj.edit45:setField("LevelJutsu3");
@@ -1711,7 +1729,7 @@ local function constructNew_frmsekai()
     obj.edit50:setMin(1);
     obj.edit50:setMax(9);
     obj.edit50:setEnabled(true);
-    obj.edit50:setVisible(true);
+    obj.edit50:setVisible(false);
     obj.edit50:setHorzTextAlign("center");
     obj.edit50:setField("Upa1d10Soma3");
     obj.edit50:setName("edit50");
@@ -1726,7 +1744,7 @@ local function constructNew_frmsekai()
     obj.edit51:setMin(1);
     obj.edit51:setMax(9);
     obj.edit51:setEnabled(true);
-    obj.edit51:setVisible(true);
+    obj.edit51:setVisible(false);
     obj.edit51:setHorzTextAlign("center");
     obj.edit51:setField("Upa2d10Soma3");
     obj.edit51:setName("edit51");
@@ -1741,7 +1759,7 @@ local function constructNew_frmsekai()
     obj.edit52:setMin(1);
     obj.edit52:setMax(9);
     obj.edit52:setEnabled(true);
-    obj.edit52:setVisible(true);
+    obj.edit52:setVisible(false);
     obj.edit52:setHorzTextAlign("center");
     obj.edit52:setField("Upa3d10Soma3");
     obj.edit52:setName("edit52");
@@ -1754,7 +1772,7 @@ local function constructNew_frmsekai()
     obj.rectangle11:setHeight(30);
     obj.rectangle11:setColor("black");
     obj.rectangle11:setStrokeColor("red");
-    obj.rectangle11:setVisible(true);
+    obj.rectangle11:setVisible(false);
     obj.rectangle11:setStrokeSize(3);
     obj.rectangle11:setName("rectangle11");
 
@@ -1768,7 +1786,7 @@ local function constructNew_frmsekai()
     obj.edit53:setMin(1);
     obj.edit53:setMax(18);
     obj.edit53:setEnabled(true);
-    obj.edit53:setVisible(true);
+    obj.edit53:setVisible(false);
     obj.edit53:setTransparent(true);
     obj.edit53:setHorzTextAlign("center");
     obj.edit53:setField("Upa1d20Soma3");
@@ -1917,63 +1935,68 @@ local function constructNew_frmsekai()
 											node.Upa1d203 = 18;
 										end;
 										
-										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
-										function (rolado)
-										if node.DescriJutsu3 == nil then
-											showMessage("Falta Descrição do Jutsu ou não irá funcionar");
-											self.btnUparJutsu3.visible = true;
-										else 
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu3);										
-												if node.Upa1d103 >= rolado.resultado then
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-													mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
-													function (rolado)	
-														if node.Upa2d103 >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
-															function (rolado)
-																if node.Upa3d103 >= rolado.resultado then
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-																	mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
-																	function (rolado)
-																		if node.Upa1d203 >= rolado.resultado then
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
-																			mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
-																			node.Upa1d10Erro3 = 0;
-																			node.Upa2d10Erro3 = 0;
-																			node.Upa3d10Erro3 = 0;
-																			node.Upa1d20Erro3 = 0;																			
-																			node.LevelJutsu3 = tonumber(node.LevelJutsu3 or 0) + 1;
-																			self.btnUparJutsu3.visible = true;	
-																		else 
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
-																			node.Upa1d20Erro3 =  node.Upa1d20Erro3 + 1;
-																			node.Upa1d203 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma3) or 0) + (tonumber(node.Upa1d20Erro3) or 0);
-																			self.btnUparJutsu3.visible = true;	
-																		end;
-																	end);	
-																else
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
-																	node.Upa3d10Erro3 =  node.Upa3d10Erro3 + 1;
-																	node.Upa3d103 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma3) or 0) + (tonumber(node.Upa3d10Erro3) or 0);
-																	self.btnUparJutsu3.visible = true;																
-																end;
-															end);
-														else
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
-															node.Upa2d10Erro3 =  node.Upa2d10Erro3 + 1;														
-															node.Upa2d103 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma3) or 0) + (tonumber(node.Upa2d10Erro3) or 0);
-															self.btnUparJutsu3.visible = true;														
-														end;												
-													end)
-												else
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
-													node.Upa1d10Erro3 =  node.Upa1d10Erro3 + 1;
-													node.Upa1d103 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma3) or 0) + (tonumber(node.Upa1d10Erro3) or 0);
-													self.btnUparJutsu3.visible = true;
+										if sheet.TreinoON == true then										
+											mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Fortificamento de Jutsu",
+											function (rolado)
+											if node.DescriJutsu3 == nil then
+												showMessage("Falta Descrição do Jutsu ou não irá funcionar");
+												self.btnUparJutsu3.visible = true;
+											else 
+												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu3);										
+													if node.Upa1d103 >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+														mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+														function (rolado)	
+															if node.Upa2d103 >= rolado.resultado then
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+																function (rolado)
+																	if node.Upa3d103 >= rolado.resultado then
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																		mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																		function (rolado)
+																			if node.Upa1d203 >= rolado.resultado then
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
+																				mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																				node.Upa1d10Erro3 = 0;
+																				node.Upa2d10Erro3 = 0;
+																				node.Upa3d10Erro3 = 0;
+																				node.Upa1d20Erro3 = 0;																			
+																				node.LevelJutsu3 = tonumber(node.LevelJutsu3 or 0) + 1;
+																				self.btnUparJutsu3.visible = true;	
+																			else 
+																				mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																				node.Upa1d20Erro3 =  node.Upa1d20Erro3 + 1;
+																				node.Upa1d203 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Upa1d20Soma3) or 0) + (tonumber(node.Upa1d20Erro3) or 0);
+																				self.btnUparJutsu3.visible = true;	
+																			end;
+																		end);	
+																	else
+																		mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																		node.Upa3d10Erro3 =  node.Upa3d10Erro3 + 1;
+																		node.Upa3d103 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Upa3d10Soma3) or 0) + (tonumber(node.Upa3d10Erro3) or 0);
+																		self.btnUparJutsu3.visible = true;																
+																	end;
+																end);
+															else
+																mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+																node.Upa2d10Erro3 =  node.Upa2d10Erro3 + 1;														
+																node.Upa2d103 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Upa2d10Soma3) or 0) + (tonumber(node.Upa2d10Erro3) or 0);
+																self.btnUparJutsu3.visible = true;														
+															end;												
+														end)
+													else
+														mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+														node.Upa1d10Erro3 =  node.Upa1d10Erro3 + 1;
+														node.Upa1d103 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Upa1d10Soma3) or 0) + (tonumber(node.Upa1d10Erro3) or 0);
+														self.btnUparJutsu3.visible = true;
+													end;
 												end;
-											end;
-										end);										
+											end);
+										else
+											showMessage("TREINO NÃO HABILITADO PROVAVELMENTE O MESTRE ESTA OFFLINE");
+											self.btnUparJutsu3.visible = true;
+										end;
 									end;	
 									
 
@@ -1987,16 +2010,16 @@ local function constructNew_frmsekai()
     obj.edit58:setField("Nome");
     obj.edit58:setName("edit58");
 
-    obj.comboBox4 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox4:setParent(obj.scrollBox2);
-    obj.comboBox4:setLeft(220);
-    obj.comboBox4:setTop(32);
-    obj.comboBox4:setWidth(95);
-    obj.comboBox4:setHeight(18);
-    obj.comboBox4:setField("Cla");
-    obj.comboBox4:setItems({'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kami', 'Kamizurui', 'Nara', 'Uchiha', 'Uzumaki', 'Yamanaka', 'Rinnegan',
+    obj.comboBox5 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox5:setParent(obj.scrollBox2);
+    obj.comboBox5:setLeft(220);
+    obj.comboBox5:setTop(32);
+    obj.comboBox5:setWidth(95);
+    obj.comboBox5:setHeight(18);
+    obj.comboBox5:setField("Cla");
+    obj.comboBox5:setItems({'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kami', 'Kamizurui', 'Nara', 'Uchiha', 'Uzumaki', 'Yamanaka', 'Rinnegan',
 		 '----------', 'Fire', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----------', 'Gote', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '----------'});
-    obj.comboBox4:setName("comboBox4");
+    obj.comboBox5:setName("comboBox5");
 
     obj.edit59 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit59:setParent(obj.scrollBox2);
@@ -2019,15 +2042,15 @@ local function constructNew_frmsekai()
     obj.edit60:setField("Idade2");
     obj.edit60:setName("edit60");
 
-    obj.comboBox5 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox5:setParent(obj.scrollBox2);
-    obj.comboBox5:setLeft(505);
-    obj.comboBox5:setTop(32);
-    obj.comboBox5:setWidth(140);
-    obj.comboBox5:setHeight(18);
-    obj.comboBox5:setField("Graduacao");
-    obj.comboBox5:setItems({'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'});
-    obj.comboBox5:setName("comboBox5");
+    obj.comboBox6 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox6:setParent(obj.scrollBox2);
+    obj.comboBox6:setLeft(505);
+    obj.comboBox6:setTop(32);
+    obj.comboBox6:setWidth(140);
+    obj.comboBox6:setHeight(18);
+    obj.comboBox6:setField("Graduacao");
+    obj.comboBox6:setItems({'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'});
+    obj.comboBox6:setName("comboBox6");
 
     obj.edit61 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit61:setParent(obj.scrollBox2);
@@ -2268,6 +2291,16 @@ local function constructNew_frmsekai()
     obj.edit79:setField("Outros");
     obj.edit79:setName("edit79");
 
+    obj.checkBox1 = GUI.fromHandle(_obj_newObject("checkBox"));
+    obj.checkBox1:setParent(obj.scrollBox2);
+    obj.checkBox1:setLeft(800);
+    obj.checkBox1:setTop(20);
+    obj.checkBox1:setFontSize(18);
+    obj.checkBox1:setText("TREINO ON ?");
+    obj.checkBox1:setVisible(false);
+    obj.checkBox1:setField("TreinoON");
+    obj.checkBox1:setName("checkBox1");
+
     obj.edit80 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit80:setParent(obj.scrollBox2);
     obj.edit80:setLeft(190);
@@ -2349,15 +2382,15 @@ local function constructNew_frmsekai()
     obj.edit83:setField("OutrosTotal");
     obj.edit83:setName("edit83");
 
-    obj.comboBox6 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox6:setParent(obj.scrollBox2);
-    obj.comboBox6:setLeft(280);
-    obj.comboBox6:setTop(336);
-    obj.comboBox6:setWidth(110);
-    obj.comboBox6:setHeight(18);
-    obj.comboBox6:setField("TipoOutro");
-    obj.comboBox6:setItems({'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'});
-    obj.comboBox6:setName("comboBox6");
+    obj.comboBox7 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox7:setParent(obj.scrollBox2);
+    obj.comboBox7:setLeft(280);
+    obj.comboBox7:setTop(336);
+    obj.comboBox7:setWidth(110);
+    obj.comboBox7:setHeight(18);
+    obj.comboBox7:setField("TipoOutro");
+    obj.comboBox7:setItems({'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'});
+    obj.comboBox7:setName("comboBox7");
 
     obj.image8 = GUI.fromHandle(_obj_newObject("image"));
     obj.image8:setParent(obj.scrollBox2);
@@ -2669,38 +2702,43 @@ local function constructNew_frmsekai()
 
     obj.dataLink5 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink5:setParent(obj.POPCALCULO);
-    obj.dataLink5:setFields({'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal', 'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'});
+    obj.dataLink5:setFields({'Chakra', 'ChakraTotal', 'Idade', 'TipoOutro'});
     obj.dataLink5:setName("dataLink5");
 
     obj.dataLink6 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink6:setParent(obj.POPCALCULO);
-    obj.dataLink6:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
+    obj.dataLink6:setFields({'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal', 'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'});
     obj.dataLink6:setName("dataLink6");
 
     obj.dataLink7 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink7:setParent(obj.POPCALCULO);
-    obj.dataLink7:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
+    obj.dataLink7:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
 		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
     obj.dataLink7:setName("dataLink7");
 
     obj.dataLink8 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink8:setParent(obj.POPCALCULO);
-    obj.dataLink8:setFields({'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'});
+    obj.dataLink8:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
     obj.dataLink8:setName("dataLink8");
 
     obj.dataLink9 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink9:setParent(obj.POPCALCULO);
-    obj.dataLink9:setFields({'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'});
+    obj.dataLink9:setFields({'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'});
     obj.dataLink9:setName("dataLink9");
 
     obj.dataLink10 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink10:setParent(obj.POPCALCULO);
-    obj.dataLink10:setFields({'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
-		'DReiatsu', 'AcessorioReiatsu'});
+    obj.dataLink10:setFields({'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'});
     obj.dataLink10:setName("dataLink10");
+
+    obj.dataLink11 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink11:setParent(obj.POPCALCULO);
+    obj.dataLink11:setFields({'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
+		'DReiatsu', 'AcessorioReiatsu'});
+    obj.dataLink11:setName("dataLink11");
 
     obj.button18 = GUI.fromHandle(_obj_newObject("button"));
     obj.button18:setParent(obj.scrollBox2);
@@ -2945,10 +2983,10 @@ local function constructNew_frmsekai()
     obj.edit115:setField("SenbonLimite");
     obj.edit115:setName("edit115");
 
-    obj.dataLink11 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink11:setParent(obj.POPKunai);
-    obj.dataLink11:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'});
-    obj.dataLink11:setName("dataLink11");
+    obj.dataLink12 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink12:setParent(obj.POPKunai);
+    obj.dataLink12:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'});
+    obj.dataLink12:setName("dataLink12");
 
     obj.button19 = GUI.fromHandle(_obj_newObject("button"));
     obj.button19:setParent(obj.scrollBox2);
@@ -3447,7 +3485,7 @@ local function constructNew_frmsekai()
     obj.edit148:setHeight(20);
     obj.edit148:setLeft(740);
     obj.edit148:setTop(183);
-    obj.edit148:setType("number");
+    obj.edit148:setEnabled(false);
     obj.edit148:setField("ChakraNatural");
     obj.edit148:setName("edit148");
 
@@ -3575,15 +3613,15 @@ local function constructNew_frmsekai()
     obj.label42:setText("Tipo");
     obj.label42:setName("label42");
 
-    obj.comboBox7 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox7:setParent(obj.POPPergaminho1);
-    obj.comboBox7:setLeft(275);
-    obj.comboBox7:setTop(363);
-    obj.comboBox7:setWidth(50);
-    obj.comboBox7:setHeight(18);
-    obj.comboBox7:setField("TipoPergaminho1");
-    obj.comboBox7:setItems({'X', 'SS', 'S'});
-    obj.comboBox7:setName("comboBox7");
+    obj.comboBox8 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox8:setParent(obj.POPPergaminho1);
+    obj.comboBox8:setLeft(275);
+    obj.comboBox8:setTop(363);
+    obj.comboBox8:setWidth(50);
+    obj.comboBox8:setHeight(18);
+    obj.comboBox8:setField("TipoPergaminho1");
+    obj.comboBox8:setItems({'X', 'SS', 'S'});
+    obj.comboBox8:setName("comboBox8");
 
     obj.image21 = GUI.fromHandle(_obj_newObject("image"));
     obj.image21:setParent(obj.POPPergaminho1);
@@ -3740,15 +3778,15 @@ local function constructNew_frmsekai()
     obj.label46:setText("Tipo");
     obj.label46:setName("label46");
 
-    obj.comboBox8 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox8:setParent(obj.POPPergaminho2);
-    obj.comboBox8:setLeft(275);
-    obj.comboBox8:setTop(363);
-    obj.comboBox8:setWidth(50);
-    obj.comboBox8:setHeight(18);
-    obj.comboBox8:setField("TipoPergaminho2");
-    obj.comboBox8:setItems({'A', 'B', 'C', 'D', 'E'});
-    obj.comboBox8:setName("comboBox8");
+    obj.comboBox9 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox9:setParent(obj.POPPergaminho2);
+    obj.comboBox9:setLeft(275);
+    obj.comboBox9:setTop(363);
+    obj.comboBox9:setWidth(50);
+    obj.comboBox9:setHeight(18);
+    obj.comboBox9:setField("TipoPergaminho2");
+    obj.comboBox9:setItems({'A', 'B', 'C', 'D', 'E'});
+    obj.comboBox9:setName("comboBox9");
 
     obj.image22 = GUI.fromHandle(_obj_newObject("image"));
     obj.image22:setParent(obj.POPPergaminho2);
@@ -3905,15 +3943,15 @@ local function constructNew_frmsekai()
     obj.label50:setText("Tipo");
     obj.label50:setName("label50");
 
-    obj.comboBox9 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox9:setParent(obj.POPPergaminho3);
-    obj.comboBox9:setLeft(275);
-    obj.comboBox9:setTop(363);
-    obj.comboBox9:setWidth(50);
-    obj.comboBox9:setHeight(18);
-    obj.comboBox9:setField("TipoPergaminho3");
-    obj.comboBox9:setItems({'X','SS','S','A','B','C','D','E','Outros'});
-    obj.comboBox9:setName("comboBox9");
+    obj.comboBox10 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox10:setParent(obj.POPPergaminho3);
+    obj.comboBox10:setLeft(275);
+    obj.comboBox10:setTop(363);
+    obj.comboBox10:setWidth(50);
+    obj.comboBox10:setHeight(18);
+    obj.comboBox10:setField("TipoPergaminho3");
+    obj.comboBox10:setItems({'X','SS','S','A','B','C','D','E','Outros'});
+    obj.comboBox10:setName("comboBox10");
 
     obj.image23 = GUI.fromHandle(_obj_newObject("image"));
     obj.image23:setParent(obj.POPPergaminho3);
@@ -4619,16 +4657,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.dataLink12 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink12:setParent(obj.scrollBox6);
-    obj.dataLink12:setFields({'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor'});
-    obj.dataLink12:setName("dataLink12");
-
     obj.dataLink13 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink13:setParent(obj.scrollBox6);
-    obj.dataLink13:setFields({'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
-				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen'});
+    obj.dataLink13:setFields({'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor'});
     obj.dataLink13:setName("dataLink13");
+
+    obj.dataLink14 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink14:setParent(obj.scrollBox6);
+    obj.dataLink14:setFields({'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
+				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen'});
+    obj.dataLink14:setName("dataLink14");
 
     obj.tab3 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab3:setParent(obj.tabControl1);
@@ -5548,15 +5586,15 @@ local function constructNew_frmsekai()
     obj.label89:setAutoSize(true);
     obj.label89:setName("label89");
 
-    obj.comboBox10 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox10:setParent(obj.rectangle13);
-    obj.comboBox10:setLeft(50);
-    obj.comboBox10:setTop(360);
-    obj.comboBox10:setWidth(140);
-    obj.comboBox10:setHeight(18);
-    obj.comboBox10:setField("TipoItens");
-    obj.comboBox10:setItems({'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'});
-    obj.comboBox10:setName("comboBox10");
+    obj.comboBox11 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox11:setParent(obj.rectangle13);
+    obj.comboBox11:setLeft(50);
+    obj.comboBox11:setTop(360);
+    obj.comboBox11:setWidth(140);
+    obj.comboBox11:setHeight(18);
+    obj.comboBox11:setField("TipoItens");
+    obj.comboBox11:setItems({'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'});
+    obj.comboBox11:setName("comboBox11");
 
     obj.tab4 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab4:setParent(obj.tabControl1);
@@ -5675,7 +5713,7 @@ local function constructNew_frmsekai()
     obj.edit237:setHorzTextAlign("center");
     obj.edit237:setType("number");
     obj.edit237:setFontSize(18);
-    obj.edit237:setEnabled(false);
+    obj.edit237:setEnabled(true);
     obj.edit237:setField("BonusGanhoAnual");
     obj.edit237:setName("edit237");
 
@@ -5688,17 +5726,17 @@ local function constructNew_frmsekai()
     obj.edit238:setHeight(25);
     obj.edit238:setHorzTextAlign("center");
     obj.edit238:setFontSize(18);
-    obj.edit238:setEnabled(false);
+    obj.edit238:setEnabled(true);
     obj.edit238:setField("BingoBook");
     obj.edit238:setName("edit238");
 
-    obj.comboBox11 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox11:setParent(obj.scrollBox8);
-    obj.comboBox11:setLeft(110);
-    obj.comboBox11:setTop(300);
-    obj.comboBox11:setField("Moradia");
-    obj.comboBox11:setItems({'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'});
-    obj.comboBox11:setName("comboBox11");
+    obj.comboBox12 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox12:setParent(obj.scrollBox8);
+    obj.comboBox12:setLeft(110);
+    obj.comboBox12:setTop(300);
+    obj.comboBox12:setField("Moradia");
+    obj.comboBox12:setItems({'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'});
+    obj.comboBox12:setName("comboBox12");
 
     obj.edit239 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit239:setParent(obj.scrollBox8);
@@ -5719,7 +5757,7 @@ local function constructNew_frmsekai()
     obj.edit240:setHeight(25);
     obj.edit240:setHorzTextAlign("center");
     obj.edit240:setFontSize(18);
-    obj.edit240:setEnabled(false);
+    obj.edit240:setEnabled(true);
     obj.edit240:setField("Bonus1d10");
     obj.edit240:setName("edit240");
 
@@ -5731,7 +5769,7 @@ local function constructNew_frmsekai()
     obj.edit241:setHeight(25);
     obj.edit241:setHorzTextAlign("center");
     obj.edit241:setFontSize(18);
-    obj.edit241:setEnabled(false);
+    obj.edit241:setEnabled(true);
     obj.edit241:setField("Bonus2d10");
     obj.edit241:setName("edit241");
 
@@ -5743,7 +5781,7 @@ local function constructNew_frmsekai()
     obj.edit242:setHeight(25);
     obj.edit242:setHorzTextAlign("center");
     obj.edit242:setFontSize(18);
-    obj.edit242:setEnabled(false);
+    obj.edit242:setEnabled(true);
     obj.edit242:setField("Bonus3d10");
     obj.edit242:setName("edit242");
 
@@ -5766,7 +5804,7 @@ local function constructNew_frmsekai()
     obj.edit243:setHeight(25);
     obj.edit243:setTransparent(true);
     obj.edit243:setHorzTextAlign("center");
-    obj.edit243:setEnabled(false);
+    obj.edit243:setEnabled(true);
     obj.edit243:setFontSize(18);
     obj.edit243:setField("Bonus1d20");
     obj.edit243:setName("edit243");
@@ -5795,10 +5833,10 @@ local function constructNew_frmsekai()
     obj.image29:setSRC("https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif");
     obj.image29:setName("image29");
 
-    obj.dataLink14 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink14:setParent(obj.scrollBox8);
-    obj.dataLink14:setFields({'Graduacao', 'BonusGanhoAnual'});
-    obj.dataLink14:setName("dataLink14");
+    obj.dataLink15 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink15:setParent(obj.scrollBox8);
+    obj.dataLink15:setFields({'Graduacao', 'BonusGanhoAnual'});
+    obj.dataLink15:setName("dataLink15");
 
     obj.button39 = GUI.fromHandle(_obj_newObject("button"));
     obj.button39:setParent(obj.scrollBox8);
@@ -6284,7 +6322,7 @@ local function constructNew_frmsekai()
 
     obj.button42 = GUI.fromHandle(_obj_newObject("button"));
     obj.button42:setParent(obj.scrollBox10);
-    obj.button42:setText("Novo Treinamento");
+    obj.button42:setText("Nova Amizade");
     obj.button42:setWidth(125);
     obj.button42:setHeight(40);
     obj.button42:setLeft(70);
@@ -6496,6 +6534,7 @@ local function constructNew_frmsekai()
             			sheet.OutrosTotal = (tonumber(sheet.OutrosTotal) or 0);
             			sheet.DanoJutsu = (tonumber(sheet.DanoJutsu) or 0);
             			sheet.DanoJutsu2 = (tonumber(sheet.DanoJutsu2) or 0);
+            			sheet.energiaTotal = (tonumber(sheet.energiaTotal) or 0);
             			sheet.DanoJutsu3 = (tonumber(sheet.DanoJutsu3) or 0);
             			sheet.CustoJutsu = (tonumber(sheet.CustoJutsu) or 0);
             			sheet.CustoJutsu2 = (tonumber(sheet.CustoJutsu2) or 0);
@@ -6669,10 +6708,18 @@ local function constructNew_frmsekai()
             						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de ataque fisico",
             							function (rolado)
             								if sheet.AcertoTaiTotal >= rolado.resultado then
-            										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo");
+            									if sheet.BatendoCom == 'Taijutsu' then
+            										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com Taijutsu Causando [§K4]" .. sheet.TaiTotal);
+            									else
+            										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com sua Arma Causando [§K4]" .. sheet.DATotal);
+            									end;
             								else
-            										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou de seu ataque");
-            								end;          
+            									mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou de seu ataque");
+            								end;
+            							local mesa = Firecast.getMesaDe(sheet); 
+            							sheet.energiaTotal = mesa.meuJogador:getBarValue(4);
+            							sheet.energiaTotal = tonumber(sheet.energiaTotal + 10);
+            							mesa.meuJogador:requestSetBarValue(4, sheet.energiaTotal, nil);							
             						end);
         end, obj);
 
@@ -6683,10 +6730,14 @@ local function constructNew_frmsekai()
             						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de Esquiva",
             							function (rolado)
             								if sheet.EsquivaTotal >= rolado.resultado then
-            										mesaDoPersonagem.chat:enviarMensagem("[§K3]Esquivou do ataque do oponente");
+            									mesaDoPersonagem.chat:enviarMensagem("[§K3]Esquivou do ataque do oponente");
             								else
-            										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente Acertou");
-            								end;          
+            									mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente Acertou");
+            								end;
+            							local mesa = Firecast.getMesaDe(sheet); 
+            							sheet.energiaTotal = mesa.meuJogador:getBarValue(4);
+            							sheet.energiaTotal = tonumber(sheet.energiaTotal + 10);
+            							mesa.meuJogador:requestSetBarValue(4, sheet.energiaTotal, nil);											
             						end);
         end, obj);
 
@@ -7513,34 +7564,46 @@ local function constructNew_frmsekai()
         function (_, field, oldValue, newValue)
             if sheet.TipoOutro == 'ChakraBiju' then
             						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
             					if sheet.TipoOutro == 'ChakraBranco' then
             						sheet.Outros = (tonumber(sheet.ChakraBranco) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
             					if sheet.TipoOutro == 'ChakraPreto' then
             						sheet.Outros = (tonumber(sheet.ChakraPreto) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
             					if sheet.TipoOutro == 'Hadou' then
             						sheet.Outros = (tonumber(sheet.Hadou) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
             					if sheet.TipoOutro == 'HadouNegro' then
             						sheet.Outros = (tonumber(sheet.HadouNegro) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             				   
             					if sheet.TipoOutro == 'ChakraNatural' then
             						sheet.Outros = (tonumber(sheet.ChakraNatural) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
             					if sheet.TipoOutro == 'ChakraRoxo' then
             						sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
             					end;
         end, obj);
 
     obj._e_event28 = obj.dataLink5:addEventListener("onChange",
+        function (_, field, oldValue, newValue)
+            sheet.ChakraNatural = (tonumber(sheet.ChakraTotal / 2) or 0);
+        end, obj);
+
+    obj._e_event29 = obj.dataLink6:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Graduacao == 'Academico' then
             						sheet.GTurno = 1;
@@ -7633,7 +7696,7 @@ local function constructNew_frmsekai()
             					end;
         end, obj);
 
-    obj._e_event29 = obj.dataLink6:addEventListener("onChange",
+    obj._e_event30 = obj.dataLink7:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
             				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
@@ -7642,7 +7705,7 @@ local function constructNew_frmsekai()
             				sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
         end, obj);
 
-    obj._e_event30 = obj.dataLink7:addEventListener("onChange",
+    obj._e_event31 = obj.dataLink8:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0);
             				sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
@@ -7656,7 +7719,7 @@ local function constructNew_frmsekai()
             				sheet.DATotal = math.ceil(sheet.DATotal);
         end, obj);
 
-    obj._e_event31 = obj.dataLink8:addEventListener("onChange",
+    obj._e_event32 = obj.dataLink9:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.GHP = (tonumber(sheet.GHP) or 0);
             				sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
@@ -7664,7 +7727,7 @@ local function constructNew_frmsekai()
              				+ (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0);
         end, obj);
 
-    obj._e_event32 = obj.dataLink9:addEventListener("onChange",
+    obj._e_event33 = obj.dataLink10:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
             				if sheet.Idade2 > 40 then
@@ -7675,19 +7738,19 @@ local function constructNew_frmsekai()
             				(tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) + (tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);
         end, obj);
 
-    obj._e_event33 = obj.dataLink10:addEventListener("onChange",
+    obj._e_event34 = obj.dataLink11:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
             				(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
-            				sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) + (tonumber(sheet.DReiatsu) or 0);
+            				sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0);
         end, obj);
 
-    obj._e_event34 = obj.button18:addEventListener("onClick",
+    obj._e_event35 = obj.button18:addEventListener("onClick",
         function (_)
             self.POPKunai:show();
         end, obj);
 
-    obj._e_event35 = obj.dataLink11:addEventListener("onChange",
+    obj._e_event36 = obj.dataLink12:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0);
             					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50;
@@ -7701,77 +7764,77 @@ local function constructNew_frmsekai()
             					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2;
         end, obj);
 
-    obj._e_event36 = obj.button19:addEventListener("onClick",
+    obj._e_event37 = obj.button19:addEventListener("onClick",
         function (_)
             self.POPPB:show();
         end, obj);
 
-    obj._e_event37 = obj.button20:addEventListener("onClick",
+    obj._e_event38 = obj.button20:addEventListener("onClick",
         function (_)
             self.POPDiverso:show();
         end, obj);
 
-    obj._e_event38 = obj.button21:addEventListener("onClick",
+    obj._e_event39 = obj.button21:addEventListener("onClick",
         function (_)
             self.POPPergaminho1:show();
         end, obj);
 
-    obj._e_event39 = obj.button22:addEventListener("onClick",
+    obj._e_event40 = obj.button22:addEventListener("onClick",
         function (_)
             Pergaminho1()
         end, obj);
 
-    obj._e_event40 = obj.button23:addEventListener("onClick",
+    obj._e_event41 = obj.button23:addEventListener("onClick",
         function (_)
             self.POPPergaminho2:show();
         end, obj);
 
-    obj._e_event41 = obj.button24:addEventListener("onClick",
+    obj._e_event42 = obj.button24:addEventListener("onClick",
         function (_)
             Pergaminho2()
         end, obj);
 
-    obj._e_event42 = obj.button25:addEventListener("onClick",
+    obj._e_event43 = obj.button25:addEventListener("onClick",
         function (_)
             self.POPPergaminho3:show();
         end, obj);
 
-    obj._e_event43 = obj.button26:addEventListener("onClick",
+    obj._e_event44 = obj.button26:addEventListener("onClick",
         function (_)
             Pergaminho3()
         end, obj);
 
-    obj._e_event44 = obj.button27:addEventListener("onClick",
+    obj._e_event45 = obj.button27:addEventListener("onClick",
         function (_)
             self.EstilodeCombate:show();
         end, obj);
 
-    obj._e_event45 = obj.button28:addEventListener("onClick",
+    obj._e_event46 = obj.button28:addEventListener("onClick",
         function (_)
             RolarTesteAtletismo()
         end, obj);
 
-    obj._e_event46 = obj.button29:addEventListener("onClick",
+    obj._e_event47 = obj.button29:addEventListener("onClick",
         function (_)
             RolarTesteSabedoria()
         end, obj);
 
-    obj._e_event47 = obj.button30:addEventListener("onClick",
+    obj._e_event48 = obj.button30:addEventListener("onClick",
         function (_)
             RolarTestePercepcao()
         end, obj);
 
-    obj._e_event48 = obj.button31:addEventListener("onClick",
+    obj._e_event49 = obj.button31:addEventListener("onClick",
         function (_)
             RolarTesteAcrobacia()
         end, obj);
 
-    obj._e_event49 = obj.button32:addEventListener("onClick",
+    obj._e_event50 = obj.button32:addEventListener("onClick",
         function (_)
             RolarTesteVigor()
         end, obj);
 
-    obj._e_event50 = obj.dataLink12:addEventListener("onChange",
+    obj._e_event51 = obj.dataLink13:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then	
             							if sheet.Atletismo == nil then
@@ -7958,7 +8021,7 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event51 = obj.dataLink13:addEventListener("onChange",
+    obj._e_event52 = obj.dataLink14:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
             						sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
@@ -7983,39 +8046,39 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event52 = obj.button33:addEventListener("onClick",
+    obj._e_event53 = obj.button33:addEventListener("onClick",
         function (_)
             self.POPArma:show();
         end, obj);
 
-    obj._e_event53 = obj.button34:addEventListener("onClick",
+    obj._e_event54 = obj.button34:addEventListener("onClick",
         function (_)
             self.POPBandana:show();
         end, obj);
 
-    obj._e_event54 = obj.button35:addEventListener("onClick",
+    obj._e_event55 = obj.button35:addEventListener("onClick",
         function (_)
             self.POPColete:show();
         end, obj);
 
-    obj._e_event55 = obj.button36:addEventListener("onClick",
+    obj._e_event56 = obj.button36:addEventListener("onClick",
         function (_)
             self.POPAcessorio:show();
         end, obj);
 
-    obj._e_event56 = obj.button37:addEventListener("onClick",
+    obj._e_event57 = obj.button37:addEventListener("onClick",
         function (_)
             self.POPBAG:show();
         end, obj);
 
-    obj._e_event57 = obj.button38:addEventListener("onClick",
+    obj._e_event58 = obj.button38:addEventListener("onClick",
         function (_)
             -- Usuário clicou no botão de criar novo item.
             								-- Vamos inserir um novo item no nosso recordList                              
             								self.rclListaDosItens4:append();
         end, obj);
 
-    obj._e_event58 = obj.rclListaDosItens4:addEventListener("onSelect",
+    obj._e_event59 = obj.rclListaDosItens4:addEventListener("onSelect",
         function (_)
             --[[
             							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8027,7 +8090,7 @@ local function constructNew_frmsekai()
             							self.boxDetalhesDoItem.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event59 = obj.dataLink14:addEventListener("onChange",
+    obj._e_event60 = obj.dataLink15:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             local BonusGanhoAnualGraduacao = nil
             						
@@ -8078,17 +8141,17 @@ local function constructNew_frmsekai()
             						self.GanhoAnual.text = tonumber(sheet.BonusGanhoAnualGraduacao or 0) + tonumber(sheet.FormulaFinal or 0);
         end, obj);
 
-    obj._e_event60 = obj.button39:addEventListener("onClick",
+    obj._e_event61 = obj.button39:addEventListener("onClick",
         function (_)
             self.POPTreino:show();
         end, obj);
 
-    obj._e_event61 = obj.button40:addEventListener("onClick",
+    obj._e_event62 = obj.button40:addEventListener("onClick",
         function (_)
             self.rclListadeTreino:append();
         end, obj);
 
-    obj._e_event62 = obj.rclListadeTreino:addEventListener("onSelect",
+    obj._e_event63 = obj.rclListadeTreino:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8100,22 +8163,22 @@ local function constructNew_frmsekai()
             								self.dsbListadeTreino.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event63 = obj.btnTreinar:addEventListener("onClick",
+    obj._e_event64 = obj.btnTreinar:addEventListener("onClick",
         function (_)
             TreinaJutsu()
         end, obj);
 
-    obj._e_event64 = obj.button41:addEventListener("onClick",
+    obj._e_event65 = obj.button41:addEventListener("onClick",
         function (_)
             self.POPAmizade:show();
         end, obj);
 
-    obj._e_event65 = obj.button42:addEventListener("onClick",
+    obj._e_event66 = obj.button42:addEventListener("onClick",
         function (_)
             self.rclNivelAmizade:append();
         end, obj);
 
-    obj._e_event66 = obj.rclNivelAmizade:addEventListener("onSelect",
+    obj._e_event67 = obj.rclNivelAmizade:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8128,6 +8191,7 @@ local function constructNew_frmsekai()
         end, obj);
 
     function obj:_releaseEvents()
+        __o_rrpgObjs.removeEventListenerById(self._e_event67);
         __o_rrpgObjs.removeEventListenerById(self._e_event66);
         __o_rrpgObjs.removeEventListenerById(self._e_event65);
         __o_rrpgObjs.removeEventListenerById(self._e_event64);
@@ -8535,6 +8599,7 @@ local function constructNew_frmsekai()
         if self.edit5 ~= nil then self.edit5:destroy(); self.edit5 = nil; end;
         if self.edit204 ~= nil then self.edit204:destroy(); self.edit204 = nil; end;
         if self.edit210 ~= nil then self.edit210:destroy(); self.edit210 = nil; end;
+        if self.comboBox12 ~= nil then self.comboBox12:destroy(); self.comboBox12 = nil; end;
         if self.POPJutsu ~= nil then self.POPJutsu:destroy(); self.POPJutsu = nil; end;
         if self.label41 ~= nil then self.label41:destroy(); self.label41 = nil; end;
         if self.scrollBox2 ~= nil then self.scrollBox2:destroy(); self.scrollBox2 = nil; end;
@@ -8591,6 +8656,7 @@ local function constructNew_frmsekai()
         if self.edit38 ~= nil then self.edit38:destroy(); self.edit38 = nil; end;
         if self.edit123 ~= nil then self.edit123:destroy(); self.edit123 = nil; end;
         if self.edit143 ~= nil then self.edit143:destroy(); self.edit143 = nil; end;
+        if self.dataLink15 ~= nil then self.dataLink15:destroy(); self.dataLink15 = nil; end;
         if self.image22 ~= nil then self.image22:destroy(); self.image22 = nil; end;
         if self.richEdit1 ~= nil then self.richEdit1:destroy(); self.richEdit1 = nil; end;
         if self.edit105 ~= nil then self.edit105:destroy(); self.edit105 = nil; end;
@@ -8748,6 +8814,7 @@ local function constructNew_frmsekai()
         if self.edit136 ~= nil then self.edit136:destroy(); self.edit136 = nil; end;
         if self.edit212 ~= nil then self.edit212:destroy(); self.edit212 = nil; end;
         if self.edit173 ~= nil then self.edit173:destroy(); self.edit173 = nil; end;
+        if self.checkBox1 ~= nil then self.checkBox1:destroy(); self.checkBox1 = nil; end;
         if self.edit227 ~= nil then self.edit227:destroy(); self.edit227 = nil; end;
         if self.image21 ~= nil then self.image21:destroy(); self.image21 = nil; end;
         if self.edit20 ~= nil then self.edit20:destroy(); self.edit20 = nil; end;
