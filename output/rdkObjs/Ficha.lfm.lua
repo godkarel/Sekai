@@ -2392,27 +2392,80 @@ local function constructNew_frmsekai()
     obj.comboBox7:setItems({'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'});
     obj.comboBox7:setName("comboBox7");
 
-    obj.image8 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image8:setParent(obj.scrollBox2);
-    obj.image8:setField("imagemDoPersonagem");
-    obj.image8:setEditable(true);
-    obj.image8:setStyle("autoFit");
-    obj.image8:setLeft(404);
-    obj.image8:setTop(410);
-    obj.image8:setWidth(302);
-    obj.image8:setHeight(255);
-    obj.image8:setName("image8");
-
     obj.button17 = GUI.fromHandle(_obj_newObject("button"));
     obj.button17:setParent(obj.scrollBox2);
-    obj.button17:setLeft(502);
-    obj.button17:setTop(270);
-    obj.button17:setWidth(105);
-    obj.button17:setHeight(85);
-    obj.button17:setOpacity(1.0);
-    obj.button17:setVisible(false);
-    obj.button17:setText("Calculo");
+    obj.button17:setLeft(490);
+    obj.button17:setTop(155);
+    obj.button17:setWidth(145);
+    obj.button17:setHeight(60);
     obj.button17:setName("button17");
+
+    obj.PopTransformation = GUI.fromHandle(_obj_newObject("popup"));
+    obj.PopTransformation:setParent(obj.scrollBox2);
+    obj.PopTransformation:setName("PopTransformation");
+    obj.PopTransformation:setVisible(false);
+    obj.PopTransformation:setLeft(1);
+    obj.PopTransformation:setTop(10);
+    obj.PopTransformation:setWidth(1020);
+    obj.PopTransformation:setHeight(580);
+
+    obj.image8 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image8:setParent(obj.PopTransformation);
+    obj.image8:setLeft(10);
+    obj.image8:setTop(10);
+    obj.image8:setWidth(1000);
+    obj.image8:setHeight(563);
+    obj.image8:setSRC("/imagens/8.png");
+    obj.image8:setName("image8");
+
+    obj.transformation = GUI.fromHandle(_obj_newObject("image"));
+    obj.transformation:setParent(obj.scrollBox2);
+    obj.transformation:setName("transformation");
+    obj.transformation:setLeft(490);
+    obj.transformation:setTop(155);
+    obj.transformation:setWidth(145);
+    obj.transformation:setHeight(60);
+    obj.transformation:setSRC("/imagens/Transform1.png");
+
+    obj.transformationDisable = GUI.fromHandle(_obj_newObject("image"));
+    obj.transformationDisable:setParent(obj.scrollBox2);
+    obj.transformationDisable:setName("transformationDisable");
+    obj.transformationDisable:setLeft(490);
+    obj.transformationDisable:setTop(155);
+    obj.transformationDisable:setWidth(145);
+    obj.transformationDisable:setVisible(false);
+    obj.transformationDisable:setHeight(60);
+    obj.transformationDisable:setSRC("/imagens/Transform2.png");
+
+    obj.ControlaTrans = GUI.fromHandle(_obj_newObject("checkBox"));
+    obj.ControlaTrans:setParent(obj.scrollBox2);
+    obj.ControlaTrans:setName("ControlaTrans");
+    obj.ControlaTrans:setLeft(490);
+    obj.ControlaTrans:setTop(220);
+    obj.ControlaTrans:setText("Ativar Transformação");
+    obj.ControlaTrans:setField("Trasnformado");
+
+    obj.image9 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image9:setParent(obj.scrollBox2);
+    obj.image9:setField("imagemDoPersonagem");
+    obj.image9:setEditable(true);
+    obj.image9:setStyle("autoFit");
+    obj.image9:setLeft(404);
+    obj.image9:setTop(410);
+    obj.image9:setWidth(302);
+    obj.image9:setHeight(255);
+    obj.image9:setName("image9");
+
+    obj.button18 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button18:setParent(obj.scrollBox2);
+    obj.button18:setLeft(502);
+    obj.button18:setTop(270);
+    obj.button18:setWidth(105);
+    obj.button18:setHeight(85);
+    obj.button18:setOpacity(1.0);
+    obj.button18:setVisible(false);
+    obj.button18:setText("Calculo");
+    obj.button18:setName("button18");
 
     obj.POPCALCULO = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPCALCULO:setParent(obj.scrollBox2);
@@ -2423,14 +2476,14 @@ local function constructNew_frmsekai()
     obj.POPCALCULO:setWidth(820);
     obj.POPCALCULO:setHeight(620);
 
-    obj.image9 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image9:setParent(obj.POPCALCULO);
-    obj.image9:setLeft(10);
-    obj.image9:setTop(10);
-    obj.image9:setWidth(800);
-    obj.image9:setHeight(600);
-    obj.image9:setSRC("/imagens/CALCULO.png");
-    obj.image9:setName("image9");
+    obj.image10 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image10:setParent(obj.POPCALCULO);
+    obj.image10:setLeft(10);
+    obj.image10:setTop(10);
+    obj.image10:setWidth(800);
+    obj.image10:setHeight(600);
+    obj.image10:setSRC("/imagens/CALCULO.png");
+    obj.image10:setName("image10");
 
     obj.edit84 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit84:setParent(obj.POPCALCULO);
@@ -2740,15 +2793,15 @@ local function constructNew_frmsekai()
 		'DReiatsu', 'AcessorioReiatsu'});
     obj.dataLink11:setName("dataLink11");
 
-    obj.button18 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button18:setParent(obj.scrollBox2);
-    obj.button18:setLeft(32);
-    obj.button18:setTop(550);
-    obj.button18:setWidth(105);
-    obj.button18:setHeight(85);
-    obj.button18:setOpacity(0.1);
-    obj.button18:setText("");
-    obj.button18:setName("button18");
+    obj.button19 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button19:setParent(obj.scrollBox2);
+    obj.button19:setLeft(32);
+    obj.button19:setTop(550);
+    obj.button19:setWidth(105);
+    obj.button19:setHeight(85);
+    obj.button19:setOpacity(0.1);
+    obj.button19:setText("");
+    obj.button19:setName("button19");
 
     obj.POPKunai = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPKunai:setParent(obj.scrollBox2);
@@ -2783,14 +2836,14 @@ local function constructNew_frmsekai()
     obj.label26:setText("Quantidade");
     obj.label26:setName("label26");
 
-    obj.image10 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image10:setParent(obj.POPKunai);
-    obj.image10:setLeft(10);
-    obj.image10:setTop(30);
-    obj.image10:setWidth(100);
-    obj.image10:setHeight(130);
-    obj.image10:setSRC("/imagens/kunai.png");
-    obj.image10:setName("image10");
+    obj.image11 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image11:setParent(obj.POPKunai);
+    obj.image11:setLeft(10);
+    obj.image11:setTop(30);
+    obj.image11:setWidth(100);
+    obj.image11:setHeight(130);
+    obj.image11:setSRC("/imagens/kunai.png");
+    obj.image11:setName("image11");
 
     obj.label27 = GUI.fromHandle(_obj_newObject("label"));
     obj.label27:setParent(obj.POPKunai);
@@ -2813,14 +2866,14 @@ local function constructNew_frmsekai()
     obj.edit106:setField("DanoKunai");
     obj.edit106:setName("edit106");
 
-    obj.image11 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image11:setParent(obj.POPKunai);
-    obj.image11:setLeft(10);
-    obj.image11:setTop(130);
-    obj.image11:setWidth(100);
-    obj.image11:setHeight(100);
-    obj.image11:setSRC("/imagens/shuriken.png");
-    obj.image11:setName("image11");
+    obj.image12 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image12:setParent(obj.POPKunai);
+    obj.image12:setLeft(10);
+    obj.image12:setTop(130);
+    obj.image12:setWidth(100);
+    obj.image12:setHeight(100);
+    obj.image12:setSRC("/imagens/shuriken.png");
+    obj.image12:setName("image12");
 
     obj.label28 = GUI.fromHandle(_obj_newObject("label"));
     obj.label28:setParent(obj.POPKunai);
@@ -2843,14 +2896,14 @@ local function constructNew_frmsekai()
     obj.edit107:setField("DanoShuriken");
     obj.edit107:setName("edit107");
 
-    obj.image12 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image12:setParent(obj.POPKunai);
-    obj.image12:setLeft(10);
-    obj.image12:setTop(230);
-    obj.image12:setWidth(100);
-    obj.image12:setHeight(100);
-    obj.image12:setSRC("/imagens/SFuuma.png");
-    obj.image12:setName("image12");
+    obj.image13 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image13:setParent(obj.POPKunai);
+    obj.image13:setLeft(10);
+    obj.image13:setTop(230);
+    obj.image13:setWidth(100);
+    obj.image13:setHeight(100);
+    obj.image13:setSRC("/imagens/SFuuma.png");
+    obj.image13:setName("image13");
 
     obj.label29 = GUI.fromHandle(_obj_newObject("label"));
     obj.label29:setParent(obj.POPKunai);
@@ -2873,14 +2926,14 @@ local function constructNew_frmsekai()
     obj.edit108:setField("DanoShurikenFuuma");
     obj.edit108:setName("edit108");
 
-    obj.image13 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image13:setParent(obj.POPKunai);
-    obj.image13:setLeft(10);
-    obj.image13:setTop(330);
-    obj.image13:setWidth(100);
-    obj.image13:setHeight(100);
-    obj.image13:setSRC("/imagens/Kgigante.png");
-    obj.image13:setName("image13");
+    obj.image14 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image14:setParent(obj.POPKunai);
+    obj.image14:setLeft(10);
+    obj.image14:setTop(330);
+    obj.image14:setWidth(100);
+    obj.image14:setHeight(100);
+    obj.image14:setSRC("/imagens/Kgigante.png");
+    obj.image14:setName("image14");
 
     obj.label30 = GUI.fromHandle(_obj_newObject("label"));
     obj.label30:setParent(obj.POPKunai);
@@ -2903,14 +2956,14 @@ local function constructNew_frmsekai()
     obj.edit109:setField("DanoKunaiGigante");
     obj.edit109:setName("edit109");
 
-    obj.image14 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image14:setParent(obj.POPKunai);
-    obj.image14:setLeft(10);
-    obj.image14:setTop(430);
-    obj.image14:setWidth(100);
-    obj.image14:setHeight(100);
-    obj.image14:setSRC("/imagens/Senbon.png");
-    obj.image14:setName("image14");
+    obj.image15 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image15:setParent(obj.POPKunai);
+    obj.image15:setLeft(10);
+    obj.image15:setTop(430);
+    obj.image15:setWidth(100);
+    obj.image15:setHeight(100);
+    obj.image15:setSRC("/imagens/Senbon.png");
+    obj.image15:setName("image15");
 
     obj.label31 = GUI.fromHandle(_obj_newObject("label"));
     obj.label31:setParent(obj.POPKunai);
@@ -2988,15 +3041,15 @@ local function constructNew_frmsekai()
     obj.dataLink12:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'});
     obj.dataLink12:setName("dataLink12");
 
-    obj.button19 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button19:setParent(obj.scrollBox2);
-    obj.button19:setLeft(140);
-    obj.button19:setTop(550);
-    obj.button19:setWidth(105);
-    obj.button19:setHeight(85);
-    obj.button19:setOpacity(0.1);
-    obj.button19:setText("");
-    obj.button19:setName("button19");
+    obj.button20 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button20:setParent(obj.scrollBox2);
+    obj.button20:setLeft(140);
+    obj.button20:setTop(550);
+    obj.button20:setWidth(105);
+    obj.button20:setHeight(85);
+    obj.button20:setOpacity(0.1);
+    obj.button20:setText("");
+    obj.button20:setName("button20");
 
     obj.POPPB = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPB:setParent(obj.scrollBox2);
@@ -3031,14 +3084,14 @@ local function constructNew_frmsekai()
     obj.label33:setText("Quantidade");
     obj.label33:setName("label33");
 
-    obj.image15 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image15:setParent(obj.POPPB);
-    obj.image15:setLeft(10);
-    obj.image15:setTop(30);
-    obj.image15:setWidth(100);
-    obj.image15:setHeight(130);
-    obj.image15:setSRC("/imagens/pb.png");
-    obj.image15:setName("image15");
+    obj.image16 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image16:setParent(obj.POPPB);
+    obj.image16:setLeft(10);
+    obj.image16:setTop(30);
+    obj.image16:setWidth(100);
+    obj.image16:setHeight(130);
+    obj.image16:setSRC("/imagens/pb.png");
+    obj.image16:setName("image16");
 
     obj.label34 = GUI.fromHandle(_obj_newObject("label"));
     obj.label34:setParent(obj.POPPB);
@@ -3061,14 +3114,14 @@ local function constructNew_frmsekai()
     obj.edit116:setField("PB");
     obj.edit116:setName("edit116");
 
-    obj.image16 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image16:setParent(obj.POPPB);
-    obj.image16:setLeft(0);
-    obj.image16:setTop(120);
-    obj.image16:setWidth(130);
-    obj.image16:setHeight(130);
-    obj.image16:setSRC("/imagens/BE.png");
-    obj.image16:setName("image16");
+    obj.image17 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image17:setParent(obj.POPPB);
+    obj.image17:setLeft(0);
+    obj.image17:setTop(120);
+    obj.image17:setWidth(130);
+    obj.image17:setHeight(130);
+    obj.image17:setSRC("/imagens/BE.png");
+    obj.image17:setName("image17");
 
     obj.label35 = GUI.fromHandle(_obj_newObject("label"));
     obj.label35:setParent(obj.POPPB);
@@ -3091,14 +3144,14 @@ local function constructNew_frmsekai()
     obj.edit117:setField("GinsoExplosivo");
     obj.edit117:setName("edit117");
 
-    obj.image17 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image17:setParent(obj.POPPB);
-    obj.image17:setLeft(20);
-    obj.image17:setTop(240);
-    obj.image17:setWidth(100);
-    obj.image17:setHeight(100);
-    obj.image17:setSRC("/imagens/veneno.png");
-    obj.image17:setName("image17");
+    obj.image18 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image18:setParent(obj.POPPB);
+    obj.image18:setLeft(20);
+    obj.image18:setTop(240);
+    obj.image18:setWidth(100);
+    obj.image18:setHeight(100);
+    obj.image18:setSRC("/imagens/veneno.png");
+    obj.image18:setName("image18");
 
     obj.label36 = GUI.fromHandle(_obj_newObject("label"));
     obj.label36:setParent(obj.POPPB);
@@ -3121,14 +3174,14 @@ local function constructNew_frmsekai()
     obj.edit118:setField("Veneno");
     obj.edit118:setName("edit118");
 
-    obj.image18 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image18:setParent(obj.POPPB);
-    obj.image18:setLeft(10);
-    obj.image18:setTop(330);
-    obj.image18:setWidth(100);
-    obj.image18:setHeight(100);
-    obj.image18:setSRC("/imagens/bandagem.png");
-    obj.image18:setName("image18");
+    obj.image19 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image19:setParent(obj.POPPB);
+    obj.image19:setLeft(10);
+    obj.image19:setTop(330);
+    obj.image19:setWidth(100);
+    obj.image19:setHeight(100);
+    obj.image19:setSRC("/imagens/bandagem.png");
+    obj.image19:setName("image19");
 
     obj.label37 = GUI.fromHandle(_obj_newObject("label"));
     obj.label37:setParent(obj.POPPB);
@@ -3151,14 +3204,14 @@ local function constructNew_frmsekai()
     obj.edit119:setField("Bandagem");
     obj.edit119:setName("edit119");
 
-    obj.image19 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image19:setParent(obj.POPPB);
-    obj.image19:setLeft(10);
-    obj.image19:setTop(430);
-    obj.image19:setWidth(100);
-    obj.image19:setHeight(100);
-    obj.image19:setSRC("/imagens/bombaf.png");
-    obj.image19:setName("image19");
+    obj.image20 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image20:setParent(obj.POPPB);
+    obj.image20:setLeft(10);
+    obj.image20:setTop(430);
+    obj.image20:setWidth(100);
+    obj.image20:setHeight(100);
+    obj.image20:setSRC("/imagens/bombaf.png");
+    obj.image20:setName("image20");
 
     obj.label38 = GUI.fromHandle(_obj_newObject("label"));
     obj.label38:setParent(obj.POPPB);
@@ -3231,15 +3284,15 @@ local function constructNew_frmsekai()
     obj.edit125:setField("BombaFumacaLimite");
     obj.edit125:setName("edit125");
 
-    obj.button20 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button20:setParent(obj.scrollBox2);
-    obj.button20:setLeft(250);
-    obj.button20:setTop(550);
-    obj.button20:setWidth(105);
-    obj.button20:setHeight(85);
-    obj.button20:setOpacity(0.1);
-    obj.button20:setText("");
-    obj.button20:setName("button20");
+    obj.button21 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button21:setParent(obj.scrollBox2);
+    obj.button21:setLeft(250);
+    obj.button21:setTop(550);
+    obj.button21:setWidth(105);
+    obj.button21:setHeight(85);
+    obj.button21:setOpacity(0.1);
+    obj.button21:setText("");
+    obj.button21:setName("button21");
 
     obj.POPDiverso = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPDiverso:setParent(obj.tab1);
@@ -3250,14 +3303,14 @@ local function constructNew_frmsekai()
     obj.POPDiverso:setWidth(1130);
     obj.POPDiverso:setHeight(400);
 
-    obj.image20 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image20:setParent(obj.POPDiverso);
-    obj.image20:setLeft(1);
-    obj.image20:setTop(1);
-    obj.image20:setWidth(1110);
-    obj.image20:setHeight(350);
-    obj.image20:setSRC("/imagens/6.png");
-    obj.image20:setName("image20");
+    obj.image21 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image21:setParent(obj.POPDiverso);
+    obj.image21:setLeft(1);
+    obj.image21:setTop(1);
+    obj.image21:setWidth(1110);
+    obj.image21:setHeight(350);
+    obj.image21:setSRC("/imagens/6.png");
+    obj.image21:setName("image21");
 
     obj.edit126 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit126:setParent(obj.POPDiverso);
@@ -3499,15 +3552,15 @@ local function constructNew_frmsekai()
     obj.edit149:setField("ChakraRoxo");
     obj.edit149:setName("edit149");
 
-    obj.button21 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button21:setParent(obj.POPDiverso);
-    obj.button21:setLeft(845);
-    obj.button21:setTop(105);
-    obj.button21:setWidth(70);
-    obj.button21:setHeight(80);
-    obj.button21:setOpacity(0.1);
-    obj.button21:setText("");
-    obj.button21:setName("button21");
+    obj.button22 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button22:setParent(obj.POPDiverso);
+    obj.button22:setLeft(845);
+    obj.button22:setTop(105);
+    obj.button22:setWidth(70);
+    obj.button22:setHeight(80);
+    obj.button22:setOpacity(0.1);
+    obj.button22:setText("");
+    obj.button22:setName("button22");
 
     obj.POPPergaminho1 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho1:setParent(obj.POPDiverso);
@@ -3623,27 +3676,27 @@ local function constructNew_frmsekai()
     obj.comboBox8:setItems({'X', 'SS', 'S'});
     obj.comboBox8:setName("comboBox8");
 
-    obj.image21 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image21:setParent(obj.POPPergaminho1);
-    obj.image21:setLeft(20);
-    obj.image21:setTop(380);
-    obj.image21:setOpacity(1.0);
-    obj.image21:setWidth(150);
-    obj.image21:setHeight(150);
-    obj.image21:setSRC("/imagens/Pergamin.png");
-    obj.image21:setName("image21");
+    obj.image22 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image22:setParent(obj.POPPergaminho1);
+    obj.image22:setLeft(20);
+    obj.image22:setTop(380);
+    obj.image22:setOpacity(1.0);
+    obj.image22:setWidth(150);
+    obj.image22:setHeight(150);
+    obj.image22:setSRC("/imagens/Pergamin.png");
+    obj.image22:setName("image22");
 
-    obj.button22 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button22:setParent(obj.POPPergaminho1);
-    obj.button22:setLeft(20);
-    obj.button22:setTop(390);
-    obj.button22:setFontSize(20);
-    obj.button22:setOpacity(0.0);
-    obj.button22:setHeight(120);
-    obj.button22:setWidth(150);
-    obj.button22:setText("");
-    obj.button22:setFontColor("White");
-    obj.button22:setName("button22");
+    obj.button23 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button23:setParent(obj.POPPergaminho1);
+    obj.button23:setLeft(20);
+    obj.button23:setTop(390);
+    obj.button23:setFontSize(20);
+    obj.button23:setOpacity(0.0);
+    obj.button23:setHeight(120);
+    obj.button23:setWidth(150);
+    obj.button23:setText("");
+    obj.button23:setFontColor("White");
+    obj.button23:setName("button23");
 
  
 						local function Pergaminho1() 
@@ -3664,15 +3717,15 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button23 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button23:setParent(obj.POPDiverso);
-    obj.button23:setLeft(917);
-    obj.button23:setTop(105);
-    obj.button23:setWidth(65);
-    obj.button23:setHeight(80);
-    obj.button23:setOpacity(0.1);
-    obj.button23:setText("");
-    obj.button23:setName("button23");
+    obj.button24 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button24:setParent(obj.POPDiverso);
+    obj.button24:setLeft(917);
+    obj.button24:setTop(105);
+    obj.button24:setWidth(65);
+    obj.button24:setHeight(80);
+    obj.button24:setOpacity(0.1);
+    obj.button24:setText("");
+    obj.button24:setName("button24");
 
     obj.POPPergaminho2 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho2:setParent(obj.POPDiverso);
@@ -3788,27 +3841,27 @@ local function constructNew_frmsekai()
     obj.comboBox9:setItems({'A', 'B', 'C', 'D', 'E'});
     obj.comboBox9:setName("comboBox9");
 
-    obj.image22 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image22:setParent(obj.POPPergaminho2);
-    obj.image22:setLeft(20);
-    obj.image22:setTop(380);
-    obj.image22:setOpacity(1.0);
-    obj.image22:setWidth(150);
-    obj.image22:setHeight(150);
-    obj.image22:setSRC("/imagens/Pergamin.png");
-    obj.image22:setName("image22");
+    obj.image23 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image23:setParent(obj.POPPergaminho2);
+    obj.image23:setLeft(20);
+    obj.image23:setTop(380);
+    obj.image23:setOpacity(1.0);
+    obj.image23:setWidth(150);
+    obj.image23:setHeight(150);
+    obj.image23:setSRC("/imagens/Pergamin.png");
+    obj.image23:setName("image23");
 
-    obj.button24 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button24:setParent(obj.POPPergaminho2);
-    obj.button24:setLeft(20);
-    obj.button24:setTop(390);
-    obj.button24:setFontSize(20);
-    obj.button24:setOpacity(0.0);
-    obj.button24:setHeight(120);
-    obj.button24:setWidth(150);
-    obj.button24:setText("");
-    obj.button24:setFontColor("White");
-    obj.button24:setName("button24");
+    obj.button25 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button25:setParent(obj.POPPergaminho2);
+    obj.button25:setLeft(20);
+    obj.button25:setTop(390);
+    obj.button25:setFontSize(20);
+    obj.button25:setOpacity(0.0);
+    obj.button25:setHeight(120);
+    obj.button25:setWidth(150);
+    obj.button25:setText("");
+    obj.button25:setFontColor("White");
+    obj.button25:setName("button25");
 
  
 							local function Pergaminho2() 
@@ -3829,15 +3882,15 @@ local function constructNew_frmsekai()
 						
 
 
-    obj.button25 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button25:setParent(obj.POPDiverso);
-    obj.button25:setLeft(984);
-    obj.button25:setTop(105);
-    obj.button25:setWidth(65);
-    obj.button25:setHeight(80);
-    obj.button25:setOpacity(0.1);
-    obj.button25:setText("");
-    obj.button25:setName("button25");
+    obj.button26 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button26:setParent(obj.POPDiverso);
+    obj.button26:setLeft(984);
+    obj.button26:setTop(105);
+    obj.button26:setWidth(65);
+    obj.button26:setHeight(80);
+    obj.button26:setOpacity(0.1);
+    obj.button26:setText("");
+    obj.button26:setName("button26");
 
     obj.POPPergaminho3 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho3:setParent(obj.POPDiverso);
@@ -3953,27 +4006,27 @@ local function constructNew_frmsekai()
     obj.comboBox10:setItems({'X','SS','S','A','B','C','D','E','Outros'});
     obj.comboBox10:setName("comboBox10");
 
-    obj.image23 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image23:setParent(obj.POPPergaminho3);
-    obj.image23:setLeft(20);
-    obj.image23:setTop(380);
-    obj.image23:setOpacity(1.0);
-    obj.image23:setWidth(150);
-    obj.image23:setHeight(150);
-    obj.image23:setSRC("/imagens/Pergamin.png");
-    obj.image23:setName("image23");
+    obj.image24 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image24:setParent(obj.POPPergaminho3);
+    obj.image24:setLeft(20);
+    obj.image24:setTop(380);
+    obj.image24:setOpacity(1.0);
+    obj.image24:setWidth(150);
+    obj.image24:setHeight(150);
+    obj.image24:setSRC("/imagens/Pergamin.png");
+    obj.image24:setName("image24");
 
-    obj.button26 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button26:setParent(obj.POPPergaminho3);
-    obj.button26:setLeft(20);
-    obj.button26:setTop(390);
-    obj.button26:setFontSize(20);
-    obj.button26:setOpacity(0.0);
-    obj.button26:setHeight(120);
-    obj.button26:setWidth(150);
-    obj.button26:setText("");
-    obj.button26:setFontColor("White");
-    obj.button26:setName("button26");
+    obj.button27 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button27:setParent(obj.POPPergaminho3);
+    obj.button27:setLeft(20);
+    obj.button27:setTop(390);
+    obj.button27:setFontSize(20);
+    obj.button27:setOpacity(0.0);
+    obj.button27:setHeight(120);
+    obj.button27:setWidth(150);
+    obj.button27:setText("");
+    obj.button27:setFontColor("White");
+    obj.button27:setName("button27");
 
  
 							local function Pergaminho3() 
@@ -3994,15 +4047,15 @@ local function constructNew_frmsekai()
 						
 
 
-    obj.button27 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button27:setParent(obj.POPDiverso);
-    obj.button27:setLeft(907);
-    obj.button27:setTop(188);
-    obj.button27:setWidth(83);
-    obj.button27:setHeight(80);
-    obj.button27:setOpacity(0.1);
-    obj.button27:setText("");
-    obj.button27:setName("button27");
+    obj.button28 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button28:setParent(obj.POPDiverso);
+    obj.button28:setLeft(907);
+    obj.button28:setTop(188);
+    obj.button28:setWidth(83);
+    obj.button28:setHeight(80);
+    obj.button28:setOpacity(0.1);
+    obj.button28:setText("");
+    obj.button28:setName("button28");
 
     obj.EstilodeCombate = GUI.fromHandle(_obj_newObject("popup"));
     obj.EstilodeCombate:setParent(obj.POPDiverso);
@@ -4053,14 +4106,14 @@ local function constructNew_frmsekai()
     obj.scrollBox6:setAlign("client");
     obj.scrollBox6:setName("scrollBox6");
 
-    obj.image24 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image24:setParent(obj.scrollBox6);
-    obj.image24:setLeft(1);
-    obj.image24:setTop(1);
-    obj.image24:setWidth(1000);
-    obj.image24:setHeight(700);
-    obj.image24:setSRC("/imagens/2.png");
-    obj.image24:setName("image24");
+    obj.image25 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image25:setParent(obj.scrollBox6);
+    obj.image25:setLeft(1);
+    obj.image25:setTop(1);
+    obj.image25:setWidth(1000);
+    obj.image25:setHeight(700);
+    obj.image25:setSRC("/imagens/2.png");
+    obj.image25:setName("image25");
 
     obj.edit163 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit163:setParent(obj.scrollBox6);
@@ -4557,16 +4610,16 @@ local function constructNew_frmsekai()
     obj.edit200:setField("GTurno");
     obj.edit200:setName("edit200");
 
-    obj.button28 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button28:setParent(obj.scrollBox6);
-    obj.button28:setLeft(430);
-    obj.button28:setTop(370);
-    obj.button28:setWidth(85);
-    obj.button28:setHeight(20);
-    obj.button28:setFontSize(12);
-    obj.button28:setFontColor("#00FFFF");
-    obj.button28:setText("Atletismo");
-    obj.button28:setName("button28");
+    obj.button29 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button29:setParent(obj.scrollBox6);
+    obj.button29:setLeft(430);
+    obj.button29:setTop(370);
+    obj.button29:setWidth(85);
+    obj.button29:setHeight(20);
+    obj.button29:setFontSize(12);
+    obj.button29:setFontColor("#00FFFF");
+    obj.button29:setText("Atletismo");
+    obj.button29:setName("button29");
 
 
 						local function RolarTesteAtletismo()      
@@ -4577,16 +4630,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button29 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button29:setParent(obj.scrollBox6);
-    obj.button29:setLeft(430);
-    obj.button29:setTop(395);
-    obj.button29:setWidth(85);
-    obj.button29:setHeight(20);
-    obj.button29:setFontSize(12);
-    obj.button29:setFontColor("#00FFFF");
-    obj.button29:setText("Raciocinio");
-    obj.button29:setName("button29");
+    obj.button30 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button30:setParent(obj.scrollBox6);
+    obj.button30:setLeft(430);
+    obj.button30:setTop(395);
+    obj.button30:setWidth(85);
+    obj.button30:setHeight(20);
+    obj.button30:setFontSize(12);
+    obj.button30:setFontColor("#00FFFF");
+    obj.button30:setText("Raciocinio");
+    obj.button30:setName("button30");
 
 
 						local function RolarTesteSabedoria()      
@@ -4597,16 +4650,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button30 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button30:setParent(obj.scrollBox6);
-    obj.button30:setLeft(430);
-    obj.button30:setTop(420);
-    obj.button30:setWidth(85);
-    obj.button30:setHeight(20);
-    obj.button30:setFontSize(12);
-    obj.button30:setFontColor("#00FFFF");
-    obj.button30:setText("Percepção");
-    obj.button30:setName("button30");
+    obj.button31 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button31:setParent(obj.scrollBox6);
+    obj.button31:setLeft(430);
+    obj.button31:setTop(420);
+    obj.button31:setWidth(85);
+    obj.button31:setHeight(20);
+    obj.button31:setFontSize(12);
+    obj.button31:setFontColor("#00FFFF");
+    obj.button31:setText("Percepção");
+    obj.button31:setName("button31");
 
 
 						local function RolarTestePercepcao()      
@@ -4617,16 +4670,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button31 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button31:setParent(obj.scrollBox6);
-    obj.button31:setLeft(430);
-    obj.button31:setTop(445);
-    obj.button31:setWidth(85);
-    obj.button31:setHeight(20);
-    obj.button31:setFontSize(12);
-    obj.button31:setFontColor("#00FFFF");
-    obj.button31:setText("Furtividade");
-    obj.button31:setName("button31");
+    obj.button32 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button32:setParent(obj.scrollBox6);
+    obj.button32:setLeft(430);
+    obj.button32:setTop(445);
+    obj.button32:setWidth(85);
+    obj.button32:setHeight(20);
+    obj.button32:setFontSize(12);
+    obj.button32:setFontColor("#00FFFF");
+    obj.button32:setText("Furtividade");
+    obj.button32:setName("button32");
 
 
 						local function RolarTesteAcrobacia()      
@@ -4637,16 +4690,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button32 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button32:setParent(obj.scrollBox6);
-    obj.button32:setLeft(430);
-    obj.button32:setTop(470);
-    obj.button32:setWidth(85);
-    obj.button32:setHeight(20);
-    obj.button32:setFontSize(12);
-    obj.button32:setFontColor("#00FFFF");
-    obj.button32:setText("Vigor");
-    obj.button32:setName("button32");
+    obj.button33 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button33:setParent(obj.scrollBox6);
+    obj.button33:setLeft(430);
+    obj.button33:setTop(470);
+    obj.button33:setWidth(85);
+    obj.button33:setHeight(20);
+    obj.button33:setFontSize(12);
+    obj.button33:setFontColor("#00FFFF");
+    obj.button33:setText("Vigor");
+    obj.button33:setName("button33");
 
 
 						local function RolarTesteVigor()      
@@ -4678,14 +4731,14 @@ local function constructNew_frmsekai()
     obj.scrollBox7:setAlign("client");
     obj.scrollBox7:setName("scrollBox7");
 
-    obj.image25 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image25:setParent(obj.scrollBox7);
-    obj.image25:setLeft(1);
-    obj.image25:setTop(1);
-    obj.image25:setWidth(1000);
-    obj.image25:setHeight(700);
-    obj.image25:setSRC("/imagens/3.png");
-    obj.image25:setName("image25");
+    obj.image26 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image26:setParent(obj.scrollBox7);
+    obj.image26:setLeft(1);
+    obj.image26:setTop(1);
+    obj.image26:setWidth(1000);
+    obj.image26:setHeight(700);
+    obj.image26:setSRC("/imagens/3.png");
+    obj.image26:setName("image26");
 
     obj.richEdit1 = GUI.fromHandle(_obj_newObject("richEdit"));
     obj.richEdit1:setParent(obj.scrollBox7);
@@ -4698,15 +4751,15 @@ local function constructNew_frmsekai()
     obj.richEdit1:setField("Historia");
     obj.richEdit1:setName("richEdit1");
 
-    obj.button33 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button33:setParent(obj.scrollBox7);
-    obj.button33:setLeft(430);
-    obj.button33:setTop(120);
-    obj.button33:setWidth(120);
-    obj.button33:setHeight(100);
-    obj.button33:setOpacity(0.0);
-    obj.button33:setText("");
-    obj.button33:setName("button33");
+    obj.button34 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button34:setParent(obj.scrollBox7);
+    obj.button34:setLeft(430);
+    obj.button34:setTop(120);
+    obj.button34:setWidth(120);
+    obj.button34:setHeight(100);
+    obj.button34:setOpacity(0.0);
+    obj.button34:setText("");
+    obj.button34:setName("button34");
 
     obj.POPArma = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPArma:setParent(obj.scrollBox7);
@@ -4905,15 +4958,15 @@ local function constructNew_frmsekai()
     obj.textEditor10:setField("Bankai");
     obj.textEditor10:setName("textEditor10");
 
-    obj.button34 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button34:setParent(obj.scrollBox7);
-    obj.button34:setLeft(610);
-    obj.button34:setTop(120);
-    obj.button34:setWidth(160);
-    obj.button34:setHeight(100);
-    obj.button34:setOpacity(0.0);
-    obj.button34:setText("");
-    obj.button34:setName("button34");
+    obj.button35 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button35:setParent(obj.scrollBox7);
+    obj.button35:setLeft(610);
+    obj.button35:setTop(120);
+    obj.button35:setWidth(160);
+    obj.button35:setHeight(100);
+    obj.button35:setOpacity(0.0);
+    obj.button35:setText("");
+    obj.button35:setName("button35");
 
     obj.POPBandana = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPBandana:setParent(obj.scrollBox7);
@@ -5000,15 +5053,15 @@ local function constructNew_frmsekai()
     obj.textEditor11:setField("BandanaPassiva");
     obj.textEditor11:setName("textEditor11");
 
-    obj.button35 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button35:setParent(obj.scrollBox7);
-    obj.button35:setLeft(430);
-    obj.button35:setTop(225);
-    obj.button35:setWidth(120);
-    obj.button35:setHeight(115);
-    obj.button35:setOpacity(0.0);
-    obj.button35:setText("");
-    obj.button35:setName("button35");
+    obj.button36 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button36:setParent(obj.scrollBox7);
+    obj.button36:setLeft(430);
+    obj.button36:setTop(225);
+    obj.button36:setWidth(120);
+    obj.button36:setHeight(115);
+    obj.button36:setOpacity(0.0);
+    obj.button36:setText("");
+    obj.button36:setName("button36");
 
     obj.POPColete = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPColete:setParent(obj.scrollBox7);
@@ -5095,15 +5148,15 @@ local function constructNew_frmsekai()
     obj.textEditor12:setField("ColetePassiva");
     obj.textEditor12:setName("textEditor12");
 
-    obj.button36 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button36:setParent(obj.scrollBox7);
-    obj.button36:setLeft(610);
-    obj.button36:setTop(232);
-    obj.button36:setWidth(160);
-    obj.button36:setHeight(100);
-    obj.button36:setOpacity(0.0);
-    obj.button36:setText("");
-    obj.button36:setName("button36");
+    obj.button37 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button37:setParent(obj.scrollBox7);
+    obj.button37:setLeft(610);
+    obj.button37:setTop(232);
+    obj.button37:setWidth(160);
+    obj.button37:setHeight(100);
+    obj.button37:setOpacity(0.0);
+    obj.button37:setText("");
+    obj.button37:setName("button37");
 
     obj.POPAcessorio = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPAcessorio:setParent(obj.scrollBox7);
@@ -5286,15 +5339,15 @@ local function constructNew_frmsekai()
     obj.textEditor13:setField("AcessorioPassiva");
     obj.textEditor13:setName("textEditor13");
 
-    obj.button37 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button37:setParent(obj.scrollBox7);
-    obj.button37:setLeft(30);
-    obj.button37:setTop(540);
-    obj.button37:setWidth(120);
-    obj.button37:setHeight(115);
-    obj.button37:setOpacity(0.1);
-    obj.button37:setText("");
-    obj.button37:setName("button37");
+    obj.button38 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button38:setParent(obj.scrollBox7);
+    obj.button38:setLeft(30);
+    obj.button38:setTop(540);
+    obj.button38:setWidth(120);
+    obj.button38:setHeight(115);
+    obj.button38:setOpacity(0.1);
+    obj.button38:setText("");
+    obj.button38:setName("button38");
 
     obj.POPBAG = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPBAG:setParent(obj.scrollBox7);
@@ -5305,14 +5358,14 @@ local function constructNew_frmsekai()
     obj.POPBAG:setWidth(650);
     obj.POPBAG:setHeight(500);
 
-    obj.image26 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image26:setParent(obj.POPBAG);
-    obj.image26:setLeft(1);
-    obj.image26:setTop(1);
-    obj.image26:setWidth(650);
-    obj.image26:setHeight(500);
-    obj.image26:setSRC("/imagens/Loja.png");
-    obj.image26:setName("image26");
+    obj.image27 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image27:setParent(obj.POPBAG);
+    obj.image27:setLeft(1);
+    obj.image27:setTop(1);
+    obj.image27:setWidth(650);
+    obj.image27:setHeight(500);
+    obj.image27:setSRC("/imagens/Loja.png");
+    obj.image27:setName("image27");
 
     obj.label79 = GUI.fromHandle(_obj_newObject("label"));
     obj.label79:setParent(obj.POPBAG);
@@ -5510,12 +5563,12 @@ local function constructNew_frmsekai()
     obj.layout1:setMargins({bottom=4});
     obj.layout1:setName("layout1");
 
-    obj.button38 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button38:setParent(obj.layout1);
-    obj.button38:setText("Novo Item");
-    obj.button38:setWidth(150);
-    obj.button38:setAlign("left");
-    obj.button38:setName("button38");
+    obj.button39 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button39:setParent(obj.layout1);
+    obj.button39:setText("Novo Item");
+    obj.button39:setWidth(150);
+    obj.button39:setAlign("left");
+    obj.button39:setName("button39");
 
     obj.rclListaDosItens4 = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclListaDosItens4:setParent(obj.POPBAG);
@@ -5606,14 +5659,14 @@ local function constructNew_frmsekai()
     obj.scrollBox8:setAlign("client");
     obj.scrollBox8:setName("scrollBox8");
 
-    obj.image27 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image27:setParent(obj.scrollBox8);
-    obj.image27:setLeft(1);
-    obj.image27:setTop(1);
-    obj.image27:setWidth(1190);
-    obj.image27:setHeight(680);
-    obj.image27:setSRC("/imagens/7.png");
-    obj.image27:setName("image27");
+    obj.image28 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image28:setParent(obj.scrollBox8);
+    obj.image28:setLeft(1);
+    obj.image28:setTop(1);
+    obj.image28:setWidth(1190);
+    obj.image28:setHeight(680);
+    obj.image28:setSRC("/imagens/7.png");
+    obj.image28:setName("image28");
 
     obj.edit232 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit232:setParent(obj.scrollBox8);
@@ -5809,44 +5862,44 @@ local function constructNew_frmsekai()
     obj.edit243:setField("Bonus1d20");
     obj.edit243:setName("edit243");
 
-    obj.image28 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image28:setParent(obj.scrollBox8);
-    obj.image28:setLeft(23);
-    obj.image28:setTop(478);
-    obj.image28:setWidth(146);
-    obj.image28:setHeight(116);
-    obj.image28:setEditable(false);
-    obj.image28:setStyle("autoFit");
-    lfm_setPropAsString(obj.image28, "animate",  "true");
-    obj.image28:setSRC("https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif");
-    obj.image28:setName("image28");
-
     obj.image29 = GUI.fromHandle(_obj_newObject("image"));
     obj.image29:setParent(obj.scrollBox8);
-    obj.image29:setLeft(222);
+    obj.image29:setLeft(23);
     obj.image29:setTop(478);
     obj.image29:setWidth(146);
     obj.image29:setHeight(116);
     obj.image29:setEditable(false);
     obj.image29:setStyle("autoFit");
     lfm_setPropAsString(obj.image29, "animate",  "true");
-    obj.image29:setSRC("https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif");
+    obj.image29:setSRC("https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif");
     obj.image29:setName("image29");
+
+    obj.image30 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image30:setParent(obj.scrollBox8);
+    obj.image30:setLeft(222);
+    obj.image30:setTop(478);
+    obj.image30:setWidth(146);
+    obj.image30:setHeight(116);
+    obj.image30:setEditable(false);
+    obj.image30:setStyle("autoFit");
+    lfm_setPropAsString(obj.image30, "animate",  "true");
+    obj.image30:setSRC("https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif");
+    obj.image30:setName("image30");
 
     obj.dataLink15 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink15:setParent(obj.scrollBox8);
     obj.dataLink15:setFields({'Graduacao', 'BonusGanhoAnual'});
     obj.dataLink15:setName("dataLink15");
 
-    obj.button39 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button39:setParent(obj.scrollBox8);
-    obj.button39:setLeft(23);
-    obj.button39:setTop(478);
-    obj.button39:setWidth(146);
-    obj.button39:setHeight(116);
-    obj.button39:setOpacity(0.1);
-    obj.button39:setText("");
-    obj.button39:setName("button39");
+    obj.button40 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button40:setParent(obj.scrollBox8);
+    obj.button40:setLeft(23);
+    obj.button40:setTop(478);
+    obj.button40:setWidth(146);
+    obj.button40:setHeight(116);
+    obj.button40:setOpacity(0.1);
+    obj.button40:setText("");
+    obj.button40:setName("button40");
 
     obj.POPTreino = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPTreino:setParent(obj.scrollBox8);
@@ -5862,22 +5915,22 @@ local function constructNew_frmsekai()
     obj.scrollBox9:setAlign("client");
     obj.scrollBox9:setName("scrollBox9");
 
-    obj.image30 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image30:setParent(obj.scrollBox9);
-    obj.image30:setTop(1);
-    obj.image30:setWidth(870);
-    obj.image30:setHeight(705);
-    obj.image30:setSRC("/imagens/5.png");
-    obj.image30:setName("image30");
+    obj.image31 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image31:setParent(obj.scrollBox9);
+    obj.image31:setTop(1);
+    obj.image31:setWidth(870);
+    obj.image31:setHeight(705);
+    obj.image31:setSRC("/imagens/5.png");
+    obj.image31:setName("image31");
 
-    obj.button40 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button40:setParent(obj.scrollBox9);
-    obj.button40:setText("Novo Treinamento");
-    obj.button40:setWidth(125);
-    obj.button40:setHeight(40);
-    obj.button40:setLeft(70);
-    obj.button40:setTop(10);
-    obj.button40:setName("button40");
+    obj.button41 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button41:setParent(obj.scrollBox9);
+    obj.button41:setText("Novo Treinamento");
+    obj.button41:setWidth(125);
+    obj.button41:setHeight(40);
+    obj.button41:setLeft(70);
+    obj.button41:setTop(10);
+    obj.button41:setName("button41");
 
     obj.rclListadeTreino = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclListadeTreino:setParent(obj.scrollBox9);
@@ -6286,15 +6339,15 @@ local function constructNew_frmsekai()
 									
 
 
-    obj.button41 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button41:setParent(obj.scrollBox8);
-    obj.button41:setLeft(222);
-    obj.button41:setTop(478);
-    obj.button41:setWidth(146);
-    obj.button41:setHeight(116);
-    obj.button41:setOpacity(0.1);
-    obj.button41:setText("");
-    obj.button41:setName("button41");
+    obj.button42 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button42:setParent(obj.scrollBox8);
+    obj.button42:setLeft(222);
+    obj.button42:setTop(478);
+    obj.button42:setWidth(146);
+    obj.button42:setHeight(116);
+    obj.button42:setOpacity(0.1);
+    obj.button42:setText("");
+    obj.button42:setName("button42");
 
     obj.POPAmizade = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPAmizade:setParent(obj.scrollBox8);
@@ -6310,24 +6363,24 @@ local function constructNew_frmsekai()
     obj.scrollBox10:setAlign("client");
     obj.scrollBox10:setName("scrollBox10");
 
-    obj.image31 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image31:setParent(obj.scrollBox10);
-    obj.image31:setLeft(-5);
-    obj.image31:setTop(60);
-    obj.image31:setWidth(410);
-    obj.image31:setStyle("stretch");
-    obj.image31:setHeight(250);
-    obj.image31:setSRC("/imagens/imgAmizade.png");
-    obj.image31:setName("image31");
+    obj.image32 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image32:setParent(obj.scrollBox10);
+    obj.image32:setLeft(-5);
+    obj.image32:setTop(60);
+    obj.image32:setWidth(410);
+    obj.image32:setStyle("stretch");
+    obj.image32:setHeight(250);
+    obj.image32:setSRC("/imagens/imgAmizade.png");
+    obj.image32:setName("image32");
 
-    obj.button42 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button42:setParent(obj.scrollBox10);
-    obj.button42:setText("Nova Amizade");
-    obj.button42:setWidth(125);
-    obj.button42:setHeight(40);
-    obj.button42:setLeft(70);
-    obj.button42:setTop(10);
-    obj.button42:setName("button42");
+    obj.button43 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button43:setParent(obj.scrollBox10);
+    obj.button43:setText("Nova Amizade");
+    obj.button43:setWidth(125);
+    obj.button43:setHeight(40);
+    obj.button43:setLeft(70);
+    obj.button43:setTop(10);
+    obj.button43:setName("button43");
 
     obj.rclNivelAmizade = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclNivelAmizade:setParent(obj.scrollBox10);
@@ -6360,14 +6413,14 @@ local function constructNew_frmsekai()
     obj.rectangle19:setTop(1);
     obj.rectangle19:setName("rectangle19");
 
-    obj.image32 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image32:setParent(obj.rectangle19);
-    obj.image32:setLeft(1);
-    obj.image32:setTop(10);
-    obj.image32:setWidth(330);
-    obj.image32:setHeight(200);
-    obj.image32:setSRC("/imagens/Amizade.png");
-    obj.image32:setName("image32");
+    obj.image33 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image33:setParent(obj.rectangle19);
+    obj.image33:setLeft(1);
+    obj.image33:setTop(10);
+    obj.image33:setWidth(330);
+    obj.image33:setHeight(200);
+    obj.image33:setSRC("/imagens/Amizade.png");
+    obj.image33:setName("image33");
 
     obj.label92 = GUI.fromHandle(_obj_newObject("label"));
     obj.label92:setParent(obj.rectangle19);
@@ -6468,16 +6521,16 @@ local function constructNew_frmsekai()
     obj.edit260:setField("AmizadeExtra");
     obj.edit260:setName("edit260");
 
-    obj.image33 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image33:setParent(obj.rectangle19);
-    obj.image33:setLeft(40);
-    obj.image33:setTop(57);
-    obj.image33:setWidth(89);
-    obj.image33:setHeight(114);
-    obj.image33:setEditable(true);
-    obj.image33:setStyle("autoFit");
-    obj.image33:setField("imgAmizade");
-    obj.image33:setName("image33");
+    obj.image34 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image34:setParent(obj.rectangle19);
+    obj.image34:setLeft(40);
+    obj.image34:setTop(57);
+    obj.image34:setWidth(89);
+    obj.image34:setHeight(114);
+    obj.image34:setEditable(true);
+    obj.image34:setStyle("autoFit");
+    obj.image34:setField("imgAmizade");
+    obj.image34:setName("image34");
 
     obj.tab5 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab5:setParent(obj.tabControl1);
@@ -6489,14 +6542,14 @@ local function constructNew_frmsekai()
     obj.scrollBox11:setAlign("client");
     obj.scrollBox11:setName("scrollBox11");
 
-    obj.image34 = GUI.fromHandle(_obj_newObject("image"));
-    obj.image34:setParent(obj.scrollBox11);
-    obj.image34:setLeft(1);
-    obj.image34:setTop(1);
-    obj.image34:setWidth(1000);
-    obj.image34:setHeight(700);
-    obj.image34:setSRC("/imagens/4.png");
-    obj.image34:setName("image34");
+    obj.image35 = GUI.fromHandle(_obj_newObject("image"));
+    obj.image35:setParent(obj.scrollBox11);
+    obj.image35:setLeft(1);
+    obj.image35:setTop(1);
+    obj.image35:setWidth(1000);
+    obj.image35:setHeight(700);
+    obj.image35:setSRC("/imagens/4.png");
+    obj.image35:setName("image35");
 
     obj.richEdit2 = GUI.fromHandle(_obj_newObject("richEdit"));
     obj.richEdit2:setParent(obj.scrollBox11);
@@ -7303,10 +7356,26 @@ local function constructNew_frmsekai()
 
     obj._e_event23 = obj.button17:addEventListener("onClick",
         function (_)
+            self.PopTransformation:show();
+        end, obj);
+
+    obj._e_event24 = obj.ControlaTrans:addEventListener("onChange",
+        function (_)
+            if self.ControlaTrans.checked then
+            					self.transformation.visible = false;
+            					self.transformationDisable.visible = true;
+            				else
+            					self.transformation.visible = true;
+            					self.transformationDisable.visible = false;
+            				end;
+        end, obj);
+
+    obj._e_event25 = obj.button18:addEventListener("onClick",
+        function (_)
             self.POPCALCULO:show();
         end, obj);
 
-    obj._e_event24 = obj.dataLink1:addEventListener("onChange",
+    obj._e_event26 = obj.dataLink1:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then
             					sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
@@ -7358,7 +7427,7 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event25 = obj.dataLink2:addEventListener("onChange",
+    obj._e_event27 = obj.dataLink2:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.CTai = 0;
             				sheet.CNin = 0;
@@ -7377,7 +7446,7 @@ local function constructNew_frmsekai()
             				sheet.CCRG = 0	;
         end, obj);
 
-    obj._e_event26 = obj.dataLink3:addEventListener("onChange",
+    obj._e_event28 = obj.dataLink3:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Cla == 'Sem clã' then
             				end;
@@ -7560,7 +7629,7 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event27 = obj.dataLink4:addEventListener("onChange",
+    obj._e_event29 = obj.dataLink4:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.TipoOutro == 'ChakraBiju' then
             						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0);
@@ -7598,12 +7667,12 @@ local function constructNew_frmsekai()
             					end;
         end, obj);
 
-    obj._e_event28 = obj.dataLink5:addEventListener("onChange",
+    obj._e_event30 = obj.dataLink5:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.ChakraNatural = (tonumber(sheet.ChakraTotal / 2) or 0);
         end, obj);
 
-    obj._e_event29 = obj.dataLink6:addEventListener("onChange",
+    obj._e_event31 = obj.dataLink6:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Graduacao == 'Academico' then
             						sheet.GTurno = 1;
@@ -7696,7 +7765,7 @@ local function constructNew_frmsekai()
             					end;
         end, obj);
 
-    obj._e_event30 = obj.dataLink7:addEventListener("onChange",
+    obj._e_event32 = obj.dataLink7:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
             				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
@@ -7705,7 +7774,7 @@ local function constructNew_frmsekai()
             				sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
         end, obj);
 
-    obj._e_event31 = obj.dataLink8:addEventListener("onChange",
+    obj._e_event33 = obj.dataLink8:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0);
             				sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
@@ -7719,7 +7788,7 @@ local function constructNew_frmsekai()
             				sheet.DATotal = math.ceil(sheet.DATotal);
         end, obj);
 
-    obj._e_event32 = obj.dataLink9:addEventListener("onChange",
+    obj._e_event34 = obj.dataLink9:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.GHP = (tonumber(sheet.GHP) or 0);
             				sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
@@ -7727,7 +7796,7 @@ local function constructNew_frmsekai()
              				+ (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0);
         end, obj);
 
-    obj._e_event33 = obj.dataLink10:addEventListener("onChange",
+    obj._e_event35 = obj.dataLink10:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
             				if sheet.Idade2 > 40 then
@@ -7738,19 +7807,19 @@ local function constructNew_frmsekai()
             				(tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) + (tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);
         end, obj);
 
-    obj._e_event34 = obj.dataLink11:addEventListener("onChange",
+    obj._e_event36 = obj.dataLink11:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
             				(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
             				sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0);
         end, obj);
 
-    obj._e_event35 = obj.button18:addEventListener("onClick",
+    obj._e_event37 = obj.button19:addEventListener("onClick",
         function (_)
             self.POPKunai:show();
         end, obj);
 
-    obj._e_event36 = obj.dataLink12:addEventListener("onChange",
+    obj._e_event38 = obj.dataLink12:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0);
             					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50;
@@ -7764,77 +7833,77 @@ local function constructNew_frmsekai()
             					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2;
         end, obj);
 
-    obj._e_event37 = obj.button19:addEventListener("onClick",
+    obj._e_event39 = obj.button20:addEventListener("onClick",
         function (_)
             self.POPPB:show();
         end, obj);
 
-    obj._e_event38 = obj.button20:addEventListener("onClick",
+    obj._e_event40 = obj.button21:addEventListener("onClick",
         function (_)
             self.POPDiverso:show();
         end, obj);
 
-    obj._e_event39 = obj.button21:addEventListener("onClick",
+    obj._e_event41 = obj.button22:addEventListener("onClick",
         function (_)
             self.POPPergaminho1:show();
         end, obj);
 
-    obj._e_event40 = obj.button22:addEventListener("onClick",
+    obj._e_event42 = obj.button23:addEventListener("onClick",
         function (_)
             Pergaminho1()
         end, obj);
 
-    obj._e_event41 = obj.button23:addEventListener("onClick",
+    obj._e_event43 = obj.button24:addEventListener("onClick",
         function (_)
             self.POPPergaminho2:show();
         end, obj);
 
-    obj._e_event42 = obj.button24:addEventListener("onClick",
+    obj._e_event44 = obj.button25:addEventListener("onClick",
         function (_)
             Pergaminho2()
         end, obj);
 
-    obj._e_event43 = obj.button25:addEventListener("onClick",
+    obj._e_event45 = obj.button26:addEventListener("onClick",
         function (_)
             self.POPPergaminho3:show();
         end, obj);
 
-    obj._e_event44 = obj.button26:addEventListener("onClick",
+    obj._e_event46 = obj.button27:addEventListener("onClick",
         function (_)
             Pergaminho3()
         end, obj);
 
-    obj._e_event45 = obj.button27:addEventListener("onClick",
+    obj._e_event47 = obj.button28:addEventListener("onClick",
         function (_)
             self.EstilodeCombate:show();
         end, obj);
 
-    obj._e_event46 = obj.button28:addEventListener("onClick",
+    obj._e_event48 = obj.button29:addEventListener("onClick",
         function (_)
             RolarTesteAtletismo()
         end, obj);
 
-    obj._e_event47 = obj.button29:addEventListener("onClick",
+    obj._e_event49 = obj.button30:addEventListener("onClick",
         function (_)
             RolarTesteSabedoria()
         end, obj);
 
-    obj._e_event48 = obj.button30:addEventListener("onClick",
+    obj._e_event50 = obj.button31:addEventListener("onClick",
         function (_)
             RolarTestePercepcao()
         end, obj);
 
-    obj._e_event49 = obj.button31:addEventListener("onClick",
+    obj._e_event51 = obj.button32:addEventListener("onClick",
         function (_)
             RolarTesteAcrobacia()
         end, obj);
 
-    obj._e_event50 = obj.button32:addEventListener("onClick",
+    obj._e_event52 = obj.button33:addEventListener("onClick",
         function (_)
             RolarTesteVigor()
         end, obj);
 
-    obj._e_event51 = obj.dataLink13:addEventListener("onChange",
+    obj._e_event53 = obj.dataLink13:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then	
             							if sheet.Atletismo == nil then
@@ -8021,7 +8090,7 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event52 = obj.dataLink14:addEventListener("onChange",
+    obj._e_event54 = obj.dataLink14:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
             						sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
@@ -8046,39 +8115,39 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event53 = obj.button33:addEventListener("onClick",
+    obj._e_event55 = obj.button34:addEventListener("onClick",
         function (_)
             self.POPArma:show();
         end, obj);
 
-    obj._e_event54 = obj.button34:addEventListener("onClick",
+    obj._e_event56 = obj.button35:addEventListener("onClick",
         function (_)
             self.POPBandana:show();
         end, obj);
 
-    obj._e_event55 = obj.button35:addEventListener("onClick",
+    obj._e_event57 = obj.button36:addEventListener("onClick",
         function (_)
             self.POPColete:show();
         end, obj);
 
-    obj._e_event56 = obj.button36:addEventListener("onClick",
+    obj._e_event58 = obj.button37:addEventListener("onClick",
         function (_)
             self.POPAcessorio:show();
         end, obj);
 
-    obj._e_event57 = obj.button37:addEventListener("onClick",
+    obj._e_event59 = obj.button38:addEventListener("onClick",
         function (_)
             self.POPBAG:show();
         end, obj);
 
-    obj._e_event58 = obj.button38:addEventListener("onClick",
+    obj._e_event60 = obj.button39:addEventListener("onClick",
         function (_)
             -- Usuário clicou no botão de criar novo item.
             								-- Vamos inserir um novo item no nosso recordList                              
             								self.rclListaDosItens4:append();
         end, obj);
 
-    obj._e_event59 = obj.rclListaDosItens4:addEventListener("onSelect",
+    obj._e_event61 = obj.rclListaDosItens4:addEventListener("onSelect",
         function (_)
             --[[
             							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8090,7 +8159,7 @@ local function constructNew_frmsekai()
             							self.boxDetalhesDoItem.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event60 = obj.dataLink15:addEventListener("onChange",
+    obj._e_event62 = obj.dataLink15:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             local BonusGanhoAnualGraduacao = nil
             						
@@ -8141,17 +8210,17 @@ local function constructNew_frmsekai()
             						self.GanhoAnual.text = tonumber(sheet.BonusGanhoAnualGraduacao or 0) + tonumber(sheet.FormulaFinal or 0);
         end, obj);
 
-    obj._e_event61 = obj.button39:addEventListener("onClick",
+    obj._e_event63 = obj.button40:addEventListener("onClick",
         function (_)
             self.POPTreino:show();
         end, obj);
 
-    obj._e_event62 = obj.button40:addEventListener("onClick",
+    obj._e_event64 = obj.button41:addEventListener("onClick",
         function (_)
             self.rclListadeTreino:append();
         end, obj);
 
-    obj._e_event63 = obj.rclListadeTreino:addEventListener("onSelect",
+    obj._e_event65 = obj.rclListadeTreino:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8163,22 +8232,22 @@ local function constructNew_frmsekai()
             								self.dsbListadeTreino.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event64 = obj.btnTreinar:addEventListener("onClick",
+    obj._e_event66 = obj.btnTreinar:addEventListener("onClick",
         function (_)
             TreinaJutsu()
         end, obj);
 
-    obj._e_event65 = obj.button41:addEventListener("onClick",
+    obj._e_event67 = obj.button42:addEventListener("onClick",
         function (_)
             self.POPAmizade:show();
         end, obj);
 
-    obj._e_event66 = obj.button42:addEventListener("onClick",
+    obj._e_event68 = obj.button43:addEventListener("onClick",
         function (_)
             self.rclNivelAmizade:append();
         end, obj);
 
-    obj._e_event67 = obj.rclNivelAmizade:addEventListener("onSelect",
+    obj._e_event69 = obj.rclNivelAmizade:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -8191,6 +8260,8 @@ local function constructNew_frmsekai()
         end, obj);
 
     function obj:_releaseEvents()
+        __o_rrpgObjs.removeEventListenerById(self._e_event69);
+        __o_rrpgObjs.removeEventListenerById(self._e_event68);
         __o_rrpgObjs.removeEventListenerById(self._e_event67);
         __o_rrpgObjs.removeEventListenerById(self._e_event66);
         __o_rrpgObjs.removeEventListenerById(self._e_event65);
@@ -8300,6 +8371,7 @@ local function constructNew_frmsekai()
         if self.edit82 ~= nil then self.edit82:destroy(); self.edit82 = nil; end;
         if self.rectangle5 ~= nil then self.rectangle5:destroy(); self.rectangle5 = nil; end;
         if self.button35 ~= nil then self.button35:destroy(); self.button35 = nil; end;
+        if self.transformation ~= nil then self.transformation:destroy(); self.transformation = nil; end;
         if self.label8 ~= nil then self.label8:destroy(); self.label8 = nil; end;
         if self.POPFavorito ~= nil then self.POPFavorito:destroy(); self.POPFavorito = nil; end;
         if self.edit11 ~= nil then self.edit11:destroy(); self.edit11 = nil; end;
@@ -8334,10 +8406,10 @@ local function constructNew_frmsekai()
         if self.edit16 ~= nil then self.edit16:destroy(); self.edit16 = nil; end;
         if self.label47 ~= nil then self.label47:destroy(); self.label47 = nil; end;
         if self.edit205 ~= nil then self.edit205:destroy(); self.edit205 = nil; end;
-        if self.label48 ~= nil then self.label48:destroy(); self.label48 = nil; end;
+        if self.button26 ~= nil then self.button26:destroy(); self.button26 = nil; end;
         if self.comboBox2 ~= nil then self.comboBox2:destroy(); self.comboBox2 = nil; end;
         if self.edit116 ~= nil then self.edit116:destroy(); self.edit116 = nil; end;
-        if self.button26 ~= nil then self.button26:destroy(); self.button26 = nil; end;
+        if self.label48 ~= nil then self.label48:destroy(); self.label48 = nil; end;
         if self.label76 ~= nil then self.label76:destroy(); self.label76 = nil; end;
         if self.edit77 ~= nil then self.edit77:destroy(); self.edit77 = nil; end;
         if self.button4 ~= nil then self.button4:destroy(); self.button4 = nil; end;
@@ -8348,8 +8420,9 @@ local function constructNew_frmsekai()
         if self.edit214 ~= nil then self.edit214:destroy(); self.edit214 = nil; end;
         if self.label1 ~= nil then self.label1:destroy(); self.label1 = nil; end;
         if self.rectangle7 ~= nil then self.rectangle7:destroy(); self.rectangle7 = nil; end;
-        if self.edit220 ~= nil then self.edit220:destroy(); self.edit220 = nil; end;
+        if self.ControlaTrans ~= nil then self.ControlaTrans:destroy(); self.ControlaTrans = nil; end;
         if self.image9 ~= nil then self.image9:destroy(); self.image9 = nil; end;
+        if self.edit220 ~= nil then self.edit220:destroy(); self.edit220 = nil; end;
         if self.comboBox11 ~= nil then self.comboBox11:destroy(); self.comboBox11 = nil; end;
         if self.edit260 ~= nil then self.edit260:destroy(); self.edit260 = nil; end;
         if self.button7 ~= nil then self.button7:destroy(); self.button7 = nil; end;
@@ -8378,6 +8451,7 @@ local function constructNew_frmsekai()
         if self.edit182 ~= nil then self.edit182:destroy(); self.edit182 = nil; end;
         if self.edit67 ~= nil then self.edit67:destroy(); self.edit67 = nil; end;
         if self.rectangle12 ~= nil then self.rectangle12:destroy(); self.rectangle12 = nil; end;
+        if self.button43 ~= nil then self.button43:destroy(); self.button43 = nil; end;
         if self.edit176 ~= nil then self.edit176:destroy(); self.edit176 = nil; end;
         if self.edit221 ~= nil then self.edit221:destroy(); self.edit221 = nil; end;
         if self.edit258 ~= nil then self.edit258:destroy(); self.edit258 = nil; end;
@@ -8399,6 +8473,7 @@ local function constructNew_frmsekai()
         if self.edit62 ~= nil then self.edit62:destroy(); self.edit62 = nil; end;
         if self.edit74 ~= nil then self.edit74:destroy(); self.edit74 = nil; end;
         if self.edit60 ~= nil then self.edit60:destroy(); self.edit60 = nil; end;
+        if self.PopTransformation ~= nil then self.PopTransformation:destroy(); self.PopTransformation = nil; end;
         if self.POPKunai ~= nil then self.POPKunai:destroy(); self.POPKunai = nil; end;
         if self.edit134 ~= nil then self.edit134:destroy(); self.edit134 = nil; end;
         if self.edit247 ~= nil then self.edit247:destroy(); self.edit247 = nil; end;
@@ -8409,9 +8484,9 @@ local function constructNew_frmsekai()
         if self.edit121 ~= nil then self.edit121:destroy(); self.edit121 = nil; end;
         if self.POPAmizade ~= nil then self.POPAmizade:destroy(); self.POPAmizade = nil; end;
         if self.textEditor9 ~= nil then self.textEditor9:destroy(); self.textEditor9 = nil; end;
+        if self.button28 ~= nil then self.button28:destroy(); self.button28 = nil; end;
         if self.edit163 ~= nil then self.edit163:destroy(); self.edit163 = nil; end;
         if self.edit199 ~= nil then self.edit199:destroy(); self.edit199 = nil; end;
-        if self.button28 ~= nil then self.button28:destroy(); self.button28 = nil; end;
         if self.scrollBox7 ~= nil then self.scrollBox7:destroy(); self.scrollBox7 = nil; end;
         if self.scrollBox11 ~= nil then self.scrollBox11:destroy(); self.scrollBox11 = nil; end;
         if self.textEditor3 ~= nil then self.textEditor3:destroy(); self.textEditor3 = nil; end;
@@ -8431,8 +8506,8 @@ local function constructNew_frmsekai()
         if self.tab2 ~= nil then self.tab2:destroy(); self.tab2 = nil; end;
         if self.edit61 ~= nil then self.edit61:destroy(); self.edit61 = nil; end;
         if self.edit84 ~= nil then self.edit84:destroy(); self.edit84 = nil; end;
-        if self.button30 ~= nil then self.button30:destroy(); self.button30 = nil; end;
         if self.image25 ~= nil then self.image25:destroy(); self.image25 = nil; end;
+        if self.button30 ~= nil then self.button30:destroy(); self.button30 = nil; end;
         if self.edit224 ~= nil then self.edit224:destroy(); self.edit224 = nil; end;
         if self.layout1 ~= nil then self.layout1:destroy(); self.layout1 = nil; end;
         if self.edit24 ~= nil then self.edit24:destroy(); self.edit24 = nil; end;
@@ -8450,6 +8525,7 @@ local function constructNew_frmsekai()
         if self.edit128 ~= nil then self.edit128:destroy(); self.edit128 = nil; end;
         if self.textEditor11 ~= nil then self.textEditor11:destroy(); self.textEditor11 = nil; end;
         if self.edit200 ~= nil then self.edit200:destroy(); self.edit200 = nil; end;
+        if self.image35 ~= nil then self.image35:destroy(); self.image35 = nil; end;
         if self.button13 ~= nil then self.button13:destroy(); self.button13 = nil; end;
         if self.textEditor2 ~= nil then self.textEditor2:destroy(); self.textEditor2 = nil; end;
         if self.edit187 ~= nil then self.edit187:destroy(); self.edit187 = nil; end;
@@ -8543,6 +8619,7 @@ local function constructNew_frmsekai()
         if self.tab1 ~= nil then self.tab1:destroy(); self.tab1 = nil; end;
         if self.edit102 ~= nil then self.edit102:destroy(); self.edit102 = nil; end;
         if self.image13 ~= nil then self.image13:destroy(); self.image13 = nil; end;
+        if self.transformationDisable ~= nil then self.transformationDisable:destroy(); self.transformationDisable = nil; end;
         if self.edit178 ~= nil then self.edit178:destroy(); self.edit178 = nil; end;
         if self.edit117 ~= nil then self.edit117:destroy(); self.edit117 = nil; end;
         if self.edit215 ~= nil then self.edit215:destroy(); self.edit215 = nil; end;
@@ -8629,8 +8706,8 @@ local function constructNew_frmsekai()
         if self.edit175 ~= nil then self.edit175:destroy(); self.edit175 = nil; end;
         if self.edit101 ~= nil then self.edit101:destroy(); self.edit101 = nil; end;
         if self.image3 ~= nil then self.image3:destroy(); self.image3 = nil; end;
-        if self.edit242 ~= nil then self.edit242:destroy(); self.edit242 = nil; end;
         if self.image28 ~= nil then self.image28:destroy(); self.image28 = nil; end;
+        if self.edit242 ~= nil then self.edit242:destroy(); self.edit242 = nil; end;
         if self.edit231 ~= nil then self.edit231:destroy(); self.edit231 = nil; end;
         if self.edit164 ~= nil then self.edit164:destroy(); self.edit164 = nil; end;
         if self.image8 ~= nil then self.image8:destroy(); self.image8 = nil; end;

@@ -1381,12 +1381,36 @@
 		</button>
 		<edit left="190" top="336" width="85" height="18" enabled="false" type="float" horzTextAlign="center" field="OutrosTotal"/>
 		<comboBox  left="280" top="336" width="110" height="18" field="TipoOutro" items="{'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}"/>
-		<image field="imagemDoPersonagem" editable="true" style="autoFit" 
-		  left="404" top="410" width="302" height="255" />
+		
+		<button left="490" top="155" width="145" height="60"  onClick="self.PopTransformation:show();"/>
+		
+		<popup name="PopTransformation" visible="false" left="1" top="10" width="1020" height="580">
+				
+		<image left="10" top="10" width="1000" height="563" src="/imagens/8.png"/>				
+
+		</popup>
+		
+		<image name="transformation" left="490" top="155" width="145" height="60" src="/imagens/Transform1.png"/>
+		<image name="transformationDisable" left="490" top="155" width="145" visible="false" height="60" src="/imagens/Transform2.png"/>				
+		
+		<checkBox name="ControlaTrans" left="490" top="220" text="Ativar Transformação" field="Trasnformado">
+			<event name="onChange"> 
+				if self.ControlaTrans.checked then
+					self.transformation.visible = false;
+					self.transformationDisable.visible = true;
+				else
+					self.transformation.visible = true;
+					self.transformationDisable.visible = false;
+				end;
+			</event>
+		</checkBox>
+		
+		
+			
+		<image field="imagemDoPersonagem" editable="true" style="autoFit" left="404" top="410" width="302" height="255" />
 		--GM DESATIVA-- 		
 		<button left="502" top="270" width="105" height="85" opacity="1.0" visible="false" text="Calculo" onClick="self.POPCALCULO:show();"/>			
-		<popup name="POPCALCULO" visible="false" left="1" top="40"
-				width="820" height="620">
+		<popup name="POPCALCULO" visible="false" left="1" top="40" width="820" height="620">
 				
 		<image left="10" top="10" width="800" height="600" src="/imagens/CALCULO.png"/>				
 		<edit left="150" top="35" width="85" height="18" enabled="false" type="float"  field="CTai"/>
