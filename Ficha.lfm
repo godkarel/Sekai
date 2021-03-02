@@ -121,6 +121,7 @@
 			sheet.CDA = (tonumber(sheet.CDA) or 0);
 			sheet.CDE = (tonumber(sheet.CDE) or 0);
 			sheet.CHP = (tonumber(sheet.CHP) or 0);
+			sheet.CReducao = (tonumber(sheet.CReducao) or 0);
 			sheet.CChakra = (tonumber(sheet.CChakra) or 0);
 			sheet.Taijutsu = (tonumber(sheet.Taijutsu) or 0);
 			sheet.Ninjutsu = (tonumber(sheet.Ninjutsu) or 0);
@@ -184,13 +185,16 @@
 			sheet.RepNuvem = (tonumber(sheet.RepNuvem) or 0);
 			sheet.RepNevoa = (tonumber(sheet.RepNevoa) or 0);
 			sheet.RepPedra = (tonumber(sheet.RepPedra) or 0);
-			sheet.BingoBook = (tonumber(sheet.BingoBook) or 0);				
+			sheet.BingoBook = (tonumber(sheet.BingoBook) or 0);	
+			sheet.ReducaoTotal = (tonumber(sheet.ReducaoTotal) or 0);	
+			sheet.TReducao = (tonumber(sheet.TReducao) or 0);			
 			sheet.GHP = 100;
 			sheet.Nome = "Escolha o Nome";
 			sheet.Sequenci1 = true;
 			self.btnTreinar.visible = true;
 			showMessage("Escolha seu nome, clã e idade");
-		end;	
+		end; 
+		sheet.Transformado = 0; 
 	</event> 
 	<scrollBox align="client">
 			 -----------------------------------
@@ -1244,6 +1248,7 @@
 		<edit left="370" top="155" width="85" enabled="false" height="18" type="float"  field="GenTotal"/>
 		<edit left="370" top="175" width="85" enabled="false" height="18" type="float"  field="DATotal"/>
 		<edit left="370" top="195" width="85" enabled="false"  height="18" type="float"  field="EleTotal"/>
+		<edit left="370" top="215" width="85" enabled="false"  height="18" type="float"  field="ReducaoTotal"/>
 		
 		-----------------------------------------------------------------------------
 		------------------------BOTOES DE LEVEL E DELEVEL ---------------------------
@@ -1382,28 +1387,56 @@
 		<edit left="190" top="336" width="85" height="18" enabled="false" type="float" horzTextAlign="center" field="OutrosTotal"/>
 		<comboBox  left="280" top="336" width="110" height="18" field="TipoOutro" items="{'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}"/>
 		
-		<button left="490" top="155" width="145" height="60"  onClick="self.PopTransformation:show();"/>
+		<button left="490" top="155" width="145" height="60" onClick="self.PopTransformation:show();"/>
 		
 		<popup name="PopTransformation" visible="false" left="1" top="10" width="1020" height="580">
 				
-		<image left="10" top="10" width="1000" height="563" src="/imagens/8.png"/>				
-
+		<image left="10" top="10" width="1000" height="563" src="/imagens/8.png"/>
+		<edit left="190" top="43" width="100" height="20" type="number" field="TTaijutsu"/>
+		<edit left="190" top="72" width="100" height="20" type="number" field="TNinjutsu"/>
+		<edit left="190" top="101" width="100" height="20" type="number" field="TGenjutsu"/>
+		<edit left="190" top="130" width="100" height="20" type="number" field="TDA"/>
+		<edit left="190" top="159" width="100" height="20" type="number" field="TElemental"/>
+		
+		
+		<edit left="190" top="217" width="100" height="20" type="number" field="THP"/>
+		<edit left="190" top="245" width="100" height="20" type="number" field="TChakra"/>
+		<edit left="190" top="273" width="100" height="20" type="number" field="TReiatsu"/>
+		<edit left="190" top="301" width="100" height="20" type="number" field="TOutros"/>
+		
+		<edit left="190" top="357" width="100" height="20" type="number" field="TReducao"/>
+		
+		<edit left="820" top="43" width="100" height="20" type="number" field="TATai"/>
+		<edit left="820" top="72" width="100" height="20" type="number" field="TANin"/>
+		<edit left="820" top="101" width="100" height="20" type="number" field="TAGen"/>
+		<edit left="820" top="130" width="100" height="20" type="number" field="TEsquiva"/>
+		<edit left="820" top="159" width="100" height="20" type="number" field="TBloqueio"/>
+		<edit left="820" top="187" width="100" height="20" type="number" field="TCTai"/>
+		<edit left="820" top="215" width="100" height="20" type="number" field="TCNin"/>
+		<edit left="820" top="243" width="100" height="20" type="number" field="TCGen"/>
+		<edit left="820" top="271" width="100" height="20" type="number" field="TTurnos"/>
 		</popup>
 		
 		<image name="transformation" left="490" top="155" width="145" height="60" src="/imagens/Transform1.png"/>
 		<image name="transformationDisable" left="490" top="155" width="145" visible="false" height="60" src="/imagens/Transform2.png"/>				
 		
-		<checkBox name="ControlaTrans" left="490" top="220" text="Ativar Transformação" field="Trasnformado">
+		<checkBox name="ControlaTrans" left="490" top="220" text="Ativar Transformação" field="Trasnformado1">
 			<event name="onChange"> 
 				if self.ControlaTrans.checked then
 					self.transformation.visible = false;
-					self.transformationDisable.visible = true;
+					self.transformationDisable.visible = true;								
 				else
 					self.transformation.visible = true;
 					self.transformationDisable.visible = false;
 				end;
 			</event>
 		</checkBox>
+		
+		<dataLink fields="{'Trasnformado1'}">
+			<event name="onChange">
+				sheet.Transformado = tonumber(sheet.Transformado) + 1;		
+			</event>
+		</dataLink>		
 		
 		
 			
@@ -1420,6 +1453,8 @@
 		<edit left="150" top="122" width="85" height="18" enabled="false" type="float"  field="CDE"/>
 		<edit left="150" top="145" width="85" height="18" enabled="false" type="float"  field="CHP"/>
 		<edit left="150" top="168" width="85" height="18" enabled="false" type="float"  field="CChakra"/>
+		
+		<edit left="310" top="210" width="85" height="18" enabled="false" type="float"  field="CReducao"/>
 		
 		<edit left="280" top="35" width="85" height="18" enabled="false" type="float"  field="Taijutsu"/>
 		<edit left="280" top="58" width="85" height="18" enabled="false" type="float"  field="Ninjutsu"/>
@@ -1494,12 +1529,22 @@
 				end;	
 			</event>
 		</dataLink>
+		
+		<dataLink fields="{'BandanaReducao', 'ColeteReducao', 'TReducao', 'CReducao', 'DReducao', 'Transformado'}">
+			<event name="onChange">	
+				if self.ControlaTrans.checked then
+					sheet.ReducaoTotal = (tonumber(sheet.BandanaReducao) or 0) + (tonumber(sheet.ColeteReducao) or 0) + (tonumber(sheet.CReducao) or 0) + (tonumber(sheet.DReducao) or 0) + (tonumber(sheet.TReducao) or 0);
+				else
+					sheet.ReducaoTotal = (tonumber(sheet.BandanaReducao) or 0) + (tonumber(sheet.ColeteReducao) or 0) + (tonumber(sheet.CReducao) or 0) + (tonumber(sheet.DReducao) or 0);	
+				end;
+			</event>
+		</dataLink>
 		---------------------------------------------------------------------------
 		---------------------------------------------------------------------------
 		-------------------------CALCULO POR NIVEL DE CLÃ--------------------------
 		---------------------------------------------------------------------------
 		---------------------------------------------------------------------------
-		<dataLink fields="{'Cla'">
+		<dataLink fields="{'Cla'}">
 			<event name="onChange">
 				sheet.CTai = 0;
 				sheet.CNin = 0;
@@ -1515,7 +1560,8 @@
 				sheet.CBloq = 0;
 				sheet.CCRT = 0;
 				sheet.CCRN = 0;
-				sheet.CCRG = 0	;		
+				sheet.CCRG = 0;
+				sheet.CReducao = 0;
 			</event>
 		</dataLink>		
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
@@ -1524,7 +1570,7 @@
 		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
 		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
 		,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
-		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'">
+		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'}">
 			<event name="onChange">						
 				if sheet.Cla == 'Sem clã' then
 				end;
@@ -1712,7 +1758,7 @@
 		-----------------------CALCULO POR NIVEL DE CLÃ----------------------------
 		---------------------------------------------------------------------------
 		---------------------------------------------------------------------------
-		<dataLink fields="{'TipoOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'">
+		<dataLink fields="{'TipoOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'}">
 			<event name="onChange"> 
 				<![CDATA[
 					 
@@ -1768,7 +1814,8 @@
 		--------------------- STATUS POR GRADUACÃO---------------------
 		---------------------------------------------------------------
 		---------------------------------------------------------------
-		<dataLink fields="{'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal', 'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'">
+		<dataLink fields="{'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal',
+		'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'}">
 			<event name="onChange"> 				
 				<![CDATA[					 
 					if sheet.Graduacao == 'Academico' then
@@ -1865,7 +1912,7 @@
 		</dataLink>
 				
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'">
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'}">
 			<event name="onChange"> 
 				sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
 				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
@@ -1876,18 +1923,27 @@
 		</dataLink>
 		
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'">
-			<event name="onChange">				
-				sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0);
-				sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
-				sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0);
-				sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0);
-				sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0);
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao', 'Transformado'}">
+			<event name="onChange">	
+				if self.ControlaTrans.checked then
+					sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0) + (tonumber(sheet.TTaijutsu) or 0);
+					sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0) + (tonumber(sheet.TNinjutsu) or 0);
+					sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0) + (tonumber(sheet.TGenjutsu) or 0);
+					sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0) + (tonumber(sheet.TElemental) or 0);
+					sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0) + (tonumber(sheet.TDA) or 0);
+				else					
+					sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0);
+					sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0);
+					sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0);
+					sheet.EleTotal = (tonumber(sheet.ArmaDE) or 0) + (tonumber(sheet.AcessorioDE) or 0) + (tonumber(sheet.DDE) or 0) + (tonumber(sheet.CDE) or 0) + (tonumber(sheet.Elemental1) or 0);
+					sheet.DATotal = (tonumber(sheet.ArmaDA) or 0) + (tonumber(sheet.DDA) or 0) + (tonumber(sheet.CDA) or 0) + (tonumber(sheet.DanoArmado) or 0);
+				end;
+					
 				sheet.TaiTotal = math.ceil(sheet.TaiTotal);
 				sheet.NinTotal = math.ceil(sheet.NinTotal);
 				sheet.GenTotal = math.ceil(sheet.GenTotal);
 				sheet.EleTotal = math.ceil(sheet.EleTotal);
-				sheet.DATotal = math.ceil(sheet.DATotal);						
+				sheet.DATotal = math.ceil(sheet.DATotal);		
 			</event>
 		</dataLink>		
 		-----------------------------------------------------------------
@@ -1898,12 +1954,19 @@
 		-----------------------------------------------------------------
 		-----------------------------------------------------------------					
 		<dataLink fields="{'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP'">
-			<event name="onChange"> 
-				sheet.GHP = (tonumber(sheet.GHP) or 0);
-				sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
-				sheet.HPTotal = math.floor(tonumber(sheet.HP) or 0) + (tonumber(sheet.CHP) or 0) + (tonumber(sheet.DHP) or 0) + (tonumber(sheet.AcessorioHP) or 0)
- 				+ (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0);	
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP', 'Transformado'}">
+			<event name="onChange">
+				if self.ControlaTrans.checked then
+					sheet.GHP = (tonumber(sheet.GHP) or 0);
+					sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
+					sheet.HPTotal = math.floor(tonumber(sheet.HP) or 0) + (tonumber(sheet.CHP) or 0) + (tonumber(sheet.DHP) or 0) + (tonumber(sheet.AcessorioHP) or 0)
+					+ (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0) + (tonumber(sheet.THP) or 0);	
+				else
+					sheet.GHP = (tonumber(sheet.GHP) or 0);
+					sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
+					sheet.HPTotal = math.floor(tonumber(sheet.HP) or 0) + (tonumber(sheet.CHP) or 0) + (tonumber(sheet.DHP) or 0) + (tonumber(sheet.AcessorioHP) or 0)
+					+ (tonumber(sheet.ColeteHP) or 0) + (tonumber(sheet.BandanaHP) or 0) + (tonumber(sheet.ArmaHP) or 0);	
+				end;
 			</event>
 		</dataLink>		
 		-----------------------------------------------------------------
@@ -1914,15 +1977,25 @@
 		-----------------------------------------------------------------
 		-----------------------------------------------------------------		
 		<dataLink fields="{'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade'">
-			<event name="onChange"> 			
-				sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
-				if sheet.Idade2 > 40 then
-					sheet.Idade2 = 40;
-				end;
-				sheet.Chakra = (tonumber(sheet.Idade2) or 0) * 25  + (tonumber(sheet.Level) or 0);
-				sheet.ChakraTotal = math.floor(tonumber(sheet.Chakra) or 0) + (tonumber(sheet.ArmaChakra) or 0) + (tonumber(sheet.BandanaChakra) or 0) + 
-				(tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) + (tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);					
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade', 'Transformado'}">
+			<event name="onChange">
+				if self.ControlaTrans.checked then
+					sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
+					if sheet.Idade2 > 40 then
+						sheet.Idade2 = 40;
+					end;
+					sheet.Chakra = (tonumber(sheet.Idade2) or 0) * 25  + (tonumber(sheet.Level) or 0);
+					sheet.ChakraTotal = math.floor(tonumber(sheet.Chakra) or 0) + (tonumber(sheet.ArmaChakra) or 0) + (tonumber(sheet.BandanaChakra) or 0) + 
+					(tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) + (tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0) + (tonumber(sheet.TChakra) or 0);	
+				else
+					sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
+					if sheet.Idade2 > 40 then
+						sheet.Idade2 = 40;
+					end;
+					sheet.Chakra = (tonumber(sheet.Idade2) or 0) * 25  + (tonumber(sheet.Level) or 0);
+					sheet.ChakraTotal = math.floor(tonumber(sheet.Chakra) or 0) + (tonumber(sheet.ArmaChakra) or 0) + (tonumber(sheet.BandanaChakra) or 0) + 
+					(tonumber(sheet.ColeteChakra) or 0) + (tonumber(sheet.AcessorioChakra) or 0) + (tonumber(sheet.DChakra) or 0) + (tonumber(sheet.GChakra) or 0) + (tonumber(sheet.CChakra) or 0);			
+				end;				
 			</event>
 		</dataLink>		
 		-----------------------------------------------------------------
@@ -1933,11 +2006,17 @@
 		-----------------------------------------------------------------
 		-----------------------------------------------------------------		
 		<dataLink fields="{'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
-		'DReiatsu', 'AcessorioReiatsu'">
-			<event name="onChange"> 
-				sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
-				(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
-				sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0);
+		'DReiatsu', 'AcessorioReiatsu', 'Transformado'}">
+			<event name="onChange">				
+				if self.ControlaTrans.checked then
+					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
+					(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
+					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0) + (tonumber(sheet.TReiatsu) or 0);	
+				else
+					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
+					(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
+					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0);			
+				end;				
 			</event>
 		</dataLink>					
 		</popup> 
@@ -1976,7 +2055,7 @@
 			<edit  width="100" height="30" left="410" top="355" enabled="false"  field="KGiganteLimite"/>	
 			<edit  width="100" height="30" left="410" top="455" enabled="false"  field="SenbonLimite"/>
 			
-			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'">
+			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'}">
 				<event name="onChange"> 
 					sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0);
 					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50;
@@ -2059,7 +2138,8 @@
 			<edit  width="80" height="20" left="740" top="139" type="number"  field="Hadou"/>
 			<edit  width="80" height="20" left="740" top="161" type="number"  field="HadouNegro"/>
 			<edit  width="80" height="20" left="740" top="183" enabled="false" field="ChakraNatural"/>
-			<edit  width="80" height="20" left="740" top="205" type="number"  field="ChakraRoxo"/>		
+			<edit  width="80" height="20" left="740" top="205" type="number"  field="ChakraRoxo"/>
+			<edit  width="80" height="20" left="740" top="227" type="number"  field="DReducao"/>			
 
 			<button left="845" top="105" width="70" height="80" opacity="0.1" text="" onClick="self.POPPergaminho1:show();"/>
 					
@@ -2469,31 +2549,48 @@
 				---------------------------------------------------------------
 				---------------------------------------------------------------
 				<dataLink fields="{'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
-				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen'">
-					<event name="onChange"> 
-						sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
-						sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
-						sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60;
-						sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20;
-						sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30;
-						sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1;
-						sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1;
-						sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1;
-						sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1;
-						
-						if sheet.AcertoTaiTotal > 90 then
-							sheet.AcertoTaiTotal = 90;
-						end;
-						
-						if sheet.AcertoNinTotal > 90 then
-							sheet.AcertoNinTotal = 90;
-						end;
-						
-						if sheet.AcertoGenTotal > 90 then
-							sheet.AcertoGenTotal = 90;
-						end;
-						
-						
+				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen', 'Transformado'}">
+					<event name="onChange">
+
+						if self.ControlaTrans.checked then
+							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60 + (tonumber(sheet.TATai) or 0);
+							sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60 + (tonumber(sheet.TANin) or 0);
+							sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60 + (tonumber(sheet.TAGen) or 0);
+							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20 + (tonumber(sheet.TEsquiva) or 0);
+							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30 + (tonumber(sheet.TBloqueio) or 0);
+							sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1 + (tonumber(sheet.TCTai) or 0);
+							sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1 + (tonumber(sheet.TCNin) or 0);
+							sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1 + (tonumber(sheet.TCGen) or 0);
+							sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1 + (tonumber(sheet.TTurnos) or 0);
+							if sheet.AcertoTaiTotal > 90 then
+								sheet.AcertoTaiTotal = 90;
+							end;
+							if sheet.AcertoNinTotal > 90 then
+								sheet.AcertoNinTotal = 90;
+							end;
+							if sheet.AcertoGenTotal > 90 then
+								sheet.AcertoGenTotal = 90;
+							end;
+						else
+							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
+							sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
+							sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60;
+							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20;
+							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30;
+							sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1;
+							sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1;
+							sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1;
+							sheet.TurnoTotal = (tonumber(sheet.GTurno) or 0) + 1;							
+							if sheet.AcertoTaiTotal > 90 then
+								sheet.AcertoTaiTotal = 90;
+							end;							
+							if sheet.AcertoNinTotal > 90 then
+								sheet.AcertoNinTotal = 90;
+							end;							
+							if sheet.AcertoGenTotal > 90 then
+								sheet.AcertoGenTotal = 90;
+							end;
+						end;	
 						
 					</event>
 				</dataLink>
@@ -2963,5 +3060,7 @@
 		</tabControl>			
 	</scrollBox>	
 	
-	
+	<event name="onHide">
+		self.ControlaTrans.check = false;
+	</event> 
 </form>
