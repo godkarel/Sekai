@@ -4,7 +4,7 @@
      title="Sekai 2" name="frmsekai">	 
 	<event name="onNodeReady">	
 		if sheet.Nome == nil then
-			sheet.cla = "Sem clã";
+			sheet.Cla = "Sem clã";
 			sheet.Graduacao = "Academico";
 			sheet.Moradia = "Primaria";
 			sheet.Idade = (tonumber(sheet.Idade) or 0);
@@ -187,11 +187,18 @@
 			sheet.RepPedra = (tonumber(sheet.RepPedra) or 0);
 			sheet.BingoBook = (tonumber(sheet.BingoBook) or 0);	
 			sheet.ReducaoTotal = (tonumber(sheet.ReducaoTotal) or 0);	
-			sheet.TReducao = (tonumber(sheet.TReducao) or 0);			
+			sheet.TReducao = (tonumber(sheet.TReducao) or 0);
+			sheet.ArmaReiatsu = (tonumber(sheet.ArmaReiatsu) or 0);			
 			sheet.GHP = 100;
 			sheet.Nome = "Escolha o Nome";
 			sheet.Sequenci1 = true;
 			self.btnTreinar.visible = true;
+			sheet.TipoBag = "Tipo Bag";
+			sheet.CAtletismo = (tonumber(sheet.CAtletismo) or 0); 
+			sheet.CPercepcao = (tonumber(sheet.CPercepcao) or 0); 
+			sheet.CFurtividade = (tonumber(sheet.CFurtividade) or 0); 
+			sheet.CRaciocineo = (tonumber(sheet.CRaciocineo) or 0); 
+			sheet.CVigor = (tonumber(sheet.CVigor) or 0); 
 			showMessage("Escolha seu nome, clã e idade");
 		end; 
 		sheet.Transformado = 0; 
@@ -1228,8 +1235,9 @@
 		------------------ INDENTAÇÃO ----------------------			
 		---------------------------------------STATUS-----------------------------------------------------				
 		<edit left="90" top="32" width="85" height="18" field="Nome"/>
-		<comboBox  left="220" top="32" width="95" height="18" field="Cla" items="{'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kami', 'Kamizurui', 'Nara', 'Uchiha', 'Uzumaki', 'Yamanaka', 'Rinnegan',
-		 '----------', 'Fire', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----------', 'Gote', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '----------'}"/>
+		<comboBox  left="220" top="32" width="95" height="18" field="Cla" items="{'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kamizurui', 'Nara', 'Ootsuki', 'Rinnegan', 'Shizuku', 'Uchiha', 'Uzumaki', 'Yamanaka',
+		 '----//----', 'Fire', 'Gomu', 'Hozuki/Hoshigake', 'Kami(Desativado)', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----//----', 
+		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'}"/>
 		<edit left="365" top="32" width="50" height="18" field="Idade"/>
 		<edit left="365" top="80" width="50" height="18" visible="false" type="number" max="40" field="Idade2"/>
 		<comboBox  left="505" top="32" width="140" height="18" field="Graduacao" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
@@ -1427,22 +1435,37 @@
 					self.transformationDisable.visible = true;								
 				else
 					self.transformation.visible = true;
-					self.transformationDisable.visible = false;
+					self.transformationDisable.visible = false;		
 				end;
 			</event>
 		</checkBox>
-		
+
 		<dataLink fields="{'Trasnformado1'}">
 			<event name="onChange">
 				sheet.Transformado = tonumber(sheet.Transformado) + 1;		
 			</event>
 		</dataLink>		
-		
-		
-			
-		<image field="imagemDoPersonagem" editable="true" style="autoFit" left="404" top="410" width="302" height="255" />
+		--------------------------------------------------
+		--------------------------------------------------
+		------------------Mensagem Mesa-------------------
+		--------------------------------------------------
+		--------------------------------------------------
+		<textEditor left="380" top="450" width="302" height="200" visible="false" field="MSGParaMesa"/>
+		<button left="603" top="655" width="80" height="20" opacity="1.0" visible="false" text="Enviar">
+			<event name="onClick"> 
+				local minhaMesa = Firecast.getRoomOf(sheet);
+				local chat = minhaMesa.chat;                  
+				chat:enviarMensagem(sheet.MSGParaMesa .. "Mais alguma coisa");
+			</event>
+		</button>
+		--------------------------------------------------
+		--------------------------------------------------
+		----------------------CALCULO---------------------
+		--------------------------------------------------
+		--------------------------------------------------
+		<image field="imagemDoPersonagem" editable="true" style="autoFit" left="450" top="255" width="154" height="110" />
 		--GM DESATIVA-- 		
-		<button left="502" top="270" width="105" height="85" opacity="1.0" visible="false" text="Calculo" onClick="self.POPCALCULO:show();"/>			
+		<button left="600" top="270" width="105" height="85" opacity="1.0" visible="false" text="Calculo" onClick="self.POPCALCULO:show();"/>			
 		<popup name="POPCALCULO" visible="false" left="1" top="40" width="820" height="620">
 				
 		<image left="10" top="10" width="800" height="600" src="/imagens/CALCULO.png"/>				
@@ -1456,6 +1479,12 @@
 		
 		<edit left="310" top="210" width="85" height="18" enabled="false" type="float"  field="CReducao"/>
 		
+		<edit left="350" top="253" width="85" height="18" enabled="false" type="float"  field="CAtletismo"/>
+		<edit left="350" top="274" width="85" height="18" enabled="false" type="float"  field="CRaciocineo"/>		
+		<edit left="350" top="295" width="85" height="18" enabled="false" type="float"  field="CPercepcao"/>
+		<edit left="350" top="316" width="85" height="18" enabled="false" type="float" field="CFurtividade"/>	
+		<edit left="350" top="337" width="85" height="18" enabled="false" type="float" field="CVigor"/>	
+		
 		<edit left="280" top="35" width="85" height="18" enabled="false" type="float"  field="Taijutsu"/>
 		<edit left="280" top="58" width="85" height="18" enabled="false" type="float"  field="Ninjutsu"/>
 		<edit left="280" top="81" width="85" height="18" enabled="false" type="float"  field="Genjutsu"/>
@@ -1463,6 +1492,8 @@
 		<edit left="280" top="122" width="85" height="18" enabled="false" type="float"  field="Elemental1"/>
 		<edit left="300" top="145" width="85" height="18" type="float"  enabled="true" field="GHP"/>
 		<edit left="300" top="168" width="85" height="18" enabled="false" type="float" field="GChakra"/>
+		
+		
 		
 		<edit left="150" top="210" width="85" height="18" enabled="false" type="float"  field="CAT"/>
 		<edit left="150" top="230" width="85" height="18" enabled="false" type="float"  field="CAN"/>
@@ -1544,8 +1575,15 @@
 		-------------------------CALCULO POR NIVEL DE CLÃ--------------------------
 		---------------------------------------------------------------------------
 		---------------------------------------------------------------------------
-		<dataLink fields="{'Cla'}">
-			<event name="onChange">
+	
+		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
+		,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
+		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
+		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
+		,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
+		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'}">
+			<event name="onChange">						
 				sheet.CTai = 0;
 				sheet.CNin = 0;
 				sheet.CGen = 0;
@@ -1562,18 +1600,36 @@
 				sheet.CCRN = 0;
 				sheet.CCRG = 0;
 				sheet.CReducao = 0;
-			</event>
-		</dataLink>		
-		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
-		,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
-		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
-		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
-		,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
-		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'}">
-			<event name="onChange">						
+				sheet.CAtletismo = 0;
+				sheet.CRaciocineo = 0;
+				sheet.CPercepcao = 0;
+				sheet.CFurtividade = 0;
+				sheet.CVigor = 0;
+				
 				if sheet.Cla == 'Sem clã' then
-				end;
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
+					sheet.CReducao = 0;
+					sheet.CAtletismo = 0;
+					sheet.CRaciocineo = 0;
+					sheet.CPercepcao = 0;
+					sheet.CFurtividade = 0;
+					sheet.CVigor = 0;
+				end;			
 				
 				if sheet.Cla == 'Aburame' then
 					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * -0.10;
@@ -1587,7 +1643,7 @@
 				
 				if sheet.Cla == 'Fuma' then
 					sheet.CCRN = 5;
-					sheet.CAN = 5;
+					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
 				end;
 				
 				if sheet.Cla == 'Hyuga' then
@@ -1596,19 +1652,37 @@
 				end;
 				
 				if sheet.Cla == 'Inuzuka' then
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
+					sheet.CPercepcao = 4;
 				end;
 				
 				if sheet.Cla == 'Jyuin' then
 					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.40;
 					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+					sheet.CVigor = 4;
 				end;
 				
 				if sheet.Cla == 'Kaguya' then
 					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
-					sheet.CBloq = 10;
+					sheet.CReducao = 10;
 				end;
 				
-				if sheet.Cla == 'Kami' then
+				if sheet.Cla == 'Kami(Desativado)' then
 					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
 				end;
 
@@ -1621,14 +1695,31 @@
 				if sheet.Cla == 'Nara' then
 					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.20;
 					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
+					sheet.CRaciocineo = 4;
 				end;
 				
 				if sheet.Cla == 'Uchiha' then
-					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10;
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
 				end;
 				
 				if sheet.Cla == 'Uzumaki' then
 					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 1;
+					sheet.CVigor = 4;
 				end;
 				
 				if sheet.Cla == 'Yamanaka' then
@@ -1636,10 +1727,33 @@
 					sheet.CAN = 5;
 					sheet.CAG = 5; 
 				end;
-
+				
+				if sheet.Cla == 'Ootsuki' then
+					sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.20;
+					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.20;
+					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.20;
+					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+					sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.20;
+					sheet.CAT = 10;
+					sheet.CAN = 10;
+					sheet.CAG = 10;
+					sheet.CCRT = 5;
+					sheet.CCRN = 5;
+					sheet.CCRG = 5;
+					sheet.CReducao = 5;
+					sheet.CEsq = 5; 
+					sheet.CBloq = 5; 
+				end;
+				
 				if sheet.Cla == 'Rinnegan' then
 					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30;
 					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.15;
+					sheet.CReducao = 5;
+				end;
+				
+				if sheet.Cla == 'Shizuku' then
+					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10;
+					sheet.CTai = (tonumber(sheet.Taijutsu) or 0) * 0.10;
 				end;
 				
 				if sheet.Cla == '----------' then
@@ -1648,6 +1762,17 @@
 				
 				if sheet.Cla == 'Fire' then
 					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
+				end;
+				
+				if sheet.Cla == 'Gomu' then
+					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10;
+					sheet.CReducao = 5;
+				end;
+				
+				if sheet.Cla == 'Hozuki/Hoshigake' then
+					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10;
+					sheet.CChakra = (tonumber(sheet.Chakra) or 0) * 0.30;
+					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.20;
 				end;
 				
 				if sheet.Cla == 'Kibaku' then
@@ -1676,7 +1801,6 @@
 				end;
 			
 				if sheet.Cla == 'Sabaku' then
-					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.10;
 					sheet.CDA = (tonumber(sheet.DanoArmado) or 0) * 0.10;
 				end;
 				
@@ -1691,10 +1815,10 @@
 				end;
 				
 				if sheet.Cla == 'Xaulan' then
-					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30;
+					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
 				end;								
 				------------------------------------------------------				
-				if sheet.Cla == 'Gote' then
+				if sheet.Cla == 'Chinoke' then
 					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.20;
 				end;
 				
@@ -1711,13 +1835,45 @@
 				if sheet.Cla == 'Kazumi' then
 					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
 					sheet.CGen = (tonumber(sheet.Genjutsu) or 0) * 0.10;
-					sheet.CAG = 5;
+					sheet.CCRG = 5;
 				end;
 
 				if sheet.Cla == 'Kouga' then
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
 				end;
 				
 				if sheet.Cla == 'Miroku' then
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
 				end;
 				
 				if sheet.Cla == 'Mitsu' then
@@ -1725,6 +1881,22 @@
 				end;
 				
 				if sheet.Cla == 'Nakamura' then
+					sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
 				end;
 				
 				if sheet.Cla == 'Natsume' then
@@ -1735,6 +1907,7 @@
 				end;
 				
 				if sheet.Cla == 'Neko' then
+					sheet.CPercepcao = 4;
 				end;
 				
 				if sheet.Cla == 'Neon' then
@@ -1749,7 +1922,22 @@
 				end;
 				
 				if sheet.Cla == '' then
-					sheet.CHP = (tonumber(sheet.HP) or 0) * 0.10;
+						sheet.CTai = 0;
+					sheet.CNin = 0;
+					sheet.CGen = 0;
+					sheet.CDA = 0;
+					sheet.CDE = 0;
+					sheet.CHP = 0;
+					sheet.CChakra = 0;
+					sheet.CAT = 0;
+					sheet.CAN = 0;
+					sheet.CAG = 0;
+					sheet.CEsq = 0;
+					sheet.CBloq = 0;
+					sheet.CCRT = 0;
+					sheet.CCRN = 0;
+					sheet.CCRG = 0;
+					sheet.CReducao = 0;
 				end;				
 			</event>
 		</dataLink>
@@ -1803,7 +1991,9 @@
 		<dataLink fields="{'Chakra', 'ChakraTotal', 'Idade', 'TipoOutro'}">
 			<event name="onChange"> 
 				<![CDATA[
-					sheet.ChakraNatural = (tonumber(sheet.ChakraTotal / 2) or 0);
+					if sheet.Sequenci1 == true then
+						sheet.ChakraNatural = (tonumber(sheet.ChakraTotal / 2) or 0);
+					end;
 				]]>
 			</event>
 		</dataLink>
@@ -1923,8 +2113,9 @@
 		</dataLink>
 		
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao', 'Transformado'}">
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao', 'Transformado', 'Cla'}">
 			<event name="onChange">	
+								
 				if self.ControlaTrans.checked then
 					sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0) + (tonumber(sheet.TTaijutsu) or 0);
 					sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0) + (tonumber(sheet.TNinjutsu) or 0);
@@ -1943,7 +2134,8 @@
 				sheet.NinTotal = math.ceil(sheet.NinTotal);
 				sheet.GenTotal = math.ceil(sheet.GenTotal);
 				sheet.EleTotal = math.ceil(sheet.EleTotal);
-				sheet.DATotal = math.ceil(sheet.DATotal);		
+				sheet.DATotal = math.ceil(sheet.DATotal);
+								
 			</event>
 		</dataLink>		
 		-----------------------------------------------------------------
@@ -2006,16 +2198,16 @@
 		-----------------------------------------------------------------
 		-----------------------------------------------------------------		
 		<dataLink fields="{'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
-		'DReiatsu', 'AcessorioReiatsu', 'Transformado'}">
+		'DReiatsu', 'AcessorioReiatsu', 'Transformado', 'ArmaReiatsu'}">
 			<event name="onChange">				
 				if self.ControlaTrans.checked then
 					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
 					(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
-					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0) + (tonumber(sheet.TReiatsu) or 0);	
+					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0) + (tonumber(sheet.ArmaReiatsu) or 0) + (tonumber(sheet.TReiatsu) or 0);	
 				else
 					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
 					(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
-					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0);			
+					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0) + (tonumber(sheet.ArmaReiatsu) or 0);			
 				end;				
 			</event>
 		</dataLink>					
@@ -2356,7 +2548,7 @@
 						end; 	   
 					</script> 			
 				 
-				<dataLink fields="{'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor'}">
+				<dataLink fields="{'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor', 'Cla'}">
 					<event name="onChange">						
 						if sheet.Sequenci1 == true then	
 							if sheet.Atletismo == nil then
@@ -2535,11 +2727,11 @@
 								sheet.SVigor = 0;
 							end;	
 
-							sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo);
-							sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio);
-							sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao);
-							sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade);
-							sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor);
+							sheet.AtletismoTotal = tonumber(sheet.SAtletismo) + tonumber(sheet.GAtletismo) + tonumber(sheet.Atletismo) + (tonumber(sheet.CAtletismo) or 0);
+							sheet.RaciocinioTotal = tonumber(sheet.SRaciocinio) + tonumber(sheet.GRaciocinio) + tonumber(sheet.Raciocinio) + (tonumber(sheet.CRaciocineo) or 0);
+							sheet.PercepcaoTotal = tonumber(sheet.SPercepcao) + tonumber(sheet.GPercepcao) + tonumber(sheet.Percepcao) + (tonumber(sheet.CPercepcao) or 0);
+							sheet.FurtividadeTotal = tonumber(sheet.SFurtividade) + tonumber(sheet.GFurtividade) + tonumber(sheet.Furtividade) + (tonumber(sheet.CFurtividade) or 0);
+							sheet.VigorTotal = tonumber(sheet.SVigor) + tonumber(sheet.GVigor) + tonumber(sheet.Vigor) + (tonumber(sheet.CVigor) or 0);
 						end;	
 					</event>
 				</dataLink>				 
@@ -2616,6 +2808,7 @@
 					<label left="200" top="20" fontFamily="Nyala" fontSize="20" text="Dano Elemental"/>
 					<label left="200" top="60" fontFamily="Nyala" fontSize="20" text="HP"/> 
 					<label left="200" top="100" fontFamily="Nyala" fontSize="20" text="Chakra"/>
+					<label left="200" top="140" fontFamily="Nyala" fontSize="20" text="Reiatsu"/>
 					<label left="20" top="200" width="300" fontFamily="Nyala" fontSize="20" text="Habilidade da Espada"/>
 					<label left="20" top="300" fontFamily="Nyala" fontSize="20" text="Shinkai"/>
 					<label left="20" top="400" fontFamily="Nyala" fontSize="20" text="Bankai"/>					  
@@ -2623,10 +2816,11 @@
 					<edit left="110" top="16" width="85" height="25"  type="number" field="ArmaDT"/>
 					<edit left="110" top="56" width="85" height="25"  type="number" field="ArmaDN"/>
 					<edit left="110" top="96" width="85" height="25"  type="number" field="ArmaDG"/>
-					<edit left="130" top="136" width="85" height="25"  type="number" field="ArmaDA"/>
+					<edit left="130" top="136" width="65" height="25"  type="number" field="ArmaDA"/>
 					<edit left="360" top="16" width="85" height="25"  type="number" field="ArmaDE"/>
 					<edit left="360" top="56" width="85" height="25"  type="number" field="ArmaHP"/>
 					<edit left="360" top="96" width="85" height="25"  type="number" field="ArmaChakra"/>
+					<edit left="360" top="136" width="85" height="25"  type="number" field="ArmaReiatsu"/>
 					<textEditor left="20" top="223" width="440" height="70"  field="HDE"/>
 					<textEditor left="20" top="320" width="440" height="70"  field="Shinkai"/>
 					<textEditor left="20" top="420" width="440" height="100"  field="Bankai"/>					  
@@ -2687,26 +2881,28 @@
 						
 				<button left="30" top="540" width="120" height="115" opacity="0.1" text="" onClick="self.POPBAG:show();"/>
 				<popup name="POPBAG" visible="false" left="1" top="40"
-				width="650" height="500">				 
-					<image left="1" top="1" width="650" height="500" src="/imagens/Loja.png"/>
+				width="660" height="500">				 
+					<image left="5" top="1" width="650" height="500" src="/imagens/Loja.png"/>
 					<label left="160" top="13" height="25" width="100" fontColor="red" text="Kunai" autoSize="true"/>
-					<edit left="200" top="08" height="25" width="30"  type="number" field="KunaiLimite"/>
+					<edit left="200" top="08" height="25" width="30"  enabled="false" type="number" field="KunaiLimite"/>
 					<label left="235" top="13" height="25" width="100" fontColor="red" text="Shuriken" autoSize="true"/>
-					<edit left="290" top="08" height="25" width="30"  type="number" field="ShurikenLimite"/>
+					<edit left="290" top="08" height="25" width="30"  enabled="false" type="number" field="ShurikenLimite"/>
 					<label left="325" top="13" height="25" width="100" fontColor="red" text="S.Fuuma" autoSize="true"/>
-					<edit left="380" top="08" height="25" width="30"  type="number" field="SFuumaLimite"/>
+					<edit left="380" top="08" height="25" width="30"  enabled="false" type="number" field="SFuumaLimite"/>
 					<label left="420" top="13" height="25" width="100" fontColor="red" text="K.Gigante" autoSize="true"/>
-					<edit left="480" top="08" height="25" width="30"  type="number" field="KGiganteLimite"/>
+					<edit left="480" top="08" height="25" width="30"  enabled="false" type="number" field="KGiganteLimite"/>
 					<label left="515" top="13" height="25" width="100" fontColor="red" text="P.Bomba" autoSize="true"/>
-					<edit left="570" top="08" height="25" width="30"  type="number" field="PBombaLimite"/>					
+					<edit left="570" top="08" height="25" width="30"  enabled="false" type="number" field="PBombaLimite"/>					
 					<label left="160" top="38" height="25" width="100" fontColor="red" text="G.Explosivo" autoSize="true"/>
-					<edit left="230" top="35" height="25" width="30"  type="number" field="GExplosivoLimite"/>
+					<edit left="230" top="35" height="25" width="30"  enabled="false" type="number" field="GExplosivoLimite"/>
 					<label left="265" top="38" height="25" width="100" fontColor="red" text="Veneno" autoSize="true"/>
-					<edit left="315" top="35" height="25" width="30"  type="number" field="VenenoLimite"/>
+					<edit left="315" top="35" height="25" width="30"  enabled="false" type="number" field="VenenoLimite"/>
 					<label left="350" top="38" height="25" width="100" fontColor="red" text="Bandagem" autoSize="true"/>
-					<edit left="415" top="35" height="25" width="30"  type="number" field="BandagemLimite"/>
+					<edit left="415" top="35" height="25" width="30"  enabled="false" type="number" field="BandagemLimite"/>
 					<label left="450" top="38" height="25" width="100" fontColor="red" text="Bomba Fumaça" autoSize="true"/>
-					<edit left="545" top="35" height="25" width="30"  type="number" field="BombaFumacaLimite"/>
+					<edit left="545" top="35" height="25" width="30"  enabled="false" type="number" field="BombaFumacaLimite"/>
+					<label left="580" top="38" height="25" width="100" fontColor="red" text="Sembo" autoSize="true"/>
+					<edit left="625" top="35" height="25" width="30"  enabled="false" type="number" field="SemboLimite"/>
 					<layout align="top" height="30" margins="{bottom=4}">					
 						<button text="Novo Item" width="150" align="left">
 							<event name="onClick">
@@ -2716,6 +2912,8 @@
 							</event>
 						</button>
 					</layout>
+					<comboBox left="3" top="40" width="147" items="{'Tipo Bag', 'Bag Genin', 'Bag Chunin', 'Bag Tengu', 'Bag Yebisu', 'Bag Benzaiten'}" 
+					field="TipoBag"/>
 					<!-- recordList, representando a lista -->
 					<recordList name="rclListaDosItens4" field="campoDosItens4" templateForm="frmItemDaLista4"
 						left="5" top="71" height="420" width="640" selectable="true">                   
@@ -2732,16 +2930,99 @@
 					</recordList>       
 					<!-- dataScopeBox representando a nossa caixa de detalhes -->  
 					<dataScopeBox name="boxDetalhesDoItem" visible="false" top="38" left="300"
-					width="330" height="440" margins="{left=4, right=4}">
+					width="355" height="440" margins="{left=4, right=4}">
 					<!-- Faça um layout "bonito" para sua caixa de detalhes =). Utilize a propriedade "field" nas tags aqui dentro-->     
 						<rectangle  color="grey" height="430" width="380" top="33" left="1">									   
 							<label left="10" top="13" height="25" width="100" fontColor="red" text="Nome do Item:" autoSize="true"/>
-							<edit left="105" top="10" height="25" width="205" field="NomedoItem"/>
-							<textEditor left="10" top="40" width="300" height="310" field="DescriItem"/>
+							<edit left="105" top="10" height="25" width="240" field="NomedoItem"/>
+							<textEditor left="10" top="40" width="335" height="310" field="DescriItem"/>
 							<label left="10" top="360" height="25" width="100" text="Tipo :" autoSize="true"/>
 							<comboBox  left="50" top="360" width="140" height="18" field="TipoItens" items="{'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'}"/>						   
 						</rectangle>
-					</dataScopeBox>				
+					</dataScopeBox>
+					<dataLink field="TipoBag">
+						<event name="onChange">
+							if sheet.TipoBag == "Tipo Bag" then
+								sheet.KunaiLimite = 1;
+								sheet.ShurikenLimite = 1;
+								sheet.SFuumaLimite = 0;
+								sheet.KGiganteLimite = 0;
+								sheet.PBombaLimite  = 0;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 0;
+								sheet.BandagemLimite = 1;
+								sheet.BombaFumacaLimite = 0;
+								sheet.SemboLimite = 0;
+							end;
+							
+							if sheet.TipoBag == "Bag Genin" then
+								sheet.KunaiLimite = 4;
+								sheet.ShurikenLimite = 8;
+								sheet.SFuumaLimite = 0;
+								sheet.KGiganteLimite = 0;
+								sheet.PBombaLimite  = 2;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 1;
+								sheet.BandagemLimite = 1;
+								sheet.BombaFumacaLimite = 2;
+								sheet.SemboLimite = 0;
+							end;
+							
+							if sheet.TipoBag == "Bag Chunin" then
+								sheet.KunaiLimite = 5;
+								sheet.ShurikenLimite = 8;
+								sheet.SFuumaLimite = 1;
+								sheet.KGiganteLimite = 1;
+								sheet.PBombaLimite  = 2;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 01
+								sheet.BandagemLimite = 2;
+								sheet.BombaFumacaLimite = 2;
+								sheet.SemboLimite = 0;
+							end;
+							
+							if sheet.TipoBag == "Bag Tengu" then
+								sheet.KunaiLimite = 4;
+								sheet.ShurikenLimite = 8;
+								sheet.SFuumaLimite = 1;
+								sheet.KGiganteLimite = 1;
+								sheet.PBombaLimite  = 2;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 0;
+								sheet.BandagemLimite = 2;
+								sheet.BombaFumacaLimite = 3;
+								sheet.SemboLimite = 8;
+							end;
+							
+							if sheet.TipoBag == "Bag Yebisu" then
+								sheet.KunaiLimite = 6;
+								sheet.ShurikenLimite = 8;
+								sheet.SFuumaLimite = 2;
+								sheet.KGiganteLimite = 2;
+								sheet.PBombaLimite  = 1;
+								sheet.GExplosivoLimite = 1;
+								sheet.VenenoLimite = 1;
+								sheet.BandagemLimite = 2;
+								sheet.BombaFumacaLimite = 1;
+								sheet.SemboLimite = 10;
+							end;
+							
+							if sheet.TipoBag == "Bag Benzaiten" then
+								sheet.KunaiLimite = 4;
+								sheet.ShurikenLimite = 6;
+								sheet.SFuumaLimite = 1;
+								sheet.KGiganteLimite = 1;
+								sheet.PBombaLimite  = 4;
+								sheet.GExplosivoLimite = 2;
+								sheet.VenenoLimite = 3;
+								sheet.BandagemLimite = 3;
+								sheet.BombaFumacaLimite = 3;
+								sheet.SemboLimite = 6;
+							end;
+						</event>
+					</dataLink>
+
+					
 				</popup>				
 			</scrollBox>
 		</tab>				
