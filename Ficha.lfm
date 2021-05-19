@@ -193,12 +193,32 @@
 			sheet.Nome = "Escolha o Nome";
 			sheet.Sequenci1 = true;
 			self.btnTreinar.visible = true;
-			sheet.TipoBag = "Tipo Bag";
+			sheet.TipoBag = sheet.TipoBag or "Tipo Bag";
 			sheet.CAtletismo = (tonumber(sheet.CAtletismo) or 0); 
 			sheet.CPercepcao = (tonumber(sheet.CPercepcao) or 0); 
 			sheet.CFurtividade = (tonumber(sheet.CFurtividade) or 0); 
 			sheet.CRaciocineo = (tonumber(sheet.CRaciocineo) or 0); 
 			sheet.CVigor = (tonumber(sheet.CVigor) or 0); 
+			sheet.KunaiQT = (tonumber(sheet.KunaiQT) or 0);
+			sheet.ShurikenQT = (tonumber(sheet.ShurikenQT) or 0);
+			sheet.SFuumaQT = (tonumber(sheet.SFuumaQT) or 0);
+			sheet.KGiganteQT = (tonumber(sheet.KGiganteQT) or 0);
+			sheet.SenbonQT = (tonumber(sheet.SenbonQT) or 0);			
+			sheet.PBombaQT = (tonumber(sheet.PBombaQT) or 0);
+			sheet.GExplosivoQT = (tonumber(sheet.GExplosivoQT) or 0);
+			sheet.VenenoQT = (tonumber(sheet.VenenoQT) or 0);
+			sheet.BandagemQT = (tonumber(sheet.BandagemQT) or 0);
+			sheet.BombaFumacaQT = (tonumber(sheet.BombaFumacaQT) or 0);	
+			sheet.KunaiLimite = (tonumber(sheet.KunaiLimite) or 0);	
+			sheet.ShurikenLimite = (tonumber(sheet.ShurikenLimite) or 0);	
+			sheet.SFuumaLimite = (tonumber(sheet.SFuumaLimite) or 0);	
+			sheet.KGiganteLimite = (tonumber(sheet.KGiganteLimite) or 0);	
+			sheet.SemboLimite = (tonumber(sheet.SemboLimite) or 0);	
+			sheet.PBombaLimite = (tonumber(sheet.PBombaLimite) or 0);	
+			sheet.GExplosivoLimite = (tonumber(sheet.GExplosivoLimite) or 0);	
+			sheet.VenenoLimite = (tonumber(sheet.VenenoLimite) or 0);	
+			sheet.BandagemLimite = (tonumber(sheet.BandagemLimite) or 0);	
+			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);				
 			showMessage("Escolha seu nome, clã e idade");
 		end; 
 		sheet.Transformado = 0; 
@@ -217,23 +237,38 @@
 				<button left="40" top="420" text="Ataque Tai" width="100">
 				    <event name="onClick">        
 						local mesaDoPersonagem = rrpg.getMesaDe(sheet);        
-						sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);                        
-						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de ataque fisico",
-							function (rolado)
-								if sheet.AcertoTaiTotal >= rolado.resultado then
-									if sheet.BatendoCom == 'Taijutsu' then
-										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com Taijutsu Causando [§K4]" .. sheet.TaiTotal);
+						sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+						if sheet.BatendoCom == nil then
+							showMessage("Escolha uma Base para o Ataque Basico");
+						else
+							mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Tentativa de ataque fisico",
+								function (rolado)
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+
+										if sheet.BatendoCom == 'Taijutsu' then
+											if sheet.CRTaiTotal >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem("[§K4]CRITOU O ALVO COM TAIJUTSU CAUSANDO [§K4]" .. (sheet.TaiTotal * 2));
+											else
+												mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com Taijutsu Causando [§K4]" .. sheet.TaiTotal);
+											end;
+										end;
+										
+										if sheet.BatendoCom == 'Armado' then
+											if sheet.CRTaiTotal >= rolado.resultado then
+												mesaDoPersonagem.chat:enviarMensagem("[§K4]CRITOU O ALVO COM A ARMA CAUSANDO [§K4]" .. (sheet.DATotal * 2));
+											else
+												mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com sua Arma Causando [§K4]" .. sheet.DATotal);
+											end;
+										end;																					
 									else
-										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acertou o alvo com sua Arma Causando [§K4]" .. sheet.DATotal);
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou de seu ataque");
 									end;
-								else
-									mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou de seu ataque");
-								end;
-							local mesa = Firecast.getMesaDe(sheet); 
-							sheet.energiaTotal = mesa.meuJogador:getBarValue(4);
-							sheet.energiaTotal = tonumber(sheet.energiaTotal + 10);
-							mesa.meuJogador:requestSetBarValue(4, sheet.energiaTotal, nil);							
-						end);                               
+								local mesa = Firecast.getMesaDe(sheet); 
+								sheet.energiaTotal = mesa.meuJogador:getBarValue(4);
+								sheet.energiaTotal = tonumber(sheet.energiaTotal + 10);
+								mesa.meuJogador:requestSetBarValue(4, sheet.energiaTotal, nil);							
+							end); 
+						end;	
 					</event>
 				</button>
 				
@@ -379,43 +414,83 @@
 												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu);
 													
 												if node.Tipo == 'Tai'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'Nin'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'Gen'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'Elemental'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'DanoArmado'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'M/Tai'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'M/Nin'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'M/Gen'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+															mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'M/Elemental'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												if node.Tipo == 'M/DA'then
-													mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													if sheet.CRTaiTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+													end;
 												end;
 												
 												local mesa = Firecast.getMesaDe(sheet);
@@ -632,7 +707,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade2"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" type="number" horzTextAlign="center" field="LevelJutsu2"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -955,7 +1030,7 @@
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade3"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="false" horzTextAlign="center" type="number" field="LevelJutsu3"/>
+						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -1236,7 +1311,7 @@
 		---------------------------------------STATUS-----------------------------------------------------				
 		<edit left="90" top="32" width="85" height="18" field="Nome"/>
 		<comboBox  left="220" top="32" width="95" height="18" field="Cla" items="{'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kamizurui', 'Nara', 'Ootsuki', 'Rinnegan', 'Shizuku', 'Uchiha', 'Uzumaki', 'Yamanaka',
-		 '----//----', 'Fire', 'Gomu', 'Hozuki/Hoshigake', 'Kami(Desativado)', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Xaulan', '----//----', 
+		 '----//----', 'Fire', 'Gomu', 'Hozuki/Hoshigake', 'Kami', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Ryotenbin', '----//----', 
 		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'}"/>
 		<edit left="365" top="32" width="50" height="18" field="Idade"/>
 		<edit left="365" top="80" width="50" height="18" visible="false" type="number" max="40" field="Idade2"/>
@@ -1450,12 +1525,58 @@
 		------------------Mensagem Mesa-------------------
 		--------------------------------------------------
 		--------------------------------------------------
-		<textEditor left="380" top="450" width="302" height="200" visible="false" field="MSGParaMesa"/>
-		<button left="603" top="655" width="80" height="20" opacity="1.0" visible="false" text="Enviar">
+		<textEditor left="373" top="465" width="302" height="200" visible="true" field="MSGParaMesa"/>
+		<radioButton text="Normal" groupName="GPRadio" field="FotoMSG" fieldValue="FMSGNormal"
+                    top="443" left="370"/>                                
+
+        <radioButton text="Feliz" groupName="GPRadio" field="FotoMSG" fieldValue="FMSGFeliz"
+                    top="443" left="438" />                                 
+
+        <radioButton text="Bravo" groupName="GPRadio" field="FotoMSG" fieldValue="FMSGBravo"
+                    top="443" left="500"/>
+					
+		<radioButton text="Triste" groupName="GPRadio" field="FotoMSG" fieldValue="FMSGTriste"
+                    top="443" left="560"/>
+		
+		<image left="375" top="398" width="60" height="42" editable="true" style="autoFit" field="FotoNormal"/>
+		<image left="438" top="398" width="60" height="42" editable="true" style="autoFit" field="FotoFeliz"/>
+		<image left="501" top="398" width="60" height="42" editable="true" style="autoFit" field="FotoBravo"/>
+		<image left="564" top="398" width="60" height="42" editable="true" style="autoFit" field="FotoTriste"/>
+		-----------------------------------------------------------------
+		
+		  <dataLink field="FotoMSG">
+                <event name="onChange">
+					if sheet.FotoMSG ~= nil then
+						if sheet.FotoMsg == "FMSGNormal" then
+							sheet.FotoSelecionada = sheet.FotoNormal;
+						end;
+
+						if sheet.FotoMsg == "FMSGFeliz" then
+							sheet.FotoSelecionada = sheet.FotoFeliz;
+						end;
+
+						if sheet.FotoMsg == "FMSGBravo" then
+							sheet.FotoSelecionada = sheet.FotoBravo;
+						end;
+						
+						if sheet.FotoMsg == "FMSGTriste" then
+							sheet.FotoSelecionada = sheet.FotoTriste;
+						end;
+					end;
+                </event>
+        </dataLink>
+		
+		<edit left="443" top="556" width="85" height="18" visible="false" field="FotoMSG"/>
+					
+		<button left="595" top="665" width="80" height="20" opacity="1.0" visible="true" text="Enviar">
 			<event name="onClick"> 
 				local minhaMesa = Firecast.getRoomOf(sheet);
-				local chat = minhaMesa.chat;                  
-				chat:enviarMensagem(sheet.MSGParaMesa .. "Mais alguma coisa");
+				local chat = minhaMesa.chat;  
+				if sheet.FotoMSG ~= nil then
+					chat:enviarMensagem("[§I ".. sheet.FotoSelecionada .. "] : " .. sheet.MSGParaMesa);
+				else
+					showMessage("Para Enviar Mensagem da Ficha é Necessario escolher uma Caracteristica");
+				end;
 			</event>
 		</button>
 		--------------------------------------------------
@@ -1682,7 +1803,7 @@
 					sheet.CReducao = 10;
 				end;
 				
-				if sheet.Cla == 'Kami(Desativado)' then
+				if sheet.Cla == 'Kami' then
 					sheet.CNin = (tonumber(sheet.Ninjutsu) or 0) * 0.10;
 				end;
 
@@ -1814,7 +1935,7 @@
 					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.30;
 				end;
 				
-				if sheet.Cla == 'Xaulan' then
+				if sheet.Cla == 'Ryotenbin' then
 					sheet.CDE = (tonumber(sheet.Elemental1) or 0) * 0.20;
 				end;								
 				------------------------------------------------------				
@@ -2219,33 +2340,196 @@
 					width="550" height="550">
 			
 			<label  width="120" height="40" left="280" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Danos"/>
-			<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantidade"/>
+			<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantia/Limite"/>
 			
 			<image left="10" top="30" width="100" height="130" src="/imagens/kunai.png"/>
 			<label  width="120" height="40" left="130" top="60" fontFamily="Nyala" fontSize="20" text="Dano Kunai"/>
 			<edit  width="100" height="30" left="260" top="65" enabled="false" field="DanoKunai"/>
+			<button left="8" top="40" width="100" height="90" opacity="0.3" onClick="UseKunai();"/>
+			<script>
+				local function UseKunai()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.KunaiQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Kunai no Alvo",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.KunaiQT = tonumber(sheet.KunaiQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://uploads.spiritfanfiction.com/fanfics/capitulos/202005/azuki-hashi-o-ninja-reencarnado-19473036-310520200131.gif]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]A Kunai acerta o Alvo Causando[§K4] " .. (sheet.DanoKunai) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.KunaiQT) ..  "][§K3] Kunais na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou da Kunai");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM KUNAI [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 		
 			<image left="10" top="130" width="100" height="100" src="/imagens/shuriken.png"/>
 			<label  width="120" height="40" left="130" top="150" fontFamily="Nyala" fontSize="20" text="Dano Shuriken"/>
 			<edit  width="100" height="30" left="260" top="155" enabled="false" field="DanoShuriken"/>
+			<button left="8" top="135" width="100" height="90" opacity="0.3" onClick="UseShuriken();"/>
+			<script>
+				local function UseShuriken()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.ShurikenQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Shuriken no Alvo",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.ShurikenQT = tonumber(sheet.ShurikenQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://operator-front-static-cdn.winamax.fr/img/editorial/2019/03/05/shuriken.gif]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]A Shuriken acerta o Alvo Causando[§K4] " .. (sheet.DanoShuriken) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.ShurikenQT) ..  "][§K3] Shuriken na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou da Shuriken");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM SHURIKEN [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 
 			<image left="10" top="230" width="100" height="100" src="/imagens/SFuuma.png"/>
 			<label  width="120" height="40" left="130" top="250" fontFamily="Nyala" fontSize="20" text="Shuriken Fuuma"/>
-			<edit  width="100" height="30" left="260" top="255" enabled="false" field="DanoShurikenFuuma"/>				
+			<edit  width="100" height="30" left="260" top="255" enabled="false" field="DanoShurikenFuuma"/>	
+			<button left="8" top="230" width="100" height="90" opacity="0.3" onClick="UseShurikenFuuma();"/>
+			<script>
+				local function UseShurikenFuuma()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.SFuumaQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Shuriken Fuuma no Alvo",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.SFuumaQT = tonumber(sheet.SFuumaQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://static.wikia.nocookie.net/a2a592ed-6791-4944-aa63-da2188d824ad]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]A Shuriken Fuuma acerta o Alvo Causando[§K4] " .. (sheet.DanoShurikenFuuma) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.SFuumaQT) ..  "][§K3] Shuriken Fuuma na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou da Shuriken Fuuma");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM SHURIKEN FUUMA [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 
 			<image left="10" top="330" width="100" height="100" src="/imagens/Kgigante.png"/>
 			<label  width="120" height="40" left="130" top="350" fontFamily="Nyala" fontSize="20" text="Kunai Gigante"/>
-			<edit  width="100" height="30" left="260" top="355" enabled="false" field="DanoKunaiGigante"/>		
+			<edit  width="100" height="30" left="260" top="355" enabled="false" field="DanoKunaiGigante"/>
+			<button left="8" top="325" width="100" height="105" opacity="0.3" onClick="UseKunaiGigante();"/>	
+			<script>
+				local function UseKunaiGigante()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.KGiganteQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Kunai Gigante no Alvo",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.KGiganteQT = tonumber(sheet.KGiganteQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://pm1.narvii.com/6355/6390d40e5a2515f41d9146fd880c996c1ea23581_hq.jpg]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]A Kunai Gigante acerta o Alvo Causando[§K4] " .. (sheet.DanoKunaiGigante) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.KGiganteQT) ..  "][§K3] Kunais Gigantes na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou da Kunai Gigante");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM KUNAI GIGANTES [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 			
 			<image left="10" top="430" width="100" height="100" src="/imagens/Senbon.png"/>
 			<label  width="120" height="40" left="130" top="450" fontFamily="Nyala" fontSize="20" text="Senbon"/>
-			<edit  width="100" height="30" left="260" top="455" enabled="false" field="Senbon"/>					
+			<edit  width="100" height="30" left="260" top="455" enabled="false" field="Senbon"/>
+			<button left="8" top="435" width="100" height="90" opacity="0.3" onClick="UseSenbon();"/>
+			<script>
+				local function UseSenbon()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.SenbonQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Senbo no Alvo",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.SenbonQT = tonumber(sheet.SenbonQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://pa1.narvii.com/6523/2a9df90eff540d3ce53af300fb7ef60883b7d2a4_hq.gif]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]A Senbon acerta o Alvo Causando[§K4] " .. (sheet.Senbon) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.SenbonQT) ..  "][§K3] Senbon na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]O Oponente esquivou da Senbon");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM SENBON [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 			
-			<edit  width="100" height="30" left="410" top="65" enabled="false"  field="KunaiLimite"/>
-			<edit  width="100" height="30" left="410" top="155" enabled="false"  field="ShurikenLimite"/>
-			<edit  width="100" height="30" left="410" top="255" enabled="false"  field="SFuumaLimite"/>
-			<edit  width="100" height="30" left="410" top="355" enabled="false"  field="KGiganteLimite"/>	
-			<edit  width="100" height="30" left="410" top="455" enabled="false"  field="SenbonLimite"/>
+			<edit  width="40" height="30" left="430" top="65" enabled="true" type="number" field="KunaiQT"/>
+			<edit  width="40" height="30" left="430" top="155" enabled="true" type="number" field="ShurikenQT"/>
+			<edit  width="40" height="30" left="430" top="255" enabled="true" type="number" field="SFuumaQT"/>
+			<edit  width="40" height="30" left="430" top="355" enabled="true" type="number" field="KGiganteQT"/>	
+			<edit  width="40" height="30" left="430" top="455" enabled="true"  type="number" fontColor="red" field="SenbonQT"/>
+			
+			<edit  width="40" height="30" left="485" top="65" enabled="false" type="number" field="KunaiLimite"/>
+			<edit  width="40" height="30" left="485" top="155" enabled="false" type="number" field="ShurikenLimite"/>
+			<edit  width="40" height="30" left="485" top="255" enabled="false" type="number" field="SFuumaLimite"/>
+			<edit  width="40" height="30" left="485" top="355" enabled="false" type="number" field="KGiganteLimite"/>	
+			<edit  width="40" height="30" left="485" top="455" enabled="false" type="number" fontColor="blue"  field="SemboLimite"/>
+			
+			<dataLink fields="{'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite', 'SemboLimite',
+			'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'}">
+				<event name="onChange">
+					sheet.KunaiQT = (tonumber(sheet.KunaiQT) or 0);
+					sheet.ShurikenQT = (tonumber(sheet.ShurikenQT) or 0);
+					sheet.SFuumaQT = (tonumber(sheet.SFuumaQT) or 0);
+					sheet.KGiganteQT = (tonumber(sheet.KGiganteQT) or 0);
+					sheet.SenbonQT = (tonumber(sheet.SenbonQT) or 0);
+					sheet.PBombaQT = (tonumber(sheet.PBombaQT) or 0);
+					sheet.GExplosivoQT = (tonumber(sheet.GExplosivoQT) or 0);
+					sheet.VenenoQT = (tonumber(sheet.VenenoQT) or 0);
+					sheet.BandagemQT = (tonumber(sheet.BandagemQT) or 0);
+					sheet.BombaFumacaQT = (tonumber(sheet.BombaFumacaQT) or 0);										
+				</event>
+			</dataLink>	
+			
+			<dataLink fields="{'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite' ,'SemboLimite'}">
+				<event name="onChange"> 					
+					
+					if sheet.KunaiQT ~= nil then
+						if sheet.KunaiQT > sheet.KunaiLimite then
+							sheet.KunaiQT = tonumber(sheet.KunaiLimite or 0);
+						end;
+					end;
+					
+					if sheet.ShurikenQT ~= nil then	
+						if sheet.ShurikenQT > sheet.ShurikenLimite then
+							sheet.ShurikenQT = tonumber(sheet.ShurikenLimite or 0);
+						end;
+					end;
+					
+					if sheet.SFuumaQT ~= nil then	
+						if sheet.SFuumaQT > sheet.SFuumaLimite then
+							sheet.SFuumaQT = tonumber(sheet.SFuumaLimite or 0);
+						end;					
+					end;
+					
+					if sheet.KGiganteQT ~= nil then	
+						if sheet.KGiganteQT > sheet.KGiganteLimite then
+							sheet.KGiganteQT = tonumber(sheet.KGiganteLimite or 0);
+						end;
+					end;
+					
+					if sheet.SenbonQT ~= nil then	
+						if sheet.SenbonQT > sheet.SemboLimite then
+							sheet.SenbonQT = tonumber(sheet.SemboLimite or 0);
+						end;
+					end;
+					
+				</event>
+			</dataLink>		
 			
 			<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'}">
 				<event name="onChange"> 
@@ -2258,7 +2542,8 @@
 					sheet.PB = (tonumber(sheet.Inteligencia) or 0);
 					sheet.GinsoExplosivo = (tonumber(sheet.Inteligencia) or 0) * 2;	
 					sheet.Veneno = (tonumber(sheet.Sabedoria) or 0);
-					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2;						
+					sheet.Bandagem = (tonumber(sheet.Sabedoria) or 0) /2 + (tonumber(sheet.Inteligencia) or 0) /2 + (tonumber(sheet.Forca) or 0) /2;
+					sheet.BF = 0;					
 				</event>
 			</dataLink>			
 		</popup> 
@@ -2270,33 +2555,180 @@
 					width="550" height="550">
 			
 			<label  width="120" height="40" left="280" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Danos"/>
-			<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantidade"/>
+			<label  width="120" height="40" left="420" top="10" fontColor="Red" fontFamily="Nyala" fontSize="20" text="Quantia/Limite"/>
 			
 			<image left="10" top="30" width="100" height="130" src="/imagens/pb.png"/>
 			<label  width="120" height="40" left="130" top="60" fontFamily="Nyala" fontSize="20" text="Papel Bomba"/>
 			<edit  width="100" height="30" left="260" top="65" enabled="false" field="PB"/>
+			<button left="8" top="40" width="100" height="90" opacity="0.3" onClick="UsePB();"/>
+			<script>
+				local function UsePB()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal or 0);  
+					if sheet.PBombaQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Papel Bomba na Area",
+							function (rolado)								
+									if sheet.AcertoNinTotal >= rolado.resultado then
+										sheet.PBombaQT = tonumber(sheet.PBombaQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://i.makeagif.com/media/9-24-2018/ySeYJn.gif]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Executa com sucesso o Papel Bomba explode Causando[§K4] " .. (sheet.PB) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.PBombaQT) ..  "][§K3] Papeis Bomba na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]Não fui possivel executar a explosão do papel bomba");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM PAPEL BOMBA [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 		
 			<image left="0" top="120" width="130" height="130" src="/imagens/BE.png"/>
 			<label  width="120" height="40" left="130" top="150" fontFamily="Nyala" fontSize="20" text="Ginso Explosivo"/>
 			<edit  width="100" height="30" left="260" top="155" enabled="false" field="GinsoExplosivo"/>
+			<button left="8" top="135" width="100" height="90" opacity="0.3" onClick="UseGinsoExplosivo();"/>
+			<script>
+				local function UseGinsoExplosivo()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal or 0);  
+					if sheet.GExplosivoQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso do Ginso Explosivo na Area",
+							function (rolado)								
+									if sheet.AcertoNinTotal >= rolado.resultado then
+										sheet.GExplosivoQT = tonumber(sheet.GExplosivoQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://2img.net/h/narutorpghabbogreg.weebly.com/uploads/3/1/1/9/31192459/460968437.png]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Executa com sucesso o Ginso Explosivo Causando[§K4] " .. (sheet.GinsoExplosivo) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.GExplosivoQT) ..  "][§K3] Ginsos na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]Não fui possivel executar a explosão do Ginso Explosivo");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM GINSO EXPLOSIVO [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
 
 			<image left="20" top="240" width="100" height="100" src="/imagens/veneno.png"/>
 			<label  width="120" height="40" left="130" top="250" fontFamily="Nyala" fontSize="20" text="Veneno"/>
-			<edit  width="100" height="30" left="260" top="255" enabled="false" field="Veneno"/>				
+			<edit  width="100" height="30" left="260" top="255" enabled="false" field="Veneno"/>	
+			<button left="8" top="230" width="100" height="90" opacity="0.3" onClick="UseVeneno();"/>
+			<script>
+				local function UseVeneno()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal or 0);  
+					if sheet.VenenoQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso do Veneno no alvo",
+							function (rolado)								
+									if sheet.AcertoNinTotal >= rolado.resultado then
+										sheet.VenenoQT = tonumber(sheet.VenenoQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://2img.net/h/narutorpghabbogreg.weebly.com/uploads/3/1/1/9/31192459/460968437.png]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Acerta o Veneno Causando[§K4] " .. (sheet.Veneno) .. " DE DANO[§K3] restam apenas [§K14][" .. (sheet.VenenoQT) ..  "][§K3] Venenos na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]Não fui possivel acertar o Veneno no Alvo");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM VENENO [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 			
 
 			<image left="10" top="330" width="100" height="100" src="/imagens/bandagem.png"/>
 			<label  width="120" height="40" left="130" top="350" fontFamily="Nyala" fontSize="20" text="Bandagem"/>
-			<edit  width="100" height="30" left="260" top="355" enabled="false" field="Bandagem"/>		
+			<edit  width="100" height="30" left="260" top="355" enabled="false" field="Bandagem"/>	
+			<button left="8" top="325" width="100" height="105" opacity="0.3" onClick="UsoBandagem();"/>	
+			<script>
+				local function UsoBandagem()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal or 0);  
+					if sheet.BandagemQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Bandagegem",
+							function (rolado)								
+									if sheet.AcertoNinTotal >= rolado.resultado then
+										sheet.BandagemQT = tonumber(sheet.BandagemQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I http://blob.firecast.com.br/blobs/QDFLARHA_1718619/Screenshot_2.png]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Executa Chakra sobre a Bandagem de Cura Curando[§K8] " .. (sheet.Bandagem) .. " DE CURA[§K3] restam apenas [§K14][" .. (sheet.BandagemQT) ..  "][§K3] Bandagens na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]Não fui possivel executar o Chakra sobre a Bandagem cancelando a Execução");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM BANDAGEM [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 				
 			
 			<image left="10" top="430" width="100" height="100" src="/imagens/bombaf.png"/>
 			<label  width="120" height="40" left="130" top="450" fontFamily="Nyala" fontSize="20" text="Bomba Fumaça"/>
-			<edit  width="100" height="30" left="260" top="455" enabled="false" field="BF"/>							
+			<edit  width="100" height="30" left="260" top="455" enabled="false" field="BF"/>	
+			<button left="8" top="435" width="100" height="90" opacity="0.3" onClick="UseBombaFumaca();"/>
+			<script>
+				local function UseBombaFumaca()      
+					local mesaDoPersonagem = Firecast.getMesaDe(sheet);      
+					sheet.AcertoTaiTotal = tonumber(sheet.AcertoTaiTotal or 0);  
+					if sheet.BombaFumacaQT > 0 then
+						mesaDoPersonagem.chat:rolarDados("1d100 ","[§K3]Uso de Bomba de Fumaça",
+							function (rolado)								
+									if sheet.AcertoTaiTotal >= rolado.resultado then
+										sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaQT or 0) - 1;
+										mesaDoPersonagem.chat:enviarMensagem("[§I https://2img.net/h/images2.wikia.nocookie.net/__cb20110428013205/naruto/es/images/5/5c/Burbujas_de_humo.jpg]");
+										mesaDoPersonagem.chat:enviarMensagem("[§K3]Lançamento de Bomba de Fumaça,[§K3] restam apenas [§K14][" .. (sheet.BombaFumacaQT) ..  "][§K3] Bomba de Fumaça na Bag");
+									else
+										mesaDoPersonagem.chat:enviarMensagem("[§K4]Não conseguiu acertar a bomba de fumaça proximo oque fez ela explodir longe");
+									end;								
+						end); 
+					else
+						mesaDoPersonagem.chat:enviarMensagem("[§K4]VOCE ESTA SEM BOMBA DE FUMAÇA [§I https://pbs.twimg.com/profile_images/1050841400407982082/BZRxaqpV_400x400.jpg]");
+					end;
+				end; 	   
+			</script> 
+				
+			<edit  width="40" height="30" left="430" top="65" enabled="true" type="number"  field="PBombaQT"/>
+			<edit  width="40" height="30" left="430" top="155" enabled="true" type="number"  field="GExplosivoQT"/>
+			<edit  width="40" height="30" left="430" top="255" enabled="true" type="number"  field="VenenoQT"/>
+			<edit  width="40" height="30" left="430" top="355" enabled="true" type="number"  field="BandagemQT"/>	
+			<edit  width="40" height="30" left="430" top="455" enabled="true" type="number"  field="BombaFumacaQT"/>
+			
+				
+			<edit  width="40" height="30" left="485" top="65" enabled="false" type="number"  field="PBombaLimite"/>		
+			<edit  width="40" height="30" left="485" top="155" enabled="false" type="number"  field="GExplosivoLimite"/>
+			<edit  width="40" height="30" left="485" top="255" enabled="false" type="number"  field="VenenoLimite"/>
+			<edit  width="40" height="30" left="485" top="355" enabled="false" type="number"  field="BandagemLimite"/>
+			<edit  width="40" height="30" left="485" top="455" enabled="false" type="number"  field="BombaFumacaLimite"/>		
+
+			<dataLink fields="{'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'}">
+				<event name="onChange"> 
+				
+					if sheet.PBombaQT ~= nil then
+						if sheet.PBombaQT > sheet.PBombaLimite then
+							sheet.PBombaQT = tonumber(sheet.PBombaLimite or 0);
+						end;
+					end;
 					
-			<edit  width="100" height="30" left="410" top="65" enabled="false"  field="PBombaLimite"/>		
-			<edit  width="100" height="30" left="410" top="155" enabled="false"  field="GExplosivoLimite"/>
-			<edit  width="100" height="30" left="410" top="255" enabled="false"  field="VenenoLimite"/>
-			<edit  width="100" height="30" left="410" top="355" enabled="false"  field="BandagemLimite"/>
-			<edit  width="100" height="30" left="410" top="455" enabled="false"  field="BombaFumacaLimite"/>									 
+					if sheet.GExplosivoQT ~= nil then
+						if sheet.GExplosivoQT > sheet.GExplosivoLimite then
+							sheet.GExplosivoQT = tonumber(sheet.GExplosivoLimite or 0);
+						end;
+					end;
+					
+					if sheet.VenenoQT ~= nil then
+						if sheet.VenenoQT > sheet.VenenoLimite then
+							sheet.VenenoQT = tonumber(sheet.VenenoLimite or 0);
+						end;					
+					end;
+					
+					if sheet.BandagemQT ~= nil then					
+						if sheet.BandagemQT > sheet.BandagemLimite then
+							sheet.BandagemQT = tonumber(sheet.BandagemLimite or 0);
+						end;
+					end;
+					
+					if sheet.BombaFumacaQT ~= nil then
+						if sheet.BombaFumacaQT > sheet.BombaFumacaLimite then
+							sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaLimite or 0);
+						end;
+					end;
+				</event>
+			</dataLink>				
 		</popup> 		
 		
 		<button left="250" top="550" width="105" height="85" opacity="0.1" text="" onClick="self.POPDiverso:show();"/>
@@ -2351,19 +2783,15 @@
 				<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
 				<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho1()"/>
 					<script> 
-						local function Pergaminho1() 
-						   
+						local function Pergaminho1() 						   
 						local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
-
 						mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Grande",
-							function (rolado)
-							
+							function (rolado)							
 								mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. sheet.DescriPergaminho1);
 								local mesa = Firecast.getMesaDe(sheet); 
 								local CustoPerga1 = mesa.meuJogador:getBarValue(2);
 								CustoPerga1 = CustoPerga1 - (tonumber(sheet.CustoPerga1) or 0);
-								mesa.meuJogador:requestSetBarValue(2, CustoPerga1);
-						
+								mesa.meuJogador:requestSetBarValue(2, CustoPerga1);						
 						end);
 						end;			
 					</script> 
@@ -2385,19 +2813,15 @@
 					<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
 					<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho2()"/>
 						<script> 
-							local function Pergaminho2() 
-								   
-							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
-				
+							local function Pergaminho2() 								   
+							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 				
 							mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Uso do Pergaminho Medio",
-								function (rolado)
-								
+								function (rolado)								
 									mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho2);
 									local mesa = Firecast.getMesaDe(sheet); 
 									local CustoPerga2 = mesa.meuJogador:getBarValue(2);
 									CustoPerga2 = CustoPerga2 - (tonumber(sheet.CustoPerga2) or 0);
-									mesa.meuJogador:requestSetBarValue(2, CustoPerga2);
-							
+									mesa.meuJogador:requestSetBarValue(2, CustoPerga2);							
 							end);
 							end;
 						</script> 
@@ -2419,19 +2843,15 @@
 					<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
 					<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho3()"/>				
 						<script> 
-							local function Pergaminho3() 
-								   
-							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
-				
+							local function Pergaminho3() 								   
+							local mesaDoPersonagem = rrpg.getMesaDe(sheet); 				
 							mesaDoPersonagem.chat:rolarDados("1d100", "[§K4]Uso de Selamento",
-								function (rolado)
-								
+								function (rolado)								
 									mesaDoPersonagem.chat:enviarMensagem(".. [§K1]".. sheet.DescriPergaminho3);
 									local mesa = Firecast.getMesaDe(sheet); 
 									local CustoPerga3 = mesa.meuJogador:getBarValue(2);
 									CustoPerga3 = CustoPerga3 - (tonumber(sheet.CustoPerga3) or 0);
-									mesa.meuJogador:requestSetBarValue(2, CustoPerga3);
-							
+									mesa.meuJogador:requestSetBarValue(2, CustoPerga3);							
 							end);
 							end;
 						</script> 
@@ -2912,7 +3332,7 @@
 							</event>
 						</button>
 					</layout>
-					<comboBox left="3" top="40" width="147" items="{'Tipo Bag', 'Bag Genin', 'Bag Chunin', 'Bag Tengu', 'Bag Yebisu', 'Bag Benzaiten'}" 
+					<comboBox name="cmbTipoBag" left="3" top="40" width="147" items="{'Tipo Bag', 'Bag Genin', 'Bag Chunin', 'Bag Tengu', 'Bag Yebisu', 'Bag Benzaiten'}" 
 					field="TipoBag"/>
 					<!-- recordList, representando a lista -->
 					<recordList name="rclListaDosItens4" field="campoDosItens4" templateForm="frmItemDaLista4"
@@ -3018,6 +3438,32 @@
 								sheet.BandagemLimite = 3;
 								sheet.BombaFumacaLimite = 3;
 								sheet.SemboLimite = 6;
+							end;
+							
+							if sheet.TipoBag == nil then
+								sheet.KunaiLimite = 0;
+								sheet.ShurikenLimite = 0;
+								sheet.SFuumaLimite = 0;
+								sheet.KGiganteLimite = 0;
+								sheet.PBombaLimite  = 0;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 0;
+								sheet.BandagemLimite = 0;
+								sheet.BombaFumacaLimite = 0;
+								sheet.SemboLimite = 0;
+							end;
+							
+							if sheet.TipoBag == "" then
+								sheet.KunaiLimite = 0;
+								sheet.ShurikenLimite = 0;
+								sheet.SFuumaLimite = 0;
+								sheet.KGiganteLimite = 0;
+								sheet.PBombaLimite  = 0;
+								sheet.GExplosivoLimite = 0;
+								sheet.VenenoLimite = 0;
+								sheet.BandagemLimite = 0;
+								sheet.BombaFumacaLimite = 0;
+								sheet.SemboLimite = 0;
 							end;
 						</event>
 					</dataLink>
@@ -3171,7 +3617,7 @@
 										local function TreinaJutsu() 
 																			
 										self.btnTreinar.visible = false;
-										local node = self.dsbListadeTreino.node;									
+										local node = self.MeuDataScoupeBo.node;									
 										local mesaDoPersonagem = rrpg.getMesaDe(sheet);	
 										
 										node.Treina1d10Erro = node.Treina1d10Erro or 0;
