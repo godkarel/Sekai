@@ -5,7 +5,7 @@
 	<event name="onNodeReady">	
 		if sheet.Nome == nil then
 			sheet.Cla = "Sem clã";
-			sheet.Graduacao = "Academico";
+			sheet.GraduacaoTreino = "Academico";
 			sheet.Moradia = "Primaria";
 			sheet.Idade = (tonumber(sheet.Idade) or 0);
 			sheet.Elemento = (tonumber(sheet.Elemento) or 0);
@@ -218,7 +218,11 @@
 			sheet.GExplosivoLimite = (tonumber(sheet.GExplosivoLimite) or 0);	
 			sheet.VenenoLimite = (tonumber(sheet.VenenoLimite) or 0);	
 			sheet.BandagemLimite = (tonumber(sheet.BandagemLimite) or 0);	
-			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);				
+			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);	
+			sheet.energia = 0;
+			sheet.energiaTotal = 100;
+			self.cmbTipoOutro.value = 1; 
+			self.cmbTipoBag.value = 1; 
 			showMessage("Escolha seu nome, clã e idade");
 		end; 
 		sheet.Transformado = 0; 
@@ -268,7 +272,7 @@
 								sheet.energiaTotal = tonumber(sheet.energiaTotal + 10);
 								mesa.meuJogador:requestSetBarValue(4, sheet.energiaTotal, nil);							
 							end); 
-						end;	
+						end;		
 					</event>
 				</button>
 				
@@ -326,19 +330,35 @@
 					<rectangle  color="black" xradius="10" yradius="10" width="460" height="580" left="1" top="1" >											
 						<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
 						<edit  width="310" height="30" left="130" top="15" field="NomedoJutsu"/>
-						<textEditor left="10" top="60" width="430" height="280" field="DescriJutsu" text="Este é um textEditor\n\ncom multiplas linhas"/>
-						<label  width="120" height="40" left="10" top="350" fontFamily="Nyala" fontSize="20" text="Dano"/>
-						<edit  width="80" height="30" left="55" top="355" type="number" field="DanoJutsu"/>
-						<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
-						<edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>
-						<edit  width="40" height="30" left="390" top="380" visible="false"  horzTextAlign="center" fontColor="cyan"  type="number" field="ChakraPlayer"/>
-						<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
-						<comboBox  left="190" top="363" width="140" height="18" field="Tipo" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>
+						<textEditor left="10" top="60" width="430" height="240" field="DescriJutsu"/>
+						<label left="10" top="305" width="120" height="40"  fontFamily="Nyala" fontSize="16" text="Dano:"/>
+						<edit left="50" top="310" width="80" height="30"  type="number" field="DanoJutsu"/>
+						
+						<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chakra:"/>
+						<edit  left="185" top="310" width="40" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
+						
+						<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="false" fontColor="cyan" text="Custo Real: "/>
+						<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="false" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>	
+
+						<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="false" fontColor="green" text="Energia: "/>
+						<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="false" fontColor="green"  field="CustoEnergia"/>
+						
+						<label left="10" top="345" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
+						<comboBox  left="50" top="358" width="100" height="18" field="Tipo" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Nulo'}"/>
+						
+						<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="false" fontSize="16" text="Tipo 2:"/>
+						<comboBox left="205" top="358" width="100" height="18" field="Tipo" visible="false" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>	
+
+						<label left="310" top="345" width="60" height="40" fontFamily="Nyala" visible="false" fontSize="16" text="Tipo 3:"/>
+						<comboBox left="355" top="358" width="100" height="18" field="Tipo" visible="false" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>						
+						
 						<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
 						<edit  width="80" height="20" left="110" top="400" enabled="false" horzTextAlign="center" type="number" field="DNVerdadeiro"/>
 						<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson " fontSize="16" text="Intensidade"/>
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+						
+						<edit  width="40" height="30" left="390" top="380" visible="false"  horzTextAlign="center" fontColor="cyan"  type="number" field="ChakraPlayer"/>
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
 						--GM DESATIVA-- 
@@ -515,11 +535,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
 											--GM NUNCA PRECISA -- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro"/>
@@ -698,7 +718,7 @@
 						<edit  width="80" height="30" left="55" top="355" type="number"  field="DanoJutsu2"/>
 						<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
 						<edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu2"/>
-						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer2"/>
+						
 						<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
 						<comboBox  left="190" top="363" width="140" height="18" field="Tipo2" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>
 						<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
@@ -706,6 +726,8 @@
 						<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson " fontSize="16" text="Intensidade"/>
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade2"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+						
+						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer2"/>
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						--GM DESATIVA-- 
@@ -841,11 +863,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d202"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma2"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma2"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma2"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma2"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma2"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma2"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro2"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro2"/>
@@ -1021,7 +1043,7 @@
 						<edit  width="80" height="30" left="55" top="355" type="number"  field="DanoJutsu3"/>
 						<label  width="60" height="40" left="340" top="350" fontFamily="Nyala" fontSize="20" fontColor="cyan" text="Chakra"/>
 						<edit  width="40" height="30" left="400" top="355" type="number"  horzTextAlign="center" fontColor="cyan"  field="CustoJutsu3"/>
-						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer3"/>
+						
 						<label  width="60" height="40" left="150" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
 						<comboBox  left="190" top="363" width="140" height="18" field="Tipo3" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>
 						<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
@@ -1029,6 +1051,8 @@
 						<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson" fontSize="16" text="Intensidade"/>
 						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade3"/>
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+						
+						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer3"/>
 						--GM DESATIVA-- 
 						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
 						--GM DESATIVA-- 
@@ -1164,11 +1188,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d203"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Soma3"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Soma3"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Soma3"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
+						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma3"/>
+						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma3"/>
+						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma3"/>
+						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro3"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro3"/>
@@ -1315,7 +1339,7 @@
 		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'}"/>
 		<edit left="365" top="32" width="50" height="18" field="Idade"/>
 		<edit left="365" top="80" width="50" height="18" visible="false" type="number" max="40" field="Idade2"/>
-		<comboBox  left="505" top="32" width="140" height="18" field="Graduacao" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
+		<comboBox  left="505" top="32" width="140" height="18" field="GraduacaoTreino" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
 		
 		<edit left="220" top="52" width="85" height="18" type="number" enabled="true" field="Yen"/>
 		<edit left="90" top="52" width="85" height="18" field="Elemento"/>
@@ -1343,44 +1367,44 @@
 					sheet.Level = 0;
 				end;
 				
-				if sheet.Graduacao == 'Academico' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 100;
+				if sheet.GraduacaoTreino == 'Academico' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 100;
 				end;
 				
-				if sheet.Graduacao == 'Genin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 200;
+				if sheet.GraduacaoTreino == 'Genin' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 200;
 				end;
 				
-				if sheet.Graduacao == 'Chunin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 1000;		
+				if sheet.GraduacaoTreino == 'Chunin' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 1000;		
 				end;
 				
-				if sheet.Graduacao == 'Jounin' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 5000;
+				if sheet.GraduacaoTreino == 'Jounin' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 5000;
 				end;
 				
-				if sheet.Graduacao == 'Anbu' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 10000;
+				if sheet.GraduacaoTreino == 'Anbu' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 10000;
 				end;
 			   
-				if sheet.Graduacao == 'AnbuNucleo' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 15000;
+				if sheet.GraduacaoTreino == 'AnbuNucleo' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 15000;
 				end;
 				
-				if sheet.Graduacao == 'Organização' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 20000;
+				if sheet.GraduacaoTreino == 'Organização' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 20000;
 				end;				
 								
-				if sheet.Graduacao == 'GDE' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 30000;
+				if sheet.GraduacaoTreino == 'GDE' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 30000;
 				end;				
 								
-				if sheet.Graduacao == 'Concelheiro' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 40000;
+				if sheet.GraduacaoTreino == 'Concelheiro' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 40000;
 				end;				
 								
-				if sheet.Graduacao == 'Kage' then
-					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 50000;
+				if sheet.GraduacaoTreino == 'Kage' then
+					sheet.GHP = (tonumber(sheet.GHP) or 0) - 50000;
 				end;			
 			</event>
 		</button>
@@ -1389,61 +1413,63 @@
 			<event name="onClick">
 				sheet.Level = (tonumber(sheet.Level) or 0) + 1;
 				
-				if sheet.Graduacao == 'Academico' then
+				if sheet.GraduacaoTreino == 'Academico' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
 				end;
 				
-				if sheet.Graduacao == 'Genin' then
+				if sheet.GraduacaoTreino == 'Genin' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
 				end;
 				
-				if sheet.Graduacao == 'Chunin' then
+				if sheet.GraduacaoTreino == 'Chunin' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;			
 				end;
 				
-				if sheet.Graduacao == 'Jounin' then
+				if sheet.GraduacaoTreino == 'Jounin' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
 				end;
 				
-				if sheet.Graduacao == 'Anbu' then
+				if sheet.GraduacaoTreino == 'Anbu' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
 				end;
 			   
-				if sheet.Graduacao == 'AnbuNucleo' then
+				if sheet.GraduacaoTreino == 'AnbuNucleo' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
 				end;
 				
-				if sheet.Graduacao == 'Organização' then
+				if sheet.GraduacaoTreino == 'Organização' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
 				end;				
 								
-				if sheet.Graduacao == 'GDE' then
+				if sheet.GraduacaoTreino == 'GDE' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
 				end;				
 								
-				if sheet.Graduacao == 'Concelheiro' then
+				if sheet.GraduacaoTreino == 'Concelheiro' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
 				end;				
 								
-				if sheet.Graduacao == 'Kage' then
+				if sheet.GraduacaoTreino == 'Kage' then
 					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
 				end;				
 			</event>
 		</button>
 				 
 		<edit left="570" top="100" width="55" height="30" horzTextAlign="center" fontColor="Red" fontFamily="Nyala" fontSize="25" enabled="true" type="number"   field="Level"/>
-		<edit left="535" top="132" width="55" height="18" type="float"  field="Exp"/>
+		<edit name="Exp" left="535" top="132" width="55" height="18" type="float"  field="Exp"/>
 		<edit left="610" top="132" width="55" height="18" enabled="false" type="float" field="ExpTotal"/>
+		
+		<edit left="670" top="132" width="55" height="18" enabled="true" type="float" field="ExpPTreino"/>
 		
 		<edit left="90" top="276" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Red" field="HP"/>
 		<edit left="90" top="296" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Cyan" field="Chakra"/>
-		<edit left="90" top="316" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="#FFD700" field="Reiatsu"/>
-		<edit left="90" top="336" width="85" height="18" type="float" enabled="false" horzTextAlign="center" field="Outros"/>
+		<edit left="90" top="316" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="#FFD700" field="Outros"/>
+		<edit left="90" top="336" width="85" height="18" type="float" enabled="false" horzTextAlign="center" field="Energia"/>
 				--GM DESATIVA--
-		<checkBox left="800" top="20" fontSize="18" text="TREINO ON ?" visible="false" field="TreinoON"/>
+		<checkBox left="800" top="20" fontSize="18" text="TREINO ON ?" visible="true" field="TreinoON"/>
 
 		<edit left="190" top="276" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="Red" field="HPTotal"/>
-		<button left="300" top="276" width="40" height="20" fontColor="red" text="❤">
+		<button left="280" top="276" width="40" height="20" fontColor="red" text="❤">
 			<event name="onClick">
 				local mesa = Firecast.getMesaDe(sheet); 
 				local HPTotal = (tonumber(sheet.HPTotal) or 0);
@@ -1451,7 +1477,7 @@
 			</event>
 		</button>		
 		<edit left="190" top="296" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="cyan"  field="ChakraTotal"/>
-		<button left="300" top="296" width="40" height="20" fontColor="Cyan" text="🌀">
+		<button left="280" top="296" width="40" height="20" fontColor="Cyan" text="🌀">
 			<event name="onClick">
 				local mesa = Firecast.getMesaDe(sheet); 
 				local ChakraTotal = (tonumber(sheet.ChakraTotal) or 0);
@@ -1459,17 +1485,25 @@
 			</event>
 		</button>
 		
-		<edit left="190" top="316" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="#FFD700" field="ReiatsuTotal"/>
-		<button left="300" top="316" width="40" height="20" fontColor="Yellow" text="⚡">
+		<edit left="190" top="316" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="#FFD700" field="OutrosTotal"/>
+		<button left="280" top="316" width="40" height="20" fontColor="Yellow" text="⚡">
 			<event name="onClick">
 				local mesa = Firecast.getMesaDe(sheet); 
-				local ReiatsuTotal = (tonumber(sheet.ReiatsuTotal) or 0);
-				mesa.meuJogador:requestSetBarValue(3, nil, ReiatsuTotal);
+				local OutrosTotal = (tonumber(sheet.OutrosTotal) or 0);
+				mesa.meuJogador:requestSetBarValue(3, nil, OutrosTotal);
 			</event>
 		</button>
-		<edit left="190" top="336" width="85" height="18" enabled="false" type="float" horzTextAlign="center" field="OutrosTotal"/>
-		<comboBox  left="280" top="336" width="110" height="18" field="TipoOutro" items="{'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}"/>
+		<comboBox name="cmbTipoOutro" left="320" top="316" width="110" height="18" field="TipoOutro" items="{'Reiatsu', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}" values="{'1', '2', '3', '4', '5', '6', '7', '8'}"/>
 		
+		<edit left="190" top="336" width="85" height="18" enabled="false" type="float" horzTextAlign="center" field="EnergiaTotal"/>
+		<button left="280" top="336" width="40" height="20" fontColor="Green" text="🔋">
+			<event name="onClick">
+				local mesa = Firecast.getMesaDe(sheet); 
+				local EnergiaTotal = (tonumber(sheet.EnergiaTotal) or 0);
+				mesa.meuJogador:requestSetBarValue(4, nil, EnergiaTotal);
+			</event>
+		</button>
+				
 		<button left="490" top="155" width="145" height="60" onClick="self.PopTransformation:show();"/>
 		
 		<popup name="PopTransformation" visible="false" left="1" top="10" width="1020" height="580">
@@ -1586,7 +1620,7 @@
 		--------------------------------------------------
 		<image field="imagemDoPersonagem" editable="true" style="autoFit" left="450" top="255" width="154" height="110" />
 		--GM DESATIVA-- 		
-		<button left="600" top="270" width="105" height="85" opacity="1.0" visible="false" text="Calculo" onClick="self.POPCALCULO:show();"/>			
+		<button left="600" top="270" width="105" height="85" opacity="1.0" visible="true" text="Calculo" onClick="self.POPCALCULO:show();"/>			
 		<popup name="POPCALCULO" visible="false" left="1" top="40" width="820" height="620">
 				
 		<image left="10" top="10" width="800" height="600" src="/imagens/CALCULO.png"/>				
@@ -1637,47 +1671,20 @@
 					if sheet.Exp > sheet.ExpTotal then
 						sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
 						sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+						showMessage("VOCE UPOU DE LEVEL");
+						
+						LevelUPHP();
 					end;	
-												
-					if sheet.Graduacao == 'Academico' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
-					end;
-					
-					if sheet.Graduacao == 'Genin' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
-					end;
-					
-					if sheet.Graduacao == 'Chunin' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
-					end;
-					
-					if sheet.Graduacao == 'Jounin' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
-					end;
-					
-					if sheet.Graduacao == 'Anbu' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
-					end;
-				   
-					if sheet.Graduacao == 'AnbuNucleo' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
-					end;
-					
-					if sheet.Graduacao == 'Organização' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
-					end;				
-									
-					if sheet.Graduacao == 'GDE' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
-					end;				
-									
-					if sheet.Graduacao == 'Concelheiro' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
-					end;				
-									
-					if sheet.Graduacao == 'Kage' then
-						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
-					end;
+
+				end;	
+			</event>
+		</dataLink>
+		
+		<dataLink field="ExpPTreino">
+			<event name="onChange">	
+				if sheet.Sequenci1 == true then
+					sheet.Exp = (tonumber(sheet.Exp) or 0) + (tonumber(sheet.ExpPTreino));
+					sheet.ExpPTreino = 0;
 				end;	
 			</event>
 		</dataLink>
@@ -1698,7 +1705,7 @@
 		---------------------------------------------------------------------------
 	
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino'
 		,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
 		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
 		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
@@ -2059,7 +2066,8 @@
 					sheet.CCRN = 0;
 					sheet.CCRG = 0;
 					sheet.CReducao = 0;
-				end;				
+				end;			
+				
 			</event>
 		</dataLink>
 		---------------------------------------------------------------------------
@@ -2067,41 +2075,45 @@
 		-----------------------CALCULO POR NIVEL DE CLÃ----------------------------
 		---------------------------------------------------------------------------
 		---------------------------------------------------------------------------
-		<dataLink fields="{'TipoOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'}">
+		<dataLink fields="{'TipoOutro', 'Reiatsu', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'}">
 			<event name="onChange"> 
 				<![CDATA[
-					 
-					if sheet.TipoOutro == 'ChakraBiju' then
+					if self.cmbTipoOutro.value == '1' then
+						sheet.Outros = (tonumber(sheet.ReiatsuTotal) or 0);
+						sheet.OutrosTotal = sheet.Outros;
+					end;
+					
+					if self.cmbTipoOutro.value == '2' then
 						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 					
-					if sheet.TipoOutro == 'ChakraBranco' then
+					if self.cmbTipoOutro.value == '3' then
 						sheet.Outros = (tonumber(sheet.ChakraBranco) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 					
-					if sheet.TipoOutro == 'ChakraPreto' then
+					if self.cmbTipoOutro.value == '4' then
 						sheet.Outros = (tonumber(sheet.ChakraPreto) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 					
-					if sheet.TipoOutro == 'Hadou' then
+					if self.cmbTipoOutro.value == '5' then
 						sheet.Outros = (tonumber(sheet.Hadou) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 					
-					if sheet.TipoOutro == 'HadouNegro' then
+					if self.cmbTipoOutro.value == '6' then
 						sheet.Outros = (tonumber(sheet.HadouNegro) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 				   
-					if sheet.TipoOutro == 'ChakraNatural' then
+					if self.cmbTipoOutro.value == '7' then
 						sheet.Outros = (tonumber(sheet.ChakraNatural) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
 					
-					if sheet.TipoOutro == 'ChakraRoxo' then
+					if self.cmbTipoOutro.value == '8' then
 						sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0);
 						sheet.OutrosTotal = sheet.Outros;
 					end;
@@ -2125,15 +2137,15 @@
 		--------------------- STATUS POR GRADUACÃO---------------------
 		---------------------------------------------------------------
 		---------------------------------------------------------------
-		<dataLink fields="{'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal',
+		<dataLink fields="{'GraduacaoTreino', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal',
 		'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'}">
 			<event name="onChange"> 				
 				<![CDATA[					 
-					if sheet.Graduacao == 'Academico' then
+					if sheet.GraduacaoTreino == 'Academico' then
 						sheet.GTurno = 1;
 					end;
 					
-					if sheet.Graduacao == 'Genin' then
+					if sheet.GraduacaoTreino == 'Genin' then
 						sheet.GAcertoTai = 2;
 						sheet.GAcertoNin = 2;
 						sheet.GAcertoGen = 2;
@@ -2141,7 +2153,7 @@
 						sheet.GBloqueio = 3;
 					end;
 					
-					if sheet.Graduacao == 'Chunin' then
+					if sheet.GraduacaoTreino == 'Chunin' then
 						sheet.GAcertoTai = 4;
 						sheet.GAcertoNin = 4;
 						sheet.GAcertoGen = 4;
@@ -2149,7 +2161,7 @@
 						sheet.GBloqueio = 6;
 					end;
 					
-					if sheet.Graduacao == 'Jounin' then
+					if sheet.GraduacaoTreino == 'Jounin' then
 						sheet.GAcertoTai = 6;
 						sheet.GAcertoNin = 6;
 						sheet.GAcertoGen = 6;
@@ -2161,7 +2173,7 @@
 						sheet.GCRGen = 3;
 					end;
 					
-					if sheet.Graduacao == 'Anbu' then
+					if sheet.GraduacaoTreino == 'Anbu' then
 						sheet.GAcertoTai = 8;
 						sheet.GAcertoNin = 8;
 						sheet.GAcertoGen = 8;
@@ -2169,7 +2181,7 @@
 						sheet.GBloqueio = 12;
 					end;
 				   
-					if sheet.Graduacao == 'AnbuNucleo' then
+					if sheet.GraduacaoTreino == 'AnbuNucleo' then
 						sheet.GAcertoTai = 10;
 						sheet.GAcertoNin = 10;
 						sheet.GAcertoGen = 10;
@@ -2180,7 +2192,7 @@
 						sheet.GCRGen = 6;
 					end;
 					
-					if sheet.Graduacao == 'Organização' then
+					if sheet.GraduacaoTreino == 'Organização' then
 						sheet.GAcertoTai = 12;
 						sheet.GAcertoNin = 12;
 						sheet.GAcertoGen = 12;
@@ -2188,7 +2200,7 @@
 						sheet.GBloqueio = 18;
 					end;					
 									
-					if sheet.Graduacao == 'GDE' then
+					if sheet.GraduacaoTreino == 'GDE' then
 						sheet.GAcertoTai = 14;
 						sheet.GAcertoNin = 14;
 						sheet.GAcertoGen = 14;
@@ -2199,7 +2211,7 @@
 						sheet.GCRGen = 9;
 					end;					
 									
-					if sheet.Graduacao == 'Concelheiro' then
+					if sheet.GraduacaoTreino == 'Concelheiro' then
 						sheet.GAcertoTai = 16;
 						sheet.GAcertoNin = 16;
 						sheet.GAcertoGen = 16;
@@ -2207,7 +2219,7 @@
 						sheet.GBloqueio = 24;
 					end;					
 									
-					if sheet.Graduacao == 'Kage' then
+					if sheet.GraduacaoTreino == 'Kage' then
 						sheet.GAcertoTai = 18;
 						sheet.GAcertoNin = 18;
 						sheet.GAcertoGen = 18;
@@ -2223,7 +2235,7 @@
 		</dataLink>
 				
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'}">
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino'}">
 			<event name="onChange"> 
 				sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
 				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
@@ -2234,7 +2246,7 @@
 		</dataLink>
 		
 		<dataLink fields="{'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao', 'Transformado', 'Cla'}">
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino', 'Transformado', 'Cla'}">
 			<event name="onChange">	
 								
 				if self.ControlaTrans.checked then
@@ -2497,37 +2509,37 @@
 			
 			<dataLink fields="{'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite' ,'SemboLimite'}">
 				<event name="onChange"> 					
-					
-					if sheet.KunaiQT ~= nil then
-						if sheet.KunaiQT > sheet.KunaiLimite then
-							sheet.KunaiQT = tonumber(sheet.KunaiLimite or 0);
+					if sheet.Sequenci1 == true then
+						if sheet.KunaiQT ~= nil then
+							if sheet.KunaiQT > sheet.KunaiLimite then
+								sheet.KunaiQT = tonumber(sheet.KunaiLimite or 0);
+							end;
+						end;
+						
+						if sheet.ShurikenQT ~= nil then	
+							if sheet.ShurikenQT > sheet.ShurikenLimite then
+								sheet.ShurikenQT = tonumber(sheet.ShurikenLimite or 0);
+							end;
+						end;
+						
+						if sheet.SFuumaQT ~= nil then	
+							if sheet.SFuumaQT > sheet.SFuumaLimite then
+								sheet.SFuumaQT = tonumber(sheet.SFuumaLimite or 0);
+							end;					
+						end;
+						
+						if sheet.KGiganteQT ~= nil then	
+							if sheet.KGiganteQT > sheet.KGiganteLimite then
+								sheet.KGiganteQT = tonumber(sheet.KGiganteLimite or 0);
+							end;
+						end;
+						
+						if sheet.SenbonQT ~= nil then	
+							if sheet.SenbonQT > sheet.SemboLimite then
+								sheet.SenbonQT = tonumber(sheet.SemboLimite or 0);
+							end;
 						end;
 					end;
-					
-					if sheet.ShurikenQT ~= nil then	
-						if sheet.ShurikenQT > sheet.ShurikenLimite then
-							sheet.ShurikenQT = tonumber(sheet.ShurikenLimite or 0);
-						end;
-					end;
-					
-					if sheet.SFuumaQT ~= nil then	
-						if sheet.SFuumaQT > sheet.SFuumaLimite then
-							sheet.SFuumaQT = tonumber(sheet.SFuumaLimite or 0);
-						end;					
-					end;
-					
-					if sheet.KGiganteQT ~= nil then	
-						if sheet.KGiganteQT > sheet.KGiganteLimite then
-							sheet.KGiganteQT = tonumber(sheet.KGiganteLimite or 0);
-						end;
-					end;
-					
-					if sheet.SenbonQT ~= nil then	
-						if sheet.SenbonQT > sheet.SemboLimite then
-							sheet.SenbonQT = tonumber(sheet.SemboLimite or 0);
-						end;
-					end;
-					
 				</event>
 			</dataLink>		
 			
@@ -2697,34 +2709,35 @@
 
 			<dataLink fields="{'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'}">
 				<event name="onChange"> 
-				
-					if sheet.PBombaQT ~= nil then
-						if sheet.PBombaQT > sheet.PBombaLimite then
-							sheet.PBombaQT = tonumber(sheet.PBombaLimite or 0);
+					if sheet.Sequenci1 == true then
+						if sheet.PBombaQT ~= nil then
+							if sheet.PBombaQT >= sheet.PBombaLimite then
+								sheet.PBombaQT = tonumber(sheet.PBombaLimite or 0);
+							end;
 						end;
-					end;
-					
-					if sheet.GExplosivoQT ~= nil then
-						if sheet.GExplosivoQT > sheet.GExplosivoLimite then
-							sheet.GExplosivoQT = tonumber(sheet.GExplosivoLimite or 0);
+						
+						if sheet.GExplosivoQT ~= nil then
+							if sheet.GExplosivoQT >= sheet.GExplosivoLimite then
+								sheet.GExplosivoQT = tonumber(sheet.GExplosivoLimite or 0);
+							end;
 						end;
-					end;
-					
-					if sheet.VenenoQT ~= nil then
-						if sheet.VenenoQT > sheet.VenenoLimite then
-							sheet.VenenoQT = tonumber(sheet.VenenoLimite or 0);
-						end;					
-					end;
-					
-					if sheet.BandagemQT ~= nil then					
-						if sheet.BandagemQT > sheet.BandagemLimite then
-							sheet.BandagemQT = tonumber(sheet.BandagemLimite or 0);
+						
+						if sheet.VenenoQT ~= nil then
+							if sheet.VenenoQT >= sheet.VenenoLimite then
+								sheet.VenenoQT = tonumber(sheet.VenenoLimite or 0);
+							end;					
 						end;
-					end;
-					
-					if sheet.BombaFumacaQT ~= nil then
-						if sheet.BombaFumacaQT > sheet.BombaFumacaLimite then
-							sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaLimite or 0);
+						
+						if sheet.BandagemQT ~= nil then					
+							if sheet.BandagemQT >= sheet.BandagemLimite then
+								sheet.BandagemQT = tonumber(sheet.BandagemLimite or 0);
+							end;
+						end;
+						
+						if sheet.BombaFumacaQT ~= nil then
+							if sheet.BombaFumacaQT >= sheet.BombaFumacaLimite then
+								sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaLimite or 0);
+							end;
 						end;
 					end;
 				</event>
@@ -2968,7 +2981,7 @@
 						end; 	   
 					</script> 			
 				 
-				<dataLink fields="{'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor', 'Cla'}">
+				<dataLink fields="{'GraduacaoTreino', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor', 'Cla'}">
 					<event name="onChange">						
 						if sheet.Sequenci1 == true then	
 							if sheet.Atletismo == nil then
@@ -3035,7 +3048,7 @@
 								sheet.VigorTotal = 0;
 							end;
 							
-							if sheet.Graduacao =='Genin' then
+							if sheet.GraduacaoTreino =='Genin' then
 								sheet.GAtletismo = 1;
 								sheet.GRaciocinio = 1;
 								sheet.GPercepcao = 1;
@@ -3043,7 +3056,7 @@
 								sheet.GVigor = 1;
 							end;
 							
-							if sheet.Graduacao =='Jounin' then
+							if sheet.GraduacaoTreino =='Jounin' then
 								sheet.GAtletismo = 2;
 								sheet.GRaciocinio = 2;
 								sheet.GPercepcao = 2;
@@ -3051,7 +3064,7 @@
 								sheet.GVigor = 2;
 							end;
 							
-							if sheet.Graduacao =='Anbu Nucleo' then
+							if sheet.GraduacaoTreino =='Anbu Nucleo' then
 								sheet.GAtletismo = 3;
 								sheet.GRaciocinio = 3;
 								sheet.GPercepcao = 3;
@@ -3059,7 +3072,7 @@
 								sheet.GVigor = 3;
 							end;
 							
-							if sheet.Graduacao =='GDE' then
+							if sheet.GraduacaoTreino =='GDE' then
 								sheet.GAtletismo = 4;
 								sheet.GRaciocinio = 4;
 								sheet.GPercepcao = 4;
@@ -3067,7 +3080,7 @@
 								sheet.GVigor = 4;
 							end;
 							
-							if sheet.Graduacao =='Kage' then
+							if sheet.GraduacaoTreino =='Kage' then
 								sheet.GAtletismo = 6;
 								sheet.GRaciocinio = 6;
 								sheet.GPercepcao = 6;
@@ -3216,8 +3229,11 @@
 		 
 		<tab title="Equipamentos">
 			<scrollBox align="client">
-				<image left="1" top="1" width="1000" height="700" src="/imagens/3.png"/>				
-				<richEdit left="22" top="90" width="320" height="340" backgroundColor="#00000000" defaultFontColor="white" field="Historia"/>				
+				<image left="1" top="1" width="1000" height="700" src="/imagens/3.png"/>								
+				<button left="55" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoHollow()"/>
+				<button left="210" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoMantoBiju()"/>
+				<button left="40" top="270" width="130" height="150" opacity="0.0" onclick="KutchyoseFicha()"/>
+				<button left="195" top="270" width="130" height="150" opacity="0.0" onclick="TransformacaoModoSennin()"/>
 				<button left="430" top="120" width="120" height="100" opacity="0.0" text="" onClick="self.POPArma:show();"/>
 				<popup name="POPArma" visible="false" left="1" top="40"
 					width="500" height="550">					 
@@ -3333,7 +3349,7 @@
 						</button>
 					</layout>
 					<comboBox name="cmbTipoBag" left="3" top="40" width="147" items="{'Tipo Bag', 'Bag Genin', 'Bag Chunin', 'Bag Tengu', 'Bag Yebisu', 'Bag Benzaiten'}" 
-					field="TipoBag"/>
+					field="TipoBag" values="{'1', '2', '3', '4', '5', '6'}"/>
 					<!-- recordList, representando a lista -->
 					<recordList name="rclListaDosItens4" field="campoDosItens4" templateForm="frmItemDaLista4"
 						left="5" top="71" height="420" width="640" selectable="true">                   
@@ -3362,7 +3378,7 @@
 					</dataScopeBox>
 					<dataLink field="TipoBag">
 						<event name="onChange">
-							if sheet.TipoBag == "Tipo Bag" then
+							if self.cmbTipoBag.value == "1" then
 								sheet.KunaiLimite = 1;
 								sheet.ShurikenLimite = 1;
 								sheet.SFuumaLimite = 0;
@@ -3375,7 +3391,7 @@
 								sheet.SemboLimite = 0;
 							end;
 							
-							if sheet.TipoBag == "Bag Genin" then
+							if self.cmbTipoBag.value == "2" then
 								sheet.KunaiLimite = 4;
 								sheet.ShurikenLimite = 8;
 								sheet.SFuumaLimite = 0;
@@ -3388,7 +3404,7 @@
 								sheet.SemboLimite = 0;
 							end;
 							
-							if sheet.TipoBag == "Bag Chunin" then
+							if self.cmbTipoBag.value == "3" then
 								sheet.KunaiLimite = 5;
 								sheet.ShurikenLimite = 8;
 								sheet.SFuumaLimite = 1;
@@ -3401,7 +3417,7 @@
 								sheet.SemboLimite = 0;
 							end;
 							
-							if sheet.TipoBag == "Bag Tengu" then
+							if self.cmbTipoBag.value == "4" then
 								sheet.KunaiLimite = 4;
 								sheet.ShurikenLimite = 8;
 								sheet.SFuumaLimite = 1;
@@ -3414,7 +3430,7 @@
 								sheet.SemboLimite = 8;
 							end;
 							
-							if sheet.TipoBag == "Bag Yebisu" then
+							if self.cmbTipoBag.value == "5" then
 								sheet.KunaiLimite = 6;
 								sheet.ShurikenLimite = 8;
 								sheet.SFuumaLimite = 2;
@@ -3427,7 +3443,7 @@
 								sheet.SemboLimite = 10;
 							end;
 							
-							if sheet.TipoBag == "Bag Benzaiten" then
+							if self.cmbTipoBag.value == "6" then
 								sheet.KunaiLimite = 4;
 								sheet.ShurikenLimite = 6;
 								sheet.SFuumaLimite = 1;
@@ -3440,7 +3456,7 @@
 								sheet.SemboLimite = 6;
 							end;
 							
-							if sheet.TipoBag == nil then
+							if self.cmbTipoBag.value == "7" then
 								sheet.KunaiLimite = 0;
 								sheet.ShurikenLimite = 0;
 								sheet.SFuumaLimite = 0;
@@ -3453,7 +3469,7 @@
 								sheet.SemboLimite = 0;
 							end;
 							
-							if sheet.TipoBag == "" then
+							if self.cmbTipoBag.value == "7" then
 								sheet.KunaiLimite = 0;
 								sheet.ShurikenLimite = 0;
 								sheet.SFuumaLimite = 0;
@@ -3496,45 +3512,51 @@
 				<comboBox left="110" top="300" field="Moradia" items="{'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'}"/>
 				<edit left="280" top="298" width="50" height="25" horzTextAlign="Center" fontSize="18" field="MoradiaNpc" />
 				
-				<edit left="10" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus1d10" />
-				<edit left="60" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true"  field="Bonus2d10" />
-				<edit left="120" top="380" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus3d10" />
-				<rectangle left="180" top="379" width="40" height="30" color="black" strokeColor="red" strokeSize="3" />
-				<edit left="180" top="380" width="40" height="25" transparent="true" horzTextAlign="Center" enabled="true" fontSize="18" field="Bonus1d20" />
+				<edit left="10" top="385" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus1d10" />
+				<edit left="60" top="385" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true"  field="Bonus2d10" />
+				<edit left="110" top="385" width="40" height="25" horzTextAlign="Center" fontSize="18" enabled="true" field="Bonus3d10" />
+				<rectangle left="160" top="384" width="40" height="30" color="black" strokeColor="red" strokeSize="3" />
+				<edit left="160" top="385" width="40" height="25" transparent="true" horzTextAlign="Center" enabled="true" fontSize="18" field="Bonus1d20" />
+				
+				<comboBox left="490" top="185" width="130" field="GraduacaoStatusSocial" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
+				
+				<button left="10" top="435" width="130" height="30" opacity="1.0" text="Treinamento Status" onClick="TreinandoStatus()"/>
+				<edit left="303" top="438" width="25" height="25" transparent="false" horzTextAlign="Center" enabled="true" min="0" max="9" type="number" fontSize="18" field="VezesPDia" />
+				<edit left="500" top="438" width="100" height="25" transparent="false" horzTextAlign="Center" enabled="true" fontSize="18" field="GanhoPTreino" />
 				
 				<image left="23" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif"/>
 				<image left="222" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif"/>
 				
-				<dataLink fields="{'Graduacao', 'BonusGanhoAnual'}">
+				<dataLink fields="{'GraduacaoStatusSocial', 'BonusGanhoAnual'}">
 					<event name="onChange">                
 						local BonusGanhoAnualGraduacao = nil
 						
-						if sheet.Graduacao == 'Jounin' then
+						if sheet.GraduacaoStatusSocial == 'Jounin' then
 							sheet.BonusGanhoAnualGraduacao = 2000;
 						end;
 						
-						if sheet.Graduacao == 'Anbu' then
+						if sheet.GraduacaoStatusSocial == 'Anbu' then
 							sheet.BonusGanhoAnualGraduacao = 3000;
 						end;
 						
-						if sheet.Graduacao == 'AnbuNucleo' then
+						if sheet.GraduacaoStatusSocial == 'AnbuNucleo' then
 							sheet.BonusGanhoAnualGraduacao = 4000;
 						end;
 						
-						if sheet.Graduacao == 'Organização' then
+						if sheet.GraduacaoStatusSocial == 'Organização' then
 							sheet.BonusGanhoAnualGraduacao = 6000;
 						end;
 						
-						if sheet.Graduacao == 'GDE' then
+						if sheet.GraduacaoStatusSocial == 'GDE' then
 							sheet.BonusGanhoAnualGraduacao = 8000;
 						end;						
 						
-						if sheet.Graduacao == 'Concelheiro' then
+						if sheet.GraduacaoStatusSocial == 'Concelheiro' then
 							sheet.BonusGanhoAnualGraduacao = 10000;
 						end;
 						
-						if sheet.Graduacao == 'Kage' then
-							sheet.BonusGanhoAnualGraduacao = 150000;
+						if sheet.GraduacaoStatusSocial == 'Kage' then
+							sheet.BonusGanhoAnualGraduacao = 20000;
 						end;
 						
 						if sheet.BonusGanhoAnualGraduacao == nil then
@@ -3592,18 +3614,22 @@
 								<textEditor left="10" top="60" width="430" height="280" field="DescriTreinandoJutsu" text="Este é um textEditor\n\ncom multiplas linhas"/>
 								
 								<label left="140" top="350" width="230" height="40" fontFamily="Nyala" fontSize="18" text="Fortificação de jutsu 3D10 e 1d20"/> 
-								<edit  left="140" top="385" width="50" height="30" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="Treina1d10"/>
-								<edit  left="200" top="385" width="50" height="30" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="Treina2d10"/>
-								<edit  left="260" top="385" width="50" height="30" type="number" min="1" max="9" enabled="false" horzTextAlign="center" field="Treina3d10"/>
+								<edit  left="140" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina1d10"/>
+								<edit  left="200" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina2d10"/>
+								<edit  left="260" top="385" width="50" height="30" type="number" min="1" max="9" enabled="true" horzTextAlign="center" field="Treina3d10"/>
 								<rectangle left="320" top="385" width="50" height="30" color="black" strokeColor="red" strokeSize="3" />						
-								<edit left="320" top="385" width="50" height="30" type="number" min="1" max="18" enabled="false" transparent="true" horzTextAlign="center" field="Treina1d20"/>
+								<edit left="320" top="385" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="true" horzTextAlign="center" field="Treina1d20"/>
 								
-								--GM DESATIVA-- 
+								<label left="60" top="420" width="100" height="30" fontFamily="Nyala" fontSize="18" text="Rank do Jutsu"/>
+								<comboBox name="cmbRakporTreino" left="160" top="420" width="50" height="30" fontFamily="Nyala" fontSize="18" field="RankPorTreino" items="{'E', 'D', 'C', 'B', 'A', 'S', 'SS', 'X','X+'}"/>
+								
+								-- GM DESATIVA TREINO -- 
 								<edit  left="140" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina1d10Soma"/>
 								<edit  left="200" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina2d10Soma"/>
 								<edit  left="260" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina3d10Soma"/>
 								<rectangle left="320" top="420" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-								<edit left="320" top="420" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="true" visible="false" horzTextAlign="center" field="Treina1d20Soma"/>
+								<edit left="320" top="420" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="false" visible="true" horzTextAlign="center" field="Treina1d20Soma"/>
+								-- GM DESATIVA TREINO -- 
 								
 								<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina1d10Erro"/>
 								<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina2d10Erro"/>
@@ -3613,116 +3639,165 @@
 								
 								<button name="btnTreinar" left="60" top="385" width="70" height="30" fontFamily="Nyala" fontSize="18" text="Treinar" onClick="TreinaJutsu()"/>
 								<script>
-									<![CDATA[
+									<![CDATA[									
 										local function TreinaJutsu() 
-																			
-										self.btnTreinar.visible = false;
-										local node = self.MeuDataScoupeBo.node;									
-										local mesaDoPersonagem = rrpg.getMesaDe(sheet);	
-										
-										node.Treina1d10Erro = node.Treina1d10Erro or 0;
-										node.Treina2d10Erro = node.Treina2d10Erro or 0;
-										node.Treina3d10Erro = node.Treina3d10Erro or 0;
-										node.Treina1d20Erro = node.Treina1d20Erro or 0;
-										
-										node.Treina1d10Soma = node.Treina1d10Soma or 0;
-										node.Treina2d10Soma = node.Treina2d10Soma or 0;
-										node.Treina3d10Soma = node.Treina3d10Soma or 0;
-										node.Treina1d20Soma = node.Treina1d20Soma or 0;	
-										
-										if node.Treina1d10 < 0 then
-											node.Treina1d10 = 1;
-										end;
-										
-										if node.Treina2d10 < 0 then
-											node.Treina2d10 = 1;
-										end;
-										
-										if node.Treina3d10 < 0 then
-											node.Treina3d10 = 1;
-										end;
-										
-										if node.Treina1d20 < 0 then
-											node.Treina1d20 = 5;
-										end;
-										
-										node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
-										node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
-										node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
-										node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
-																												
-										if node.Treina1d10 > 9 then
-											node.Treina1d10 = 9;
-										end;
-										
-										if node.Treina2d10 > 9 then
-											node.Treina2d10 = 9;
-										end;
-										
-										if node.Treina3d10 > 9 then
-											node.Treina3d10 = 9;
-										end;
-										
-										if node.Treina1d20 > 18 then
-											node.Treina1d20 = 18;
-										end;	
-										
-										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
-										function (rolado)
-										if node.DescriTreinandoJutsu == nil then
-											showMessage("Falta Descrição do Jutsu ou não irá funcionar");
-											self.btnTreinar.visible = true;
-										else 
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
-												if node.Treina1d10 >= rolado.resultado then
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-													mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
-													function (rolado)	
-														if node.Treina2d10 >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
-															function (rolado)
-																if node.Treina3d10 >= rolado.resultado then
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-																	mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
-																	function (rolado)
-																		if node.Treina1d20 >= rolado.resultado then
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
-																			mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
-																			self.btnTreinar.visible = true;	
-																		else 
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
-																			node.Treina1d20Erro =  node.Treina1d20Erro + 1;
-																			node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
-																			self.btnTreinar.visible = true;	
-																		end;
-																	end);	
-																else
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
-																	node.Treina3d10Erro =  node.Treina3d10Erro + 1;
-																	node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
-																	self.btnTreinar.visible = true;																
-																end;
-															end);
-														else
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
-															node.Treina2d10Erro =  node.Treina2d10Erro + 1;														
-															node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
-															self.btnTreinar.visible = true;														
-														end;												
-													end)
-												else
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
-													node.Treina1d10Erro =  node.Treina1d10Erro + 1;
-													node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
-													self.btnTreinar.visible = true;
+											local node = self.dsbListadeTreino.node;
+											if node.RankPorTreino == nil then
+												showMessage("ESCOLHE UM RANK PORA PORRA DA FICHA CALCULAR TEU XP O FILHO DA PUTA");
+											else
+												self.btnTreinar.visible = false;
+												self.cmbRakporTreino.enabled = false;
+												self.Exp.enabled = false
+																					
+												local mesaDoPersonagem = rrpg.getMesaDe(sheet);	
+												
+												node.Treina1d10Erro = node.Treina1d10Erro or 0;
+												node.Treina2d10Erro = node.Treina2d10Erro or 0;
+												node.Treina3d10Erro = node.Treina3d10Erro or 0;
+												node.Treina1d20Erro = node.Treina1d20Erro or 0;
+												
+												node.Treina1d10Soma = node.Treina1d10Soma or 0;
+												node.Treina2d10Soma = node.Treina2d10Soma or 0;
+												node.Treina3d10Soma = node.Treina3d10Soma or 0;
+												node.Treina1d20Soma = node.Treina1d20Soma or 0;	
+												
+												if node.Treina1d10 < 0 then
+													node.Treina1d10 = 1;
 												end;
+												
+												if node.Treina2d10 < 0 then
+													node.Treina2d10 = 1;
+												end;
+												
+												if node.Treina3d10 < 0 then
+													node.Treina3d10 = 1;
+												end;
+												
+												if node.Treina1d20 < 0 then
+													node.Treina1d20 = 5;
+												end;
+												
+												node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
+												node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
+												node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
+												node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
+																														
+												if node.Treina1d10 > 9 then
+													node.Treina1d10 = 9;
+												end;
+												
+												if node.Treina2d10 > 9 then
+													node.Treina2d10 = 9;
+												end;
+												
+												if node.Treina3d10 > 9 then
+													node.Treina3d10 = 9;
+												end;
+												
+												if node.Treina1d20 > 18 then
+													node.Treina1d20 = 18;
+												end;	
+												
+												mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
+												function (rolado)
+												if node.DescriTreinandoJutsu == nil then
+													showMessage("Falta Descrição do Jutsu ou não irá funcionar");
+													self.btnTreinar.visible = true;
+													self.cmbRakporTreino.enabled = true;
+													self.Exp.enabled = true;
+												else 
+													mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
+														if node.Treina1d10 >= rolado.resultado then
+															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+															function (rolado)	
+																if node.Treina2d10 >= rolado.resultado then
+																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																	mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+																	function (rolado)
+																		if node.Treina3d10 >= rolado.resultado then
+																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																			mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																			function (rolado)
+																				if node.Treina1d20 >= rolado.resultado then
+																					mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu [§K4][LEMBRE-SE DE COPIALO PARA SEUS JUTSUS]");										
+																					mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																					ProcuraXP();
+																					self.btnTreinar.visible = true;	
+																					self.cmbRakporTreino.enabled = true;
+																					self.Exp.enabled = true;
+																				else 
+																					mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																					node.Treina1d20Erro =  node.Treina1d20Erro + 1;
+																					node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
+																					self.btnTreinar.visible = true;
+																					self.cmbRakporTreino.enabled = true;
+																					self.Exp.enabled = true;																					
+																				end;
+																			end);	
+																		else
+																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																			node.Treina3d10Erro =  node.Treina3d10Erro + 1;
+																			node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
+																			self.btnTreinar.visible = true;	
+																			self.cmbRakporTreino.enabled = true;
+																			self.Exp.enabled = true;
+																		end;
+																	end);
+																else
+																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+																	node.Treina2d10Erro =  node.Treina2d10Erro + 1;														
+																	node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
+																	self.btnTreinar.visible = true;		
+																	self.cmbRakporTreino.enabled = true;
+																	self.Exp.enabled = true;
+																end;												
+															end)
+														else
+															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+															node.Treina1d10Erro =  node.Treina1d10Erro + 1;
+															node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
+															self.btnTreinar.visible = true;
+															self.cmbRakporTreino.enabled = true;
+															self.Exp.enabled = true;
+														end;
+													end;
+												end);
 											end;
-										end);										
-									end;	
+										end;	
 									]]>
-								</script>							
+								</script>	
+
+								<script>
+									<![CDATA[
+										function ProcuraXP() 
+											local node = self.dsbListadeTreino.node;
+											
+											if node.RankPorTreino == "E" then
+												sheet.ExpPTreino = 500;
+											elseif	node.RankPorTreino == "D" then
+												sheet.ExpPTreino = 1000;
+											elseif	node.RankPorTreino == "C" then
+												sheet.ExpPTreino = 2000;
+											elseif	node.RankPorTreino == "B" then
+												sheet.ExpPTreino = 3000;
+											elseif	node.RankPorTreino == "A" then
+												sheet.ExpPTreino = 5000;
+											elseif	node.RankPorTreino == "S" then
+												sheet.ExpPTreino = 8000;
+											elseif	node.RankPorTreino == "SS" then
+												sheet.ExpPTreino = 11000;
+											elseif	node.RankPorTreino == "X" then
+												sheet.ExpPTreino = 14000;
+											elseif	node.RankPorTreino == "X+" then
+												sheet.ExpPTreino = 20000;
+											end;
+										end;												
+									]]>
+								</script>	
 							</rectangle>
+							
+							
 						</dataScopeBox>
 					</scrollBox>
 				</popup> 
@@ -3790,4 +3865,253 @@
 	<event name="onHide">
 		self.ControlaTrans.check = false;
 	</event> 
+	
+	<script>
+		local function TreinandoStatus()
+					local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+					if sheet.TreinoON == false then
+						showMessage("MESTRE FORA DA MESA O TREINO NÃO ESTA HABILITADO");
+						mesaDoPersonagem.chat:enviarMensagem("[§K3]MESTRE FORA DA MESA O TREINO NÃO ESTA HABILITADO");
+					else
+						sheet.gambiarrento = 0;  
+						sheet.EsperaTreinoResultado = 0;
+						sheet.modificador = 0;
+						-- obter a mesa do personagem						
+						if sheet.GraduacaoTreino == "" then
+							showMessage("Tu não tem Graduação pra treino não filho da puta ? Ajeita essa merda eu passo horas programando pra tu rolar essa merda e nem colocar a graduação seu imundo ?");
+						else
+							if sheet.VezesPDia == 0 then
+								showMessage("VAI TREINAR 0 VEZES POR DIA ? SEU ARROMBADO ENTÃO TU NÃO VAI GANHAR PONTO SEU LIXO ESPACIAL");
+							else
+								if sheet.GraduacaoTreino == "Academico" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.gambiarrento, "[§K3]Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 5);
+											sheet.EsperaTreinoResultado = rolado.resultado * 5;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino /2);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Genin" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 20);
+											sheet.EsperaTreinoResultado = rolado.resultado * 20;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 2);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Chunin" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Jounin" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Anbu" then
+									mesaDoPersonagem.chat:rolarDados("1d50 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "AnbuNucleo" then
+									mesaDoPersonagem.chat:rolarDados("1d100 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Organização" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 1000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 1000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "GDE" then
+									mesaDoPersonagem.chat:rolarDados("1d6 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Concelheiro" then
+									mesaDoPersonagem.chat:rolarDados("1d12 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);      
+								end;
+								
+								if sheet.GraduacaoTreino == "Kage" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end); 				
+								end;
+							end; 
+						end;
+					end;
+                end;				
+	</script>
+	
+	<script>
+		
+		function ZeradorTreino() 
+						sheet.VezesPDia = 0;
+					end;
+	
+	</script>
+	
+	<script>
+		
+		function LevelUPHP() 
+						
+					if sheet.GraduacaoTreino == 'Academico' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Genin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Chunin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
+					end;
+					
+					if sheet.GraduacaoTreino == 'Jounin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Anbu' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+					end;
+				   
+					if sheet.GraduacaoTreino == 'AnbuNucleo' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Organização' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'GDE' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'Concelheiro' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'Kage' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+					end;
+					
+		end;
+	
+	</script>
+	
+	<script>
+		
+		function TransformacaoHollow() 
+						
+			showMessage("Em Breve... Transformação Hollow");
+					
+		end;
+	
+	</script>
+	
+	<script>
+		
+		function TransformacaoMantoBiju() 
+						
+			showMessage("Em Breve...Manto Biju");
+					
+		end;
+	
+	</script>
+	
+	<script>
+		
+		function KutchyoseFicha() 
+						
+			showMessage("Em Breve... Kutchyose");
+					
+		end;
+	
+	</script>
+	
+	<script>
+		
+		function TransformacaoModoSennin() 
+						
+			showMessage("Em Breve... Modo Sennin");
+					
+		end;
+	
+	</script>
+	
+	<dataLink field="GraduacaoTreino">
+		<event name="onChange">	
+			if sheet.Sequenci1 == true then
+				sheet.Inteligencia = sheet.Inteligencia + 1;
+				sheet.Inteligencia = sheet.Inteligencia - 1;	
+			end;
+		</event>
+	</dataLink>
+	
+
 </form>

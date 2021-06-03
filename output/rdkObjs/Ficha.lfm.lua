@@ -184,160 +184,258 @@ local function constructNew_frmsekai()
     obj.textEditor1:setLeft(10);
     obj.textEditor1:setTop(60);
     obj.textEditor1:setWidth(430);
-    obj.textEditor1:setHeight(280);
+    obj.textEditor1:setHeight(240);
     obj.textEditor1:setField("DescriJutsu");
-    obj.textEditor1:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor1:setName("textEditor1");
 
     obj.label2 = GUI.fromHandle(_obj_newObject("label"));
     obj.label2:setParent(obj.rectangle1);
+    obj.label2:setLeft(10);
+    obj.label2:setTop(305);
     obj.label2:setWidth(120);
     obj.label2:setHeight(40);
-    obj.label2:setLeft(10);
-    obj.label2:setTop(350);
     obj.label2:setFontFamily("Nyala");
-    obj.label2:setFontSize(20);
-    obj.label2:setText("Dano");
+    obj.label2:setFontSize(16);
+    obj.label2:setText("Dano:");
     obj.label2:setName("label2");
 
     obj.edit2 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit2:setParent(obj.rectangle1);
+    obj.edit2:setLeft(50);
+    obj.edit2:setTop(310);
     obj.edit2:setWidth(80);
     obj.edit2:setHeight(30);
-    obj.edit2:setLeft(55);
-    obj.edit2:setTop(355);
     obj.edit2:setType("number");
     obj.edit2:setField("DanoJutsu");
     obj.edit2:setName("edit2");
 
     obj.label3 = GUI.fromHandle(_obj_newObject("label"));
     obj.label3:setParent(obj.rectangle1);
+    obj.label3:setLeft(135);
+    obj.label3:setTop(305);
     obj.label3:setWidth(60);
     obj.label3:setHeight(40);
-    obj.label3:setLeft(340);
-    obj.label3:setTop(350);
     obj.label3:setFontFamily("Nyala");
-    obj.label3:setFontSize(20);
+    obj.label3:setFontSize(16);
     obj.label3:setFontColor("cyan");
-    obj.label3:setText("Chakra");
+    obj.label3:setText("Chakra:");
     obj.label3:setName("label3");
 
     obj.edit3 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit3:setParent(obj.rectangle1);
+    obj.edit3:setLeft(185);
+    obj.edit3:setTop(310);
     obj.edit3:setWidth(40);
     obj.edit3:setHeight(30);
-    obj.edit3:setLeft(400);
-    obj.edit3:setTop(355);
     obj.edit3:setType("number");
     obj.edit3:setHorzTextAlign("center");
     obj.edit3:setFontColor("cyan");
     obj.edit3:setField("CustoJutsu");
     obj.edit3:setName("edit3");
 
+    obj.label4 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label4:setParent(obj.rectangle1);
+    obj.label4:setLeft(230);
+    obj.label4:setTop(305);
+    obj.label4:setWidth(100);
+    obj.label4:setHeight(40);
+    obj.label4:setFontFamily("Nyala");
+    obj.label4:setFontSize(16);
+    obj.label4:setVisible(false);
+    obj.label4:setFontColor("cyan");
+    obj.label4:setText("Custo Real: ");
+    obj.label4:setName("label4");
+
     obj.edit4 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit4:setParent(obj.rectangle1);
+    obj.edit4:setLeft(300);
+    obj.edit4:setTop(310);
     obj.edit4:setWidth(40);
     obj.edit4:setHeight(30);
-    obj.edit4:setLeft(390);
-    obj.edit4:setTop(380);
+    obj.edit4:setType("number");
+    obj.edit4:setEnabled(false);
     obj.edit4:setVisible(false);
     obj.edit4:setHorzTextAlign("center");
     obj.edit4:setFontColor("cyan");
-    obj.edit4:setType("number");
-    obj.edit4:setField("ChakraPlayer");
+    obj.edit4:setField("CustoJutsu");
     obj.edit4:setName("edit4");
-
-    obj.label4 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label4:setParent(obj.rectangle1);
-    obj.label4:setWidth(60);
-    obj.label4:setHeight(40);
-    obj.label4:setLeft(150);
-    obj.label4:setTop(350);
-    obj.label4:setFontFamily("Nyala");
-    obj.label4:setFontSize(20);
-    obj.label4:setText("Tipo");
-    obj.label4:setName("label4");
-
-    obj.comboBox2 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox2:setParent(obj.rectangle1);
-    obj.comboBox2:setLeft(190);
-    obj.comboBox2:setTop(363);
-    obj.comboBox2:setWidth(140);
-    obj.comboBox2:setHeight(18);
-    obj.comboBox2:setField("Tipo");
-    obj.comboBox2:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox2:setName("comboBox2");
 
     obj.label5 = GUI.fromHandle(_obj_newObject("label"));
     obj.label5:setParent(obj.rectangle1);
-    obj.label5:setWidth(150);
+    obj.label5:setLeft(345);
+    obj.label5:setTop(305);
+    obj.label5:setWidth(100);
     obj.label5:setHeight(40);
-    obj.label5:setLeft(10);
-    obj.label5:setTop(390);
     obj.label5:setFontFamily("Nyala");
     obj.label5:setFontSize(16);
-    obj.label5:setText("Dano Verdadeiro");
+    obj.label5:setVisible(false);
+    obj.label5:setFontColor("green");
+    obj.label5:setText("Energia: ");
     obj.label5:setName("label5");
 
     obj.edit5 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit5:setParent(obj.rectangle1);
-    obj.edit5:setWidth(80);
-    obj.edit5:setHeight(20);
-    obj.edit5:setLeft(110);
-    obj.edit5:setTop(400);
-    obj.edit5:setEnabled(false);
-    obj.edit5:setHorzTextAlign("center");
+    obj.edit5:setLeft(400);
+    obj.edit5:setTop(310);
+    obj.edit5:setWidth(40);
+    obj.edit5:setHeight(30);
     obj.edit5:setType("number");
-    obj.edit5:setField("DNVerdadeiro");
+    obj.edit5:setHorzTextAlign("center");
+    obj.edit5:setVisible(false);
+    obj.edit5:setFontColor("green");
+    obj.edit5:setField("CustoEnergia");
     obj.edit5:setName("edit5");
 
     obj.label6 = GUI.fromHandle(_obj_newObject("label"));
     obj.label6:setParent(obj.rectangle1);
-    obj.label6:setWidth(170);
+    obj.label6:setLeft(10);
+    obj.label6:setTop(345);
+    obj.label6:setWidth(60);
     obj.label6:setHeight(40);
-    obj.label6:setLeft(280);
-    obj.label6:setTop(390);
     obj.label6:setFontFamily("Nyala");
-    obj.label6:setFontColor("Crimson ");
     obj.label6:setFontSize(16);
-    obj.label6:setText("Intensidade");
+    obj.label6:setText("Tipo 1:");
     obj.label6:setName("label6");
+
+    obj.comboBox2 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox2:setParent(obj.rectangle1);
+    obj.comboBox2:setLeft(50);
+    obj.comboBox2:setTop(358);
+    obj.comboBox2:setWidth(100);
+    obj.comboBox2:setHeight(18);
+    obj.comboBox2:setField("Tipo");
+    obj.comboBox2:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Nulo'});
+    obj.comboBox2:setName("comboBox2");
+
+    obj.label7 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label7:setParent(obj.rectangle1);
+    obj.label7:setLeft(160);
+    obj.label7:setTop(345);
+    obj.label7:setWidth(60);
+    obj.label7:setHeight(40);
+    obj.label7:setFontFamily("Nyala");
+    obj.label7:setVisible(false);
+    obj.label7:setFontSize(16);
+    obj.label7:setText("Tipo 2:");
+    obj.label7:setName("label7");
+
+    obj.comboBox3 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox3:setParent(obj.rectangle1);
+    obj.comboBox3:setLeft(205);
+    obj.comboBox3:setTop(358);
+    obj.comboBox3:setWidth(100);
+    obj.comboBox3:setHeight(18);
+    obj.comboBox3:setField("Tipo");
+    obj.comboBox3:setVisible(false);
+    obj.comboBox3:setItems({'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox3:setName("comboBox3");
+
+    obj.label8 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label8:setParent(obj.rectangle1);
+    obj.label8:setLeft(310);
+    obj.label8:setTop(345);
+    obj.label8:setWidth(60);
+    obj.label8:setHeight(40);
+    obj.label8:setFontFamily("Nyala");
+    obj.label8:setVisible(false);
+    obj.label8:setFontSize(16);
+    obj.label8:setText("Tipo 3:");
+    obj.label8:setName("label8");
+
+    obj.comboBox4 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox4:setParent(obj.rectangle1);
+    obj.comboBox4:setLeft(355);
+    obj.comboBox4:setTop(358);
+    obj.comboBox4:setWidth(100);
+    obj.comboBox4:setHeight(18);
+    obj.comboBox4:setField("Tipo");
+    obj.comboBox4:setVisible(false);
+    obj.comboBox4:setItems({'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox4:setName("comboBox4");
+
+    obj.label9 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label9:setParent(obj.rectangle1);
+    obj.label9:setWidth(150);
+    obj.label9:setHeight(40);
+    obj.label9:setLeft(10);
+    obj.label9:setTop(390);
+    obj.label9:setFontFamily("Nyala");
+    obj.label9:setFontSize(16);
+    obj.label9:setText("Dano Verdadeiro");
+    obj.label9:setName("label9");
 
     obj.edit6 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit6:setParent(obj.rectangle1);
     obj.edit6:setWidth(80);
     obj.edit6:setHeight(20);
-    obj.edit6:setLeft(350);
+    obj.edit6:setLeft(110);
     obj.edit6:setTop(400);
     obj.edit6:setEnabled(false);
     obj.edit6:setHorzTextAlign("center");
     obj.edit6:setType("number");
-    obj.edit6:setFontColor("Crimson");
-    obj.edit6:setField("Intensidade");
+    obj.edit6:setField("DNVerdadeiro");
     obj.edit6:setName("edit6");
 
-    obj.label7 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label7:setParent(obj.rectangle1);
-    obj.label7:setWidth(70);
-    obj.label7:setHeight(40);
-    obj.label7:setLeft(195);
-    obj.label7:setTop(390);
-    obj.label7:setFontFamily("Nyala");
-    obj.label7:setFontSize(16);
-    obj.label7:setText("Level");
-    obj.label7:setName("label7");
+    obj.label10 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label10:setParent(obj.rectangle1);
+    obj.label10:setWidth(170);
+    obj.label10:setHeight(40);
+    obj.label10:setLeft(280);
+    obj.label10:setTop(390);
+    obj.label10:setFontFamily("Nyala");
+    obj.label10:setFontColor("Crimson ");
+    obj.label10:setFontSize(16);
+    obj.label10:setText("Intensidade");
+    obj.label10:setName("label10");
 
     obj.edit7 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit7:setParent(obj.rectangle1);
-    obj.edit7:setWidth(30);
+    obj.edit7:setWidth(80);
     obj.edit7:setHeight(20);
-    obj.edit7:setLeft(230);
+    obj.edit7:setLeft(350);
     obj.edit7:setTop(400);
-    obj.edit7:setEnabled(true);
+    obj.edit7:setEnabled(false);
     obj.edit7:setHorzTextAlign("center");
     obj.edit7:setType("number");
-    obj.edit7:setField("LevelJutsu1");
+    obj.edit7:setFontColor("Crimson");
+    obj.edit7:setField("Intensidade");
     obj.edit7:setName("edit7");
+
+    obj.label11 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label11:setParent(obj.rectangle1);
+    obj.label11:setWidth(70);
+    obj.label11:setHeight(40);
+    obj.label11:setLeft(195);
+    obj.label11:setTop(390);
+    obj.label11:setFontFamily("Nyala");
+    obj.label11:setFontSize(16);
+    obj.label11:setText("Level");
+    obj.label11:setName("label11");
+
+    obj.edit8 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit8:setParent(obj.rectangle1);
+    obj.edit8:setWidth(40);
+    obj.edit8:setHeight(30);
+    obj.edit8:setLeft(390);
+    obj.edit8:setTop(380);
+    obj.edit8:setVisible(false);
+    obj.edit8:setHorzTextAlign("center");
+    obj.edit8:setFontColor("cyan");
+    obj.edit8:setType("number");
+    obj.edit8:setField("ChakraPlayer");
+    obj.edit8:setName("edit8");
+
+    obj.edit9 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit9:setParent(obj.rectangle1);
+    obj.edit9:setWidth(30);
+    obj.edit9:setHeight(20);
+    obj.edit9:setLeft(230);
+    obj.edit9:setTop(400);
+    obj.edit9:setEnabled(true);
+    obj.edit9:setHorzTextAlign("center");
+    obj.edit9:setType("number");
+    obj.edit9:setField("LevelJutsu1");
+    obj.edit9:setName("edit9");
 
     obj.image3 = GUI.fromHandle(_obj_newObject("image"));
     obj.image3:setParent(obj.rectangle1);
@@ -360,50 +458,20 @@ local function constructNew_frmsekai()
     obj.button5:setFontColor("White");
     obj.button5:setName("button5");
 
-    obj.label8 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label8:setParent(obj.rectangle1);
-    obj.label8:setLeft(180);
-    obj.label8:setTop(450);
-    obj.label8:setWidth(230);
-    obj.label8:setHeight(40);
-    obj.label8:setFontFamily("Nyala");
-    obj.label8:setFontSize(18);
-    obj.label8:setText("Fortificação de jutsu 3D10 e 1d20");
-    obj.label8:setName("label8");
-
-    obj.edit8 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit8:setParent(obj.rectangle1);
-    obj.edit8:setLeft(180);
-    obj.edit8:setTop(500);
-    obj.edit8:setWidth(50);
-    obj.edit8:setHeight(30);
-    obj.edit8:setType("number");
-    obj.edit8:setMin(1);
-    obj.edit8:setMax(9);
-    obj.edit8:setEnabled(false);
-    obj.edit8:setVisible(true);
-    obj.edit8:setHorzTextAlign("center");
-    obj.edit8:setField("Upa1d10");
-    obj.edit8:setName("edit8");
-
-    obj.edit9 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit9:setParent(obj.rectangle1);
-    obj.edit9:setLeft(240);
-    obj.edit9:setTop(500);
-    obj.edit9:setWidth(50);
-    obj.edit9:setHeight(30);
-    obj.edit9:setType("number");
-    obj.edit9:setMin(1);
-    obj.edit9:setMax(9);
-    obj.edit9:setEnabled(false);
-    obj.edit9:setVisible(true);
-    obj.edit9:setHorzTextAlign("center");
-    obj.edit9:setField("Upa2d10");
-    obj.edit9:setName("edit9");
+    obj.label12 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label12:setParent(obj.rectangle1);
+    obj.label12:setLeft(180);
+    obj.label12:setTop(450);
+    obj.label12:setWidth(230);
+    obj.label12:setHeight(40);
+    obj.label12:setFontFamily("Nyala");
+    obj.label12:setFontSize(18);
+    obj.label12:setText("Fortificação de jutsu 3D10 e 1d20");
+    obj.label12:setName("label12");
 
     obj.edit10 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit10:setParent(obj.rectangle1);
-    obj.edit10:setLeft(300);
+    obj.edit10:setLeft(180);
     obj.edit10:setTop(500);
     obj.edit10:setWidth(50);
     obj.edit10:setHeight(30);
@@ -413,8 +481,38 @@ local function constructNew_frmsekai()
     obj.edit10:setEnabled(false);
     obj.edit10:setVisible(true);
     obj.edit10:setHorzTextAlign("center");
-    obj.edit10:setField("Upa3d10");
+    obj.edit10:setField("Upa1d10");
     obj.edit10:setName("edit10");
+
+    obj.edit11 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit11:setParent(obj.rectangle1);
+    obj.edit11:setLeft(240);
+    obj.edit11:setTop(500);
+    obj.edit11:setWidth(50);
+    obj.edit11:setHeight(30);
+    obj.edit11:setType("number");
+    obj.edit11:setMin(1);
+    obj.edit11:setMax(9);
+    obj.edit11:setEnabled(false);
+    obj.edit11:setVisible(true);
+    obj.edit11:setHorzTextAlign("center");
+    obj.edit11:setField("Upa2d10");
+    obj.edit11:setName("edit11");
+
+    obj.edit12 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit12:setParent(obj.rectangle1);
+    obj.edit12:setLeft(300);
+    obj.edit12:setTop(500);
+    obj.edit12:setWidth(50);
+    obj.edit12:setHeight(30);
+    obj.edit12:setType("number");
+    obj.edit12:setMin(1);
+    obj.edit12:setMax(9);
+    obj.edit12:setEnabled(false);
+    obj.edit12:setVisible(true);
+    obj.edit12:setHorzTextAlign("center");
+    obj.edit12:setField("Upa3d10");
+    obj.edit12:setName("edit12");
 
     obj.rectangle2 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle2:setParent(obj.rectangle1);
@@ -427,55 +525,25 @@ local function constructNew_frmsekai()
     obj.rectangle2:setStrokeSize(3);
     obj.rectangle2:setName("rectangle2");
 
-    obj.edit11 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit11:setParent(obj.rectangle1);
-    obj.edit11:setLeft(360);
-    obj.edit11:setTop(500);
-    obj.edit11:setWidth(50);
-    obj.edit11:setHeight(30);
-    obj.edit11:setType("number");
-    obj.edit11:setMin(1);
-    obj.edit11:setMax(18);
-    obj.edit11:setEnabled(false);
-    obj.edit11:setVisible(true);
-    obj.edit11:setTransparent(true);
-    obj.edit11:setHorzTextAlign("center");
-    obj.edit11:setField("Upa1d20");
-    obj.edit11:setName("edit11");
-
-    obj.edit12 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit12:setParent(obj.rectangle1);
-    obj.edit12:setLeft(180);
-    obj.edit12:setTop(450);
-    obj.edit12:setWidth(50);
-    obj.edit12:setHeight(30);
-    obj.edit12:setType("number");
-    obj.edit12:setMin(1);
-    obj.edit12:setMax(9);
-    obj.edit12:setEnabled(true);
-    obj.edit12:setVisible(false);
-    obj.edit12:setHorzTextAlign("center");
-    obj.edit12:setField("Upa1d10Soma");
-    obj.edit12:setName("edit12");
-
     obj.edit13 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit13:setParent(obj.rectangle1);
-    obj.edit13:setLeft(240);
-    obj.edit13:setTop(450);
+    obj.edit13:setLeft(360);
+    obj.edit13:setTop(500);
     obj.edit13:setWidth(50);
     obj.edit13:setHeight(30);
     obj.edit13:setType("number");
     obj.edit13:setMin(1);
-    obj.edit13:setMax(9);
-    obj.edit13:setEnabled(true);
-    obj.edit13:setVisible(false);
+    obj.edit13:setMax(18);
+    obj.edit13:setEnabled(false);
+    obj.edit13:setVisible(true);
+    obj.edit13:setTransparent(true);
     obj.edit13:setHorzTextAlign("center");
-    obj.edit13:setField("Upa2d10Soma");
+    obj.edit13:setField("Upa1d20");
     obj.edit13:setName("edit13");
 
     obj.edit14 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit14:setParent(obj.rectangle1);
-    obj.edit14:setLeft(300);
+    obj.edit14:setLeft(180);
     obj.edit14:setTop(450);
     obj.edit14:setWidth(50);
     obj.edit14:setHeight(30);
@@ -483,10 +551,40 @@ local function constructNew_frmsekai()
     obj.edit14:setMin(1);
     obj.edit14:setMax(9);
     obj.edit14:setEnabled(true);
-    obj.edit14:setVisible(false);
+    obj.edit14:setVisible(true);
     obj.edit14:setHorzTextAlign("center");
-    obj.edit14:setField("Upa3d10Soma");
+    obj.edit14:setField("Upa1d10Soma");
     obj.edit14:setName("edit14");
+
+    obj.edit15 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit15:setParent(obj.rectangle1);
+    obj.edit15:setLeft(240);
+    obj.edit15:setTop(450);
+    obj.edit15:setWidth(50);
+    obj.edit15:setHeight(30);
+    obj.edit15:setType("number");
+    obj.edit15:setMin(1);
+    obj.edit15:setMax(9);
+    obj.edit15:setEnabled(true);
+    obj.edit15:setVisible(true);
+    obj.edit15:setHorzTextAlign("center");
+    obj.edit15:setField("Upa2d10Soma");
+    obj.edit15:setName("edit15");
+
+    obj.edit16 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit16:setParent(obj.rectangle1);
+    obj.edit16:setLeft(300);
+    obj.edit16:setTop(450);
+    obj.edit16:setWidth(50);
+    obj.edit16:setHeight(30);
+    obj.edit16:setType("number");
+    obj.edit16:setMin(1);
+    obj.edit16:setMax(9);
+    obj.edit16:setEnabled(true);
+    obj.edit16:setVisible(true);
+    obj.edit16:setHorzTextAlign("center");
+    obj.edit16:setField("Upa3d10Soma");
+    obj.edit16:setName("edit16");
 
     obj.rectangle3 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle3:setParent(obj.rectangle1);
@@ -496,59 +594,29 @@ local function constructNew_frmsekai()
     obj.rectangle3:setHeight(30);
     obj.rectangle3:setColor("black");
     obj.rectangle3:setStrokeColor("red");
-    obj.rectangle3:setVisible(false);
+    obj.rectangle3:setVisible(true);
     obj.rectangle3:setStrokeSize(3);
     obj.rectangle3:setName("rectangle3");
 
-    obj.edit15 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit15:setParent(obj.rectangle1);
-    obj.edit15:setLeft(360);
-    obj.edit15:setTop(450);
-    obj.edit15:setWidth(50);
-    obj.edit15:setHeight(30);
-    obj.edit15:setType("number");
-    obj.edit15:setMin(1);
-    obj.edit15:setMax(18);
-    obj.edit15:setEnabled(true);
-    obj.edit15:setVisible(false);
-    obj.edit15:setTransparent(true);
-    obj.edit15:setHorzTextAlign("center");
-    obj.edit15:setField("Upa1d20Soma");
-    obj.edit15:setName("edit15");
-
-    obj.edit16 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit16:setParent(obj.rectangle1);
-    obj.edit16:setLeft(140);
-    obj.edit16:setTop(460);
-    obj.edit16:setWidth(50);
-    obj.edit16:setHeight(30);
-    obj.edit16:setType("number");
-    obj.edit16:setMin(1);
-    obj.edit16:setMax(9);
-    obj.edit16:setEnabled(true);
-    obj.edit16:setVisible(false);
-    obj.edit16:setHorzTextAlign("center");
-    obj.edit16:setField("Upa1d10Erro");
-    obj.edit16:setName("edit16");
-
     obj.edit17 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit17:setParent(obj.rectangle1);
-    obj.edit17:setLeft(200);
-    obj.edit17:setTop(460);
+    obj.edit17:setLeft(360);
+    obj.edit17:setTop(450);
     obj.edit17:setWidth(50);
     obj.edit17:setHeight(30);
     obj.edit17:setType("number");
     obj.edit17:setMin(1);
-    obj.edit17:setMax(9);
+    obj.edit17:setMax(18);
     obj.edit17:setEnabled(true);
-    obj.edit17:setVisible(false);
+    obj.edit17:setVisible(true);
+    obj.edit17:setTransparent(true);
     obj.edit17:setHorzTextAlign("center");
-    obj.edit17:setField("Upa2d10Erro");
+    obj.edit17:setField("Upa1d20Soma");
     obj.edit17:setName("edit17");
 
     obj.edit18 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit18:setParent(obj.rectangle1);
-    obj.edit18:setLeft(260);
+    obj.edit18:setLeft(140);
     obj.edit18:setTop(460);
     obj.edit18:setWidth(50);
     obj.edit18:setHeight(30);
@@ -558,8 +626,38 @@ local function constructNew_frmsekai()
     obj.edit18:setEnabled(true);
     obj.edit18:setVisible(false);
     obj.edit18:setHorzTextAlign("center");
-    obj.edit18:setField("Upa3d10Erro");
+    obj.edit18:setField("Upa1d10Erro");
     obj.edit18:setName("edit18");
+
+    obj.edit19 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit19:setParent(obj.rectangle1);
+    obj.edit19:setLeft(200);
+    obj.edit19:setTop(460);
+    obj.edit19:setWidth(50);
+    obj.edit19:setHeight(30);
+    obj.edit19:setType("number");
+    obj.edit19:setMin(1);
+    obj.edit19:setMax(9);
+    obj.edit19:setEnabled(true);
+    obj.edit19:setVisible(false);
+    obj.edit19:setHorzTextAlign("center");
+    obj.edit19:setField("Upa2d10Erro");
+    obj.edit19:setName("edit19");
+
+    obj.edit20 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit20:setParent(obj.rectangle1);
+    obj.edit20:setLeft(260);
+    obj.edit20:setTop(460);
+    obj.edit20:setWidth(50);
+    obj.edit20:setHeight(30);
+    obj.edit20:setType("number");
+    obj.edit20:setMin(1);
+    obj.edit20:setMax(9);
+    obj.edit20:setEnabled(true);
+    obj.edit20:setVisible(false);
+    obj.edit20:setHorzTextAlign("center");
+    obj.edit20:setField("Upa3d10Erro");
+    obj.edit20:setName("edit20");
 
     obj.rectangle4 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle4:setParent(obj.rectangle1);
@@ -573,21 +671,21 @@ local function constructNew_frmsekai()
     obj.rectangle4:setStrokeSize(3);
     obj.rectangle4:setName("rectangle4");
 
-    obj.edit19 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit19:setParent(obj.rectangle1);
-    obj.edit19:setLeft(320);
-    obj.edit19:setTop(460);
-    obj.edit19:setWidth(50);
-    obj.edit19:setHeight(30);
-    obj.edit19:setType("number");
-    obj.edit19:setMin(1);
-    obj.edit19:setMax(18);
-    obj.edit19:setEnabled(true);
-    obj.edit19:setVisible(false);
-    obj.edit19:setTransparent(true);
-    obj.edit19:setHorzTextAlign("center");
-    obj.edit19:setField("Upa1d20Erro");
-    obj.edit19:setName("edit19");
+    obj.edit21 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit21:setParent(obj.rectangle1);
+    obj.edit21:setLeft(320);
+    obj.edit21:setTop(460);
+    obj.edit21:setWidth(50);
+    obj.edit21:setHeight(30);
+    obj.edit21:setType("number");
+    obj.edit21:setMin(1);
+    obj.edit21:setMax(18);
+    obj.edit21:setEnabled(true);
+    obj.edit21:setVisible(false);
+    obj.edit21:setTransparent(true);
+    obj.edit21:setHorzTextAlign("center");
+    obj.edit21:setField("Upa1d20Erro");
+    obj.edit21:setName("edit21");
 
     obj.btnUparJutsu = GUI.fromHandle(_obj_newObject("button"));
     obj.btnUparJutsu:setParent(obj.rectangle1);
@@ -797,25 +895,25 @@ local function constructNew_frmsekai()
     obj.rectangle5:setTop(1);
     obj.rectangle5:setName("rectangle5");
 
-    obj.label9 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label9:setParent(obj.rectangle5);
-    obj.label9:setWidth(120);
-    obj.label9:setHeight(40);
-    obj.label9:setLeft(10);
-    obj.label9:setTop(10);
-    obj.label9:setFontFamily("Nyala");
-    obj.label9:setFontSize(20);
-    obj.label9:setText("Nome do Jutsu:");
-    obj.label9:setName("label9");
+    obj.label13 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label13:setParent(obj.rectangle5);
+    obj.label13:setWidth(120);
+    obj.label13:setHeight(40);
+    obj.label13:setLeft(10);
+    obj.label13:setTop(10);
+    obj.label13:setFontFamily("Nyala");
+    obj.label13:setFontSize(20);
+    obj.label13:setText("Nome do Jutsu:");
+    obj.label13:setName("label13");
 
-    obj.edit20 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit20:setParent(obj.rectangle5);
-    obj.edit20:setWidth(310);
-    obj.edit20:setHeight(30);
-    obj.edit20:setLeft(130);
-    obj.edit20:setTop(15);
-    obj.edit20:setField("NomedoJutsu2");
-    obj.edit20:setName("edit20");
+    obj.edit22 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit22:setParent(obj.rectangle5);
+    obj.edit22:setWidth(310);
+    obj.edit22:setHeight(30);
+    obj.edit22:setLeft(130);
+    obj.edit22:setTop(15);
+    obj.edit22:setField("NomedoJutsu2");
+    obj.edit22:setName("edit22");
 
     obj.textEditor2 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor2:setParent(obj.rectangle5);
@@ -827,155 +925,155 @@ local function constructNew_frmsekai()
     obj.textEditor2:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor2:setName("textEditor2");
 
-    obj.label10 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label10:setParent(obj.rectangle5);
-    obj.label10:setWidth(120);
-    obj.label10:setHeight(40);
-    obj.label10:setLeft(10);
-    obj.label10:setTop(350);
-    obj.label10:setFontFamily("Nyala");
-    obj.label10:setFontSize(20);
-    obj.label10:setText("Dano");
-    obj.label10:setName("label10");
-
-    obj.edit21 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit21:setParent(obj.rectangle5);
-    obj.edit21:setWidth(80);
-    obj.edit21:setHeight(30);
-    obj.edit21:setLeft(55);
-    obj.edit21:setTop(355);
-    obj.edit21:setType("number");
-    obj.edit21:setField("DanoJutsu2");
-    obj.edit21:setName("edit21");
-
-    obj.label11 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label11:setParent(obj.rectangle5);
-    obj.label11:setWidth(60);
-    obj.label11:setHeight(40);
-    obj.label11:setLeft(340);
-    obj.label11:setTop(350);
-    obj.label11:setFontFamily("Nyala");
-    obj.label11:setFontSize(20);
-    obj.label11:setFontColor("cyan");
-    obj.label11:setText("Chakra");
-    obj.label11:setName("label11");
-
-    obj.edit22 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit22:setParent(obj.rectangle5);
-    obj.edit22:setWidth(40);
-    obj.edit22:setHeight(30);
-    obj.edit22:setLeft(400);
-    obj.edit22:setTop(355);
-    obj.edit22:setType("number");
-    obj.edit22:setHorzTextAlign("center");
-    obj.edit22:setFontColor("cyan");
-    obj.edit22:setField("CustoJutsu2");
-    obj.edit22:setName("edit22");
+    obj.label14 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label14:setParent(obj.rectangle5);
+    obj.label14:setWidth(120);
+    obj.label14:setHeight(40);
+    obj.label14:setLeft(10);
+    obj.label14:setTop(350);
+    obj.label14:setFontFamily("Nyala");
+    obj.label14:setFontSize(20);
+    obj.label14:setText("Dano");
+    obj.label14:setName("label14");
 
     obj.edit23 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit23:setParent(obj.rectangle5);
-    obj.edit23:setWidth(40);
+    obj.edit23:setWidth(80);
     obj.edit23:setHeight(30);
-    obj.edit23:setLeft(390);
-    obj.edit23:setTop(380);
-    obj.edit23:setVisible(false);
+    obj.edit23:setLeft(55);
+    obj.edit23:setTop(355);
     obj.edit23:setType("number");
-    obj.edit23:setHorzTextAlign("center");
-    obj.edit23:setFontColor("cyan");
-    obj.edit23:setField("ChakraPlayer2");
+    obj.edit23:setField("DanoJutsu2");
     obj.edit23:setName("edit23");
 
-    obj.label12 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label12:setParent(obj.rectangle5);
-    obj.label12:setWidth(60);
-    obj.label12:setHeight(40);
-    obj.label12:setLeft(150);
-    obj.label12:setTop(350);
-    obj.label12:setFontFamily("Nyala");
-    obj.label12:setFontSize(20);
-    obj.label12:setText("Tipo");
-    obj.label12:setName("label12");
-
-    obj.comboBox3 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox3:setParent(obj.rectangle5);
-    obj.comboBox3:setLeft(190);
-    obj.comboBox3:setTop(363);
-    obj.comboBox3:setWidth(140);
-    obj.comboBox3:setHeight(18);
-    obj.comboBox3:setField("Tipo2");
-    obj.comboBox3:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox3:setName("comboBox3");
-
-    obj.label13 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label13:setParent(obj.rectangle5);
-    obj.label13:setWidth(150);
-    obj.label13:setHeight(40);
-    obj.label13:setLeft(10);
-    obj.label13:setTop(390);
-    obj.label13:setFontFamily("Nyala");
-    obj.label13:setFontSize(16);
-    obj.label13:setText("Dano Verdadeiro");
-    obj.label13:setName("label13");
+    obj.label15 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label15:setParent(obj.rectangle5);
+    obj.label15:setWidth(60);
+    obj.label15:setHeight(40);
+    obj.label15:setLeft(340);
+    obj.label15:setTop(350);
+    obj.label15:setFontFamily("Nyala");
+    obj.label15:setFontSize(20);
+    obj.label15:setFontColor("cyan");
+    obj.label15:setText("Chakra");
+    obj.label15:setName("label15");
 
     obj.edit24 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit24:setParent(obj.rectangle5);
-    obj.edit24:setWidth(80);
-    obj.edit24:setHeight(20);
-    obj.edit24:setLeft(110);
-    obj.edit24:setTop(400);
-    obj.edit24:setEnabled(false);
-    obj.edit24:setHorzTextAlign("center");
+    obj.edit24:setWidth(40);
+    obj.edit24:setHeight(30);
+    obj.edit24:setLeft(400);
+    obj.edit24:setTop(355);
     obj.edit24:setType("number");
-    obj.edit24:setField("DNVerdadeiro2");
+    obj.edit24:setHorzTextAlign("center");
+    obj.edit24:setFontColor("cyan");
+    obj.edit24:setField("CustoJutsu2");
     obj.edit24:setName("edit24");
 
-    obj.label14 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label14:setParent(obj.rectangle5);
-    obj.label14:setWidth(170);
-    obj.label14:setHeight(40);
-    obj.label14:setLeft(280);
-    obj.label14:setTop(390);
-    obj.label14:setFontFamily("Nyala");
-    obj.label14:setFontColor("Crimson ");
-    obj.label14:setFontSize(16);
-    obj.label14:setText("Intensidade");
-    obj.label14:setName("label14");
+    obj.label16 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label16:setParent(obj.rectangle5);
+    obj.label16:setWidth(60);
+    obj.label16:setHeight(40);
+    obj.label16:setLeft(150);
+    obj.label16:setTop(350);
+    obj.label16:setFontFamily("Nyala");
+    obj.label16:setFontSize(20);
+    obj.label16:setText("Tipo");
+    obj.label16:setName("label16");
+
+    obj.comboBox5 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox5:setParent(obj.rectangle5);
+    obj.comboBox5:setLeft(190);
+    obj.comboBox5:setTop(363);
+    obj.comboBox5:setWidth(140);
+    obj.comboBox5:setHeight(18);
+    obj.comboBox5:setField("Tipo2");
+    obj.comboBox5:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox5:setName("comboBox5");
+
+    obj.label17 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label17:setParent(obj.rectangle5);
+    obj.label17:setWidth(150);
+    obj.label17:setHeight(40);
+    obj.label17:setLeft(10);
+    obj.label17:setTop(390);
+    obj.label17:setFontFamily("Nyala");
+    obj.label17:setFontSize(16);
+    obj.label17:setText("Dano Verdadeiro");
+    obj.label17:setName("label17");
 
     obj.edit25 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit25:setParent(obj.rectangle5);
     obj.edit25:setWidth(80);
     obj.edit25:setHeight(20);
-    obj.edit25:setLeft(350);
+    obj.edit25:setLeft(110);
     obj.edit25:setTop(400);
     obj.edit25:setEnabled(false);
     obj.edit25:setHorzTextAlign("center");
     obj.edit25:setType("number");
-    obj.edit25:setFontColor("Crimson");
-    obj.edit25:setField("Intensidade2");
+    obj.edit25:setField("DNVerdadeiro2");
     obj.edit25:setName("edit25");
 
-    obj.label15 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label15:setParent(obj.rectangle5);
-    obj.label15:setWidth(70);
-    obj.label15:setHeight(40);
-    obj.label15:setLeft(195);
-    obj.label15:setTop(390);
-    obj.label15:setFontFamily("Nyala");
-    obj.label15:setFontSize(16);
-    obj.label15:setText("Level");
-    obj.label15:setName("label15");
+    obj.label18 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label18:setParent(obj.rectangle5);
+    obj.label18:setWidth(170);
+    obj.label18:setHeight(40);
+    obj.label18:setLeft(280);
+    obj.label18:setTop(390);
+    obj.label18:setFontFamily("Nyala");
+    obj.label18:setFontColor("Crimson ");
+    obj.label18:setFontSize(16);
+    obj.label18:setText("Intensidade");
+    obj.label18:setName("label18");
 
     obj.edit26 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit26:setParent(obj.rectangle5);
-    obj.edit26:setWidth(30);
+    obj.edit26:setWidth(80);
     obj.edit26:setHeight(20);
-    obj.edit26:setLeft(230);
+    obj.edit26:setLeft(350);
     obj.edit26:setTop(400);
-    obj.edit26:setEnabled(true);
-    obj.edit26:setType("number");
+    obj.edit26:setEnabled(false);
     obj.edit26:setHorzTextAlign("center");
-    obj.edit26:setField("LevelJutsu2");
+    obj.edit26:setType("number");
+    obj.edit26:setFontColor("Crimson");
+    obj.edit26:setField("Intensidade2");
     obj.edit26:setName("edit26");
+
+    obj.label19 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label19:setParent(obj.rectangle5);
+    obj.label19:setWidth(70);
+    obj.label19:setHeight(40);
+    obj.label19:setLeft(195);
+    obj.label19:setTop(390);
+    obj.label19:setFontFamily("Nyala");
+    obj.label19:setFontSize(16);
+    obj.label19:setText("Level");
+    obj.label19:setName("label19");
+
+    obj.edit27 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit27:setParent(obj.rectangle5);
+    obj.edit27:setWidth(40);
+    obj.edit27:setHeight(30);
+    obj.edit27:setLeft(390);
+    obj.edit27:setTop(380);
+    obj.edit27:setVisible(false);
+    obj.edit27:setType("number");
+    obj.edit27:setHorzTextAlign("center");
+    obj.edit27:setFontColor("cyan");
+    obj.edit27:setField("ChakraPlayer2");
+    obj.edit27:setName("edit27");
+
+    obj.edit28 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit28:setParent(obj.rectangle5);
+    obj.edit28:setWidth(30);
+    obj.edit28:setHeight(20);
+    obj.edit28:setLeft(230);
+    obj.edit28:setTop(400);
+    obj.edit28:setEnabled(true);
+    obj.edit28:setType("number");
+    obj.edit28:setHorzTextAlign("center");
+    obj.edit28:setField("LevelJutsu2");
+    obj.edit28:setName("edit28");
 
     obj.image5 = GUI.fromHandle(_obj_newObject("image"));
     obj.image5:setParent(obj.rectangle5);
@@ -998,50 +1096,20 @@ local function constructNew_frmsekai()
     obj.button8:setFontColor("White");
     obj.button8:setName("button8");
 
-    obj.label16 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label16:setParent(obj.rectangle5);
-    obj.label16:setLeft(180);
-    obj.label16:setTop(450);
-    obj.label16:setWidth(230);
-    obj.label16:setHeight(40);
-    obj.label16:setFontFamily("Nyala");
-    obj.label16:setFontSize(18);
-    obj.label16:setText("Fortificação de jutsu 3D10 e 1d20");
-    obj.label16:setName("label16");
-
-    obj.edit27 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit27:setParent(obj.rectangle5);
-    obj.edit27:setLeft(180);
-    obj.edit27:setTop(500);
-    obj.edit27:setWidth(50);
-    obj.edit27:setHeight(30);
-    obj.edit27:setType("number");
-    obj.edit27:setMin(1);
-    obj.edit27:setMax(9);
-    obj.edit27:setEnabled(false);
-    obj.edit27:setVisible(true);
-    obj.edit27:setHorzTextAlign("center");
-    obj.edit27:setField("Upa1d102");
-    obj.edit27:setName("edit27");
-
-    obj.edit28 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit28:setParent(obj.rectangle5);
-    obj.edit28:setLeft(240);
-    obj.edit28:setTop(500);
-    obj.edit28:setWidth(50);
-    obj.edit28:setHeight(30);
-    obj.edit28:setType("number");
-    obj.edit28:setMin(1);
-    obj.edit28:setMax(9);
-    obj.edit28:setEnabled(false);
-    obj.edit28:setVisible(true);
-    obj.edit28:setHorzTextAlign("center");
-    obj.edit28:setField("Upa2d102");
-    obj.edit28:setName("edit28");
+    obj.label20 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label20:setParent(obj.rectangle5);
+    obj.label20:setLeft(180);
+    obj.label20:setTop(450);
+    obj.label20:setWidth(230);
+    obj.label20:setHeight(40);
+    obj.label20:setFontFamily("Nyala");
+    obj.label20:setFontSize(18);
+    obj.label20:setText("Fortificação de jutsu 3D10 e 1d20");
+    obj.label20:setName("label20");
 
     obj.edit29 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit29:setParent(obj.rectangle5);
-    obj.edit29:setLeft(300);
+    obj.edit29:setLeft(180);
     obj.edit29:setTop(500);
     obj.edit29:setWidth(50);
     obj.edit29:setHeight(30);
@@ -1051,8 +1119,38 @@ local function constructNew_frmsekai()
     obj.edit29:setEnabled(false);
     obj.edit29:setVisible(true);
     obj.edit29:setHorzTextAlign("center");
-    obj.edit29:setField("Upa3d102");
+    obj.edit29:setField("Upa1d102");
     obj.edit29:setName("edit29");
+
+    obj.edit30 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit30:setParent(obj.rectangle5);
+    obj.edit30:setLeft(240);
+    obj.edit30:setTop(500);
+    obj.edit30:setWidth(50);
+    obj.edit30:setHeight(30);
+    obj.edit30:setType("number");
+    obj.edit30:setMin(1);
+    obj.edit30:setMax(9);
+    obj.edit30:setEnabled(false);
+    obj.edit30:setVisible(true);
+    obj.edit30:setHorzTextAlign("center");
+    obj.edit30:setField("Upa2d102");
+    obj.edit30:setName("edit30");
+
+    obj.edit31 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit31:setParent(obj.rectangle5);
+    obj.edit31:setLeft(300);
+    obj.edit31:setTop(500);
+    obj.edit31:setWidth(50);
+    obj.edit31:setHeight(30);
+    obj.edit31:setType("number");
+    obj.edit31:setMin(1);
+    obj.edit31:setMax(9);
+    obj.edit31:setEnabled(false);
+    obj.edit31:setVisible(true);
+    obj.edit31:setHorzTextAlign("center");
+    obj.edit31:setField("Upa3d102");
+    obj.edit31:setName("edit31");
 
     obj.rectangle6 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle6:setParent(obj.rectangle5);
@@ -1065,55 +1163,25 @@ local function constructNew_frmsekai()
     obj.rectangle6:setStrokeSize(3);
     obj.rectangle6:setName("rectangle6");
 
-    obj.edit30 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit30:setParent(obj.rectangle5);
-    obj.edit30:setLeft(360);
-    obj.edit30:setTop(500);
-    obj.edit30:setWidth(50);
-    obj.edit30:setHeight(30);
-    obj.edit30:setType("number");
-    obj.edit30:setMin(1);
-    obj.edit30:setMax(18);
-    obj.edit30:setEnabled(false);
-    obj.edit30:setVisible(true);
-    obj.edit30:setTransparent(true);
-    obj.edit30:setHorzTextAlign("center");
-    obj.edit30:setField("Upa1d202");
-    obj.edit30:setName("edit30");
-
-    obj.edit31 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit31:setParent(obj.rectangle5);
-    obj.edit31:setLeft(180);
-    obj.edit31:setTop(450);
-    obj.edit31:setWidth(50);
-    obj.edit31:setHeight(30);
-    obj.edit31:setType("number");
-    obj.edit31:setMin(1);
-    obj.edit31:setMax(9);
-    obj.edit31:setEnabled(true);
-    obj.edit31:setVisible(false);
-    obj.edit31:setHorzTextAlign("center");
-    obj.edit31:setField("Upa1d10Soma2");
-    obj.edit31:setName("edit31");
-
     obj.edit32 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit32:setParent(obj.rectangle5);
-    obj.edit32:setLeft(240);
-    obj.edit32:setTop(450);
+    obj.edit32:setLeft(360);
+    obj.edit32:setTop(500);
     obj.edit32:setWidth(50);
     obj.edit32:setHeight(30);
     obj.edit32:setType("number");
     obj.edit32:setMin(1);
-    obj.edit32:setMax(9);
-    obj.edit32:setEnabled(true);
-    obj.edit32:setVisible(false);
+    obj.edit32:setMax(18);
+    obj.edit32:setEnabled(false);
+    obj.edit32:setVisible(true);
+    obj.edit32:setTransparent(true);
     obj.edit32:setHorzTextAlign("center");
-    obj.edit32:setField("Upa2d10Soma2");
+    obj.edit32:setField("Upa1d202");
     obj.edit32:setName("edit32");
 
     obj.edit33 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit33:setParent(obj.rectangle5);
-    obj.edit33:setLeft(300);
+    obj.edit33:setLeft(180);
     obj.edit33:setTop(450);
     obj.edit33:setWidth(50);
     obj.edit33:setHeight(30);
@@ -1121,10 +1189,40 @@ local function constructNew_frmsekai()
     obj.edit33:setMin(1);
     obj.edit33:setMax(9);
     obj.edit33:setEnabled(true);
-    obj.edit33:setVisible(false);
+    obj.edit33:setVisible(true);
     obj.edit33:setHorzTextAlign("center");
-    obj.edit33:setField("Upa3d10Soma2");
+    obj.edit33:setField("Upa1d10Soma2");
     obj.edit33:setName("edit33");
+
+    obj.edit34 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit34:setParent(obj.rectangle5);
+    obj.edit34:setLeft(240);
+    obj.edit34:setTop(450);
+    obj.edit34:setWidth(50);
+    obj.edit34:setHeight(30);
+    obj.edit34:setType("number");
+    obj.edit34:setMin(1);
+    obj.edit34:setMax(9);
+    obj.edit34:setEnabled(true);
+    obj.edit34:setVisible(true);
+    obj.edit34:setHorzTextAlign("center");
+    obj.edit34:setField("Upa2d10Soma2");
+    obj.edit34:setName("edit34");
+
+    obj.edit35 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit35:setParent(obj.rectangle5);
+    obj.edit35:setLeft(300);
+    obj.edit35:setTop(450);
+    obj.edit35:setWidth(50);
+    obj.edit35:setHeight(30);
+    obj.edit35:setType("number");
+    obj.edit35:setMin(1);
+    obj.edit35:setMax(9);
+    obj.edit35:setEnabled(true);
+    obj.edit35:setVisible(true);
+    obj.edit35:setHorzTextAlign("center");
+    obj.edit35:setField("Upa3d10Soma2");
+    obj.edit35:setName("edit35");
 
     obj.rectangle7 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle7:setParent(obj.rectangle5);
@@ -1134,59 +1232,29 @@ local function constructNew_frmsekai()
     obj.rectangle7:setHeight(30);
     obj.rectangle7:setColor("black");
     obj.rectangle7:setStrokeColor("red");
-    obj.rectangle7:setVisible(false);
+    obj.rectangle7:setVisible(true);
     obj.rectangle7:setStrokeSize(3);
     obj.rectangle7:setName("rectangle7");
 
-    obj.edit34 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit34:setParent(obj.rectangle5);
-    obj.edit34:setLeft(360);
-    obj.edit34:setTop(450);
-    obj.edit34:setWidth(50);
-    obj.edit34:setHeight(30);
-    obj.edit34:setType("number");
-    obj.edit34:setMin(1);
-    obj.edit34:setMax(18);
-    obj.edit34:setEnabled(true);
-    obj.edit34:setVisible(false);
-    obj.edit34:setTransparent(false);
-    obj.edit34:setHorzTextAlign("center");
-    obj.edit34:setField("Upa1d20Soma2");
-    obj.edit34:setName("edit34");
-
-    obj.edit35 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit35:setParent(obj.rectangle5);
-    obj.edit35:setLeft(140);
-    obj.edit35:setTop(460);
-    obj.edit35:setWidth(50);
-    obj.edit35:setHeight(30);
-    obj.edit35:setType("number");
-    obj.edit35:setMin(1);
-    obj.edit35:setMax(9);
-    obj.edit35:setEnabled(true);
-    obj.edit35:setVisible(false);
-    obj.edit35:setHorzTextAlign("center");
-    obj.edit35:setField("Upa1d10Erro2");
-    obj.edit35:setName("edit35");
-
     obj.edit36 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit36:setParent(obj.rectangle5);
-    obj.edit36:setLeft(200);
-    obj.edit36:setTop(460);
+    obj.edit36:setLeft(360);
+    obj.edit36:setTop(450);
     obj.edit36:setWidth(50);
     obj.edit36:setHeight(30);
     obj.edit36:setType("number");
     obj.edit36:setMin(1);
-    obj.edit36:setMax(9);
+    obj.edit36:setMax(18);
     obj.edit36:setEnabled(true);
-    obj.edit36:setVisible(false);
+    obj.edit36:setVisible(true);
+    obj.edit36:setTransparent(false);
     obj.edit36:setHorzTextAlign("center");
-    obj.edit36:setField("Upa2d10Erro2");
+    obj.edit36:setField("Upa1d20Soma2");
     obj.edit36:setName("edit36");
 
     obj.edit37 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit37:setParent(obj.rectangle5);
-    obj.edit37:setLeft(260);
+    obj.edit37:setLeft(140);
     obj.edit37:setTop(460);
     obj.edit37:setWidth(50);
     obj.edit37:setHeight(30);
@@ -1196,8 +1264,38 @@ local function constructNew_frmsekai()
     obj.edit37:setEnabled(true);
     obj.edit37:setVisible(false);
     obj.edit37:setHorzTextAlign("center");
-    obj.edit37:setField("Upa3d10Erro2");
+    obj.edit37:setField("Upa1d10Erro2");
     obj.edit37:setName("edit37");
+
+    obj.edit38 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit38:setParent(obj.rectangle5);
+    obj.edit38:setLeft(200);
+    obj.edit38:setTop(460);
+    obj.edit38:setWidth(50);
+    obj.edit38:setHeight(30);
+    obj.edit38:setType("number");
+    obj.edit38:setMin(1);
+    obj.edit38:setMax(9);
+    obj.edit38:setEnabled(true);
+    obj.edit38:setVisible(false);
+    obj.edit38:setHorzTextAlign("center");
+    obj.edit38:setField("Upa2d10Erro2");
+    obj.edit38:setName("edit38");
+
+    obj.edit39 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit39:setParent(obj.rectangle5);
+    obj.edit39:setLeft(260);
+    obj.edit39:setTop(460);
+    obj.edit39:setWidth(50);
+    obj.edit39:setHeight(30);
+    obj.edit39:setType("number");
+    obj.edit39:setMin(1);
+    obj.edit39:setMax(9);
+    obj.edit39:setEnabled(true);
+    obj.edit39:setVisible(false);
+    obj.edit39:setHorzTextAlign("center");
+    obj.edit39:setField("Upa3d10Erro2");
+    obj.edit39:setName("edit39");
 
     obj.rectangle8 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle8:setParent(obj.rectangle5);
@@ -1211,21 +1309,21 @@ local function constructNew_frmsekai()
     obj.rectangle8:setStrokeSize(3);
     obj.rectangle8:setName("rectangle8");
 
-    obj.edit38 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit38:setParent(obj.rectangle5);
-    obj.edit38:setLeft(320);
-    obj.edit38:setTop(460);
-    obj.edit38:setWidth(50);
-    obj.edit38:setHeight(30);
-    obj.edit38:setType("number");
-    obj.edit38:setMin(1);
-    obj.edit38:setMax(18);
-    obj.edit38:setEnabled(true);
-    obj.edit38:setVisible(false);
-    obj.edit38:setTransparent(true);
-    obj.edit38:setHorzTextAlign("center");
-    obj.edit38:setField("Upa1d20Erro2");
-    obj.edit38:setName("edit38");
+    obj.edit40 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit40:setParent(obj.rectangle5);
+    obj.edit40:setLeft(320);
+    obj.edit40:setTop(460);
+    obj.edit40:setWidth(50);
+    obj.edit40:setHeight(30);
+    obj.edit40:setType("number");
+    obj.edit40:setMin(1);
+    obj.edit40:setMax(18);
+    obj.edit40:setEnabled(true);
+    obj.edit40:setVisible(false);
+    obj.edit40:setTransparent(true);
+    obj.edit40:setHorzTextAlign("center");
+    obj.edit40:setField("Upa1d20Erro2");
+    obj.edit40:setName("edit40");
 
     obj.btnUparJutsu2 = GUI.fromHandle(_obj_newObject("button"));
     obj.btnUparJutsu2:setParent(obj.rectangle5);
@@ -1435,25 +1533,25 @@ local function constructNew_frmsekai()
     obj.rectangle9:setTop(1);
     obj.rectangle9:setName("rectangle9");
 
-    obj.label17 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label17:setParent(obj.rectangle9);
-    obj.label17:setWidth(120);
-    obj.label17:setHeight(40);
-    obj.label17:setLeft(10);
-    obj.label17:setTop(10);
-    obj.label17:setFontFamily("Nyala");
-    obj.label17:setFontSize(20);
-    obj.label17:setText("Nome do Jutsu:");
-    obj.label17:setName("label17");
+    obj.label21 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label21:setParent(obj.rectangle9);
+    obj.label21:setWidth(120);
+    obj.label21:setHeight(40);
+    obj.label21:setLeft(10);
+    obj.label21:setTop(10);
+    obj.label21:setFontFamily("Nyala");
+    obj.label21:setFontSize(20);
+    obj.label21:setText("Nome do Jutsu:");
+    obj.label21:setName("label21");
 
-    obj.edit39 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit39:setParent(obj.rectangle9);
-    obj.edit39:setWidth(310);
-    obj.edit39:setHeight(30);
-    obj.edit39:setLeft(130);
-    obj.edit39:setTop(15);
-    obj.edit39:setField("NomedoJutsu3");
-    obj.edit39:setName("edit39");
+    obj.edit41 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit41:setParent(obj.rectangle9);
+    obj.edit41:setWidth(310);
+    obj.edit41:setHeight(30);
+    obj.edit41:setLeft(130);
+    obj.edit41:setTop(15);
+    obj.edit41:setField("NomedoJutsu3");
+    obj.edit41:setName("edit41");
 
     obj.textEditor3 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor3:setParent(obj.rectangle9);
@@ -1465,155 +1563,155 @@ local function constructNew_frmsekai()
     obj.textEditor3:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor3:setName("textEditor3");
 
-    obj.label18 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label18:setParent(obj.rectangle9);
-    obj.label18:setWidth(120);
-    obj.label18:setHeight(40);
-    obj.label18:setLeft(10);
-    obj.label18:setTop(350);
-    obj.label18:setFontFamily("Nyala");
-    obj.label18:setFontSize(20);
-    obj.label18:setText("Dano");
-    obj.label18:setName("label18");
-
-    obj.edit40 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit40:setParent(obj.rectangle9);
-    obj.edit40:setWidth(80);
-    obj.edit40:setHeight(30);
-    obj.edit40:setLeft(55);
-    obj.edit40:setTop(355);
-    obj.edit40:setType("number");
-    obj.edit40:setField("DanoJutsu3");
-    obj.edit40:setName("edit40");
-
-    obj.label19 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label19:setParent(obj.rectangle9);
-    obj.label19:setWidth(60);
-    obj.label19:setHeight(40);
-    obj.label19:setLeft(340);
-    obj.label19:setTop(350);
-    obj.label19:setFontFamily("Nyala");
-    obj.label19:setFontSize(20);
-    obj.label19:setFontColor("cyan");
-    obj.label19:setText("Chakra");
-    obj.label19:setName("label19");
-
-    obj.edit41 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit41:setParent(obj.rectangle9);
-    obj.edit41:setWidth(40);
-    obj.edit41:setHeight(30);
-    obj.edit41:setLeft(400);
-    obj.edit41:setTop(355);
-    obj.edit41:setType("number");
-    obj.edit41:setHorzTextAlign("center");
-    obj.edit41:setFontColor("cyan");
-    obj.edit41:setField("CustoJutsu3");
-    obj.edit41:setName("edit41");
+    obj.label22 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label22:setParent(obj.rectangle9);
+    obj.label22:setWidth(120);
+    obj.label22:setHeight(40);
+    obj.label22:setLeft(10);
+    obj.label22:setTop(350);
+    obj.label22:setFontFamily("Nyala");
+    obj.label22:setFontSize(20);
+    obj.label22:setText("Dano");
+    obj.label22:setName("label22");
 
     obj.edit42 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit42:setParent(obj.rectangle9);
-    obj.edit42:setWidth(40);
+    obj.edit42:setWidth(80);
     obj.edit42:setHeight(30);
-    obj.edit42:setLeft(390);
-    obj.edit42:setTop(380);
-    obj.edit42:setVisible(false);
+    obj.edit42:setLeft(55);
+    obj.edit42:setTop(355);
     obj.edit42:setType("number");
-    obj.edit42:setHorzTextAlign("center");
-    obj.edit42:setFontColor("cyan");
-    obj.edit42:setField("ChakraPlayer3");
+    obj.edit42:setField("DanoJutsu3");
     obj.edit42:setName("edit42");
 
-    obj.label20 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label20:setParent(obj.rectangle9);
-    obj.label20:setWidth(60);
-    obj.label20:setHeight(40);
-    obj.label20:setLeft(150);
-    obj.label20:setTop(350);
-    obj.label20:setFontFamily("Nyala");
-    obj.label20:setFontSize(20);
-    obj.label20:setText("Tipo");
-    obj.label20:setName("label20");
-
-    obj.comboBox4 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox4:setParent(obj.rectangle9);
-    obj.comboBox4:setLeft(190);
-    obj.comboBox4:setTop(363);
-    obj.comboBox4:setWidth(140);
-    obj.comboBox4:setHeight(18);
-    obj.comboBox4:setField("Tipo3");
-    obj.comboBox4:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
-    obj.comboBox4:setName("comboBox4");
-
-    obj.label21 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label21:setParent(obj.rectangle9);
-    obj.label21:setWidth(150);
-    obj.label21:setHeight(40);
-    obj.label21:setLeft(10);
-    obj.label21:setTop(390);
-    obj.label21:setFontFamily("Nyala");
-    obj.label21:setFontSize(16);
-    obj.label21:setText("Dano Verdadeiro");
-    obj.label21:setName("label21");
+    obj.label23 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label23:setParent(obj.rectangle9);
+    obj.label23:setWidth(60);
+    obj.label23:setHeight(40);
+    obj.label23:setLeft(340);
+    obj.label23:setTop(350);
+    obj.label23:setFontFamily("Nyala");
+    obj.label23:setFontSize(20);
+    obj.label23:setFontColor("cyan");
+    obj.label23:setText("Chakra");
+    obj.label23:setName("label23");
 
     obj.edit43 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit43:setParent(obj.rectangle9);
-    obj.edit43:setWidth(80);
-    obj.edit43:setHeight(20);
-    obj.edit43:setLeft(110);
-    obj.edit43:setTop(400);
-    obj.edit43:setEnabled(false);
-    obj.edit43:setHorzTextAlign("center");
+    obj.edit43:setWidth(40);
+    obj.edit43:setHeight(30);
+    obj.edit43:setLeft(400);
+    obj.edit43:setTop(355);
     obj.edit43:setType("number");
-    obj.edit43:setField("DNVerdadeiro3");
+    obj.edit43:setHorzTextAlign("center");
+    obj.edit43:setFontColor("cyan");
+    obj.edit43:setField("CustoJutsu3");
     obj.edit43:setName("edit43");
 
-    obj.label22 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label22:setParent(obj.rectangle9);
-    obj.label22:setWidth(170);
-    obj.label22:setHeight(40);
-    obj.label22:setLeft(280);
-    obj.label22:setTop(390);
-    obj.label22:setFontFamily("Nyala");
-    obj.label22:setFontColor("Crimson");
-    obj.label22:setFontSize(16);
-    obj.label22:setText("Intensidade");
-    obj.label22:setName("label22");
+    obj.label24 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label24:setParent(obj.rectangle9);
+    obj.label24:setWidth(60);
+    obj.label24:setHeight(40);
+    obj.label24:setLeft(150);
+    obj.label24:setTop(350);
+    obj.label24:setFontFamily("Nyala");
+    obj.label24:setFontSize(20);
+    obj.label24:setText("Tipo");
+    obj.label24:setName("label24");
+
+    obj.comboBox6 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox6:setParent(obj.rectangle9);
+    obj.comboBox6:setLeft(190);
+    obj.comboBox6:setTop(363);
+    obj.comboBox6:setWidth(140);
+    obj.comboBox6:setHeight(18);
+    obj.comboBox6:setField("Tipo3");
+    obj.comboBox6:setItems({'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'});
+    obj.comboBox6:setName("comboBox6");
+
+    obj.label25 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label25:setParent(obj.rectangle9);
+    obj.label25:setWidth(150);
+    obj.label25:setHeight(40);
+    obj.label25:setLeft(10);
+    obj.label25:setTop(390);
+    obj.label25:setFontFamily("Nyala");
+    obj.label25:setFontSize(16);
+    obj.label25:setText("Dano Verdadeiro");
+    obj.label25:setName("label25");
 
     obj.edit44 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit44:setParent(obj.rectangle9);
     obj.edit44:setWidth(80);
     obj.edit44:setHeight(20);
-    obj.edit44:setLeft(350);
+    obj.edit44:setLeft(110);
     obj.edit44:setTop(400);
     obj.edit44:setEnabled(false);
     obj.edit44:setHorzTextAlign("center");
     obj.edit44:setType("number");
-    obj.edit44:setFontColor("Crimson");
-    obj.edit44:setField("Intensidade3");
+    obj.edit44:setField("DNVerdadeiro3");
     obj.edit44:setName("edit44");
 
-    obj.label23 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label23:setParent(obj.rectangle9);
-    obj.label23:setWidth(70);
-    obj.label23:setHeight(40);
-    obj.label23:setLeft(195);
-    obj.label23:setTop(390);
-    obj.label23:setFontFamily("Nyala");
-    obj.label23:setFontSize(16);
-    obj.label23:setText("Level");
-    obj.label23:setName("label23");
+    obj.label26 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label26:setParent(obj.rectangle9);
+    obj.label26:setWidth(170);
+    obj.label26:setHeight(40);
+    obj.label26:setLeft(280);
+    obj.label26:setTop(390);
+    obj.label26:setFontFamily("Nyala");
+    obj.label26:setFontColor("Crimson");
+    obj.label26:setFontSize(16);
+    obj.label26:setText("Intensidade");
+    obj.label26:setName("label26");
 
     obj.edit45 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit45:setParent(obj.rectangle9);
-    obj.edit45:setWidth(30);
+    obj.edit45:setWidth(80);
     obj.edit45:setHeight(20);
-    obj.edit45:setLeft(230);
+    obj.edit45:setLeft(350);
     obj.edit45:setTop(400);
-    obj.edit45:setEnabled(true);
+    obj.edit45:setEnabled(false);
     obj.edit45:setHorzTextAlign("center");
     obj.edit45:setType("number");
-    obj.edit45:setField("LevelJutsu3");
+    obj.edit45:setFontColor("Crimson");
+    obj.edit45:setField("Intensidade3");
     obj.edit45:setName("edit45");
+
+    obj.label27 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label27:setParent(obj.rectangle9);
+    obj.label27:setWidth(70);
+    obj.label27:setHeight(40);
+    obj.label27:setLeft(195);
+    obj.label27:setTop(390);
+    obj.label27:setFontFamily("Nyala");
+    obj.label27:setFontSize(16);
+    obj.label27:setText("Level");
+    obj.label27:setName("label27");
+
+    obj.edit46 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit46:setParent(obj.rectangle9);
+    obj.edit46:setWidth(40);
+    obj.edit46:setHeight(30);
+    obj.edit46:setLeft(390);
+    obj.edit46:setTop(380);
+    obj.edit46:setVisible(false);
+    obj.edit46:setType("number");
+    obj.edit46:setHorzTextAlign("center");
+    obj.edit46:setFontColor("cyan");
+    obj.edit46:setField("ChakraPlayer3");
+    obj.edit46:setName("edit46");
+
+    obj.edit47 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit47:setParent(obj.rectangle9);
+    obj.edit47:setWidth(30);
+    obj.edit47:setHeight(20);
+    obj.edit47:setLeft(230);
+    obj.edit47:setTop(400);
+    obj.edit47:setEnabled(true);
+    obj.edit47:setHorzTextAlign("center");
+    obj.edit47:setType("number");
+    obj.edit47:setField("LevelJutsu3");
+    obj.edit47:setName("edit47");
 
     obj.image7 = GUI.fromHandle(_obj_newObject("image"));
     obj.image7:setParent(obj.rectangle9);
@@ -1636,50 +1734,20 @@ local function constructNew_frmsekai()
     obj.button11:setFontColor("White");
     obj.button11:setName("button11");
 
-    obj.label24 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label24:setParent(obj.rectangle9);
-    obj.label24:setLeft(180);
-    obj.label24:setTop(450);
-    obj.label24:setWidth(230);
-    obj.label24:setHeight(40);
-    obj.label24:setFontFamily("Nyala");
-    obj.label24:setFontSize(18);
-    obj.label24:setText("Fortificação de jutsu 3D10 e 1d20");
-    obj.label24:setName("label24");
-
-    obj.edit46 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit46:setParent(obj.rectangle9);
-    obj.edit46:setLeft(180);
-    obj.edit46:setTop(500);
-    obj.edit46:setWidth(50);
-    obj.edit46:setHeight(30);
-    obj.edit46:setType("number");
-    obj.edit46:setMin(1);
-    obj.edit46:setMax(9);
-    obj.edit46:setEnabled(false);
-    obj.edit46:setVisible(true);
-    obj.edit46:setHorzTextAlign("center");
-    obj.edit46:setField("Upa1d103");
-    obj.edit46:setName("edit46");
-
-    obj.edit47 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit47:setParent(obj.rectangle9);
-    obj.edit47:setLeft(240);
-    obj.edit47:setTop(500);
-    obj.edit47:setWidth(50);
-    obj.edit47:setHeight(30);
-    obj.edit47:setType("number");
-    obj.edit47:setMin(1);
-    obj.edit47:setMax(9);
-    obj.edit47:setEnabled(false);
-    obj.edit47:setVisible(true);
-    obj.edit47:setHorzTextAlign("center");
-    obj.edit47:setField("Upa2d103");
-    obj.edit47:setName("edit47");
+    obj.label28 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label28:setParent(obj.rectangle9);
+    obj.label28:setLeft(180);
+    obj.label28:setTop(450);
+    obj.label28:setWidth(230);
+    obj.label28:setHeight(40);
+    obj.label28:setFontFamily("Nyala");
+    obj.label28:setFontSize(18);
+    obj.label28:setText("Fortificação de jutsu 3D10 e 1d20");
+    obj.label28:setName("label28");
 
     obj.edit48 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit48:setParent(obj.rectangle9);
-    obj.edit48:setLeft(300);
+    obj.edit48:setLeft(180);
     obj.edit48:setTop(500);
     obj.edit48:setWidth(50);
     obj.edit48:setHeight(30);
@@ -1689,8 +1757,38 @@ local function constructNew_frmsekai()
     obj.edit48:setEnabled(false);
     obj.edit48:setVisible(true);
     obj.edit48:setHorzTextAlign("center");
-    obj.edit48:setField("Upa3d103");
+    obj.edit48:setField("Upa1d103");
     obj.edit48:setName("edit48");
+
+    obj.edit49 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit49:setParent(obj.rectangle9);
+    obj.edit49:setLeft(240);
+    obj.edit49:setTop(500);
+    obj.edit49:setWidth(50);
+    obj.edit49:setHeight(30);
+    obj.edit49:setType("number");
+    obj.edit49:setMin(1);
+    obj.edit49:setMax(9);
+    obj.edit49:setEnabled(false);
+    obj.edit49:setVisible(true);
+    obj.edit49:setHorzTextAlign("center");
+    obj.edit49:setField("Upa2d103");
+    obj.edit49:setName("edit49");
+
+    obj.edit50 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit50:setParent(obj.rectangle9);
+    obj.edit50:setLeft(300);
+    obj.edit50:setTop(500);
+    obj.edit50:setWidth(50);
+    obj.edit50:setHeight(30);
+    obj.edit50:setType("number");
+    obj.edit50:setMin(1);
+    obj.edit50:setMax(9);
+    obj.edit50:setEnabled(false);
+    obj.edit50:setVisible(true);
+    obj.edit50:setHorzTextAlign("center");
+    obj.edit50:setField("Upa3d103");
+    obj.edit50:setName("edit50");
 
     obj.rectangle10 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle10:setParent(obj.rectangle9);
@@ -1703,55 +1801,25 @@ local function constructNew_frmsekai()
     obj.rectangle10:setStrokeSize(3);
     obj.rectangle10:setName("rectangle10");
 
-    obj.edit49 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit49:setParent(obj.rectangle9);
-    obj.edit49:setLeft(360);
-    obj.edit49:setTop(500);
-    obj.edit49:setWidth(50);
-    obj.edit49:setHeight(30);
-    obj.edit49:setType("number");
-    obj.edit49:setMin(1);
-    obj.edit49:setMax(18);
-    obj.edit49:setEnabled(false);
-    obj.edit49:setVisible(true);
-    obj.edit49:setTransparent(true);
-    obj.edit49:setHorzTextAlign("center");
-    obj.edit49:setField("Upa1d203");
-    obj.edit49:setName("edit49");
-
-    obj.edit50 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit50:setParent(obj.rectangle9);
-    obj.edit50:setLeft(180);
-    obj.edit50:setTop(450);
-    obj.edit50:setWidth(50);
-    obj.edit50:setHeight(30);
-    obj.edit50:setType("number");
-    obj.edit50:setMin(1);
-    obj.edit50:setMax(9);
-    obj.edit50:setEnabled(true);
-    obj.edit50:setVisible(false);
-    obj.edit50:setHorzTextAlign("center");
-    obj.edit50:setField("Upa1d10Soma3");
-    obj.edit50:setName("edit50");
-
     obj.edit51 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit51:setParent(obj.rectangle9);
-    obj.edit51:setLeft(240);
-    obj.edit51:setTop(450);
+    obj.edit51:setLeft(360);
+    obj.edit51:setTop(500);
     obj.edit51:setWidth(50);
     obj.edit51:setHeight(30);
     obj.edit51:setType("number");
     obj.edit51:setMin(1);
-    obj.edit51:setMax(9);
-    obj.edit51:setEnabled(true);
-    obj.edit51:setVisible(false);
+    obj.edit51:setMax(18);
+    obj.edit51:setEnabled(false);
+    obj.edit51:setVisible(true);
+    obj.edit51:setTransparent(true);
     obj.edit51:setHorzTextAlign("center");
-    obj.edit51:setField("Upa2d10Soma3");
+    obj.edit51:setField("Upa1d203");
     obj.edit51:setName("edit51");
 
     obj.edit52 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit52:setParent(obj.rectangle9);
-    obj.edit52:setLeft(300);
+    obj.edit52:setLeft(180);
     obj.edit52:setTop(450);
     obj.edit52:setWidth(50);
     obj.edit52:setHeight(30);
@@ -1759,10 +1827,40 @@ local function constructNew_frmsekai()
     obj.edit52:setMin(1);
     obj.edit52:setMax(9);
     obj.edit52:setEnabled(true);
-    obj.edit52:setVisible(false);
+    obj.edit52:setVisible(true);
     obj.edit52:setHorzTextAlign("center");
-    obj.edit52:setField("Upa3d10Soma3");
+    obj.edit52:setField("Upa1d10Soma3");
     obj.edit52:setName("edit52");
+
+    obj.edit53 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit53:setParent(obj.rectangle9);
+    obj.edit53:setLeft(240);
+    obj.edit53:setTop(450);
+    obj.edit53:setWidth(50);
+    obj.edit53:setHeight(30);
+    obj.edit53:setType("number");
+    obj.edit53:setMin(1);
+    obj.edit53:setMax(9);
+    obj.edit53:setEnabled(true);
+    obj.edit53:setVisible(true);
+    obj.edit53:setHorzTextAlign("center");
+    obj.edit53:setField("Upa2d10Soma3");
+    obj.edit53:setName("edit53");
+
+    obj.edit54 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit54:setParent(obj.rectangle9);
+    obj.edit54:setLeft(300);
+    obj.edit54:setTop(450);
+    obj.edit54:setWidth(50);
+    obj.edit54:setHeight(30);
+    obj.edit54:setType("number");
+    obj.edit54:setMin(1);
+    obj.edit54:setMax(9);
+    obj.edit54:setEnabled(true);
+    obj.edit54:setVisible(true);
+    obj.edit54:setHorzTextAlign("center");
+    obj.edit54:setField("Upa3d10Soma3");
+    obj.edit54:setName("edit54");
 
     obj.rectangle11 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle11:setParent(obj.rectangle9);
@@ -1772,59 +1870,29 @@ local function constructNew_frmsekai()
     obj.rectangle11:setHeight(30);
     obj.rectangle11:setColor("black");
     obj.rectangle11:setStrokeColor("red");
-    obj.rectangle11:setVisible(false);
+    obj.rectangle11:setVisible(true);
     obj.rectangle11:setStrokeSize(3);
     obj.rectangle11:setName("rectangle11");
 
-    obj.edit53 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit53:setParent(obj.rectangle9);
-    obj.edit53:setLeft(360);
-    obj.edit53:setTop(450);
-    obj.edit53:setWidth(50);
-    obj.edit53:setHeight(30);
-    obj.edit53:setType("number");
-    obj.edit53:setMin(1);
-    obj.edit53:setMax(18);
-    obj.edit53:setEnabled(true);
-    obj.edit53:setVisible(false);
-    obj.edit53:setTransparent(true);
-    obj.edit53:setHorzTextAlign("center");
-    obj.edit53:setField("Upa1d20Soma3");
-    obj.edit53:setName("edit53");
-
-    obj.edit54 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit54:setParent(obj.rectangle9);
-    obj.edit54:setLeft(140);
-    obj.edit54:setTop(460);
-    obj.edit54:setWidth(50);
-    obj.edit54:setHeight(30);
-    obj.edit54:setType("number");
-    obj.edit54:setMin(1);
-    obj.edit54:setMax(9);
-    obj.edit54:setEnabled(true);
-    obj.edit54:setVisible(false);
-    obj.edit54:setHorzTextAlign("center");
-    obj.edit54:setField("Upa1d10Erro3");
-    obj.edit54:setName("edit54");
-
     obj.edit55 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit55:setParent(obj.rectangle9);
-    obj.edit55:setLeft(200);
-    obj.edit55:setTop(460);
+    obj.edit55:setLeft(360);
+    obj.edit55:setTop(450);
     obj.edit55:setWidth(50);
     obj.edit55:setHeight(30);
     obj.edit55:setType("number");
     obj.edit55:setMin(1);
-    obj.edit55:setMax(9);
+    obj.edit55:setMax(18);
     obj.edit55:setEnabled(true);
-    obj.edit55:setVisible(false);
+    obj.edit55:setVisible(true);
+    obj.edit55:setTransparent(true);
     obj.edit55:setHorzTextAlign("center");
-    obj.edit55:setField("Upa2d10Erro3");
+    obj.edit55:setField("Upa1d20Soma3");
     obj.edit55:setName("edit55");
 
     obj.edit56 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit56:setParent(obj.rectangle9);
-    obj.edit56:setLeft(260);
+    obj.edit56:setLeft(140);
     obj.edit56:setTop(460);
     obj.edit56:setWidth(50);
     obj.edit56:setHeight(30);
@@ -1834,8 +1902,38 @@ local function constructNew_frmsekai()
     obj.edit56:setEnabled(true);
     obj.edit56:setVisible(false);
     obj.edit56:setHorzTextAlign("center");
-    obj.edit56:setField("Upa3d10Erro3");
+    obj.edit56:setField("Upa1d10Erro3");
     obj.edit56:setName("edit56");
+
+    obj.edit57 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit57:setParent(obj.rectangle9);
+    obj.edit57:setLeft(200);
+    obj.edit57:setTop(460);
+    obj.edit57:setWidth(50);
+    obj.edit57:setHeight(30);
+    obj.edit57:setType("number");
+    obj.edit57:setMin(1);
+    obj.edit57:setMax(9);
+    obj.edit57:setEnabled(true);
+    obj.edit57:setVisible(false);
+    obj.edit57:setHorzTextAlign("center");
+    obj.edit57:setField("Upa2d10Erro3");
+    obj.edit57:setName("edit57");
+
+    obj.edit58 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit58:setParent(obj.rectangle9);
+    obj.edit58:setLeft(260);
+    obj.edit58:setTop(460);
+    obj.edit58:setWidth(50);
+    obj.edit58:setHeight(30);
+    obj.edit58:setType("number");
+    obj.edit58:setMin(1);
+    obj.edit58:setMax(9);
+    obj.edit58:setEnabled(true);
+    obj.edit58:setVisible(false);
+    obj.edit58:setHorzTextAlign("center");
+    obj.edit58:setField("Upa3d10Erro3");
+    obj.edit58:setName("edit58");
 
     obj.rectangle12 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle12:setParent(obj.rectangle9);
@@ -1849,21 +1947,21 @@ local function constructNew_frmsekai()
     obj.rectangle12:setStrokeSize(3);
     obj.rectangle12:setName("rectangle12");
 
-    obj.edit57 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit57:setParent(obj.rectangle9);
-    obj.edit57:setLeft(320);
-    obj.edit57:setTop(460);
-    obj.edit57:setWidth(50);
-    obj.edit57:setHeight(30);
-    obj.edit57:setType("number");
-    obj.edit57:setMin(1);
-    obj.edit57:setMax(18);
-    obj.edit57:setEnabled(true);
-    obj.edit57:setVisible(false);
-    obj.edit57:setTransparent(true);
-    obj.edit57:setHorzTextAlign("center");
-    obj.edit57:setField("Upa1d20Erro3");
-    obj.edit57:setName("edit57");
+    obj.edit59 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit59:setParent(obj.rectangle9);
+    obj.edit59:setLeft(320);
+    obj.edit59:setTop(460);
+    obj.edit59:setWidth(50);
+    obj.edit59:setHeight(30);
+    obj.edit59:setType("number");
+    obj.edit59:setMin(1);
+    obj.edit59:setMax(18);
+    obj.edit59:setEnabled(true);
+    obj.edit59:setVisible(false);
+    obj.edit59:setTransparent(true);
+    obj.edit59:setHorzTextAlign("center");
+    obj.edit59:setField("Upa1d20Erro3");
+    obj.edit59:setName("edit59");
 
     obj.btnUparJutsu3 = GUI.fromHandle(_obj_newObject("button"));
     obj.btnUparJutsu3:setParent(obj.rectangle9);
@@ -2001,193 +2099,193 @@ local function constructNew_frmsekai()
 									
 
 
-    obj.edit58 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit58:setParent(obj.scrollBox2);
-    obj.edit58:setLeft(90);
-    obj.edit58:setTop(32);
-    obj.edit58:setWidth(85);
-    obj.edit58:setHeight(18);
-    obj.edit58:setField("Nome");
-    obj.edit58:setName("edit58");
-
-    obj.comboBox5 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox5:setParent(obj.scrollBox2);
-    obj.comboBox5:setLeft(220);
-    obj.comboBox5:setTop(32);
-    obj.comboBox5:setWidth(95);
-    obj.comboBox5:setHeight(18);
-    obj.comboBox5:setField("Cla");
-    obj.comboBox5:setItems({'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kamizurui', 'Nara', 'Ootsuki', 'Rinnegan', 'Shizuku', 'Uchiha', 'Uzumaki', 'Yamanaka',
-		 '----//----', 'Fire', 'Gomu', 'Hozuki/Hoshigake', 'Kami', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Ryotenbin', '----//----', 
-		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'});
-    obj.comboBox5:setName("comboBox5");
-
-    obj.edit59 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit59:setParent(obj.scrollBox2);
-    obj.edit59:setLeft(365);
-    obj.edit59:setTop(32);
-    obj.edit59:setWidth(50);
-    obj.edit59:setHeight(18);
-    obj.edit59:setField("Idade");
-    obj.edit59:setName("edit59");
-
     obj.edit60 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit60:setParent(obj.scrollBox2);
-    obj.edit60:setLeft(365);
-    obj.edit60:setTop(80);
-    obj.edit60:setWidth(50);
+    obj.edit60:setLeft(90);
+    obj.edit60:setTop(32);
+    obj.edit60:setWidth(85);
     obj.edit60:setHeight(18);
-    obj.edit60:setVisible(false);
-    obj.edit60:setType("number");
-    obj.edit60:setMax(40);
-    obj.edit60:setField("Idade2");
+    obj.edit60:setField("Nome");
     obj.edit60:setName("edit60");
 
-    obj.comboBox6 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox6:setParent(obj.scrollBox2);
-    obj.comboBox6:setLeft(505);
-    obj.comboBox6:setTop(32);
-    obj.comboBox6:setWidth(140);
-    obj.comboBox6:setHeight(18);
-    obj.comboBox6:setField("Graduacao");
-    obj.comboBox6:setItems({'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'});
-    obj.comboBox6:setName("comboBox6");
+    obj.comboBox7 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox7:setParent(obj.scrollBox2);
+    obj.comboBox7:setLeft(220);
+    obj.comboBox7:setTop(32);
+    obj.comboBox7:setWidth(95);
+    obj.comboBox7:setHeight(18);
+    obj.comboBox7:setField("Cla");
+    obj.comboBox7:setItems({'Sem clã', 'Aburame', 'Akimichi', 'Fuma', 'Hyuga', 'Inuzuka', 'Jyuin', 'Kaguya', 'Kamizurui', 'Nara', 'Ootsuki', 'Rinnegan', 'Shizuku', 'Uchiha', 'Uzumaki', 'Yamanaka',
+		 '----//----', 'Fire', 'Gomu', 'Hozuki/Hoshigake', 'Kami', 'Kibaku', 'Kori', 'Mashido', 'Nomade', 'Orega', 'Ray', 'Sabaku', 'Senju', 'Temuri', 'Ryotenbin', '----//----', 
+		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'});
+    obj.comboBox7:setName("comboBox7");
 
     obj.edit61 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit61:setParent(obj.scrollBox2);
-    obj.edit61:setLeft(220);
-    obj.edit61:setTop(52);
-    obj.edit61:setWidth(85);
+    obj.edit61:setLeft(365);
+    obj.edit61:setTop(32);
+    obj.edit61:setWidth(50);
     obj.edit61:setHeight(18);
-    obj.edit61:setType("number");
-    obj.edit61:setEnabled(true);
-    obj.edit61:setField("Yen");
+    obj.edit61:setField("Idade");
     obj.edit61:setName("edit61");
 
     obj.edit62 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit62:setParent(obj.scrollBox2);
-    obj.edit62:setLeft(90);
-    obj.edit62:setTop(52);
-    obj.edit62:setWidth(85);
+    obj.edit62:setLeft(365);
+    obj.edit62:setTop(80);
+    obj.edit62:setWidth(50);
     obj.edit62:setHeight(18);
-    obj.edit62:setField("Elemento");
+    obj.edit62:setVisible(false);
+    obj.edit62:setType("number");
+    obj.edit62:setMax(40);
+    obj.edit62:setField("Idade2");
     obj.edit62:setName("edit62");
+
+    obj.comboBox8 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox8:setParent(obj.scrollBox2);
+    obj.comboBox8:setLeft(505);
+    obj.comboBox8:setTop(32);
+    obj.comboBox8:setWidth(140);
+    obj.comboBox8:setHeight(18);
+    obj.comboBox8:setField("GraduacaoTreino");
+    obj.comboBox8:setItems({'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'});
+    obj.comboBox8:setName("comboBox8");
 
     obj.edit63 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit63:setParent(obj.scrollBox2);
-    obj.edit63:setLeft(130);
-    obj.edit63:setTop(115);
+    obj.edit63:setLeft(220);
+    obj.edit63:setTop(52);
     obj.edit63:setWidth(85);
     obj.edit63:setHeight(18);
     obj.edit63:setType("number");
-    obj.edit63:setField("Forca");
+    obj.edit63:setEnabled(true);
+    obj.edit63:setField("Yen");
     obj.edit63:setName("edit63");
 
     obj.edit64 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit64:setParent(obj.scrollBox2);
-    obj.edit64:setLeft(130);
-    obj.edit64:setTop(135);
+    obj.edit64:setLeft(90);
+    obj.edit64:setTop(52);
     obj.edit64:setWidth(85);
     obj.edit64:setHeight(18);
-    obj.edit64:setType("number");
-    obj.edit64:setField("Inteligencia");
+    obj.edit64:setField("Elemento");
     obj.edit64:setName("edit64");
 
     obj.edit65 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit65:setParent(obj.scrollBox2);
     obj.edit65:setLeft(130);
-    obj.edit65:setTop(155);
+    obj.edit65:setTop(115);
     obj.edit65:setWidth(85);
     obj.edit65:setHeight(18);
     obj.edit65:setType("number");
-    obj.edit65:setField("Sabedoria");
+    obj.edit65:setField("Forca");
     obj.edit65:setName("edit65");
 
     obj.edit66 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit66:setParent(obj.scrollBox2);
     obj.edit66:setLeft(130);
-    obj.edit66:setTop(175);
+    obj.edit66:setTop(135);
     obj.edit66:setWidth(85);
     obj.edit66:setHeight(18);
     obj.edit66:setType("number");
-    obj.edit66:setField("Habilidade");
+    obj.edit66:setField("Inteligencia");
     obj.edit66:setName("edit66");
 
     obj.edit67 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit67:setParent(obj.scrollBox2);
     obj.edit67:setLeft(130);
-    obj.edit67:setTop(195);
+    obj.edit67:setTop(155);
     obj.edit67:setWidth(85);
     obj.edit67:setHeight(18);
     obj.edit67:setType("number");
-    obj.edit67:setField("Resistencia");
+    obj.edit67:setField("Sabedoria");
     obj.edit67:setName("edit67");
 
     obj.edit68 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit68:setParent(obj.scrollBox2);
-    obj.edit68:setLeft(370);
-    obj.edit68:setTop(115);
+    obj.edit68:setLeft(130);
+    obj.edit68:setTop(175);
     obj.edit68:setWidth(85);
-    obj.edit68:setEnabled(false);
     obj.edit68:setHeight(18);
-    obj.edit68:setType("float");
-    obj.edit68:setField("TaiTotal");
+    obj.edit68:setType("number");
+    obj.edit68:setField("Habilidade");
     obj.edit68:setName("edit68");
 
     obj.edit69 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit69:setParent(obj.scrollBox2);
-    obj.edit69:setLeft(370);
-    obj.edit69:setTop(135);
+    obj.edit69:setLeft(130);
+    obj.edit69:setTop(195);
     obj.edit69:setWidth(85);
-    obj.edit69:setEnabled(false);
     obj.edit69:setHeight(18);
-    obj.edit69:setType("float");
-    obj.edit69:setField("NinTotal");
+    obj.edit69:setType("number");
+    obj.edit69:setField("Resistencia");
     obj.edit69:setName("edit69");
 
     obj.edit70 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit70:setParent(obj.scrollBox2);
     obj.edit70:setLeft(370);
-    obj.edit70:setTop(155);
+    obj.edit70:setTop(115);
     obj.edit70:setWidth(85);
     obj.edit70:setEnabled(false);
     obj.edit70:setHeight(18);
     obj.edit70:setType("float");
-    obj.edit70:setField("GenTotal");
+    obj.edit70:setField("TaiTotal");
     obj.edit70:setName("edit70");
 
     obj.edit71 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit71:setParent(obj.scrollBox2);
     obj.edit71:setLeft(370);
-    obj.edit71:setTop(175);
+    obj.edit71:setTop(135);
     obj.edit71:setWidth(85);
     obj.edit71:setEnabled(false);
     obj.edit71:setHeight(18);
     obj.edit71:setType("float");
-    obj.edit71:setField("DATotal");
+    obj.edit71:setField("NinTotal");
     obj.edit71:setName("edit71");
 
     obj.edit72 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit72:setParent(obj.scrollBox2);
     obj.edit72:setLeft(370);
-    obj.edit72:setTop(195);
+    obj.edit72:setTop(155);
     obj.edit72:setWidth(85);
     obj.edit72:setEnabled(false);
     obj.edit72:setHeight(18);
     obj.edit72:setType("float");
-    obj.edit72:setField("EleTotal");
+    obj.edit72:setField("GenTotal");
     obj.edit72:setName("edit72");
 
     obj.edit73 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit73:setParent(obj.scrollBox2);
     obj.edit73:setLeft(370);
-    obj.edit73:setTop(215);
+    obj.edit73:setTop(175);
     obj.edit73:setWidth(85);
     obj.edit73:setEnabled(false);
     obj.edit73:setHeight(18);
     obj.edit73:setType("float");
-    obj.edit73:setField("ReducaoTotal");
+    obj.edit73:setField("DATotal");
     obj.edit73:setName("edit73");
+
+    obj.edit74 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit74:setParent(obj.scrollBox2);
+    obj.edit74:setLeft(370);
+    obj.edit74:setTop(195);
+    obj.edit74:setWidth(85);
+    obj.edit74:setEnabled(false);
+    obj.edit74:setHeight(18);
+    obj.edit74:setType("float");
+    obj.edit74:setField("EleTotal");
+    obj.edit74:setName("edit74");
+
+    obj.edit75 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit75:setParent(obj.scrollBox2);
+    obj.edit75:setLeft(370);
+    obj.edit75:setTop(215);
+    obj.edit75:setWidth(85);
+    obj.edit75:setEnabled(false);
+    obj.edit75:setHeight(18);
+    obj.edit75:setType("float");
+    obj.edit75:setField("ReducaoTotal");
+    obj.edit75:setName("edit75");
 
     obj.button12 = GUI.fromHandle(_obj_newObject("button"));
     obj.button12:setParent(obj.scrollBox2);
@@ -2216,92 +2314,103 @@ local function constructNew_frmsekai()
     obj.button13:setText("»");
     obj.button13:setName("button13");
 
-    obj.edit74 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit74:setParent(obj.scrollBox2);
-    obj.edit74:setLeft(570);
-    obj.edit74:setTop(100);
-    obj.edit74:setWidth(55);
-    obj.edit74:setHeight(30);
-    obj.edit74:setHorzTextAlign("center");
-    obj.edit74:setFontColor("Red");
-    obj.edit74:setFontFamily("Nyala");
-    obj.edit74:setFontSize(25);
-    obj.edit74:setEnabled(true);
-    obj.edit74:setType("number");
-    obj.edit74:setField("Level");
-    obj.edit74:setName("edit74");
-
-    obj.edit75 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit75:setParent(obj.scrollBox2);
-    obj.edit75:setLeft(535);
-    obj.edit75:setTop(132);
-    obj.edit75:setWidth(55);
-    obj.edit75:setHeight(18);
-    obj.edit75:setType("float");
-    obj.edit75:setField("Exp");
-    obj.edit75:setName("edit75");
-
     obj.edit76 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit76:setParent(obj.scrollBox2);
-    obj.edit76:setLeft(610);
-    obj.edit76:setTop(132);
+    obj.edit76:setLeft(570);
+    obj.edit76:setTop(100);
     obj.edit76:setWidth(55);
-    obj.edit76:setHeight(18);
-    obj.edit76:setEnabled(false);
-    obj.edit76:setType("float");
-    obj.edit76:setField("ExpTotal");
+    obj.edit76:setHeight(30);
+    obj.edit76:setHorzTextAlign("center");
+    obj.edit76:setFontColor("Red");
+    obj.edit76:setFontFamily("Nyala");
+    obj.edit76:setFontSize(25);
+    obj.edit76:setEnabled(true);
+    obj.edit76:setType("number");
+    obj.edit76:setField("Level");
     obj.edit76:setName("edit76");
+
+    obj.Exp = GUI.fromHandle(_obj_newObject("edit"));
+    obj.Exp:setParent(obj.scrollBox2);
+    obj.Exp:setName("Exp");
+    obj.Exp:setLeft(535);
+    obj.Exp:setTop(132);
+    obj.Exp:setWidth(55);
+    obj.Exp:setHeight(18);
+    obj.Exp:setType("float");
+    obj.Exp:setField("Exp");
 
     obj.edit77 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit77:setParent(obj.scrollBox2);
-    obj.edit77:setLeft(90);
-    obj.edit77:setTop(276);
-    obj.edit77:setWidth(85);
+    obj.edit77:setLeft(610);
+    obj.edit77:setTop(132);
+    obj.edit77:setWidth(55);
     obj.edit77:setHeight(18);
-    obj.edit77:setType("float");
     obj.edit77:setEnabled(false);
-    obj.edit77:setHorzTextAlign("center");
-    obj.edit77:setFontColor("Red");
-    obj.edit77:setField("HP");
+    obj.edit77:setType("float");
+    obj.edit77:setField("ExpTotal");
     obj.edit77:setName("edit77");
 
     obj.edit78 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit78:setParent(obj.scrollBox2);
-    obj.edit78:setLeft(90);
-    obj.edit78:setTop(296);
-    obj.edit78:setWidth(85);
+    obj.edit78:setLeft(670);
+    obj.edit78:setTop(132);
+    obj.edit78:setWidth(55);
     obj.edit78:setHeight(18);
+    obj.edit78:setEnabled(true);
     obj.edit78:setType("float");
-    obj.edit78:setEnabled(false);
-    obj.edit78:setHorzTextAlign("center");
-    obj.edit78:setFontColor("Cyan");
-    obj.edit78:setField("Chakra");
+    obj.edit78:setField("ExpPTreino");
     obj.edit78:setName("edit78");
 
     obj.edit79 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit79:setParent(obj.scrollBox2);
     obj.edit79:setLeft(90);
-    obj.edit79:setTop(316);
+    obj.edit79:setTop(276);
     obj.edit79:setWidth(85);
     obj.edit79:setHeight(18);
     obj.edit79:setType("float");
     obj.edit79:setEnabled(false);
     obj.edit79:setHorzTextAlign("center");
-    obj.edit79:setFontColor("#FFD700");
-    obj.edit79:setField("Reiatsu");
+    obj.edit79:setFontColor("Red");
+    obj.edit79:setField("HP");
     obj.edit79:setName("edit79");
 
     obj.edit80 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit80:setParent(obj.scrollBox2);
     obj.edit80:setLeft(90);
-    obj.edit80:setTop(336);
+    obj.edit80:setTop(296);
     obj.edit80:setWidth(85);
     obj.edit80:setHeight(18);
     obj.edit80:setType("float");
     obj.edit80:setEnabled(false);
     obj.edit80:setHorzTextAlign("center");
-    obj.edit80:setField("Outros");
+    obj.edit80:setFontColor("Cyan");
+    obj.edit80:setField("Chakra");
     obj.edit80:setName("edit80");
+
+    obj.edit81 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit81:setParent(obj.scrollBox2);
+    obj.edit81:setLeft(90);
+    obj.edit81:setTop(316);
+    obj.edit81:setWidth(85);
+    obj.edit81:setHeight(18);
+    obj.edit81:setType("float");
+    obj.edit81:setEnabled(false);
+    obj.edit81:setHorzTextAlign("center");
+    obj.edit81:setFontColor("#FFD700");
+    obj.edit81:setField("Outros");
+    obj.edit81:setName("edit81");
+
+    obj.edit82 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit82:setParent(obj.scrollBox2);
+    obj.edit82:setLeft(90);
+    obj.edit82:setTop(336);
+    obj.edit82:setWidth(85);
+    obj.edit82:setHeight(18);
+    obj.edit82:setType("float");
+    obj.edit82:setEnabled(false);
+    obj.edit82:setHorzTextAlign("center");
+    obj.edit82:setField("Energia");
+    obj.edit82:setName("edit82");
 
     obj.checkBox1 = GUI.fromHandle(_obj_newObject("checkBox"));
     obj.checkBox1:setParent(obj.scrollBox2);
@@ -2309,26 +2418,26 @@ local function constructNew_frmsekai()
     obj.checkBox1:setTop(20);
     obj.checkBox1:setFontSize(18);
     obj.checkBox1:setText("TREINO ON ?");
-    obj.checkBox1:setVisible(false);
+    obj.checkBox1:setVisible(true);
     obj.checkBox1:setField("TreinoON");
     obj.checkBox1:setName("checkBox1");
 
-    obj.edit81 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit81:setParent(obj.scrollBox2);
-    obj.edit81:setLeft(190);
-    obj.edit81:setTop(276);
-    obj.edit81:setWidth(85);
-    obj.edit81:setHeight(18);
-    obj.edit81:setEnabled(false);
-    obj.edit81:setType("float");
-    obj.edit81:setHorzTextAlign("center");
-    obj.edit81:setFontColor("Red");
-    obj.edit81:setField("HPTotal");
-    obj.edit81:setName("edit81");
+    obj.edit83 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit83:setParent(obj.scrollBox2);
+    obj.edit83:setLeft(190);
+    obj.edit83:setTop(276);
+    obj.edit83:setWidth(85);
+    obj.edit83:setHeight(18);
+    obj.edit83:setEnabled(false);
+    obj.edit83:setType("float");
+    obj.edit83:setHorzTextAlign("center");
+    obj.edit83:setFontColor("Red");
+    obj.edit83:setField("HPTotal");
+    obj.edit83:setName("edit83");
 
     obj.button14 = GUI.fromHandle(_obj_newObject("button"));
     obj.button14:setParent(obj.scrollBox2);
-    obj.button14:setLeft(300);
+    obj.button14:setLeft(280);
     obj.button14:setTop(276);
     obj.button14:setWidth(40);
     obj.button14:setHeight(20);
@@ -2336,22 +2445,22 @@ local function constructNew_frmsekai()
     obj.button14:setText("❤");
     obj.button14:setName("button14");
 
-    obj.edit82 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit82:setParent(obj.scrollBox2);
-    obj.edit82:setLeft(190);
-    obj.edit82:setTop(296);
-    obj.edit82:setWidth(85);
-    obj.edit82:setHeight(18);
-    obj.edit82:setEnabled(false);
-    obj.edit82:setType("float");
-    obj.edit82:setHorzTextAlign("center");
-    obj.edit82:setFontColor("cyan");
-    obj.edit82:setField("ChakraTotal");
-    obj.edit82:setName("edit82");
+    obj.edit84 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit84:setParent(obj.scrollBox2);
+    obj.edit84:setLeft(190);
+    obj.edit84:setTop(296);
+    obj.edit84:setWidth(85);
+    obj.edit84:setHeight(18);
+    obj.edit84:setEnabled(false);
+    obj.edit84:setType("float");
+    obj.edit84:setHorzTextAlign("center");
+    obj.edit84:setFontColor("cyan");
+    obj.edit84:setField("ChakraTotal");
+    obj.edit84:setName("edit84");
 
     obj.button15 = GUI.fromHandle(_obj_newObject("button"));
     obj.button15:setParent(obj.scrollBox2);
-    obj.button15:setLeft(300);
+    obj.button15:setLeft(280);
     obj.button15:setTop(296);
     obj.button15:setWidth(40);
     obj.button15:setHeight(20);
@@ -2359,22 +2468,22 @@ local function constructNew_frmsekai()
     obj.button15:setText("🌀");
     obj.button15:setName("button15");
 
-    obj.edit83 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit83:setParent(obj.scrollBox2);
-    obj.edit83:setLeft(190);
-    obj.edit83:setTop(316);
-    obj.edit83:setWidth(85);
-    obj.edit83:setHeight(18);
-    obj.edit83:setEnabled(false);
-    obj.edit83:setType("float");
-    obj.edit83:setHorzTextAlign("center");
-    obj.edit83:setFontColor("#FFD700");
-    obj.edit83:setField("ReiatsuTotal");
-    obj.edit83:setName("edit83");
+    obj.edit85 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit85:setParent(obj.scrollBox2);
+    obj.edit85:setLeft(190);
+    obj.edit85:setTop(316);
+    obj.edit85:setWidth(85);
+    obj.edit85:setHeight(18);
+    obj.edit85:setEnabled(false);
+    obj.edit85:setType("float");
+    obj.edit85:setHorzTextAlign("center");
+    obj.edit85:setFontColor("#FFD700");
+    obj.edit85:setField("OutrosTotal");
+    obj.edit85:setName("edit85");
 
     obj.button16 = GUI.fromHandle(_obj_newObject("button"));
     obj.button16:setParent(obj.scrollBox2);
-    obj.button16:setLeft(300);
+    obj.button16:setLeft(280);
     obj.button16:setTop(316);
     obj.button16:setWidth(40);
     obj.button16:setHeight(20);
@@ -2382,35 +2491,46 @@ local function constructNew_frmsekai()
     obj.button16:setText("⚡");
     obj.button16:setName("button16");
 
-    obj.edit84 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit84:setParent(obj.scrollBox2);
-    obj.edit84:setLeft(190);
-    obj.edit84:setTop(336);
-    obj.edit84:setWidth(85);
-    obj.edit84:setHeight(18);
-    obj.edit84:setEnabled(false);
-    obj.edit84:setType("float");
-    obj.edit84:setHorzTextAlign("center");
-    obj.edit84:setField("OutrosTotal");
-    obj.edit84:setName("edit84");
+    obj.cmbTipoOutro = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.cmbTipoOutro:setParent(obj.scrollBox2);
+    obj.cmbTipoOutro:setName("cmbTipoOutro");
+    obj.cmbTipoOutro:setLeft(320);
+    obj.cmbTipoOutro:setTop(316);
+    obj.cmbTipoOutro:setWidth(110);
+    obj.cmbTipoOutro:setHeight(18);
+    obj.cmbTipoOutro:setField("TipoOutro");
+    obj.cmbTipoOutro:setItems({'Reiatsu', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'});
+    obj.cmbTipoOutro:setValues({'1', '2', '3', '4', '5', '6', '7', '8'});
 
-    obj.comboBox7 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox7:setParent(obj.scrollBox2);
-    obj.comboBox7:setLeft(280);
-    obj.comboBox7:setTop(336);
-    obj.comboBox7:setWidth(110);
-    obj.comboBox7:setHeight(18);
-    obj.comboBox7:setField("TipoOutro");
-    obj.comboBox7:setItems({'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'});
-    obj.comboBox7:setName("comboBox7");
+    obj.edit86 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit86:setParent(obj.scrollBox2);
+    obj.edit86:setLeft(190);
+    obj.edit86:setTop(336);
+    obj.edit86:setWidth(85);
+    obj.edit86:setHeight(18);
+    obj.edit86:setEnabled(false);
+    obj.edit86:setType("float");
+    obj.edit86:setHorzTextAlign("center");
+    obj.edit86:setField("EnergiaTotal");
+    obj.edit86:setName("edit86");
 
     obj.button17 = GUI.fromHandle(_obj_newObject("button"));
     obj.button17:setParent(obj.scrollBox2);
-    obj.button17:setLeft(490);
-    obj.button17:setTop(155);
-    obj.button17:setWidth(145);
-    obj.button17:setHeight(60);
+    obj.button17:setLeft(280);
+    obj.button17:setTop(336);
+    obj.button17:setWidth(40);
+    obj.button17:setHeight(20);
+    obj.button17:setFontColor("Green");
+    obj.button17:setText("🔋");
     obj.button17:setName("button17");
+
+    obj.button18 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button18:setParent(obj.scrollBox2);
+    obj.button18:setLeft(490);
+    obj.button18:setTop(155);
+    obj.button18:setWidth(145);
+    obj.button18:setHeight(60);
+    obj.button18:setName("button18");
 
     obj.PopTransformation = GUI.fromHandle(_obj_newObject("popup"));
     obj.PopTransformation:setParent(obj.scrollBox2);
@@ -2430,195 +2550,195 @@ local function constructNew_frmsekai()
     obj.image8:setSRC("/imagens/8.png");
     obj.image8:setName("image8");
 
-    obj.edit85 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit85:setParent(obj.PopTransformation);
-    obj.edit85:setLeft(190);
-    obj.edit85:setTop(43);
-    obj.edit85:setWidth(100);
-    obj.edit85:setHeight(20);
-    obj.edit85:setType("number");
-    obj.edit85:setField("TTaijutsu");
-    obj.edit85:setName("edit85");
-
-    obj.edit86 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit86:setParent(obj.PopTransformation);
-    obj.edit86:setLeft(190);
-    obj.edit86:setTop(72);
-    obj.edit86:setWidth(100);
-    obj.edit86:setHeight(20);
-    obj.edit86:setType("number");
-    obj.edit86:setField("TNinjutsu");
-    obj.edit86:setName("edit86");
-
     obj.edit87 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit87:setParent(obj.PopTransformation);
     obj.edit87:setLeft(190);
-    obj.edit87:setTop(101);
+    obj.edit87:setTop(43);
     obj.edit87:setWidth(100);
     obj.edit87:setHeight(20);
     obj.edit87:setType("number");
-    obj.edit87:setField("TGenjutsu");
+    obj.edit87:setField("TTaijutsu");
     obj.edit87:setName("edit87");
 
     obj.edit88 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit88:setParent(obj.PopTransformation);
     obj.edit88:setLeft(190);
-    obj.edit88:setTop(130);
+    obj.edit88:setTop(72);
     obj.edit88:setWidth(100);
     obj.edit88:setHeight(20);
     obj.edit88:setType("number");
-    obj.edit88:setField("TDA");
+    obj.edit88:setField("TNinjutsu");
     obj.edit88:setName("edit88");
 
     obj.edit89 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit89:setParent(obj.PopTransformation);
     obj.edit89:setLeft(190);
-    obj.edit89:setTop(159);
+    obj.edit89:setTop(101);
     obj.edit89:setWidth(100);
     obj.edit89:setHeight(20);
     obj.edit89:setType("number");
-    obj.edit89:setField("TElemental");
+    obj.edit89:setField("TGenjutsu");
     obj.edit89:setName("edit89");
 
     obj.edit90 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit90:setParent(obj.PopTransformation);
     obj.edit90:setLeft(190);
-    obj.edit90:setTop(217);
+    obj.edit90:setTop(130);
     obj.edit90:setWidth(100);
     obj.edit90:setHeight(20);
     obj.edit90:setType("number");
-    obj.edit90:setField("THP");
+    obj.edit90:setField("TDA");
     obj.edit90:setName("edit90");
 
     obj.edit91 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit91:setParent(obj.PopTransformation);
     obj.edit91:setLeft(190);
-    obj.edit91:setTop(245);
+    obj.edit91:setTop(159);
     obj.edit91:setWidth(100);
     obj.edit91:setHeight(20);
     obj.edit91:setType("number");
-    obj.edit91:setField("TChakra");
+    obj.edit91:setField("TElemental");
     obj.edit91:setName("edit91");
 
     obj.edit92 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit92:setParent(obj.PopTransformation);
     obj.edit92:setLeft(190);
-    obj.edit92:setTop(273);
+    obj.edit92:setTop(217);
     obj.edit92:setWidth(100);
     obj.edit92:setHeight(20);
     obj.edit92:setType("number");
-    obj.edit92:setField("TReiatsu");
+    obj.edit92:setField("THP");
     obj.edit92:setName("edit92");
 
     obj.edit93 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit93:setParent(obj.PopTransformation);
     obj.edit93:setLeft(190);
-    obj.edit93:setTop(301);
+    obj.edit93:setTop(245);
     obj.edit93:setWidth(100);
     obj.edit93:setHeight(20);
     obj.edit93:setType("number");
-    obj.edit93:setField("TOutros");
+    obj.edit93:setField("TChakra");
     obj.edit93:setName("edit93");
 
     obj.edit94 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit94:setParent(obj.PopTransformation);
     obj.edit94:setLeft(190);
-    obj.edit94:setTop(357);
+    obj.edit94:setTop(273);
     obj.edit94:setWidth(100);
     obj.edit94:setHeight(20);
     obj.edit94:setType("number");
-    obj.edit94:setField("TReducao");
+    obj.edit94:setField("TReiatsu");
     obj.edit94:setName("edit94");
 
     obj.edit95 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit95:setParent(obj.PopTransformation);
-    obj.edit95:setLeft(820);
-    obj.edit95:setTop(43);
+    obj.edit95:setLeft(190);
+    obj.edit95:setTop(301);
     obj.edit95:setWidth(100);
     obj.edit95:setHeight(20);
     obj.edit95:setType("number");
-    obj.edit95:setField("TATai");
+    obj.edit95:setField("TOutros");
     obj.edit95:setName("edit95");
 
     obj.edit96 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit96:setParent(obj.PopTransformation);
-    obj.edit96:setLeft(820);
-    obj.edit96:setTop(72);
+    obj.edit96:setLeft(190);
+    obj.edit96:setTop(357);
     obj.edit96:setWidth(100);
     obj.edit96:setHeight(20);
     obj.edit96:setType("number");
-    obj.edit96:setField("TANin");
+    obj.edit96:setField("TReducao");
     obj.edit96:setName("edit96");
 
     obj.edit97 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit97:setParent(obj.PopTransformation);
     obj.edit97:setLeft(820);
-    obj.edit97:setTop(101);
+    obj.edit97:setTop(43);
     obj.edit97:setWidth(100);
     obj.edit97:setHeight(20);
     obj.edit97:setType("number");
-    obj.edit97:setField("TAGen");
+    obj.edit97:setField("TATai");
     obj.edit97:setName("edit97");
 
     obj.edit98 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit98:setParent(obj.PopTransformation);
     obj.edit98:setLeft(820);
-    obj.edit98:setTop(130);
+    obj.edit98:setTop(72);
     obj.edit98:setWidth(100);
     obj.edit98:setHeight(20);
     obj.edit98:setType("number");
-    obj.edit98:setField("TEsquiva");
+    obj.edit98:setField("TANin");
     obj.edit98:setName("edit98");
 
     obj.edit99 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit99:setParent(obj.PopTransformation);
     obj.edit99:setLeft(820);
-    obj.edit99:setTop(159);
+    obj.edit99:setTop(101);
     obj.edit99:setWidth(100);
     obj.edit99:setHeight(20);
     obj.edit99:setType("number");
-    obj.edit99:setField("TBloqueio");
+    obj.edit99:setField("TAGen");
     obj.edit99:setName("edit99");
 
     obj.edit100 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit100:setParent(obj.PopTransformation);
     obj.edit100:setLeft(820);
-    obj.edit100:setTop(187);
+    obj.edit100:setTop(130);
     obj.edit100:setWidth(100);
     obj.edit100:setHeight(20);
     obj.edit100:setType("number");
-    obj.edit100:setField("TCTai");
+    obj.edit100:setField("TEsquiva");
     obj.edit100:setName("edit100");
 
     obj.edit101 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit101:setParent(obj.PopTransformation);
     obj.edit101:setLeft(820);
-    obj.edit101:setTop(215);
+    obj.edit101:setTop(159);
     obj.edit101:setWidth(100);
     obj.edit101:setHeight(20);
     obj.edit101:setType("number");
-    obj.edit101:setField("TCNin");
+    obj.edit101:setField("TBloqueio");
     obj.edit101:setName("edit101");
 
     obj.edit102 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit102:setParent(obj.PopTransformation);
     obj.edit102:setLeft(820);
-    obj.edit102:setTop(243);
+    obj.edit102:setTop(187);
     obj.edit102:setWidth(100);
     obj.edit102:setHeight(20);
     obj.edit102:setType("number");
-    obj.edit102:setField("TCGen");
+    obj.edit102:setField("TCTai");
     obj.edit102:setName("edit102");
 
     obj.edit103 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit103:setParent(obj.PopTransformation);
     obj.edit103:setLeft(820);
-    obj.edit103:setTop(271);
+    obj.edit103:setTop(215);
     obj.edit103:setWidth(100);
     obj.edit103:setHeight(20);
     obj.edit103:setType("number");
-    obj.edit103:setField("TTurnos");
+    obj.edit103:setField("TCNin");
     obj.edit103:setName("edit103");
+
+    obj.edit104 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit104:setParent(obj.PopTransformation);
+    obj.edit104:setLeft(820);
+    obj.edit104:setTop(243);
+    obj.edit104:setWidth(100);
+    obj.edit104:setHeight(20);
+    obj.edit104:setType("number");
+    obj.edit104:setField("TCGen");
+    obj.edit104:setName("edit104");
+
+    obj.edit105 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit105:setParent(obj.PopTransformation);
+    obj.edit105:setLeft(820);
+    obj.edit105:setTop(271);
+    obj.edit105:setWidth(100);
+    obj.edit105:setHeight(20);
+    obj.edit105:setType("number");
+    obj.edit105:setField("TTurnos");
+    obj.edit105:setName("edit105");
 
     obj.transformation = GUI.fromHandle(_obj_newObject("image"));
     obj.transformation:setParent(obj.scrollBox2);
@@ -2751,26 +2871,26 @@ local function constructNew_frmsekai()
     obj.dataLink2:setField("FotoMSG");
     obj.dataLink2:setName("dataLink2");
 
-    obj.edit104 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit104:setParent(obj.scrollBox2);
-    obj.edit104:setLeft(443);
-    obj.edit104:setTop(556);
-    obj.edit104:setWidth(85);
-    obj.edit104:setHeight(18);
-    obj.edit104:setVisible(false);
-    obj.edit104:setField("FotoMSG");
-    obj.edit104:setName("edit104");
+    obj.edit106 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit106:setParent(obj.scrollBox2);
+    obj.edit106:setLeft(443);
+    obj.edit106:setTop(556);
+    obj.edit106:setWidth(85);
+    obj.edit106:setHeight(18);
+    obj.edit106:setVisible(false);
+    obj.edit106:setField("FotoMSG");
+    obj.edit106:setName("edit106");
 
-    obj.button18 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button18:setParent(obj.scrollBox2);
-    obj.button18:setLeft(595);
-    obj.button18:setTop(665);
-    obj.button18:setWidth(80);
-    obj.button18:setHeight(20);
-    obj.button18:setOpacity(1.0);
-    obj.button18:setVisible(true);
-    obj.button18:setText("Enviar");
-    obj.button18:setName("button18");
+    obj.button19 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button19:setParent(obj.scrollBox2);
+    obj.button19:setLeft(595);
+    obj.button19:setTop(665);
+    obj.button19:setWidth(80);
+    obj.button19:setHeight(20);
+    obj.button19:setOpacity(1.0);
+    obj.button19:setVisible(true);
+    obj.button19:setText("Enviar");
+    obj.button19:setName("button19");
 
     obj.image13 = GUI.fromHandle(_obj_newObject("image"));
     obj.image13:setParent(obj.scrollBox2);
@@ -2783,16 +2903,16 @@ local function constructNew_frmsekai()
     obj.image13:setHeight(110);
     obj.image13:setName("image13");
 
-    obj.button19 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button19:setParent(obj.scrollBox2);
-    obj.button19:setLeft(600);
-    obj.button19:setTop(270);
-    obj.button19:setWidth(105);
-    obj.button19:setHeight(85);
-    obj.button19:setOpacity(1.0);
-    obj.button19:setVisible(false);
-    obj.button19:setText("Calculo");
-    obj.button19:setName("button19");
+    obj.button20 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button20:setParent(obj.scrollBox2);
+    obj.button20:setLeft(600);
+    obj.button20:setTop(270);
+    obj.button20:setWidth(105);
+    obj.button20:setHeight(85);
+    obj.button20:setOpacity(1.0);
+    obj.button20:setVisible(true);
+    obj.button20:setText("Calculo");
+    obj.button20:setName("button20");
 
     obj.POPCALCULO = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPCALCULO:setParent(obj.scrollBox2);
@@ -2812,313 +2932,313 @@ local function constructNew_frmsekai()
     obj.image14:setSRC("/imagens/CALCULO.png");
     obj.image14:setName("image14");
 
-    obj.edit105 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit105:setParent(obj.POPCALCULO);
-    obj.edit105:setLeft(150);
-    obj.edit105:setTop(35);
-    obj.edit105:setWidth(85);
-    obj.edit105:setHeight(18);
-    obj.edit105:setEnabled(false);
-    obj.edit105:setType("float");
-    obj.edit105:setField("CTai");
-    obj.edit105:setName("edit105");
-
-    obj.edit106 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit106:setParent(obj.POPCALCULO);
-    obj.edit106:setLeft(150);
-    obj.edit106:setTop(58);
-    obj.edit106:setWidth(85);
-    obj.edit106:setHeight(18);
-    obj.edit106:setEnabled(false);
-    obj.edit106:setType("float");
-    obj.edit106:setField("CNin");
-    obj.edit106:setName("edit106");
-
     obj.edit107 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit107:setParent(obj.POPCALCULO);
     obj.edit107:setLeft(150);
-    obj.edit107:setTop(81);
+    obj.edit107:setTop(35);
     obj.edit107:setWidth(85);
     obj.edit107:setHeight(18);
     obj.edit107:setEnabled(false);
     obj.edit107:setType("float");
-    obj.edit107:setField("CGen");
+    obj.edit107:setField("CTai");
     obj.edit107:setName("edit107");
 
     obj.edit108 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit108:setParent(obj.POPCALCULO);
     obj.edit108:setLeft(150);
-    obj.edit108:setTop(102);
+    obj.edit108:setTop(58);
     obj.edit108:setWidth(85);
     obj.edit108:setHeight(18);
     obj.edit108:setEnabled(false);
     obj.edit108:setType("float");
-    obj.edit108:setField("CDA");
+    obj.edit108:setField("CNin");
     obj.edit108:setName("edit108");
 
     obj.edit109 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit109:setParent(obj.POPCALCULO);
     obj.edit109:setLeft(150);
-    obj.edit109:setTop(122);
+    obj.edit109:setTop(81);
     obj.edit109:setWidth(85);
     obj.edit109:setHeight(18);
     obj.edit109:setEnabled(false);
     obj.edit109:setType("float");
-    obj.edit109:setField("CDE");
+    obj.edit109:setField("CGen");
     obj.edit109:setName("edit109");
 
     obj.edit110 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit110:setParent(obj.POPCALCULO);
     obj.edit110:setLeft(150);
-    obj.edit110:setTop(145);
+    obj.edit110:setTop(102);
     obj.edit110:setWidth(85);
     obj.edit110:setHeight(18);
     obj.edit110:setEnabled(false);
     obj.edit110:setType("float");
-    obj.edit110:setField("CHP");
+    obj.edit110:setField("CDA");
     obj.edit110:setName("edit110");
 
     obj.edit111 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit111:setParent(obj.POPCALCULO);
     obj.edit111:setLeft(150);
-    obj.edit111:setTop(168);
+    obj.edit111:setTop(122);
     obj.edit111:setWidth(85);
     obj.edit111:setHeight(18);
     obj.edit111:setEnabled(false);
     obj.edit111:setType("float");
-    obj.edit111:setField("CChakra");
+    obj.edit111:setField("CDE");
     obj.edit111:setName("edit111");
 
     obj.edit112 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit112:setParent(obj.POPCALCULO);
-    obj.edit112:setLeft(310);
-    obj.edit112:setTop(210);
+    obj.edit112:setLeft(150);
+    obj.edit112:setTop(145);
     obj.edit112:setWidth(85);
     obj.edit112:setHeight(18);
     obj.edit112:setEnabled(false);
     obj.edit112:setType("float");
-    obj.edit112:setField("CReducao");
+    obj.edit112:setField("CHP");
     obj.edit112:setName("edit112");
 
     obj.edit113 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit113:setParent(obj.POPCALCULO);
-    obj.edit113:setLeft(350);
-    obj.edit113:setTop(253);
+    obj.edit113:setLeft(150);
+    obj.edit113:setTop(168);
     obj.edit113:setWidth(85);
     obj.edit113:setHeight(18);
     obj.edit113:setEnabled(false);
     obj.edit113:setType("float");
-    obj.edit113:setField("CAtletismo");
+    obj.edit113:setField("CChakra");
     obj.edit113:setName("edit113");
 
     obj.edit114 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit114:setParent(obj.POPCALCULO);
-    obj.edit114:setLeft(350);
-    obj.edit114:setTop(274);
+    obj.edit114:setLeft(310);
+    obj.edit114:setTop(210);
     obj.edit114:setWidth(85);
     obj.edit114:setHeight(18);
     obj.edit114:setEnabled(false);
     obj.edit114:setType("float");
-    obj.edit114:setField("CRaciocineo");
+    obj.edit114:setField("CReducao");
     obj.edit114:setName("edit114");
 
     obj.edit115 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit115:setParent(obj.POPCALCULO);
     obj.edit115:setLeft(350);
-    obj.edit115:setTop(295);
+    obj.edit115:setTop(253);
     obj.edit115:setWidth(85);
     obj.edit115:setHeight(18);
     obj.edit115:setEnabled(false);
     obj.edit115:setType("float");
-    obj.edit115:setField("CPercepcao");
+    obj.edit115:setField("CAtletismo");
     obj.edit115:setName("edit115");
 
     obj.edit116 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit116:setParent(obj.POPCALCULO);
     obj.edit116:setLeft(350);
-    obj.edit116:setTop(316);
+    obj.edit116:setTop(274);
     obj.edit116:setWidth(85);
     obj.edit116:setHeight(18);
     obj.edit116:setEnabled(false);
     obj.edit116:setType("float");
-    obj.edit116:setField("CFurtividade");
+    obj.edit116:setField("CRaciocineo");
     obj.edit116:setName("edit116");
 
     obj.edit117 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit117:setParent(obj.POPCALCULO);
     obj.edit117:setLeft(350);
-    obj.edit117:setTop(337);
+    obj.edit117:setTop(295);
     obj.edit117:setWidth(85);
     obj.edit117:setHeight(18);
     obj.edit117:setEnabled(false);
     obj.edit117:setType("float");
-    obj.edit117:setField("CVigor");
+    obj.edit117:setField("CPercepcao");
     obj.edit117:setName("edit117");
 
     obj.edit118 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit118:setParent(obj.POPCALCULO);
-    obj.edit118:setLeft(280);
-    obj.edit118:setTop(35);
+    obj.edit118:setLeft(350);
+    obj.edit118:setTop(316);
     obj.edit118:setWidth(85);
     obj.edit118:setHeight(18);
     obj.edit118:setEnabled(false);
     obj.edit118:setType("float");
-    obj.edit118:setField("Taijutsu");
+    obj.edit118:setField("CFurtividade");
     obj.edit118:setName("edit118");
 
     obj.edit119 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit119:setParent(obj.POPCALCULO);
-    obj.edit119:setLeft(280);
-    obj.edit119:setTop(58);
+    obj.edit119:setLeft(350);
+    obj.edit119:setTop(337);
     obj.edit119:setWidth(85);
     obj.edit119:setHeight(18);
     obj.edit119:setEnabled(false);
     obj.edit119:setType("float");
-    obj.edit119:setField("Ninjutsu");
+    obj.edit119:setField("CVigor");
     obj.edit119:setName("edit119");
 
     obj.edit120 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit120:setParent(obj.POPCALCULO);
     obj.edit120:setLeft(280);
-    obj.edit120:setTop(81);
+    obj.edit120:setTop(35);
     obj.edit120:setWidth(85);
     obj.edit120:setHeight(18);
     obj.edit120:setEnabled(false);
     obj.edit120:setType("float");
-    obj.edit120:setField("Genjutsu");
+    obj.edit120:setField("Taijutsu");
     obj.edit120:setName("edit120");
 
     obj.edit121 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit121:setParent(obj.POPCALCULO);
     obj.edit121:setLeft(280);
-    obj.edit121:setTop(102);
+    obj.edit121:setTop(58);
     obj.edit121:setWidth(85);
     obj.edit121:setHeight(18);
     obj.edit121:setEnabled(false);
     obj.edit121:setType("float");
-    obj.edit121:setField("DanoArmado");
+    obj.edit121:setField("Ninjutsu");
     obj.edit121:setName("edit121");
 
     obj.edit122 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit122:setParent(obj.POPCALCULO);
     obj.edit122:setLeft(280);
-    obj.edit122:setTop(122);
+    obj.edit122:setTop(81);
     obj.edit122:setWidth(85);
     obj.edit122:setHeight(18);
     obj.edit122:setEnabled(false);
     obj.edit122:setType("float");
-    obj.edit122:setField("Elemental1");
+    obj.edit122:setField("Genjutsu");
     obj.edit122:setName("edit122");
 
     obj.edit123 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit123:setParent(obj.POPCALCULO);
-    obj.edit123:setLeft(300);
-    obj.edit123:setTop(145);
+    obj.edit123:setLeft(280);
+    obj.edit123:setTop(102);
     obj.edit123:setWidth(85);
     obj.edit123:setHeight(18);
+    obj.edit123:setEnabled(false);
     obj.edit123:setType("float");
-    obj.edit123:setEnabled(true);
-    obj.edit123:setField("GHP");
+    obj.edit123:setField("DanoArmado");
     obj.edit123:setName("edit123");
 
     obj.edit124 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit124:setParent(obj.POPCALCULO);
-    obj.edit124:setLeft(300);
-    obj.edit124:setTop(168);
+    obj.edit124:setLeft(280);
+    obj.edit124:setTop(122);
     obj.edit124:setWidth(85);
     obj.edit124:setHeight(18);
     obj.edit124:setEnabled(false);
     obj.edit124:setType("float");
-    obj.edit124:setField("GChakra");
+    obj.edit124:setField("Elemental1");
     obj.edit124:setName("edit124");
 
     obj.edit125 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit125:setParent(obj.POPCALCULO);
-    obj.edit125:setLeft(150);
-    obj.edit125:setTop(210);
+    obj.edit125:setLeft(300);
+    obj.edit125:setTop(145);
     obj.edit125:setWidth(85);
     obj.edit125:setHeight(18);
-    obj.edit125:setEnabled(false);
     obj.edit125:setType("float");
-    obj.edit125:setField("CAT");
+    obj.edit125:setEnabled(true);
+    obj.edit125:setField("GHP");
     obj.edit125:setName("edit125");
 
     obj.edit126 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit126:setParent(obj.POPCALCULO);
-    obj.edit126:setLeft(150);
-    obj.edit126:setTop(230);
+    obj.edit126:setLeft(300);
+    obj.edit126:setTop(168);
     obj.edit126:setWidth(85);
     obj.edit126:setHeight(18);
     obj.edit126:setEnabled(false);
     obj.edit126:setType("float");
-    obj.edit126:setField("CAN");
+    obj.edit126:setField("GChakra");
     obj.edit126:setName("edit126");
 
     obj.edit127 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit127:setParent(obj.POPCALCULO);
     obj.edit127:setLeft(150);
-    obj.edit127:setTop(250);
+    obj.edit127:setTop(210);
     obj.edit127:setWidth(85);
     obj.edit127:setHeight(18);
     obj.edit127:setEnabled(false);
     obj.edit127:setType("float");
-    obj.edit127:setField("CAG");
+    obj.edit127:setField("CAT");
     obj.edit127:setName("edit127");
 
     obj.edit128 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit128:setParent(obj.POPCALCULO);
     obj.edit128:setLeft(150);
-    obj.edit128:setTop(300);
+    obj.edit128:setTop(230);
     obj.edit128:setWidth(85);
     obj.edit128:setHeight(18);
     obj.edit128:setEnabled(false);
     obj.edit128:setType("float");
-    obj.edit128:setField("CEsq");
+    obj.edit128:setField("CAN");
     obj.edit128:setName("edit128");
 
     obj.edit129 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit129:setParent(obj.POPCALCULO);
     obj.edit129:setLeft(150);
-    obj.edit129:setTop(320);
+    obj.edit129:setTop(250);
     obj.edit129:setWidth(85);
     obj.edit129:setHeight(18);
     obj.edit129:setEnabled(false);
     obj.edit129:setType("float");
-    obj.edit129:setField("CBloq");
+    obj.edit129:setField("CAG");
     obj.edit129:setName("edit129");
 
     obj.edit130 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit130:setParent(obj.POPCALCULO);
     obj.edit130:setLeft(150);
-    obj.edit130:setTop(360);
+    obj.edit130:setTop(300);
     obj.edit130:setWidth(85);
     obj.edit130:setHeight(18);
     obj.edit130:setEnabled(false);
     obj.edit130:setType("float");
-    obj.edit130:setField("CCRT");
+    obj.edit130:setField("CEsq");
     obj.edit130:setName("edit130");
 
     obj.edit131 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit131:setParent(obj.POPCALCULO);
     obj.edit131:setLeft(150);
-    obj.edit131:setTop(380);
+    obj.edit131:setTop(320);
     obj.edit131:setWidth(85);
     obj.edit131:setHeight(18);
     obj.edit131:setEnabled(false);
     obj.edit131:setType("float");
-    obj.edit131:setField("CCRN");
+    obj.edit131:setField("CBloq");
     obj.edit131:setName("edit131");
 
     obj.edit132 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit132:setParent(obj.POPCALCULO);
     obj.edit132:setLeft(150);
-    obj.edit132:setTop(400);
+    obj.edit132:setTop(360);
     obj.edit132:setWidth(85);
     obj.edit132:setHeight(18);
     obj.edit132:setEnabled(false);
     obj.edit132:setType("float");
-    obj.edit132:setField("CCRG");
+    obj.edit132:setField("CCRT");
     obj.edit132:setName("edit132");
+
+    obj.edit133 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit133:setParent(obj.POPCALCULO);
+    obj.edit133:setLeft(150);
+    obj.edit133:setTop(380);
+    obj.edit133:setWidth(85);
+    obj.edit133:setHeight(18);
+    obj.edit133:setEnabled(false);
+    obj.edit133:setType("float");
+    obj.edit133:setField("CCRN");
+    obj.edit133:setName("edit133");
+
+    obj.edit134 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit134:setParent(obj.POPCALCULO);
+    obj.edit134:setLeft(150);
+    obj.edit134:setTop(400);
+    obj.edit134:setWidth(85);
+    obj.edit134:setHeight(18);
+    obj.edit134:setEnabled(false);
+    obj.edit134:setType("float");
+    obj.edit134:setField("CCRG");
+    obj.edit134:setName("edit134");
 
     obj.dataLink3 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink3:setParent(obj.POPCALCULO);
@@ -3127,75 +3247,80 @@ local function constructNew_frmsekai()
 
     obj.dataLink4 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink4:setParent(obj.POPCALCULO);
-    obj.dataLink4:setFields({'BandanaReducao', 'ColeteReducao', 'TReducao', 'CReducao', 'DReducao', 'Transformado'});
+    obj.dataLink4:setField("ExpPTreino");
     obj.dataLink4:setName("dataLink4");
 
     obj.dataLink5 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink5:setParent(obj.POPCALCULO);
-    obj.dataLink5:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'
+    obj.dataLink5:setFields({'BandanaReducao', 'ColeteReducao', 'TReducao', 'CReducao', 'DReducao', 'Transformado'});
+    obj.dataLink5:setName("dataLink5");
+
+    obj.dataLink6 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink6:setParent(obj.POPCALCULO);
+    obj.dataLink6:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino'
 		,'Nome', 'Elemento', 'Cla', 'Idade', 'HP', 'HPTotal', 'Chakra' ,'ChakraTotal', 'Reiatsu', 'ReiatsuTotal', 'Outros', 'OutrosTotal', 'DanoJutsu', 'DanoJutsu2', 'DanoJutsu3', 
 		'Intensidade', 'Intensidade2','Intensidade3' ,'CustoJutsu' ,'CustoJutsu2' ,'CustoJutsu3' ,'LevelJutsu' ,'LevelJutsu2' ,'LevelJutsu3' ,'DanoKunai' ,'DanoShuriken' ,'DanoKunaiGigante' ,'DanoShurikenFuuma' ,'Marionete'
 		,'PB' ,'GinsoExplosivo' ,'Veneno' ,'Bandagem' ,'BF','DTaijutsu','DNinjutsu','DGenjutsu','DDA','DDE','DHP','DChakra','DReiatsu','DOutro','DAcertoTai','DAcertoNin','DAcertoGen','DBloqueio','DCriticalTai','DCriticalNin','DCriticalGen'
 		,'ChakraBiju','ChakraBranco','ChakraPreto','Hadou','HadouNegro','ChakraNatural','ChakraRoxo','IntensidadeP1','IntensidadeP2','IntensidadeP3','CustoPerga1','CustoPerga2','CustoPerga3','DEDC'
 		,'Taijutsu','Ninjutsu','Genjutsu','DanoArmado','Elemental1','TipoOutro','TipoItens','Tipo','Tipo2','Tipo3'});
-    obj.dataLink5:setName("dataLink5");
-
-    obj.dataLink6 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink6:setParent(obj.POPCALCULO);
-    obj.dataLink6:setFields({'TipoOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'});
     obj.dataLink6:setName("dataLink6");
 
     obj.dataLink7 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink7:setParent(obj.POPCALCULO);
-    obj.dataLink7:setFields({'Chakra', 'ChakraTotal', 'Idade', 'TipoOutro'});
+    obj.dataLink7:setFields({'TipoOutro', 'Reiatsu', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'ChakraNatural', 'ChakraRoxo', 'Hadou', 'HadouNegro'});
     obj.dataLink7:setName("dataLink7");
 
     obj.dataLink8 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink8:setParent(obj.POPCALCULO);
-    obj.dataLink8:setFields({'Graduacao', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal',
-		'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'});
+    obj.dataLink8:setFields({'Chakra', 'ChakraTotal', 'Idade', 'TipoOutro'});
     obj.dataLink8:setName("dataLink8");
 
     obj.dataLink9 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink9:setParent(obj.POPCALCULO);
-    obj.dataLink9:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao'});
+    obj.dataLink9:setFields({'GraduacaoTreino', 'AcertoTaiTotal', 'AcertoNinTotal', 'AcertoGenTotal', 'EsquivaTotal','BloqueioTotal', 'TurnoTotal', 'CRTaiTotal',
+		'CRNinTotal', 'CRGenTotal', 'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno'});
     obj.dataLink9:setName("dataLink9");
 
     obj.dataLink10 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink10:setParent(obj.POPCALCULO);
-    obj.dataLink10:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
-		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'Graduacao', 'Transformado', 'Cla'});
+    obj.dataLink10:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'TaiTotal', 'NinTotal', 'GenTotal', 'EleTotal', 'DATotal', 'Level', 
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino'});
     obj.dataLink10:setName("dataLink10");
 
     obj.dataLink11 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink11:setParent(obj.POPCALCULO);
-    obj.dataLink11:setFields({'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP', 'Transformado'});
+    obj.dataLink11:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Elemental', 'Habilidade', 'Resistencia', 'Level', 'Taijutsu', 'Ninjutsu', 'Genjutsu', 'Elemental1', 'DanoArmado',
+		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino', 'Transformado', 'Cla'});
     obj.dataLink11:setName("dataLink11");
 
     obj.dataLink12 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink12:setParent(obj.POPCALCULO);
-    obj.dataLink12:setFields({'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
-		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade', 'Transformado'});
+    obj.dataLink12:setFields({'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP', 'Transformado'});
     obj.dataLink12:setName("dataLink12");
 
     obj.dataLink13 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink13:setParent(obj.POPCALCULO);
-    obj.dataLink13:setFields({'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
-		'DReiatsu', 'AcessorioReiatsu', 'Transformado', 'ArmaReiatsu'});
+    obj.dataLink13:setFields({'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
+		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade', 'Transformado'});
     obj.dataLink13:setName("dataLink13");
 
-    obj.button20 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button20:setParent(obj.scrollBox2);
-    obj.button20:setLeft(32);
-    obj.button20:setTop(550);
-    obj.button20:setWidth(105);
-    obj.button20:setHeight(85);
-    obj.button20:setOpacity(0.1);
-    obj.button20:setText("");
-    obj.button20:setName("button20");
+    obj.dataLink14 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink14:setParent(obj.POPCALCULO);
+    obj.dataLink14:setFields({'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
+		'DReiatsu', 'AcessorioReiatsu', 'Transformado', 'ArmaReiatsu'});
+    obj.dataLink14:setName("dataLink14");
+
+    obj.button21 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button21:setParent(obj.scrollBox2);
+    obj.button21:setLeft(32);
+    obj.button21:setTop(550);
+    obj.button21:setWidth(105);
+    obj.button21:setHeight(85);
+    obj.button21:setOpacity(0.1);
+    obj.button21:setText("");
+    obj.button21:setName("button21");
 
     obj.POPKunai = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPKunai:setParent(obj.scrollBox2);
@@ -3206,29 +3331,29 @@ local function constructNew_frmsekai()
     obj.POPKunai:setWidth(550);
     obj.POPKunai:setHeight(550);
 
-    obj.label25 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label25:setParent(obj.POPKunai);
-    obj.label25:setWidth(120);
-    obj.label25:setHeight(40);
-    obj.label25:setLeft(280);
-    obj.label25:setTop(10);
-    obj.label25:setFontColor("Red");
-    obj.label25:setFontFamily("Nyala");
-    obj.label25:setFontSize(20);
-    obj.label25:setText("Danos");
-    obj.label25:setName("label25");
+    obj.label29 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label29:setParent(obj.POPKunai);
+    obj.label29:setWidth(120);
+    obj.label29:setHeight(40);
+    obj.label29:setLeft(280);
+    obj.label29:setTop(10);
+    obj.label29:setFontColor("Red");
+    obj.label29:setFontFamily("Nyala");
+    obj.label29:setFontSize(20);
+    obj.label29:setText("Danos");
+    obj.label29:setName("label29");
 
-    obj.label26 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label26:setParent(obj.POPKunai);
-    obj.label26:setWidth(120);
-    obj.label26:setHeight(40);
-    obj.label26:setLeft(420);
-    obj.label26:setTop(10);
-    obj.label26:setFontColor("Red");
-    obj.label26:setFontFamily("Nyala");
-    obj.label26:setFontSize(20);
-    obj.label26:setText("Quantia/Limite");
-    obj.label26:setName("label26");
+    obj.label30 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label30:setParent(obj.POPKunai);
+    obj.label30:setWidth(120);
+    obj.label30:setHeight(40);
+    obj.label30:setLeft(420);
+    obj.label30:setTop(10);
+    obj.label30:setFontColor("Red");
+    obj.label30:setFontFamily("Nyala");
+    obj.label30:setFontSize(20);
+    obj.label30:setText("Quantia/Limite");
+    obj.label30:setName("label30");
 
     obj.image15 = GUI.fromHandle(_obj_newObject("image"));
     obj.image15:setParent(obj.POPKunai);
@@ -3239,35 +3364,35 @@ local function constructNew_frmsekai()
     obj.image15:setSRC("/imagens/kunai.png");
     obj.image15:setName("image15");
 
-    obj.label27 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label27:setParent(obj.POPKunai);
-    obj.label27:setWidth(120);
-    obj.label27:setHeight(40);
-    obj.label27:setLeft(130);
-    obj.label27:setTop(60);
-    obj.label27:setFontFamily("Nyala");
-    obj.label27:setFontSize(20);
-    obj.label27:setText("Dano Kunai");
-    obj.label27:setName("label27");
+    obj.label31 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label31:setParent(obj.POPKunai);
+    obj.label31:setWidth(120);
+    obj.label31:setHeight(40);
+    obj.label31:setLeft(130);
+    obj.label31:setTop(60);
+    obj.label31:setFontFamily("Nyala");
+    obj.label31:setFontSize(20);
+    obj.label31:setText("Dano Kunai");
+    obj.label31:setName("label31");
 
-    obj.edit133 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit133:setParent(obj.POPKunai);
-    obj.edit133:setWidth(100);
-    obj.edit133:setHeight(30);
-    obj.edit133:setLeft(260);
-    obj.edit133:setTop(65);
-    obj.edit133:setEnabled(false);
-    obj.edit133:setField("DanoKunai");
-    obj.edit133:setName("edit133");
+    obj.edit135 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit135:setParent(obj.POPKunai);
+    obj.edit135:setWidth(100);
+    obj.edit135:setHeight(30);
+    obj.edit135:setLeft(260);
+    obj.edit135:setTop(65);
+    obj.edit135:setEnabled(false);
+    obj.edit135:setField("DanoKunai");
+    obj.edit135:setName("edit135");
 
-    obj.button21 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button21:setParent(obj.POPKunai);
-    obj.button21:setLeft(8);
-    obj.button21:setTop(40);
-    obj.button21:setWidth(100);
-    obj.button21:setHeight(90);
-    obj.button21:setOpacity(0.3);
-    obj.button21:setName("button21");
+    obj.button22 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button22:setParent(obj.POPKunai);
+    obj.button22:setLeft(8);
+    obj.button22:setTop(40);
+    obj.button22:setWidth(100);
+    obj.button22:setHeight(90);
+    obj.button22:setOpacity(0.3);
+    obj.button22:setName("button22");
 
 
 				local function UseKunai()      
@@ -3300,35 +3425,35 @@ local function constructNew_frmsekai()
     obj.image16:setSRC("/imagens/shuriken.png");
     obj.image16:setName("image16");
 
-    obj.label28 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label28:setParent(obj.POPKunai);
-    obj.label28:setWidth(120);
-    obj.label28:setHeight(40);
-    obj.label28:setLeft(130);
-    obj.label28:setTop(150);
-    obj.label28:setFontFamily("Nyala");
-    obj.label28:setFontSize(20);
-    obj.label28:setText("Dano Shuriken");
-    obj.label28:setName("label28");
+    obj.label32 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label32:setParent(obj.POPKunai);
+    obj.label32:setWidth(120);
+    obj.label32:setHeight(40);
+    obj.label32:setLeft(130);
+    obj.label32:setTop(150);
+    obj.label32:setFontFamily("Nyala");
+    obj.label32:setFontSize(20);
+    obj.label32:setText("Dano Shuriken");
+    obj.label32:setName("label32");
 
-    obj.edit134 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit134:setParent(obj.POPKunai);
-    obj.edit134:setWidth(100);
-    obj.edit134:setHeight(30);
-    obj.edit134:setLeft(260);
-    obj.edit134:setTop(155);
-    obj.edit134:setEnabled(false);
-    obj.edit134:setField("DanoShuriken");
-    obj.edit134:setName("edit134");
+    obj.edit136 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit136:setParent(obj.POPKunai);
+    obj.edit136:setWidth(100);
+    obj.edit136:setHeight(30);
+    obj.edit136:setLeft(260);
+    obj.edit136:setTop(155);
+    obj.edit136:setEnabled(false);
+    obj.edit136:setField("DanoShuriken");
+    obj.edit136:setName("edit136");
 
-    obj.button22 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button22:setParent(obj.POPKunai);
-    obj.button22:setLeft(8);
-    obj.button22:setTop(135);
-    obj.button22:setWidth(100);
-    obj.button22:setHeight(90);
-    obj.button22:setOpacity(0.3);
-    obj.button22:setName("button22");
+    obj.button23 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button23:setParent(obj.POPKunai);
+    obj.button23:setLeft(8);
+    obj.button23:setTop(135);
+    obj.button23:setWidth(100);
+    obj.button23:setHeight(90);
+    obj.button23:setOpacity(0.3);
+    obj.button23:setName("button23");
 
 
 				local function UseShuriken()      
@@ -3361,35 +3486,35 @@ local function constructNew_frmsekai()
     obj.image17:setSRC("/imagens/SFuuma.png");
     obj.image17:setName("image17");
 
-    obj.label29 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label29:setParent(obj.POPKunai);
-    obj.label29:setWidth(120);
-    obj.label29:setHeight(40);
-    obj.label29:setLeft(130);
-    obj.label29:setTop(250);
-    obj.label29:setFontFamily("Nyala");
-    obj.label29:setFontSize(20);
-    obj.label29:setText("Shuriken Fuuma");
-    obj.label29:setName("label29");
+    obj.label33 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label33:setParent(obj.POPKunai);
+    obj.label33:setWidth(120);
+    obj.label33:setHeight(40);
+    obj.label33:setLeft(130);
+    obj.label33:setTop(250);
+    obj.label33:setFontFamily("Nyala");
+    obj.label33:setFontSize(20);
+    obj.label33:setText("Shuriken Fuuma");
+    obj.label33:setName("label33");
 
-    obj.edit135 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit135:setParent(obj.POPKunai);
-    obj.edit135:setWidth(100);
-    obj.edit135:setHeight(30);
-    obj.edit135:setLeft(260);
-    obj.edit135:setTop(255);
-    obj.edit135:setEnabled(false);
-    obj.edit135:setField("DanoShurikenFuuma");
-    obj.edit135:setName("edit135");
+    obj.edit137 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit137:setParent(obj.POPKunai);
+    obj.edit137:setWidth(100);
+    obj.edit137:setHeight(30);
+    obj.edit137:setLeft(260);
+    obj.edit137:setTop(255);
+    obj.edit137:setEnabled(false);
+    obj.edit137:setField("DanoShurikenFuuma");
+    obj.edit137:setName("edit137");
 
-    obj.button23 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button23:setParent(obj.POPKunai);
-    obj.button23:setLeft(8);
-    obj.button23:setTop(230);
-    obj.button23:setWidth(100);
-    obj.button23:setHeight(90);
-    obj.button23:setOpacity(0.3);
-    obj.button23:setName("button23");
+    obj.button24 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button24:setParent(obj.POPKunai);
+    obj.button24:setLeft(8);
+    obj.button24:setTop(230);
+    obj.button24:setWidth(100);
+    obj.button24:setHeight(90);
+    obj.button24:setOpacity(0.3);
+    obj.button24:setName("button24");
 
 
 				local function UseShurikenFuuma()      
@@ -3422,35 +3547,35 @@ local function constructNew_frmsekai()
     obj.image18:setSRC("/imagens/Kgigante.png");
     obj.image18:setName("image18");
 
-    obj.label30 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label30:setParent(obj.POPKunai);
-    obj.label30:setWidth(120);
-    obj.label30:setHeight(40);
-    obj.label30:setLeft(130);
-    obj.label30:setTop(350);
-    obj.label30:setFontFamily("Nyala");
-    obj.label30:setFontSize(20);
-    obj.label30:setText("Kunai Gigante");
-    obj.label30:setName("label30");
+    obj.label34 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label34:setParent(obj.POPKunai);
+    obj.label34:setWidth(120);
+    obj.label34:setHeight(40);
+    obj.label34:setLeft(130);
+    obj.label34:setTop(350);
+    obj.label34:setFontFamily("Nyala");
+    obj.label34:setFontSize(20);
+    obj.label34:setText("Kunai Gigante");
+    obj.label34:setName("label34");
 
-    obj.edit136 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit136:setParent(obj.POPKunai);
-    obj.edit136:setWidth(100);
-    obj.edit136:setHeight(30);
-    obj.edit136:setLeft(260);
-    obj.edit136:setTop(355);
-    obj.edit136:setEnabled(false);
-    obj.edit136:setField("DanoKunaiGigante");
-    obj.edit136:setName("edit136");
+    obj.edit138 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit138:setParent(obj.POPKunai);
+    obj.edit138:setWidth(100);
+    obj.edit138:setHeight(30);
+    obj.edit138:setLeft(260);
+    obj.edit138:setTop(355);
+    obj.edit138:setEnabled(false);
+    obj.edit138:setField("DanoKunaiGigante");
+    obj.edit138:setName("edit138");
 
-    obj.button24 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button24:setParent(obj.POPKunai);
-    obj.button24:setLeft(8);
-    obj.button24:setTop(325);
-    obj.button24:setWidth(100);
-    obj.button24:setHeight(105);
-    obj.button24:setOpacity(0.3);
-    obj.button24:setName("button24");
+    obj.button25 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button25:setParent(obj.POPKunai);
+    obj.button25:setLeft(8);
+    obj.button25:setTop(325);
+    obj.button25:setWidth(100);
+    obj.button25:setHeight(105);
+    obj.button25:setOpacity(0.3);
+    obj.button25:setName("button25");
 
 
 				local function UseKunaiGigante()      
@@ -3483,35 +3608,35 @@ local function constructNew_frmsekai()
     obj.image19:setSRC("/imagens/Senbon.png");
     obj.image19:setName("image19");
 
-    obj.label31 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label31:setParent(obj.POPKunai);
-    obj.label31:setWidth(120);
-    obj.label31:setHeight(40);
-    obj.label31:setLeft(130);
-    obj.label31:setTop(450);
-    obj.label31:setFontFamily("Nyala");
-    obj.label31:setFontSize(20);
-    obj.label31:setText("Senbon");
-    obj.label31:setName("label31");
+    obj.label35 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label35:setParent(obj.POPKunai);
+    obj.label35:setWidth(120);
+    obj.label35:setHeight(40);
+    obj.label35:setLeft(130);
+    obj.label35:setTop(450);
+    obj.label35:setFontFamily("Nyala");
+    obj.label35:setFontSize(20);
+    obj.label35:setText("Senbon");
+    obj.label35:setName("label35");
 
-    obj.edit137 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit137:setParent(obj.POPKunai);
-    obj.edit137:setWidth(100);
-    obj.edit137:setHeight(30);
-    obj.edit137:setLeft(260);
-    obj.edit137:setTop(455);
-    obj.edit137:setEnabled(false);
-    obj.edit137:setField("Senbon");
-    obj.edit137:setName("edit137");
+    obj.edit139 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit139:setParent(obj.POPKunai);
+    obj.edit139:setWidth(100);
+    obj.edit139:setHeight(30);
+    obj.edit139:setLeft(260);
+    obj.edit139:setTop(455);
+    obj.edit139:setEnabled(false);
+    obj.edit139:setField("Senbon");
+    obj.edit139:setName("edit139");
 
-    obj.button25 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button25:setParent(obj.POPKunai);
-    obj.button25:setLeft(8);
-    obj.button25:setTop(435);
-    obj.button25:setWidth(100);
-    obj.button25:setHeight(90);
-    obj.button25:setOpacity(0.3);
-    obj.button25:setName("button25");
+    obj.button26 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button26:setParent(obj.POPKunai);
+    obj.button26:setLeft(8);
+    obj.button26:setTop(435);
+    obj.button26:setWidth(100);
+    obj.button26:setHeight(90);
+    obj.button26:setOpacity(0.3);
+    obj.button26:setName("button26");
 
 
 				local function UseSenbon()      
@@ -3535,37 +3660,15 @@ local function constructNew_frmsekai()
 			
 
 
-    obj.edit138 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit138:setParent(obj.POPKunai);
-    obj.edit138:setWidth(40);
-    obj.edit138:setHeight(30);
-    obj.edit138:setLeft(430);
-    obj.edit138:setTop(65);
-    obj.edit138:setEnabled(true);
-    obj.edit138:setType("number");
-    obj.edit138:setField("KunaiQT");
-    obj.edit138:setName("edit138");
-
-    obj.edit139 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit139:setParent(obj.POPKunai);
-    obj.edit139:setWidth(40);
-    obj.edit139:setHeight(30);
-    obj.edit139:setLeft(430);
-    obj.edit139:setTop(155);
-    obj.edit139:setEnabled(true);
-    obj.edit139:setType("number");
-    obj.edit139:setField("ShurikenQT");
-    obj.edit139:setName("edit139");
-
     obj.edit140 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit140:setParent(obj.POPKunai);
     obj.edit140:setWidth(40);
     obj.edit140:setHeight(30);
     obj.edit140:setLeft(430);
-    obj.edit140:setTop(255);
+    obj.edit140:setTop(65);
     obj.edit140:setEnabled(true);
     obj.edit140:setType("number");
-    obj.edit140:setField("SFuumaQT");
+    obj.edit140:setField("KunaiQT");
     obj.edit140:setName("edit140");
 
     obj.edit141 = GUI.fromHandle(_obj_newObject("edit"));
@@ -3573,10 +3676,10 @@ local function constructNew_frmsekai()
     obj.edit141:setWidth(40);
     obj.edit141:setHeight(30);
     obj.edit141:setLeft(430);
-    obj.edit141:setTop(355);
+    obj.edit141:setTop(155);
     obj.edit141:setEnabled(true);
     obj.edit141:setType("number");
-    obj.edit141:setField("KGiganteQT");
+    obj.edit141:setField("ShurikenQT");
     obj.edit141:setName("edit141");
 
     obj.edit142 = GUI.fromHandle(_obj_newObject("edit"));
@@ -3584,33 +3687,33 @@ local function constructNew_frmsekai()
     obj.edit142:setWidth(40);
     obj.edit142:setHeight(30);
     obj.edit142:setLeft(430);
-    obj.edit142:setTop(455);
+    obj.edit142:setTop(255);
     obj.edit142:setEnabled(true);
     obj.edit142:setType("number");
-    obj.edit142:setFontColor("red");
-    obj.edit142:setField("SenbonQT");
+    obj.edit142:setField("SFuumaQT");
     obj.edit142:setName("edit142");
 
     obj.edit143 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit143:setParent(obj.POPKunai);
     obj.edit143:setWidth(40);
     obj.edit143:setHeight(30);
-    obj.edit143:setLeft(485);
-    obj.edit143:setTop(65);
-    obj.edit143:setEnabled(false);
+    obj.edit143:setLeft(430);
+    obj.edit143:setTop(355);
+    obj.edit143:setEnabled(true);
     obj.edit143:setType("number");
-    obj.edit143:setField("KunaiLimite");
+    obj.edit143:setField("KGiganteQT");
     obj.edit143:setName("edit143");
 
     obj.edit144 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit144:setParent(obj.POPKunai);
     obj.edit144:setWidth(40);
     obj.edit144:setHeight(30);
-    obj.edit144:setLeft(485);
-    obj.edit144:setTop(155);
-    obj.edit144:setEnabled(false);
+    obj.edit144:setLeft(430);
+    obj.edit144:setTop(455);
+    obj.edit144:setEnabled(true);
     obj.edit144:setType("number");
-    obj.edit144:setField("ShurikenLimite");
+    obj.edit144:setFontColor("red");
+    obj.edit144:setField("SenbonQT");
     obj.edit144:setName("edit144");
 
     obj.edit145 = GUI.fromHandle(_obj_newObject("edit"));
@@ -3618,10 +3721,10 @@ local function constructNew_frmsekai()
     obj.edit145:setWidth(40);
     obj.edit145:setHeight(30);
     obj.edit145:setLeft(485);
-    obj.edit145:setTop(255);
+    obj.edit145:setTop(65);
     obj.edit145:setEnabled(false);
     obj.edit145:setType("number");
-    obj.edit145:setField("SFuumaLimite");
+    obj.edit145:setField("KunaiLimite");
     obj.edit145:setName("edit145");
 
     obj.edit146 = GUI.fromHandle(_obj_newObject("edit"));
@@ -3629,10 +3732,10 @@ local function constructNew_frmsekai()
     obj.edit146:setWidth(40);
     obj.edit146:setHeight(30);
     obj.edit146:setLeft(485);
-    obj.edit146:setTop(355);
+    obj.edit146:setTop(155);
     obj.edit146:setEnabled(false);
     obj.edit146:setType("number");
-    obj.edit146:setField("KGiganteLimite");
+    obj.edit146:setField("ShurikenLimite");
     obj.edit146:setName("edit146");
 
     obj.edit147 = GUI.fromHandle(_obj_newObject("edit"));
@@ -3640,38 +3743,60 @@ local function constructNew_frmsekai()
     obj.edit147:setWidth(40);
     obj.edit147:setHeight(30);
     obj.edit147:setLeft(485);
-    obj.edit147:setTop(455);
+    obj.edit147:setTop(255);
     obj.edit147:setEnabled(false);
     obj.edit147:setType("number");
-    obj.edit147:setFontColor("blue");
-    obj.edit147:setField("SemboLimite");
+    obj.edit147:setField("SFuumaLimite");
     obj.edit147:setName("edit147");
 
-    obj.dataLink14 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink14:setParent(obj.POPKunai);
-    obj.dataLink14:setFields({'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite', 'SemboLimite',
-			'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'});
-    obj.dataLink14:setName("dataLink14");
+    obj.edit148 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit148:setParent(obj.POPKunai);
+    obj.edit148:setWidth(40);
+    obj.edit148:setHeight(30);
+    obj.edit148:setLeft(485);
+    obj.edit148:setTop(355);
+    obj.edit148:setEnabled(false);
+    obj.edit148:setType("number");
+    obj.edit148:setField("KGiganteLimite");
+    obj.edit148:setName("edit148");
+
+    obj.edit149 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit149:setParent(obj.POPKunai);
+    obj.edit149:setWidth(40);
+    obj.edit149:setHeight(30);
+    obj.edit149:setLeft(485);
+    obj.edit149:setTop(455);
+    obj.edit149:setEnabled(false);
+    obj.edit149:setType("number");
+    obj.edit149:setFontColor("blue");
+    obj.edit149:setField("SemboLimite");
+    obj.edit149:setName("edit149");
 
     obj.dataLink15 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink15:setParent(obj.POPKunai);
-    obj.dataLink15:setFields({'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite' ,'SemboLimite'});
+    obj.dataLink15:setFields({'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite', 'SemboLimite',
+			'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'});
     obj.dataLink15:setName("dataLink15");
 
     obj.dataLink16 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink16:setParent(obj.POPKunai);
-    obj.dataLink16:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'});
+    obj.dataLink16:setFields({'KunaiQT', 'ShurikenQT', 'SFuumaQT', 'KGiganteQT', 'SenbonQT', 'KunaiLimite', 'ShurikenLimite', 'SFuumaLimite', 'KGiganteLimite' ,'SemboLimite'});
     obj.dataLink16:setName("dataLink16");
 
-    obj.button26 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button26:setParent(obj.scrollBox2);
-    obj.button26:setLeft(140);
-    obj.button26:setTop(550);
-    obj.button26:setWidth(105);
-    obj.button26:setHeight(85);
-    obj.button26:setOpacity(0.1);
-    obj.button26:setText("");
-    obj.button26:setName("button26");
+    obj.dataLink17 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink17:setParent(obj.POPKunai);
+    obj.dataLink17:setFields({'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia'});
+    obj.dataLink17:setName("dataLink17");
+
+    obj.button27 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button27:setParent(obj.scrollBox2);
+    obj.button27:setLeft(140);
+    obj.button27:setTop(550);
+    obj.button27:setWidth(105);
+    obj.button27:setHeight(85);
+    obj.button27:setOpacity(0.1);
+    obj.button27:setText("");
+    obj.button27:setName("button27");
 
     obj.POPPB = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPB:setParent(obj.scrollBox2);
@@ -3682,29 +3807,29 @@ local function constructNew_frmsekai()
     obj.POPPB:setWidth(550);
     obj.POPPB:setHeight(550);
 
-    obj.label32 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label32:setParent(obj.POPPB);
-    obj.label32:setWidth(120);
-    obj.label32:setHeight(40);
-    obj.label32:setLeft(280);
-    obj.label32:setTop(10);
-    obj.label32:setFontColor("Red");
-    obj.label32:setFontFamily("Nyala");
-    obj.label32:setFontSize(20);
-    obj.label32:setText("Danos");
-    obj.label32:setName("label32");
+    obj.label36 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label36:setParent(obj.POPPB);
+    obj.label36:setWidth(120);
+    obj.label36:setHeight(40);
+    obj.label36:setLeft(280);
+    obj.label36:setTop(10);
+    obj.label36:setFontColor("Red");
+    obj.label36:setFontFamily("Nyala");
+    obj.label36:setFontSize(20);
+    obj.label36:setText("Danos");
+    obj.label36:setName("label36");
 
-    obj.label33 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label33:setParent(obj.POPPB);
-    obj.label33:setWidth(120);
-    obj.label33:setHeight(40);
-    obj.label33:setLeft(420);
-    obj.label33:setTop(10);
-    obj.label33:setFontColor("Red");
-    obj.label33:setFontFamily("Nyala");
-    obj.label33:setFontSize(20);
-    obj.label33:setText("Quantia/Limite");
-    obj.label33:setName("label33");
+    obj.label37 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label37:setParent(obj.POPPB);
+    obj.label37:setWidth(120);
+    obj.label37:setHeight(40);
+    obj.label37:setLeft(420);
+    obj.label37:setTop(10);
+    obj.label37:setFontColor("Red");
+    obj.label37:setFontFamily("Nyala");
+    obj.label37:setFontSize(20);
+    obj.label37:setText("Quantia/Limite");
+    obj.label37:setName("label37");
 
     obj.image20 = GUI.fromHandle(_obj_newObject("image"));
     obj.image20:setParent(obj.POPPB);
@@ -3715,35 +3840,35 @@ local function constructNew_frmsekai()
     obj.image20:setSRC("/imagens/pb.png");
     obj.image20:setName("image20");
 
-    obj.label34 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label34:setParent(obj.POPPB);
-    obj.label34:setWidth(120);
-    obj.label34:setHeight(40);
-    obj.label34:setLeft(130);
-    obj.label34:setTop(60);
-    obj.label34:setFontFamily("Nyala");
-    obj.label34:setFontSize(20);
-    obj.label34:setText("Papel Bomba");
-    obj.label34:setName("label34");
+    obj.label38 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label38:setParent(obj.POPPB);
+    obj.label38:setWidth(120);
+    obj.label38:setHeight(40);
+    obj.label38:setLeft(130);
+    obj.label38:setTop(60);
+    obj.label38:setFontFamily("Nyala");
+    obj.label38:setFontSize(20);
+    obj.label38:setText("Papel Bomba");
+    obj.label38:setName("label38");
 
-    obj.edit148 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit148:setParent(obj.POPPB);
-    obj.edit148:setWidth(100);
-    obj.edit148:setHeight(30);
-    obj.edit148:setLeft(260);
-    obj.edit148:setTop(65);
-    obj.edit148:setEnabled(false);
-    obj.edit148:setField("PB");
-    obj.edit148:setName("edit148");
+    obj.edit150 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit150:setParent(obj.POPPB);
+    obj.edit150:setWidth(100);
+    obj.edit150:setHeight(30);
+    obj.edit150:setLeft(260);
+    obj.edit150:setTop(65);
+    obj.edit150:setEnabled(false);
+    obj.edit150:setField("PB");
+    obj.edit150:setName("edit150");
 
-    obj.button27 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button27:setParent(obj.POPPB);
-    obj.button27:setLeft(8);
-    obj.button27:setTop(40);
-    obj.button27:setWidth(100);
-    obj.button27:setHeight(90);
-    obj.button27:setOpacity(0.3);
-    obj.button27:setName("button27");
+    obj.button28 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button28:setParent(obj.POPPB);
+    obj.button28:setLeft(8);
+    obj.button28:setTop(40);
+    obj.button28:setWidth(100);
+    obj.button28:setHeight(90);
+    obj.button28:setOpacity(0.3);
+    obj.button28:setName("button28");
 
 
 				local function UsePB()      
@@ -3776,35 +3901,35 @@ local function constructNew_frmsekai()
     obj.image21:setSRC("/imagens/BE.png");
     obj.image21:setName("image21");
 
-    obj.label35 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label35:setParent(obj.POPPB);
-    obj.label35:setWidth(120);
-    obj.label35:setHeight(40);
-    obj.label35:setLeft(130);
-    obj.label35:setTop(150);
-    obj.label35:setFontFamily("Nyala");
-    obj.label35:setFontSize(20);
-    obj.label35:setText("Ginso Explosivo");
-    obj.label35:setName("label35");
+    obj.label39 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label39:setParent(obj.POPPB);
+    obj.label39:setWidth(120);
+    obj.label39:setHeight(40);
+    obj.label39:setLeft(130);
+    obj.label39:setTop(150);
+    obj.label39:setFontFamily("Nyala");
+    obj.label39:setFontSize(20);
+    obj.label39:setText("Ginso Explosivo");
+    obj.label39:setName("label39");
 
-    obj.edit149 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit149:setParent(obj.POPPB);
-    obj.edit149:setWidth(100);
-    obj.edit149:setHeight(30);
-    obj.edit149:setLeft(260);
-    obj.edit149:setTop(155);
-    obj.edit149:setEnabled(false);
-    obj.edit149:setField("GinsoExplosivo");
-    obj.edit149:setName("edit149");
+    obj.edit151 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit151:setParent(obj.POPPB);
+    obj.edit151:setWidth(100);
+    obj.edit151:setHeight(30);
+    obj.edit151:setLeft(260);
+    obj.edit151:setTop(155);
+    obj.edit151:setEnabled(false);
+    obj.edit151:setField("GinsoExplosivo");
+    obj.edit151:setName("edit151");
 
-    obj.button28 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button28:setParent(obj.POPPB);
-    obj.button28:setLeft(8);
-    obj.button28:setTop(135);
-    obj.button28:setWidth(100);
-    obj.button28:setHeight(90);
-    obj.button28:setOpacity(0.3);
-    obj.button28:setName("button28");
+    obj.button29 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button29:setParent(obj.POPPB);
+    obj.button29:setLeft(8);
+    obj.button29:setTop(135);
+    obj.button29:setWidth(100);
+    obj.button29:setHeight(90);
+    obj.button29:setOpacity(0.3);
+    obj.button29:setName("button29");
 
 
 				local function UseGinsoExplosivo()      
@@ -3837,35 +3962,35 @@ local function constructNew_frmsekai()
     obj.image22:setSRC("/imagens/veneno.png");
     obj.image22:setName("image22");
 
-    obj.label36 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label36:setParent(obj.POPPB);
-    obj.label36:setWidth(120);
-    obj.label36:setHeight(40);
-    obj.label36:setLeft(130);
-    obj.label36:setTop(250);
-    obj.label36:setFontFamily("Nyala");
-    obj.label36:setFontSize(20);
-    obj.label36:setText("Veneno");
-    obj.label36:setName("label36");
+    obj.label40 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label40:setParent(obj.POPPB);
+    obj.label40:setWidth(120);
+    obj.label40:setHeight(40);
+    obj.label40:setLeft(130);
+    obj.label40:setTop(250);
+    obj.label40:setFontFamily("Nyala");
+    obj.label40:setFontSize(20);
+    obj.label40:setText("Veneno");
+    obj.label40:setName("label40");
 
-    obj.edit150 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit150:setParent(obj.POPPB);
-    obj.edit150:setWidth(100);
-    obj.edit150:setHeight(30);
-    obj.edit150:setLeft(260);
-    obj.edit150:setTop(255);
-    obj.edit150:setEnabled(false);
-    obj.edit150:setField("Veneno");
-    obj.edit150:setName("edit150");
+    obj.edit152 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit152:setParent(obj.POPPB);
+    obj.edit152:setWidth(100);
+    obj.edit152:setHeight(30);
+    obj.edit152:setLeft(260);
+    obj.edit152:setTop(255);
+    obj.edit152:setEnabled(false);
+    obj.edit152:setField("Veneno");
+    obj.edit152:setName("edit152");
 
-    obj.button29 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button29:setParent(obj.POPPB);
-    obj.button29:setLeft(8);
-    obj.button29:setTop(230);
-    obj.button29:setWidth(100);
-    obj.button29:setHeight(90);
-    obj.button29:setOpacity(0.3);
-    obj.button29:setName("button29");
+    obj.button30 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button30:setParent(obj.POPPB);
+    obj.button30:setLeft(8);
+    obj.button30:setTop(230);
+    obj.button30:setWidth(100);
+    obj.button30:setHeight(90);
+    obj.button30:setOpacity(0.3);
+    obj.button30:setName("button30");
 
 
 				local function UseVeneno()      
@@ -3898,35 +4023,35 @@ local function constructNew_frmsekai()
     obj.image23:setSRC("/imagens/bandagem.png");
     obj.image23:setName("image23");
 
-    obj.label37 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label37:setParent(obj.POPPB);
-    obj.label37:setWidth(120);
-    obj.label37:setHeight(40);
-    obj.label37:setLeft(130);
-    obj.label37:setTop(350);
-    obj.label37:setFontFamily("Nyala");
-    obj.label37:setFontSize(20);
-    obj.label37:setText("Bandagem");
-    obj.label37:setName("label37");
+    obj.label41 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label41:setParent(obj.POPPB);
+    obj.label41:setWidth(120);
+    obj.label41:setHeight(40);
+    obj.label41:setLeft(130);
+    obj.label41:setTop(350);
+    obj.label41:setFontFamily("Nyala");
+    obj.label41:setFontSize(20);
+    obj.label41:setText("Bandagem");
+    obj.label41:setName("label41");
 
-    obj.edit151 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit151:setParent(obj.POPPB);
-    obj.edit151:setWidth(100);
-    obj.edit151:setHeight(30);
-    obj.edit151:setLeft(260);
-    obj.edit151:setTop(355);
-    obj.edit151:setEnabled(false);
-    obj.edit151:setField("Bandagem");
-    obj.edit151:setName("edit151");
+    obj.edit153 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit153:setParent(obj.POPPB);
+    obj.edit153:setWidth(100);
+    obj.edit153:setHeight(30);
+    obj.edit153:setLeft(260);
+    obj.edit153:setTop(355);
+    obj.edit153:setEnabled(false);
+    obj.edit153:setField("Bandagem");
+    obj.edit153:setName("edit153");
 
-    obj.button30 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button30:setParent(obj.POPPB);
-    obj.button30:setLeft(8);
-    obj.button30:setTop(325);
-    obj.button30:setWidth(100);
-    obj.button30:setHeight(105);
-    obj.button30:setOpacity(0.3);
-    obj.button30:setName("button30");
+    obj.button31 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button31:setParent(obj.POPPB);
+    obj.button31:setLeft(8);
+    obj.button31:setTop(325);
+    obj.button31:setWidth(100);
+    obj.button31:setHeight(105);
+    obj.button31:setOpacity(0.3);
+    obj.button31:setName("button31");
 
 
 				local function UsoBandagem()      
@@ -3959,35 +4084,35 @@ local function constructNew_frmsekai()
     obj.image24:setSRC("/imagens/bombaf.png");
     obj.image24:setName("image24");
 
-    obj.label38 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label38:setParent(obj.POPPB);
-    obj.label38:setWidth(120);
-    obj.label38:setHeight(40);
-    obj.label38:setLeft(130);
-    obj.label38:setTop(450);
-    obj.label38:setFontFamily("Nyala");
-    obj.label38:setFontSize(20);
-    obj.label38:setText("Bomba Fumaça");
-    obj.label38:setName("label38");
+    obj.label42 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label42:setParent(obj.POPPB);
+    obj.label42:setWidth(120);
+    obj.label42:setHeight(40);
+    obj.label42:setLeft(130);
+    obj.label42:setTop(450);
+    obj.label42:setFontFamily("Nyala");
+    obj.label42:setFontSize(20);
+    obj.label42:setText("Bomba Fumaça");
+    obj.label42:setName("label42");
 
-    obj.edit152 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit152:setParent(obj.POPPB);
-    obj.edit152:setWidth(100);
-    obj.edit152:setHeight(30);
-    obj.edit152:setLeft(260);
-    obj.edit152:setTop(455);
-    obj.edit152:setEnabled(false);
-    obj.edit152:setField("BF");
-    obj.edit152:setName("edit152");
+    obj.edit154 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit154:setParent(obj.POPPB);
+    obj.edit154:setWidth(100);
+    obj.edit154:setHeight(30);
+    obj.edit154:setLeft(260);
+    obj.edit154:setTop(455);
+    obj.edit154:setEnabled(false);
+    obj.edit154:setField("BF");
+    obj.edit154:setName("edit154");
 
-    obj.button31 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button31:setParent(obj.POPPB);
-    obj.button31:setLeft(8);
-    obj.button31:setTop(435);
-    obj.button31:setWidth(100);
-    obj.button31:setHeight(90);
-    obj.button31:setOpacity(0.3);
-    obj.button31:setName("button31");
+    obj.button32 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button32:setParent(obj.POPPB);
+    obj.button32:setLeft(8);
+    obj.button32:setTop(435);
+    obj.button32:setWidth(100);
+    obj.button32:setHeight(90);
+    obj.button32:setOpacity(0.3);
+    obj.button32:setName("button32");
 
 
 				local function UseBombaFumaca()      
@@ -4011,37 +4136,15 @@ local function constructNew_frmsekai()
 			
 
 
-    obj.edit153 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit153:setParent(obj.POPPB);
-    obj.edit153:setWidth(40);
-    obj.edit153:setHeight(30);
-    obj.edit153:setLeft(430);
-    obj.edit153:setTop(65);
-    obj.edit153:setEnabled(true);
-    obj.edit153:setType("number");
-    obj.edit153:setField("PBombaQT");
-    obj.edit153:setName("edit153");
-
-    obj.edit154 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit154:setParent(obj.POPPB);
-    obj.edit154:setWidth(40);
-    obj.edit154:setHeight(30);
-    obj.edit154:setLeft(430);
-    obj.edit154:setTop(155);
-    obj.edit154:setEnabled(true);
-    obj.edit154:setType("number");
-    obj.edit154:setField("GExplosivoQT");
-    obj.edit154:setName("edit154");
-
     obj.edit155 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit155:setParent(obj.POPPB);
     obj.edit155:setWidth(40);
     obj.edit155:setHeight(30);
     obj.edit155:setLeft(430);
-    obj.edit155:setTop(255);
+    obj.edit155:setTop(65);
     obj.edit155:setEnabled(true);
     obj.edit155:setType("number");
-    obj.edit155:setField("VenenoQT");
+    obj.edit155:setField("PBombaQT");
     obj.edit155:setName("edit155");
 
     obj.edit156 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4049,10 +4152,10 @@ local function constructNew_frmsekai()
     obj.edit156:setWidth(40);
     obj.edit156:setHeight(30);
     obj.edit156:setLeft(430);
-    obj.edit156:setTop(355);
+    obj.edit156:setTop(155);
     obj.edit156:setEnabled(true);
     obj.edit156:setType("number");
-    obj.edit156:setField("BandagemQT");
+    obj.edit156:setField("GExplosivoQT");
     obj.edit156:setName("edit156");
 
     obj.edit157 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4060,32 +4163,32 @@ local function constructNew_frmsekai()
     obj.edit157:setWidth(40);
     obj.edit157:setHeight(30);
     obj.edit157:setLeft(430);
-    obj.edit157:setTop(455);
+    obj.edit157:setTop(255);
     obj.edit157:setEnabled(true);
     obj.edit157:setType("number");
-    obj.edit157:setField("BombaFumacaQT");
+    obj.edit157:setField("VenenoQT");
     obj.edit157:setName("edit157");
 
     obj.edit158 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit158:setParent(obj.POPPB);
     obj.edit158:setWidth(40);
     obj.edit158:setHeight(30);
-    obj.edit158:setLeft(485);
-    obj.edit158:setTop(65);
-    obj.edit158:setEnabled(false);
+    obj.edit158:setLeft(430);
+    obj.edit158:setTop(355);
+    obj.edit158:setEnabled(true);
     obj.edit158:setType("number");
-    obj.edit158:setField("PBombaLimite");
+    obj.edit158:setField("BandagemQT");
     obj.edit158:setName("edit158");
 
     obj.edit159 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit159:setParent(obj.POPPB);
     obj.edit159:setWidth(40);
     obj.edit159:setHeight(30);
-    obj.edit159:setLeft(485);
-    obj.edit159:setTop(155);
-    obj.edit159:setEnabled(false);
+    obj.edit159:setLeft(430);
+    obj.edit159:setTop(455);
+    obj.edit159:setEnabled(true);
     obj.edit159:setType("number");
-    obj.edit159:setField("GExplosivoLimite");
+    obj.edit159:setField("BombaFumacaQT");
     obj.edit159:setName("edit159");
 
     obj.edit160 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4093,10 +4196,10 @@ local function constructNew_frmsekai()
     obj.edit160:setWidth(40);
     obj.edit160:setHeight(30);
     obj.edit160:setLeft(485);
-    obj.edit160:setTop(255);
+    obj.edit160:setTop(65);
     obj.edit160:setEnabled(false);
     obj.edit160:setType("number");
-    obj.edit160:setField("VenenoLimite");
+    obj.edit160:setField("PBombaLimite");
     obj.edit160:setName("edit160");
 
     obj.edit161 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4104,10 +4207,10 @@ local function constructNew_frmsekai()
     obj.edit161:setWidth(40);
     obj.edit161:setHeight(30);
     obj.edit161:setLeft(485);
-    obj.edit161:setTop(355);
+    obj.edit161:setTop(155);
     obj.edit161:setEnabled(false);
     obj.edit161:setType("number");
-    obj.edit161:setField("BandagemLimite");
+    obj.edit161:setField("GExplosivoLimite");
     obj.edit161:setName("edit161");
 
     obj.edit162 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4115,26 +4218,48 @@ local function constructNew_frmsekai()
     obj.edit162:setWidth(40);
     obj.edit162:setHeight(30);
     obj.edit162:setLeft(485);
-    obj.edit162:setTop(455);
+    obj.edit162:setTop(255);
     obj.edit162:setEnabled(false);
     obj.edit162:setType("number");
-    obj.edit162:setField("BombaFumacaLimite");
+    obj.edit162:setField("VenenoLimite");
     obj.edit162:setName("edit162");
 
-    obj.dataLink17 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink17:setParent(obj.POPPB);
-    obj.dataLink17:setFields({'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'});
-    obj.dataLink17:setName("dataLink17");
+    obj.edit163 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit163:setParent(obj.POPPB);
+    obj.edit163:setWidth(40);
+    obj.edit163:setHeight(30);
+    obj.edit163:setLeft(485);
+    obj.edit163:setTop(355);
+    obj.edit163:setEnabled(false);
+    obj.edit163:setType("number");
+    obj.edit163:setField("BandagemLimite");
+    obj.edit163:setName("edit163");
 
-    obj.button32 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button32:setParent(obj.scrollBox2);
-    obj.button32:setLeft(250);
-    obj.button32:setTop(550);
-    obj.button32:setWidth(105);
-    obj.button32:setHeight(85);
-    obj.button32:setOpacity(0.1);
-    obj.button32:setText("");
-    obj.button32:setName("button32");
+    obj.edit164 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit164:setParent(obj.POPPB);
+    obj.edit164:setWidth(40);
+    obj.edit164:setHeight(30);
+    obj.edit164:setLeft(485);
+    obj.edit164:setTop(455);
+    obj.edit164:setEnabled(false);
+    obj.edit164:setType("number");
+    obj.edit164:setField("BombaFumacaLimite");
+    obj.edit164:setName("edit164");
+
+    obj.dataLink18 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink18:setParent(obj.POPPB);
+    obj.dataLink18:setFields({'PBombaQT', 'GExplosivoQT', 'VenenoQT', 'BandagemQT', 'BombaFumacaQT', 'PBombaLimite', 'GExplosivoLimite', 'VenenoLimite', 'BandagemLimite', 'BombaFumacaLimite'});
+    obj.dataLink18:setName("dataLink18");
+
+    obj.button33 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button33:setParent(obj.scrollBox2);
+    obj.button33:setLeft(250);
+    obj.button33:setTop(550);
+    obj.button33:setWidth(105);
+    obj.button33:setHeight(85);
+    obj.button33:setOpacity(0.1);
+    obj.button33:setText("");
+    obj.button33:setName("button33");
 
     obj.POPDiverso = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPDiverso:setParent(obj.tab1);
@@ -4154,34 +4279,14 @@ local function constructNew_frmsekai()
     obj.image25:setSRC("/imagens/6.png");
     obj.image25:setName("image25");
 
-    obj.edit163 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit163:setParent(obj.POPDiverso);
-    obj.edit163:setWidth(80);
-    obj.edit163:setHeight(20);
-    obj.edit163:setLeft(220);
-    obj.edit163:setTop(73);
-    obj.edit163:setType("number");
-    obj.edit163:setField("DTaijutsu");
-    obj.edit163:setName("edit163");
-
-    obj.edit164 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit164:setParent(obj.POPDiverso);
-    obj.edit164:setWidth(80);
-    obj.edit164:setHeight(20);
-    obj.edit164:setLeft(220);
-    obj.edit164:setTop(95);
-    obj.edit164:setType("number");
-    obj.edit164:setField("DNinjutsu");
-    obj.edit164:setName("edit164");
-
     obj.edit165 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit165:setParent(obj.POPDiverso);
     obj.edit165:setWidth(80);
     obj.edit165:setHeight(20);
     obj.edit165:setLeft(220);
-    obj.edit165:setTop(117);
+    obj.edit165:setTop(73);
     obj.edit165:setType("number");
-    obj.edit165:setField("DGenjutsu");
+    obj.edit165:setField("DTaijutsu");
     obj.edit165:setName("edit165");
 
     obj.edit166 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4189,9 +4294,9 @@ local function constructNew_frmsekai()
     obj.edit166:setWidth(80);
     obj.edit166:setHeight(20);
     obj.edit166:setLeft(220);
-    obj.edit166:setTop(139);
+    obj.edit166:setTop(95);
     obj.edit166:setType("number");
-    obj.edit166:setField("DDA");
+    obj.edit166:setField("DNinjutsu");
     obj.edit166:setName("edit166");
 
     obj.edit167 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4199,9 +4304,9 @@ local function constructNew_frmsekai()
     obj.edit167:setWidth(80);
     obj.edit167:setHeight(20);
     obj.edit167:setLeft(220);
-    obj.edit167:setTop(161);
+    obj.edit167:setTop(117);
     obj.edit167:setType("number");
-    obj.edit167:setField("DDE");
+    obj.edit167:setField("DGenjutsu");
     obj.edit167:setName("edit167");
 
     obj.edit168 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4209,9 +4314,9 @@ local function constructNew_frmsekai()
     obj.edit168:setWidth(80);
     obj.edit168:setHeight(20);
     obj.edit168:setLeft(220);
-    obj.edit168:setTop(183);
+    obj.edit168:setTop(139);
     obj.edit168:setType("number");
-    obj.edit168:setField("DHP");
+    obj.edit168:setField("DDA");
     obj.edit168:setName("edit168");
 
     obj.edit169 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4219,9 +4324,9 @@ local function constructNew_frmsekai()
     obj.edit169:setWidth(80);
     obj.edit169:setHeight(20);
     obj.edit169:setLeft(220);
-    obj.edit169:setTop(205);
+    obj.edit169:setTop(161);
     obj.edit169:setType("number");
-    obj.edit169:setField("DChakra");
+    obj.edit169:setField("DDE");
     obj.edit169:setName("edit169");
 
     obj.edit170 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4229,9 +4334,9 @@ local function constructNew_frmsekai()
     obj.edit170:setWidth(80);
     obj.edit170:setHeight(20);
     obj.edit170:setLeft(220);
-    obj.edit170:setTop(227);
+    obj.edit170:setTop(183);
     obj.edit170:setType("number");
-    obj.edit170:setField("DReiatsu");
+    obj.edit170:setField("DHP");
     obj.edit170:setName("edit170");
 
     obj.edit171 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4239,29 +4344,29 @@ local function constructNew_frmsekai()
     obj.edit171:setWidth(80);
     obj.edit171:setHeight(20);
     obj.edit171:setLeft(220);
-    obj.edit171:setTop(249);
+    obj.edit171:setTop(205);
     obj.edit171:setType("number");
-    obj.edit171:setField("DOutro");
+    obj.edit171:setField("DChakra");
     obj.edit171:setName("edit171");
 
     obj.edit172 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit172:setParent(obj.POPDiverso);
     obj.edit172:setWidth(80);
     obj.edit172:setHeight(20);
-    obj.edit172:setLeft(480);
-    obj.edit172:setTop(73);
+    obj.edit172:setLeft(220);
+    obj.edit172:setTop(227);
     obj.edit172:setType("number");
-    obj.edit172:setField("DAcertoTai");
+    obj.edit172:setField("DReiatsu");
     obj.edit172:setName("edit172");
 
     obj.edit173 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit173:setParent(obj.POPDiverso);
     obj.edit173:setWidth(80);
     obj.edit173:setHeight(20);
-    obj.edit173:setLeft(480);
-    obj.edit173:setTop(95);
+    obj.edit173:setLeft(220);
+    obj.edit173:setTop(249);
     obj.edit173:setType("number");
-    obj.edit173:setField("DAcertoNin");
+    obj.edit173:setField("DOutro");
     obj.edit173:setName("edit173");
 
     obj.edit174 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4269,9 +4374,9 @@ local function constructNew_frmsekai()
     obj.edit174:setWidth(80);
     obj.edit174:setHeight(20);
     obj.edit174:setLeft(480);
-    obj.edit174:setTop(117);
+    obj.edit174:setTop(73);
     obj.edit174:setType("number");
-    obj.edit174:setField("DAcertoGen");
+    obj.edit174:setField("DAcertoTai");
     obj.edit174:setName("edit174");
 
     obj.edit175 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4279,9 +4384,9 @@ local function constructNew_frmsekai()
     obj.edit175:setWidth(80);
     obj.edit175:setHeight(20);
     obj.edit175:setLeft(480);
-    obj.edit175:setTop(139);
+    obj.edit175:setTop(95);
     obj.edit175:setType("number");
-    obj.edit175:setField("DBloqueio");
+    obj.edit175:setField("DAcertoNin");
     obj.edit175:setName("edit175");
 
     obj.edit176 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4289,9 +4394,9 @@ local function constructNew_frmsekai()
     obj.edit176:setWidth(80);
     obj.edit176:setHeight(20);
     obj.edit176:setLeft(480);
-    obj.edit176:setTop(161);
+    obj.edit176:setTop(117);
     obj.edit176:setType("number");
-    obj.edit176:setField("DEsquiva");
+    obj.edit176:setField("DAcertoGen");
     obj.edit176:setName("edit176");
 
     obj.edit177 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4299,9 +4404,9 @@ local function constructNew_frmsekai()
     obj.edit177:setWidth(80);
     obj.edit177:setHeight(20);
     obj.edit177:setLeft(480);
-    obj.edit177:setTop(183);
+    obj.edit177:setTop(139);
     obj.edit177:setType("number");
-    obj.edit177:setField("DCriticalTai");
+    obj.edit177:setField("DBloqueio");
     obj.edit177:setName("edit177");
 
     obj.edit178 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4309,9 +4414,9 @@ local function constructNew_frmsekai()
     obj.edit178:setWidth(80);
     obj.edit178:setHeight(20);
     obj.edit178:setLeft(480);
-    obj.edit178:setTop(205);
+    obj.edit178:setTop(161);
     obj.edit178:setType("number");
-    obj.edit178:setField("DCriticalNin");
+    obj.edit178:setField("DEsquiva");
     obj.edit178:setName("edit178");
 
     obj.edit179 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4319,29 +4424,29 @@ local function constructNew_frmsekai()
     obj.edit179:setWidth(80);
     obj.edit179:setHeight(20);
     obj.edit179:setLeft(480);
-    obj.edit179:setTop(227);
+    obj.edit179:setTop(183);
     obj.edit179:setType("number");
-    obj.edit179:setField("DCriticalGen");
+    obj.edit179:setField("DCriticalTai");
     obj.edit179:setName("edit179");
 
     obj.edit180 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit180:setParent(obj.POPDiverso);
     obj.edit180:setWidth(80);
     obj.edit180:setHeight(20);
-    obj.edit180:setLeft(740);
-    obj.edit180:setTop(73);
+    obj.edit180:setLeft(480);
+    obj.edit180:setTop(205);
     obj.edit180:setType("number");
-    obj.edit180:setField("ChakraBiju");
+    obj.edit180:setField("DCriticalNin");
     obj.edit180:setName("edit180");
 
     obj.edit181 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit181:setParent(obj.POPDiverso);
     obj.edit181:setWidth(80);
     obj.edit181:setHeight(20);
-    obj.edit181:setLeft(740);
-    obj.edit181:setTop(95);
+    obj.edit181:setLeft(480);
+    obj.edit181:setTop(227);
     obj.edit181:setType("number");
-    obj.edit181:setField("ChakraBranco");
+    obj.edit181:setField("DCriticalGen");
     obj.edit181:setName("edit181");
 
     obj.edit182 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4349,9 +4454,9 @@ local function constructNew_frmsekai()
     obj.edit182:setWidth(80);
     obj.edit182:setHeight(20);
     obj.edit182:setLeft(740);
-    obj.edit182:setTop(117);
+    obj.edit182:setTop(73);
     obj.edit182:setType("number");
-    obj.edit182:setField("ChakraPreto");
+    obj.edit182:setField("ChakraBiju");
     obj.edit182:setName("edit182");
 
     obj.edit183 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4359,9 +4464,9 @@ local function constructNew_frmsekai()
     obj.edit183:setWidth(80);
     obj.edit183:setHeight(20);
     obj.edit183:setLeft(740);
-    obj.edit183:setTop(139);
+    obj.edit183:setTop(95);
     obj.edit183:setType("number");
-    obj.edit183:setField("Hadou");
+    obj.edit183:setField("ChakraBranco");
     obj.edit183:setName("edit183");
 
     obj.edit184 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4369,9 +4474,9 @@ local function constructNew_frmsekai()
     obj.edit184:setWidth(80);
     obj.edit184:setHeight(20);
     obj.edit184:setLeft(740);
-    obj.edit184:setTop(161);
+    obj.edit184:setTop(117);
     obj.edit184:setType("number");
-    obj.edit184:setField("HadouNegro");
+    obj.edit184:setField("ChakraPreto");
     obj.edit184:setName("edit184");
 
     obj.edit185 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4379,9 +4484,9 @@ local function constructNew_frmsekai()
     obj.edit185:setWidth(80);
     obj.edit185:setHeight(20);
     obj.edit185:setLeft(740);
-    obj.edit185:setTop(183);
-    obj.edit185:setEnabled(false);
-    obj.edit185:setField("ChakraNatural");
+    obj.edit185:setTop(139);
+    obj.edit185:setType("number");
+    obj.edit185:setField("Hadou");
     obj.edit185:setName("edit185");
 
     obj.edit186 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4389,9 +4494,9 @@ local function constructNew_frmsekai()
     obj.edit186:setWidth(80);
     obj.edit186:setHeight(20);
     obj.edit186:setLeft(740);
-    obj.edit186:setTop(205);
+    obj.edit186:setTop(161);
     obj.edit186:setType("number");
-    obj.edit186:setField("ChakraRoxo");
+    obj.edit186:setField("HadouNegro");
     obj.edit186:setName("edit186");
 
     obj.edit187 = GUI.fromHandle(_obj_newObject("edit"));
@@ -4399,20 +4504,40 @@ local function constructNew_frmsekai()
     obj.edit187:setWidth(80);
     obj.edit187:setHeight(20);
     obj.edit187:setLeft(740);
-    obj.edit187:setTop(227);
-    obj.edit187:setType("number");
-    obj.edit187:setField("DReducao");
+    obj.edit187:setTop(183);
+    obj.edit187:setEnabled(false);
+    obj.edit187:setField("ChakraNatural");
     obj.edit187:setName("edit187");
 
-    obj.button33 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button33:setParent(obj.POPDiverso);
-    obj.button33:setLeft(845);
-    obj.button33:setTop(105);
-    obj.button33:setWidth(70);
-    obj.button33:setHeight(80);
-    obj.button33:setOpacity(0.1);
-    obj.button33:setText("");
-    obj.button33:setName("button33");
+    obj.edit188 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit188:setParent(obj.POPDiverso);
+    obj.edit188:setWidth(80);
+    obj.edit188:setHeight(20);
+    obj.edit188:setLeft(740);
+    obj.edit188:setTop(205);
+    obj.edit188:setType("number");
+    obj.edit188:setField("ChakraRoxo");
+    obj.edit188:setName("edit188");
+
+    obj.edit189 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit189:setParent(obj.POPDiverso);
+    obj.edit189:setWidth(80);
+    obj.edit189:setHeight(20);
+    obj.edit189:setLeft(740);
+    obj.edit189:setTop(227);
+    obj.edit189:setType("number");
+    obj.edit189:setField("DReducao");
+    obj.edit189:setName("edit189");
+
+    obj.button34 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button34:setParent(obj.POPDiverso);
+    obj.button34:setLeft(845);
+    obj.button34:setTop(105);
+    obj.button34:setWidth(70);
+    obj.button34:setHeight(80);
+    obj.button34:setOpacity(0.1);
+    obj.button34:setText("");
+    obj.button34:setName("button34");
 
     obj.POPPergaminho1 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho1:setParent(obj.POPDiverso);
@@ -4423,25 +4548,25 @@ local function constructNew_frmsekai()
     obj.POPPergaminho1:setWidth(450);
     obj.POPPergaminho1:setHeight(520);
 
-    obj.label39 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label39:setParent(obj.POPPergaminho1);
-    obj.label39:setWidth(120);
-    obj.label39:setHeight(40);
-    obj.label39:setLeft(10);
-    obj.label39:setTop(10);
-    obj.label39:setFontFamily("Nyala");
-    obj.label39:setFontSize(20);
-    obj.label39:setText("Selado :");
-    obj.label39:setName("label39");
+    obj.label43 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label43:setParent(obj.POPPergaminho1);
+    obj.label43:setWidth(120);
+    obj.label43:setHeight(40);
+    obj.label43:setLeft(10);
+    obj.label43:setTop(10);
+    obj.label43:setFontFamily("Nyala");
+    obj.label43:setFontSize(20);
+    obj.label43:setText("Selado :");
+    obj.label43:setName("label43");
 
-    obj.edit188 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit188:setParent(obj.POPPergaminho1);
-    obj.edit188:setWidth(310);
-    obj.edit188:setHeight(30);
-    obj.edit188:setLeft(100);
-    obj.edit188:setTop(15);
-    obj.edit188:setField("NomePergaminho1");
-    obj.edit188:setName("edit188");
+    obj.edit190 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit190:setParent(obj.POPPergaminho1);
+    obj.edit190:setWidth(310);
+    obj.edit190:setHeight(30);
+    obj.edit190:setLeft(100);
+    obj.edit190:setTop(15);
+    obj.edit190:setField("NomePergaminho1");
+    obj.edit190:setName("edit190");
 
     obj.textEditor5 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor5:setParent(obj.POPPergaminho1);
@@ -4453,80 +4578,80 @@ local function constructNew_frmsekai()
     obj.textEditor5:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor5:setName("textEditor5");
 
-    obj.label40 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label40:setParent(obj.POPPergaminho1);
-    obj.label40:setWidth(120);
-    obj.label40:setHeight(40);
-    obj.label40:setLeft(10);
-    obj.label40:setTop(350);
-    obj.label40:setFontFamily("Nyala");
-    obj.label40:setFontSize(20);
-    obj.label40:setText("Intensidade");
-    obj.label40:setName("label40");
-
-    obj.edit189 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit189:setParent(obj.POPPergaminho1);
-    obj.edit189:setWidth(120);
-    obj.edit189:setHeight(30);
-    obj.edit189:setLeft(100);
-    obj.edit189:setTop(355);
-    obj.edit189:setType("number");
-    obj.edit189:setEnabled(false);
-    obj.edit189:setField("IntensidadeP1");
-    obj.edit189:setName("edit189");
-
-    obj.label41 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label41:setParent(obj.POPPergaminho1);
-    obj.label41:setWidth(60);
-    obj.label41:setHeight(40);
-    obj.label41:setLeft(340);
-    obj.label41:setTop(350);
-    obj.label41:setFontFamily("Nyala");
-    obj.label41:setFontSize(20);
-    obj.label41:setText("Chakra");
-    obj.label41:setName("label41");
-
-    obj.edit190 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit190:setParent(obj.POPPergaminho1);
-    obj.edit190:setWidth(40);
-    obj.edit190:setHeight(30);
-    obj.edit190:setLeft(400);
-    obj.edit190:setTop(355);
-    obj.edit190:setType("number");
-    obj.edit190:setField("CustoPerga1");
-    obj.edit190:setName("edit190");
+    obj.label44 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label44:setParent(obj.POPPergaminho1);
+    obj.label44:setWidth(120);
+    obj.label44:setHeight(40);
+    obj.label44:setLeft(10);
+    obj.label44:setTop(350);
+    obj.label44:setFontFamily("Nyala");
+    obj.label44:setFontSize(20);
+    obj.label44:setText("Intensidade");
+    obj.label44:setName("label44");
 
     obj.edit191 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit191:setParent(obj.POPPergaminho1);
-    obj.edit191:setWidth(40);
+    obj.edit191:setWidth(120);
     obj.edit191:setHeight(30);
-    obj.edit191:setLeft(390);
-    obj.edit191:setTop(380);
-    obj.edit191:setVisible(false);
+    obj.edit191:setLeft(100);
+    obj.edit191:setTop(355);
     obj.edit191:setType("number");
-    obj.edit191:setField("ChakraPerga1");
+    obj.edit191:setEnabled(false);
+    obj.edit191:setField("IntensidadeP1");
     obj.edit191:setName("edit191");
 
-    obj.label42 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label42:setParent(obj.POPPergaminho1);
-    obj.label42:setWidth(60);
-    obj.label42:setHeight(40);
-    obj.label42:setLeft(230);
-    obj.label42:setTop(350);
-    obj.label42:setFontFamily("Nyala");
-    obj.label42:setFontSize(20);
-    obj.label42:setText("Tipo");
-    obj.label42:setName("label42");
+    obj.label45 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label45:setParent(obj.POPPergaminho1);
+    obj.label45:setWidth(60);
+    obj.label45:setHeight(40);
+    obj.label45:setLeft(340);
+    obj.label45:setTop(350);
+    obj.label45:setFontFamily("Nyala");
+    obj.label45:setFontSize(20);
+    obj.label45:setText("Chakra");
+    obj.label45:setName("label45");
 
-    obj.comboBox8 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox8:setParent(obj.POPPergaminho1);
-    obj.comboBox8:setLeft(275);
-    obj.comboBox8:setTop(363);
-    obj.comboBox8:setWidth(50);
-    obj.comboBox8:setHeight(18);
-    obj.comboBox8:setField("TipoPergaminho1");
-    obj.comboBox8:setItems({'X', 'SS', 'S'});
-    obj.comboBox8:setName("comboBox8");
+    obj.edit192 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit192:setParent(obj.POPPergaminho1);
+    obj.edit192:setWidth(40);
+    obj.edit192:setHeight(30);
+    obj.edit192:setLeft(400);
+    obj.edit192:setTop(355);
+    obj.edit192:setType("number");
+    obj.edit192:setField("CustoPerga1");
+    obj.edit192:setName("edit192");
+
+    obj.edit193 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit193:setParent(obj.POPPergaminho1);
+    obj.edit193:setWidth(40);
+    obj.edit193:setHeight(30);
+    obj.edit193:setLeft(390);
+    obj.edit193:setTop(380);
+    obj.edit193:setVisible(false);
+    obj.edit193:setType("number");
+    obj.edit193:setField("ChakraPerga1");
+    obj.edit193:setName("edit193");
+
+    obj.label46 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label46:setParent(obj.POPPergaminho1);
+    obj.label46:setWidth(60);
+    obj.label46:setHeight(40);
+    obj.label46:setLeft(230);
+    obj.label46:setTop(350);
+    obj.label46:setFontFamily("Nyala");
+    obj.label46:setFontSize(20);
+    obj.label46:setText("Tipo");
+    obj.label46:setName("label46");
+
+    obj.comboBox9 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox9:setParent(obj.POPPergaminho1);
+    obj.comboBox9:setLeft(275);
+    obj.comboBox9:setTop(363);
+    obj.comboBox9:setWidth(50);
+    obj.comboBox9:setHeight(18);
+    obj.comboBox9:setField("TipoPergaminho1");
+    obj.comboBox9:setItems({'X', 'SS', 'S'});
+    obj.comboBox9:setName("comboBox9");
 
     obj.image26 = GUI.fromHandle(_obj_newObject("image"));
     obj.image26:setParent(obj.POPPergaminho1);
@@ -4538,17 +4663,17 @@ local function constructNew_frmsekai()
     obj.image26:setSRC("/imagens/Pergamin.png");
     obj.image26:setName("image26");
 
-    obj.button34 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button34:setParent(obj.POPPergaminho1);
-    obj.button34:setLeft(20);
-    obj.button34:setTop(390);
-    obj.button34:setFontSize(20);
-    obj.button34:setOpacity(0.0);
-    obj.button34:setHeight(120);
-    obj.button34:setWidth(150);
-    obj.button34:setText("");
-    obj.button34:setFontColor("White");
-    obj.button34:setName("button34");
+    obj.button35 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button35:setParent(obj.POPPergaminho1);
+    obj.button35:setLeft(20);
+    obj.button35:setTop(390);
+    obj.button35:setFontSize(20);
+    obj.button35:setOpacity(0.0);
+    obj.button35:setHeight(120);
+    obj.button35:setWidth(150);
+    obj.button35:setText("");
+    obj.button35:setFontColor("White");
+    obj.button35:setName("button35");
 
  
 						local function Pergaminho1() 						   
@@ -4565,15 +4690,15 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button35 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button35:setParent(obj.POPDiverso);
-    obj.button35:setLeft(917);
-    obj.button35:setTop(105);
-    obj.button35:setWidth(65);
-    obj.button35:setHeight(80);
-    obj.button35:setOpacity(0.1);
-    obj.button35:setText("");
-    obj.button35:setName("button35");
+    obj.button36 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button36:setParent(obj.POPDiverso);
+    obj.button36:setLeft(917);
+    obj.button36:setTop(105);
+    obj.button36:setWidth(65);
+    obj.button36:setHeight(80);
+    obj.button36:setOpacity(0.1);
+    obj.button36:setText("");
+    obj.button36:setName("button36");
 
     obj.POPPergaminho2 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho2:setParent(obj.POPDiverso);
@@ -4584,25 +4709,25 @@ local function constructNew_frmsekai()
     obj.POPPergaminho2:setWidth(450);
     obj.POPPergaminho2:setHeight(520);
 
-    obj.label43 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label43:setParent(obj.POPPergaminho2);
-    obj.label43:setWidth(120);
-    obj.label43:setHeight(40);
-    obj.label43:setLeft(10);
-    obj.label43:setTop(10);
-    obj.label43:setFontFamily("Nyala");
-    obj.label43:setFontSize(20);
-    obj.label43:setText("Selado :");
-    obj.label43:setName("label43");
+    obj.label47 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label47:setParent(obj.POPPergaminho2);
+    obj.label47:setWidth(120);
+    obj.label47:setHeight(40);
+    obj.label47:setLeft(10);
+    obj.label47:setTop(10);
+    obj.label47:setFontFamily("Nyala");
+    obj.label47:setFontSize(20);
+    obj.label47:setText("Selado :");
+    obj.label47:setName("label47");
 
-    obj.edit192 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit192:setParent(obj.POPPergaminho2);
-    obj.edit192:setWidth(310);
-    obj.edit192:setHeight(30);
-    obj.edit192:setLeft(100);
-    obj.edit192:setTop(15);
-    obj.edit192:setField("NomePergaminho2");
-    obj.edit192:setName("edit192");
+    obj.edit194 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit194:setParent(obj.POPPergaminho2);
+    obj.edit194:setWidth(310);
+    obj.edit194:setHeight(30);
+    obj.edit194:setLeft(100);
+    obj.edit194:setTop(15);
+    obj.edit194:setField("NomePergaminho2");
+    obj.edit194:setName("edit194");
 
     obj.textEditor6 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor6:setParent(obj.POPPergaminho2);
@@ -4614,80 +4739,80 @@ local function constructNew_frmsekai()
     obj.textEditor6:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor6:setName("textEditor6");
 
-    obj.label44 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label44:setParent(obj.POPPergaminho2);
-    obj.label44:setWidth(120);
-    obj.label44:setHeight(40);
-    obj.label44:setLeft(10);
-    obj.label44:setTop(350);
-    obj.label44:setFontFamily("Nyala");
-    obj.label44:setFontSize(20);
-    obj.label44:setText("Intensidade");
-    obj.label44:setName("label44");
-
-    obj.edit193 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit193:setParent(obj.POPPergaminho2);
-    obj.edit193:setWidth(120);
-    obj.edit193:setHeight(30);
-    obj.edit193:setLeft(100);
-    obj.edit193:setTop(355);
-    obj.edit193:setEnabled(false);
-    obj.edit193:setType("number");
-    obj.edit193:setField("IntensidadeP2");
-    obj.edit193:setName("edit193");
-
-    obj.label45 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label45:setParent(obj.POPPergaminho2);
-    obj.label45:setWidth(60);
-    obj.label45:setHeight(40);
-    obj.label45:setLeft(340);
-    obj.label45:setTop(350);
-    obj.label45:setFontFamily("Nyala");
-    obj.label45:setFontSize(20);
-    obj.label45:setText("Chakra");
-    obj.label45:setName("label45");
-
-    obj.edit194 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit194:setParent(obj.POPPergaminho2);
-    obj.edit194:setWidth(40);
-    obj.edit194:setHeight(30);
-    obj.edit194:setLeft(400);
-    obj.edit194:setTop(355);
-    obj.edit194:setType("number");
-    obj.edit194:setField("CustoPerga2");
-    obj.edit194:setName("edit194");
+    obj.label48 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label48:setParent(obj.POPPergaminho2);
+    obj.label48:setWidth(120);
+    obj.label48:setHeight(40);
+    obj.label48:setLeft(10);
+    obj.label48:setTop(350);
+    obj.label48:setFontFamily("Nyala");
+    obj.label48:setFontSize(20);
+    obj.label48:setText("Intensidade");
+    obj.label48:setName("label48");
 
     obj.edit195 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit195:setParent(obj.POPPergaminho2);
-    obj.edit195:setWidth(40);
+    obj.edit195:setWidth(120);
     obj.edit195:setHeight(30);
-    obj.edit195:setLeft(390);
-    obj.edit195:setTop(380);
-    obj.edit195:setVisible(false);
+    obj.edit195:setLeft(100);
+    obj.edit195:setTop(355);
+    obj.edit195:setEnabled(false);
     obj.edit195:setType("number");
-    obj.edit195:setField("ChakraPerga2");
+    obj.edit195:setField("IntensidadeP2");
     obj.edit195:setName("edit195");
 
-    obj.label46 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label46:setParent(obj.POPPergaminho2);
-    obj.label46:setWidth(60);
-    obj.label46:setHeight(40);
-    obj.label46:setLeft(230);
-    obj.label46:setTop(350);
-    obj.label46:setFontFamily("Nyala");
-    obj.label46:setFontSize(20);
-    obj.label46:setText("Tipo");
-    obj.label46:setName("label46");
+    obj.label49 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label49:setParent(obj.POPPergaminho2);
+    obj.label49:setWidth(60);
+    obj.label49:setHeight(40);
+    obj.label49:setLeft(340);
+    obj.label49:setTop(350);
+    obj.label49:setFontFamily("Nyala");
+    obj.label49:setFontSize(20);
+    obj.label49:setText("Chakra");
+    obj.label49:setName("label49");
 
-    obj.comboBox9 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox9:setParent(obj.POPPergaminho2);
-    obj.comboBox9:setLeft(275);
-    obj.comboBox9:setTop(363);
-    obj.comboBox9:setWidth(50);
-    obj.comboBox9:setHeight(18);
-    obj.comboBox9:setField("TipoPergaminho2");
-    obj.comboBox9:setItems({'A', 'B', 'C', 'D', 'E'});
-    obj.comboBox9:setName("comboBox9");
+    obj.edit196 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit196:setParent(obj.POPPergaminho2);
+    obj.edit196:setWidth(40);
+    obj.edit196:setHeight(30);
+    obj.edit196:setLeft(400);
+    obj.edit196:setTop(355);
+    obj.edit196:setType("number");
+    obj.edit196:setField("CustoPerga2");
+    obj.edit196:setName("edit196");
+
+    obj.edit197 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit197:setParent(obj.POPPergaminho2);
+    obj.edit197:setWidth(40);
+    obj.edit197:setHeight(30);
+    obj.edit197:setLeft(390);
+    obj.edit197:setTop(380);
+    obj.edit197:setVisible(false);
+    obj.edit197:setType("number");
+    obj.edit197:setField("ChakraPerga2");
+    obj.edit197:setName("edit197");
+
+    obj.label50 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label50:setParent(obj.POPPergaminho2);
+    obj.label50:setWidth(60);
+    obj.label50:setHeight(40);
+    obj.label50:setLeft(230);
+    obj.label50:setTop(350);
+    obj.label50:setFontFamily("Nyala");
+    obj.label50:setFontSize(20);
+    obj.label50:setText("Tipo");
+    obj.label50:setName("label50");
+
+    obj.comboBox10 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox10:setParent(obj.POPPergaminho2);
+    obj.comboBox10:setLeft(275);
+    obj.comboBox10:setTop(363);
+    obj.comboBox10:setWidth(50);
+    obj.comboBox10:setHeight(18);
+    obj.comboBox10:setField("TipoPergaminho2");
+    obj.comboBox10:setItems({'A', 'B', 'C', 'D', 'E'});
+    obj.comboBox10:setName("comboBox10");
 
     obj.image27 = GUI.fromHandle(_obj_newObject("image"));
     obj.image27:setParent(obj.POPPergaminho2);
@@ -4699,17 +4824,17 @@ local function constructNew_frmsekai()
     obj.image27:setSRC("/imagens/Pergamin.png");
     obj.image27:setName("image27");
 
-    obj.button36 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button36:setParent(obj.POPPergaminho2);
-    obj.button36:setLeft(20);
-    obj.button36:setTop(390);
-    obj.button36:setFontSize(20);
-    obj.button36:setOpacity(0.0);
-    obj.button36:setHeight(120);
-    obj.button36:setWidth(150);
-    obj.button36:setText("");
-    obj.button36:setFontColor("White");
-    obj.button36:setName("button36");
+    obj.button37 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button37:setParent(obj.POPPergaminho2);
+    obj.button37:setLeft(20);
+    obj.button37:setTop(390);
+    obj.button37:setFontSize(20);
+    obj.button37:setOpacity(0.0);
+    obj.button37:setHeight(120);
+    obj.button37:setWidth(150);
+    obj.button37:setText("");
+    obj.button37:setFontColor("White");
+    obj.button37:setName("button37");
 
  
 							local function Pergaminho2() 								   
@@ -4726,15 +4851,15 @@ local function constructNew_frmsekai()
 						
 
 
-    obj.button37 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button37:setParent(obj.POPDiverso);
-    obj.button37:setLeft(984);
-    obj.button37:setTop(105);
-    obj.button37:setWidth(65);
-    obj.button37:setHeight(80);
-    obj.button37:setOpacity(0.1);
-    obj.button37:setText("");
-    obj.button37:setName("button37");
+    obj.button38 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button38:setParent(obj.POPDiverso);
+    obj.button38:setLeft(984);
+    obj.button38:setTop(105);
+    obj.button38:setWidth(65);
+    obj.button38:setHeight(80);
+    obj.button38:setOpacity(0.1);
+    obj.button38:setText("");
+    obj.button38:setName("button38");
 
     obj.POPPergaminho3 = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPPergaminho3:setParent(obj.POPDiverso);
@@ -4745,25 +4870,25 @@ local function constructNew_frmsekai()
     obj.POPPergaminho3:setWidth(450);
     obj.POPPergaminho3:setHeight(520);
 
-    obj.label47 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label47:setParent(obj.POPPergaminho3);
-    obj.label47:setWidth(120);
-    obj.label47:setHeight(40);
-    obj.label47:setLeft(10);
-    obj.label47:setTop(10);
-    obj.label47:setFontFamily("Nyala");
-    obj.label47:setFontSize(20);
-    obj.label47:setText("Selado :");
-    obj.label47:setName("label47");
+    obj.label51 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label51:setParent(obj.POPPergaminho3);
+    obj.label51:setWidth(120);
+    obj.label51:setHeight(40);
+    obj.label51:setLeft(10);
+    obj.label51:setTop(10);
+    obj.label51:setFontFamily("Nyala");
+    obj.label51:setFontSize(20);
+    obj.label51:setText("Selado :");
+    obj.label51:setName("label51");
 
-    obj.edit196 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit196:setParent(obj.POPPergaminho3);
-    obj.edit196:setWidth(310);
-    obj.edit196:setHeight(30);
-    obj.edit196:setLeft(100);
-    obj.edit196:setTop(15);
-    obj.edit196:setField("NomePergaminho3");
-    obj.edit196:setName("edit196");
+    obj.edit198 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit198:setParent(obj.POPPergaminho3);
+    obj.edit198:setWidth(310);
+    obj.edit198:setHeight(30);
+    obj.edit198:setLeft(100);
+    obj.edit198:setTop(15);
+    obj.edit198:setField("NomePergaminho3");
+    obj.edit198:setName("edit198");
 
     obj.textEditor7 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor7:setParent(obj.POPPergaminho3);
@@ -4775,80 +4900,80 @@ local function constructNew_frmsekai()
     obj.textEditor7:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor7:setName("textEditor7");
 
-    obj.label48 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label48:setParent(obj.POPPergaminho3);
-    obj.label48:setWidth(120);
-    obj.label48:setHeight(40);
-    obj.label48:setLeft(10);
-    obj.label48:setTop(350);
-    obj.label48:setFontFamily("Nyala");
-    obj.label48:setFontSize(20);
-    obj.label48:setText("Intensidade");
-    obj.label48:setName("label48");
-
-    obj.edit197 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit197:setParent(obj.POPPergaminho3);
-    obj.edit197:setWidth(120);
-    obj.edit197:setHeight(30);
-    obj.edit197:setLeft(100);
-    obj.edit197:setTop(355);
-    obj.edit197:setEnabled(false);
-    obj.edit197:setType("number");
-    obj.edit197:setField("IntensidadeP3");
-    obj.edit197:setName("edit197");
-
-    obj.label49 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label49:setParent(obj.POPPergaminho3);
-    obj.label49:setWidth(60);
-    obj.label49:setHeight(40);
-    obj.label49:setLeft(340);
-    obj.label49:setTop(350);
-    obj.label49:setFontFamily("Nyala");
-    obj.label49:setFontSize(20);
-    obj.label49:setText("Chakra");
-    obj.label49:setName("label49");
-
-    obj.edit198 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit198:setParent(obj.POPPergaminho3);
-    obj.edit198:setWidth(40);
-    obj.edit198:setHeight(30);
-    obj.edit198:setLeft(400);
-    obj.edit198:setTop(355);
-    obj.edit198:setType("number");
-    obj.edit198:setField("CustoPerga3");
-    obj.edit198:setName("edit198");
+    obj.label52 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label52:setParent(obj.POPPergaminho3);
+    obj.label52:setWidth(120);
+    obj.label52:setHeight(40);
+    obj.label52:setLeft(10);
+    obj.label52:setTop(350);
+    obj.label52:setFontFamily("Nyala");
+    obj.label52:setFontSize(20);
+    obj.label52:setText("Intensidade");
+    obj.label52:setName("label52");
 
     obj.edit199 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit199:setParent(obj.POPPergaminho3);
-    obj.edit199:setWidth(40);
+    obj.edit199:setWidth(120);
     obj.edit199:setHeight(30);
-    obj.edit199:setLeft(390);
-    obj.edit199:setTop(380);
-    obj.edit199:setVisible(false);
+    obj.edit199:setLeft(100);
+    obj.edit199:setTop(355);
+    obj.edit199:setEnabled(false);
     obj.edit199:setType("number");
-    obj.edit199:setField("ChakraPerga3");
+    obj.edit199:setField("IntensidadeP3");
     obj.edit199:setName("edit199");
 
-    obj.label50 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label50:setParent(obj.POPPergaminho3);
-    obj.label50:setWidth(60);
-    obj.label50:setHeight(40);
-    obj.label50:setLeft(230);
-    obj.label50:setTop(350);
-    obj.label50:setFontFamily("Nyala");
-    obj.label50:setFontSize(20);
-    obj.label50:setText("Tipo");
-    obj.label50:setName("label50");
+    obj.label53 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label53:setParent(obj.POPPergaminho3);
+    obj.label53:setWidth(60);
+    obj.label53:setHeight(40);
+    obj.label53:setLeft(340);
+    obj.label53:setTop(350);
+    obj.label53:setFontFamily("Nyala");
+    obj.label53:setFontSize(20);
+    obj.label53:setText("Chakra");
+    obj.label53:setName("label53");
 
-    obj.comboBox10 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox10:setParent(obj.POPPergaminho3);
-    obj.comboBox10:setLeft(275);
-    obj.comboBox10:setTop(363);
-    obj.comboBox10:setWidth(50);
-    obj.comboBox10:setHeight(18);
-    obj.comboBox10:setField("TipoPergaminho3");
-    obj.comboBox10:setItems({'X','SS','S','A','B','C','D','E','Outros'});
-    obj.comboBox10:setName("comboBox10");
+    obj.edit200 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit200:setParent(obj.POPPergaminho3);
+    obj.edit200:setWidth(40);
+    obj.edit200:setHeight(30);
+    obj.edit200:setLeft(400);
+    obj.edit200:setTop(355);
+    obj.edit200:setType("number");
+    obj.edit200:setField("CustoPerga3");
+    obj.edit200:setName("edit200");
+
+    obj.edit201 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit201:setParent(obj.POPPergaminho3);
+    obj.edit201:setWidth(40);
+    obj.edit201:setHeight(30);
+    obj.edit201:setLeft(390);
+    obj.edit201:setTop(380);
+    obj.edit201:setVisible(false);
+    obj.edit201:setType("number");
+    obj.edit201:setField("ChakraPerga3");
+    obj.edit201:setName("edit201");
+
+    obj.label54 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label54:setParent(obj.POPPergaminho3);
+    obj.label54:setWidth(60);
+    obj.label54:setHeight(40);
+    obj.label54:setLeft(230);
+    obj.label54:setTop(350);
+    obj.label54:setFontFamily("Nyala");
+    obj.label54:setFontSize(20);
+    obj.label54:setText("Tipo");
+    obj.label54:setName("label54");
+
+    obj.comboBox11 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox11:setParent(obj.POPPergaminho3);
+    obj.comboBox11:setLeft(275);
+    obj.comboBox11:setTop(363);
+    obj.comboBox11:setWidth(50);
+    obj.comboBox11:setHeight(18);
+    obj.comboBox11:setField("TipoPergaminho3");
+    obj.comboBox11:setItems({'X','SS','S','A','B','C','D','E','Outros'});
+    obj.comboBox11:setName("comboBox11");
 
     obj.image28 = GUI.fromHandle(_obj_newObject("image"));
     obj.image28:setParent(obj.POPPergaminho3);
@@ -4860,17 +4985,17 @@ local function constructNew_frmsekai()
     obj.image28:setSRC("/imagens/Pergamin.png");
     obj.image28:setName("image28");
 
-    obj.button38 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button38:setParent(obj.POPPergaminho3);
-    obj.button38:setLeft(20);
-    obj.button38:setTop(390);
-    obj.button38:setFontSize(20);
-    obj.button38:setOpacity(0.0);
-    obj.button38:setHeight(120);
-    obj.button38:setWidth(150);
-    obj.button38:setText("");
-    obj.button38:setFontColor("White");
-    obj.button38:setName("button38");
+    obj.button39 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button39:setParent(obj.POPPergaminho3);
+    obj.button39:setLeft(20);
+    obj.button39:setTop(390);
+    obj.button39:setFontSize(20);
+    obj.button39:setOpacity(0.0);
+    obj.button39:setHeight(120);
+    obj.button39:setWidth(150);
+    obj.button39:setText("");
+    obj.button39:setFontColor("White");
+    obj.button39:setName("button39");
 
  
 							local function Pergaminho3() 								   
@@ -4887,15 +5012,15 @@ local function constructNew_frmsekai()
 						
 
 
-    obj.button39 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button39:setParent(obj.POPDiverso);
-    obj.button39:setLeft(907);
-    obj.button39:setTop(188);
-    obj.button39:setWidth(83);
-    obj.button39:setHeight(80);
-    obj.button39:setOpacity(0.1);
-    obj.button39:setText("");
-    obj.button39:setName("button39");
+    obj.button40 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button40:setParent(obj.POPDiverso);
+    obj.button40:setLeft(907);
+    obj.button40:setTop(188);
+    obj.button40:setWidth(83);
+    obj.button40:setHeight(80);
+    obj.button40:setOpacity(0.1);
+    obj.button40:setText("");
+    obj.button40:setName("button40");
 
     obj.EstilodeCombate = GUI.fromHandle(_obj_newObject("popup"));
     obj.EstilodeCombate:setParent(obj.POPDiverso);
@@ -4906,25 +5031,25 @@ local function constructNew_frmsekai()
     obj.EstilodeCombate:setWidth(450);
     obj.EstilodeCombate:setHeight(350);
 
-    obj.label51 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label51:setParent(obj.EstilodeCombate);
-    obj.label51:setWidth(300);
-    obj.label51:setHeight(40);
-    obj.label51:setLeft(10);
-    obj.label51:setTop(10);
-    obj.label51:setFontFamily("Nyala");
-    obj.label51:setFontSize(20);
-    obj.label51:setText("Nome do estilo de Combate :");
-    obj.label51:setName("label51");
+    obj.label55 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label55:setParent(obj.EstilodeCombate);
+    obj.label55:setWidth(300);
+    obj.label55:setHeight(40);
+    obj.label55:setLeft(10);
+    obj.label55:setTop(10);
+    obj.label55:setFontFamily("Nyala");
+    obj.label55:setFontSize(20);
+    obj.label55:setText("Nome do estilo de Combate :");
+    obj.label55:setName("label55");
 
-    obj.edit200 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit200:setParent(obj.EstilodeCombate);
-    obj.edit200:setWidth(210);
-    obj.edit200:setHeight(30);
-    obj.edit200:setLeft(230);
-    obj.edit200:setTop(15);
-    obj.edit200:setField("NomeEDC");
-    obj.edit200:setName("edit200");
+    obj.edit202 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit202:setParent(obj.EstilodeCombate);
+    obj.edit202:setWidth(210);
+    obj.edit202:setHeight(30);
+    obj.edit202:setLeft(230);
+    obj.edit202:setTop(15);
+    obj.edit202:setField("NomeEDC");
+    obj.edit202:setName("edit202");
 
     obj.textEditor8 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor8:setParent(obj.EstilodeCombate);
@@ -4955,220 +5080,192 @@ local function constructNew_frmsekai()
     obj.image29:setSRC("/imagens/2.png");
     obj.image29:setName("image29");
 
-    obj.edit201 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit201:setParent(obj.scrollBox6);
-    obj.edit201:setLeft(230);
-    obj.edit201:setTop(45);
-    obj.edit201:setWidth(75);
-    obj.edit201:setHeight(18);
-    obj.edit201:setEnabled(false);
-    obj.edit201:setHorzTextAlign("center");
-    obj.edit201:setFontColor("#00FFFF");
-    obj.edit201:setType("number");
-    obj.edit201:setField("AcertoTaiTotal");
-    obj.edit201:setName("edit201");
-
-    obj.edit202 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit202:setParent(obj.scrollBox6);
-    obj.edit202:setLeft(230);
-    obj.edit202:setTop(70);
-    obj.edit202:setWidth(75);
-    obj.edit202:setHeight(18);
-    obj.edit202:setEnabled(false);
-    obj.edit202:setHorzTextAlign("center");
-    obj.edit202:setFontColor("#00FFFF");
-    obj.edit202:setType("number");
-    obj.edit202:setField("AcertoNinTotal");
-    obj.edit202:setName("edit202");
-
     obj.edit203 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit203:setParent(obj.scrollBox6);
     obj.edit203:setLeft(230);
-    obj.edit203:setTop(95);
+    obj.edit203:setTop(45);
     obj.edit203:setWidth(75);
     obj.edit203:setHeight(18);
     obj.edit203:setEnabled(false);
     obj.edit203:setHorzTextAlign("center");
     obj.edit203:setFontColor("#00FFFF");
     obj.edit203:setType("number");
-    obj.edit203:setField("AcertoGenTotal");
+    obj.edit203:setField("AcertoTaiTotal");
     obj.edit203:setName("edit203");
 
     obj.edit204 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit204:setParent(obj.scrollBox6);
     obj.edit204:setLeft(230);
-    obj.edit204:setTop(145);
+    obj.edit204:setTop(70);
     obj.edit204:setWidth(75);
     obj.edit204:setHeight(18);
     obj.edit204:setEnabled(false);
     obj.edit204:setHorzTextAlign("center");
     obj.edit204:setFontColor("#00FFFF");
     obj.edit204:setType("number");
-    obj.edit204:setField("EsquivaTotal");
+    obj.edit204:setField("AcertoNinTotal");
     obj.edit204:setName("edit204");
 
     obj.edit205 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit205:setParent(obj.scrollBox6);
     obj.edit205:setLeft(230);
-    obj.edit205:setTop(170);
+    obj.edit205:setTop(95);
     obj.edit205:setWidth(75);
     obj.edit205:setHeight(18);
     obj.edit205:setEnabled(false);
     obj.edit205:setHorzTextAlign("center");
     obj.edit205:setFontColor("#00FFFF");
     obj.edit205:setType("number");
-    obj.edit205:setField("BloqueioTotal");
+    obj.edit205:setField("AcertoGenTotal");
     obj.edit205:setName("edit205");
 
     obj.edit206 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit206:setParent(obj.scrollBox6);
     obj.edit206:setLeft(230);
-    obj.edit206:setTop(220);
+    obj.edit206:setTop(145);
     obj.edit206:setWidth(75);
     obj.edit206:setHeight(18);
     obj.edit206:setEnabled(false);
     obj.edit206:setHorzTextAlign("center");
     obj.edit206:setFontColor("#00FFFF");
     obj.edit206:setType("number");
-    obj.edit206:setField("CRTaiTotal");
+    obj.edit206:setField("EsquivaTotal");
     obj.edit206:setName("edit206");
 
     obj.edit207 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit207:setParent(obj.scrollBox6);
     obj.edit207:setLeft(230);
-    obj.edit207:setTop(245);
+    obj.edit207:setTop(170);
     obj.edit207:setWidth(75);
     obj.edit207:setHeight(18);
     obj.edit207:setEnabled(false);
     obj.edit207:setHorzTextAlign("center");
     obj.edit207:setFontColor("#00FFFF");
     obj.edit207:setType("number");
-    obj.edit207:setField("CRNinTotal");
+    obj.edit207:setField("BloqueioTotal");
     obj.edit207:setName("edit207");
 
     obj.edit208 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit208:setParent(obj.scrollBox6);
     obj.edit208:setLeft(230);
-    obj.edit208:setTop(270);
+    obj.edit208:setTop(220);
     obj.edit208:setWidth(75);
     obj.edit208:setHeight(18);
     obj.edit208:setEnabled(false);
     obj.edit208:setHorzTextAlign("center");
     obj.edit208:setFontColor("#00FFFF");
     obj.edit208:setType("number");
-    obj.edit208:setField("CRGenTotal");
+    obj.edit208:setField("CRTaiTotal");
     obj.edit208:setName("edit208");
 
     obj.edit209 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit209:setParent(obj.scrollBox6);
     obj.edit209:setLeft(230);
-    obj.edit209:setTop(320);
+    obj.edit209:setTop(245);
     obj.edit209:setWidth(75);
     obj.edit209:setHeight(18);
     obj.edit209:setEnabled(false);
     obj.edit209:setHorzTextAlign("center");
     obj.edit209:setFontColor("#00FFFF");
     obj.edit209:setType("number");
-    obj.edit209:setField("TurnoTotal");
+    obj.edit209:setField("CRNinTotal");
     obj.edit209:setName("edit209");
 
     obj.edit210 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit210:setParent(obj.scrollBox6);
     obj.edit210:setLeft(230);
-    obj.edit210:setTop(370);
+    obj.edit210:setTop(270);
     obj.edit210:setWidth(75);
     obj.edit210:setHeight(18);
-    obj.edit210:setEnabled(true);
+    obj.edit210:setEnabled(false);
     obj.edit210:setHorzTextAlign("center");
     obj.edit210:setFontColor("#00FFFF");
     obj.edit210:setType("number");
-    obj.edit210:setField("Atletismo");
+    obj.edit210:setField("CRGenTotal");
     obj.edit210:setName("edit210");
 
     obj.edit211 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit211:setParent(obj.scrollBox6);
     obj.edit211:setLeft(230);
-    obj.edit211:setTop(395);
+    obj.edit211:setTop(320);
     obj.edit211:setWidth(75);
     obj.edit211:setHeight(18);
-    obj.edit211:setEnabled(true);
+    obj.edit211:setEnabled(false);
     obj.edit211:setHorzTextAlign("center");
     obj.edit211:setFontColor("#00FFFF");
     obj.edit211:setType("number");
-    obj.edit211:setField("Raciocinio");
+    obj.edit211:setField("TurnoTotal");
     obj.edit211:setName("edit211");
 
     obj.edit212 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit212:setParent(obj.scrollBox6);
     obj.edit212:setLeft(230);
-    obj.edit212:setTop(420);
+    obj.edit212:setTop(370);
     obj.edit212:setWidth(75);
     obj.edit212:setHeight(18);
     obj.edit212:setEnabled(true);
     obj.edit212:setHorzTextAlign("center");
     obj.edit212:setFontColor("#00FFFF");
     obj.edit212:setType("number");
-    obj.edit212:setField("Percepcao");
+    obj.edit212:setField("Atletismo");
     obj.edit212:setName("edit212");
 
     obj.edit213 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit213:setParent(obj.scrollBox6);
     obj.edit213:setLeft(230);
-    obj.edit213:setTop(445);
+    obj.edit213:setTop(395);
     obj.edit213:setWidth(75);
     obj.edit213:setHeight(18);
     obj.edit213:setEnabled(true);
     obj.edit213:setHorzTextAlign("center");
     obj.edit213:setFontColor("#00FFFF");
     obj.edit213:setType("number");
-    obj.edit213:setField("Furtividade");
+    obj.edit213:setField("Raciocinio");
     obj.edit213:setName("edit213");
 
     obj.edit214 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit214:setParent(obj.scrollBox6);
     obj.edit214:setLeft(230);
-    obj.edit214:setTop(470);
+    obj.edit214:setTop(420);
     obj.edit214:setWidth(75);
     obj.edit214:setHeight(18);
     obj.edit214:setEnabled(true);
     obj.edit214:setHorzTextAlign("center");
     obj.edit214:setFontColor("#00FFFF");
     obj.edit214:setType("number");
-    obj.edit214:setField("Vigor");
+    obj.edit214:setField("Percepcao");
     obj.edit214:setName("edit214");
 
     obj.edit215 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit215:setParent(obj.scrollBox6);
-    obj.edit215:setLeft(430);
-    obj.edit215:setTop(370);
+    obj.edit215:setLeft(230);
+    obj.edit215:setTop(445);
     obj.edit215:setWidth(75);
     obj.edit215:setHeight(18);
-    obj.edit215:setVisible(false);
-    obj.edit215:setEnabled(false);
+    obj.edit215:setEnabled(true);
     obj.edit215:setHorzTextAlign("center");
     obj.edit215:setFontColor("#00FFFF");
     obj.edit215:setType("number");
-    obj.edit215:setField("GAtletismo");
+    obj.edit215:setField("Furtividade");
     obj.edit215:setName("edit215");
 
     obj.edit216 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit216:setParent(obj.scrollBox6);
-    obj.edit216:setLeft(430);
-    obj.edit216:setTop(395);
+    obj.edit216:setLeft(230);
+    obj.edit216:setTop(470);
     obj.edit216:setWidth(75);
     obj.edit216:setHeight(18);
-    obj.edit216:setVisible(false);
-    obj.edit216:setEnabled(false);
+    obj.edit216:setEnabled(true);
     obj.edit216:setHorzTextAlign("center");
     obj.edit216:setFontColor("#00FFFF");
     obj.edit216:setType("number");
-    obj.edit216:setField("GRaciocinio");
+    obj.edit216:setField("Vigor");
     obj.edit216:setName("edit216");
 
     obj.edit217 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit217:setParent(obj.scrollBox6);
     obj.edit217:setLeft(430);
-    obj.edit217:setTop(420);
+    obj.edit217:setTop(370);
     obj.edit217:setWidth(75);
     obj.edit217:setHeight(18);
     obj.edit217:setVisible(false);
@@ -5176,13 +5273,13 @@ local function constructNew_frmsekai()
     obj.edit217:setHorzTextAlign("center");
     obj.edit217:setFontColor("#00FFFF");
     obj.edit217:setType("number");
-    obj.edit217:setField("GPercepcao");
+    obj.edit217:setField("GAtletismo");
     obj.edit217:setName("edit217");
 
     obj.edit218 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit218:setParent(obj.scrollBox6);
     obj.edit218:setLeft(430);
-    obj.edit218:setTop(445);
+    obj.edit218:setTop(395);
     obj.edit218:setWidth(75);
     obj.edit218:setHeight(18);
     obj.edit218:setVisible(false);
@@ -5190,13 +5287,13 @@ local function constructNew_frmsekai()
     obj.edit218:setHorzTextAlign("center");
     obj.edit218:setFontColor("#00FFFF");
     obj.edit218:setType("number");
-    obj.edit218:setField("GFurtividade");
+    obj.edit218:setField("GRaciocinio");
     obj.edit218:setName("edit218");
 
     obj.edit219 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit219:setParent(obj.scrollBox6);
     obj.edit219:setLeft(430);
-    obj.edit219:setTop(470);
+    obj.edit219:setTop(420);
     obj.edit219:setWidth(75);
     obj.edit219:setHeight(18);
     obj.edit219:setVisible(false);
@@ -5204,106 +5301,106 @@ local function constructNew_frmsekai()
     obj.edit219:setHorzTextAlign("center");
     obj.edit219:setFontColor("#00FFFF");
     obj.edit219:setType("number");
-    obj.edit219:setField("GVigor");
+    obj.edit219:setField("GPercepcao");
     obj.edit219:setName("edit219");
 
     obj.edit220 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit220:setParent(obj.scrollBox6);
-    obj.edit220:setLeft(330);
-    obj.edit220:setTop(370);
+    obj.edit220:setLeft(430);
+    obj.edit220:setTop(445);
     obj.edit220:setWidth(75);
     obj.edit220:setHeight(18);
+    obj.edit220:setVisible(false);
     obj.edit220:setEnabled(false);
     obj.edit220:setHorzTextAlign("center");
     obj.edit220:setFontColor("#00FFFF");
     obj.edit220:setType("number");
-    obj.edit220:setField("AtletismoTotal");
+    obj.edit220:setField("GFurtividade");
     obj.edit220:setName("edit220");
 
     obj.edit221 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit221:setParent(obj.scrollBox6);
-    obj.edit221:setLeft(330);
-    obj.edit221:setTop(395);
+    obj.edit221:setLeft(430);
+    obj.edit221:setTop(470);
     obj.edit221:setWidth(75);
     obj.edit221:setHeight(18);
+    obj.edit221:setVisible(false);
     obj.edit221:setEnabled(false);
     obj.edit221:setHorzTextAlign("center");
     obj.edit221:setFontColor("#00FFFF");
     obj.edit221:setType("number");
-    obj.edit221:setField("RaciocinioTotal");
+    obj.edit221:setField("GVigor");
     obj.edit221:setName("edit221");
 
     obj.edit222 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit222:setParent(obj.scrollBox6);
     obj.edit222:setLeft(330);
-    obj.edit222:setTop(420);
+    obj.edit222:setTop(370);
     obj.edit222:setWidth(75);
     obj.edit222:setHeight(18);
     obj.edit222:setEnabled(false);
     obj.edit222:setHorzTextAlign("center");
     obj.edit222:setFontColor("#00FFFF");
     obj.edit222:setType("number");
-    obj.edit222:setField("PercepcaoTotal");
+    obj.edit222:setField("AtletismoTotal");
     obj.edit222:setName("edit222");
 
     obj.edit223 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit223:setParent(obj.scrollBox6);
     obj.edit223:setLeft(330);
-    obj.edit223:setTop(445);
+    obj.edit223:setTop(395);
     obj.edit223:setWidth(75);
     obj.edit223:setHeight(18);
     obj.edit223:setEnabled(false);
     obj.edit223:setHorzTextAlign("center");
     obj.edit223:setFontColor("#00FFFF");
     obj.edit223:setType("number");
-    obj.edit223:setField("FurtividadeTotal");
+    obj.edit223:setField("RaciocinioTotal");
     obj.edit223:setName("edit223");
 
     obj.edit224 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit224:setParent(obj.scrollBox6);
     obj.edit224:setLeft(330);
-    obj.edit224:setTop(470);
+    obj.edit224:setTop(420);
     obj.edit224:setWidth(75);
     obj.edit224:setHeight(18);
     obj.edit224:setEnabled(false);
     obj.edit224:setHorzTextAlign("center");
     obj.edit224:setFontColor("#00FFFF");
     obj.edit224:setType("number");
-    obj.edit224:setField("VigorTotal");
+    obj.edit224:setField("PercepcaoTotal");
     obj.edit224:setName("edit224");
 
     obj.edit225 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit225:setParent(obj.scrollBox6);
-    obj.edit225:setLeft(530);
-    obj.edit225:setTop(370);
+    obj.edit225:setLeft(330);
+    obj.edit225:setTop(445);
     obj.edit225:setWidth(75);
     obj.edit225:setHeight(18);
-    obj.edit225:setVisible(false);
     obj.edit225:setEnabled(false);
     obj.edit225:setHorzTextAlign("center");
     obj.edit225:setFontColor("#00FFFF");
     obj.edit225:setType("number");
-    obj.edit225:setField("SAtletismo");
+    obj.edit225:setField("FurtividadeTotal");
     obj.edit225:setName("edit225");
 
     obj.edit226 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit226:setParent(obj.scrollBox6);
-    obj.edit226:setLeft(530);
-    obj.edit226:setTop(395);
+    obj.edit226:setLeft(330);
+    obj.edit226:setTop(470);
     obj.edit226:setWidth(75);
     obj.edit226:setHeight(18);
-    obj.edit226:setVisible(false);
     obj.edit226:setEnabled(false);
     obj.edit226:setHorzTextAlign("center");
     obj.edit226:setFontColor("#00FFFF");
     obj.edit226:setType("number");
-    obj.edit226:setField("SRaciocinio");
+    obj.edit226:setField("VigorTotal");
     obj.edit226:setName("edit226");
 
     obj.edit227 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit227:setParent(obj.scrollBox6);
     obj.edit227:setLeft(530);
-    obj.edit227:setTop(420);
+    obj.edit227:setTop(370);
     obj.edit227:setWidth(75);
     obj.edit227:setHeight(18);
     obj.edit227:setVisible(false);
@@ -5311,13 +5408,13 @@ local function constructNew_frmsekai()
     obj.edit227:setHorzTextAlign("center");
     obj.edit227:setFontColor("#00FFFF");
     obj.edit227:setType("number");
-    obj.edit227:setField("SPercepcao");
+    obj.edit227:setField("SAtletismo");
     obj.edit227:setName("edit227");
 
     obj.edit228 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit228:setParent(obj.scrollBox6);
     obj.edit228:setLeft(530);
-    obj.edit228:setTop(445);
+    obj.edit228:setTop(395);
     obj.edit228:setWidth(75);
     obj.edit228:setHeight(18);
     obj.edit228:setVisible(false);
@@ -5325,13 +5422,13 @@ local function constructNew_frmsekai()
     obj.edit228:setHorzTextAlign("center");
     obj.edit228:setFontColor("#00FFFF");
     obj.edit228:setType("number");
-    obj.edit228:setField("SFurtividade");
+    obj.edit228:setField("SRaciocinio");
     obj.edit228:setName("edit228");
 
     obj.edit229 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit229:setParent(obj.scrollBox6);
     obj.edit229:setLeft(530);
-    obj.edit229:setTop(470);
+    obj.edit229:setTop(420);
     obj.edit229:setWidth(75);
     obj.edit229:setHeight(18);
     obj.edit229:setVisible(false);
@@ -5339,127 +5436,155 @@ local function constructNew_frmsekai()
     obj.edit229:setHorzTextAlign("center");
     obj.edit229:setFontColor("#00FFFF");
     obj.edit229:setType("number");
-    obj.edit229:setField("SVigor");
+    obj.edit229:setField("SPercepcao");
     obj.edit229:setName("edit229");
 
     obj.edit230 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit230:setParent(obj.scrollBox6);
-    obj.edit230:setLeft(330);
-    obj.edit230:setTop(45);
-    obj.edit230:setWidth(85);
+    obj.edit230:setLeft(530);
+    obj.edit230:setTop(445);
+    obj.edit230:setWidth(75);
     obj.edit230:setHeight(18);
-    obj.edit230:setEnabled(false);
     obj.edit230:setVisible(false);
+    obj.edit230:setEnabled(false);
+    obj.edit230:setHorzTextAlign("center");
+    obj.edit230:setFontColor("#00FFFF");
     obj.edit230:setType("number");
-    obj.edit230:setField("GAcertoTai");
+    obj.edit230:setField("SFurtividade");
     obj.edit230:setName("edit230");
 
     obj.edit231 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit231:setParent(obj.scrollBox6);
-    obj.edit231:setLeft(330);
-    obj.edit231:setTop(70);
-    obj.edit231:setWidth(85);
+    obj.edit231:setLeft(530);
+    obj.edit231:setTop(470);
+    obj.edit231:setWidth(75);
     obj.edit231:setHeight(18);
-    obj.edit231:setEnabled(false);
     obj.edit231:setVisible(false);
+    obj.edit231:setEnabled(false);
+    obj.edit231:setHorzTextAlign("center");
+    obj.edit231:setFontColor("#00FFFF");
     obj.edit231:setType("number");
-    obj.edit231:setField("GAcertoNin");
+    obj.edit231:setField("SVigor");
     obj.edit231:setName("edit231");
 
     obj.edit232 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit232:setParent(obj.scrollBox6);
     obj.edit232:setLeft(330);
-    obj.edit232:setTop(95);
+    obj.edit232:setTop(45);
     obj.edit232:setWidth(85);
     obj.edit232:setHeight(18);
     obj.edit232:setEnabled(false);
     obj.edit232:setVisible(false);
     obj.edit232:setType("number");
-    obj.edit232:setField("GAcertoGen");
+    obj.edit232:setField("GAcertoTai");
     obj.edit232:setName("edit232");
 
     obj.edit233 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit233:setParent(obj.scrollBox6);
     obj.edit233:setLeft(330);
-    obj.edit233:setTop(145);
+    obj.edit233:setTop(70);
     obj.edit233:setWidth(85);
     obj.edit233:setHeight(18);
     obj.edit233:setEnabled(false);
     obj.edit233:setVisible(false);
     obj.edit233:setType("number");
-    obj.edit233:setField("GEsquiva");
+    obj.edit233:setField("GAcertoNin");
     obj.edit233:setName("edit233");
 
     obj.edit234 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit234:setParent(obj.scrollBox6);
     obj.edit234:setLeft(330);
-    obj.edit234:setTop(170);
+    obj.edit234:setTop(95);
     obj.edit234:setWidth(85);
     obj.edit234:setHeight(18);
     obj.edit234:setEnabled(false);
     obj.edit234:setVisible(false);
     obj.edit234:setType("number");
-    obj.edit234:setField("GBloqueio");
+    obj.edit234:setField("GAcertoGen");
     obj.edit234:setName("edit234");
 
     obj.edit235 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit235:setParent(obj.scrollBox6);
     obj.edit235:setLeft(330);
-    obj.edit235:setTop(220);
+    obj.edit235:setTop(145);
     obj.edit235:setWidth(85);
     obj.edit235:setHeight(18);
     obj.edit235:setEnabled(false);
     obj.edit235:setVisible(false);
     obj.edit235:setType("number");
-    obj.edit235:setField("GCRTai");
+    obj.edit235:setField("GEsquiva");
     obj.edit235:setName("edit235");
 
     obj.edit236 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit236:setParent(obj.scrollBox6);
     obj.edit236:setLeft(330);
-    obj.edit236:setTop(245);
+    obj.edit236:setTop(170);
     obj.edit236:setWidth(85);
     obj.edit236:setHeight(18);
     obj.edit236:setEnabled(false);
     obj.edit236:setVisible(false);
     obj.edit236:setType("number");
-    obj.edit236:setField("GCRNin");
+    obj.edit236:setField("GBloqueio");
     obj.edit236:setName("edit236");
 
     obj.edit237 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit237:setParent(obj.scrollBox6);
     obj.edit237:setLeft(330);
-    obj.edit237:setTop(270);
+    obj.edit237:setTop(220);
     obj.edit237:setWidth(85);
     obj.edit237:setHeight(18);
     obj.edit237:setEnabled(false);
     obj.edit237:setVisible(false);
     obj.edit237:setType("number");
-    obj.edit237:setField("GCRGen");
+    obj.edit237:setField("GCRTai");
     obj.edit237:setName("edit237");
 
     obj.edit238 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit238:setParent(obj.scrollBox6);
     obj.edit238:setLeft(330);
-    obj.edit238:setTop(320);
+    obj.edit238:setTop(245);
     obj.edit238:setWidth(85);
     obj.edit238:setHeight(18);
     obj.edit238:setEnabled(false);
     obj.edit238:setVisible(false);
     obj.edit238:setType("number");
-    obj.edit238:setField("GTurno");
+    obj.edit238:setField("GCRNin");
     obj.edit238:setName("edit238");
 
-    obj.button40 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button40:setParent(obj.scrollBox6);
-    obj.button40:setLeft(430);
-    obj.button40:setTop(370);
-    obj.button40:setWidth(85);
-    obj.button40:setHeight(20);
-    obj.button40:setFontSize(12);
-    obj.button40:setFontColor("#00FFFF");
-    obj.button40:setText("Atletismo");
-    obj.button40:setName("button40");
+    obj.edit239 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit239:setParent(obj.scrollBox6);
+    obj.edit239:setLeft(330);
+    obj.edit239:setTop(270);
+    obj.edit239:setWidth(85);
+    obj.edit239:setHeight(18);
+    obj.edit239:setEnabled(false);
+    obj.edit239:setVisible(false);
+    obj.edit239:setType("number");
+    obj.edit239:setField("GCRGen");
+    obj.edit239:setName("edit239");
+
+    obj.edit240 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit240:setParent(obj.scrollBox6);
+    obj.edit240:setLeft(330);
+    obj.edit240:setTop(320);
+    obj.edit240:setWidth(85);
+    obj.edit240:setHeight(18);
+    obj.edit240:setEnabled(false);
+    obj.edit240:setVisible(false);
+    obj.edit240:setType("number");
+    obj.edit240:setField("GTurno");
+    obj.edit240:setName("edit240");
+
+    obj.button41 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button41:setParent(obj.scrollBox6);
+    obj.button41:setLeft(430);
+    obj.button41:setTop(370);
+    obj.button41:setWidth(85);
+    obj.button41:setHeight(20);
+    obj.button41:setFontSize(12);
+    obj.button41:setFontColor("#00FFFF");
+    obj.button41:setText("Atletismo");
+    obj.button41:setName("button41");
 
 
 						local function RolarTesteAtletismo()      
@@ -5470,16 +5595,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button41 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button41:setParent(obj.scrollBox6);
-    obj.button41:setLeft(430);
-    obj.button41:setTop(395);
-    obj.button41:setWidth(85);
-    obj.button41:setHeight(20);
-    obj.button41:setFontSize(12);
-    obj.button41:setFontColor("#00FFFF");
-    obj.button41:setText("Raciocinio");
-    obj.button41:setName("button41");
+    obj.button42 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button42:setParent(obj.scrollBox6);
+    obj.button42:setLeft(430);
+    obj.button42:setTop(395);
+    obj.button42:setWidth(85);
+    obj.button42:setHeight(20);
+    obj.button42:setFontSize(12);
+    obj.button42:setFontColor("#00FFFF");
+    obj.button42:setText("Raciocinio");
+    obj.button42:setName("button42");
 
 
 						local function RolarTesteSabedoria()      
@@ -5490,16 +5615,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button42 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button42:setParent(obj.scrollBox6);
-    obj.button42:setLeft(430);
-    obj.button42:setTop(420);
-    obj.button42:setWidth(85);
-    obj.button42:setHeight(20);
-    obj.button42:setFontSize(12);
-    obj.button42:setFontColor("#00FFFF");
-    obj.button42:setText("Percepção");
-    obj.button42:setName("button42");
+    obj.button43 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button43:setParent(obj.scrollBox6);
+    obj.button43:setLeft(430);
+    obj.button43:setTop(420);
+    obj.button43:setWidth(85);
+    obj.button43:setHeight(20);
+    obj.button43:setFontSize(12);
+    obj.button43:setFontColor("#00FFFF");
+    obj.button43:setText("Percepção");
+    obj.button43:setName("button43");
 
 
 						local function RolarTestePercepcao()      
@@ -5510,16 +5635,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button43 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button43:setParent(obj.scrollBox6);
-    obj.button43:setLeft(430);
-    obj.button43:setTop(445);
-    obj.button43:setWidth(85);
-    obj.button43:setHeight(20);
-    obj.button43:setFontSize(12);
-    obj.button43:setFontColor("#00FFFF");
-    obj.button43:setText("Furtividade");
-    obj.button43:setName("button43");
+    obj.button44 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button44:setParent(obj.scrollBox6);
+    obj.button44:setLeft(430);
+    obj.button44:setTop(445);
+    obj.button44:setWidth(85);
+    obj.button44:setHeight(20);
+    obj.button44:setFontSize(12);
+    obj.button44:setFontColor("#00FFFF");
+    obj.button44:setText("Furtividade");
+    obj.button44:setName("button44");
 
 
 						local function RolarTesteAcrobacia()      
@@ -5530,16 +5655,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.button44 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button44:setParent(obj.scrollBox6);
-    obj.button44:setLeft(430);
-    obj.button44:setTop(470);
-    obj.button44:setWidth(85);
-    obj.button44:setHeight(20);
-    obj.button44:setFontSize(12);
-    obj.button44:setFontColor("#00FFFF");
-    obj.button44:setText("Vigor");
-    obj.button44:setName("button44");
+    obj.button45 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button45:setParent(obj.scrollBox6);
+    obj.button45:setLeft(430);
+    obj.button45:setTop(470);
+    obj.button45:setWidth(85);
+    obj.button45:setHeight(20);
+    obj.button45:setFontSize(12);
+    obj.button45:setFontColor("#00FFFF");
+    obj.button45:setText("Vigor");
+    obj.button45:setName("button45");
 
 
 						local function RolarTesteVigor()      
@@ -5550,16 +5675,16 @@ local function constructNew_frmsekai()
 					
 
 
-    obj.dataLink18 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink18:setParent(obj.scrollBox6);
-    obj.dataLink18:setFields({'Graduacao', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor', 'Cla'});
-    obj.dataLink18:setName("dataLink18");
-
     obj.dataLink19 = GUI.fromHandle(_obj_newObject("dataLink"));
     obj.dataLink19:setParent(obj.scrollBox6);
-    obj.dataLink19:setFields({'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
-				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen', 'Transformado'});
+    obj.dataLink19:setFields({'GraduacaoTreino', 'Forca', 'Inteligencia', 'Sabedoria', 'Habilidade', 'Resistencia', 'Atletismo', 'Raciocinio', 'Percepcao', 'Furtividade', 'Vigor', 'Cla'});
     obj.dataLink19:setName("dataLink19");
+
+    obj.dataLink20 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink20:setParent(obj.scrollBox6);
+    obj.dataLink20:setFields({'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
+				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen', 'Transformado'});
+    obj.dataLink20:setName("dataLink20");
 
     obj.tab3 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab3:setParent(obj.tabControl1);
@@ -5580,26 +5705,51 @@ local function constructNew_frmsekai()
     obj.image30:setSRC("/imagens/3.png");
     obj.image30:setName("image30");
 
-    obj.richEdit1 = GUI.fromHandle(_obj_newObject("richEdit"));
-    obj.richEdit1:setParent(obj.scrollBox7);
-    obj.richEdit1:setLeft(22);
-    obj.richEdit1:setTop(90);
-    obj.richEdit1:setWidth(320);
-    obj.richEdit1:setHeight(340);
-    lfm_setPropAsString(obj.richEdit1, "backgroundColor",  "#00000000");
-    lfm_setPropAsString(obj.richEdit1, "defaultFontColor",  "white");
-    obj.richEdit1:setField("Historia");
-    obj.richEdit1:setName("richEdit1");
+    obj.button46 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button46:setParent(obj.scrollBox7);
+    obj.button46:setLeft(55);
+    obj.button46:setTop(110);
+    obj.button46:setWidth(100);
+    obj.button46:setHeight(150);
+    obj.button46:setOpacity(0.0);
+    obj.button46:setName("button46");
 
-    obj.button45 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button45:setParent(obj.scrollBox7);
-    obj.button45:setLeft(430);
-    obj.button45:setTop(120);
-    obj.button45:setWidth(120);
-    obj.button45:setHeight(100);
-    obj.button45:setOpacity(0.0);
-    obj.button45:setText("");
-    obj.button45:setName("button45");
+    obj.button47 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button47:setParent(obj.scrollBox7);
+    obj.button47:setLeft(210);
+    obj.button47:setTop(110);
+    obj.button47:setWidth(100);
+    obj.button47:setHeight(150);
+    obj.button47:setOpacity(0.0);
+    obj.button47:setName("button47");
+
+    obj.button48 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button48:setParent(obj.scrollBox7);
+    obj.button48:setLeft(40);
+    obj.button48:setTop(270);
+    obj.button48:setWidth(130);
+    obj.button48:setHeight(150);
+    obj.button48:setOpacity(0.0);
+    obj.button48:setName("button48");
+
+    obj.button49 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button49:setParent(obj.scrollBox7);
+    obj.button49:setLeft(195);
+    obj.button49:setTop(270);
+    obj.button49:setWidth(130);
+    obj.button49:setHeight(150);
+    obj.button49:setOpacity(0.0);
+    obj.button49:setName("button49");
+
+    obj.button50 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button50:setParent(obj.scrollBox7);
+    obj.button50:setLeft(430);
+    obj.button50:setTop(120);
+    obj.button50:setWidth(120);
+    obj.button50:setHeight(100);
+    obj.button50:setOpacity(0.0);
+    obj.button50:setText("");
+    obj.button50:setName("button50");
 
     obj.POPArma = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPArma:setParent(obj.scrollBox7);
@@ -5610,185 +5760,185 @@ local function constructNew_frmsekai()
     obj.POPArma:setWidth(500);
     obj.POPArma:setHeight(550);
 
-    obj.label52 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label52:setParent(obj.POPArma);
-    obj.label52:setLeft(20);
-    obj.label52:setTop(20);
-    obj.label52:setFontFamily("Nyala");
-    obj.label52:setFontSize(20);
-    obj.label52:setText("Dano Tai");
-    obj.label52:setName("label52");
-
-    obj.label53 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label53:setParent(obj.POPArma);
-    obj.label53:setLeft(20);
-    obj.label53:setTop(60);
-    obj.label53:setFontFamily("Nyala");
-    obj.label53:setFontSize(20);
-    obj.label53:setText("Dano Nin");
-    obj.label53:setName("label53");
-
-    obj.label54 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label54:setParent(obj.POPArma);
-    obj.label54:setLeft(20);
-    obj.label54:setTop(100);
-    obj.label54:setFontFamily("Nyala");
-    obj.label54:setFontSize(20);
-    obj.label54:setText("Dano Gen");
-    obj.label54:setName("label54");
-
-    obj.label55 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label55:setParent(obj.POPArma);
-    obj.label55:setLeft(20);
-    obj.label55:setTop(140);
-    obj.label55:setFontFamily("Nyala");
-    obj.label55:setFontSize(20);
-    obj.label55:setText("Dano Armado");
-    obj.label55:setName("label55");
-
     obj.label56 = GUI.fromHandle(_obj_newObject("label"));
     obj.label56:setParent(obj.POPArma);
-    obj.label56:setLeft(200);
+    obj.label56:setLeft(20);
     obj.label56:setTop(20);
     obj.label56:setFontFamily("Nyala");
     obj.label56:setFontSize(20);
-    obj.label56:setText("Dano Elemental");
+    obj.label56:setText("Dano Tai");
     obj.label56:setName("label56");
 
     obj.label57 = GUI.fromHandle(_obj_newObject("label"));
     obj.label57:setParent(obj.POPArma);
-    obj.label57:setLeft(200);
+    obj.label57:setLeft(20);
     obj.label57:setTop(60);
     obj.label57:setFontFamily("Nyala");
     obj.label57:setFontSize(20);
-    obj.label57:setText("HP");
+    obj.label57:setText("Dano Nin");
     obj.label57:setName("label57");
 
     obj.label58 = GUI.fromHandle(_obj_newObject("label"));
     obj.label58:setParent(obj.POPArma);
-    obj.label58:setLeft(200);
+    obj.label58:setLeft(20);
     obj.label58:setTop(100);
     obj.label58:setFontFamily("Nyala");
     obj.label58:setFontSize(20);
-    obj.label58:setText("Chakra");
+    obj.label58:setText("Dano Gen");
     obj.label58:setName("label58");
 
     obj.label59 = GUI.fromHandle(_obj_newObject("label"));
     obj.label59:setParent(obj.POPArma);
-    obj.label59:setLeft(200);
+    obj.label59:setLeft(20);
     obj.label59:setTop(140);
     obj.label59:setFontFamily("Nyala");
     obj.label59:setFontSize(20);
-    obj.label59:setText("Reiatsu");
+    obj.label59:setText("Dano Armado");
     obj.label59:setName("label59");
 
     obj.label60 = GUI.fromHandle(_obj_newObject("label"));
     obj.label60:setParent(obj.POPArma);
-    obj.label60:setLeft(20);
-    obj.label60:setTop(200);
-    obj.label60:setWidth(300);
+    obj.label60:setLeft(200);
+    obj.label60:setTop(20);
     obj.label60:setFontFamily("Nyala");
     obj.label60:setFontSize(20);
-    obj.label60:setText("Habilidade da Espada");
+    obj.label60:setText("Dano Elemental");
     obj.label60:setName("label60");
 
     obj.label61 = GUI.fromHandle(_obj_newObject("label"));
     obj.label61:setParent(obj.POPArma);
-    obj.label61:setLeft(20);
-    obj.label61:setTop(300);
+    obj.label61:setLeft(200);
+    obj.label61:setTop(60);
     obj.label61:setFontFamily("Nyala");
     obj.label61:setFontSize(20);
-    obj.label61:setText("Shinkai");
+    obj.label61:setText("HP");
     obj.label61:setName("label61");
 
     obj.label62 = GUI.fromHandle(_obj_newObject("label"));
     obj.label62:setParent(obj.POPArma);
-    obj.label62:setLeft(20);
-    obj.label62:setTop(400);
+    obj.label62:setLeft(200);
+    obj.label62:setTop(100);
     obj.label62:setFontFamily("Nyala");
     obj.label62:setFontSize(20);
-    obj.label62:setText("Bankai");
+    obj.label62:setText("Chakra");
     obj.label62:setName("label62");
 
-    obj.edit239 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit239:setParent(obj.POPArma);
-    obj.edit239:setLeft(110);
-    obj.edit239:setTop(16);
-    obj.edit239:setWidth(85);
-    obj.edit239:setHeight(25);
-    obj.edit239:setType("number");
-    obj.edit239:setField("ArmaDT");
-    obj.edit239:setName("edit239");
+    obj.label63 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label63:setParent(obj.POPArma);
+    obj.label63:setLeft(200);
+    obj.label63:setTop(140);
+    obj.label63:setFontFamily("Nyala");
+    obj.label63:setFontSize(20);
+    obj.label63:setText("Reiatsu");
+    obj.label63:setName("label63");
 
-    obj.edit240 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit240:setParent(obj.POPArma);
-    obj.edit240:setLeft(110);
-    obj.edit240:setTop(56);
-    obj.edit240:setWidth(85);
-    obj.edit240:setHeight(25);
-    obj.edit240:setType("number");
-    obj.edit240:setField("ArmaDN");
-    obj.edit240:setName("edit240");
+    obj.label64 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label64:setParent(obj.POPArma);
+    obj.label64:setLeft(20);
+    obj.label64:setTop(200);
+    obj.label64:setWidth(300);
+    obj.label64:setFontFamily("Nyala");
+    obj.label64:setFontSize(20);
+    obj.label64:setText("Habilidade da Espada");
+    obj.label64:setName("label64");
+
+    obj.label65 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label65:setParent(obj.POPArma);
+    obj.label65:setLeft(20);
+    obj.label65:setTop(300);
+    obj.label65:setFontFamily("Nyala");
+    obj.label65:setFontSize(20);
+    obj.label65:setText("Shinkai");
+    obj.label65:setName("label65");
+
+    obj.label66 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label66:setParent(obj.POPArma);
+    obj.label66:setLeft(20);
+    obj.label66:setTop(400);
+    obj.label66:setFontFamily("Nyala");
+    obj.label66:setFontSize(20);
+    obj.label66:setText("Bankai");
+    obj.label66:setName("label66");
 
     obj.edit241 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit241:setParent(obj.POPArma);
     obj.edit241:setLeft(110);
-    obj.edit241:setTop(96);
+    obj.edit241:setTop(16);
     obj.edit241:setWidth(85);
     obj.edit241:setHeight(25);
     obj.edit241:setType("number");
-    obj.edit241:setField("ArmaDG");
+    obj.edit241:setField("ArmaDT");
     obj.edit241:setName("edit241");
 
     obj.edit242 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit242:setParent(obj.POPArma);
-    obj.edit242:setLeft(130);
-    obj.edit242:setTop(136);
-    obj.edit242:setWidth(65);
+    obj.edit242:setLeft(110);
+    obj.edit242:setTop(56);
+    obj.edit242:setWidth(85);
     obj.edit242:setHeight(25);
     obj.edit242:setType("number");
-    obj.edit242:setField("ArmaDA");
+    obj.edit242:setField("ArmaDN");
     obj.edit242:setName("edit242");
 
     obj.edit243 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit243:setParent(obj.POPArma);
-    obj.edit243:setLeft(360);
-    obj.edit243:setTop(16);
+    obj.edit243:setLeft(110);
+    obj.edit243:setTop(96);
     obj.edit243:setWidth(85);
     obj.edit243:setHeight(25);
     obj.edit243:setType("number");
-    obj.edit243:setField("ArmaDE");
+    obj.edit243:setField("ArmaDG");
     obj.edit243:setName("edit243");
 
     obj.edit244 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit244:setParent(obj.POPArma);
-    obj.edit244:setLeft(360);
-    obj.edit244:setTop(56);
-    obj.edit244:setWidth(85);
+    obj.edit244:setLeft(130);
+    obj.edit244:setTop(136);
+    obj.edit244:setWidth(65);
     obj.edit244:setHeight(25);
     obj.edit244:setType("number");
-    obj.edit244:setField("ArmaHP");
+    obj.edit244:setField("ArmaDA");
     obj.edit244:setName("edit244");
 
     obj.edit245 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit245:setParent(obj.POPArma);
     obj.edit245:setLeft(360);
-    obj.edit245:setTop(96);
+    obj.edit245:setTop(16);
     obj.edit245:setWidth(85);
     obj.edit245:setHeight(25);
     obj.edit245:setType("number");
-    obj.edit245:setField("ArmaChakra");
+    obj.edit245:setField("ArmaDE");
     obj.edit245:setName("edit245");
 
     obj.edit246 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit246:setParent(obj.POPArma);
     obj.edit246:setLeft(360);
-    obj.edit246:setTop(136);
+    obj.edit246:setTop(56);
     obj.edit246:setWidth(85);
     obj.edit246:setHeight(25);
     obj.edit246:setType("number");
-    obj.edit246:setField("ArmaReiatsu");
+    obj.edit246:setField("ArmaHP");
     obj.edit246:setName("edit246");
+
+    obj.edit247 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit247:setParent(obj.POPArma);
+    obj.edit247:setLeft(360);
+    obj.edit247:setTop(96);
+    obj.edit247:setWidth(85);
+    obj.edit247:setHeight(25);
+    obj.edit247:setType("number");
+    obj.edit247:setField("ArmaChakra");
+    obj.edit247:setName("edit247");
+
+    obj.edit248 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit248:setParent(obj.POPArma);
+    obj.edit248:setLeft(360);
+    obj.edit248:setTop(136);
+    obj.edit248:setWidth(85);
+    obj.edit248:setHeight(25);
+    obj.edit248:setType("number");
+    obj.edit248:setField("ArmaReiatsu");
+    obj.edit248:setName("edit248");
 
     obj.textEditor9 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor9:setParent(obj.POPArma);
@@ -5817,15 +5967,15 @@ local function constructNew_frmsekai()
     obj.textEditor11:setField("Bankai");
     obj.textEditor11:setName("textEditor11");
 
-    obj.button46 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button46:setParent(obj.scrollBox7);
-    obj.button46:setLeft(610);
-    obj.button46:setTop(120);
-    obj.button46:setWidth(160);
-    obj.button46:setHeight(100);
-    obj.button46:setOpacity(0.0);
-    obj.button46:setText("");
-    obj.button46:setName("button46");
+    obj.button51 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button51:setParent(obj.scrollBox7);
+    obj.button51:setLeft(610);
+    obj.button51:setTop(120);
+    obj.button51:setWidth(160);
+    obj.button51:setHeight(100);
+    obj.button51:setOpacity(0.0);
+    obj.button51:setText("");
+    obj.button51:setName("button51");
 
     obj.POPBandana = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPBandana:setParent(obj.scrollBox7);
@@ -5836,72 +5986,72 @@ local function constructNew_frmsekai()
     obj.POPBandana:setWidth(300);
     obj.POPBandana:setHeight(300);
 
-    obj.label63 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label63:setParent(obj.POPBandana);
-    obj.label63:setLeft(20);
-    obj.label63:setTop(20);
-    obj.label63:setFontFamily("Nyala");
-    obj.label63:setFontSize(20);
-    obj.label63:setText("HP");
-    obj.label63:setName("label63");
+    obj.label67 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label67:setParent(obj.POPBandana);
+    obj.label67:setLeft(20);
+    obj.label67:setTop(20);
+    obj.label67:setFontFamily("Nyala");
+    obj.label67:setFontSize(20);
+    obj.label67:setText("HP");
+    obj.label67:setName("label67");
 
-    obj.label64 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label64:setParent(obj.POPBandana);
-    obj.label64:setLeft(20);
-    obj.label64:setTop(60);
-    obj.label64:setFontFamily("Nyala");
-    obj.label64:setFontSize(20);
-    obj.label64:setText("Chakra");
-    obj.label64:setName("label64");
+    obj.label68 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label68:setParent(obj.POPBandana);
+    obj.label68:setLeft(20);
+    obj.label68:setTop(60);
+    obj.label68:setFontFamily("Nyala");
+    obj.label68:setFontSize(20);
+    obj.label68:setText("Chakra");
+    obj.label68:setName("label68");
 
-    obj.label65 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label65:setParent(obj.POPBandana);
-    obj.label65:setLeft(20);
-    obj.label65:setTop(100);
-    obj.label65:setFontFamily("Nyala");
-    obj.label65:setFontSize(20);
-    obj.label65:setText("Redução");
-    obj.label65:setName("label65");
+    obj.label69 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label69:setParent(obj.POPBandana);
+    obj.label69:setLeft(20);
+    obj.label69:setTop(100);
+    obj.label69:setFontFamily("Nyala");
+    obj.label69:setFontSize(20);
+    obj.label69:setText("Redução");
+    obj.label69:setName("label69");
 
-    obj.label66 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label66:setParent(obj.POPBandana);
-    obj.label66:setLeft(20);
-    obj.label66:setTop(140);
-    obj.label66:setWidth(300);
-    obj.label66:setFontFamily("Nyala");
-    obj.label66:setFontSize(20);
-    obj.label66:setText("Passiva");
-    obj.label66:setName("label66");
-
-    obj.edit247 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit247:setParent(obj.POPBandana);
-    obj.edit247:setLeft(110);
-    obj.edit247:setTop(16);
-    obj.edit247:setWidth(85);
-    obj.edit247:setHeight(25);
-    obj.edit247:setType("number");
-    obj.edit247:setField("BandanaHP");
-    obj.edit247:setName("edit247");
-
-    obj.edit248 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit248:setParent(obj.POPBandana);
-    obj.edit248:setLeft(110);
-    obj.edit248:setTop(56);
-    obj.edit248:setWidth(85);
-    obj.edit248:setHeight(25);
-    obj.edit248:setType("number");
-    obj.edit248:setField("BandanaChakra");
-    obj.edit248:setName("edit248");
+    obj.label70 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label70:setParent(obj.POPBandana);
+    obj.label70:setLeft(20);
+    obj.label70:setTop(140);
+    obj.label70:setWidth(300);
+    obj.label70:setFontFamily("Nyala");
+    obj.label70:setFontSize(20);
+    obj.label70:setText("Passiva");
+    obj.label70:setName("label70");
 
     obj.edit249 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit249:setParent(obj.POPBandana);
     obj.edit249:setLeft(110);
-    obj.edit249:setTop(96);
+    obj.edit249:setTop(16);
     obj.edit249:setWidth(85);
     obj.edit249:setHeight(25);
     obj.edit249:setType("number");
-    obj.edit249:setField("BandanaReducao");
+    obj.edit249:setField("BandanaHP");
     obj.edit249:setName("edit249");
+
+    obj.edit250 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit250:setParent(obj.POPBandana);
+    obj.edit250:setLeft(110);
+    obj.edit250:setTop(56);
+    obj.edit250:setWidth(85);
+    obj.edit250:setHeight(25);
+    obj.edit250:setType("number");
+    obj.edit250:setField("BandanaChakra");
+    obj.edit250:setName("edit250");
+
+    obj.edit251 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit251:setParent(obj.POPBandana);
+    obj.edit251:setLeft(110);
+    obj.edit251:setTop(96);
+    obj.edit251:setWidth(85);
+    obj.edit251:setHeight(25);
+    obj.edit251:setType("number");
+    obj.edit251:setField("BandanaReducao");
+    obj.edit251:setName("edit251");
 
     obj.textEditor12 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor12:setParent(obj.POPBandana);
@@ -5912,15 +6062,15 @@ local function constructNew_frmsekai()
     obj.textEditor12:setField("BandanaPassiva");
     obj.textEditor12:setName("textEditor12");
 
-    obj.button47 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button47:setParent(obj.scrollBox7);
-    obj.button47:setLeft(430);
-    obj.button47:setTop(225);
-    obj.button47:setWidth(120);
-    obj.button47:setHeight(115);
-    obj.button47:setOpacity(0.0);
-    obj.button47:setText("");
-    obj.button47:setName("button47");
+    obj.button52 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button52:setParent(obj.scrollBox7);
+    obj.button52:setLeft(430);
+    obj.button52:setTop(225);
+    obj.button52:setWidth(120);
+    obj.button52:setHeight(115);
+    obj.button52:setOpacity(0.0);
+    obj.button52:setText("");
+    obj.button52:setName("button52");
 
     obj.POPColete = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPColete:setParent(obj.scrollBox7);
@@ -5931,72 +6081,72 @@ local function constructNew_frmsekai()
     obj.POPColete:setWidth(300);
     obj.POPColete:setHeight(300);
 
-    obj.label67 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label67:setParent(obj.POPColete);
-    obj.label67:setLeft(20);
-    obj.label67:setTop(20);
-    obj.label67:setFontFamily("Nyala");
-    obj.label67:setFontSize(20);
-    obj.label67:setText("HP");
-    obj.label67:setName("label67");
+    obj.label71 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label71:setParent(obj.POPColete);
+    obj.label71:setLeft(20);
+    obj.label71:setTop(20);
+    obj.label71:setFontFamily("Nyala");
+    obj.label71:setFontSize(20);
+    obj.label71:setText("HP");
+    obj.label71:setName("label71");
 
-    obj.label68 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label68:setParent(obj.POPColete);
-    obj.label68:setLeft(20);
-    obj.label68:setTop(60);
-    obj.label68:setFontFamily("Nyala");
-    obj.label68:setFontSize(20);
-    obj.label68:setText("Chakra");
-    obj.label68:setName("label68");
+    obj.label72 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label72:setParent(obj.POPColete);
+    obj.label72:setLeft(20);
+    obj.label72:setTop(60);
+    obj.label72:setFontFamily("Nyala");
+    obj.label72:setFontSize(20);
+    obj.label72:setText("Chakra");
+    obj.label72:setName("label72");
 
-    obj.label69 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label69:setParent(obj.POPColete);
-    obj.label69:setLeft(20);
-    obj.label69:setTop(100);
-    obj.label69:setFontFamily("Nyala");
-    obj.label69:setFontSize(20);
-    obj.label69:setText("Redução");
-    obj.label69:setName("label69");
+    obj.label73 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label73:setParent(obj.POPColete);
+    obj.label73:setLeft(20);
+    obj.label73:setTop(100);
+    obj.label73:setFontFamily("Nyala");
+    obj.label73:setFontSize(20);
+    obj.label73:setText("Redução");
+    obj.label73:setName("label73");
 
-    obj.label70 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label70:setParent(obj.POPColete);
-    obj.label70:setLeft(20);
-    obj.label70:setTop(140);
-    obj.label70:setWidth(300);
-    obj.label70:setFontFamily("Nyala");
-    obj.label70:setFontSize(20);
-    obj.label70:setText("Passiva");
-    obj.label70:setName("label70");
-
-    obj.edit250 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit250:setParent(obj.POPColete);
-    obj.edit250:setLeft(110);
-    obj.edit250:setTop(16);
-    obj.edit250:setWidth(85);
-    obj.edit250:setHeight(25);
-    obj.edit250:setType("number");
-    obj.edit250:setField("ColeteHP");
-    obj.edit250:setName("edit250");
-
-    obj.edit251 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit251:setParent(obj.POPColete);
-    obj.edit251:setLeft(110);
-    obj.edit251:setTop(56);
-    obj.edit251:setWidth(85);
-    obj.edit251:setHeight(25);
-    obj.edit251:setType("number");
-    obj.edit251:setField("ColeteChakra");
-    obj.edit251:setName("edit251");
+    obj.label74 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label74:setParent(obj.POPColete);
+    obj.label74:setLeft(20);
+    obj.label74:setTop(140);
+    obj.label74:setWidth(300);
+    obj.label74:setFontFamily("Nyala");
+    obj.label74:setFontSize(20);
+    obj.label74:setText("Passiva");
+    obj.label74:setName("label74");
 
     obj.edit252 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit252:setParent(obj.POPColete);
     obj.edit252:setLeft(110);
-    obj.edit252:setTop(96);
+    obj.edit252:setTop(16);
     obj.edit252:setWidth(85);
     obj.edit252:setHeight(25);
     obj.edit252:setType("number");
-    obj.edit252:setField("ColeteReducao");
+    obj.edit252:setField("ColeteHP");
     obj.edit252:setName("edit252");
+
+    obj.edit253 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit253:setParent(obj.POPColete);
+    obj.edit253:setLeft(110);
+    obj.edit253:setTop(56);
+    obj.edit253:setWidth(85);
+    obj.edit253:setHeight(25);
+    obj.edit253:setType("number");
+    obj.edit253:setField("ColeteChakra");
+    obj.edit253:setName("edit253");
+
+    obj.edit254 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit254:setParent(obj.POPColete);
+    obj.edit254:setLeft(110);
+    obj.edit254:setTop(96);
+    obj.edit254:setWidth(85);
+    obj.edit254:setHeight(25);
+    obj.edit254:setType("number");
+    obj.edit254:setField("ColeteReducao");
+    obj.edit254:setName("edit254");
 
     obj.textEditor13 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor13:setParent(obj.POPColete);
@@ -6007,15 +6157,15 @@ local function constructNew_frmsekai()
     obj.textEditor13:setField("ColetePassiva");
     obj.textEditor13:setName("textEditor13");
 
-    obj.button48 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button48:setParent(obj.scrollBox7);
-    obj.button48:setLeft(610);
-    obj.button48:setTop(232);
-    obj.button48:setWidth(160);
-    obj.button48:setHeight(100);
-    obj.button48:setOpacity(0.0);
-    obj.button48:setText("");
-    obj.button48:setName("button48");
+    obj.button53 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button53:setParent(obj.scrollBox7);
+    obj.button53:setLeft(610);
+    obj.button53:setTop(232);
+    obj.button53:setWidth(160);
+    obj.button53:setHeight(100);
+    obj.button53:setOpacity(0.0);
+    obj.button53:setText("");
+    obj.button53:setName("button53");
 
     obj.POPAcessorio = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPAcessorio:setParent(obj.scrollBox7);
@@ -6026,168 +6176,168 @@ local function constructNew_frmsekai()
     obj.POPAcessorio:setWidth(500);
     obj.POPAcessorio:setHeight(350);
 
-    obj.label71 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label71:setParent(obj.POPAcessorio);
-    obj.label71:setLeft(20);
-    obj.label71:setTop(20);
-    obj.label71:setFontFamily("Nyala");
-    obj.label71:setFontSize(20);
-    obj.label71:setText("Dano Tai");
-    obj.label71:setName("label71");
-
-    obj.label72 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label72:setParent(obj.POPAcessorio);
-    obj.label72:setLeft(20);
-    obj.label72:setTop(60);
-    obj.label72:setFontFamily("Nyala");
-    obj.label72:setFontSize(20);
-    obj.label72:setText("Dano Nin");
-    obj.label72:setName("label72");
-
-    obj.label73 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label73:setParent(obj.POPAcessorio);
-    obj.label73:setLeft(20);
-    obj.label73:setTop(100);
-    obj.label73:setFontFamily("Nyala");
-    obj.label73:setFontSize(20);
-    obj.label73:setText("Dano Gen");
-    obj.label73:setName("label73");
-
-    obj.label74 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label74:setParent(obj.POPAcessorio);
-    obj.label74:setLeft(230);
-    obj.label74:setTop(20);
-    obj.label74:setFontFamily("Nyala");
-    obj.label74:setFontSize(20);
-    obj.label74:setText("Dano Elemental");
-    obj.label74:setName("label74");
-
     obj.label75 = GUI.fromHandle(_obj_newObject("label"));
     obj.label75:setParent(obj.POPAcessorio);
-    obj.label75:setLeft(230);
-    obj.label75:setTop(60);
+    obj.label75:setLeft(20);
+    obj.label75:setTop(20);
     obj.label75:setFontFamily("Nyala");
     obj.label75:setFontSize(20);
-    obj.label75:setText("HP");
+    obj.label75:setText("Dano Tai");
     obj.label75:setName("label75");
 
     obj.label76 = GUI.fromHandle(_obj_newObject("label"));
     obj.label76:setParent(obj.POPAcessorio);
-    obj.label76:setLeft(230);
-    obj.label76:setTop(100);
+    obj.label76:setLeft(20);
+    obj.label76:setTop(60);
     obj.label76:setFontFamily("Nyala");
     obj.label76:setFontSize(20);
-    obj.label76:setText("Chakra");
+    obj.label76:setText("Dano Nin");
     obj.label76:setName("label76");
 
     obj.label77 = GUI.fromHandle(_obj_newObject("label"));
     obj.label77:setParent(obj.POPAcessorio);
     obj.label77:setLeft(20);
-    obj.label77:setTop(140);
-    obj.label77:setWidth(300);
+    obj.label77:setTop(100);
     obj.label77:setFontFamily("Nyala");
     obj.label77:setFontSize(20);
-    obj.label77:setText("Reiatsu");
+    obj.label77:setText("Dano Gen");
     obj.label77:setName("label77");
 
     obj.label78 = GUI.fromHandle(_obj_newObject("label"));
     obj.label78:setParent(obj.POPAcessorio);
     obj.label78:setLeft(230);
-    obj.label78:setTop(140);
+    obj.label78:setTop(20);
     obj.label78:setFontFamily("Nyala");
     obj.label78:setFontSize(20);
-    obj.label78:setText("Outros");
+    obj.label78:setText("Dano Elemental");
     obj.label78:setName("label78");
 
-    obj.edit253 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit253:setParent(obj.POPAcessorio);
-    obj.edit253:setLeft(110);
-    obj.edit253:setTop(16);
-    obj.edit253:setWidth(85);
-    obj.edit253:setHeight(25);
-    obj.edit253:setType("number");
-    obj.edit253:setField("AcessorioDT");
-    obj.edit253:setName("edit253");
+    obj.label79 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label79:setParent(obj.POPAcessorio);
+    obj.label79:setLeft(230);
+    obj.label79:setTop(60);
+    obj.label79:setFontFamily("Nyala");
+    obj.label79:setFontSize(20);
+    obj.label79:setText("HP");
+    obj.label79:setName("label79");
 
-    obj.edit254 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit254:setParent(obj.POPAcessorio);
-    obj.edit254:setLeft(110);
-    obj.edit254:setTop(56);
-    obj.edit254:setWidth(85);
-    obj.edit254:setHeight(25);
-    obj.edit254:setType("number");
-    obj.edit254:setField("AcessorioDN");
-    obj.edit254:setName("edit254");
+    obj.label80 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label80:setParent(obj.POPAcessorio);
+    obj.label80:setLeft(230);
+    obj.label80:setTop(100);
+    obj.label80:setFontFamily("Nyala");
+    obj.label80:setFontSize(20);
+    obj.label80:setText("Chakra");
+    obj.label80:setName("label80");
+
+    obj.label81 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label81:setParent(obj.POPAcessorio);
+    obj.label81:setLeft(20);
+    obj.label81:setTop(140);
+    obj.label81:setWidth(300);
+    obj.label81:setFontFamily("Nyala");
+    obj.label81:setFontSize(20);
+    obj.label81:setText("Reiatsu");
+    obj.label81:setName("label81");
+
+    obj.label82 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label82:setParent(obj.POPAcessorio);
+    obj.label82:setLeft(230);
+    obj.label82:setTop(140);
+    obj.label82:setFontFamily("Nyala");
+    obj.label82:setFontSize(20);
+    obj.label82:setText("Outros");
+    obj.label82:setName("label82");
 
     obj.edit255 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit255:setParent(obj.POPAcessorio);
     obj.edit255:setLeft(110);
-    obj.edit255:setTop(96);
+    obj.edit255:setTop(16);
     obj.edit255:setWidth(85);
     obj.edit255:setHeight(25);
     obj.edit255:setType("number");
-    obj.edit255:setField("AcessorioDG");
+    obj.edit255:setField("AcessorioDT");
     obj.edit255:setName("edit255");
 
     obj.edit256 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit256:setParent(obj.POPAcessorio);
-    obj.edit256:setLeft(360);
-    obj.edit256:setTop(16);
+    obj.edit256:setLeft(110);
+    obj.edit256:setTop(56);
     obj.edit256:setWidth(85);
     obj.edit256:setHeight(25);
     obj.edit256:setType("number");
-    obj.edit256:setField("AcessorioDE");
+    obj.edit256:setField("AcessorioDN");
     obj.edit256:setName("edit256");
 
     obj.edit257 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit257:setParent(obj.POPAcessorio);
-    obj.edit257:setLeft(360);
-    obj.edit257:setTop(56);
+    obj.edit257:setLeft(110);
+    obj.edit257:setTop(96);
     obj.edit257:setWidth(85);
     obj.edit257:setHeight(25);
     obj.edit257:setType("number");
-    obj.edit257:setField("AcessorioHP");
+    obj.edit257:setField("AcessorioDG");
     obj.edit257:setName("edit257");
 
     obj.edit258 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit258:setParent(obj.POPAcessorio);
     obj.edit258:setLeft(360);
-    obj.edit258:setTop(96);
+    obj.edit258:setTop(16);
     obj.edit258:setWidth(85);
     obj.edit258:setHeight(25);
     obj.edit258:setType("number");
-    obj.edit258:setField("AcessorioChakra");
+    obj.edit258:setField("AcessorioDE");
     obj.edit258:setName("edit258");
 
     obj.edit259 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit259:setParent(obj.POPAcessorio);
-    obj.edit259:setLeft(110);
-    obj.edit259:setTop(136);
+    obj.edit259:setLeft(360);
+    obj.edit259:setTop(56);
     obj.edit259:setWidth(85);
     obj.edit259:setHeight(25);
     obj.edit259:setType("number");
-    obj.edit259:setField("AcessorioReiatsu");
+    obj.edit259:setField("AcessorioHP");
     obj.edit259:setName("edit259");
 
     obj.edit260 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit260:setParent(obj.POPAcessorio);
     obj.edit260:setLeft(360);
-    obj.edit260:setTop(136);
+    obj.edit260:setTop(96);
     obj.edit260:setWidth(85);
     obj.edit260:setHeight(25);
     obj.edit260:setType("number");
-    obj.edit260:setField("AcessorioOutros");
+    obj.edit260:setField("AcessorioChakra");
     obj.edit260:setName("edit260");
 
-    obj.label79 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label79:setParent(obj.POPAcessorio);
-    obj.label79:setLeft(20);
-    obj.label79:setTop(180);
-    obj.label79:setWidth(300);
-    obj.label79:setFontFamily("Nyala");
-    obj.label79:setFontSize(20);
-    obj.label79:setText("Habilidade");
-    obj.label79:setName("label79");
+    obj.edit261 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit261:setParent(obj.POPAcessorio);
+    obj.edit261:setLeft(110);
+    obj.edit261:setTop(136);
+    obj.edit261:setWidth(85);
+    obj.edit261:setHeight(25);
+    obj.edit261:setType("number");
+    obj.edit261:setField("AcessorioReiatsu");
+    obj.edit261:setName("edit261");
+
+    obj.edit262 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit262:setParent(obj.POPAcessorio);
+    obj.edit262:setLeft(360);
+    obj.edit262:setTop(136);
+    obj.edit262:setWidth(85);
+    obj.edit262:setHeight(25);
+    obj.edit262:setType("number");
+    obj.edit262:setField("AcessorioOutros");
+    obj.edit262:setName("edit262");
+
+    obj.label83 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label83:setParent(obj.POPAcessorio);
+    obj.label83:setLeft(20);
+    obj.label83:setTop(180);
+    obj.label83:setWidth(300);
+    obj.label83:setFontFamily("Nyala");
+    obj.label83:setFontSize(20);
+    obj.label83:setText("Habilidade");
+    obj.label83:setName("label83");
 
     obj.textEditor14 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor14:setParent(obj.POPAcessorio);
@@ -6198,15 +6348,15 @@ local function constructNew_frmsekai()
     obj.textEditor14:setField("AcessorioPassiva");
     obj.textEditor14:setName("textEditor14");
 
-    obj.button49 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button49:setParent(obj.scrollBox7);
-    obj.button49:setLeft(30);
-    obj.button49:setTop(540);
-    obj.button49:setWidth(120);
-    obj.button49:setHeight(115);
-    obj.button49:setOpacity(0.1);
-    obj.button49:setText("");
-    obj.button49:setName("button49");
+    obj.button54 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button54:setParent(obj.scrollBox7);
+    obj.button54:setLeft(30);
+    obj.button54:setTop(540);
+    obj.button54:setWidth(120);
+    obj.button54:setHeight(115);
+    obj.button54:setOpacity(0.1);
+    obj.button54:setText("");
+    obj.button54:setName("button54");
 
     obj.POPBAG = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPBAG:setParent(obj.scrollBox7);
@@ -6226,225 +6376,225 @@ local function constructNew_frmsekai()
     obj.image31:setSRC("/imagens/Loja.png");
     obj.image31:setName("image31");
 
-    obj.label80 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label80:setParent(obj.POPBAG);
-    obj.label80:setLeft(160);
-    obj.label80:setTop(13);
-    obj.label80:setHeight(25);
-    obj.label80:setWidth(100);
-    obj.label80:setFontColor("red");
-    obj.label80:setText("Kunai");
-    obj.label80:setAutoSize(true);
-    obj.label80:setName("label80");
-
-    obj.edit261 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit261:setParent(obj.POPBAG);
-    obj.edit261:setLeft(200);
-    obj.edit261:setTop(08);
-    obj.edit261:setHeight(25);
-    obj.edit261:setWidth(30);
-    obj.edit261:setEnabled(false);
-    obj.edit261:setType("number");
-    obj.edit261:setField("KunaiLimite");
-    obj.edit261:setName("edit261");
-
-    obj.label81 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label81:setParent(obj.POPBAG);
-    obj.label81:setLeft(235);
-    obj.label81:setTop(13);
-    obj.label81:setHeight(25);
-    obj.label81:setWidth(100);
-    obj.label81:setFontColor("red");
-    obj.label81:setText("Shuriken");
-    obj.label81:setAutoSize(true);
-    obj.label81:setName("label81");
-
-    obj.edit262 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit262:setParent(obj.POPBAG);
-    obj.edit262:setLeft(290);
-    obj.edit262:setTop(08);
-    obj.edit262:setHeight(25);
-    obj.edit262:setWidth(30);
-    obj.edit262:setEnabled(false);
-    obj.edit262:setType("number");
-    obj.edit262:setField("ShurikenLimite");
-    obj.edit262:setName("edit262");
-
-    obj.label82 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label82:setParent(obj.POPBAG);
-    obj.label82:setLeft(325);
-    obj.label82:setTop(13);
-    obj.label82:setHeight(25);
-    obj.label82:setWidth(100);
-    obj.label82:setFontColor("red");
-    obj.label82:setText("S.Fuuma");
-    obj.label82:setAutoSize(true);
-    obj.label82:setName("label82");
+    obj.label84 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label84:setParent(obj.POPBAG);
+    obj.label84:setLeft(160);
+    obj.label84:setTop(13);
+    obj.label84:setHeight(25);
+    obj.label84:setWidth(100);
+    obj.label84:setFontColor("red");
+    obj.label84:setText("Kunai");
+    obj.label84:setAutoSize(true);
+    obj.label84:setName("label84");
 
     obj.edit263 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit263:setParent(obj.POPBAG);
-    obj.edit263:setLeft(380);
+    obj.edit263:setLeft(200);
     obj.edit263:setTop(08);
     obj.edit263:setHeight(25);
     obj.edit263:setWidth(30);
     obj.edit263:setEnabled(false);
     obj.edit263:setType("number");
-    obj.edit263:setField("SFuumaLimite");
+    obj.edit263:setField("KunaiLimite");
     obj.edit263:setName("edit263");
 
-    obj.label83 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label83:setParent(obj.POPBAG);
-    obj.label83:setLeft(420);
-    obj.label83:setTop(13);
-    obj.label83:setHeight(25);
-    obj.label83:setWidth(100);
-    obj.label83:setFontColor("red");
-    obj.label83:setText("K.Gigante");
-    obj.label83:setAutoSize(true);
-    obj.label83:setName("label83");
+    obj.label85 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label85:setParent(obj.POPBAG);
+    obj.label85:setLeft(235);
+    obj.label85:setTop(13);
+    obj.label85:setHeight(25);
+    obj.label85:setWidth(100);
+    obj.label85:setFontColor("red");
+    obj.label85:setText("Shuriken");
+    obj.label85:setAutoSize(true);
+    obj.label85:setName("label85");
 
     obj.edit264 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit264:setParent(obj.POPBAG);
-    obj.edit264:setLeft(480);
+    obj.edit264:setLeft(290);
     obj.edit264:setTop(08);
     obj.edit264:setHeight(25);
     obj.edit264:setWidth(30);
     obj.edit264:setEnabled(false);
     obj.edit264:setType("number");
-    obj.edit264:setField("KGiganteLimite");
+    obj.edit264:setField("ShurikenLimite");
     obj.edit264:setName("edit264");
 
-    obj.label84 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label84:setParent(obj.POPBAG);
-    obj.label84:setLeft(515);
-    obj.label84:setTop(13);
-    obj.label84:setHeight(25);
-    obj.label84:setWidth(100);
-    obj.label84:setFontColor("red");
-    obj.label84:setText("P.Bomba");
-    obj.label84:setAutoSize(true);
-    obj.label84:setName("label84");
+    obj.label86 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label86:setParent(obj.POPBAG);
+    obj.label86:setLeft(325);
+    obj.label86:setTop(13);
+    obj.label86:setHeight(25);
+    obj.label86:setWidth(100);
+    obj.label86:setFontColor("red");
+    obj.label86:setText("S.Fuuma");
+    obj.label86:setAutoSize(true);
+    obj.label86:setName("label86");
 
     obj.edit265 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit265:setParent(obj.POPBAG);
-    obj.edit265:setLeft(570);
+    obj.edit265:setLeft(380);
     obj.edit265:setTop(08);
     obj.edit265:setHeight(25);
     obj.edit265:setWidth(30);
     obj.edit265:setEnabled(false);
     obj.edit265:setType("number");
-    obj.edit265:setField("PBombaLimite");
+    obj.edit265:setField("SFuumaLimite");
     obj.edit265:setName("edit265");
 
-    obj.label85 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label85:setParent(obj.POPBAG);
-    obj.label85:setLeft(160);
-    obj.label85:setTop(38);
-    obj.label85:setHeight(25);
-    obj.label85:setWidth(100);
-    obj.label85:setFontColor("red");
-    obj.label85:setText("G.Explosivo");
-    obj.label85:setAutoSize(true);
-    obj.label85:setName("label85");
+    obj.label87 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label87:setParent(obj.POPBAG);
+    obj.label87:setLeft(420);
+    obj.label87:setTop(13);
+    obj.label87:setHeight(25);
+    obj.label87:setWidth(100);
+    obj.label87:setFontColor("red");
+    obj.label87:setText("K.Gigante");
+    obj.label87:setAutoSize(true);
+    obj.label87:setName("label87");
 
     obj.edit266 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit266:setParent(obj.POPBAG);
-    obj.edit266:setLeft(230);
-    obj.edit266:setTop(35);
+    obj.edit266:setLeft(480);
+    obj.edit266:setTop(08);
     obj.edit266:setHeight(25);
     obj.edit266:setWidth(30);
     obj.edit266:setEnabled(false);
     obj.edit266:setType("number");
-    obj.edit266:setField("GExplosivoLimite");
+    obj.edit266:setField("KGiganteLimite");
     obj.edit266:setName("edit266");
 
-    obj.label86 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label86:setParent(obj.POPBAG);
-    obj.label86:setLeft(265);
-    obj.label86:setTop(38);
-    obj.label86:setHeight(25);
-    obj.label86:setWidth(100);
-    obj.label86:setFontColor("red");
-    obj.label86:setText("Veneno");
-    obj.label86:setAutoSize(true);
-    obj.label86:setName("label86");
+    obj.label88 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label88:setParent(obj.POPBAG);
+    obj.label88:setLeft(515);
+    obj.label88:setTop(13);
+    obj.label88:setHeight(25);
+    obj.label88:setWidth(100);
+    obj.label88:setFontColor("red");
+    obj.label88:setText("P.Bomba");
+    obj.label88:setAutoSize(true);
+    obj.label88:setName("label88");
 
     obj.edit267 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit267:setParent(obj.POPBAG);
-    obj.edit267:setLeft(315);
-    obj.edit267:setTop(35);
+    obj.edit267:setLeft(570);
+    obj.edit267:setTop(08);
     obj.edit267:setHeight(25);
     obj.edit267:setWidth(30);
     obj.edit267:setEnabled(false);
     obj.edit267:setType("number");
-    obj.edit267:setField("VenenoLimite");
+    obj.edit267:setField("PBombaLimite");
     obj.edit267:setName("edit267");
 
-    obj.label87 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label87:setParent(obj.POPBAG);
-    obj.label87:setLeft(350);
-    obj.label87:setTop(38);
-    obj.label87:setHeight(25);
-    obj.label87:setWidth(100);
-    obj.label87:setFontColor("red");
-    obj.label87:setText("Bandagem");
-    obj.label87:setAutoSize(true);
-    obj.label87:setName("label87");
+    obj.label89 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label89:setParent(obj.POPBAG);
+    obj.label89:setLeft(160);
+    obj.label89:setTop(38);
+    obj.label89:setHeight(25);
+    obj.label89:setWidth(100);
+    obj.label89:setFontColor("red");
+    obj.label89:setText("G.Explosivo");
+    obj.label89:setAutoSize(true);
+    obj.label89:setName("label89");
 
     obj.edit268 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit268:setParent(obj.POPBAG);
-    obj.edit268:setLeft(415);
+    obj.edit268:setLeft(230);
     obj.edit268:setTop(35);
     obj.edit268:setHeight(25);
     obj.edit268:setWidth(30);
     obj.edit268:setEnabled(false);
     obj.edit268:setType("number");
-    obj.edit268:setField("BandagemLimite");
+    obj.edit268:setField("GExplosivoLimite");
     obj.edit268:setName("edit268");
 
-    obj.label88 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label88:setParent(obj.POPBAG);
-    obj.label88:setLeft(450);
-    obj.label88:setTop(38);
-    obj.label88:setHeight(25);
-    obj.label88:setWidth(100);
-    obj.label88:setFontColor("red");
-    obj.label88:setText("Bomba Fumaça");
-    obj.label88:setAutoSize(true);
-    obj.label88:setName("label88");
+    obj.label90 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label90:setParent(obj.POPBAG);
+    obj.label90:setLeft(265);
+    obj.label90:setTop(38);
+    obj.label90:setHeight(25);
+    obj.label90:setWidth(100);
+    obj.label90:setFontColor("red");
+    obj.label90:setText("Veneno");
+    obj.label90:setAutoSize(true);
+    obj.label90:setName("label90");
 
     obj.edit269 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit269:setParent(obj.POPBAG);
-    obj.edit269:setLeft(545);
+    obj.edit269:setLeft(315);
     obj.edit269:setTop(35);
     obj.edit269:setHeight(25);
     obj.edit269:setWidth(30);
     obj.edit269:setEnabled(false);
     obj.edit269:setType("number");
-    obj.edit269:setField("BombaFumacaLimite");
+    obj.edit269:setField("VenenoLimite");
     obj.edit269:setName("edit269");
 
-    obj.label89 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label89:setParent(obj.POPBAG);
-    obj.label89:setLeft(580);
-    obj.label89:setTop(38);
-    obj.label89:setHeight(25);
-    obj.label89:setWidth(100);
-    obj.label89:setFontColor("red");
-    obj.label89:setText("Sembo");
-    obj.label89:setAutoSize(true);
-    obj.label89:setName("label89");
+    obj.label91 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label91:setParent(obj.POPBAG);
+    obj.label91:setLeft(350);
+    obj.label91:setTop(38);
+    obj.label91:setHeight(25);
+    obj.label91:setWidth(100);
+    obj.label91:setFontColor("red");
+    obj.label91:setText("Bandagem");
+    obj.label91:setAutoSize(true);
+    obj.label91:setName("label91");
 
     obj.edit270 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit270:setParent(obj.POPBAG);
-    obj.edit270:setLeft(625);
+    obj.edit270:setLeft(415);
     obj.edit270:setTop(35);
     obj.edit270:setHeight(25);
     obj.edit270:setWidth(30);
     obj.edit270:setEnabled(false);
     obj.edit270:setType("number");
-    obj.edit270:setField("SemboLimite");
+    obj.edit270:setField("BandagemLimite");
     obj.edit270:setName("edit270");
+
+    obj.label92 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label92:setParent(obj.POPBAG);
+    obj.label92:setLeft(450);
+    obj.label92:setTop(38);
+    obj.label92:setHeight(25);
+    obj.label92:setWidth(100);
+    obj.label92:setFontColor("red");
+    obj.label92:setText("Bomba Fumaça");
+    obj.label92:setAutoSize(true);
+    obj.label92:setName("label92");
+
+    obj.edit271 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit271:setParent(obj.POPBAG);
+    obj.edit271:setLeft(545);
+    obj.edit271:setTop(35);
+    obj.edit271:setHeight(25);
+    obj.edit271:setWidth(30);
+    obj.edit271:setEnabled(false);
+    obj.edit271:setType("number");
+    obj.edit271:setField("BombaFumacaLimite");
+    obj.edit271:setName("edit271");
+
+    obj.label93 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label93:setParent(obj.POPBAG);
+    obj.label93:setLeft(580);
+    obj.label93:setTop(38);
+    obj.label93:setHeight(25);
+    obj.label93:setWidth(100);
+    obj.label93:setFontColor("red");
+    obj.label93:setText("Sembo");
+    obj.label93:setAutoSize(true);
+    obj.label93:setName("label93");
+
+    obj.edit272 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit272:setParent(obj.POPBAG);
+    obj.edit272:setLeft(625);
+    obj.edit272:setTop(35);
+    obj.edit272:setHeight(25);
+    obj.edit272:setWidth(30);
+    obj.edit272:setEnabled(false);
+    obj.edit272:setType("number");
+    obj.edit272:setField("SemboLimite");
+    obj.edit272:setName("edit272");
 
     obj.layout1 = GUI.fromHandle(_obj_newObject("layout"));
     obj.layout1:setParent(obj.POPBAG);
@@ -6453,12 +6603,12 @@ local function constructNew_frmsekai()
     obj.layout1:setMargins({bottom=4});
     obj.layout1:setName("layout1");
 
-    obj.button50 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button50:setParent(obj.layout1);
-    obj.button50:setText("Novo Item");
-    obj.button50:setWidth(150);
-    obj.button50:setAlign("left");
-    obj.button50:setName("button50");
+    obj.button55 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button55:setParent(obj.layout1);
+    obj.button55:setText("Novo Item");
+    obj.button55:setWidth(150);
+    obj.button55:setAlign("left");
+    obj.button55:setName("button55");
 
     obj.cmbTipoBag = GUI.fromHandle(_obj_newObject("comboBox"));
     obj.cmbTipoBag:setParent(obj.POPBAG);
@@ -6468,6 +6618,7 @@ local function constructNew_frmsekai()
     obj.cmbTipoBag:setWidth(147);
     obj.cmbTipoBag:setItems({'Tipo Bag', 'Bag Genin', 'Bag Chunin', 'Bag Tengu', 'Bag Yebisu', 'Bag Benzaiten'});
     obj.cmbTipoBag:setField("TipoBag");
+    obj.cmbTipoBag:setValues({'1', '2', '3', '4', '5', '6'});
 
     obj.rclListaDosItens4 = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclListaDosItens4:setParent(obj.POPBAG);
@@ -6499,25 +6650,25 @@ local function constructNew_frmsekai()
     obj.rectangle13:setLeft(1);
     obj.rectangle13:setName("rectangle13");
 
-    obj.label90 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label90:setParent(obj.rectangle13);
-    obj.label90:setLeft(10);
-    obj.label90:setTop(13);
-    obj.label90:setHeight(25);
-    obj.label90:setWidth(100);
-    obj.label90:setFontColor("red");
-    obj.label90:setText("Nome do Item:");
-    obj.label90:setAutoSize(true);
-    obj.label90:setName("label90");
+    obj.label94 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label94:setParent(obj.rectangle13);
+    obj.label94:setLeft(10);
+    obj.label94:setTop(13);
+    obj.label94:setHeight(25);
+    obj.label94:setWidth(100);
+    obj.label94:setFontColor("red");
+    obj.label94:setText("Nome do Item:");
+    obj.label94:setAutoSize(true);
+    obj.label94:setName("label94");
 
-    obj.edit271 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit271:setParent(obj.rectangle13);
-    obj.edit271:setLeft(105);
-    obj.edit271:setTop(10);
-    obj.edit271:setHeight(25);
-    obj.edit271:setWidth(240);
-    obj.edit271:setField("NomedoItem");
-    obj.edit271:setName("edit271");
+    obj.edit273 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit273:setParent(obj.rectangle13);
+    obj.edit273:setLeft(105);
+    obj.edit273:setTop(10);
+    obj.edit273:setHeight(25);
+    obj.edit273:setWidth(240);
+    obj.edit273:setField("NomedoItem");
+    obj.edit273:setName("edit273");
 
     obj.textEditor15 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor15:setParent(obj.rectangle13);
@@ -6528,30 +6679,30 @@ local function constructNew_frmsekai()
     obj.textEditor15:setField("DescriItem");
     obj.textEditor15:setName("textEditor15");
 
-    obj.label91 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label91:setParent(obj.rectangle13);
-    obj.label91:setLeft(10);
-    obj.label91:setTop(360);
-    obj.label91:setHeight(25);
-    obj.label91:setWidth(100);
-    obj.label91:setText("Tipo :");
-    obj.label91:setAutoSize(true);
-    obj.label91:setName("label91");
+    obj.label95 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label95:setParent(obj.rectangle13);
+    obj.label95:setLeft(10);
+    obj.label95:setTop(360);
+    obj.label95:setHeight(25);
+    obj.label95:setWidth(100);
+    obj.label95:setText("Tipo :");
+    obj.label95:setAutoSize(true);
+    obj.label95:setName("label95");
 
-    obj.comboBox11 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox11:setParent(obj.rectangle13);
-    obj.comboBox11:setLeft(50);
-    obj.comboBox11:setTop(360);
-    obj.comboBox11:setWidth(140);
-    obj.comboBox11:setHeight(18);
-    obj.comboBox11:setField("TipoItens");
-    obj.comboBox11:setItems({'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'});
-    obj.comboBox11:setName("comboBox11");
+    obj.comboBox12 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox12:setParent(obj.rectangle13);
+    obj.comboBox12:setLeft(50);
+    obj.comboBox12:setTop(360);
+    obj.comboBox12:setWidth(140);
+    obj.comboBox12:setHeight(18);
+    obj.comboBox12:setField("TipoItens");
+    obj.comboBox12:setItems({'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Marionete', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem', 'Bomba de Fumaça', 'Selamento', 'Outros'});
+    obj.comboBox12:setName("comboBox12");
 
-    obj.dataLink20 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink20:setParent(obj.POPBAG);
-    obj.dataLink20:setField("TipoBag");
-    obj.dataLink20:setName("dataLink20");
+    obj.dataLink21 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink21:setParent(obj.POPBAG);
+    obj.dataLink21:setField("TipoBag");
+    obj.dataLink21:setName("dataLink21");
 
     obj.tab4 = GUI.fromHandle(_obj_newObject("tab"));
     obj.tab4:setParent(obj.tabControl1);
@@ -6572,40 +6723,10 @@ local function constructNew_frmsekai()
     obj.image32:setSRC("/imagens/7.png");
     obj.image32:setName("image32");
 
-    obj.edit272 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit272:setParent(obj.scrollBox8);
-    obj.edit272:setLeft(170);
-    obj.edit272:setTop(12);
-    obj.edit272:setWidth(80);
-    obj.edit272:setHeight(25);
-    obj.edit272:setHorzTextAlign("center");
-    obj.edit272:setType("number");
-    obj.edit272:setMax(100);
-    obj.edit272:setMin(0);
-    obj.edit272:setEnabled(false);
-    obj.edit272:setFontSize(18);
-    obj.edit272:setField("RepFolha");
-    obj.edit272:setName("edit272");
-
-    obj.edit273 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit273:setParent(obj.scrollBox8);
-    obj.edit273:setLeft(170);
-    obj.edit273:setTop(40);
-    obj.edit273:setWidth(80);
-    obj.edit273:setHeight(25);
-    obj.edit273:setHorzTextAlign("center");
-    obj.edit273:setType("number");
-    obj.edit273:setMax(100);
-    obj.edit273:setMin(0);
-    obj.edit273:setEnabled(false);
-    obj.edit273:setFontSize(18);
-    obj.edit273:setField("RepAreia");
-    obj.edit273:setName("edit273");
-
     obj.edit274 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit274:setParent(obj.scrollBox8);
     obj.edit274:setLeft(170);
-    obj.edit274:setTop(68);
+    obj.edit274:setTop(12);
     obj.edit274:setWidth(80);
     obj.edit274:setHeight(25);
     obj.edit274:setHorzTextAlign("center");
@@ -6614,13 +6735,13 @@ local function constructNew_frmsekai()
     obj.edit274:setMin(0);
     obj.edit274:setEnabled(false);
     obj.edit274:setFontSize(18);
-    obj.edit274:setField("RepNuvem");
+    obj.edit274:setField("RepFolha");
     obj.edit274:setName("edit274");
 
     obj.edit275 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit275:setParent(obj.scrollBox8);
     obj.edit275:setLeft(170);
-    obj.edit275:setTop(96);
+    obj.edit275:setTop(40);
     obj.edit275:setWidth(80);
     obj.edit275:setHeight(25);
     obj.edit275:setHorzTextAlign("center");
@@ -6629,13 +6750,13 @@ local function constructNew_frmsekai()
     obj.edit275:setMin(0);
     obj.edit275:setEnabled(false);
     obj.edit275:setFontSize(18);
-    obj.edit275:setField("RepNevoa");
+    obj.edit275:setField("RepAreia");
     obj.edit275:setName("edit275");
 
     obj.edit276 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit276:setParent(obj.scrollBox8);
     obj.edit276:setLeft(170);
-    obj.edit276:setTop(124);
+    obj.edit276:setTop(68);
     obj.edit276:setWidth(80);
     obj.edit276:setHeight(25);
     obj.edit276:setHorzTextAlign("center");
@@ -6644,8 +6765,38 @@ local function constructNew_frmsekai()
     obj.edit276:setMin(0);
     obj.edit276:setEnabled(false);
     obj.edit276:setFontSize(18);
-    obj.edit276:setField("RepPedra");
+    obj.edit276:setField("RepNuvem");
     obj.edit276:setName("edit276");
+
+    obj.edit277 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit277:setParent(obj.scrollBox8);
+    obj.edit277:setLeft(170);
+    obj.edit277:setTop(96);
+    obj.edit277:setWidth(80);
+    obj.edit277:setHeight(25);
+    obj.edit277:setHorzTextAlign("center");
+    obj.edit277:setType("number");
+    obj.edit277:setMax(100);
+    obj.edit277:setMin(0);
+    obj.edit277:setEnabled(false);
+    obj.edit277:setFontSize(18);
+    obj.edit277:setField("RepNevoa");
+    obj.edit277:setName("edit277");
+
+    obj.edit278 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit278:setParent(obj.scrollBox8);
+    obj.edit278:setLeft(170);
+    obj.edit278:setTop(124);
+    obj.edit278:setWidth(80);
+    obj.edit278:setHeight(25);
+    obj.edit278:setHorzTextAlign("center");
+    obj.edit278:setType("number");
+    obj.edit278:setMax(100);
+    obj.edit278:setMin(0);
+    obj.edit278:setEnabled(false);
+    obj.edit278:setFontSize(18);
+    obj.edit278:setField("RepPedra");
+    obj.edit278:setName("edit278");
 
     obj.GanhoAnual = GUI.fromHandle(_obj_newObject("edit"));
     obj.GanhoAnual:setParent(obj.scrollBox8);
@@ -6661,91 +6812,91 @@ local function constructNew_frmsekai()
     obj.GanhoAnual:setHorzTextAlign("center");
     obj.GanhoAnual:setFontSize(18);
 
-    obj.edit277 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit277:setParent(obj.scrollBox8);
-    obj.edit277:setLeft(187);
-    obj.edit277:setTop(213);
-    obj.edit277:setWidth(50);
-    obj.edit277:setHeight(25);
-    obj.edit277:setHorzTextAlign("center");
-    obj.edit277:setType("number");
-    obj.edit277:setFontSize(18);
-    obj.edit277:setEnabled(true);
-    obj.edit277:setField("BonusGanhoAnual");
-    obj.edit277:setName("edit277");
-
-    obj.edit278 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit278:setParent(obj.scrollBox8);
-    obj.edit278:setLeft(10);
-    obj.edit278:setTop(270);
-    obj.edit278:setReadOnly(true);
-    obj.edit278:setWidth(140);
-    obj.edit278:setHeight(25);
-    obj.edit278:setHorzTextAlign("center");
-    obj.edit278:setFontSize(18);
-    obj.edit278:setEnabled(true);
-    obj.edit278:setField("BingoBook");
-    obj.edit278:setName("edit278");
-
-    obj.comboBox12 = GUI.fromHandle(_obj_newObject("comboBox"));
-    obj.comboBox12:setParent(obj.scrollBox8);
-    obj.comboBox12:setLeft(110);
-    obj.comboBox12:setTop(300);
-    obj.comboBox12:setField("Moradia");
-    obj.comboBox12:setItems({'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'});
-    obj.comboBox12:setName("comboBox12");
-
     obj.edit279 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit279:setParent(obj.scrollBox8);
-    obj.edit279:setLeft(280);
-    obj.edit279:setTop(298);
+    obj.edit279:setLeft(187);
+    obj.edit279:setTop(213);
     obj.edit279:setWidth(50);
     obj.edit279:setHeight(25);
     obj.edit279:setHorzTextAlign("center");
+    obj.edit279:setType("number");
     obj.edit279:setFontSize(18);
-    obj.edit279:setField("MoradiaNpc");
+    obj.edit279:setEnabled(true);
+    obj.edit279:setField("BonusGanhoAnual");
     obj.edit279:setName("edit279");
 
     obj.edit280 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit280:setParent(obj.scrollBox8);
     obj.edit280:setLeft(10);
-    obj.edit280:setTop(380);
-    obj.edit280:setWidth(40);
+    obj.edit280:setTop(270);
+    obj.edit280:setReadOnly(true);
+    obj.edit280:setWidth(140);
     obj.edit280:setHeight(25);
     obj.edit280:setHorzTextAlign("center");
     obj.edit280:setFontSize(18);
     obj.edit280:setEnabled(true);
-    obj.edit280:setField("Bonus1d10");
+    obj.edit280:setField("BingoBook");
     obj.edit280:setName("edit280");
+
+    obj.comboBox13 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox13:setParent(obj.scrollBox8);
+    obj.comboBox13:setLeft(110);
+    obj.comboBox13:setTop(300);
+    obj.comboBox13:setField("Moradia");
+    obj.comboBox13:setItems({'Primaria', 'Barata', 'Media', 'Cara', 'Aluguel'});
+    obj.comboBox13:setName("comboBox13");
 
     obj.edit281 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit281:setParent(obj.scrollBox8);
-    obj.edit281:setLeft(60);
-    obj.edit281:setTop(380);
-    obj.edit281:setWidth(40);
+    obj.edit281:setLeft(280);
+    obj.edit281:setTop(298);
+    obj.edit281:setWidth(50);
     obj.edit281:setHeight(25);
     obj.edit281:setHorzTextAlign("center");
     obj.edit281:setFontSize(18);
-    obj.edit281:setEnabled(true);
-    obj.edit281:setField("Bonus2d10");
+    obj.edit281:setField("MoradiaNpc");
     obj.edit281:setName("edit281");
 
     obj.edit282 = GUI.fromHandle(_obj_newObject("edit"));
     obj.edit282:setParent(obj.scrollBox8);
-    obj.edit282:setLeft(120);
-    obj.edit282:setTop(380);
+    obj.edit282:setLeft(10);
+    obj.edit282:setTop(385);
     obj.edit282:setWidth(40);
     obj.edit282:setHeight(25);
     obj.edit282:setHorzTextAlign("center");
     obj.edit282:setFontSize(18);
     obj.edit282:setEnabled(true);
-    obj.edit282:setField("Bonus3d10");
+    obj.edit282:setField("Bonus1d10");
     obj.edit282:setName("edit282");
+
+    obj.edit283 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit283:setParent(obj.scrollBox8);
+    obj.edit283:setLeft(60);
+    obj.edit283:setTop(385);
+    obj.edit283:setWidth(40);
+    obj.edit283:setHeight(25);
+    obj.edit283:setHorzTextAlign("center");
+    obj.edit283:setFontSize(18);
+    obj.edit283:setEnabled(true);
+    obj.edit283:setField("Bonus2d10");
+    obj.edit283:setName("edit283");
+
+    obj.edit284 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit284:setParent(obj.scrollBox8);
+    obj.edit284:setLeft(110);
+    obj.edit284:setTop(385);
+    obj.edit284:setWidth(40);
+    obj.edit284:setHeight(25);
+    obj.edit284:setHorzTextAlign("center");
+    obj.edit284:setFontSize(18);
+    obj.edit284:setEnabled(true);
+    obj.edit284:setField("Bonus3d10");
+    obj.edit284:setName("edit284");
 
     obj.rectangle14 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle14:setParent(obj.scrollBox8);
-    obj.rectangle14:setLeft(180);
-    obj.rectangle14:setTop(379);
+    obj.rectangle14:setLeft(160);
+    obj.rectangle14:setTop(384);
     obj.rectangle14:setWidth(40);
     obj.rectangle14:setHeight(30);
     obj.rectangle14:setColor("black");
@@ -6753,18 +6904,66 @@ local function constructNew_frmsekai()
     obj.rectangle14:setStrokeSize(3);
     obj.rectangle14:setName("rectangle14");
 
-    obj.edit283 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit283:setParent(obj.scrollBox8);
-    obj.edit283:setLeft(180);
-    obj.edit283:setTop(380);
-    obj.edit283:setWidth(40);
-    obj.edit283:setHeight(25);
-    obj.edit283:setTransparent(true);
-    obj.edit283:setHorzTextAlign("center");
-    obj.edit283:setEnabled(true);
-    obj.edit283:setFontSize(18);
-    obj.edit283:setField("Bonus1d20");
-    obj.edit283:setName("edit283");
+    obj.edit285 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit285:setParent(obj.scrollBox8);
+    obj.edit285:setLeft(160);
+    obj.edit285:setTop(385);
+    obj.edit285:setWidth(40);
+    obj.edit285:setHeight(25);
+    obj.edit285:setTransparent(true);
+    obj.edit285:setHorzTextAlign("center");
+    obj.edit285:setEnabled(true);
+    obj.edit285:setFontSize(18);
+    obj.edit285:setField("Bonus1d20");
+    obj.edit285:setName("edit285");
+
+    obj.comboBox14 = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.comboBox14:setParent(obj.scrollBox8);
+    obj.comboBox14:setLeft(490);
+    obj.comboBox14:setTop(185);
+    obj.comboBox14:setWidth(130);
+    obj.comboBox14:setField("GraduacaoStatusSocial");
+    obj.comboBox14:setItems({'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'});
+    obj.comboBox14:setName("comboBox14");
+
+    obj.button56 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button56:setParent(obj.scrollBox8);
+    obj.button56:setLeft(10);
+    obj.button56:setTop(435);
+    obj.button56:setWidth(130);
+    obj.button56:setHeight(30);
+    obj.button56:setOpacity(1.0);
+    obj.button56:setText("Treinamento Status");
+    obj.button56:setName("button56");
+
+    obj.edit286 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit286:setParent(obj.scrollBox8);
+    obj.edit286:setLeft(303);
+    obj.edit286:setTop(438);
+    obj.edit286:setWidth(25);
+    obj.edit286:setHeight(25);
+    obj.edit286:setTransparent(false);
+    obj.edit286:setHorzTextAlign("center");
+    obj.edit286:setEnabled(true);
+    obj.edit286:setMin(0);
+    obj.edit286:setMax(9);
+    obj.edit286:setType("number");
+    obj.edit286:setFontSize(18);
+    obj.edit286:setField("VezesPDia");
+    obj.edit286:setName("edit286");
+
+    obj.edit287 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit287:setParent(obj.scrollBox8);
+    obj.edit287:setLeft(500);
+    obj.edit287:setTop(438);
+    obj.edit287:setWidth(100);
+    obj.edit287:setHeight(25);
+    obj.edit287:setTransparent(false);
+    obj.edit287:setHorzTextAlign("center");
+    obj.edit287:setEnabled(true);
+    obj.edit287:setFontSize(18);
+    obj.edit287:setField("GanhoPTreino");
+    obj.edit287:setName("edit287");
 
     obj.image33 = GUI.fromHandle(_obj_newObject("image"));
     obj.image33:setParent(obj.scrollBox8);
@@ -6790,20 +6989,20 @@ local function constructNew_frmsekai()
     obj.image34:setSRC("https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif");
     obj.image34:setName("image34");
 
-    obj.dataLink21 = GUI.fromHandle(_obj_newObject("dataLink"));
-    obj.dataLink21:setParent(obj.scrollBox8);
-    obj.dataLink21:setFields({'Graduacao', 'BonusGanhoAnual'});
-    obj.dataLink21:setName("dataLink21");
+    obj.dataLink22 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink22:setParent(obj.scrollBox8);
+    obj.dataLink22:setFields({'GraduacaoStatusSocial', 'BonusGanhoAnual'});
+    obj.dataLink22:setName("dataLink22");
 
-    obj.button51 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button51:setParent(obj.scrollBox8);
-    obj.button51:setLeft(23);
-    obj.button51:setTop(478);
-    obj.button51:setWidth(146);
-    obj.button51:setHeight(116);
-    obj.button51:setOpacity(0.1);
-    obj.button51:setText("");
-    obj.button51:setName("button51");
+    obj.button57 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button57:setParent(obj.scrollBox8);
+    obj.button57:setLeft(23);
+    obj.button57:setTop(478);
+    obj.button57:setWidth(146);
+    obj.button57:setHeight(116);
+    obj.button57:setOpacity(0.1);
+    obj.button57:setText("");
+    obj.button57:setName("button57");
 
     obj.POPTreino = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPTreino:setParent(obj.scrollBox8);
@@ -6827,14 +7026,14 @@ local function constructNew_frmsekai()
     obj.image35:setSRC("/imagens/5.png");
     obj.image35:setName("image35");
 
-    obj.button52 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button52:setParent(obj.scrollBox9);
-    obj.button52:setText("Novo Treinamento");
-    obj.button52:setWidth(125);
-    obj.button52:setHeight(40);
-    obj.button52:setLeft(70);
-    obj.button52:setTop(10);
-    obj.button52:setName("button52");
+    obj.button58 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button58:setParent(obj.scrollBox9);
+    obj.button58:setText("Novo Treinamento");
+    obj.button58:setWidth(125);
+    obj.button58:setHeight(40);
+    obj.button58:setLeft(70);
+    obj.button58:setTop(10);
+    obj.button58:setName("button58");
 
     obj.rclListadeTreino = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclListadeTreino:setParent(obj.scrollBox9);
@@ -6867,25 +7066,25 @@ local function constructNew_frmsekai()
     obj.rectangle15:setTop(1);
     obj.rectangle15:setName("rectangle15");
 
-    obj.label92 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label92:setParent(obj.rectangle15);
-    obj.label92:setWidth(120);
-    obj.label92:setHeight(40);
-    obj.label92:setLeft(10);
-    obj.label92:setTop(10);
-    obj.label92:setFontFamily("Nyala");
-    obj.label92:setFontSize(20);
-    obj.label92:setText("Nome do Jutsu:");
-    obj.label92:setName("label92");
+    obj.label96 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label96:setParent(obj.rectangle15);
+    obj.label96:setWidth(120);
+    obj.label96:setHeight(40);
+    obj.label96:setLeft(10);
+    obj.label96:setTop(10);
+    obj.label96:setFontFamily("Nyala");
+    obj.label96:setFontSize(20);
+    obj.label96:setText("Nome do Jutsu:");
+    obj.label96:setName("label96");
 
-    obj.edit284 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit284:setParent(obj.rectangle15);
-    obj.edit284:setWidth(310);
-    obj.edit284:setHeight(30);
-    obj.edit284:setLeft(130);
-    obj.edit284:setTop(15);
-    obj.edit284:setField("JutsuTreinando");
-    obj.edit284:setName("edit284");
+    obj.edit288 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit288:setParent(obj.rectangle15);
+    obj.edit288:setWidth(310);
+    obj.edit288:setHeight(30);
+    obj.edit288:setLeft(130);
+    obj.edit288:setTop(15);
+    obj.edit288:setField("JutsuTreinando");
+    obj.edit288:setName("edit288");
 
     obj.textEditor16 = GUI.fromHandle(_obj_newObject("textEditor"));
     obj.textEditor16:setParent(obj.rectangle15);
@@ -6897,58 +7096,58 @@ local function constructNew_frmsekai()
     obj.textEditor16:setText("Este é um textEditor\n\ncom multiplas linhas");
     obj.textEditor16:setName("textEditor16");
 
-    obj.label93 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label93:setParent(obj.rectangle15);
-    obj.label93:setLeft(140);
-    obj.label93:setTop(350);
-    obj.label93:setWidth(230);
-    obj.label93:setHeight(40);
-    obj.label93:setFontFamily("Nyala");
-    obj.label93:setFontSize(18);
-    obj.label93:setText("Fortificação de jutsu 3D10 e 1d20");
-    obj.label93:setName("label93");
+    obj.label97 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label97:setParent(obj.rectangle15);
+    obj.label97:setLeft(140);
+    obj.label97:setTop(350);
+    obj.label97:setWidth(230);
+    obj.label97:setHeight(40);
+    obj.label97:setFontFamily("Nyala");
+    obj.label97:setFontSize(18);
+    obj.label97:setText("Fortificação de jutsu 3D10 e 1d20");
+    obj.label97:setName("label97");
 
-    obj.edit285 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit285:setParent(obj.rectangle15);
-    obj.edit285:setLeft(140);
-    obj.edit285:setTop(385);
-    obj.edit285:setWidth(50);
-    obj.edit285:setHeight(30);
-    obj.edit285:setType("number");
-    obj.edit285:setMin(1);
-    obj.edit285:setMax(9);
-    obj.edit285:setEnabled(false);
-    obj.edit285:setHorzTextAlign("center");
-    obj.edit285:setField("Treina1d10");
-    obj.edit285:setName("edit285");
+    obj.edit289 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit289:setParent(obj.rectangle15);
+    obj.edit289:setLeft(140);
+    obj.edit289:setTop(385);
+    obj.edit289:setWidth(50);
+    obj.edit289:setHeight(30);
+    obj.edit289:setType("number");
+    obj.edit289:setMin(1);
+    obj.edit289:setMax(9);
+    obj.edit289:setEnabled(true);
+    obj.edit289:setHorzTextAlign("center");
+    obj.edit289:setField("Treina1d10");
+    obj.edit289:setName("edit289");
 
-    obj.edit286 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit286:setParent(obj.rectangle15);
-    obj.edit286:setLeft(200);
-    obj.edit286:setTop(385);
-    obj.edit286:setWidth(50);
-    obj.edit286:setHeight(30);
-    obj.edit286:setType("number");
-    obj.edit286:setMin(1);
-    obj.edit286:setMax(9);
-    obj.edit286:setEnabled(false);
-    obj.edit286:setHorzTextAlign("center");
-    obj.edit286:setField("Treina2d10");
-    obj.edit286:setName("edit286");
+    obj.edit290 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit290:setParent(obj.rectangle15);
+    obj.edit290:setLeft(200);
+    obj.edit290:setTop(385);
+    obj.edit290:setWidth(50);
+    obj.edit290:setHeight(30);
+    obj.edit290:setType("number");
+    obj.edit290:setMin(1);
+    obj.edit290:setMax(9);
+    obj.edit290:setEnabled(true);
+    obj.edit290:setHorzTextAlign("center");
+    obj.edit290:setField("Treina2d10");
+    obj.edit290:setName("edit290");
 
-    obj.edit287 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit287:setParent(obj.rectangle15);
-    obj.edit287:setLeft(260);
-    obj.edit287:setTop(385);
-    obj.edit287:setWidth(50);
-    obj.edit287:setHeight(30);
-    obj.edit287:setType("number");
-    obj.edit287:setMin(1);
-    obj.edit287:setMax(9);
-    obj.edit287:setEnabled(false);
-    obj.edit287:setHorzTextAlign("center");
-    obj.edit287:setField("Treina3d10");
-    obj.edit287:setName("edit287");
+    obj.edit291 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit291:setParent(obj.rectangle15);
+    obj.edit291:setLeft(260);
+    obj.edit291:setTop(385);
+    obj.edit291:setWidth(50);
+    obj.edit291:setHeight(30);
+    obj.edit291:setType("number");
+    obj.edit291:setMin(1);
+    obj.edit291:setMax(9);
+    obj.edit291:setEnabled(true);
+    obj.edit291:setHorzTextAlign("center");
+    obj.edit291:setField("Treina3d10");
+    obj.edit291:setName("edit291");
 
     obj.rectangle16 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle16:setParent(obj.rectangle15);
@@ -6961,65 +7160,88 @@ local function constructNew_frmsekai()
     obj.rectangle16:setStrokeSize(3);
     obj.rectangle16:setName("rectangle16");
 
-    obj.edit288 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit288:setParent(obj.rectangle15);
-    obj.edit288:setLeft(320);
-    obj.edit288:setTop(385);
-    obj.edit288:setWidth(50);
-    obj.edit288:setHeight(30);
-    obj.edit288:setType("number");
-    obj.edit288:setMin(1);
-    obj.edit288:setMax(18);
-    obj.edit288:setEnabled(false);
-    obj.edit288:setTransparent(true);
-    obj.edit288:setHorzTextAlign("center");
-    obj.edit288:setField("Treina1d20");
-    obj.edit288:setName("edit288");
+    obj.edit292 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit292:setParent(obj.rectangle15);
+    obj.edit292:setLeft(320);
+    obj.edit292:setTop(385);
+    obj.edit292:setWidth(50);
+    obj.edit292:setHeight(30);
+    obj.edit292:setType("number");
+    obj.edit292:setMin(1);
+    obj.edit292:setMax(18);
+    obj.edit292:setEnabled(true);
+    obj.edit292:setTransparent(true);
+    obj.edit292:setHorzTextAlign("center");
+    obj.edit292:setField("Treina1d20");
+    obj.edit292:setName("edit292");
 
-    obj.edit289 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit289:setParent(obj.rectangle15);
-    obj.edit289:setLeft(140);
-    obj.edit289:setTop(420);
-    obj.edit289:setWidth(50);
-    obj.edit289:setHeight(30);
-    obj.edit289:setType("number");
-    obj.edit289:setMin(1);
-    obj.edit289:setMax(9);
-    obj.edit289:setEnabled(true);
-    obj.edit289:setVisible(false);
-    obj.edit289:setHorzTextAlign("center");
-    obj.edit289:setField("Treina1d10Soma");
-    obj.edit289:setName("edit289");
+    obj.label98 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label98:setParent(obj.rectangle15);
+    obj.label98:setLeft(60);
+    obj.label98:setTop(420);
+    obj.label98:setWidth(100);
+    obj.label98:setHeight(30);
+    obj.label98:setFontFamily("Nyala");
+    obj.label98:setFontSize(18);
+    obj.label98:setText("Rank do Jutsu");
+    obj.label98:setName("label98");
 
-    obj.edit290 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit290:setParent(obj.rectangle15);
-    obj.edit290:setLeft(200);
-    obj.edit290:setTop(420);
-    obj.edit290:setWidth(50);
-    obj.edit290:setHeight(30);
-    obj.edit290:setType("number");
-    obj.edit290:setMin(1);
-    obj.edit290:setMax(9);
-    obj.edit290:setEnabled(true);
-    obj.edit290:setVisible(false);
-    obj.edit290:setHorzTextAlign("center");
-    obj.edit290:setField("Treina2d10Soma");
-    obj.edit290:setName("edit290");
+    obj.cmbRakporTreino = GUI.fromHandle(_obj_newObject("comboBox"));
+    obj.cmbRakporTreino:setParent(obj.rectangle15);
+    obj.cmbRakporTreino:setName("cmbRakporTreino");
+    obj.cmbRakporTreino:setLeft(160);
+    obj.cmbRakporTreino:setTop(420);
+    obj.cmbRakporTreino:setWidth(50);
+    obj.cmbRakporTreino:setHeight(30);
+    obj.cmbRakporTreino:setFontFamily("Nyala");
+    obj.cmbRakporTreino:setFontSize(18);
+    obj.cmbRakporTreino:setField("RankPorTreino");
+    obj.cmbRakporTreino:setItems({'E', 'D', 'C', 'B', 'A', 'S', 'SS', 'X','X+'});
 
-    obj.edit291 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit291:setParent(obj.rectangle15);
-    obj.edit291:setLeft(260);
-    obj.edit291:setTop(420);
-    obj.edit291:setWidth(50);
-    obj.edit291:setHeight(30);
-    obj.edit291:setType("number");
-    obj.edit291:setMin(1);
-    obj.edit291:setMax(9);
-    obj.edit291:setEnabled(true);
-    obj.edit291:setVisible(false);
-    obj.edit291:setHorzTextAlign("center");
-    obj.edit291:setField("Treina3d10Soma");
-    obj.edit291:setName("edit291");
+    obj.edit293 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit293:setParent(obj.rectangle15);
+    obj.edit293:setLeft(140);
+    obj.edit293:setTop(420);
+    obj.edit293:setWidth(50);
+    obj.edit293:setHeight(30);
+    obj.edit293:setType("number");
+    obj.edit293:setMin(1);
+    obj.edit293:setMax(9);
+    obj.edit293:setEnabled(true);
+    obj.edit293:setVisible(false);
+    obj.edit293:setHorzTextAlign("center");
+    obj.edit293:setField("Treina1d10Soma");
+    obj.edit293:setName("edit293");
+
+    obj.edit294 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit294:setParent(obj.rectangle15);
+    obj.edit294:setLeft(200);
+    obj.edit294:setTop(420);
+    obj.edit294:setWidth(50);
+    obj.edit294:setHeight(30);
+    obj.edit294:setType("number");
+    obj.edit294:setMin(1);
+    obj.edit294:setMax(9);
+    obj.edit294:setEnabled(true);
+    obj.edit294:setVisible(false);
+    obj.edit294:setHorzTextAlign("center");
+    obj.edit294:setField("Treina2d10Soma");
+    obj.edit294:setName("edit294");
+
+    obj.edit295 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit295:setParent(obj.rectangle15);
+    obj.edit295:setLeft(260);
+    obj.edit295:setTop(420);
+    obj.edit295:setWidth(50);
+    obj.edit295:setHeight(30);
+    obj.edit295:setType("number");
+    obj.edit295:setMin(1);
+    obj.edit295:setMax(9);
+    obj.edit295:setEnabled(true);
+    obj.edit295:setVisible(false);
+    obj.edit295:setHorzTextAlign("center");
+    obj.edit295:setField("Treina3d10Soma");
+    obj.edit295:setName("edit295");
 
     obj.rectangle17 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle17:setParent(obj.rectangle15);
@@ -7033,66 +7255,66 @@ local function constructNew_frmsekai()
     obj.rectangle17:setStrokeSize(3);
     obj.rectangle17:setName("rectangle17");
 
-    obj.edit292 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit292:setParent(obj.rectangle15);
-    obj.edit292:setLeft(320);
-    obj.edit292:setTop(420);
-    obj.edit292:setWidth(50);
-    obj.edit292:setHeight(30);
-    obj.edit292:setType("number");
-    obj.edit292:setMin(1);
-    obj.edit292:setMax(18);
-    obj.edit292:setEnabled(true);
-    obj.edit292:setTransparent(true);
-    obj.edit292:setVisible(false);
-    obj.edit292:setHorzTextAlign("center");
-    obj.edit292:setField("Treina1d20Soma");
-    obj.edit292:setName("edit292");
+    obj.edit296 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit296:setParent(obj.rectangle15);
+    obj.edit296:setLeft(320);
+    obj.edit296:setTop(420);
+    obj.edit296:setWidth(50);
+    obj.edit296:setHeight(30);
+    obj.edit296:setType("number");
+    obj.edit296:setMin(1);
+    obj.edit296:setMax(18);
+    obj.edit296:setEnabled(true);
+    obj.edit296:setTransparent(false);
+    obj.edit296:setVisible(true);
+    obj.edit296:setHorzTextAlign("center");
+    obj.edit296:setField("Treina1d20Soma");
+    obj.edit296:setName("edit296");
 
-    obj.edit293 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit293:setParent(obj.rectangle15);
-    obj.edit293:setLeft(140);
-    obj.edit293:setTop(460);
-    obj.edit293:setWidth(50);
-    obj.edit293:setHeight(30);
-    obj.edit293:setType("number");
-    obj.edit293:setMin(1);
-    obj.edit293:setMax(9);
-    obj.edit293:setEnabled(true);
-    obj.edit293:setVisible(false);
-    obj.edit293:setHorzTextAlign("center");
-    obj.edit293:setField("Treina1d10Erro");
-    obj.edit293:setName("edit293");
+    obj.edit297 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit297:setParent(obj.rectangle15);
+    obj.edit297:setLeft(140);
+    obj.edit297:setTop(460);
+    obj.edit297:setWidth(50);
+    obj.edit297:setHeight(30);
+    obj.edit297:setType("number");
+    obj.edit297:setMin(1);
+    obj.edit297:setMax(9);
+    obj.edit297:setEnabled(true);
+    obj.edit297:setVisible(false);
+    obj.edit297:setHorzTextAlign("center");
+    obj.edit297:setField("Treina1d10Erro");
+    obj.edit297:setName("edit297");
 
-    obj.edit294 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit294:setParent(obj.rectangle15);
-    obj.edit294:setLeft(200);
-    obj.edit294:setTop(460);
-    obj.edit294:setWidth(50);
-    obj.edit294:setHeight(30);
-    obj.edit294:setType("number");
-    obj.edit294:setMin(1);
-    obj.edit294:setMax(9);
-    obj.edit294:setEnabled(true);
-    obj.edit294:setVisible(false);
-    obj.edit294:setHorzTextAlign("center");
-    obj.edit294:setField("Treina2d10Erro");
-    obj.edit294:setName("edit294");
+    obj.edit298 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit298:setParent(obj.rectangle15);
+    obj.edit298:setLeft(200);
+    obj.edit298:setTop(460);
+    obj.edit298:setWidth(50);
+    obj.edit298:setHeight(30);
+    obj.edit298:setType("number");
+    obj.edit298:setMin(1);
+    obj.edit298:setMax(9);
+    obj.edit298:setEnabled(true);
+    obj.edit298:setVisible(false);
+    obj.edit298:setHorzTextAlign("center");
+    obj.edit298:setField("Treina2d10Erro");
+    obj.edit298:setName("edit298");
 
-    obj.edit295 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit295:setParent(obj.rectangle15);
-    obj.edit295:setLeft(260);
-    obj.edit295:setTop(460);
-    obj.edit295:setWidth(50);
-    obj.edit295:setHeight(30);
-    obj.edit295:setType("number");
-    obj.edit295:setMin(1);
-    obj.edit295:setMax(9);
-    obj.edit295:setEnabled(true);
-    obj.edit295:setVisible(false);
-    obj.edit295:setHorzTextAlign("center");
-    obj.edit295:setField("Treina3d10Erro");
-    obj.edit295:setName("edit295");
+    obj.edit299 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit299:setParent(obj.rectangle15);
+    obj.edit299:setLeft(260);
+    obj.edit299:setTop(460);
+    obj.edit299:setWidth(50);
+    obj.edit299:setHeight(30);
+    obj.edit299:setType("number");
+    obj.edit299:setMin(1);
+    obj.edit299:setMax(9);
+    obj.edit299:setEnabled(true);
+    obj.edit299:setVisible(false);
+    obj.edit299:setHorzTextAlign("center");
+    obj.edit299:setField("Treina3d10Erro");
+    obj.edit299:setName("edit299");
 
     obj.rectangle18 = GUI.fromHandle(_obj_newObject("rectangle"));
     obj.rectangle18:setParent(obj.rectangle15);
@@ -7106,21 +7328,21 @@ local function constructNew_frmsekai()
     obj.rectangle18:setStrokeSize(3);
     obj.rectangle18:setName("rectangle18");
 
-    obj.edit296 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit296:setParent(obj.rectangle15);
-    obj.edit296:setLeft(320);
-    obj.edit296:setTop(460);
-    obj.edit296:setWidth(50);
-    obj.edit296:setHeight(30);
-    obj.edit296:setType("number");
-    obj.edit296:setMin(1);
-    obj.edit296:setMax(18);
-    obj.edit296:setEnabled(true);
-    obj.edit296:setVisible(false);
-    obj.edit296:setTransparent(true);
-    obj.edit296:setHorzTextAlign("center");
-    obj.edit296:setField("Treina1d20Erro");
-    obj.edit296:setName("edit296");
+    obj.edit300 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit300:setParent(obj.rectangle15);
+    obj.edit300:setLeft(320);
+    obj.edit300:setTop(460);
+    obj.edit300:setWidth(50);
+    obj.edit300:setHeight(30);
+    obj.edit300:setType("number");
+    obj.edit300:setMin(1);
+    obj.edit300:setMax(18);
+    obj.edit300:setEnabled(true);
+    obj.edit300:setVisible(false);
+    obj.edit300:setTransparent(true);
+    obj.edit300:setHorzTextAlign("center");
+    obj.edit300:setField("Treina1d20Erro");
+    obj.edit300:setName("edit300");
 
     obj.btnTreinar = GUI.fromHandle(_obj_newObject("button"));
     obj.btnTreinar:setParent(obj.rectangle15);
@@ -7133,125 +7355,171 @@ local function constructNew_frmsekai()
     obj.btnTreinar:setFontSize(18);
     obj.btnTreinar:setText("Treinar");
 
-
+									
 										local function TreinaJutsu() 
-																			
-										self.btnTreinar.visible = false;
-										local node = self.MeuDataScoupeBo.node;									
-										local mesaDoPersonagem = rrpg.getMesaDe(sheet);	
-										
-										node.Treina1d10Erro = node.Treina1d10Erro or 0;
-										node.Treina2d10Erro = node.Treina2d10Erro or 0;
-										node.Treina3d10Erro = node.Treina3d10Erro or 0;
-										node.Treina1d20Erro = node.Treina1d20Erro or 0;
-										
-										node.Treina1d10Soma = node.Treina1d10Soma or 0;
-										node.Treina2d10Soma = node.Treina2d10Soma or 0;
-										node.Treina3d10Soma = node.Treina3d10Soma or 0;
-										node.Treina1d20Soma = node.Treina1d20Soma or 0;	
-										
-										if node.Treina1d10 < 0 then
-											node.Treina1d10 = 1;
-										end;
-										
-										if node.Treina2d10 < 0 then
-											node.Treina2d10 = 1;
-										end;
-										
-										if node.Treina3d10 < 0 then
-											node.Treina3d10 = 1;
-										end;
-										
-										if node.Treina1d20 < 0 then
-											node.Treina1d20 = 5;
-										end;
-										
-										node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
-										node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
-										node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
-										node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
-																												
-										if node.Treina1d10 > 9 then
-											node.Treina1d10 = 9;
-										end;
-										
-										if node.Treina2d10 > 9 then
-											node.Treina2d10 = 9;
-										end;
-										
-										if node.Treina3d10 > 9 then
-											node.Treina3d10 = 9;
-										end;
-										
-										if node.Treina1d20 > 18 then
-											node.Treina1d20 = 18;
-										end;	
-										
-										mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
-										function (rolado)
-										if node.DescriTreinandoJutsu == nil then
-											showMessage("Falta Descrição do Jutsu ou não irá funcionar");
-											self.btnTreinar.visible = true;
-										else 
-											mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
-												if node.Treina1d10 >= rolado.resultado then
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-													mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
-													function (rolado)	
-														if node.Treina2d10 >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
-															function (rolado)
-																if node.Treina3d10 >= rolado.resultado then
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
-																	mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
-																	function (rolado)
-																		if node.Treina1d20 >= rolado.resultado then
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu");										
-																			mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
-																			self.btnTreinar.visible = true;	
-																		else 
-																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
-																			node.Treina1d20Erro =  node.Treina1d20Erro + 1;
-																			node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
-																			self.btnTreinar.visible = true;	
-																		end;
-																	end);	
-																else
-																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
-																	node.Treina3d10Erro =  node.Treina3d10Erro + 1;
-																	node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
-																	self.btnTreinar.visible = true;																
-																end;
-															end);
-														else
-															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
-															node.Treina2d10Erro =  node.Treina2d10Erro + 1;														
-															node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
-															self.btnTreinar.visible = true;														
-														end;												
-													end)
-												else
-													mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
-													node.Treina1d10Erro =  node.Treina1d10Erro + 1;
-													node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
-													self.btnTreinar.visible = true;
+											local node = self.dsbListadeTreino.node;
+											if node.RankPorTreino == nil then
+												showMessage("ESCOLHE UM RANK PORA PORRA DA FICHA CALCULAR TEU XP O FILHO DA PUTA");
+											else
+												self.btnTreinar.visible = false;
+												self.cmbRakporTreino.enabled = false;
+												self.Exp.enabled = false
+																					
+												local mesaDoPersonagem = rrpg.getMesaDe(sheet);	
+												
+												node.Treina1d10Erro = node.Treina1d10Erro or 0;
+												node.Treina2d10Erro = node.Treina2d10Erro or 0;
+												node.Treina3d10Erro = node.Treina3d10Erro or 0;
+												node.Treina1d20Erro = node.Treina1d20Erro or 0;
+												
+												node.Treina1d10Soma = node.Treina1d10Soma or 0;
+												node.Treina2d10Soma = node.Treina2d10Soma or 0;
+												node.Treina3d10Soma = node.Treina3d10Soma or 0;
+												node.Treina1d20Soma = node.Treina1d20Soma or 0;	
+												
+												if node.Treina1d10 < 0 then
+													node.Treina1d10 = 1;
 												end;
+												
+												if node.Treina2d10 < 0 then
+													node.Treina2d10 = 1;
+												end;
+												
+												if node.Treina3d10 < 0 then
+													node.Treina3d10 = 1;
+												end;
+												
+												if node.Treina1d20 < 0 then
+													node.Treina1d20 = 5;
+												end;
+												
+												node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
+												node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
+												node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
+												node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
+																														
+												if node.Treina1d10 > 9 then
+													node.Treina1d10 = 9;
+												end;
+												
+												if node.Treina2d10 > 9 then
+													node.Treina2d10 = 9;
+												end;
+												
+												if node.Treina3d10 > 9 then
+													node.Treina3d10 = 9;
+												end;
+												
+												if node.Treina1d20 > 18 then
+													node.Treina1d20 = 18;
+												end;	
+												
+												mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Treinamento de Jutsu",
+												function (rolado)
+												if node.DescriTreinandoJutsu == nil then
+													showMessage("Falta Descrição do Jutsu ou não irá funcionar");
+													self.btnTreinar.visible = true;
+													self.cmbRakporTreino.enabled = true;
+													self.Exp.enabled = true;
+												else 
+													mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriTreinandoJutsu);										
+														if node.Treina1d10 >= rolado.resultado then
+															mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+															mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Segunda Tentativa",
+															function (rolado)	
+																if node.Treina2d10 >= rolado.resultado then
+																	mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																	mesaDoPersonagem.chat:rolarDados("1d10", "[§K3]Terceira Tentativa",
+																	function (rolado)
+																		if node.Treina3d10 >= rolado.resultado then
+																			mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Sucesso");
+																			mesaDoPersonagem.chat:rolarDados("1d20", "[§K3]Tentativa de Execução Final",
+																			function (rolado)
+																				if node.Treina1d20 >= rolado.resultado then
+																					mesaDoPersonagem.chat:enviarMensagem(".. [§K3] Aprendeu o Jutsu [§K4][LEMBRE-SE DE COPIALO PARA SEUS JUTSUS]");										
+																					mesaDoPersonagem.chat:enviarMensagem("[§I https://ns-rpg.weebly.com/uploads/2/5/1/4/25140777/644651_orig.gif]");
+																					ProcuraXP();
+																					self.btnTreinar.visible = true;	
+																					self.cmbRakporTreino.enabled = true;
+																					self.Exp.enabled = true;
+																				else 
+																					mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Ultima");
+																					node.Treina1d20Erro =  node.Treina1d20Erro + 1;
+																					node.Treina1d20 = (tonumber(sheet.Bonus1d20) or 0) + (tonumber(node.Treina1d20Soma) or 0) + (tonumber(node.Treina1d20Erro) or 0);
+																					self.btnTreinar.visible = true;
+																					self.cmbRakporTreino.enabled = true;
+																					self.Exp.enabled = true;																					
+																				end;
+																			end);	
+																		else
+																			mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Terceira");
+																			node.Treina3d10Erro =  node.Treina3d10Erro + 1;
+																			node.Treina3d10 = (tonumber(sheet.Bonus3d10) or 0) + (tonumber(node.Treina3d10Soma) or 0) + (tonumber(node.Treina3d10Erro) or 0);
+																			self.btnTreinar.visible = true;	
+																			self.cmbRakporTreino.enabled = true;
+																			self.Exp.enabled = true;
+																		end;
+																	end);
+																else
+																	mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Segunda");
+																	node.Treina2d10Erro =  node.Treina2d10Erro + 1;														
+																	node.Treina2d10 = (tonumber(sheet.Bonus2d10) or 0) + (tonumber(node.Treina2d10Soma) or 0) + (tonumber(node.Treina2d10Erro) or 0);
+																	self.btnTreinar.visible = true;		
+																	self.cmbRakporTreino.enabled = true;
+																	self.Exp.enabled = true;
+																end;												
+															end)
+														else
+															mesaDoPersonagem.chat:enviarMensagem(".. [§K4] Falhou na Primeira");
+															node.Treina1d10Erro =  node.Treina1d10Erro + 1;
+															node.Treina1d10 = (tonumber(sheet.Bonus1d10) or 0) + (tonumber(node.Treina1d10Soma) or 0) + (tonumber(node.Treina1d10Erro) or 0);
+															self.btnTreinar.visible = true;
+															self.cmbRakporTreino.enabled = true;
+															self.Exp.enabled = true;
+														end;
+													end;
+												end);
 											end;
-										end);										
-									end;	
+										end;	
 									
 
 
-    obj.button53 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button53:setParent(obj.scrollBox8);
-    obj.button53:setLeft(222);
-    obj.button53:setTop(478);
-    obj.button53:setWidth(146);
-    obj.button53:setHeight(116);
-    obj.button53:setOpacity(0.1);
-    obj.button53:setText("");
-    obj.button53:setName("button53");
+
+										function ProcuraXP() 
+											local node = self.dsbListadeTreino.node;
+											
+											if node.RankPorTreino == "E" then
+												sheet.ExpPTreino = 500;
+											elseif	node.RankPorTreino == "D" then
+												sheet.ExpPTreino = 1000;
+											elseif	node.RankPorTreino == "C" then
+												sheet.ExpPTreino = 2000;
+											elseif	node.RankPorTreino == "B" then
+												sheet.ExpPTreino = 3000;
+											elseif	node.RankPorTreino == "A" then
+												sheet.ExpPTreino = 5000;
+											elseif	node.RankPorTreino == "S" then
+												sheet.ExpPTreino = 8000;
+											elseif	node.RankPorTreino == "SS" then
+												sheet.ExpPTreino = 11000;
+											elseif	node.RankPorTreino == "X" then
+												sheet.ExpPTreino = 14000;
+											elseif	node.RankPorTreino == "X+" then
+												sheet.ExpPTreino = 20000;
+											end;
+										end;												
+									
+
+
+    obj.button59 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button59:setParent(obj.scrollBox8);
+    obj.button59:setLeft(222);
+    obj.button59:setTop(478);
+    obj.button59:setWidth(146);
+    obj.button59:setHeight(116);
+    obj.button59:setOpacity(0.1);
+    obj.button59:setText("");
+    obj.button59:setName("button59");
 
     obj.POPAmizade = GUI.fromHandle(_obj_newObject("popup"));
     obj.POPAmizade:setParent(obj.scrollBox8);
@@ -7277,14 +7545,14 @@ local function constructNew_frmsekai()
     obj.image36:setSRC("/imagens/imgAmizade.png");
     obj.image36:setName("image36");
 
-    obj.button54 = GUI.fromHandle(_obj_newObject("button"));
-    obj.button54:setParent(obj.scrollBox10);
-    obj.button54:setText("Nova Amizade");
-    obj.button54:setWidth(125);
-    obj.button54:setHeight(40);
-    obj.button54:setLeft(70);
-    obj.button54:setTop(10);
-    obj.button54:setName("button54");
+    obj.button60 = GUI.fromHandle(_obj_newObject("button"));
+    obj.button60:setParent(obj.scrollBox10);
+    obj.button60:setText("Nova Amizade");
+    obj.button60:setWidth(125);
+    obj.button60:setHeight(40);
+    obj.button60:setLeft(70);
+    obj.button60:setTop(10);
+    obj.button60:setName("button60");
 
     obj.rclNivelAmizade = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclNivelAmizade:setParent(obj.scrollBox10);
@@ -7326,104 +7594,104 @@ local function constructNew_frmsekai()
     obj.image37:setSRC("/imagens/Amizade.png");
     obj.image37:setName("image37");
 
-    obj.label94 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label94:setParent(obj.rectangle19);
-    obj.label94:setLeft(144);
-    obj.label94:setTop(69);
-    obj.label94:setWidth(52);
-    obj.label94:setHeight(20);
-    obj.label94:setHorzTextAlign("center");
-    obj.label94:setFontFamily("Nyala");
-    obj.label94:setFontSize(14);
-    obj.label94:setText("Nome");
-    obj.label94:setName("label94");
+    obj.label99 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label99:setParent(obj.rectangle19);
+    obj.label99:setLeft(144);
+    obj.label99:setTop(69);
+    obj.label99:setWidth(52);
+    obj.label99:setHeight(20);
+    obj.label99:setHorzTextAlign("center");
+    obj.label99:setFontFamily("Nyala");
+    obj.label99:setFontSize(14);
+    obj.label99:setText("Nome");
+    obj.label99:setName("label99");
 
-    obj.edit297 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit297:setParent(obj.rectangle19);
-    obj.edit297:setLeft(198);
-    obj.edit297:setTop(69);
-    obj.edit297:setWidth(100);
-    obj.edit297:setHeight(20);
-    obj.edit297:setHorzTextAlign("center");
-    obj.edit297:setFontColor("black");
-    obj.edit297:setTransparent(true);
-    obj.edit297:setField("NivelAmizade");
-    obj.edit297:setName("edit297");
+    obj.edit301 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit301:setParent(obj.rectangle19);
+    obj.edit301:setLeft(198);
+    obj.edit301:setTop(69);
+    obj.edit301:setWidth(100);
+    obj.edit301:setHeight(20);
+    obj.edit301:setHorzTextAlign("center");
+    obj.edit301:setFontColor("black");
+    obj.edit301:setTransparent(true);
+    obj.edit301:setField("NivelAmizade");
+    obj.edit301:setName("edit301");
 
-    obj.label95 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label95:setParent(obj.rectangle19);
-    obj.label95:setLeft(144);
-    obj.label95:setTop(89);
-    obj.label95:setWidth(52);
-    obj.label95:setHeight(20);
-    obj.label95:setHorzTextAlign("center");
-    obj.label95:setFontFamily("Nyala");
-    obj.label95:setFontSize(12);
-    obj.label95:setText("Parentesco");
-    obj.label95:setName("label95");
+    obj.label100 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label100:setParent(obj.rectangle19);
+    obj.label100:setLeft(144);
+    obj.label100:setTop(89);
+    obj.label100:setWidth(52);
+    obj.label100:setHeight(20);
+    obj.label100:setHorzTextAlign("center");
+    obj.label100:setFontFamily("Nyala");
+    obj.label100:setFontSize(12);
+    obj.label100:setText("Parentesco");
+    obj.label100:setName("label100");
 
-    obj.edit298 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit298:setParent(obj.rectangle19);
-    obj.edit298:setLeft(198);
-    obj.edit298:setTop(89);
-    obj.edit298:setWidth(100);
-    obj.edit298:setHeight(20);
-    obj.edit298:setHorzTextAlign("center");
-    obj.edit298:setFontColor("black");
-    obj.edit298:setTransparent(true);
-    obj.edit298:setField("Parentesco");
-    obj.edit298:setName("edit298");
+    obj.edit302 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit302:setParent(obj.rectangle19);
+    obj.edit302:setLeft(198);
+    obj.edit302:setTop(89);
+    obj.edit302:setWidth(100);
+    obj.edit302:setHeight(20);
+    obj.edit302:setHorzTextAlign("center");
+    obj.edit302:setFontColor("black");
+    obj.edit302:setTransparent(true);
+    obj.edit302:setField("Parentesco");
+    obj.edit302:setName("edit302");
 
-    obj.label96 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label96:setParent(obj.rectangle19);
-    obj.label96:setLeft(144);
-    obj.label96:setTop(109);
-    obj.label96:setWidth(52);
-    obj.label96:setHeight(20);
-    obj.label96:setHorzTextAlign("center");
-    obj.label96:setFontFamily("Nyala");
-    obj.label96:setFontSize(14);
-    obj.label96:setText("Amizade");
-    obj.label96:setName("label96");
+    obj.label101 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label101:setParent(obj.rectangle19);
+    obj.label101:setLeft(144);
+    obj.label101:setTop(109);
+    obj.label101:setWidth(52);
+    obj.label101:setHeight(20);
+    obj.label101:setHorzTextAlign("center");
+    obj.label101:setFontFamily("Nyala");
+    obj.label101:setFontSize(14);
+    obj.label101:setText("Amizade");
+    obj.label101:setName("label101");
 
-    obj.edit299 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit299:setParent(obj.rectangle19);
-    obj.edit299:setLeft(198);
-    obj.edit299:setTop(109);
-    obj.edit299:setWidth(100);
-    obj.edit299:setHeight(20);
-    obj.edit299:setHorzTextAlign("center");
-    obj.edit299:setFontColor("black");
-    obj.edit299:setType("number");
-    obj.edit299:setMax(100);
-    obj.edit299:setTransparent(true);
-    obj.edit299:setField("NVAmizade");
-    obj.edit299:setName("edit299");
+    obj.edit303 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit303:setParent(obj.rectangle19);
+    obj.edit303:setLeft(198);
+    obj.edit303:setTop(109);
+    obj.edit303:setWidth(100);
+    obj.edit303:setHeight(20);
+    obj.edit303:setHorzTextAlign("center");
+    obj.edit303:setFontColor("black");
+    obj.edit303:setType("number");
+    obj.edit303:setMax(100);
+    obj.edit303:setTransparent(true);
+    obj.edit303:setField("NVAmizade");
+    obj.edit303:setName("edit303");
 
-    obj.label97 = GUI.fromHandle(_obj_newObject("label"));
-    obj.label97:setParent(obj.rectangle19);
-    obj.label97:setLeft(144);
-    obj.label97:setTop(129);
-    obj.label97:setWidth(52);
-    obj.label97:setHeight(20);
-    obj.label97:setHorzTextAlign("center");
-    obj.label97:setFontFamily("Nyala");
-    obj.label97:setFontSize(14);
-    obj.label97:setText("Extra");
-    obj.label97:setName("label97");
+    obj.label102 = GUI.fromHandle(_obj_newObject("label"));
+    obj.label102:setParent(obj.rectangle19);
+    obj.label102:setLeft(144);
+    obj.label102:setTop(129);
+    obj.label102:setWidth(52);
+    obj.label102:setHeight(20);
+    obj.label102:setHorzTextAlign("center");
+    obj.label102:setFontFamily("Nyala");
+    obj.label102:setFontSize(14);
+    obj.label102:setText("Extra");
+    obj.label102:setName("label102");
 
-    obj.edit300 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edit300:setParent(obj.rectangle19);
-    obj.edit300:setLeft(198);
-    obj.edit300:setTop(129);
-    obj.edit300:setWidth(100);
-    obj.edit300:setHeight(20);
-    obj.edit300:setHorzTextAlign("center");
-    obj.edit300:setFontColor("black");
-    obj.edit300:setMax(100);
-    obj.edit300:setTransparent(true);
-    obj.edit300:setField("AmizadeExtra");
-    obj.edit300:setName("edit300");
+    obj.edit304 = GUI.fromHandle(_obj_newObject("edit"));
+    obj.edit304:setParent(obj.rectangle19);
+    obj.edit304:setLeft(198);
+    obj.edit304:setTop(129);
+    obj.edit304:setWidth(100);
+    obj.edit304:setHeight(20);
+    obj.edit304:setHorzTextAlign("center");
+    obj.edit304:setFontColor("black");
+    obj.edit304:setMax(100);
+    obj.edit304:setTransparent(true);
+    obj.edit304:setField("AmizadeExtra");
+    obj.edit304:setName("edit304");
 
     obj.image38 = GUI.fromHandle(_obj_newObject("image"));
     obj.image38:setParent(obj.rectangle19);
@@ -7455,22 +7723,272 @@ local function constructNew_frmsekai()
     obj.image39:setSRC("/imagens/4.png");
     obj.image39:setName("image39");
 
-    obj.richEdit2 = GUI.fromHandle(_obj_newObject("richEdit"));
-    obj.richEdit2:setParent(obj.scrollBox11);
-    obj.richEdit2:setLeft(85);
-    obj.richEdit2:setTop(140);
-    obj.richEdit2:setWidth(440);
-    obj.richEdit2:setHeight(545);
-    lfm_setPropAsString(obj.richEdit2, "backgroundColor",  "#00000000");
-    lfm_setPropAsString(obj.richEdit2, "defaultFontColor",  "white");
-    obj.richEdit2:setField("Kutchyose");
-    obj.richEdit2:setName("richEdit2");
+    obj.richEdit1 = GUI.fromHandle(_obj_newObject("richEdit"));
+    obj.richEdit1:setParent(obj.scrollBox11);
+    obj.richEdit1:setLeft(85);
+    obj.richEdit1:setTop(140);
+    obj.richEdit1:setWidth(440);
+    obj.richEdit1:setHeight(545);
+    lfm_setPropAsString(obj.richEdit1, "backgroundColor",  "#00000000");
+    lfm_setPropAsString(obj.richEdit1, "defaultFontColor",  "white");
+    obj.richEdit1:setField("Kutchyose");
+    obj.richEdit1:setName("richEdit1");
+
+
+		local function TreinandoStatus()
+					local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
+					if sheet.TreinoON == false then
+						showMessage("MESTRE FORA DA MESA O TREINO NÃO ESTA HABILITADO");
+						mesaDoPersonagem.chat:enviarMensagem("[§K3]MESTRE FORA DA MESA O TREINO NÃO ESTA HABILITADO");
+					else
+						sheet.gambiarrento = 0;  
+						sheet.EsperaTreinoResultado = 0;
+						sheet.modificador = 0;
+						-- obter a mesa do personagem						
+						if sheet.GraduacaoTreino == "" then
+							showMessage("Tu não tem Graduação pra treino não filho da puta ? Ajeita essa merda eu passo horas programando pra tu rolar essa merda e nem colocar a graduação seu imundo ?");
+						else
+							if sheet.VezesPDia == 0 then
+								showMessage("VAI TREINAR 0 VEZES POR DIA ? SEU ARROMBADO ENTÃO TU NÃO VAI GANHAR PONTO SEU LIXO ESPACIAL");
+							else
+								if sheet.GraduacaoTreino == "Academico" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.gambiarrento, "[§K3]Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 5);
+											sheet.EsperaTreinoResultado = rolado.resultado * 5;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino /2);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Genin" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 20);
+											sheet.EsperaTreinoResultado = rolado.resultado * 20;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 2);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Chunin" then
+									mesaDoPersonagem.chat:rolarDados("1d4 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Jounin" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Anbu" then
+									mesaDoPersonagem.chat:rolarDados("1d50 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "AnbuNucleo" then
+									mesaDoPersonagem.chat:rolarDados("1d100 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
+											sheet.EsperaTreinoResultado = rolado.resultado * 100;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Organização" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 1000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 1000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "GDE" then
+									mesaDoPersonagem.chat:rolarDados("1d6 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);          	
+								end;
+								
+								if sheet.GraduacaoTreino == "Concelheiro" then
+									mesaDoPersonagem.chat:rolarDados("1d12 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end);      
+								end;
+								
+								if sheet.GraduacaoTreino == "Kage" then
+									mesaDoPersonagem.chat:rolarDados("1d20 + " .. sheet.modificador, "Treinando Status",
+										function (rolado)                                            
+											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
+											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											ZeradorTreino();
+										end); 				
+								end;
+							end; 
+						end;
+					end;
+                end;				
+	
+
+
+
+		
+		function ZeradorTreino() 
+						sheet.VezesPDia = 0;
+					end;
+	
+	
+
+
+
+		
+		function LevelUPHP() 
+						
+					if sheet.GraduacaoTreino == 'Academico' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Genin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Chunin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
+					end;
+					
+					if sheet.GraduacaoTreino == 'Jounin' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Anbu' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
+					end;
+				   
+					if sheet.GraduacaoTreino == 'AnbuNucleo' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
+					end;
+					
+					if sheet.GraduacaoTreino == 'Organização' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'GDE' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'Concelheiro' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
+					end;				
+									
+					if sheet.GraduacaoTreino == 'Kage' then
+						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
+					end;
+					
+		end;
+	
+	
+
+
+
+		
+		function TransformacaoHollow() 
+						
+			showMessage("Em Breve... Transformação Hollow");
+					
+		end;
+	
+	
+
+
+
+		
+		function TransformacaoMantoBiju() 
+						
+			showMessage("Em Breve...Manto Biju");
+					
+		end;
+	
+	
+
+
+
+		
+		function KutchyoseFicha() 
+						
+			showMessage("Em Breve... Kutchyose");
+					
+		end;
+	
+	
+
+
+
+		
+		function TransformacaoModoSennin() 
+						
+			showMessage("Em Breve... Modo Sennin");
+					
+		end;
+	
+	
+
+
+    obj.dataLink23 = GUI.fromHandle(_obj_newObject("dataLink"));
+    obj.dataLink23:setParent(obj);
+    obj.dataLink23:setField("GraduacaoTreino");
+    obj.dataLink23:setName("dataLink23");
 
     obj._e_event0 = obj:addEventListener("onNodeReady",
         function (_)
             if sheet.Nome == nil then
             			sheet.Cla = "Sem clã";
-            			sheet.Graduacao = "Academico";
+            			sheet.GraduacaoTreino = "Academico";
             			sheet.Moradia = "Primaria";
             			sheet.Idade = (tonumber(sheet.Idade) or 0);
             			sheet.Elemento = (tonumber(sheet.Elemento) or 0);
@@ -7683,7 +8201,11 @@ local function constructNew_frmsekai()
             			sheet.GExplosivoLimite = (tonumber(sheet.GExplosivoLimite) or 0);	
             			sheet.VenenoLimite = (tonumber(sheet.VenenoLimite) or 0);	
             			sheet.BandagemLimite = (tonumber(sheet.BandagemLimite) or 0);	
-            			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);				
+            			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);	
+            			sheet.energia = 0;
+            			sheet.energiaTotal = 100;
+            			self.cmbTipoOutro.value = 1; 
+            			self.cmbTipoBag.value = 1; 
             			showMessage("Escolha seu nome, clã e idade");
             		end; 
             		sheet.Transformado = 0;
@@ -8242,44 +8764,44 @@ local function constructNew_frmsekai()
             					sheet.Level = 0;
             				end;
             				
-            				if sheet.Graduacao == 'Academico' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 100;
+            				if sheet.GraduacaoTreino == 'Academico' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 100;
             				end;
             				
-            				if sheet.Graduacao == 'Genin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 200;
+            				if sheet.GraduacaoTreino == 'Genin' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 200;
             				end;
             				
-            				if sheet.Graduacao == 'Chunin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 1000;		
+            				if sheet.GraduacaoTreino == 'Chunin' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 1000;		
             				end;
             				
-            				if sheet.Graduacao == 'Jounin' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 5000;
+            				if sheet.GraduacaoTreino == 'Jounin' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 5000;
             				end;
             				
-            				if sheet.Graduacao == 'Anbu' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 10000;
+            				if sheet.GraduacaoTreino == 'Anbu' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 10000;
             				end;
             			   
-            				if sheet.Graduacao == 'AnbuNucleo' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 15000;
+            				if sheet.GraduacaoTreino == 'AnbuNucleo' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 15000;
             				end;
             				
-            				if sheet.Graduacao == 'Organização' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 20000;
+            				if sheet.GraduacaoTreino == 'Organização' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 20000;
             				end;				
             								
-            				if sheet.Graduacao == 'GDE' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 30000;
+            				if sheet.GraduacaoTreino == 'GDE' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 30000;
             				end;				
             								
-            				if sheet.Graduacao == 'Concelheiro' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 40000;
+            				if sheet.GraduacaoTreino == 'Concelheiro' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 40000;
             				end;				
             								
-            				if sheet.Graduacao == 'Kage' then
-            					sheet.GHP =  (tonumber(sheet.GHP) or 0) - 50000;
+            				if sheet.GraduacaoTreino == 'Kage' then
+            					sheet.GHP = (tonumber(sheet.GHP) or 0) - 50000;
             				end;
         end, obj);
 
@@ -8287,43 +8809,43 @@ local function constructNew_frmsekai()
         function (_)
             sheet.Level = (tonumber(sheet.Level) or 0) + 1;
             				
-            				if sheet.Graduacao == 'Academico' then
+            				if sheet.GraduacaoTreino == 'Academico' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
             				end;
             				
-            				if sheet.Graduacao == 'Genin' then
+            				if sheet.GraduacaoTreino == 'Genin' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
             				end;
             				
-            				if sheet.Graduacao == 'Chunin' then
+            				if sheet.GraduacaoTreino == 'Chunin' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;			
             				end;
             				
-            				if sheet.Graduacao == 'Jounin' then
+            				if sheet.GraduacaoTreino == 'Jounin' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
             				end;
             				
-            				if sheet.Graduacao == 'Anbu' then
+            				if sheet.GraduacaoTreino == 'Anbu' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
             				end;
             			   
-            				if sheet.Graduacao == 'AnbuNucleo' then
+            				if sheet.GraduacaoTreino == 'AnbuNucleo' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
             				end;
             				
-            				if sheet.Graduacao == 'Organização' then
+            				if sheet.GraduacaoTreino == 'Organização' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
             				end;				
             								
-            				if sheet.Graduacao == 'GDE' then
+            				if sheet.GraduacaoTreino == 'GDE' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
             				end;				
             								
-            				if sheet.Graduacao == 'Concelheiro' then
+            				if sheet.GraduacaoTreino == 'Concelheiro' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
             				end;				
             								
-            				if sheet.Graduacao == 'Kage' then
+            				if sheet.GraduacaoTreino == 'Kage' then
             					sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
             				end;
         end, obj);
@@ -8345,16 +8867,23 @@ local function constructNew_frmsekai()
     obj._e_event23 = obj.button16:addEventListener("onClick",
         function (_)
             local mesa = Firecast.getMesaDe(sheet); 
-            				local ReiatsuTotal = (tonumber(sheet.ReiatsuTotal) or 0);
-            				mesa.meuJogador:requestSetBarValue(3, nil, ReiatsuTotal);
+            				local OutrosTotal = (tonumber(sheet.OutrosTotal) or 0);
+            				mesa.meuJogador:requestSetBarValue(3, nil, OutrosTotal);
         end, obj);
 
     obj._e_event24 = obj.button17:addEventListener("onClick",
         function (_)
+            local mesa = Firecast.getMesaDe(sheet); 
+            				local EnergiaTotal = (tonumber(sheet.EnergiaTotal) or 0);
+            				mesa.meuJogador:requestSetBarValue(4, nil, EnergiaTotal);
+        end, obj);
+
+    obj._e_event25 = obj.button18:addEventListener("onClick",
+        function (_)
             self.PopTransformation:show();
         end, obj);
 
-    obj._e_event25 = obj.ControlaTrans:addEventListener("onChange",
+    obj._e_event26 = obj.ControlaTrans:addEventListener("onChange",
         function (_)
             if self.ControlaTrans.checked then
             					self.transformation.visible = false;
@@ -8365,12 +8894,12 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event26 = obj.dataLink1:addEventListener("onChange",
+    obj._e_event27 = obj.dataLink1:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Transformado = tonumber(sheet.Transformado) + 1;
         end, obj);
 
-    obj._e_event27 = obj.dataLink2:addEventListener("onChange",
+    obj._e_event28 = obj.dataLink2:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.FotoMSG ~= nil then
             						if sheet.FotoMsg == "FMSGNormal" then
@@ -8391,7 +8920,7 @@ local function constructNew_frmsekai()
             					end;
         end, obj);
 
-    obj._e_event28 = obj.button18:addEventListener("onClick",
+    obj._e_event29 = obj.button19:addEventListener("onClick",
         function (_)
             local minhaMesa = Firecast.getRoomOf(sheet);
             				local chat = minhaMesa.chat;  
@@ -8402,12 +8931,12 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event29 = obj.button19:addEventListener("onClick",
+    obj._e_event30 = obj.button20:addEventListener("onClick",
         function (_)
             self.POPCALCULO:show();
         end, obj);
 
-    obj._e_event30 = obj.dataLink3:addEventListener("onChange",
+    obj._e_event31 = obj.dataLink3:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then
             					sheet.ExpTotal = (tonumber(sheet.Level) or 0) * 100;
@@ -8415,51 +8944,23 @@ local function constructNew_frmsekai()
             					if sheet.Exp > sheet.ExpTotal then
             						sheet.Exp = (tonumber(sheet.Exp) or 0) - (tonumber(sheet.ExpTotal) or 0);
             						sheet.Level = (tonumber(sheet.Level) or 0) + 1;
+            						showMessage("VOCE UPOU DE LEVEL");
+            						
+            						LevelUPHP();
             					end;	
-            												
-            					if sheet.Graduacao == 'Academico' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 100;
-            					end;
-            					
-            					if sheet.Graduacao == 'Genin' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 200;
-            					end;
-            					
-            					if sheet.Graduacao == 'Chunin' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 1000;		
-            					end;
-            					
-            					if sheet.Graduacao == 'Jounin' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 5000;
-            					end;
-            					
-            					if sheet.Graduacao == 'Anbu' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 10000;
-            					end;
-            				   
-            					if sheet.Graduacao == 'AnbuNucleo' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 15000;
-            					end;
-            					
-            					if sheet.Graduacao == 'Organização' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 20000;
-            					end;				
-            									
-            					if sheet.Graduacao == 'GDE' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 30000;
-            					end;				
-            									
-            					if sheet.Graduacao == 'Concelheiro' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 40000;
-            					end;				
-            									
-            					if sheet.Graduacao == 'Kage' then
-            						sheet.GHP =  (tonumber(sheet.GHP) or 0) + 50000;
-            					end;
+            
             				end;
         end, obj);
 
-    obj._e_event31 = obj.dataLink4:addEventListener("onChange",
+    obj._e_event32 = obj.dataLink4:addEventListener("onChange",
+        function (_, field, oldValue, newValue)
+            if sheet.Sequenci1 == true then
+            					sheet.Exp = (tonumber(sheet.Exp) or 0) + (tonumber(sheet.ExpPTreino));
+            					sheet.ExpPTreino = 0;
+            				end;
+        end, obj);
+
+    obj._e_event33 = obj.dataLink5:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             					sheet.ReducaoTotal = (tonumber(sheet.BandanaReducao) or 0) + (tonumber(sheet.ColeteReducao) or 0) + (tonumber(sheet.CReducao) or 0) + (tonumber(sheet.DReducao) or 0) + (tonumber(sheet.TReducao) or 0);
@@ -8468,7 +8969,7 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event32 = obj.dataLink5:addEventListener("onChange",
+    obj._e_event34 = obj.dataLink6:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.CTai = 0;
             				sheet.CNin = 0;
@@ -8827,58 +9328,63 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event33 = obj.dataLink6:addEventListener("onChange",
+    obj._e_event35 = obj.dataLink7:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.TipoOutro == 'ChakraBiju' then
+            if self.cmbTipoOutro.value == '1' then
+            						sheet.Outros = (tonumber(sheet.ReiatsuTotal) or 0);
+            						sheet.OutrosTotal = sheet.Outros;
+            					end;
+            					
+            					if self.cmbTipoOutro.value == '2' then
             						sheet.Outros = (tonumber(sheet.ChakraBiju) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
-            					if sheet.TipoOutro == 'ChakraBranco' then
+            					if self.cmbTipoOutro.value == '3' then
             						sheet.Outros = (tonumber(sheet.ChakraBranco) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
-            					if sheet.TipoOutro == 'ChakraPreto' then
+            					if self.cmbTipoOutro.value == '4' then
             						sheet.Outros = (tonumber(sheet.ChakraPreto) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
-            					if sheet.TipoOutro == 'Hadou' then
+            					if self.cmbTipoOutro.value == '5' then
             						sheet.Outros = (tonumber(sheet.Hadou) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
-            					if sheet.TipoOutro == 'HadouNegro' then
+            					if self.cmbTipoOutro.value == '6' then
             						sheet.Outros = (tonumber(sheet.HadouNegro) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             				   
-            					if sheet.TipoOutro == 'ChakraNatural' then
+            					if self.cmbTipoOutro.value == '7' then
             						sheet.Outros = (tonumber(sheet.ChakraNatural) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
             					
-            					if sheet.TipoOutro == 'ChakraRoxo' then
+            					if self.cmbTipoOutro.value == '8' then
             						sheet.Outros = (tonumber(sheet.ChakraRoxo) or 0);
             						sheet.OutrosTotal = sheet.Outros;
             					end;
         end, obj);
 
-    obj._e_event34 = obj.dataLink7:addEventListener("onChange",
+    obj._e_event36 = obj.dataLink8:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then
             						sheet.ChakraNatural = (tonumber(sheet.ChakraTotal / 2) or 0);
             					end;
         end, obj);
 
-    obj._e_event35 = obj.dataLink8:addEventListener("onChange",
+    obj._e_event37 = obj.dataLink9:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.Graduacao == 'Academico' then
+            if sheet.GraduacaoTreino == 'Academico' then
             						sheet.GTurno = 1;
             					end;
             					
-            					if sheet.Graduacao == 'Genin' then
+            					if sheet.GraduacaoTreino == 'Genin' then
             						sheet.GAcertoTai = 2;
             						sheet.GAcertoNin = 2;
             						sheet.GAcertoGen = 2;
@@ -8886,7 +9392,7 @@ local function constructNew_frmsekai()
             						sheet.GBloqueio = 3;
             					end;
             					
-            					if sheet.Graduacao == 'Chunin' then
+            					if sheet.GraduacaoTreino == 'Chunin' then
             						sheet.GAcertoTai = 4;
             						sheet.GAcertoNin = 4;
             						sheet.GAcertoGen = 4;
@@ -8894,7 +9400,7 @@ local function constructNew_frmsekai()
             						sheet.GBloqueio = 6;
             					end;
             					
-            					if sheet.Graduacao == 'Jounin' then
+            					if sheet.GraduacaoTreino == 'Jounin' then
             						sheet.GAcertoTai = 6;
             						sheet.GAcertoNin = 6;
             						sheet.GAcertoGen = 6;
@@ -8906,7 +9412,7 @@ local function constructNew_frmsekai()
             						sheet.GCRGen = 3;
             					end;
             					
-            					if sheet.Graduacao == 'Anbu' then
+            					if sheet.GraduacaoTreino == 'Anbu' then
             						sheet.GAcertoTai = 8;
             						sheet.GAcertoNin = 8;
             						sheet.GAcertoGen = 8;
@@ -8914,7 +9420,7 @@ local function constructNew_frmsekai()
             						sheet.GBloqueio = 12;
             					end;
             				   
-            					if sheet.Graduacao == 'AnbuNucleo' then
+            					if sheet.GraduacaoTreino == 'AnbuNucleo' then
             						sheet.GAcertoTai = 10;
             						sheet.GAcertoNin = 10;
             						sheet.GAcertoGen = 10;
@@ -8925,7 +9431,7 @@ local function constructNew_frmsekai()
             						sheet.GCRGen = 6;
             					end;
             					
-            					if sheet.Graduacao == 'Organização' then
+            					if sheet.GraduacaoTreino == 'Organização' then
             						sheet.GAcertoTai = 12;
             						sheet.GAcertoNin = 12;
             						sheet.GAcertoGen = 12;
@@ -8933,7 +9439,7 @@ local function constructNew_frmsekai()
             						sheet.GBloqueio = 18;
             					end;					
             									
-            					if sheet.Graduacao == 'GDE' then
+            					if sheet.GraduacaoTreino == 'GDE' then
             						sheet.GAcertoTai = 14;
             						sheet.GAcertoNin = 14;
             						sheet.GAcertoGen = 14;
@@ -8944,7 +9450,7 @@ local function constructNew_frmsekai()
             						sheet.GCRGen = 9;
             					end;					
             									
-            					if sheet.Graduacao == 'Concelheiro' then
+            					if sheet.GraduacaoTreino == 'Concelheiro' then
             						sheet.GAcertoTai = 16;
             						sheet.GAcertoNin = 16;
             						sheet.GAcertoGen = 16;
@@ -8952,7 +9458,7 @@ local function constructNew_frmsekai()
             						sheet.GBloqueio = 24;
             					end;					
             									
-            					if sheet.Graduacao == 'Kage' then
+            					if sheet.GraduacaoTreino == 'Kage' then
             						sheet.GAcertoTai = 18;
             						sheet.GAcertoNin = 18;
             						sheet.GAcertoGen = 18;
@@ -8965,7 +9471,7 @@ local function constructNew_frmsekai()
             					end;
         end, obj);
 
-    obj._e_event36 = obj.dataLink9:addEventListener("onChange",
+    obj._e_event38 = obj.dataLink10:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
             				sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
@@ -8974,7 +9480,7 @@ local function constructNew_frmsekai()
             				sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
         end, obj);
 
-    obj._e_event37 = obj.dataLink10:addEventListener("onChange",
+    obj._e_event39 = obj.dataLink11:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             					sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0) + (tonumber(sheet.TTaijutsu) or 0);
@@ -8997,7 +9503,7 @@ local function constructNew_frmsekai()
             				sheet.DATotal = math.ceil(sheet.DATotal);
         end, obj);
 
-    obj._e_event38 = obj.dataLink11:addEventListener("onChange",
+    obj._e_event40 = obj.dataLink12:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             					sheet.GHP = (tonumber(sheet.GHP) or 0);
@@ -9012,7 +9518,7 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event39 = obj.dataLink12:addEventListener("onChange",
+    obj._e_event41 = obj.dataLink13:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             					sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
@@ -9033,7 +9539,7 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event40 = obj.dataLink13:addEventListener("onChange",
+    obj._e_event42 = obj.dataLink14:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
@@ -9046,37 +9552,37 @@ local function constructNew_frmsekai()
             				end;
         end, obj);
 
-    obj._e_event41 = obj.button20:addEventListener("onClick",
+    obj._e_event43 = obj.button21:addEventListener("onClick",
         function (_)
             self.POPKunai:show();
         end, obj);
 
-    obj._e_event42 = obj.button21:addEventListener("onClick",
+    obj._e_event44 = obj.button22:addEventListener("onClick",
         function (_)
             UseKunai();
         end, obj);
 
-    obj._e_event43 = obj.button22:addEventListener("onClick",
+    obj._e_event45 = obj.button23:addEventListener("onClick",
         function (_)
             UseShuriken();
         end, obj);
 
-    obj._e_event44 = obj.button23:addEventListener("onClick",
+    obj._e_event46 = obj.button24:addEventListener("onClick",
         function (_)
             UseShurikenFuuma();
         end, obj);
 
-    obj._e_event45 = obj.button24:addEventListener("onClick",
+    obj._e_event47 = obj.button25:addEventListener("onClick",
         function (_)
             UseKunaiGigante();
         end, obj);
 
-    obj._e_event46 = obj.button25:addEventListener("onClick",
+    obj._e_event48 = obj.button26:addEventListener("onClick",
         function (_)
             UseSenbon();
         end, obj);
 
-    obj._e_event47 = obj.dataLink14:addEventListener("onChange",
+    obj._e_event49 = obj.dataLink15:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.KunaiQT = (tonumber(sheet.KunaiQT) or 0);
             					sheet.ShurikenQT = (tonumber(sheet.ShurikenQT) or 0);
@@ -9090,40 +9596,42 @@ local function constructNew_frmsekai()
             					sheet.BombaFumacaQT = (tonumber(sheet.BombaFumacaQT) or 0);
         end, obj);
 
-    obj._e_event48 = obj.dataLink15:addEventListener("onChange",
+    obj._e_event50 = obj.dataLink16:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.KunaiQT ~= nil then
-            						if sheet.KunaiQT > sheet.KunaiLimite then
-            							sheet.KunaiQT = tonumber(sheet.KunaiLimite or 0);
+            if sheet.Sequenci1 == true then
+            						if sheet.KunaiQT ~= nil then
+            							if sheet.KunaiQT > sheet.KunaiLimite then
+            								sheet.KunaiQT = tonumber(sheet.KunaiLimite or 0);
+            							end;
             						end;
-            					end;
-            					
-            					if sheet.ShurikenQT ~= nil then	
-            						if sheet.ShurikenQT > sheet.ShurikenLimite then
-            							sheet.ShurikenQT = tonumber(sheet.ShurikenLimite or 0);
+            						
+            						if sheet.ShurikenQT ~= nil then	
+            							if sheet.ShurikenQT > sheet.ShurikenLimite then
+            								sheet.ShurikenQT = tonumber(sheet.ShurikenLimite or 0);
+            							end;
             						end;
-            					end;
-            					
-            					if sheet.SFuumaQT ~= nil then	
-            						if sheet.SFuumaQT > sheet.SFuumaLimite then
-            							sheet.SFuumaQT = tonumber(sheet.SFuumaLimite or 0);
-            						end;					
-            					end;
-            					
-            					if sheet.KGiganteQT ~= nil then	
-            						if sheet.KGiganteQT > sheet.KGiganteLimite then
-            							sheet.KGiganteQT = tonumber(sheet.KGiganteLimite or 0);
+            						
+            						if sheet.SFuumaQT ~= nil then	
+            							if sheet.SFuumaQT > sheet.SFuumaLimite then
+            								sheet.SFuumaQT = tonumber(sheet.SFuumaLimite or 0);
+            							end;					
             						end;
-            					end;
-            					
-            					if sheet.SenbonQT ~= nil then	
-            						if sheet.SenbonQT > sheet.SemboLimite then
-            							sheet.SenbonQT = tonumber(sheet.SemboLimite or 0);
+            						
+            						if sheet.KGiganteQT ~= nil then	
+            							if sheet.KGiganteQT > sheet.KGiganteLimite then
+            								sheet.KGiganteQT = tonumber(sheet.KGiganteLimite or 0);
+            							end;
+            						end;
+            						
+            						if sheet.SenbonQT ~= nil then	
+            							if sheet.SenbonQT > sheet.SemboLimite then
+            								sheet.SenbonQT = tonumber(sheet.SemboLimite or 0);
+            							end;
             						end;
             					end;
         end, obj);
 
-    obj._e_event49 = obj.dataLink16:addEventListener("onChange",
+    obj._e_event51 = obj.dataLink17:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             sheet.DanoKunai = (tonumber(sheet.Habilidade) or 0);
             					sheet.DanoShuriken = (tonumber(sheet.Habilidade) or 0) * 0.50;
@@ -9138,135 +9646,137 @@ local function constructNew_frmsekai()
             					sheet.BF = 0;
         end, obj);
 
-    obj._e_event50 = obj.button26:addEventListener("onClick",
+    obj._e_event52 = obj.button27:addEventListener("onClick",
         function (_)
             self.POPPB:show();
         end, obj);
 
-    obj._e_event51 = obj.button27:addEventListener("onClick",
+    obj._e_event53 = obj.button28:addEventListener("onClick",
         function (_)
             UsePB();
         end, obj);
 
-    obj._e_event52 = obj.button28:addEventListener("onClick",
+    obj._e_event54 = obj.button29:addEventListener("onClick",
         function (_)
             UseGinsoExplosivo();
         end, obj);
 
-    obj._e_event53 = obj.button29:addEventListener("onClick",
+    obj._e_event55 = obj.button30:addEventListener("onClick",
         function (_)
             UseVeneno();
         end, obj);
 
-    obj._e_event54 = obj.button30:addEventListener("onClick",
+    obj._e_event56 = obj.button31:addEventListener("onClick",
         function (_)
             UsoBandagem();
         end, obj);
 
-    obj._e_event55 = obj.button31:addEventListener("onClick",
+    obj._e_event57 = obj.button32:addEventListener("onClick",
         function (_)
             UseBombaFumaca();
         end, obj);
 
-    obj._e_event56 = obj.dataLink17:addEventListener("onChange",
+    obj._e_event58 = obj.dataLink18:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.PBombaQT ~= nil then
-            						if sheet.PBombaQT > sheet.PBombaLimite then
-            							sheet.PBombaQT = tonumber(sheet.PBombaLimite or 0);
+            if sheet.Sequenci1 == true then
+            						if sheet.PBombaQT ~= nil then
+            							if sheet.PBombaQT >= sheet.PBombaLimite then
+            								sheet.PBombaQT = tonumber(sheet.PBombaLimite or 0);
+            							end;
             						end;
-            					end;
-            					
-            					if sheet.GExplosivoQT ~= nil then
-            						if sheet.GExplosivoQT > sheet.GExplosivoLimite then
-            							sheet.GExplosivoQT = tonumber(sheet.GExplosivoLimite or 0);
+            						
+            						if sheet.GExplosivoQT ~= nil then
+            							if sheet.GExplosivoQT >= sheet.GExplosivoLimite then
+            								sheet.GExplosivoQT = tonumber(sheet.GExplosivoLimite or 0);
+            							end;
             						end;
-            					end;
-            					
-            					if sheet.VenenoQT ~= nil then
-            						if sheet.VenenoQT > sheet.VenenoLimite then
-            							sheet.VenenoQT = tonumber(sheet.VenenoLimite or 0);
-            						end;					
-            					end;
-            					
-            					if sheet.BandagemQT ~= nil then					
-            						if sheet.BandagemQT > sheet.BandagemLimite then
-            							sheet.BandagemQT = tonumber(sheet.BandagemLimite or 0);
+            						
+            						if sheet.VenenoQT ~= nil then
+            							if sheet.VenenoQT >= sheet.VenenoLimite then
+            								sheet.VenenoQT = tonumber(sheet.VenenoLimite or 0);
+            							end;					
             						end;
-            					end;
-            					
-            					if sheet.BombaFumacaQT ~= nil then
-            						if sheet.BombaFumacaQT > sheet.BombaFumacaLimite then
-            							sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaLimite or 0);
+            						
+            						if sheet.BandagemQT ~= nil then					
+            							if sheet.BandagemQT >= sheet.BandagemLimite then
+            								sheet.BandagemQT = tonumber(sheet.BandagemLimite or 0);
+            							end;
+            						end;
+            						
+            						if sheet.BombaFumacaQT ~= nil then
+            							if sheet.BombaFumacaQT >= sheet.BombaFumacaLimite then
+            								sheet.BombaFumacaQT = tonumber(sheet.BombaFumacaLimite or 0);
+            							end;
             						end;
             					end;
         end, obj);
 
-    obj._e_event57 = obj.button32:addEventListener("onClick",
+    obj._e_event59 = obj.button33:addEventListener("onClick",
         function (_)
             self.POPDiverso:show();
         end, obj);
 
-    obj._e_event58 = obj.button33:addEventListener("onClick",
+    obj._e_event60 = obj.button34:addEventListener("onClick",
         function (_)
             self.POPPergaminho1:show();
         end, obj);
 
-    obj._e_event59 = obj.button34:addEventListener("onClick",
+    obj._e_event61 = obj.button35:addEventListener("onClick",
         function (_)
             Pergaminho1()
         end, obj);
 
-    obj._e_event60 = obj.button35:addEventListener("onClick",
+    obj._e_event62 = obj.button36:addEventListener("onClick",
         function (_)
             self.POPPergaminho2:show();
         end, obj);
 
-    obj._e_event61 = obj.button36:addEventListener("onClick",
+    obj._e_event63 = obj.button37:addEventListener("onClick",
         function (_)
             Pergaminho2()
         end, obj);
 
-    obj._e_event62 = obj.button37:addEventListener("onClick",
+    obj._e_event64 = obj.button38:addEventListener("onClick",
         function (_)
             self.POPPergaminho3:show();
         end, obj);
 
-    obj._e_event63 = obj.button38:addEventListener("onClick",
+    obj._e_event65 = obj.button39:addEventListener("onClick",
         function (_)
             Pergaminho3()
         end, obj);
 
-    obj._e_event64 = obj.button39:addEventListener("onClick",
+    obj._e_event66 = obj.button40:addEventListener("onClick",
         function (_)
             self.EstilodeCombate:show();
         end, obj);
 
-    obj._e_event65 = obj.button40:addEventListener("onClick",
+    obj._e_event67 = obj.button41:addEventListener("onClick",
         function (_)
             RolarTesteAtletismo()
         end, obj);
 
-    obj._e_event66 = obj.button41:addEventListener("onClick",
+    obj._e_event68 = obj.button42:addEventListener("onClick",
         function (_)
             RolarTesteSabedoria()
         end, obj);
 
-    obj._e_event67 = obj.button42:addEventListener("onClick",
+    obj._e_event69 = obj.button43:addEventListener("onClick",
         function (_)
             RolarTestePercepcao()
         end, obj);
 
-    obj._e_event68 = obj.button43:addEventListener("onClick",
+    obj._e_event70 = obj.button44:addEventListener("onClick",
         function (_)
             RolarTesteAcrobacia()
         end, obj);
 
-    obj._e_event69 = obj.button44:addEventListener("onClick",
+    obj._e_event71 = obj.button45:addEventListener("onClick",
         function (_)
             RolarTesteVigor()
         end, obj);
 
-    obj._e_event70 = obj.dataLink18:addEventListener("onChange",
+    obj._e_event72 = obj.dataLink19:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if sheet.Sequenci1 == true then	
             							if sheet.Atletismo == nil then
@@ -9333,7 +9843,7 @@ local function constructNew_frmsekai()
             								sheet.VigorTotal = 0;
             							end;
             							
-            							if sheet.Graduacao =='Genin' then
+            							if sheet.GraduacaoTreino =='Genin' then
             								sheet.GAtletismo = 1;
             								sheet.GRaciocinio = 1;
             								sheet.GPercepcao = 1;
@@ -9341,7 +9851,7 @@ local function constructNew_frmsekai()
             								sheet.GVigor = 1;
             							end;
             							
-            							if sheet.Graduacao =='Jounin' then
+            							if sheet.GraduacaoTreino =='Jounin' then
             								sheet.GAtletismo = 2;
             								sheet.GRaciocinio = 2;
             								sheet.GPercepcao = 2;
@@ -9349,7 +9859,7 @@ local function constructNew_frmsekai()
             								sheet.GVigor = 2;
             							end;
             							
-            							if sheet.Graduacao =='Anbu Nucleo' then
+            							if sheet.GraduacaoTreino =='Anbu Nucleo' then
             								sheet.GAtletismo = 3;
             								sheet.GRaciocinio = 3;
             								sheet.GPercepcao = 3;
@@ -9357,7 +9867,7 @@ local function constructNew_frmsekai()
             								sheet.GVigor = 3;
             							end;
             							
-            							if sheet.Graduacao =='GDE' then
+            							if sheet.GraduacaoTreino =='GDE' then
             								sheet.GAtletismo = 4;
             								sheet.GRaciocinio = 4;
             								sheet.GPercepcao = 4;
@@ -9365,7 +9875,7 @@ local function constructNew_frmsekai()
             								sheet.GVigor = 4;
             							end;
             							
-            							if sheet.Graduacao =='Kage' then
+            							if sheet.GraduacaoTreino =='Kage' then
             								sheet.GAtletismo = 6;
             								sheet.GRaciocinio = 6;
             								sheet.GPercepcao = 6;
@@ -9453,7 +9963,7 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event71 = obj.dataLink19:addEventListener("onChange",
+    obj._e_event73 = obj.dataLink20:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             if self.ControlaTrans.checked then
             							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60 + (tonumber(sheet.TATai) or 0);
@@ -9496,39 +10006,59 @@ local function constructNew_frmsekai()
             						end;
         end, obj);
 
-    obj._e_event72 = obj.button45:addEventListener("onClick",
+    obj._e_event74 = obj.button46:addEventListener("onClick",
+        function (_)
+            TransformacaoHollow()
+        end, obj);
+
+    obj._e_event75 = obj.button47:addEventListener("onClick",
+        function (_)
+            TransformacaoMantoBiju()
+        end, obj);
+
+    obj._e_event76 = obj.button48:addEventListener("onClick",
+        function (_)
+            KutchyoseFicha()
+        end, obj);
+
+    obj._e_event77 = obj.button49:addEventListener("onClick",
+        function (_)
+            TransformacaoModoSennin()
+        end, obj);
+
+    obj._e_event78 = obj.button50:addEventListener("onClick",
         function (_)
             self.POPArma:show();
         end, obj);
 
-    obj._e_event73 = obj.button46:addEventListener("onClick",
+    obj._e_event79 = obj.button51:addEventListener("onClick",
         function (_)
             self.POPBandana:show();
         end, obj);
 
-    obj._e_event74 = obj.button47:addEventListener("onClick",
+    obj._e_event80 = obj.button52:addEventListener("onClick",
         function (_)
             self.POPColete:show();
         end, obj);
 
-    obj._e_event75 = obj.button48:addEventListener("onClick",
+    obj._e_event81 = obj.button53:addEventListener("onClick",
         function (_)
             self.POPAcessorio:show();
         end, obj);
 
-    obj._e_event76 = obj.button49:addEventListener("onClick",
+    obj._e_event82 = obj.button54:addEventListener("onClick",
         function (_)
             self.POPBAG:show();
         end, obj);
 
-    obj._e_event77 = obj.button50:addEventListener("onClick",
+    obj._e_event83 = obj.button55:addEventListener("onClick",
         function (_)
             -- Usuário clicou no botão de criar novo item.
             								-- Vamos inserir um novo item no nosso recordList                              
             								self.rclListaDosItens4:append();
         end, obj);
 
-    obj._e_event78 = obj.rclListaDosItens4:addEventListener("onSelect",
+    obj._e_event84 = obj.rclListaDosItens4:addEventListener("onSelect",
         function (_)
             --[[
             							Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -9540,9 +10070,9 @@ local function constructNew_frmsekai()
             							self.boxDetalhesDoItem.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event79 = obj.dataLink20:addEventListener("onChange",
+    obj._e_event85 = obj.dataLink21:addEventListener("onChange",
         function (_, field, oldValue, newValue)
-            if sheet.TipoBag == "Tipo Bag" then
+            if self.cmbTipoBag.value == "1" then
             								sheet.KunaiLimite = 1;
             								sheet.ShurikenLimite = 1;
             								sheet.SFuumaLimite = 0;
@@ -9555,7 +10085,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 0;
             							end;
             							
-            							if sheet.TipoBag == "Bag Genin" then
+            							if self.cmbTipoBag.value == "2" then
             								sheet.KunaiLimite = 4;
             								sheet.ShurikenLimite = 8;
             								sheet.SFuumaLimite = 0;
@@ -9568,7 +10098,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 0;
             							end;
             							
-            							if sheet.TipoBag == "Bag Chunin" then
+            							if self.cmbTipoBag.value == "3" then
             								sheet.KunaiLimite = 5;
             								sheet.ShurikenLimite = 8;
             								sheet.SFuumaLimite = 1;
@@ -9581,7 +10111,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 0;
             							end;
             							
-            							if sheet.TipoBag == "Bag Tengu" then
+            							if self.cmbTipoBag.value == "4" then
             								sheet.KunaiLimite = 4;
             								sheet.ShurikenLimite = 8;
             								sheet.SFuumaLimite = 1;
@@ -9594,7 +10124,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 8;
             							end;
             							
-            							if sheet.TipoBag == "Bag Yebisu" then
+            							if self.cmbTipoBag.value == "5" then
             								sheet.KunaiLimite = 6;
             								sheet.ShurikenLimite = 8;
             								sheet.SFuumaLimite = 2;
@@ -9607,7 +10137,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 10;
             							end;
             							
-            							if sheet.TipoBag == "Bag Benzaiten" then
+            							if self.cmbTipoBag.value == "6" then
             								sheet.KunaiLimite = 4;
             								sheet.ShurikenLimite = 6;
             								sheet.SFuumaLimite = 1;
@@ -9620,7 +10150,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 6;
             							end;
             							
-            							if sheet.TipoBag == nil then
+            							if self.cmbTipoBag.value == "7" then
             								sheet.KunaiLimite = 0;
             								sheet.ShurikenLimite = 0;
             								sheet.SFuumaLimite = 0;
@@ -9633,7 +10163,7 @@ local function constructNew_frmsekai()
             								sheet.SemboLimite = 0;
             							end;
             							
-            							if sheet.TipoBag == "" then
+            							if self.cmbTipoBag.value == "7" then
             								sheet.KunaiLimite = 0;
             								sheet.ShurikenLimite = 0;
             								sheet.SFuumaLimite = 0;
@@ -9647,36 +10177,41 @@ local function constructNew_frmsekai()
             							end;
         end, obj);
 
-    obj._e_event80 = obj.dataLink21:addEventListener("onChange",
+    obj._e_event86 = obj.button56:addEventListener("onClick",
+        function (_)
+            TreinandoStatus()
+        end, obj);
+
+    obj._e_event87 = obj.dataLink22:addEventListener("onChange",
         function (_, field, oldValue, newValue)
             local BonusGanhoAnualGraduacao = nil
             						
-            						if sheet.Graduacao == 'Jounin' then
+            						if sheet.GraduacaoStatusSocial == 'Jounin' then
             							sheet.BonusGanhoAnualGraduacao = 2000;
             						end;
             						
-            						if sheet.Graduacao == 'Anbu' then
+            						if sheet.GraduacaoStatusSocial == 'Anbu' then
             							sheet.BonusGanhoAnualGraduacao = 3000;
             						end;
             						
-            						if sheet.Graduacao == 'AnbuNucleo' then
+            						if sheet.GraduacaoStatusSocial == 'AnbuNucleo' then
             							sheet.BonusGanhoAnualGraduacao = 4000;
             						end;
             						
-            						if sheet.Graduacao == 'Organização' then
+            						if sheet.GraduacaoStatusSocial == 'Organização' then
             							sheet.BonusGanhoAnualGraduacao = 6000;
             						end;
             						
-            						if sheet.Graduacao == 'GDE' then
+            						if sheet.GraduacaoStatusSocial == 'GDE' then
             							sheet.BonusGanhoAnualGraduacao = 8000;
             						end;						
             						
-            						if sheet.Graduacao == 'Concelheiro' then
+            						if sheet.GraduacaoStatusSocial == 'Concelheiro' then
             							sheet.BonusGanhoAnualGraduacao = 10000;
             						end;
             						
-            						if sheet.Graduacao == 'Kage' then
-            							sheet.BonusGanhoAnualGraduacao = 150000;
+            						if sheet.GraduacaoStatusSocial == 'Kage' then
+            							sheet.BonusGanhoAnualGraduacao = 20000;
             						end;
             						
             						if sheet.BonusGanhoAnualGraduacao == nil then
@@ -9698,17 +10233,17 @@ local function constructNew_frmsekai()
             						self.GanhoAnual.text = tonumber(sheet.BonusGanhoAnualGraduacao or 0) + tonumber(sheet.FormulaFinal or 0);
         end, obj);
 
-    obj._e_event81 = obj.button51:addEventListener("onClick",
+    obj._e_event88 = obj.button57:addEventListener("onClick",
         function (_)
             self.POPTreino:show();
         end, obj);
 
-    obj._e_event82 = obj.button52:addEventListener("onClick",
+    obj._e_event89 = obj.button58:addEventListener("onClick",
         function (_)
             self.rclListadeTreino:append();
         end, obj);
 
-    obj._e_event83 = obj.rclListadeTreino:addEventListener("onSelect",
+    obj._e_event90 = obj.rclListadeTreino:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -9720,22 +10255,22 @@ local function constructNew_frmsekai()
             								self.dsbListadeTreino.visible = (node ~= nil);
         end, obj);
 
-    obj._e_event84 = obj.btnTreinar:addEventListener("onClick",
+    obj._e_event91 = obj.btnTreinar:addEventListener("onClick",
         function (_)
             TreinaJutsu()
         end, obj);
 
-    obj._e_event85 = obj.button53:addEventListener("onClick",
+    obj._e_event92 = obj.button59:addEventListener("onClick",
         function (_)
             self.POPAmizade:show();
         end, obj);
 
-    obj._e_event86 = obj.button54:addEventListener("onClick",
+    obj._e_event93 = obj.button60:addEventListener("onClick",
         function (_)
             self.rclNivelAmizade:append();
         end, obj);
 
-    obj._e_event87 = obj.rclNivelAmizade:addEventListener("onSelect",
+    obj._e_event94 = obj.rclNivelAmizade:addEventListener("onSelect",
         function (_)
             --[[
             								Este evento é chamado quando o usuário selecionar/deselecionar itens da lista. Quando o usuário selecionar, vamos fazer nosso dataScopeBox 
@@ -9747,7 +10282,23 @@ local function constructNew_frmsekai()
             								self.dsbNivelAmizade.visible = (node ~= nil);
         end, obj);
 
+    obj._e_event95 = obj.dataLink23:addEventListener("onChange",
+        function (_, field, oldValue, newValue)
+            if sheet.Sequenci1 == true then
+            				sheet.Inteligencia = sheet.Inteligencia + 1;
+            				sheet.Inteligencia = sheet.Inteligencia - 1;	
+            			end;
+        end, obj);
+
     function obj:_releaseEvents()
+        __o_rrpgObjs.removeEventListenerById(self._e_event95);
+        __o_rrpgObjs.removeEventListenerById(self._e_event94);
+        __o_rrpgObjs.removeEventListenerById(self._e_event93);
+        __o_rrpgObjs.removeEventListenerById(self._e_event92);
+        __o_rrpgObjs.removeEventListenerById(self._e_event91);
+        __o_rrpgObjs.removeEventListenerById(self._e_event90);
+        __o_rrpgObjs.removeEventListenerById(self._e_event89);
+        __o_rrpgObjs.removeEventListenerById(self._e_event88);
         __o_rrpgObjs.removeEventListenerById(self._e_event87);
         __o_rrpgObjs.removeEventListenerById(self._e_event86);
         __o_rrpgObjs.removeEventListenerById(self._e_event85);
@@ -9884,6 +10435,7 @@ local function constructNew_frmsekai()
         if self.edit82 ~= nil then self.edit82:destroy(); self.edit82 = nil; end;
         if self.rectangle5 ~= nil then self.rectangle5:destroy(); self.rectangle5 = nil; end;
         if self.button35 ~= nil then self.button35:destroy(); self.button35 = nil; end;
+        if self.Exp ~= nil then self.Exp:destroy(); self.Exp = nil; end;
         if self.transformation ~= nil then self.transformation:destroy(); self.transformation = nil; end;
         if self.label8 ~= nil then self.label8:destroy(); self.label8 = nil; end;
         if self.POPFavorito ~= nil then self.POPFavorito:destroy(); self.POPFavorito = nil; end;
@@ -9900,6 +10452,7 @@ local function constructNew_frmsekai()
         if self.dataLink9 ~= nil then self.dataLink9:destroy(); self.dataLink9 = nil; end;
         if self.POPDiverso ~= nil then self.POPDiverso:destroy(); self.POPDiverso = nil; end;
         if self.scrollBox9 ~= nil then self.scrollBox9:destroy(); self.scrollBox9 = nil; end;
+        if self.label99 ~= nil then self.label99:destroy(); self.label99 = nil; end;
         if self.label49 ~= nil then self.label49:destroy(); self.label49 = nil; end;
         if self.comboBox10 ~= nil then self.comboBox10:destroy(); self.comboBox10 = nil; end;
         if self.edit156 ~= nil then self.edit156:destroy(); self.edit156 = nil; end;
@@ -9913,9 +10466,9 @@ local function constructNew_frmsekai()
         if self.dsbNivelAmizade ~= nil then self.dsbNivelAmizade:destroy(); self.dsbNivelAmizade = nil; end;
         if self.edit69 ~= nil then self.edit69:destroy(); self.edit69 = nil; end;
         if self.edit255 ~= nil then self.edit255:destroy(); self.edit255 = nil; end;
-        if self.edit228 ~= nil then self.edit228:destroy(); self.edit228 = nil; end;
-        if self.button21 ~= nil then self.button21:destroy(); self.button21 = nil; end;
         if self.label52 ~= nil then self.label52:destroy(); self.label52 = nil; end;
+        if self.button21 ~= nil then self.button21:destroy(); self.button21 = nil; end;
+        if self.edit228 ~= nil then self.edit228:destroy(); self.edit228 = nil; end;
         if self.rclListadeTreino ~= nil then self.rclListadeTreino:destroy(); self.rclListadeTreino = nil; end;
         if self.edit115 ~= nil then self.edit115:destroy(); self.edit115 = nil; end;
         if self.edit16 ~= nil then self.edit16:destroy(); self.edit16 = nil; end;
@@ -9925,21 +10478,21 @@ local function constructNew_frmsekai()
         if self.comboBox2 ~= nil then self.comboBox2:destroy(); self.comboBox2 = nil; end;
         if self.edit116 ~= nil then self.edit116:destroy(); self.edit116 = nil; end;
         if self.label48 ~= nil then self.label48:destroy(); self.label48 = nil; end;
-        if self.edit214 ~= nil then self.edit214:destroy(); self.edit214 = nil; end;
+        if self.comboBox11 ~= nil then self.comboBox11:destroy(); self.comboBox11 = nil; end;
         if self.edit77 ~= nil then self.edit77:destroy(); self.edit77 = nil; end;
         if self.button4 ~= nil then self.button4:destroy(); self.button4 = nil; end;
         if self.edit52 ~= nil then self.edit52:destroy(); self.edit52 = nil; end;
         if self.textEditor4 ~= nil then self.textEditor4:destroy(); self.textEditor4 = nil; end;
         if self.edit159 ~= nil then self.edit159:destroy(); self.edit159 = nil; end;
         if self.edit196 ~= nil then self.edit196:destroy(); self.edit196 = nil; end;
-        if self.label76 ~= nil then self.label76:destroy(); self.label76 = nil; end;
+        if self.edit214 ~= nil then self.edit214:destroy(); self.edit214 = nil; end;
         if self.label1 ~= nil then self.label1:destroy(); self.label1 = nil; end;
         if self.rectangle7 ~= nil then self.rectangle7:destroy(); self.rectangle7 = nil; end;
         if self.ControlaTrans ~= nil then self.ControlaTrans:destroy(); self.ControlaTrans = nil; end;
         if self.image9 ~= nil then self.image9:destroy(); self.image9 = nil; end;
         if self.edit220 ~= nil then self.edit220:destroy(); self.edit220 = nil; end;
+        if self.label76 ~= nil then self.label76:destroy(); self.label76 = nil; end;
         if self.edit260 ~= nil then self.edit260:destroy(); self.edit260 = nil; end;
-        if self.comboBox11 ~= nil then self.comboBox11:destroy(); self.comboBox11 = nil; end;
         if self.button7 ~= nil then self.button7:destroy(); self.button7 = nil; end;
         if self.edit58 ~= nil then self.edit58:destroy(); self.edit58 = nil; end;
         if self.edit235 ~= nil then self.edit235:destroy(); self.edit235 = nil; end;
@@ -9968,6 +10521,7 @@ local function constructNew_frmsekai()
         if self.label19 ~= nil then self.label19:destroy(); self.label19 = nil; end;
         if self.edit182 ~= nil then self.edit182:destroy(); self.edit182 = nil; end;
         if self.button45 ~= nil then self.button45:destroy(); self.button45 = nil; end;
+        if self.edit304 ~= nil then self.edit304:destroy(); self.edit304 = nil; end;
         if self.edit67 ~= nil then self.edit67:destroy(); self.edit67 = nil; end;
         if self.rectangle12 ~= nil then self.rectangle12:destroy(); self.rectangle12 = nil; end;
         if self.image37 ~= nil then self.image37:destroy(); self.image37 = nil; end;
@@ -9981,6 +10535,7 @@ local function constructNew_frmsekai()
         if self.edit124 ~= nil then self.edit124:destroy(); self.edit124 = nil; end;
         if self.label2 ~= nil then self.label2:destroy(); self.label2 = nil; end;
         if self.edit157 ~= nil then self.edit157:destroy(); self.edit157 = nil; end;
+        if self.edit301 ~= nil then self.edit301:destroy(); self.edit301 = nil; end;
         if self.label89 ~= nil then self.label89:destroy(); self.label89 = nil; end;
         if self.edit284 ~= nil then self.edit284:destroy(); self.edit284 = nil; end;
         if self.edit83 ~= nil then self.edit83:destroy(); self.edit83 = nil; end;
@@ -9991,7 +10546,6 @@ local function constructNew_frmsekai()
         if self.scrollBox5 ~= nil then self.scrollBox5:destroy(); self.scrollBox5 = nil; end;
         if self.edit161 ~= nil then self.edit161:destroy(); self.edit161 = nil; end;
         if self.edit241 ~= nil then self.edit241:destroy(); self.edit241 = nil; end;
-        if self.richEdit2 ~= nil then self.richEdit2:destroy(); self.richEdit2 = nil; end;
         if self.edit62 ~= nil then self.edit62:destroy(); self.edit62 = nil; end;
         if self.edit74 ~= nil then self.edit74:destroy(); self.edit74 = nil; end;
         if self.edit60 ~= nil then self.edit60:destroy(); self.edit60 = nil; end;
@@ -10036,20 +10590,20 @@ local function constructNew_frmsekai()
         if self.button30 ~= nil then self.button30:destroy(); self.button30 = nil; end;
         if self.image25 ~= nil then self.image25:destroy(); self.image25 = nil; end;
         if self.edit224 ~= nil then self.edit224:destroy(); self.edit224 = nil; end;
-        if self.layout1 ~= nil then self.layout1:destroy(); self.layout1 = nil; end;
-        if self.edit24 ~= nil then self.edit24:destroy(); self.edit24 = nil; end;
         if self.label90 ~= nil then self.label90:destroy(); self.label90 = nil; end;
+        if self.edit24 ~= nil then self.edit24:destroy(); self.edit24 = nil; end;
+        if self.label93 ~= nil then self.label93:destroy(); self.label93 = nil; end;
         if self.edit59 ~= nil then self.edit59:destroy(); self.edit59 = nil; end;
-        if self.edit274 ~= nil then self.edit274:destroy(); self.edit274 = nil; end;
+        if self.layout1 ~= nil then self.layout1:destroy(); self.layout1 = nil; end;
         if self.edit14 ~= nil then self.edit14:destroy(); self.edit14 = nil; end;
         if self.edit249 ~= nil then self.edit249:destroy(); self.edit249 = nil; end;
-        if self.textEditor16 ~= nil then self.textEditor16:destroy(); self.textEditor16 = nil; end;
+        if self.edit274 ~= nil then self.edit274:destroy(); self.edit274 = nil; end;
         if self.dataLink8 ~= nil then self.dataLink8:destroy(); self.dataLink8 = nil; end;
         if self.edit4 ~= nil then self.edit4:destroy(); self.edit4 = nil; end;
         if self.edit198 ~= nil then self.edit198:destroy(); self.edit198 = nil; end;
         if self.edit252 ~= nil then self.edit252:destroy(); self.edit252 = nil; end;
-        if self.label93 ~= nil then self.label93:destroy(); self.label93 = nil; end;
         if self.edit287 ~= nil then self.edit287:destroy(); self.edit287 = nil; end;
+        if self.textEditor16 ~= nil then self.textEditor16:destroy(); self.textEditor16 = nil; end;
         if self.edit289 ~= nil then self.edit289:destroy(); self.edit289 = nil; end;
         if self.label6 ~= nil then self.label6:destroy(); self.label6 = nil; end;
         if self.edit128 ~= nil then self.edit128:destroy(); self.edit128 = nil; end;
@@ -10067,6 +10621,7 @@ local function constructNew_frmsekai()
         if self.edit218 ~= nil then self.edit218:destroy(); self.edit218 = nil; end;
         if self.edit165 ~= nil then self.edit165:destroy(); self.edit165 = nil; end;
         if self.edit208 ~= nil then self.edit208:destroy(); self.edit208 = nil; end;
+        if self.button55 ~= nil then self.button55:destroy(); self.button55 = nil; end;
         if self.ListaJutsus2 ~= nil then self.ListaJutsus2:destroy(); self.ListaJutsus2 = nil; end;
         if self.edit8 ~= nil then self.edit8:destroy(); self.edit8 = nil; end;
         if self.edit45 ~= nil then self.edit45:destroy(); self.edit45 = nil; end;
@@ -10082,6 +10637,7 @@ local function constructNew_frmsekai()
         if self.edit109 ~= nil then self.edit109:destroy(); self.edit109 = nil; end;
         if self.edit21 ~= nil then self.edit21:destroy(); self.edit21 = nil; end;
         if self.button24 ~= nil then self.button24:destroy(); self.button24 = nil; end;
+        if self.edit302 ~= nil then self.edit302:destroy(); self.edit302 = nil; end;
         if self.button3 ~= nil then self.button3:destroy(); self.button3 = nil; end;
         if self.label42 ~= nil then self.label42:destroy(); self.label42 = nil; end;
         if self.edit174 ~= nil then self.edit174:destroy(); self.edit174 = nil; end;
@@ -10090,20 +10646,24 @@ local function constructNew_frmsekai()
         if self.edit261 ~= nil then self.edit261:destroy(); self.edit261 = nil; end;
         if self.edit133 ~= nil then self.edit133:destroy(); self.edit133 = nil; end;
         if self.image26 ~= nil then self.image26:destroy(); self.image26 = nil; end;
+        if self.label102 ~= nil then self.label102:destroy(); self.label102 = nil; end;
         if self.edit93 ~= nil then self.edit93:destroy(); self.edit93 = nil; end;
         if self.edit126 ~= nil then self.edit126:destroy(); self.edit126 = nil; end;
         if self.edit300 ~= nil then self.edit300:destroy(); self.edit300 = nil; end;
         if self.edit13 ~= nil then self.edit13:destroy(); self.edit13 = nil; end;
+        if self.cmbTipoOutro ~= nil then self.cmbTipoOutro:destroy(); self.cmbTipoOutro = nil; end;
         if self.edit225 ~= nil then self.edit225:destroy(); self.edit225 = nil; end;
         if self.btnUparJutsu ~= nil then self.btnUparJutsu:destroy(); self.btnUparJutsu = nil; end;
         if self.edit81 ~= nil then self.edit81:destroy(); self.edit81 = nil; end;
         if self.edit177 ~= nil then self.edit177:destroy(); self.edit177 = nil; end;
         if self.button11 ~= nil then self.button11:destroy(); self.button11 = nil; end;
         if self.label81 ~= nil then self.label81:destroy(); self.label81 = nil; end;
+        if self.button58 ~= nil then self.button58:destroy(); self.button58 = nil; end;
         if self.btnUparJutsu3 ~= nil then self.btnUparJutsu3:destroy(); self.btnUparJutsu3 = nil; end;
         if self.edit166 ~= nil then self.edit166:destroy(); self.edit166 = nil; end;
-        if self.scrollBox10 ~= nil then self.scrollBox10:destroy(); self.scrollBox10 = nil; end;
+        if self.dataLink22 ~= nil then self.dataLink22:destroy(); self.dataLink22 = nil; end;
         if self.button6 ~= nil then self.button6:destroy(); self.button6 = nil; end;
+        if self.scrollBox10 ~= nil then self.scrollBox10:destroy(); self.scrollBox10 = nil; end;
         if self.button5 ~= nil then self.button5:destroy(); self.button5 = nil; end;
         if self.edit37 ~= nil then self.edit37:destroy(); self.edit37 = nil; end;
         if self.edit184 ~= nil then self.edit184:destroy(); self.edit184 = nil; end;
@@ -10126,8 +10686,8 @@ local function constructNew_frmsekai()
         if self.label79 ~= nil then self.label79:destroy(); self.label79 = nil; end;
         if self.edit299 ~= nil then self.edit299:destroy(); self.edit299 = nil; end;
         if self.edit113 ~= nil then self.edit113:destroy(); self.edit113 = nil; end;
-        if self.edit15 ~= nil then self.edit15:destroy(); self.edit15 = nil; end;
         if self.label11 ~= nil then self.label11:destroy(); self.label11 = nil; end;
+        if self.edit15 ~= nil then self.edit15:destroy(); self.edit15 = nil; end;
         if self.label3 ~= nil then self.label3:destroy(); self.label3 = nil; end;
         if self.label20 ~= nil then self.label20:destroy(); self.label20 = nil; end;
         if self.edit211 ~= nil then self.edit211:destroy(); self.edit211 = nil; end;
@@ -10175,6 +10735,7 @@ local function constructNew_frmsekai()
         if self.label40 ~= nil then self.label40:destroy(); self.label40 = nil; end;
         if self.dataLink4 ~= nil then self.dataLink4:destroy(); self.dataLink4 = nil; end;
         if self.image5 ~= nil then self.image5:destroy(); self.image5 = nil; end;
+        if self.comboBox13 ~= nil then self.comboBox13:destroy(); self.comboBox13 = nil; end;
         if self.edit111 ~= nil then self.edit111:destroy(); self.edit111 = nil; end;
         if self.image7 ~= nil then self.image7:destroy(); self.image7 = nil; end;
         if self.edit28 ~= nil then self.edit28:destroy(); self.edit28 = nil; end;
@@ -10186,6 +10747,7 @@ local function constructNew_frmsekai()
         if self.edit85 ~= nil then self.edit85:destroy(); self.edit85 = nil; end;
         if self.edit201 ~= nil then self.edit201:destroy(); self.edit201 = nil; end;
         if self.edit243 ~= nil then self.edit243:destroy(); self.edit243 = nil; end;
+        if self.button56 ~= nil then self.button56:destroy(); self.button56 = nil; end;
         if self.button2 ~= nil then self.button2:destroy(); self.button2 = nil; end;
         if self.label22 ~= nil then self.label22:destroy(); self.label22 = nil; end;
         if self.dataLink21 ~= nil then self.dataLink21:destroy(); self.dataLink21 = nil; end;
@@ -10218,6 +10780,7 @@ local function constructNew_frmsekai()
         if self.edit114 ~= nil then self.edit114:destroy(); self.edit114 = nil; end;
         if self.button53 ~= nil then self.button53:destroy(); self.button53 = nil; end;
         if self.edit298 ~= nil then self.edit298:destroy(); self.edit298 = nil; end;
+        if self.dataLink23 ~= nil then self.dataLink23:destroy(); self.dataLink23 = nil; end;
         if self.label34 ~= nil then self.label34:destroy(); self.label34 = nil; end;
         if self.edit5 ~= nil then self.edit5:destroy(); self.edit5 = nil; end;
         if self.edit204 ~= nil then self.edit204:destroy(); self.edit204 = nil; end;
@@ -10249,12 +10812,15 @@ local function constructNew_frmsekai()
         if self.image29 ~= nil then self.image29:destroy(); self.image29 = nil; end;
         if self.edit79 ~= nil then self.edit79:destroy(); self.edit79 = nil; end;
         if self.edit256 ~= nil then self.edit256:destroy(); self.edit256 = nil; end;
+        if self.comboBox14 ~= nil then self.comboBox14:destroy(); self.comboBox14 = nil; end;
         if self.edit283 ~= nil then self.edit283:destroy(); self.edit283 = nil; end;
         if self.dataLink16 ~= nil then self.dataLink16:destroy(); self.dataLink16 = nil; end;
         if self.label78 ~= nil then self.label78:destroy(); self.label78 = nil; end;
+        if self.label101 ~= nil then self.label101:destroy(); self.label101 = nil; end;
         if self.image27 ~= nil then self.image27:destroy(); self.image27 = nil; end;
         if self.edit175 ~= nil then self.edit175:destroy(); self.edit175 = nil; end;
         if self.edit291 ~= nil then self.edit291:destroy(); self.edit291 = nil; end;
+        if self.button59 ~= nil then self.button59:destroy(); self.button59 = nil; end;
         if self.edit101 ~= nil then self.edit101:destroy(); self.edit101 = nil; end;
         if self.image3 ~= nil then self.image3:destroy(); self.image3 = nil; end;
         if self.image28 ~= nil then self.image28:destroy(); self.image28 = nil; end;
@@ -10291,10 +10857,11 @@ local function constructNew_frmsekai()
         if self.edit143 ~= nil then self.edit143:destroy(); self.edit143 = nil; end;
         if self.dataLink15 ~= nil then self.dataLink15:destroy(); self.dataLink15 = nil; end;
         if self.image22 ~= nil then self.image22:destroy(); self.image22 = nil; end;
+        if self.button60 ~= nil then self.button60:destroy(); self.button60 = nil; end;
         if self.edit206 ~= nil then self.edit206:destroy(); self.edit206 = nil; end;
         if self.edit105 ~= nil then self.edit105:destroy(); self.edit105 = nil; end;
-        if self.richEdit1 ~= nil then self.richEdit1:destroy(); self.richEdit1 = nil; end;
         if self.label54 ~= nil then self.label54:destroy(); self.label54 = nil; end;
+        if self.richEdit1 ~= nil then self.richEdit1:destroy(); self.richEdit1 = nil; end;
         if self.scrollBox3 ~= nil then self.scrollBox3:destroy(); self.scrollBox3 = nil; end;
         if self.edit239 ~= nil then self.edit239:destroy(); self.edit239 = nil; end;
         if self.textEditor1 ~= nil then self.textEditor1:destroy(); self.textEditor1 = nil; end;
@@ -10336,6 +10903,7 @@ local function constructNew_frmsekai()
         if self.edit288 ~= nil then self.edit288:destroy(); self.edit288 = nil; end;
         if self.button49 ~= nil then self.button49:destroy(); self.button49 = nil; end;
         if self.scrollBox8 ~= nil then self.scrollBox8:destroy(); self.scrollBox8 = nil; end;
+        if self.label98 ~= nil then self.label98:destroy(); self.label98 = nil; end;
         if self.edit104 ~= nil then self.edit104:destroy(); self.edit104 = nil; end;
         if self.edit207 ~= nil then self.edit207:destroy(); self.edit207 = nil; end;
         if self.edit7 ~= nil then self.edit7:destroy(); self.edit7 = nil; end;
@@ -10382,6 +10950,7 @@ local function constructNew_frmsekai()
         if self.dataLink19 ~= nil then self.dataLink19:destroy(); self.dataLink19 = nil; end;
         if self.edit148 ~= nil then self.edit148:destroy(); self.edit148 = nil; end;
         if self.button50 ~= nil then self.button50:destroy(); self.button50 = nil; end;
+        if self.cmbRakporTreino ~= nil then self.cmbRakporTreino:destroy(); self.cmbRakporTreino = nil; end;
         if self.button22 ~= nil then self.button22:destroy(); self.button22 = nil; end;
         if self.button48 ~= nil then self.button48:destroy(); self.button48 = nil; end;
         if self.edit53 ~= nil then self.edit53:destroy(); self.edit53 = nil; end;
@@ -10389,10 +10958,10 @@ local function constructNew_frmsekai()
         if self.edit232 ~= nil then self.edit232:destroy(); self.edit232 = nil; end;
         if self.dataLink17 ~= nil then self.dataLink17:destroy(); self.dataLink17 = nil; end;
         if self.image16 ~= nil then self.image16:destroy(); self.image16 = nil; end;
-        if self.rectangle8 ~= nil then self.rectangle8:destroy(); self.rectangle8 = nil; end;
         if self.label9 ~= nil then self.label9:destroy(); self.label9 = nil; end;
-        if self.edit107 ~= nil then self.edit107:destroy(); self.edit107 = nil; end;
+        if self.rectangle8 ~= nil then self.rectangle8:destroy(); self.rectangle8 = nil; end;
         if self.label28 ~= nil then self.label28:destroy(); self.label28 = nil; end;
+        if self.edit107 ~= nil then self.edit107:destroy(); self.edit107 = nil; end;
         if self.edit217 ~= nil then self.edit217:destroy(); self.edit217 = nil; end;
         if self.edit234 ~= nil then self.edit234:destroy(); self.edit234 = nil; end;
         if self.edit237 ~= nil then self.edit237:destroy(); self.edit237 = nil; end;
@@ -10402,6 +10971,7 @@ local function constructNew_frmsekai()
         if self.tab4 ~= nil then self.tab4:destroy(); self.tab4 = nil; end;
         if self.edit56 ~= nil then self.edit56:destroy(); self.edit56 = nil; end;
         if self.label80 ~= nil then self.label80:destroy(); self.label80 = nil; end;
+        if self.button57 ~= nil then self.button57:destroy(); self.button57 = nil; end;
         if self.edit290 ~= nil then self.edit290:destroy(); self.edit290 = nil; end;
         if self.edit197 ~= nil then self.edit197:destroy(); self.edit197 = nil; end;
         if self.edit141 ~= nil then self.edit141:destroy(); self.edit141 = nil; end;
@@ -10411,6 +10981,7 @@ local function constructNew_frmsekai()
         if self.btnUparJutsu2 ~= nil then self.btnUparJutsu2:destroy(); self.btnUparJutsu2 = nil; end;
         if self.edit275 ~= nil then self.edit275:destroy(); self.edit275 = nil; end;
         if self.label17 ~= nil then self.label17:destroy(); self.label17 = nil; end;
+        if self.label100 ~= nil then self.label100:destroy(); self.label100 = nil; end;
         if self.edit75 ~= nil then self.edit75:destroy(); self.edit75 = nil; end;
         if self.edit193 ~= nil then self.edit193:destroy(); self.edit193 = nil; end;
         if self.edit65 ~= nil then self.edit65:destroy(); self.edit65 = nil; end;
@@ -10447,9 +11018,10 @@ local function constructNew_frmsekai()
         if self.edit78 ~= nil then self.edit78:destroy(); self.edit78 = nil; end;
         if self.label87 ~= nil then self.label87:destroy(); self.label87 = nil; end;
         if self.edit202 ~= nil then self.edit202:destroy(); self.edit202 = nil; end;
+        if self.edit303 ~= nil then self.edit303:destroy(); self.edit303 = nil; end;
         if self.edit91 ~= nil then self.edit91:destroy(); self.edit91 = nil; end;
-        if self.edit70 ~= nil then self.edit70:destroy(); self.edit70 = nil; end;
         if self.label25 ~= nil then self.label25:destroy(); self.label25 = nil; end;
+        if self.edit70 ~= nil then self.edit70:destroy(); self.edit70 = nil; end;
         if self.edit268 ~= nil then self.edit268:destroy(); self.edit268 = nil; end;
         if self.edit248 ~= nil then self.edit248:destroy(); self.edit248 = nil; end;
         if self.button46 ~= nil then self.button46:destroy(); self.button46 = nil; end;
