@@ -2898,6 +2898,7 @@
 				<edit left="230" top="95" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="AcertoGenTotal"/>
 				<edit left="230" top="145" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="EsquivaTotal"/>
 				<edit left="230" top="170" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="BloqueioTotal"/>
+				<edit left="440	" top="170" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" field="BloqueioReducaoForca"/>
 				<edit left="230" top="220" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRTaiTotal"/>
 				<edit left="230" top="245" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRNinTotal"/>
 				<edit left="230" top="270" width="75" height="18" enabled="false" horzTextAlign="center" fontColor="#00FFFF" type="number" field="CRGenTotal"/>
@@ -2931,6 +2932,7 @@
 				<edit left="330" top="95" width="85" height="18" enabled="false" visible="false"   type="number" field="GAcertoGen"/>
 				<edit left="330" top="145" width="85" height="18" enabled="false" visible="false"  type="number" field="GEsquiva"/>
 				<edit left="330" top="170" width="85" height="18" enabled="false" visible="false"  type="number" field="GBloqueio"/>
+				
 				<edit left="330" top="220" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRTai"/>
 				<edit left="330" top="245" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRNin"/>
 				<edit left="330" top="270" width="85" height="18" enabled="false" visible="false"  type="number" field="GCRGen"/>
@@ -4109,6 +4111,28 @@
 			if sheet.Sequenci1 == true then
 				sheet.Inteligencia = sheet.Inteligencia + 1;
 				sheet.Inteligencia = sheet.Inteligencia - 1;	
+			end;
+		</event>
+	</dataLink>
+	
+	<dataLink field="Forca">
+		<event name="onChange">
+			if sheet.Sequenci1 == true then
+				if sheet.Forca >= 100000000 then
+					sheet.BloqueioReducaoForca = "50 %"
+				elseif sheet.Forca >= 10000000 then
+					sheet.BloqueioReducaoForca = "45 %"
+				elseif sheet.Forca >= 1000000 then
+					sheet.BloqueioReducaoForca = "40 %"
+				elseif sheet.Forca >= 100000 then
+					sheet.BloqueioReducaoForca = "35 %"
+				elseif sheet.Forca >= 10000then
+					sheet.BloqueioReducaoForca = "30 %"
+				elseif sheet.Forca >= 1000 then
+					sheet.BloqueioReducaoForca = "25 %"
+				else
+					sheet.BloqueioReducaoForca = "10 %"
+				end;				
 			end;
 		</event>
 	</dataLink>
