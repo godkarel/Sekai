@@ -218,14 +218,78 @@
 			sheet.GExplosivoLimite = (tonumber(sheet.GExplosivoLimite) or 0);	
 			sheet.VenenoLimite = (tonumber(sheet.VenenoLimite) or 0);	
 			sheet.BandagemLimite = (tonumber(sheet.BandagemLimite) or 0);	
-			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);	
+			sheet.BombaFumacaLimite = (tonumber(sheet.BombaFumacaLimite) or 0);				
 			sheet.energia = 0;
 			sheet.energiaTotal = 100;
 			self.cmbTipoOutro.value = 1; 
-			self.cmbTipoBag.value = 1; 
+			self.cmbTipoBag.value = 1; 			
+			sheet.KutchyoseNome = (tonumber(sheet.KutchyoseNome) or 0);	
+			sheet.KutchyoseNumero = (tonumber(sheet.KutchyoseNumero) or 0);	
+			sheet.KutchyoseDano = (tonumber(sheet.KutchyoseDano) or 0);	
+			sheet.KutchyosePorcentDano = (tonumber(sheet.KutchyosePorcentDano) or 0);	
+			sheet.KutchyoseDanoTotal = (tonumber(sheet.KutchyoseDanoTotal) or 0);				
+			sheet.KutchyoseHP = (tonumber(sheet.KutchyoseHP) or 0);	
+			sheet.KutchyosePorcentHP = (tonumber(sheet.KutchyosePorcentHP) or 0);
+			sheet.KutchyoseHPTotal = (tonumber(sheet.KutchyoseHPTotal) or 0);			
+			sheet.KutchyoseAtualEnergia = (tonumber(sheet.KutchyoseAtualEnergia) or 0);
+			sheet.KutchyoseMaxEnergia = (tonumber(sheet.KutchyoseMaxEnergia) or 0);			
 			showMessage("Escolha seu nome, clã e idade");
 		end; 
 		sheet.Transformado = 0; 
+		sheet.GMDesativa = false;	
+
+		if sheet.GMDesativa == false then
+			self.edtGM2.visible = false;
+			self.edtGM3.visible = false;
+			self.edtGM4.visible = false;
+			self.edtGM5.visible = false;
+			self.edtGM6.visible = false;
+			self.edtGM8.visible = false;
+			self.edtGM9.visible = false;
+			self.edtGM10.visible = false;
+			self.edtGM11.visible = false;
+			self.edtGM12.visible = false;
+			self.edtGM14.visible = false;
+			self.edtGM15.visible = false;
+			self.edtGM16.visible = false;
+			self.edtGM17.visible = false;
+			self.edtGM18.visible = false;
+			self.edtGM19.visible = false;
+			self.edtGM20.visible = false;
+			self.edtGM21.visible = false;
+			self.edtGM22.visible = false;
+			self.edtGM23.visible = false;
+			self.edtGM24.visible = false;
+			self.edtGM25.visible = false;
+			self.edtGM27.visible = false;
+		end;
+		
+		if sheet.GMDesativa == true then
+			self.edtGM2.visible = true;
+			self.edtGM3.visible = true;
+			self.edtGM4.visible = true;
+			self.edtGM5.visible = true;
+			self.edtGM6.visible = true;
+			self.edtGM8.visible = true;
+			self.edtGM9.visible = true;
+			self.edtGM10.visible = true;
+			self.edtGM11.visible = true;
+			self.edtGM12.visible = true;
+			self.edtGM14.visible = true;
+			self.edtGM15.visible = true;
+			self.edtGM16.visible = true;
+			self.edtGM17.visible = true;
+			self.edtGM18.visible = true;
+			self.edtGM19.visible = true;
+			self.edtGM20.visible = true;
+			self.edtGM21.visible = true;
+			self.edtGM22.visible = true;
+			self.edtGM23.visible = true;
+			self.edtGM24.visible = true;
+			self.edtGM25.visible = true;
+			self.edtGM27.visible = true;
+		end;
+			
 	</event> 
 	<scrollBox align="client">
 			 -----------------------------------
@@ -301,7 +365,7 @@
 		<popup name="POPJutsu" visible="false" left="1" top="40"
 			 width="900" height="600">						 
 			<scrollBox align="client">		 
-				<image top="1" width="870" height="705" src="/imagens/5.png"/>
+				<image top="1" width="870" height="705" src="/imagens/5.png"/> 
 				<!-- Botão de inserir novo item à lista -->			   
 				<button text="Novo Jutsu"  width="125" height="40" left="70" top="10">
 					<event name="onClick">
@@ -360,7 +424,7 @@
 						
 						<edit  width="40" height="30" left="390" top="380" visible="false"  horzTextAlign="center" fontColor="cyan"  type="number" field="ChakraPlayer"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu1"/>
+						<edit name="edtGM1"  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" visible="true" type="number" field="LevelJutsu1"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -535,11 +599,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
+						<edit name="edtGM2" left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma"/>
+						<edit name="edtGM3" left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma"/>
+						<edit name="edtGM4" left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma"/>
+						<rectangle name="edtGM5" left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit name="edtGM6" left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
 											--GM NUNCA PRECISA -- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro"/>
@@ -729,7 +793,7 @@
 						
 						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer2"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
+						<edit name="edtGM7" width="30" height="20" left="230" top="400" enabled="true" visible="true" type="number" horzTextAlign="center" field="LevelJutsu2"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -863,11 +927,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d202"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma2"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma2"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma2"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
+						<edit name="edtGM8" left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma2"/>
+						<edit name="edtGM9" left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma2"/>
+						<edit name="edtGM10" left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma2"/>
+						<rectangle name="edtGM11" left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit name="edtGM12" left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="false" horzTextAlign="center" field="Upa1d20Soma2"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro2"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro2"/>
@@ -1054,7 +1118,7 @@
 						
 						<edit  width="40" height="30" left="390" top="380" visible="false" type="number"  horzTextAlign="center" fontColor="cyan"  field="ChakraPlayer3"/>
 						--GM DESATIVA-- 
-						<edit  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" field="LevelJutsu3"/>
+						<edit name="edtGM13" width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" type="number" visible="true" field="LevelJutsu3"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -1188,11 +1252,11 @@
 						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d203"/>
 											
 												--GM DESATIVA-- 
-						<edit  left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma3"/>
-						<edit  left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma3"/>
-						<edit  left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma3"/>
-						<rectangle left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
-						<edit left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
+						<edit name="edtGM14" left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma3"/>
+						<edit name="edtGM15" left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma3"/>
+						<edit name="edtGM16" left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma3"/>
+						<rectangle name="edtGM17" left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
+						<edit name="edtGM18" left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma3"/>
 												--GM NUNCA PRECISA-- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro3"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro3"/>
@@ -1459,14 +1523,14 @@
 		<edit name="Exp" left="535" top="132" width="55" height="18" type="float"  field="Exp"/>
 		<edit left="610" top="132" width="55" height="18" enabled="false" type="float" field="ExpTotal"/>
 		
-		<edit left="670" top="132" width="55" height="18" enabled="true" type="float" field="ExpPTreino"/>
+		<edit name="edtGM27" left="670" top="132" width="55" height="18" enabled="true" type="float" field="ExpPTreino"/>
 		
 		<edit left="90" top="276" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Red" field="HP"/>
 		<edit left="90" top="296" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="Cyan" field="Chakra"/>
 		<edit left="90" top="316" width="85" height="18" type="float" enabled="false" horzTextAlign="center" fontColor="#FFD700" field="Outros"/>
 		<edit left="90" top="336" width="85" height="18" type="float" enabled="false" horzTextAlign="center" field="Energia"/>
 				--GM DESATIVA--
-		<checkBox left="800" top="20" fontSize="18" text="TREINO ON ?" visible="true" field="TreinoON"/>
+		<checkBox name="edtGM19" left="800" top="20" fontSize="18" text="TREINO ON ?" visible="true" field="TreinoON"/>
 
 		<edit left="190" top="276" width="85" height="18" enabled="false" type="float" horzTextAlign="center" fontColor="Red" field="HPTotal"/>
 		<button left="280" top="276" width="40" height="20" fontColor="red" text="❤">
@@ -1620,7 +1684,7 @@
 		--------------------------------------------------
 		<image field="imagemDoPersonagem" editable="true" style="autoFit" left="450" top="255" width="154" height="110" />
 		--GM DESATIVA-- 		
-		<button left="600" top="270" width="105" height="85" opacity="1.0" visible="true" text="Calculo" onClick="self.POPCALCULO:show();"/>			
+		<button name="edtGM20" left="600" top="270" width="105" height="85" opacity="1.0" visible="true" text="Calculo" onClick="self.POPCALCULO:show();"/>			
 		<popup name="POPCALCULO" visible="false" left="1" top="40" width="820" height="620">
 				
 		<image left="10" top="10" width="800" height="600" src="/imagens/CALCULO.png"/>				
@@ -3172,7 +3236,7 @@
 				</dataLink>				 
 				---------------------------------------------------------------
 				---------------------------------------------------------------
-				--------------------- STATUS POR GRADUACÃO---------------------
+				--------------------- STATUS POR GRADUACÃO e Chanes ---------------------
 				---------------------------------------------------------------
 				---------------------------------------------------------------
 				<dataLink fields="{'GAcertoTai', 'GAcertoNin', 'GAcertoGen', 'GEsquiva', 'GBloqueio', 'GCRTai', 'GCRNin', 'GCRGen', 'GTurno',
@@ -3183,8 +3247,8 @@
 							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60 + (tonumber(sheet.TATai) or 0);
 							sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60 + (tonumber(sheet.TANin) or 0);
 							sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60 + (tonumber(sheet.TAGen) or 0);
-							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20 + (tonumber(sheet.TEsquiva) or 0);
-							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30 + (tonumber(sheet.TBloqueio) or 0);
+							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 30 + (tonumber(sheet.TEsquiva) or 0);
+							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 40 + (tonumber(sheet.TBloqueio) or 0);
 							sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1 + (tonumber(sheet.TCTai) or 0);
 							sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1 + (tonumber(sheet.TCNin) or 0);
 							sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1 + (tonumber(sheet.TCGen) or 0);
@@ -3202,8 +3266,8 @@
 							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60;
 							sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60;	
 							sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60;
-							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 20;
-							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 30;
+							sheet.EsquivaTotal = (tonumber(sheet.GEsquiva) or 0) + (tonumber(sheet.CEsq) or 0) + (tonumber(sheet.DEsquiva) or 0) + 30;
+							sheet.BloqueioTotal = (tonumber(sheet.GBloqueio) or 0) + (tonumber(sheet.CBloq) or 0) + (tonumber(sheet.DBloqueio) or 0) + 40;
 							sheet.CRTaiTotal = (tonumber(sheet.GCRTai) or 0) + (tonumber(sheet.CCRT) or 0) + (tonumber(sheet.DCriticalTai) or 0) + 1;
 							sheet.CRNinTotal = (tonumber(sheet.GCRNin) or 0) + (tonumber(sheet.CCRN) or 0) + (tonumber(sheet.DCriticalNin) or 0) + 1;
 							sheet.CRGenTotal = (tonumber(sheet.GCRGen) or 0) + (tonumber(sheet.CCRG) or 0) + (tonumber(sheet.DCriticalGen) or 0) + 1;
@@ -3234,7 +3298,13 @@
 				<image left="1" top="1" width="1000" height="700" src="/imagens/3.png"/>								
 				<button left="55" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoHollow()"/>
 				<button left="210" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoMantoBiju()"/>
-				<button left="40" top="270" width="130" height="150" opacity="0.0" onclick="KutchyoseFicha()"/>
+				<button left="40" top="270" width="130" height="150" opacity="0.0">
+					<event name="onClick">
+						local novoForm = GUI.newForm("frmKutchyoseFicha");
+						novoForm:setNodeObject(sheet);
+						novoForm:show();
+					</event>			
+				</button>
 				<button left="195" top="270" width="130" height="150" opacity="0.0" onclick="TransformacaoModoSennin()"/>
 				<button left="430" top="120" width="120" height="100" opacity="0.0" text="" onClick="self.POPArma:show();"/>
 				<popup name="POPArma" visible="false" left="1" top="40"
@@ -3524,7 +3594,7 @@
 				
 				<button left="10" top="435" width="130" height="30" opacity="1.0" text="Treinamento Status" onClick="TreinandoStatus()"/>
 				<edit left="303" top="438" width="25" height="25" transparent="false" horzTextAlign="Center" enabled="true" min="0" max="9" type="number" fontSize="18" field="VezesPDia" />
-				<edit left="500" top="438" width="100" height="25" transparent="false" horzTextAlign="Center" enabled="true" fontSize="18" field="GanhoPTreino" />
+				<edit name="edtGM26" left="500" top="438" width="100" height="25" transparent="false" horzTextAlign="Center" enabled="true" visible="false" fontSize="18" field="GanhoPTreino" />
 				
 				<image left="23" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif"/>
 				<image left="222" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif"/>
@@ -3626,11 +3696,11 @@
 								<comboBox name="cmbRakporTreino" left="160" top="420" width="50" height="30" fontFamily="Nyala" fontSize="18" field="RankPorTreino" items="{'E', 'D', 'C', 'B', 'A', 'S', 'SS', 'X','X+'}"/>
 								
 								-- GM DESATIVA TREINO -- 
-								<edit  left="140" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina1d10Soma"/>
-								<edit  left="200" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina2d10Soma"/>
-								<edit  left="260" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina3d10Soma"/>
-								<rectangle left="320" top="420" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-								<edit left="320" top="420" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="false" visible="true" horzTextAlign="center" field="Treina1d20Soma"/>
+								<edit name="edtGM21" left="140" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina1d10Soma"/>
+								<edit name="edtGM22" left="200" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina2d10Soma"/>
+								<edit name="edtGM23" left="260" top="420" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina3d10Soma"/>
+								<rectangle name="edtGM24" left="320" top="420" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
+								<edit name="edtGM25" left="320" top="420" width="50" height="30" type="number" min="1" max="18" enabled="true" transparent="false" visible="true" horzTextAlign="center" field="Treina1d20Soma"/>
 								-- GM DESATIVA TREINO -- 
 								
 								<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Treina1d10Erro"/>
@@ -4085,17 +4155,7 @@
 		end;
 	
 	</script>
-	
-	<script>
 		
-		function KutchyoseFicha() 
-						
-			showMessage("Em Breve... Kutchyose");
-					
-		end;
-	
-	</script>
-	
 	<script>
 		
 		function TransformacaoModoSennin() 
