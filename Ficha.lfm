@@ -232,8 +232,64 @@
 			sheet.KutchyosePorcentHP = (tonumber(sheet.KutchyosePorcentHP) or 0);
 			sheet.KutchyoseHPTotal = (tonumber(sheet.KutchyoseHPTotal) or 0);			
 			sheet.KutchyoseAtualEnergia = (tonumber(sheet.KutchyoseAtualEnergia) or 0);
-			sheet.KutchyoseMaxEnergia = (tonumber(sheet.KutchyoseMaxEnergia) or 0);			
-			showMessage("Escolha seu nome, clã e idade");
+			sheet.KutchyoseMaxEnergia = (tonumber(sheet.KutchyoseMaxEnergia) or 0);	
+			sheet.TTaijutsu = tonumber(sheet.TTaijutsu) or 0;
+			sheet.TNinjutsu = tonumber(sheet.TNinjutsu) or 0;
+			sheet.TGenjutsu = tonumber(sheet.TGenjutsu) or 0;
+			sheet.TDA = tonumber(sheet.TDA) or 0;
+			sheet.TElemental = tonumber(sheet.TElemental) or 0;			
+			sheet.THP = tonumber(sheet.THP) or 0;
+			sheet.TChakra = tonumber(sheet.TChakra) or 0;
+			sheet.TReiatsu = tonumber(sheet.TReiatsu) or 0;
+			sheet.TOutros = tonumber(sheet.TOutros) or 0;			
+			sheet.TReducao = tonumber(sheet.TReducao) or 0;			
+			sheet.TATai = tonumber(sheet.TATai) or 0;
+			sheet.TANin = tonumber(sheet.TANin) or 0;
+			sheet.TAGen = tonumber(sheet.TAGen) or 0;
+			sheet.TEsquiva = tonumber(sheet.TEsquiva) or 0;
+			sheet.TBloqueio = tonumber(sheet.TBloqueio) or 0;
+			sheet.TCTai = tonumber(sheet.TCTai) or 0;
+			sheet.TCNin = tonumber(sheet.TCNin) or 0;
+			sheet.TCGen = tonumber(sheet.TCGen) or 0;
+			sheet.TTurnos = tonumber(sheet.TTurnos) or 0;
+			sheet.TITaijutsu = tonumber(sheet.TITaijutsu) or 0;			
+			sheet.TINinjutsu = tonumber(sheet.TINinjutsu) or 0;
+			sheet.TIGenjutsu = tonumber(sheet.TIGenjutsu) or 0;
+			sheet.TIDA = tonumber(sheet.TIDA) or 0;
+			sheet.TIElemental = tonumber(sheet.TIElemental) or 0;
+			sheet.TIHP = tonumber(sheet.TIHP) or 0;
+			sheet.TIChakra = tonumber(sheet.TIChakra) or 0;
+			sheet.TIOutros = tonumber(sheet.TIOutros) or 0;
+			sheet.TIReducao = tonumber(sheet.TIReducao) or 0;
+			sheet.TIATai = tonumber(sheet.TIATai) or 0;
+			sheet.TIANin = tonumber(sheet.TIANin) or 0;
+			sheet.TIAGen = tonumber(sheet.TIAGen) or 0;
+			sheet.TIEsquiva = tonumber(sheet.TIEsquiva) or 0;
+			sheet.TIBloqueio = tonumber(sheet.TIBloqueio) or 0;
+			sheet.TICTai = tonumber(sheet.TICTai) or 0;
+			sheet.TICNin = tonumber(sheet.TICNin) or 0;
+			sheet.TICGen = tonumber(sheet.TICGen) or 0;
+			sheet.TITurnos = tonumber(sheet.TITurnos) or 0;
+			sheet.TISTaijutsu = tonumber(sheet.TISTaijutsu) or 0;
+			sheet.TISNinjutsu = tonumber(sheet.TISNinjutsu) or 0;
+			sheet.TISGenjutsu = tonumber(sheet.TISGenjutsu) or 0;
+			sheet.TISDA = tonumber(sheet.TISDA) or 0;
+			sheet.TISElemental = tonumber(sheet.TISElemental) or 0;
+			sheet.TISHP = tonumber(sheet.TISHP) or 0;
+			sheet.TISChakra = tonumber(sheet.TISChakra) or 0;
+			sheet.TISReiatsu = tonumber(sheet.TISReiatsu) or 0;
+			sheet.TISOutros = tonumber(sheet.TISOutros) or 0;
+			sheet.TISReducao = tonumber(sheet.TISReducao) or 0;
+			sheet.TISATai = tonumber(sheet.TISATai) or 0;
+			sheet.TISANin = tonumber(sheet.TISANin) or 0;
+			sheet.TISAGen = tonumber(sheet.TISAGen) or 0;
+			sheet.TISEsquiva = tonumber(sheet.TISEsquiva) or 0;
+			sheet.TISBloqueio = tonumber(sheet.TISBloqueio) or 0;
+			sheet.TISCTai = tonumber(sheet.TISCTai) or 0;
+			sheet.TISCNin = tonumber(sheet.TISCNin) or 0;
+			sheet.TISCGen = tonumber(sheet.TISCGen) or 0;
+			sheet.TISTurnos = tonumber(sheet.TISTurnos) or 0;
+			showMessage("Escolha seu nome, clã e idade");			
 		end; 
 		sheet.Transformado = 0; 
 		sheet.GMDesativa = false;	
@@ -262,6 +318,9 @@
 			self.edtGM24.visible = false;
 			self.edtGM25.visible = false;
 			self.edtGM27.visible = false;
+			self.edtGM28.visible = false;
+			self.edtGM29.visible = false;
+			self.edtGM30.visible = false;
 		end;
 		
 		if sheet.GMDesativa == true then
@@ -288,7 +347,12 @@
 			self.edtGM24.visible = true;
 			self.edtGM25.visible = true;
 			self.edtGM27.visible = true;
+			self.edtGM28.visible = true;
+			self.edtGM29.visible = true;
+			self.edtGM30.visible = true;
 		end;
+		
+
 			
 	</event> 
 	<scrollBox align="client">
@@ -386,6 +450,21 @@
 						self.ListaJutsus.node = node;                       
 						-- a caixa de detalhe só ficará visível se houver item selecionado
 						self.ListaJutsus.visible = (node ~= nil);
+						if	self.ListaJutsus.visible == true then
+							self.ListaJutsus.node.LevelJutsu1 = self.ListaJutsus.node.LevelJutsu1 or 1;
+							self.ListaJutsus.node.DanoJutsu = self.ListaJutsus.node.DanoJutsu or 0;
+							self.ListaJutsus.node.TipoLista1Jutsu1 = self.ListaJutsus.node.TipoLista1Jutsu1 or 'Tai';
+							self.ListaJutsus.node.TipoLista1Jutsu2 = self.ListaJutsus.node.TipoLista1Jutsu2 or 'Nulo';
+							self.ListaJutsus.node.TipoLista1Jutsu3 = self.ListaJutsus.node.TipoLista1Jutsu3 or 'Nulo';
+							self.ListaJutsus.node.CustoJutsu = self.ListaJutsus.node.CustoJutsu or 0;
+							self.ListaJutsus.node.DescriJutsu = self.ListaJutsus.node.DescriJutsu or 'COLOQUE UMA DESCRICAO E OS STATUS ESPECIFICOS DA HABILIDADE';
+							FazCalculoTipoLista1Intensidade1();
+							FazCalculoTipoLista1Intensidade2();
+							FazCalculoTipoLista1Intensidade3();
+							FazCalculodoCustoReal();
+							FazCalculodoCustoEnergia();
+							FazCalculoTipoLista1IntensidadeTotal();
+						end;	
 					</event>
 				</recordList>       
 				<!-- dataScopeBox representando a nossa caixa de detalhes -->  
@@ -396,35 +475,64 @@
 						<edit  width="310" height="30" left="130" top="15" field="NomedoJutsu"/>
 						<textEditor left="10" top="60" width="430" height="240" field="DescriJutsu"/>
 						<label left="10" top="305" width="120" height="40"  fontFamily="Nyala" fontSize="16" text="Dano:"/>
-						<edit left="50" top="310" width="80" height="30"  type="number" field="DanoJutsu"/>
-						
-						<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chakra:"/>
+						<edit left="50" top="310" width="80" height="30" type="number" min="0" field="DanoJutsu"/>
+												
+						<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chacra:"/>
 						<edit  left="185" top="310" width="40" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
 						
-						<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="false" fontColor="cyan" text="Custo Real: "/>
-						<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="false" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>	
+						<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
+						<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
 
-						<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="false" fontColor="green" text="Energia: "/>
-						<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="false" fontColor="green"  field="CustoEnergia"/>
+						<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
+						<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
 						
 						<label left="10" top="345" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
-						<comboBox  left="50" top="358" width="100" height="18" field="Tipo" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Nulo'}"/>
+						<comboBox left="50" top="358" width="100" height="18" field="TipoLista1Jutsu1" items="{'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Nulo'}"/>
 						
-						<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="false" fontSize="16" text="Tipo 2:"/>
-						<comboBox left="205" top="358" width="100" height="18" field="Tipo" visible="false" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>	
+						<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="true" fontSize="16" text="Tipo 2:"/>
+						<comboBox left="205" top="358" width="100" height="18" field="TipoLista1Jutsu2" visible="true" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>	
 
-						<label left="310" top="345" width="60" height="40" fontFamily="Nyala" visible="false" fontSize="16" text="Tipo 3:"/>
-						<comboBox left="355" top="358" width="100" height="18" field="Tipo" visible="false" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>						
+						<label left="310" top="345" width="60" height="40" fontFamily="Nyala" visible="true" fontSize="16" text="Tipo 3:"/>
+						<comboBox left="355" top="358" width="100" height="18" field="TipoLista1Jutsu3" visible="true" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA'}"/>						
 						
 						<label  width="150" height="40" left="10" top="390" fontFamily="Nyala" fontSize="16" text="Dano Verdadeiro"/>
 						<edit  width="80" height="20" left="110" top="400" enabled="false" horzTextAlign="center" type="number" field="DNVerdadeiro"/>
 						<label  width="170" height="40" left="280" top="390" fontFamily="Nyala" fontColor="Crimson " fontSize="16" text="Intensidade"/>
-						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="Crimson" field="Intensidade"/>
+						<edit name="edtGM28" width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" visible="false" type="number" fontColor="Crimson" field="Lista1Intensidade1"/>
+						<edit name="edtGM29" width="80" height="20" left="350" top="420" enabled="false" horzTextAlign="center" visible="false" type="number" fontColor="Crimson" field="Lista1Intensidade2"/>
+						<edit name="edtGM30" width="80" height="20" left="350" top="440" enabled="false" horzTextAlign="center" visible="false" type="number" fontColor="Crimson" field="Lista1Intensidade3"/>
+						<edit  width="80" height="20" left="350" top="400" enabled="false" horzTextAlign="center" type="number" fontColor="red" field="Lista1IntensidadeTotal"/>
+						
 						<label  width="70" height="40" left="195" top="390" fontFamily="Nyala" fontSize="16" text="Level"/>
+						
+						<dataLink fields="{'DanoJutsu', 'LevelJutsu1'}">
+							<event name="onChange">
+								if	self.ListaJutsus.visible == true then
+									local node = self.ListaJutsus.node;	                     
+
+									if (node.DanoJutsu ~= nil) and (node.DanoJutsu > -1) then
+										node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
+									else
+										node.LevelJutsu1 = 1;
+									end;
+								end;	
+							</event>
+						</dataLink>
+												
+						<dataLink fields="{'TipoLista1Jutsu1', 'LevelJutsu1', 'DanoJutsu', 'TipoLista1Jutsu2', 'TipoLista1Jutsu3', 'DNVerdadeiro', 'CustoJutsu'}">
+							<event name="onChange">
+								FazCalculoTipoLista1Intensidade1();
+								FazCalculoTipoLista1Intensidade2();
+								FazCalculoTipoLista1Intensidade3();
+								FazCalculoTipoLista1IntensidadeTotal();
+								FazCalculodoCustoReal();
+								FazCalculodoCustoEnergia();
+							</event>
+						</dataLink>
 						
 						<edit  width="40" height="30" left="390" top="380" visible="false"  horzTextAlign="center" fontColor="cyan"  type="number" field="ChakraPlayer"/>
 						--GM DESATIVA-- 
-						<edit name="edtGM1"  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" visible="true" type="number" field="LevelJutsu1"/>
+						<edit name="edtGM1"  width="30" height="20" left="230" top="400" enabled="true" horzTextAlign="center" visible="true" type="number" min="1" field="LevelJutsu1"/>
 						--GM DESATIVA-- 
 						<image left="20" top="420" width="150" height="150" src="/imagens/Jutsu.png"/>
 						<button left="20" top="430" fontSize="20" opacity="0.0" height="120" width="150" text="Usar" fontColor="White">
@@ -433,160 +541,117 @@
 									local node = self.ListaJutsus.node;									
 									local mesaDoPersonagem = rrpg.getMesaDe(sheet);
 									
-									if node.Tipo == nil then
-										showMessage("Escolha o tipo do seu jutsu e preencha com as informações");
-									else 	
-										sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;
+										sheet.AcertoNinTotal = tonumber(sheet.AcertoNinTotal) or 0;	
 										
-										if node.DanoJutsu ~= nil then
-											node.DNVerdadeiro = tonumber(node.DanoJutsu)* 2^tonumber(node.LevelJutsu1 - 1); 
-										else
-											node.LevelJutsu1 = 1;
-										end;
-										
-										if node.Tipo == 'Tai' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.TaiTotal) or 0);	
-										end;	
-										
-										if node.Tipo == 'Nin' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.NinTotal) or 0);	
-										end;
-										
-										if node.Tipo == 'Gen' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.GenTotal) or 0);	
-										end;
-										
-										if node.Tipo == 'Elemental' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.EleTotal) or 0);	
-										end;
-										
-										if node.Tipo == 'DanoArmado' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.DanoArmado) or 0);	
-										end;
-										
-										if node.Tipo == 'M/Tai' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.TaiTotal / 2) or 0);	
-										end;
-										
-										if node.Tipo == 'M/Nin' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.NinTotal / 2) or 0);	
-										end;
-										
-										if node.Tipo == 'M/Gen' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.GenTotal / 2) or 0);	
-										end;
-										
-										if node.Tipo == 'M/Elemental' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.EleTotal / 2) or 0);	
-										end;
-										
-										if node.Tipo == 'M/DA' then
-											node.Intensidade = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(sheet.DanoArmado / 2) or 0);	
-										end;
-										
-										if node.Tipo == 'Selamento' then
-											node.Intensidade = 0;	
-										end;
-										
-										if node.Tipo == 'Outros' then
-											node.Intensidade = 0;
-										end;
-																			
 										mesaDoPersonagem.chat:rolarDados("1d100", "[§K3]Tentativa de executar Jutsu",
 										function (rolado)	
 											if sheet.AcertoNinTotal >= rolado.resultado then
 												mesaDoPersonagem.chat:enviarMensagem(".. [§K3]".. node.DescriJutsu);
-													
-												if node.Tipo == 'Tai'then
+												
+												if node.TipoLista1Jutsu1 == 'Tai'then
 													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'Nin'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'Nin'then
+													if sheet.CRNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'Gen'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'Gen'then
+													if sheet.CRGenTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'Elemental'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'Elemental'then
+													if sheet.CRNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'DanoArmado'then
+												if node.TipoLista1Jutsu1 == 'DanoArmado'then
 													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'M/Tai'then
+												if node.TipoLista1Jutsu1 == 'M/Tai'then
 													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'M/Nin'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'M/Nin'then
+													if sheet.CRNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'M/Gen'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-															mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'M/Gen'then
+													if sheet.CRGenTotal >= rolado.resultado then
+															mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'M/Elemental'then
-													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+												if node.TipoLista1Jutsu1 == 'M/Elemental'then
+													if sheet.CRNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
-												if node.Tipo == 'M/DA'then
+												if node.TipoLista1Jutsu1 == 'M/DA'then
 													if sheet.CRTaiTotal >= rolado.resultado then
-														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Intensidade * 2) .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
 													else
-														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Intensidade .. "[§K3] »");
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
+													end;
+												end;
+												
+												if node.TipoLista1Jutsu1 == 'Nulo' then													
+													if sheet.CRNinTotal >= rolado.resultado then
+														mesaDoPersonagem.chat:enviarMensagem("[§K4,0]CRITICAL :awyeah: « [§K4,0]" .. (node.Lista1IntensidadeTotal * 2) .. "[§K3] »");
+													else
+														mesaDoPersonagem.chat:enviarMensagem("[§K3,0]Causando « [§K4,0]" .. node.Lista1IntensidadeTotal .. "[§K3] »");
 													end;
 												end;
 												
 												local mesa = Firecast.getMesaDe(sheet);
 												local ChakraPlayer = mesa.meuJogador:getBarValue(2);
 												node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
-												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsu) or 0);
+												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+												
+												if node.CustoEnergia > 0 then
+													local EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+													node.EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+													node.EnergiaPlayer = (tonumber(node.EnergiaPlayer) or 0) - (tonumber(node.CustoEnergia) or 0);
+													mesa.meuJogador:requestSetBarValue(4, node.EnergiaPlayer);
+												end;
 											else
 												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
 											end;
-										end);
-									end;	
+										end);	
 								]]>
 							</event>
 						</button>
@@ -596,15 +661,14 @@
 						<edit  left="240" top="500" width="50" height="30" type="number" min="1" max="9" enabled="false" visible="true" horzTextAlign="center" field="Upa2d10"/>
 						<edit  left="300" top="500" width="50" height="30" type="number" min="1" max="9" enabled="false" visible="true" horzTextAlign="center" field="Upa3d10"/>
 						<rectangle left="360" top="500" width="50" height="30" color="black" strokeColor="red" strokeSize="3" />						
-						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20"/>
-											
-												--GM DESATIVA-- 
+						<edit left="360" top="500" width="50" height="30" type="number" min="1" max="18" enabled="false" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20"/>											
+						--GM DESATIVA-- 
 						<edit name="edtGM2" left="180" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa1d10Soma"/>
 						<edit name="edtGM3" left="240" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa2d10Soma"/>
 						<edit name="edtGM4" left="300" top="450" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="true" horzTextAlign="center" field="Upa3d10Soma"/>
 						<rectangle name="edtGM5" left="360" top="450" width="50" height="30" color="black" strokeColor="red" visible="true" strokeSize="3" />						
 						<edit name="edtGM6" left="360" top="450" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="true" transparent="true" horzTextAlign="center" field="Upa1d20Soma"/>
-											--GM NUNCA PRECISA -- 
+						--GM NUNCA PRECISA -- 
 						<edit  left="140" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa1d10Erro"/>
 						<edit  left="200" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa2d10Erro"/>
 						<edit  left="260" top="460" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Upa3d10Erro"/>
@@ -736,7 +800,8 @@
 										end;
 									end;	
 									]]>
-								</script>							
+								</script>
+						--------------- DATA LINK DANO VERDADEIRO AUTOMATICO --------------
 					</rectangle>
 				</dataScopeBox>
 			</scrollBox>
@@ -1403,7 +1468,7 @@
 		 'Chinoke', 'Hanbun', 'Kazumi', 'Kouga', 'Miroku', 'Mitsu', 'Nakamura', 'Natsume', 'Neko', 'Neon', 'Shinkara', '---//---'}"/>
 		<edit left="365" top="32" width="50" height="18" field="Idade"/>
 		<edit left="365" top="80" width="50" height="18" visible="false" type="number" max="40" field="Idade2"/>
-		<comboBox  left="505" top="32" width="140" height="18" field="GraduacaoTreino" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
+		<comboBox  left="550" top="32" width="140" height="18" field="GraduacaoTreino" items="{'Academico', 'Genin', 'Chunin', 'Jounin', 'Anbu', 'AnbuNucleo', 'Organização', 'GDE', 'Concelheiro', 'Kage'}"/>
 		
 		<edit left="220" top="52" width="85" height="18" type="number" enabled="true" field="Yen"/>
 		<edit left="90" top="52" width="85" height="18" field="Elemento"/>
@@ -1567,57 +1632,109 @@
 				mesa.meuJogador:requestSetBarValue(4, nil, EnergiaTotal);
 			</event>
 		</button>
-				
-		<button left="490" top="155" width="145" height="60" onClick="self.PopTransformation:show();"/>
 		
-		<popup name="PopTransformation" visible="false" left="1" top="10" width="1020" height="580">
-				
+		===================================================
+		=========== TRANSFORMAÇÃO TOTAL INTERMEDIARIA =====
+		===================================================
+		
+		<button left="650" top="155" width="145" height="60" visible="false" onClick="self.PopTransformationTotal:show();"/>
+		<checkBox name="ControlaTransTotal" left="650" top="220" width="200" text="Ativar Transformação Total" visible="false" field="TransformadoTotal">
+			<event name="onChange">
+				if self.ControlaTransTotal.checked then
+					CalculaTransformacaoTotal();
+				end;
+			</event>
+		</checkBox>	
+		
+		<popup name="PopTransformationTotal" visible="false" left="1" top="10" width="1020" height="580">
+			
 		<image left="10" top="10" width="1000" height="563" src="/imagens/8.png"/>
-		<edit left="190" top="43" width="100" height="20" type="number" field="TTaijutsu"/>
-		<edit left="190" top="72" width="100" height="20" type="number" field="TNinjutsu"/>
-		<edit left="190" top="101" width="100" height="20" type="number" field="TGenjutsu"/>
-		<edit left="190" top="130" width="100" height="20" type="number" field="TDA"/>
-		<edit left="190" top="159" width="100" height="20" type="number" field="TElemental"/>
+		<edit left="190" top="43" width="100" height="20" type="number" enabled="false" field="TTaijutsu"/>
+		<edit left="190" top="72" width="100" height="20" type="number" enabled="false" field="TNinjutsu"/>
+		<edit left="190" top="101" width="100" height="20" type="number" enabled="false" field="TGenjutsu"/>
+		<edit left="190" top="130" width="100" height="20" type="number" enabled="false" field="TDA"/>
+		<edit left="190" top="159" width="100" height="20" type="number" enabled="false" field="TElemental"/>
 		
 		
-		<edit left="190" top="217" width="100" height="20" type="number" field="THP"/>
-		<edit left="190" top="245" width="100" height="20" type="number" field="TChakra"/>
-		<edit left="190" top="273" width="100" height="20" type="number" field="TReiatsu"/>
-		<edit left="190" top="301" width="100" height="20" type="number" field="TOutros"/>
+		<edit left="190" top="217" width="100" height="20" type="number" enabled="false" field="THP"/>
+		<edit left="190" top="245" width="100" height="20" type="number" enabled="false" field="TChakra"/>
+		<edit left="190" top="273" width="100" height="20" type="number" enabled="false" field="TReiatsu"/>
+		<edit left="190" top="301" width="100" height="20" type="number" enabled="false" field="TOutros"/>
 		
-		<edit left="190" top="357" width="100" height="20" type="number" field="TReducao"/>
+		<edit left="190" top="357" width="100" height="20" type="number" enabled="false" field="TReducao"/>
 		
-		<edit left="820" top="43" width="100" height="20" type="number" field="TATai"/>
-		<edit left="820" top="72" width="100" height="20" type="number" field="TANin"/>
-		<edit left="820" top="101" width="100" height="20" type="number" field="TAGen"/>
-		<edit left="820" top="130" width="100" height="20" type="number" field="TEsquiva"/>
-		<edit left="820" top="159" width="100" height="20" type="number" field="TBloqueio"/>
-		<edit left="820" top="187" width="100" height="20" type="number" field="TCTai"/>
-		<edit left="820" top="215" width="100" height="20" type="number" field="TCNin"/>
-		<edit left="820" top="243" width="100" height="20" type="number" field="TCGen"/>
-		<edit left="820" top="271" width="100" height="20" type="number" field="TTurnos"/>
+		<edit left="820" top="43" width="100" height="20" type="number" enabled="false" field="TATai"/>
+		<edit left="820" top="72" width="100" height="20" type="number" enabled="false" field="TANin"/>
+		<edit left="820" top="101" width="100" height="20" type="number" enabled="false" field="TAGen"/>
+		<edit left="820" top="130" width="100" height="20" type="number" enabled="false" field="TEsquiva"/>
+		<edit left="820" top="159" width="100" height="20" type="number" enabled="false" field="TBloqueio"/>
+		<edit left="820" top="187" width="100" height="20" type="number" enabled="false" field="TCTai"/>
+		<edit left="820" top="215" width="100" height="20" type="number" enabled="false" field="TCNin"/>
+		<edit left="820" top="243" width="100" height="20" type="number" enabled="false" field="TCGen"/>
+		<edit left="820" top="271" width="100" height="20" type="number" enabled="false" field="TTurnos"/>
 		</popup>
 		
+		<button left="490" top="155" width="145" height="60" onClick="self.PopTransformation:show();"/>
+				
+		<dataLink fields="{'Transformado2', 'Transformado5', 'Transformado4', 'Transformado3'}">
+			<event name="onChange">
+				AtivaJunto();			
+			</event>
+		</dataLink>
+				
+		===================================================
+		=========== TRANSFORMAÇÃO NORMAL ==================
+		===================================================
+	
 		<image name="transformation" left="490" top="155" width="145" height="60" src="/imagens/Transform1.png"/>
-		<image name="transformationDisable" left="490" top="155" width="145" visible="false" height="60" src="/imagens/Transform2.png"/>				
+		<image name="transformationDisable" left="490" top="155" width="145" visible="false" height="60" src="/imagens/Transform2.png"/>
 		
-		<checkBox name="ControlaTrans" left="490" top="220" text="Ativar Transformação" field="Trasnformado1">
+		<popup name="PopTransformation" visible="false" left="1" top="10" width="1020" height="580">				
+		<image left="10" top="10" width="1000" height="563" src="/imagens/8.png"/>
+		<edit left="190" top="43" width="100" height="20" type="number" field="TransTaijutsu"/>
+		<edit left="190" top="72" width="100" height="20" type="number" field="TransNinjutsu"/>
+		<edit left="190" top="101" width="100" height="20" type="number" field="TransGenjutsu"/>
+		<edit left="190" top="130" width="100" height="20" type="number" field="TransDA"/>
+		<edit left="190" top="159" width="100" height="20" type="number" field="TransElemental"/>	
+		
+		<edit left="190" top="217" width="100" height="20" type="number" field="TransHP"/>
+		<edit left="190" top="245" width="100" height="20" type="number" field="TransChakra"/>
+		<edit left="190" top="273" width="100" height="20" type="number" field="TransReiatsu"/>
+		<edit left="190" top="301" width="100" height="20" type="number" field="TransOutros"/>
+		
+		<edit left="190" top="357" width="100" height="20" type="number" field="TransReducao"/>
+		
+		<edit left="820" top="43" width="100" height="20" type="number" field="TransATai"/>
+		<edit left="820" top="72" width="100" height="20" type="number" field="TransANin"/>
+		<edit left="820" top="101" width="100" height="20" type="number" field="TransAGen"/>
+		<edit left="820" top="130" width="100" height="20" type="number" field="TransEsquiva"/>
+		<edit left="820" top="159" width="100" height="20" type="number" field="TransBloqueio"/>
+		<edit left="820" top="187" width="100" height="20" type="number" field="TransCTai"/>
+		<edit left="820" top="215" width="100" height="20" type="number" field="TransCNin"/>
+		<edit left="820" top="243" width="100" height="20" type="number" field="TransCGen"/>
+		<edit left="820" top="271" width="100" height="20" type="number" field="TransTurnos"/>		
+		</popup>	
+
+		<checkBox name="ControlaTrans" left="490" top="220" text="Ativar Transformação" field="Transformado2">
 			<event name="onChange"> 
 				if self.ControlaTrans.checked then
 					self.transformation.visible = false;
-					self.transformationDisable.visible = true;								
+					self.transformationDisable.visible = true;	
 				else
 					self.transformation.visible = true;
 					self.transformationDisable.visible = false;		
 				end;
 			</event>
 		</checkBox>
-
-		<dataLink fields="{'Trasnformado1'}">
+		
+		<dataLink fields="{'TransTaijutsu', 'TransNinjutsu' , 'TransGenjutsu', 'TransDA', 'TransElemental', 'TransHP', 'TransChakra', 
+		'TransReiatsu', 'TransOutros', 'TransReducao', 'TransATai', 'TransANin', 'TransAGen', 'TransEsquiva', 'TransBloqueio', 'TransCTai',
+		'TransCNin', 'TransCGen', 'TransTurnos', 'Transformado2'}">
 			<event name="onChange">
-				sheet.Transformado = tonumber(sheet.Transformado) + 1;		
+				CalculaTransformacao();
 			</event>
-		</dataLink>		
+		</dataLink>	
+						
 		--------------------------------------------------
 		--------------------------------------------------
 		------------------Mensagem Mesa-------------------
@@ -1755,7 +1872,7 @@
 		
 		<dataLink fields="{'BandanaReducao', 'ColeteReducao', 'TReducao', 'CReducao', 'DReducao', 'Transformado'}">
 			<event name="onChange">	
-				if self.ControlaTrans.checked then
+				if self.ControlaTransTotal.checked then
 					sheet.ReducaoTotal = (tonumber(sheet.BandanaReducao) or 0) + (tonumber(sheet.ColeteReducao) or 0) + (tonumber(sheet.CReducao) or 0) + (tonumber(sheet.DReducao) or 0) + (tonumber(sheet.TReducao) or 0);
 				else
 					sheet.ReducaoTotal = (tonumber(sheet.BandanaReducao) or 0) + (tonumber(sheet.ColeteReducao) or 0) + (tonumber(sheet.CReducao) or 0) + (tonumber(sheet.DReducao) or 0);	
@@ -2313,7 +2430,7 @@
 		'ArmaDT', 'ArmaDN', 'ArmaDG', 'ArmaDE', 'ArmaDA', 'AcessorioDT', 'AcessorioDN', 'AcessorioDG', 'AcessorioDE', 'DTaijutsu', 'DNinjutsu', 'DGenjutsu', 'DDA', 'DDE', 'GraduacaoTreino', 'Transformado', 'Cla'}">
 			<event name="onChange">	
 								
-				if self.ControlaTrans.checked then
+				if self.ControlaTransTotal.checked then
 					sheet.TaiTotal = (tonumber(sheet.ArmaDT) or 0) + (tonumber(sheet.AcessorioDT) or 0) + (tonumber(sheet.DTaijutsu) or 0) + (tonumber(sheet.CTai) or 0) + (tonumber(sheet.Taijutsu) or 0) + (tonumber(sheet.TTaijutsu) or 0);
 					sheet.NinTotal = (tonumber(sheet.ArmaDN) or 0) + (tonumber(sheet.AcessorioDN) or 0) + (tonumber(sheet.DNinjutsu) or 0) + (tonumber(sheet.CNin) or 0) + (tonumber(sheet.Ninjutsu) or 0) + (tonumber(sheet.TNinjutsu) or 0);
 					sheet.GenTotal = (tonumber(sheet.ArmaDG) or 0) + (tonumber(sheet.AcessorioDG) or 0) + (tonumber(sheet.DGenjutsu) or 0) + (tonumber(sheet.CGen) or 0) + (tonumber(sheet.Genjutsu) or 0) + (tonumber(sheet.TGenjutsu) or 0);
@@ -2345,7 +2462,7 @@
 		<dataLink fields="{'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra', 'Resistencia', 
 		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CHP', 'GHP', 'Transformado'}">
 			<event name="onChange">
-				if self.ControlaTrans.checked then
+				if self.ControlaTransTotal.checked then
 					sheet.GHP = (tonumber(sheet.GHP) or 0);
 					sheet.HP = math.floor(tonumber(sheet.Resistencia) or 0) * 10 + (tonumber(sheet.GHP) or 0);
 					sheet.HPTotal = math.floor(tonumber(sheet.HP) or 0) + (tonumber(sheet.CHP) or 0) + (tonumber(sheet.DHP) or 0) + (tonumber(sheet.AcessorioHP) or 0)
@@ -2368,7 +2485,7 @@
 		<dataLink fields="{'HP', 'Chakra', 'ChakraTotal', 'ArmaHP','ArmaChakra', 'BandanaChakra',
 		'BandanaHP', 'ColeteChakra', 'ColeteHP', 'AcessorioChakra', 'AcessorioHP', 'DHP', 'DChakra', 'CChakra', 'GChakra', 'Idade', 'Transformado'}">
 			<event name="onChange">
-				if self.ControlaTrans.checked then
+				if self.ControlaTransTotal.checked then
 					sheet.Idade2 = (tonumber(sheet.Idade) or 0);		
 					if sheet.Idade2 > 40 then
 						sheet.Idade2 = 40;
@@ -2397,7 +2514,7 @@
 		<dataLink fields="{'TaiTotal', 'NinTotal', 'GenTotal', 'DATotal','EleTotal', 'Level',
 		'DReiatsu', 'AcessorioReiatsu', 'Transformado', 'ArmaReiatsu'}">
 			<event name="onChange">				
-				if self.ControlaTrans.checked then
+				if self.ControlaTransTotal.checked then
 					sheet.Reiatsu = (tonumber(sheet.TaiTotal) or 0) + (tonumber(sheet.NinTotal) or 0) + (tonumber(sheet.GenTotal) or 0) + 
 					(tonumber(sheet.DATotal) or 0) + (tonumber(sheet.EleTotal) or 0) + ( 10000 * (tonumber(sheet.Level) or 0));
 					sheet.ReiatsuTotal = (tonumber(sheet.Reiatsu) or 0) * 10 + (tonumber(sheet.DReiatsu) or 0) + (tonumber(sheet.ArmaReiatsu) or 0) + (tonumber(sheet.TReiatsu) or 0);	
@@ -3243,7 +3360,7 @@
 				'CAT', 'CAN', 'CAG', 'CEsq', 'CBloq', 'CCRT', 'CCRN', 'CCRG', 'DAcertoTai', 'DAcertoNin', 'DAcertoGen', 'DEsquiva', 'DBloqueio', 'DCriticalTai', 'DCriticalNin', 'DCriticalGen', 'Transformado'}">
 					<event name="onChange">
 
-						if self.ControlaTrans.checked then
+						if self.ControlaTransTotal.checked then
 							sheet.AcertoTaiTotal = (tonumber(sheet.GAcertoTai) or 0) + (tonumber(sheet.CAT) or 0) + (tonumber(sheet.DAcertoTai) or 0) + 60 + (tonumber(sheet.TATai) or 0);
 							sheet.AcertoNinTotal = (tonumber(sheet.GAcertoNin) or 0) + (tonumber(sheet.CAN) or 0) + (tonumber(sheet.DAcertoNin) or 0) + 60 + (tonumber(sheet.TANin) or 0);
 							sheet.AcertoGenTotal = (tonumber(sheet.GAcertoGen) or 0) + (tonumber(sheet.CAG) or 0) + (tonumber(sheet.DAcertoGen) or 0) + 60 + (tonumber(sheet.TAGen) or 0);
@@ -3297,7 +3414,21 @@
 			<scrollBox align="client">
 				<image left="1" top="1" width="1000" height="700" src="/imagens/3.png"/>								
 				<button left="55" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoHollow()"/>
+				<checkBox name="ControlaTransHollow" visible="false" left="30" top="93" text="Ativar Transformação" field="Transformado3">
+					<event name="onChange"> 
+						if self.ControlaTransHollow.checked then								
+						else								
+						end;
+					</event>
+				</checkBox>
 				<button left="210" top="110" width="100" height="150" opacity="0.0" onclick="TransformacaoMantoBiju()"/>
+				<checkBox name="ControlaTransMantoBiju" visible="false" left="185" top="93" text="Ativar Transformação" field="Transformado4">
+					<event name="onChange"> 
+						if self.ControlaTransMantoBiju.checked then														
+						else								
+						end;
+					</event>
+				</checkBox>
 				<button left="40" top="270" width="130" height="150" opacity="0.0">
 					<event name="onClick">
 						local novoForm = GUI.newForm("frmKutchyoseFicha");
@@ -3305,7 +3436,44 @@
 						novoForm:show();
 					</event>			
 				</button>
-				<button left="195" top="270" width="130" height="150" opacity="0.0" onclick="TransformacaoModoSennin()"/>
+				
+				----------------------SENNIN TRANSFORM ----------------------
+				<button left="195" top="270" width="130" height="150" opacity="0.0" onclick="self.PopSenninTransformation:show();"/>
+				<popup name="PopSenninTransformation" visible="false" left="1" top="10" width="1020" height="580">				
+					<image left="10" top="10" width="1000" height="563" src="/imagens/10.png"/>
+					<edit left="190" top="43" width="100" height="20" type="number" field="TransSenninTaijutsu"/>
+					<edit left="190" top="72" width="100" height="20" type="number" field="TransSenninNinjutsu"/>
+					<edit left="190" top="101" width="100" height="20" type="number" field="TransSenninGenjutsu"/>
+					<edit left="190" top="130" width="100" height="20" type="number" field="TransSenninDA"/>
+					<edit left="190" top="159" width="100" height="20" type="number" field="TransSenninElemental"/>
+					
+					
+					<edit left="190" top="217" width="100" height="20" type="number" field="TransSenninHP"/>
+					<edit left="190" top="245" width="100" height="20" type="number" field="TransSenninChakra"/>
+					<edit left="190" top="273" width="100" height="20" type="number" field="TransSenninReiatsu"/>
+					<edit left="190" top="301" width="100" height="20" type="number" field="TransSenninOutros"/>
+					
+					<edit left="190" top="357" width="100" height="20" type="number" field="TransSenninReducao"/>
+					
+					<edit left="820" top="43" width="100" height="20" type="number" field="TransSenninATai"/>
+					<edit left="820" top="72" width="100" height="20" type="number" field="TransSenninANin"/>
+					<edit left="820" top="101" width="100" height="20" type="number" field="TransSenninAGen"/>
+					<edit left="820" top="130" width="100" height="20" type="number" field="TransSenninEsquiva"/>
+					<edit left="820" top="159" width="100" height="20" type="number" field="TransSenninBloqueio"/>
+					<edit left="820" top="187" width="100" height="20" type="number" field="TransSenninCTai"/>
+					<edit left="820" top="215" width="100" height="20" type="number" field="TransSenninCNin"/>
+					<edit left="820" top="243" width="100" height="20" type="number" field="TransSenninCGen"/>
+					<edit left="820" top="271" width="100" height="20" type="number" field="TransSenninTurnos"/>
+				</popup>				
+				<checkBox name="ControlaTransSennin" left="185" top="400" text="Ativar Transformação" field="Transformado5"/>
+				<dataLink fields="{'TransSenninTaijutsu', 'TransSenninNinjutsu' , 'TransSenninGenjutsu', 'TransSenninDA', 'TransSenninElemental', 'TransSenninHP', 'TransSenninChakra', 
+				'TransSenninReiatsu', 'TransSenninOutros', 'TransSenninReducao', 'TransSenninATai', 'TransSenninANin', 'TransSenninAGen', 'TransSenninEsquiva', 'TransSenninBloqueio', 'TransSenninCTai',
+				'TransSenninCNin', 'TransSenninCGen', 'TransSenninTurnos', 'Transformado5'}">
+					<event name="onChange">
+						CalculaTransformacaoSennin();
+					</event>
+				</dataLink>	
+				
 				<button left="430" top="120" width="120" height="100" opacity="0.0" text="" onClick="self.POPArma:show();"/>
 				<popup name="POPArma" visible="false" left="1" top="40"
 					width="500" height="550">					 
@@ -3933,11 +4101,7 @@
 		</tab>						 
 		</tabControl>			
 	</scrollBox>	
-	
-	<event name="onHide">
-		self.ControlaTrans.check = false;
-	</event> 
-	
+		
 	<script>
 		local function TreinandoStatus()
 					local mesaDoPersonagem = rrpg.getMesaDe(sheet); 
@@ -4166,6 +4330,396 @@
 	
 	</script>
 	
+	
+	<script>
+		function FazCalculoTipoLista1Intensidade1() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	 
+
+				node.Lista1Intensidade1 = 0;	
+				
+				if node.TipoLista1Jutsu1 == 'Tai' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.TaiTotal) or 0);	
+				end;	
+				
+				if node.TipoLista1Jutsu1 == 'Nin' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.NinTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'Gen' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.GenTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'Elemental' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.EleTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'DanoArmado' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.DanoArmado) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'M/Tai' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.TaiTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'M/Nin' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.NinTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'M/Gen' then	
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.GenTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'M/Elemental' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.EleTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'M/DA' then
+					node.Lista1Intensidade1 = math.floor(tonumber(sheet.DanoArmado / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'Selamento' then
+					node.Lista1Intensidade1 = 0;	
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'Outros' then
+					node.Lista1Intensidade1 = 0;
+				end;
+				
+				if node.TipoLista1Jutsu1 == 'Nulo' then
+					node.Lista1Intensidade1 = 0;	
+				end;
+			end;	
+		end;
+	</script>
+	
+	<script>
+		function FazCalculoTipoLista1Intensidade2() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	  
+
+				node.Lista1Intensidade2 = 0;	
+
+				if node.TipoLista1Jutsu2 == 'Nulo' then
+					node.Lista1Intensidade2 = 0;	
+				end;
+
+				if node.TipoLista1Jutsu2 == 'Tai' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.TaiTotal) or 0);	
+				end;	
+				
+				if node.TipoLista1Jutsu2 == 'Nin' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.NinTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'Gen' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.GenTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'Elemental' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.EleTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'DanoArmado' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.DanoArmado) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'M/Tai' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.TaiTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'M/Nin' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.NinTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'M/Gen' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.GenTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'M/Elemental' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.EleTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'M/DA' then
+					node.Lista1Intensidade2 = math.floor(tonumber(sheet.DanoArmado / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'Selamento' then
+					node.Lista1Intensidade2 = 0;	
+				end;
+				
+				if node.TipoLista1Jutsu2 == 'Outros' then
+					node.Lista1Intensidade2 = 0;
+				end;
+			end;	
+		end;
+	</script>
+	
+	<script>
+		function FazCalculoTipoLista1Intensidade3() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	
+
+				node.Lista1Intensidade3 = 0;
+
+				if node.TipoLista1Jutsu3 == 'Nulo' then
+					node.Lista1Intensidade3 = 0;	
+				end;
+
+				if node.TipoLista1Jutsu3 == 'Tai' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.TaiTotal) or 0);	
+				end;	
+				
+				if node.TipoLista1Jutsu3 == 'Nin' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.NinTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'Gen' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.GenTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'Elemental' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.EleTotal) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'DanoArmado' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.DanoArmado) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'M/Tai' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.TaiTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'M/Nin' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.NinTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'M/Gen' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.GenTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'M/Elemental' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.EleTotal / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'M/DA' then
+					node.Lista1Intensidade3 = math.floor(tonumber(sheet.DanoArmado / 2) or 0);	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'Selamento' then
+					node.Lista1Intensidade3 = 0;	
+				end;
+				
+				if node.TipoLista1Jutsu3 == 'Outros' then
+					node.Lista1Intensidade3 = 0;
+				end;
+			end;		
+		end;
+	</script>
+	
+	<script>
+		function FazCalculoTipoLista1IntensidadeTotal() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	                     
+				
+				node.Lista1IntensidadeTotal = (tonumber(node.DNVerdadeiro) or 0) + (tonumber(node.Lista1Intensidade1) or 0) + (tonumber(node.Lista1Intensidade2) or 0) + (tonumber(node.Lista1Intensidade3) or 0);										
+			end;		
+		end;
+	</script>
+	
+	<script>
+		function FazCalculodoCustoReal() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	
+				
+				if node.LevelJutsu1 == nil then
+					node.LevelJutsu1 = 1;
+				end;
+				
+				node.AdicionalCusto = ((tonumber(node.LevelJutsu1 * 2) or 0) - 2);
+				node.CustoJutsuReal = tonumber(node.CustoJutsu or 0) + tonumber(node.AdicionalCusto or 0) or 0;							
+			end;		
+		end;
+	</script>	
+	
+	<script>
+		function FazCalculodoCustoEnergia() 
+			if	self.ListaJutsus.visible == true then
+				local node = self.ListaJutsus.node;	   
+				
+				node.CustoEnergia = math.floor(tonumber(node.CustoEnergia) or 0);						
+			end;		
+		end;
+	</script>
+	
+	<script>
+		function CalculaTransformacaoSennin();
+			if sheet.Sequenci1 == true then
+				if sheet.Transformado5 == true then	
+					sheet.TISTaijutsu = tonumber(sheet.TransSenninTaijutsu) or 0;
+					sheet.TISNinjutsu = tonumber(sheet.TransSenninNinjutsu) or 0;
+					sheet.TISGenjutsu = tonumber(sheet.TransSenninGenjutsu) or 0;
+					sheet.TISDA = tonumber(sheet.TransSenninDA) or 0;
+					sheet.TISElemental = tonumber(sheet.TransSenninElemental) or 0;				
+					sheet.TISHP = tonumber(sheet.TransSenninHP) or 0;
+					sheet.TISChakra = tonumber(sheet.TransSenninChakra) or 0;
+					sheet.TISReiatsu = tonumber(sheet.TransSenninReiatsu) or 0;
+					sheet.TISOutros = tonumber(sheet.TransSenninOutros) or 0;				
+					sheet.TISReducao = tonumber(sheet.TransSenninReducao) or 0;				
+					sheet.TISATai = tonumber(sheet.TransSenninATai) or 0;
+					sheet.TISANin = tonumber(sheet.TransSenninANin) or 0;
+					sheet.TISAGen = tonumber(sheet.TransSenninAGen) or 0;
+					sheet.TISEsquiva = tonumber(sheet.TransSenninEsquiva) or 0;
+					sheet.TISBloqueio = tonumber(sheet.TransSenninBloqueio) or 0;
+					sheet.TISCTai = tonumber(sheet.TransSenninCTai) or 0;
+					sheet.TISCNin = tonumber(sheet.TransSenninCNin) or 0;
+					sheet.TISCGen = tonumber(sheet.TransSenninCGen) or 0;
+					sheet.TISTurnos = tonumber(sheet.TransSenninTurnos) or 0;				
+				else	
+					sheet.TISTaijutsu = 0;
+					sheet.TISNinjutsu = 0;
+					sheet.TISGenjutsu = 0;
+					sheet.TISDA = 0;
+					sheet.TISElemental = 0;				
+					sheet.TISHP = 0;
+					sheet.TISChakra = 0;
+					sheet.TISReiatsu = 0;
+					sheet.TISOutros = 0;				
+					sheet.TISReducao = 0;				
+					sheet.TISATai = 0;
+					sheet.TISANin = 0;
+					sheet.TISAGen = 0;
+					sheet.TISEsquiva = 0;
+					sheet.TISBloqueio = 0;
+					sheet.TISCTai = 0;
+					sheet.TISCNin = 0;
+					sheet.TISCGen = 0;
+					sheet.TISTurnos = 0;		 
+				end;
+				
+				CalculaTransformacaoTotal();
+			end;
+		end;
+	</script>
+
+	<script>
+		function CalculaTransformacao();
+			if sheet.Transformado2 == true then	
+				sheet.TITaijutsu = tonumber(sheet.TransTaijutsu) or 0;
+				sheet.TINinjutsu = tonumber(sheet.TransNinjutsu) or 0;
+				sheet.TIGenjutsu = tonumber(sheet.TransGenjutsu) or 0;
+				sheet.TIDA = tonumber(sheet.TransDA) or 0;
+				sheet.TIElemental = tonumber(sheet.TransElemental) or 0;				
+				sheet.TIHP = tonumber(sheet.TransHP) or 0;
+				sheet.TIChakra = tonumber(sheet.TransChakra) or 0;
+				sheet.TIReiatsu = tonumber(sheet.TransReiatsu) or 0;
+				sheet.TIOutros = tonumber(sheet.TransOutros) or 0;				
+				sheet.TIReducao = tonumber(sheet.TransReducao) or 0;				
+				sheet.TIATai = tonumber(sheet.TransATai) or 0;
+				sheet.TIANin = tonumber(sheet.TransANin) or 0;
+				sheet.TIAGen = tonumber(sheet.TransAGen) or 0;
+				sheet.TIEsquiva = tonumber(sheet.TransEsquiva) or 0;
+				sheet.TIBloqueio = tonumber(sheet.TransBloqueio) or 0;
+				sheet.TICTai = tonumber(sheet.TransCTai) or 0;
+				sheet.TICNin = tonumber(sheet.TransCNin) or 0;
+				sheet.TICGen = tonumber(sheet.TransCGen) or 0;
+				sheet.TITurnos = tonumber(sheet.TransTurnos) or 0;				
+			else	
+				sheet.TITaijutsu = 0;
+				sheet.TINinjutsu = 0;
+				sheet.TIGenjutsu = 0;
+				sheet.TIDA = 0;
+				sheet.TIElemental = 0;				
+				sheet.TIHP = 0;
+				sheet.TIChakra = 0;
+				sheet.TIReiatsu = 0;
+				sheet.TIOutros = 0;				
+				sheet.TIReducao = 0;				
+				sheet.TIATai = 0;
+				sheet.TIANin = 0;
+				sheet.TIAGen = 0;
+				sheet.TIEsquiva = 0;
+				sheet.TIBloqueio = 0;
+				sheet.TICTai = 0;
+				sheet.TICNin = 0;
+				sheet.TICGen = 0;
+				sheet.TITurnos = 0;		 
+			end;					
+		end;
+	</script>
+	
+	<script>
+		function CalculaTransformacaoTotal();
+			if sheet.TransformadoTotal == true then	
+				sheet.TTaijutsu = (tonumber(sheet.TITaijutsu) or 0) + (tonumber(sheet.TISTaijutsu) or 0);
+				sheet.TNinjutsu = (tonumber(sheet.TINinjutsu) or 0) + (tonumber(sheet.TISNinjutsu) or 0);
+				sheet.TGenjutsu = (tonumber(sheet.TIGenjutsu) or 0) + (tonumber(sheet.TISGenjutsu) or 0);
+				sheet.TDA = (tonumber(sheet.TIDA) or 0) + (tonumber(sheet.TISDA) or 0);
+				sheet.TElemental = (tonumber(sheet.TIElemental) or 0) + (tonumber(sheet.TISElemental) or 0);			
+				sheet.THP = (tonumber(sheet.TIHP) or 0) + (tonumber(sheet.TISHP) or 0);
+				sheet.TChakra = (tonumber(sheet.TIChakra) or 0) + (tonumber(sheet.TISChakra) or 0);
+				sheet.TReiatsu = (tonumber(sheet.TIReiatsu) or 0) + (tonumber(sheet.TISReiatsu) or 0);
+				sheet.TOutros = (tonumber(sheet.TIOutros) or 0) + (tonumber(sheet.TISOutros) or 0);				
+				sheet.TReducao = (tonumber(sheet.TIReducao) or 0) + (tonumber(sheet.TISReducao) or 0);				
+				sheet.TATai = (tonumber(sheet.TIATai) or 0) + (tonumber(sheet.TISATai) or 0);
+				sheet.TANin = (tonumber(sheet.TIANin) or 0) + (tonumber(sheet.TISANin) or 0);
+				sheet.TAGen = (tonumber(sheet.TIAGen) or 0) + (tonumber(sheet.TISAGen) or 0);
+				sheet.TEsquiva = (tonumber(sheet.TIEsquiva) or 0) + (tonumber(sheet.TISEsquiva) or 0);
+				sheet.TBloqueio = (tonumber(sheet.TIBloqueio) or 0) + (tonumber(sheet.TISBloqueio) or 0);
+				sheet.TCTai = (tonumber(sheet.TICTai) or 0) + (tonumber(sheet.TISCTai) or 0);
+				sheet.TCNin = (tonumber(sheet.TICNin) or 0) + (tonumber(sheet.TISCNin) or 0);
+				sheet.TCGen = (tonumber(sheet.TICGen) or 0) + (tonumber(sheet.TISCGen) or 0);
+				sheet.TTurnos = (tonumber(sheet.TITurnos) or 0) + (tonumber(sheet.TISTurnos) or 0);				
+			else	
+				sheet.TTaijutsu = 0;
+				sheet.TNinjutsu = 0;
+				sheet.TGenjutsu = 0;
+				sheet.TDA = 0;
+				sheet.TElemental = 0;				
+				sheet.THP = 0;
+				sheet.TChakra = 0;
+				sheet.TReiatsu = 0;
+				sheet.TOutros = 0;				
+				sheet.TReducao = 0;				
+				sheet.TATai = 0;
+				sheet.TANin = 0;
+				sheet.TAGen = 0;
+				sheet.TEsquiva = 0;
+				sheet.TBloqueio = 0;
+				sheet.TCTai = 0;
+				sheet.TCNin = 0;
+				sheet.TCGen = 0;
+				sheet.TTurnos = 0;		 
+			end;					
+		end;
+	</script>
+	
+	<script>
+		function AtivaJunto() 
+			if sheet.Sequenci1 == true then
+				self.ControlaTransTotal.checked = false;
+			
+				if self.ControlaTrans.checked == true then
+					self.ControlaTransTotal.checked = true;		
+				end;
+				
+				if self.ControlaTransSennin.checked == true then
+					self.ControlaTransTotal.checked = true;		
+				end;
+				
+				if self.ControlaTransHollow.checked == true then
+					self.ControlaTransTotal.checked = true;		
+				end;
+				
+				if self.ControlaTransMantoBiju.checked == true then
+					self.ControlaTransTotal.checked = true;		
+				end;
+				
+				sheet.Transformado = tonumber(sheet.Transformado) + 1;		
+			end;
+		end;
+	</script>
+		
 	<dataLink field="GraduacaoTreino">
 		<event name="onChange">	
 			if sheet.Sequenci1 == true then
