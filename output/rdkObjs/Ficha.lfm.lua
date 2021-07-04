@@ -7516,19 +7516,19 @@ local function constructNew_frmsekai()
     obj.edit309:setField("VezesPDia");
     obj.edit309:setName("edit309");
 
-    obj.edtGM26 = GUI.fromHandle(_obj_newObject("edit"));
-    obj.edtGM26:setParent(obj.scrollBox8);
-    obj.edtGM26:setName("edtGM26");
-    obj.edtGM26:setLeft(500);
-    obj.edtGM26:setTop(438);
-    obj.edtGM26:setWidth(100);
-    obj.edtGM26:setHeight(25);
-    obj.edtGM26:setTransparent(false);
-    obj.edtGM26:setHorzTextAlign("center");
-    obj.edtGM26:setEnabled(true);
-    obj.edtGM26:setVisible(false);
-    obj.edtGM26:setFontSize(18);
-    obj.edtGM26:setField("GanhoPTreino");
+    obj.GanhoporTreino = GUI.fromHandle(_obj_newObject("edit"));
+    obj.GanhoporTreino:setParent(obj.scrollBox8);
+    obj.GanhoporTreino:setName("GanhoporTreino");
+    obj.GanhoporTreino:setLeft(500);
+    obj.GanhoporTreino:setTop(438);
+    obj.GanhoporTreino:setWidth(100);
+    obj.GanhoporTreino:setHeight(25);
+    obj.GanhoporTreino:setTransparent(false);
+    obj.GanhoporTreino:setHorzTextAlign("center");
+    obj.GanhoporTreino:setEnabled(false);
+    obj.GanhoporTreino:setVisible(true);
+    obj.GanhoporTreino:setFontSize(18);
+    obj.GanhoporTreino:setField("GanhoPTreino");
 
     obj.image35 = GUI.fromHandle(_obj_newObject("image"));
     obj.image35:setParent(obj.scrollBox8);
@@ -8321,7 +8321,7 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 5);
 											sheet.EsperaTreinoResultado = rolado.resultado * 5;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino /2);
 											ZeradorTreino();
@@ -8333,7 +8333,7 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 20);
 											sheet.EsperaTreinoResultado = rolado.resultado * 20;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino / 2);
 											ZeradorTreino();
@@ -8345,9 +8345,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 5);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -8357,9 +8357,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 5);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -8369,7 +8369,7 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
 											ZeradorTreino();
@@ -8381,7 +8381,7 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
 											ZeradorTreino();
@@ -8393,9 +8393,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 1000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 1000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.05);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -8405,9 +8405,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.05);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -8417,9 +8417,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.01);
 											ZeradorTreino();
 										end);      
 								end;
@@ -8429,9 +8429,9 @@ local function constructNew_frmsekai()
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.01);
 											ZeradorTreino();
 										end); 				
 								end;
@@ -8445,7 +8445,7 @@ local function constructNew_frmsekai()
 
 		
 		function ZeradorTreino() 
-						sheet.VezesPDia = 0;
+						sheet.VezesPDia = 1;
 					end;
 	
 	
@@ -11637,10 +11637,11 @@ local function constructNew_frmsekai()
         if self.edit220 ~= nil then self.edit220:destroy(); self.edit220 = nil; end;
         if self.edit260 ~= nil then self.edit260:destroy(); self.edit260 = nil; end;
         if self.label76 ~= nil then self.label76:destroy(); self.label76 = nil; end;
-        if self.edit316 ~= nil then self.edit316:destroy(); self.edit316 = nil; end;
+        if self.GanhoporTreino ~= nil then self.GanhoporTreino:destroy(); self.GanhoporTreino = nil; end;
         if self.button7 ~= nil then self.button7:destroy(); self.button7 = nil; end;
         if self.edit58 ~= nil then self.edit58:destroy(); self.edit58 = nil; end;
         if self.edit235 ~= nil then self.edit235:destroy(); self.edit235 = nil; end;
+        if self.edit316 ~= nil then self.edit316:destroy(); self.edit316 = nil; end;
         if self.POPBandana ~= nil then self.POPBandana:destroy(); self.POPBandana = nil; end;
         if self.edit66 ~= nil then self.edit66:destroy(); self.edit66 = nil; end;
         if self.dataLink20 ~= nil then self.dataLink20:destroy(); self.dataLink20 = nil; end;
@@ -11673,9 +11674,8 @@ local function constructNew_frmsekai()
         if self.image37 ~= nil then self.image37:destroy(); self.image37 = nil; end;
         if self.rectangle12 ~= nil then self.rectangle12:destroy(); self.rectangle12 = nil; end;
         if self.button43 ~= nil then self.button43:destroy(); self.button43 = nil; end;
-        if self.edtGM26 ~= nil then self.edtGM26:destroy(); self.edtGM26 = nil; end;
-        if self.edit176 ~= nil then self.edit176:destroy(); self.edit176 = nil; end;
         if self.image41 ~= nil then self.image41:destroy(); self.image41 = nil; end;
+        if self.edit176 ~= nil then self.edit176:destroy(); self.edit176 = nil; end;
         if self.button44 ~= nil then self.button44:destroy(); self.button44 = nil; end;
         if self.ControlaTransHollow ~= nil then self.ControlaTransHollow:destroy(); self.ControlaTransHollow = nil; end;
         if self.edit221 ~= nil then self.edit221:destroy(); self.edit221 = nil; end;

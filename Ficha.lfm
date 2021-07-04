@@ -3762,7 +3762,7 @@
 				
 				<button left="10" top="435" width="130" height="30" opacity="1.0" text="Treinamento Status" onClick="TreinandoStatus()"/>
 				<edit left="303" top="438" width="25" height="25" transparent="false" horzTextAlign="Center" enabled="true" min="0" max="9" type="number" fontSize="18" field="VezesPDia" />
-				<edit name="edtGM26" left="500" top="438" width="100" height="25" transparent="false" horzTextAlign="Center" enabled="true" visible="false" fontSize="18" field="GanhoPTreino" />
+				<edit name="GanhoporTreino" left="500" top="438" width="100" height="25" transparent="false" horzTextAlign="Center" enabled="false" visible="true" fontSize="18" field="GanhoPTreino" />
 				
 				<image left="23" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://nrpg-generations.weebly.com/uploads/6/9/2/9/69297201/dcfb772c-9d26-4c05-afd8-9914ebf7c06a_orig.gif"/>
 				<image left="222" top="478" width="146" height="116" editable="false" style="autoFit" animate="true" src="https://i.kym-cdn.com/photos/images/original/001/010/923/060.gif"/>
@@ -4124,7 +4124,7 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 5);
 											sheet.EsperaTreinoResultado = rolado.resultado * 5;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino /2);
 											ZeradorTreino();
@@ -4136,7 +4136,7 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 20);
 											sheet.EsperaTreinoResultado = rolado.resultado * 20;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino / 2);
 											ZeradorTreino();
@@ -4148,9 +4148,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 5);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -4160,9 +4160,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino / 5);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -4172,7 +4172,7 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
 											ZeradorTreino();
@@ -4184,7 +4184,7 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 100);
 											sheet.EsperaTreinoResultado = rolado.resultado * 100;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
 											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
 											ZeradorTreino();
@@ -4196,9 +4196,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 1000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 1000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.05);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -4208,9 +4208,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.05);
 											ZeradorTreino();
 										end);          	
 								end;
@@ -4220,9 +4220,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.01);
 											ZeradorTreino();
 										end);      
 								end;
@@ -4232,9 +4232,9 @@
 										function (rolado)                                            
 											mesaDoPersonagem.chat:enviarMensagem("[§K3]Treinou igual um  FDP e recebeu [§K4]" .. rolado.resultado * 10000);
 											sheet.EsperaTreinoResultado = rolado.resultado * 10000;
-											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * sheet.VezesPDia or 1;
+											sheet.EsperaTreinoResultado  = sheet.EsperaTreinoResultado * 1;
 											sheet.GanhoPTreino = sheet.EsperaTreinoResultado;
-											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.10);
+											sheet.ExpPTreino = (sheet.GanhoPTreino * 0.01);
 											ZeradorTreino();
 										end); 				
 								end;
@@ -4247,7 +4247,7 @@
 	<script>
 		
 		function ZeradorTreino() 
-						sheet.VezesPDia = 0;
+						sheet.VezesPDia = 1;
 					end;
 	
 	</script>
