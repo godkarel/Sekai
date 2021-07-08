@@ -193,7 +193,7 @@ local function constructNew_frmKutchyoseFicha()
     obj.rclListaJutsusKutchyose = GUI.fromHandle(_obj_newObject("recordList"));
     obj.rclListaJutsusKutchyose:setParent(obj.scrollBox1);
     obj.rclListaJutsusKutchyose:setName("rclListaJutsusKutchyose");
-    obj.rclListaJutsusKutchyose:setField("Jutsus");
+    obj.rclListaJutsusKutchyose:setField("KutchyoseJutsus");
     obj.rclListaJutsusKutchyose:setTemplateForm("frmKutchyoseFichaJutsu");
     obj.rclListaJutsusKutchyose:setWidth(1000);
     obj.rclListaJutsusKutchyose:setHeight(505);

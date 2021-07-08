@@ -28,7 +28,7 @@
 					</event>
 				</button>
 				<!-- recordList, representando a lista -->
-				<recordList name="rclListaJutsusKutchyose" field="Jutsus" templateForm="frmKutchyoseFichaJutsu"
+				<recordList name="rclListaJutsusKutchyose" field="KutchyoseJutsus" templateForm="frmKutchyoseFichaJutsu"
 							width="1000" height="505" left="5" top="245" selectable="true">                              
 					<event name="onSelect">
 						--[[
