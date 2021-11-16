@@ -609,6 +609,7 @@
 									self.ListaJutsus.node.TipoLista1Jutsu2 = self.ListaJutsus.node.TipoLista1Jutsu2 or 'Nulo';
 									self.ListaJutsus.node.TipoLista1Jutsu3 = self.ListaJutsus.node.TipoLista1Jutsu3 or 'Nulo';
 									self.ListaJutsus.node.CustoJutsu = self.ListaJutsus.node.CustoJutsu or 0;
+									self.ListaJutsus.node.TipoCustoJutsu1 = self.ListaJutsus.node.TipoCustoJutsu1 or "Chacra";
 									self.ListaJutsus.node.DescriJutsu = self.ListaJutsus.node.DescriJutsu or 'COLOQUE UMA DESCRICAO E OS STATUS ESPECIFICOS DA HABILIDADE';
 									FazCalculoTipoLista1Intensidade1();
 									FazCalculoTipoLista1Intensidade2();
@@ -620,20 +621,20 @@
 							</event>
 						</recordList>       
 						<dataScopeBox name="ListaJutsus" visible="false" width="480" height="590" left="400" top="60" >     
-							<rectangle  color="black" xradius="10" yradius="10" width="460" height="580" left="1" top="1" >											
+							<rectangle  color="black" xradius="10" yradius="10" width="470" height="580" left="1" top="1" >											
 								<label  width="120" height="40" left="10" top="10" fontFamily="Nyala" fontSize="20" text="Nome do Jutsu:"/>
 								<edit  width="220" height="30" left="130" top="15" field="NomedoJutsu"/>
 								<button width="80" height="30" left="360" top="15" fontColor="red" text="DELETAR" onClick="NDB.deleteNode(self.ListaJutsus.node);" />
 								<textEditor left="10" top="60" width="430" height="240" field="DescriJutsu"/>
 								<label left="10" top="305" width="120" height="40"  fontFamily="Nyala" fontSize="16" text="Dano:"/>
 								<edit left="50" top="310" width="80" height="30" type="number" min="0" field="DanoJutsu"/>														
-								<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chacra:"/>
-								<edit  left="185" top="310" width="40" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
-								<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
-								<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
-								<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
-								<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
-								<label left="10" top="345" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
+								<comboBox left="135" top="318" width="110" height="20" scale="0.9" fontColor="Cyan" field="TipoCustoJutsu1" items="{'Chacra', 'Reiatsu', 'Chacra Biju', 'Chacra Branco', 'Chacra Preto', 'Hadou', 'Hadou Negro', 'Chacra Natural', 'Chakra Roxo', 'Outros'}"/>
+								<edit  left="238" top="310" width="30" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
+								<label left="268" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
+								<edit left="338" top="310" width="30" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
+								<label left="375" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
+								<edit left="430" top="310" width="30" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
+								<label left="10" top="340" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
 								<comboBox left="50" top="358" width="100" height="18" field="TipoLista1Jutsu1" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Senbon', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem'}"/>
 								<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="true" fontSize="16" text="Tipo 2:"/>
 								<comboBox left="205" top="358" width="100" height="18" field="TipoLista1Jutsu2" visible="true" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Senbon', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem'}"/>
@@ -850,69 +851,83 @@
 												end;
 
 												if 	self.edtGM21.checked then
-													if sheet.TipoOutro == 'Chakra' then
+													if node.TipoCustoJutsu1 == 'Chacra' then
 														sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakra = sheet.OutrosAtual;
 														sheet.ChakraAtual = sheet.OutrosAtual;
 													end;
 												
-													if sheet.TipoOutro == 'Outros' then
+													if node.TipoCustoJutsu1 == 'Outros' then
 														sheet.OutrosAtual = (tonumber(sheet.BDOutro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDOutro = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'Reiatsu' then
+													if node.TipoCustoJutsu1 == 'Reiatsu' then
 														sheet.OutrosAtual = (tonumber(sheet.BDReiatsu) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBiju' then
+													if node.TipoCustoJutsu1 == 'Chacra Biju' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBranco' then
+													if node.TipoCustoJutsu1 == 'Chacra Branco' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraPreto' then
+													if node.TipoCustoJutsu1 == 'Chacra Preto' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'Hadou' then
+													if node.TipoCustoJutsu1 == 'Hadou' then
 														sheet.OutrosAtual = (tonumber(sheet.BDHadou) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'HadouNegro' then
+													if node.TipoCustoJutsu1 == 'Hadou Negro' then
 														sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraNatural' then
+													if node.TipoCustoJutsu1 == 'Chacra Natural' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraRoxo' then
+													if node.TipoCustoJutsu1 == 'Chacra Roxo' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0) - (tonumber(node.CustoJutsuReal) or 0);
 														sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
-													end;		
+													end;													
 												else
 													if self.edtGM21.checked then
-														sheet.ChakraAtual = node.ChakraPlayer;
+														if node.TipoCustoJutsu1 == 'Chacra' then
+															sheet.ChakraAtual = node.ChakraPlayer;
+														else
+															sheet.OutrosAtual = node.OutroPlayer;
+														end;
 													else
-														local mesa = Firecast.getMesaDe(sheet);
-														local ChakraPlayer = mesa.meuJogador:getBarValue(2);
-														node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
-														node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
-														sheet.ChakraAtual = node.ChakraPlayer;
-														mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);	
+														if node.TipoCustoJutsu1 == 'Chacra' then
+															local mesa = Firecast.getMesaDe(sheet);
+															local ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.ChakraAtual = node.ChakraPlayer;
+															mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+														else
+															local mesa = Firecast.getMesaDe(sheet);
+															local OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = (tonumber(node.OutroPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.OutrosAtual = node.OutroPlayer;
+															mesa.meuJogador:requestSetBarValue(3, node.OutroPlayer);
+														end;
 													end;
-												end;
-												
+												end;									
+											
+
 												if node.CustoEnergia > 0 then
 														if self.edtGM21.checked == true then
 															local mesa = Firecast.getMesaDe(sheet);
@@ -945,7 +960,8 @@
 								<edit name="edtGM3" left="240" top="530" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Dificuldade2d10DoJutsu1"/>
 								<edit name="edtGM4" left="300" top="530" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Dificuldade3d10DoJutsu1"/>
 								<rectangle name="edtGM5" left="360" top="530" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
-								<edit name="edtGM6" left="360" top="530" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Dificuldade1d20DoJutsu1"/>	
+								<edit name="edtGM6" left="360" top="530" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Dificuldade1d20DoJutsu1"/>								
+								<button left="415" top="500" width="50" height="30" fontFamily="Nyala" fontSize="18" text="( ? )" onClick="showMessage('O Bonus de Dificuldade do Treino da aba (Personagem) só é aplicado enquanto a rolagem do teste esta ativa, voce poderá acompanhar qual o total da chance durente a tentativa de treinar a habilidade')"/>
 								
 								<dataLink fields="{'LevelJutsu1', 'GraduacaoTreino', 'RankPorTreino', 'Dificuldade1d10DoJutsu1', 'Dificuldade2d10DoJutsu1', 'Dificuldade3d10DoJutsu1', 'Dificuldade1d20DoJutsu1', 
 								'Dificuldade1d10DoJutsu1Estudo', 'Dificuldade2d10DoJutsu1Estudo', 'Dificuldade3d10DoJutsu1Estudo', 'Dificuldade1d20DoJutsu1Estudo'}">
@@ -960,6 +976,14 @@
 										PreparaDifuculdadeTreinoRankX();
 										PreparaDifuculdadeTreinoRankXPLUS();										
 										MonstraProPlayerADificuldadeTreino();					
+									</event>
+								</dataLink>
+								
+								<dataLink fields="{'TipoCustoJutsu1'}">
+									<event name="onChange"> 
+										node = self.rclListadeJutsus1.selectedNode;	
+										
+										sheet.TipoOutro = node.TipoCustoJutsu1 or "Chacra";	
 									</event>
 								</dataLink>
 												
@@ -1005,6 +1029,7 @@
 									self.ListaJutsus2.node.TipoLista1Jutsu2 = self.ListaJutsus2.node.TipoLista1Jutsu2 or 'Nulo';
 									self.ListaJutsus2.node.TipoLista1Jutsu3 = self.ListaJutsus2.node.TipoLista1Jutsu3 or 'Nulo';
 									self.ListaJutsus2.node.CustoJutsu = self.ListaJutsus2.node.CustoJutsu or 0;
+									self.ListaJutsus2.node.TipoCustoJutsu2 = self.ListaJutsus2.node.TipoCustoJutsu2 or "Chacra";
 									self.ListaJutsus2.node.DescriJutsu = self.ListaJutsus2.node.DescriJutsu or 'COLOQUE UMA DESCRICAO E OS STATUS ESPECIFICOS DA HABILIDADE';
 									FazCalculoTipoLista2Intensidade1();
 									FazCalculoTipoLista2Intensidade2();
@@ -1023,12 +1048,12 @@
 								<textEditor left="10" top="60" width="430" height="240" field="DescriJutsu"/>
 								<label left="10" top="305" width="120" height="40"  fontFamily="Nyala" fontSize="16" text="Dano:"/>
 								<edit left="50" top="310" width="80" height="30" type="number" min="0" field="DanoJutsu"/>														
-								<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chacra:"/>
-								<edit  left="185" top="310" width="40" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
-								<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
-								<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
-								<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
-								<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
+								<comboBox left="135" top="318" width="110" height="20" scale="0.9" fontColor="Cyan" field="TipoCustoJutsu2" items="{'Chacra', 'Reiatsu', 'Chacra Biju', 'Chacra Branco', 'Chacra Preto', 'Hadou', 'Hadou Negro', 'Chacra Natural', 'Chakra Roxo', 'Outros'}"/>
+								<edit  left="236" top="310" width="30" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
+								<label left="268" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
+								<edit left="338" top="310" width="30" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
+								<label left="375" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
+								<edit left="430" top="310" width="30" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>																
 								<label left="10" top="345" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
 								<comboBox left="50" top="358" width="100" height="18" field="TipoLista1Jutsu1" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Senbon', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem'}"/>
 								<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="true" fontSize="16" text="Tipo 2:"/>
@@ -1244,17 +1269,95 @@
 													end;
 												end;
 												
-												local mesa = Firecast.getMesaDe(sheet);
-												local ChakraPlayer = mesa.meuJogador:getBarValue(2);
-												node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
-												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
-												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+												if 	self.edtGM21.checked then
+													if node.TipoCustoJutsu2 == 'Chacra' then
+														sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakra = sheet.OutrosAtual;
+														sheet.ChakraAtual = sheet.OutrosAtual;
+													end;
+												
+													if node.TipoCustoJutsu2 == 'Outros' then
+														sheet.OutrosAtual = (tonumber(sheet.BDOutro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDOutro = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Reiatsu' then
+														sheet.OutrosAtual = (tonumber(sheet.BDReiatsu) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Chacra Biju' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Chacra Branco' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Chacra Preto' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Hadou' then
+														sheet.OutrosAtual = (tonumber(sheet.BDHadou) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Hadou Negro' then
+														sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Chacra Natural' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu2 == 'Chacra Roxo' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
+													end;													
+												else
+													if self.edtGM21.checked then
+														if node.TipoCustoJutsu2 == 'Chacra' then
+															sheet.ChakraAtual = node.ChakraPlayer;
+														else
+															sheet.OutrosAtual = node.OutroPlayer;
+														end;
+													else
+														if node.TipoCustoJutsu2 == 'Chacra' then
+															local mesa = Firecast.getMesaDe(sheet);
+															local ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.ChakraAtual = node.ChakraPlayer;
+															mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+														else
+															local mesa = Firecast.getMesaDe(sheet);
+															local OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = (tonumber(node.OutroPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.OutrosAtual = node.OutroPlayer;
+															mesa.meuJogador:requestSetBarValue(3, node.OutroPlayer);
+														end;
+													end;
+												end;
 												
 												if node.CustoEnergia > 0 then
-													local EnergiaPlayer = mesa.meuJogador:getBarValue(4);
-													node.EnergiaPlayer = mesa.meuJogador:getBarValue(4);
-													node.EnergiaPlayer = (tonumber(node.EnergiaPlayer) or 0) - (tonumber(node.CustoEnergia) or 0);
-													mesa.meuJogador:requestSetBarValue(4, node.EnergiaPlayer);
+													if self.edtGM21.checked == true then
+														local mesa = Firecast.getMesaDe(sheet);
+														sheet.EnergiaAtual = (tonumber(sheet.EnergiaAtual) or 0) - (tonumber(node.CustoEnergia) or 0);
+													else			
+														local mesa = Firecast.getMesaDe(sheet);
+														local EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+														node.EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+														node.EnergiaPlayer = (tonumber(node.EnergiaPlayer) or 0) - (tonumber(node.CustoEnergia) or 0);
+														sheet.EnergiaAtual = node.EnergiaPlayer;
+														mesa.meuJogador:requestSetBarValue(4, node.EnergiaPlayer);
+													end;
 												end;
 											else
 												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
@@ -1276,7 +1379,8 @@
 								<edit name="edtGM37" left="300" top="530" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Dificuldade3d10DoJutsu1"/>
 								<rectangle name="edtGM38" left="360" top="530" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
 								<edit name="edtGM39" left="360" top="530" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Dificuldade1d20DoJutsu1"/>	
-						
+								<button left="415" top="500" width="50" height="30" fontFamily="Nyala" fontSize="18" text="( ? )" onClick="showMessage('O Bonus de Dificuldade do Treino da aba (Personagem) só é aplicado enquanto a rolagem do teste esta ativa, voce poderá acompanhar qual o total da chance durente a tentativa de treinar a habilidade')"/>
+								
 								<dataLink fields="{'LevelJutsu1', 'GraduacaoTreino', 'RankPorTreino', 'Dificuldade1d10DoJutsu1', 'Dificuldade2d10DoJutsu1', 'Dificuldade3d10DoJutsu1', 'Dificuldade1d20DoJutsu1', 
 								'Dificuldade1d10DoJutsu1Estudo', 'Dificuldade2d10DoJutsu1Estudo', 'Dificuldade3d10DoJutsu1Estudo', 'Dificuldade1d20DoJutsu1Estudo'}">
 									<event name="onChange"> 
@@ -1291,6 +1395,14 @@
 										PreparaDifuculdadeTreinoRankXPLUS2();										
 										MonstraProPlayerADificuldadeTreino2();					
 									</event>
+								</dataLink>
+								
+								<dataLink fields="{'TipoCustoJutsu2'}">
+									<event name="onChange"> 
+										node = self.ListaJutsus2.node;	
+										
+										sheet.TipoOutro = node.TipoCustoJutsu2 or "Chacra";	
+									</event>	
 								</dataLink>
 												
 								<button name="btnUparJutsu2" left="180" top="540" width="230" height="30" fontFamily="Nyala" fontSize="18" text="Treinar" onClick="TreinarLevelJutsu2()"/>	
@@ -1335,6 +1447,7 @@
 									self.ListaJutsus3.node.TipoLista1Jutsu2 = self.ListaJutsus3.node.TipoLista1Jutsu2 or 'Nulo';
 									self.ListaJutsus3.node.TipoLista1Jutsu3 = self.ListaJutsus3.node.TipoLista1Jutsu3 or 'Nulo';
 									self.ListaJutsus3.node.CustoJutsu = self.ListaJutsus3.node.CustoJutsu or 0;
+									self.ListaJutsus3.node.TipoCustoJutsu3 = self.ListaJutsus3.node.TipoCustoJutsu3 or "Chacra";
 									self.ListaJutsus3.node.DescriJutsu = self.ListaJutsus3.node.DescriJutsu or 'COLOQUE UMA DESCRICAO E OS STATUS ESPECIFICOS DA HABILIDADE';
 									FazCalculoTipoLista3Intensidade1();
 									FazCalculoTipoLista3Intensidade2();
@@ -1353,12 +1466,12 @@
 								<textEditor left="10" top="60" width="430" height="240" field="DescriJutsu"/>
 								<label left="10" top="305" width="120" height="40"  fontFamily="Nyala" fontSize="16" text="Dano:"/>
 								<edit left="50" top="310" width="80" height="30" type="number" min="0" field="DanoJutsu"/>														
-								<label left="135" top="305" width="60" height="40" fontFamily="Nyala" fontSize="16" fontColor="cyan" text="Chacra:"/>
-								<edit  left="185" top="310" width="40" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
-								<label left="230" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
-								<edit left="300" top="310" width="40" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
-								<label left="345" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
-								<edit left="400" top="310" width="40" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
+								<comboBox left="135" top="318" width="110" height="20" scale="0.9" fontColor="Cyan" field="TipoCustoJutsu3" items="{'Chacra', 'Reiatsu', 'Chacra Biju', 'Chacra Branco', 'Chacra Preto', 'Hadou', 'Hadou Negro', 'Chacra Natural', 'Chakra Roxo', 'Outros'}"/>
+								<edit  left="236" top="310" width="30" height="30" type="number" horzTextAlign="center" fontColor="cyan"  field="CustoJutsu"/>						
+								<label left="268" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="cyan" text="Custo Real: "/>
+								<edit left="338" top="310" width="30" height="30" type="number" enabled="false" visible="true" horzTextAlign="center" fontColor="cyan"  field="CustoJutsuReal"/>	
+								<label left="375" top="305" width="100" height="40" fontFamily="Nyala" fontSize="16" visible="true" fontColor="green" text="Energia: "/>
+								<edit left="430" top="310" width="30" height="30" type="number"  horzTextAlign="center" visible="true" fontColor="green" min="0" field="CustoEnergia"/>
 								<label left="10" top="345" width="60" height="40" fontFamily="Nyala" fontSize="16" text="Tipo 1:"/>
 								<comboBox left="50" top="358" width="100" height="18" field="TipoLista1Jutsu1" items="{'Nulo', 'Tai', 'Nin', 'Gen', 'Elemental', 'DanoArmado', 'Defensivo', 'Selamento', 'Outros','M/Tai', 'M/Nin', 'M/Gen', 'M/Elemental', 'M/DA', 'Kunai', 'Shuriken', 'Shuriken Fuuma', 'Kunai Gigante', 'Senbon', 'Papel Bomba', 'Ginso Explosivo', 'Veneno', 'Bandagem'}"/>
 								<label left="160" top="345" width="60" height="40" fontFamily="Nyala" visible="true" fontSize="16" text="Tipo 2:"/>
@@ -1574,17 +1687,95 @@
 													end;
 												end;
 												
-												local mesa = Firecast.getMesaDe(sheet);
-												local ChakraPlayer = mesa.meuJogador:getBarValue(2);
-												node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
-												node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
-												mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+												if 	self.edtGM21.checked then
+													if node.TipoCustoJutsu3 == 'Chacra' then
+														sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakra = sheet.OutrosAtual;
+														sheet.ChakraAtual = sheet.OutrosAtual;
+													end;
+												
+													if node.TipoCustoJutsu3 == 'Outros' then
+														sheet.OutrosAtual = (tonumber(sheet.BDOutro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDOutro = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Reiatsu' then
+														sheet.OutrosAtual = (tonumber(sheet.BDReiatsu) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Chacra Biju' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Chacra Branco' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Chacra Preto' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Hadou' then
+														sheet.OutrosAtual = (tonumber(sheet.BDHadou) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Hadou Negro' then
+														sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Chacra Natural' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
+													end;
+													
+													if node.TipoCustoJutsu3 == 'Chacra Roxo' then
+														sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+														sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
+													end;													
+												else
+													if self.edtGM21.checked then
+														if node.TipoCustoJutsu3 == 'Chacra' then
+															sheet.ChakraAtual = node.ChakraPlayer;
+														else
+															sheet.OutrosAtual = node.OutroPlayer;
+														end;
+													else
+														if node.TipoCustoJutsu3 == 'Chacra' then
+															local mesa = Firecast.getMesaDe(sheet);
+															local ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = mesa.meuJogador:getBarValue(2);
+															node.ChakraPlayer = (tonumber(node.ChakraPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.ChakraAtual = node.ChakraPlayer;
+															mesa.meuJogador:requestSetBarValue(2, node.ChakraPlayer);
+														else
+															local mesa = Firecast.getMesaDe(sheet);
+															local OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = mesa.meuJogador:getBarValue(3);
+															node.OutroPlayer = (tonumber(node.OutroPlayer) or 0) - (tonumber(node.CustoJutsuReal) or 0);
+															sheet.OutrosAtual = node.OutroPlayer;
+															mesa.meuJogador:requestSetBarValue(3, node.OutroPlayer);
+														end;
+													end;
+												end;
 												
 												if node.CustoEnergia > 0 then
-													local EnergiaPlayer = mesa.meuJogador:getBarValue(4);
-													node.EnergiaPlayer = mesa.meuJogador:getBarValue(4);
-													node.EnergiaPlayer = (tonumber(node.EnergiaPlayer) or 0) - (tonumber(node.CustoEnergia) or 0);
-													mesa.meuJogador:requestSetBarValue(4, node.EnergiaPlayer);
+													if self.edtGM21.checked == true then
+														local mesa = Firecast.getMesaDe(sheet);
+														sheet.EnergiaAtual = (tonumber(sheet.EnergiaAtual) or 0) - (tonumber(node.CustoEnergia) or 0);
+													else			
+														local mesa = Firecast.getMesaDe(sheet);
+														local EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+														node.EnergiaPlayer = mesa.meuJogador:getBarValue(4);
+														node.EnergiaPlayer = (tonumber(node.EnergiaPlayer) or 0) - (tonumber(node.CustoEnergia) or 0);
+														sheet.EnergiaAtual = node.EnergiaPlayer;
+														mesa.meuJogador:requestSetBarValue(4, node.EnergiaPlayer);
+													end;
 												end;
 											else
 												mesaDoPersonagem.chat:enviarMensagem("[§K4,0]TURURU, O Naruto pode ser duro as vezes [§I https://i0.wp.com/www.fatosdesconhecidos.com.br/wp-content/uploads/2018/11/Naruto_after_Jiraiyas_death.png?resize=600,450]");
@@ -1606,7 +1797,8 @@
 								<edit name="edtGM47" left="300" top="530" width="50" height="30" type="number" min="1" max="9" enabled="true" visible="false" horzTextAlign="center" field="Dificuldade3d10DoJutsu1"/>
 								<rectangle name="edtGM48" left="360" top="530" width="50" height="30" color="black" strokeColor="red" visible="false" strokeSize="3" />						
 								<edit name="edtGM49" left="360" top="530" width="50" height="30" type="number" min="1" max="18" enabled="true" visible="false" transparent="true" horzTextAlign="center" field="Dificuldade1d20DoJutsu1"/>	
-						
+								<button left="415" top="500" width="50" height="30" fontFamily="Nyala" fontSize="18" text="( ? )" onClick="showMessage('O Bonus de Dificuldade do Treino da aba (Personagem) só é aplicado enquanto a rolagem do teste esta ativa, voce poderá acompanhar qual o total da chance durente a tentativa de treinar a habilidade')"/>
+								
 								<dataLink fields="{'LevelJutsu1', 'GraduacaoTreino', 'RankPorTreino', 'Dificuldade1d10DoJutsu1', 'Dificuldade2d10DoJutsu1', 'Dificuldade3d10DoJutsu1', 'Dificuldade1d20DoJutsu1', 
 								'Dificuldade1d10DoJutsu1Estudo', 'Dificuldade2d10DoJutsu1Estudo', 'Dificuldade3d10DoJutsu1Estudo', 'Dificuldade1d20DoJutsu1Estudo'}">
 									<event name="onChange"> 
@@ -1621,6 +1813,14 @@
 										PreparaDifuculdadeTreinoRankXPLUS3();										
 										MonstraProPlayerADificuldadeTreino3();					
 									</event>
+								</dataLink>
+								
+								<dataLink fields="{'TipoCustoJutsu3'}">
+									<event name="onChange"> 
+										node = self.ListaJutsus3.node;	
+										
+										sheet.TipoOutro = node.TipoCustoJutsu3 or "Chacra";	
+									</event>	
 								</dataLink>
 												
 								<button name="btnUparJutsu3" left="180" top="540" width="230" height="30" fontFamily="Nyala" fontSize="18" text="Treinar" onClick="TreinarLevelJutsu3()"/>	
@@ -1752,7 +1952,7 @@
 					<event name="onClick">
 						sheet.ChakraAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(sheet.CustoChacraRecebido) or 0);
 						
-						if sheet.TipoOutro == 'Chakra' then
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.BDChakra = (tonumber(sheet.ChakraAtual) or 0);
 							sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0);
 						end;						
@@ -1764,7 +1964,7 @@
 					<event name="onClick">
 						sheet.ChakraAtual = (tonumber(sheet.ChakraAtual) or 0) + (tonumber(sheet.CustoChacraRecebido) or 0);
 						
-						if sheet.TipoOutro == 'Chakra' then
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.BDChakra = (tonumber(sheet.ChakraAtual) or 0);
 							sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0);
 						end;
@@ -1782,7 +1982,7 @@
 					<event name="onClick">
 						sheet.OutrosAtual = (tonumber(sheet.OutrosAtual) or 0) - (tonumber(sheet.CustoOutrosRecebido) or 0);						
 												
-						if sheet.TipoOutro == 'Chakra' then
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.BDChakra = (tonumber(sheet.OutrosAtual) or 0);
 							sheet.ChakraAtual = (tonumber(sheet.OutrosAtual) or 0);
 						end;
@@ -1791,15 +1991,15 @@
 							sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBiju' then
+						if sheet.TipoOutro == 'Chacra Biju' then
 							sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBranco' then
+						if sheet.TipoOutro == 'Chacra Branco' then
 							sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraPreto' then
+						if sheet.TipoOutro == 'Chacra Preto' then
 							sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
@@ -1807,15 +2007,15 @@
 							sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'HadouNegro' then
+						if sheet.TipoOutro == 'Hadou Negro' then
 							sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraNatural' then
+						if sheet.TipoOutro == 'Chacra Natural' then
 							sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraRoxo' then
+						if sheet.TipoOutro == 'Chacra Roxo' then
 							sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
@@ -1835,7 +2035,7 @@
 							sheet.OutrosAtual = tonumber(sheet.OutrosTotal);
 						end;
 						
-						if sheet.TipoOutro == 'Chakra' then
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.BDChakra = (tonumber(sheet.OutrosAtual) or 0);
 							sheet.ChakraAtual = (tonumber(sheet.OutrosAtual) or 0);
 						end;
@@ -1844,15 +2044,15 @@
 							sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBiju' then
+						if sheet.TipoOutro == 'Chacra Biju' then
 							sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBranco' then
+						if sheet.TipoOutro == 'Chacra Branco' then
 							sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraPreto' then
+						if sheet.TipoOutro == 'Chacra Preto' then
 							sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
@@ -1860,15 +2060,15 @@
 							sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'HadouNegro' then
+						if sheet.TipoOutro == 'Hadou Negro' then
 							sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraNatural' then
+						if sheet.TipoOutro == 'Chacra Natural' then
 							sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraRoxo' then
+						if sheet.TipoOutro == 'Chacra Roxo' then
 							sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
 						end;
 						
@@ -1915,7 +2115,7 @@
 				
 				<dataLink fields="{'OutrosAtual', 'OutrosTotal', 'TipoOutro', 'DOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo', 'Outros', 'Reiatsu', 'Chakra', 'ChakraAtual', 'ChakraTotal'}">
 					<event name="onChange">
-						if sheet.TipoOutro == 'Chakra' then
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraTotal) or 0);
 						end;
 						
@@ -1923,15 +2123,15 @@
 							sheet.OutrosTotal = (tonumber(sheet.ReiatsuTotal) or 0);
 						end;
 							
-						if sheet.TipoOutro == 'ChakraBiju' then
+						if sheet.TipoOutro == 'Chacra Biju' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraBiju) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBranco' then
+						if sheet.TipoOutro == 'Chacra Branco' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraBranco) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraPreto' then
+						if sheet.TipoOutro == 'Chacra Preto' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraPreto) or 0);
 						end;
 						
@@ -1939,22 +2139,74 @@
 							sheet.OutrosTotal = (tonumber(sheet.Hadou) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'HadouNegro' then
+						if sheet.TipoOutro == 'Hadou Negro' then
 							sheet.OutrosTotal = (tonumber(sheet.HadouNegro) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraNatural' then
+						if sheet.TipoOutro == 'Chacra Natural' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraNatural) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraRoxo' then
+						if sheet.TipoOutro == 'Chacra Roxo' then
 							sheet.OutrosTotal = (tonumber(sheet.ChakraRoxo) or 0);
 						end;
 						
 						if sheet.TipoOutro == 'Outros' then
 							sheet.OutrosTotal = (tonumber(sheet.DOutro) or 0);
 						end;
-																		
+																								
+						self.BarraOutros.value = tonumber(sheet.OutrosAtual);
+						self.BarraOutros.max = tonumber(sheet.OutrosTotal);						
+					</event>
+				</dataLink>
+				
+				<dataLink fields="{'OutrosAtual', 'OutrosTotal', 'TipoOutro', 'DOutro', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo', 'Outros', 'Reiatsu', 'Chakra', 'ChakraAtual', 'ChakraTotal'}">
+					<event name="onChange">
+						local mesa = Firecast.getMesaDe(sheet); 
+						
+						if sheet.TipoOutro == 'Chacra' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraTotal) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Reiatsu' then
+							sheet.OutrosTotal = (tonumber(sheet.ReiatsuTotal) or 0);
+						end;
+							
+						if sheet.TipoOutro == 'Chacra Biju' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraBiju) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Chacra Branco' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraBranco) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Chacra Preto' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraPreto) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Hadou' then
+							sheet.OutrosTotal = (tonumber(sheet.Hadou) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Hadou Negro' then
+							sheet.OutrosTotal = (tonumber(sheet.HadouNegro) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Chacra Natural' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraNatural) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Chacra Roxo' then
+							sheet.OutrosTotal = (tonumber(sheet.ChakraRoxo) or 0);
+						end;
+						
+						if sheet.TipoOutro == 'Outros' then
+							sheet.OutrosTotal = (tonumber(sheet.DOutro) or 0);
+						end;
+						
+						local OutrosTotal = (tonumber(sheet.OutrosTotal) or 0);
+						mesa.meuJogador:requestSetBarValue(3, nil, OutrosTotal);
+																								
 						self.BarraOutros.value = tonumber(sheet.OutrosAtual);
 						self.BarraOutros.max = tonumber(sheet.OutrosTotal);						
 					</event>
@@ -1962,7 +2214,9 @@
 				
 				<dataLink field="TipoOutro">
 					<event name="onChange">
-						if sheet.TipoOutro == 'Chakra' then
+						local mesa = Firecast.getMesaDe(sheet); 
+						
+						if sheet.TipoOutro == 'Chacra' then
 							sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0);
 						end;
 						
@@ -1970,15 +2224,15 @@
 							sheet.OutrosAtual = (tonumber(sheet.BDReiatsu) or 0);
 						end;
 					
-						if sheet.TipoOutro == 'ChakraBiju' then
+						if sheet.TipoOutro == 'Chacra Biju' then
 							sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraBranco' then
+						if sheet.TipoOutro == 'Chacra Branco' then
 							sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraPreto' then
+						if sheet.TipoOutro == 'Chacra Preto' then
 							sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0);
 						end;
 						
@@ -1986,21 +2240,24 @@
 							sheet.OutrosAtual = (tonumber(sheet.BDHadou) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'HadouNegro' then
+						if sheet.TipoOutro == 'Hadou Negro' then
 							sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraNatural' then
+						if sheet.TipoOutro == 'Chacra Natural' then
 							sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0);
 						end;
 						
-						if sheet.TipoOutro == 'ChakraRoxo' then
+						if sheet.TipoOutro == 'Chacra Roxo' then
 							sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0);
 						end;
 						
 						if sheet.TipoOutro == 'Outros' then
 							sheet.OutrosAtual = (tonumber(sheet.BDOutro) or 0);
-						end;				
+						end;
+							
+						local OutrosAtual = (tonumber(sheet.OutrosAtual) or 0);
+						mesa.meuJogador:requestSetBarValue(3, OutrosAtual, nil);
 					</event>
 				</dataLink>				
 				
@@ -2068,7 +2325,7 @@
 						mesa.meuJogador:requestSetBarValue(3, nil, OutrosTotal);
 					</event>
 				</button>				
-				<comboBox name="cmbTipoOutro" left="320" top="316" width="110" height="18" fontColor="yellow" field="TipoOutro" items="{'Chakra', 'Outros', 'Reiatsu', 'ChakraBiju', 'ChakraBranco', 'ChakraPreto', 'Hadou', 'HadouNegro', 'ChakraNatural', 'ChakraRoxo'}"/>
+				<comboBox name="cmbTipoOutro" left="320" top="316" width="110" height="18" fontColor="yellow" field="TipoOutro" items="{'Chacra', 'Reiatsu', 'Chacra Biju', 'Chacra Branco', 'Chacra Preto', 'Hadou', 'Hadou Negro', 'Chacra Natural', 'Chakra Roxo', 'Outros'}"/>
 				
 				<progressBar name="BarraEnergia" left="85" top="336" width="190" height="19" color="Green"  value="100" max="100"/>
 				<label left="90" top="336" width="85" height="18" horzTextAlign="center" visible="false" field="Energia"/>
@@ -2217,7 +2474,7 @@
 								end;
 							end;
 						</event>
-				</dataLink>
+				</dataLink>			
 
 				<edit left="443" top="556" width="85" height="18" visible="false" field="FotoMSG"/>					
 				<button left="635" top="475" scale="3.0" width="25" height="20" opacity="1.0" visible="true" text="💬">
@@ -2235,6 +2492,7 @@
 				</button>
 				
 				<image left="650" top="550" width="146" height="116" editable="false" animate="true" src="https://i.pinimg.com/originals/c7/44/c5/c744c5d661e383b57db574a2a3f4d216.gif"/>
+				<image left="615" top="510" width="215" height="200"  editable="false" src="/imagens/board.png"/>	
 =============================================================
 =============================================================
 =============================================================
@@ -2803,8 +3061,8 @@
 							sheet.Taijutsu = (tonumber(sheet.Forca) or 0) * 2;
 							sheet.Ninjutsu = (tonumber(sheet.Inteligencia) or 0) * 2;
 							sheet.Genjutsu = (tonumber(sheet.Sabedoria) or 0) * 2;
-							sheet.Elemental1 = (tonumber(sheet.Sabedoria) or 0) + (tonumber(sheet.Inteligencia) or 0);
-							sheet.DanoArmado = (tonumber(sheet.Forca) or 0) + (tonumber(sheet.Habilidade) or 0);
+							sheet.Elemental1 = (tonumber(sheet.NinTotal / 2) or 0) + (tonumber(sheet.GenTotal / 2) or 0);
+							sheet.DanoArmado = (tonumber(sheet.TaiTotal / 2) or 0) + (tonumber(sheet.Habilidade) or 0);
 						</event>
 					</dataLink>
 					
@@ -3344,7 +3602,7 @@
 					<edit  width="40" height="30" left="400" top="355"  type="number" field="CustoPerga1"/>
 					<edit  width="40" height="30" left="390" top="380" visible="false" type="number" field="ChakraPerga1"/>
 					<label  width="60" height="40" left="230" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
-					<comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho1" items="{'X', 'SS', 'S'}"/>
+					<comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho1" items="{'A', 'B', 'C', 'D', 'E' , 'Outros'}"/>
 					<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
 					<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho1()"/>
 						<script> 
@@ -3380,7 +3638,7 @@
 					<edit  width="40" height="30" left="400" top="355"  type="number" field="CustoPerga2"/>
 					<edit  width="40" height="30" left="390" top="380" visible="false" type="number" field="ChakraPerga2"/>
 					<label  width="60" height="40" left="230" top="350" fontFamily="Nyala" fontSize="20" text="Tipo"/>
-					<comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho2" items="{'A', 'B', 'C', 'D', 'E'}"/>
+					<comboBox  left="275" top="363" width="50" height="18" field="TipoPergaminho2" items="{'X', 'SS', 'S', 'Outros'}"/> 
 					<image left="20" top="380" opacity="1.0" width="150" height="150" src="/imagens/Pergamin.png"/>
 					<button left="20" top="390" fontSize="20" opacity="0.0" height="120" width="150" text="" fontColor="White" onClick="Pergaminho2()"/>
 						<script> 
@@ -3653,7 +3911,7 @@
 												end;
 
 												if 	self.edtGM21.checked then
-													if sheet.TipoOutro == 'Chakra' then
+													if sheet.TipoOutro == 'Chacra' then
 														sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakra = sheet.OutrosAtual;
 														sheet.ChakraAtual = sheet.OutrosAtual;
@@ -3669,17 +3927,17 @@
 														sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBiju' then
+													if sheet.TipoOutro == 'Chacra Biju' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBranco' then
+													if sheet.TipoOutro == 'Chacra Branco' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraPreto' then
+													if sheet.TipoOutro == 'Chacra Preto' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
 													end;
@@ -3689,17 +3947,17 @@
 														sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'HadouNegro' then
+													if sheet.TipoOutro == 'Hadou Negro' then
 														sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraNatural' then
+													if sheet.TipoOutro == 'Chacra Natural' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraRoxo' then
+													if sheet.TipoOutro == 'Chacra Roxo' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0) - (tonumber(sheet.DCustoReal) or 0);
 														sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
 													end;		
@@ -3764,10 +4022,10 @@
 =============================================================
 =============================================================	
 				
-				<image left="615" top="510" width="215" height="200"  editable="false" src="/imagens/board.png"/>	
+				
 	
 				<button left="650" top="570" width="146" height="100" opacity="0.0" text="" onClick="self.EstilodeCombate:show();"/>
-				<popup name="EstilodeCombate" visible="false" left="1" top="40"	width="1000" height="620">		
+				<popup name="EstilodeCombate" visible="false" left="1" top="40"	width="1000" height="620">	
 					<scrollBox align="client">	
 						<button text="Novo Estilo de combate" width="125" height="40" left="10" top="10">
 							<event name="onClick">                          
@@ -4080,7 +4338,7 @@
 												end;
 
 												if 	self.edtGM21.checked then
-													if sheet.TipoOutro == 'Chakra' then
+													if sheet.TipoOutro == 'Chacra' then
 														sheet.OutrosAtual = (tonumber(sheet.ChakraAtual) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakra = sheet.OutrosAtual;
 														sheet.ChakraAtual = sheet.OutrosAtual;
@@ -4096,17 +4354,17 @@
 														sheet.BDReiatsu = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBiju' then
+													if sheet.TipoOutro == 'Chacra Biju' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBiju) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakraBiju = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraBranco' then
+													if sheet.TipoOutro == 'Chacra Branco' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraBranco) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakraBranco = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraPreto' then
+													if sheet.TipoOutro == 'Chacra Preto' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraPreto) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakraPreto = (tonumber(sheet.OutrosAtual) or 0);
 													end;
@@ -4116,17 +4374,17 @@
 														sheet.BDHadou = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'HadouNegro' then
+													if sheet.TipoOutro == 'Hadou Negro' then
 														sheet.OutrosAtual = (tonumber(sheet.BDHadouNegro) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDHadouNegro = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraNatural' then
+													if sheet.TipoOutro == 'Chacra Natural' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraNatural) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakraNatural = (tonumber(sheet.OutrosAtual) or 0);
 													end;
 													
-													if sheet.TipoOutro == 'ChakraRoxo' then
+													if sheet.TipoOutro == 'Chacra Roxo' then
 														sheet.OutrosAtual = (tonumber(sheet.BDChakraRoxo) or 0) - (tonumber(node.CustoEDC) or 0);
 														sheet.BDChakraRoxo = (tonumber(sheet.OutrosAtual) or 0);
 													end;		
